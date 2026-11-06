@@ -233,3 +233,25 @@ Online references:
 **Outcome:** wording and broad attribution are corroborated by an accessible text of the cited work. The page locator is not yet reconciled: HATEMDB gives 5/56, while the online copies consulted show 5/57. This may be an edition or pagination difference; it is not enough evidence to declare the HATEMDB locator wrong.
 
 **Research lesson:** this is exactly why the extraction schema must preserve the citation as supplied, record the edition separately when known, and distinguish (a) text match, (b) speaker attribution, and (c) exact bibliographic locator verification. One successful wording match does not validate the entire corpus.
+
+
+## 13. Quote-level extraction preparation
+
+A dedicated extraction script has been added at `dataset_discovery/extract_hatemdb_quotes.py`.
+
+Its purpose is to flatten each nested quotation occurrence into a reviewable row while preserving:
+- the original narrator record ID and JSON pointer;
+- the original scholar-group key as `source_group_label`, not as a verified speaker;
+- the raw quotation unchanged;
+- the raw trailing citation and conservatively parsed work-title / volume-page strings;
+- source-file and record SHA-256 hashes;
+- explicit unreviewed / unverified annotation statuses.
+
+**Execution status:** the script has been committed but has not yet been run against the upstream JSON files in this environment. The upstream JSON files exceed the GitHub connector's text-fetch limit. The extraction output and parser coverage therefore remain unverified until the script is run locally against the exact repository files.
+
+Command:
+```bash
+python dataset_discovery/extract_hatemdb_quotes.py path/to/narrators_db.json --out hatemdb_quote_occurrences.csv
+```
+
+The resulting CSV is a working extraction table, not a gold-standard ESA dataset. Parser outputs must be checked against raw quotations and source texts before annotation or model use.
