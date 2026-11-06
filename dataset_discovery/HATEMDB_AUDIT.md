@@ -216,3 +216,20 @@ Investigate why the file has 7,233 rows but a maximum hadith number of 7,563, in
 It is not yet a gold-standard dataset. Its most important limitation is that the speaker attribution is embedded in unstructured text and cannot safely be inferred from the scholar-group key. Its redistribution rights are also unresolved.
 
 The next step should be to build and validate a quote-level parser and a small manual verification sample—not to train a model yet.
+
+
+## 12. First manual source check — narrator record 1
+
+**Record:** narrator ID 1, al-Ḥumaydī (ʿAbd Allāh ibn al-Zubayr).  
+**HATEMDB group:** `أبو حاتم الرازي`.  
+**HATEMDB citation:** `الجرح والتعديل لابن أبي حاتم (5/ 56)`.
+
+A targeted lookup found the corresponding entry for ʿAbd Allāh ibn al-Zubayr al-Ḥumaydī in Ibn Abī Ḥātim's *al-Jarḥ wa al-Taʿdīl*. The online text contains the same evaluative content attributed to Abū Ḥātim: al-Ḥumaydī is described as the most reliable transmitter from Sufyān ibn ʿUyaynah and as a trustworthy imam. The entry also includes the separate report that al-Ḥumaydī himself accompanied Ibn ʿUyaynah for nineteen years or so.
+
+Online references:
+- [HadithWeb — al-Jarḥ wa al-Taʿdīl, entry 264](https://sunna.alifta.gov.sa/BookToc/ViewServicePage?bookId=61&mainId=699528) displays the passage with locator 5/57.
+- [AB Library — al-Jarḥ wa al-Taʿdīl, page 57](https://ablibrary.net/book_content/b/3108/58?lang=ar) displays the corresponding wording and identifies the book and publisher metadata.
+
+**Outcome:** wording and broad attribution are corroborated by an accessible text of the cited work. The page locator is not yet reconciled: HATEMDB gives 5/56, while the online copies consulted show 5/57. This may be an edition or pagination difference; it is not enough evidence to declare the HATEMDB locator wrong.
+
+**Research lesson:** this is exactly why the extraction schema must preserve the citation as supplied, record the edition separately when known, and distinguish (a) text match, (b) speaker attribution, and (c) exact bibliographic locator verification. One successful wording match does not validate the entire corpus.
