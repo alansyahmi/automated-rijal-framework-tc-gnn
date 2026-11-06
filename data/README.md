@@ -3,7 +3,7 @@
 ## Directory policy
 
 - `raw/`: immutable source snapshots where storage and licence terms permit.
-- `interim/`: intermediate extracts and transformations.
+- `temporaries/`: intermediate extracts and transformations.
 - `processed/`: versioned, analysis-ready datasets.
 - `documentation/`: schemas, data dictionaries, provenance, validation reports, and dataset cards.
 
