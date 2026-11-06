@@ -49,3 +49,7 @@ checkpoints/
 Thumbs.db
 .idea/
 .vscode/
+
+# Track dataset documentation while keeping raw corpus files local
+!data/raw/hadithdb/
+!data/raw/hadithdb/README.md
