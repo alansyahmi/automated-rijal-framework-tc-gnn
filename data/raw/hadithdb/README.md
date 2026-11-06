@@ -113,7 +113,31 @@ python .\dataset_discovery\hadithdb\profile_hadithdb_quotes.py `
   --out-dir .\data\interim\hadithdb_profile
 ```
 
-## 7. Recommended handling and next validation work
+
+## 7. Duplicate-structure audit
+
+A separate read-only audit script is available at `dataset_discovery/hadithdb/audit_duplicate_structure.py`. It compares the extracted CSV back to the original JSON coordinates, profiles exact repeated quotation strings, and distinguishes storage patterns such as repetition across multiple group labels within one record versus repetition across different records.
+
+Run it from the repository root:
+
+```powershell
+python .\\dataset_discovery\\hadithdb\\audit_duplicate_structure.py `
+  .\\data\\interim\\hadithdb_quote_occurrences.csv `
+  .\\data\\raw\\hadithdb\\narrators_db.json `
+  --out-dir .\\data\\interim\\hadithdb_structure_audit
+```
+
+Outputs are written under `data/interim/hadithdb_structure_audit/`:
+
+- `duplicate_structure_summary.json` — counts, source hash, and JSON-coordinate validation;
+- `duplicate_structure_patterns.csv` — one row per repeated exact quotation string;
+- `duplicate_group_key_examples.csv` — occurrence-level details for repeated strings;
+- `record_group_semantics_sample.csv` — records ranked by repeated quotations across group labels;
+- `PROFILE_REPORT.md` — human-readable interpretation and cautions.
+
+The audit uses exact raw text to define duplicate clusters. It also checks whether a group label appears literally in its quotation after conservative Unicode, diacritic, and whitespace normalisation. That check is only a text-presence signal; it is not entity resolution or proof of speaker attribution. The script does not infer the semantic type of any group key, and it does not alter or deduplicate the raw source or extraction table.
+
+## 8. Recommended handling and next validation work
 
 1. Keep the downloaded source file immutable and record its checksum.
 2. Keep the raw JSON local until redistribution rights are clarified.
