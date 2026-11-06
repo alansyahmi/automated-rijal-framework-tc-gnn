@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Flatten HATEMDB narrator-level quotation groups into a quote-occurrence CSV.
+"""Flatten hadithdb narrator-level quotation groups into a quote-occurrence CSV.
 
 This is an extraction aid, not a critic-attribution or ESA-labeling system.
 The original scholar-group key is retained as source_group_label and MUST NOT
 be treated as a verified speaker/critic identity.
 
 Usage:
-  python extract_hatemdb_quotes.py narrators_db.json --out hatemdb_quote_occurrences.csv
+  python extract_hadithdb_quotes.py narrators_db.json --out hadithdb_quote_occurrences.csv
 
 Input JSON is read only. The output CSV is a derived working file.
 """
@@ -84,7 +84,7 @@ def parse_citation(raw_quote: str) -> dict[str, str]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input_json", type=Path)
-    parser.add_argument("--out", type=Path, default=Path("hatemdb_quote_occurrences.csv"))
+    parser.add_argument("--out", type=Path, default=Path("hadithdb_quote_occurrences.csv"))
     args = parser.parse_args()
 
     raw_bytes = args.input_json.read_bytes()
@@ -110,7 +110,7 @@ def main() -> None:
     for narrator_id, record in data.items():
         if not isinstance(record, dict):
             continue
-        groups = record.get("الجرح والتعديل")
+        groups = first_value(record, ("الجرح والتعديل",))
         if not isinstance(groups, dict):
             continue
 
@@ -140,14 +140,15 @@ def main() -> None:
                 parsed = parse_citation(quote)
                 pointer = (
                     "/" + json_pointer_escape(narrator_id)
-                    + "/الجرح والتعديل/" + json_pointer_escape(group_label)
+                    + "/data/الجرح والتعديل/"
+                    + json_pointer_escape(group_label)
                     + "/" + str(quote_index)
                 )
                 occurrence_key = "\0".join(
-                    ("HATEMDB", str(narrator_id), str(group_label), str(quote_index), quote)
+                    ("hadithdb", str(narrator_id), str(group_label), str(quote_index), quote)
                 )
                 rows.append({
-                    "source_dataset_id": "HATEMDB",
+                    "source_dataset_id": "hadithdb",
                     "source_file": args.input_json.name,
                     "source_file_sha256": input_hash,
                     "source_record_id": str(narrator_id),
