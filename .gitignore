@@ -1,32 +1,30 @@
-# Python
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.venv/
-venv/
-env/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Local environment and secrets
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-secrets/
-credentials/
-
 # Local data and generated artifacts
+
+# Raw datasets: ignore by default
 data/raw/*
+data/1_raw/*
+
+# Keep directory placeholders
+!data/raw/.gitkeep
+!data/1_raw/.gitkeep
+
+# Allow dataset documentation
+!data/raw/hadithdb/
+!data/raw/hadithdb/README.md
+
+# Allow the Shamela narrator metadata dataset
+!data/1_raw/Shamela4_Full_DB/
+!data/1_raw/Shamela4_Full_DB/_meta/
+!data/1_raw/Shamela4_Full_DB/_meta/narrators.parquet
+
+# Ignore generated intermediate and processed data
 data/interim/*
 data/processed/*
-!data/raw/.gitkeep
+
 !data/interim/.gitkeep
 !data/processed/.gitkeep
+
+# Ignore database and analytical file formats by default
 *.sqlite
 *.sqlite3
 *.db
@@ -34,22 +32,5 @@ data/processed/*
 *.arrow
 *.feather
 
-# Experiment outputs
-mlruns/
-wandb/
-lightning_logs/
-checkpoints/
-*.ckpt
-*.pt
-*.pth
-*.onnx
-
-# OS / editor
-.DS_Store
-Thumbs.db
-.idea/
-.vscode/
-
-# Track dataset documentation while keeping raw corpus files local
-!data/raw/hadithdb/
-!data/raw/hadithdb/README.md
+# Re-allow the specific Shamela file
+!data/1_raw/Shamela4_Full_DB/_meta/narrators.parquet
