@@ -1,0 +1,37 @@
+{
+  "input_csv": "data\\interim\\hadithdb_quote_occurrences.csv",
+  "input_json": "data\\raw\\hadithdb\\narrators_db.json",
+  "input_json_sha256": "67c183de90f779496f741a868120224c71fd32ff94525fb6a119ea8750b9c42a",
+  "extracted_quote_occurrences": 40524,
+  "source_records_with_quote_groups": 1524,
+  "json_pointer_validation": {
+    "matched": 40524
+  },
+  "record_name_mismatch_count": 0,
+  "unique_exact_quote_strings": 35216,
+  "duplicate_exact_quote_clusters": 3639,
+  "occurrences_in_duplicate_clusters": 8947,
+  "duplicate_cluster_pattern_counts": {
+    "within_record_multi_group": 3240,
+    "within_record_same_group": 128,
+    "cross_record": 268,
+    "mixed_within_and_cross_record": 3
+  },
+  "clusters_repeated_across_multiple_group_labels_within_a_record": 3243,
+  "clusters_spanning_multiple_source_records": 271,
+  "clusters_with_repetition_inside_same_record_and_group": 189,
+  "group_label_literal_presence_checks": {
+    "occurrence_checks": 8947,
+    "literal_substring_hits": 4159,
+    "interpretation": "String-presence signal only; not speaker attribution or entity resolution."
+  },
+  "record_profiles_generated": 1521,
+  "record_profiles_written": 100,
+  "warnings": [
+    "Duplicate identity uses exact raw quotation text; no quote normalization is used.",
+    "Repeated occurrences are not automatically errors or independent judgements.",
+    "Group-label substring matches are not proof of speaker identity or resolved person identity.",
+    "Record ID identifies the biography record containing a quote, not necessarily every statement subject.",
+    "No group-key semantic types, speaker attributions, statement types, or ESA stances are inferred."
+  ]
+}

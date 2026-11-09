@@ -1,0 +1,18 @@
+{
+  "input_csv": "data\\interim\\hadithdb_quote_occurrences.csv",
+  "total_quote_occurrences": 40524,
+  "unique_narrator_ids": 1521,
+  "unique_source_group_labels": 1307,
+  "unique_cited_work_titles": 49,
+  "unique_exact_quote_strings": 35216,
+  "distinct_quote_strings_repeated": 3639,
+  "excess_occurrences_beyond_first": 5308,
+  "citation_parse_statuses": {
+    "trailing_bracket_parsed": 40385,
+    "bracket_found_but_format_unparsed": 137,
+    "no_trailing_bracketed_citation": 2
+  },
+  "sample_size": 100,
+  "sample_seed": 42,
+  "interpretation_warning": "Exact repetition is not automatically an error or independent evidence. Inspect the locations."
+}
