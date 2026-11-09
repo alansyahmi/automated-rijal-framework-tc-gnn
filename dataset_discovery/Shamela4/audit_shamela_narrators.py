@@ -77,14 +77,48 @@ def normalise_title(citation: Any) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def iter_grouped_pairs(grouped: Any, kind: str, warnings: Counter):
+    """Yield (label, entries) from Shamela's list-of-pairs or dict representation."""
+    if grouped is None:
+        return
+    if isinstance(grouped, dict):
+        yield from grouped.items()
+        return
+    if isinstance(grouped, list):
+        for index, item in enumerate(grouped):
+            if isinstance(item, (list, tuple)) and len(item) >= 2:
+                yield item[0], item[1]
+            else:
+                warnings[f"{kind}_group_pair_malformed"] += 1
+        return
+    warnings[f"{kind}_not_grouped:" + type(grouped).__name__] += 1
+
+
+def parse_biography(value: Any, warnings: Counter) -> dict[str, Any]:
+    """Convert biography_text's {'summary': [[field, value], ...]} into a lookup dict."""
+    if value is None:
+        return {}
+    if isinstance(value, dict):
+        summary = value.get("summary", [])
+        if isinstance(summary, list):
+            result = {}
+            for item in summary:
+                if isinstance(item, (list, tuple)) and len(item) >= 2:
+                    result[as_text(item[0])] = item[1]
+                else:
+                    warnings["biography_summary_pair_malformed"] += 1
+            return result
+        warnings["biography_summary_not_list"] += 1
+        return value
+    warnings["biography_root_not_dict:" + type(value).__name__] += 1
+    return {}
+
+
 def parse_garh(grouped: Any, warnings: Counter) -> list[dict[str, Any]]:
     rows = []
     if grouped is None:
         return rows
-    if not isinstance(grouped, dict):
-        warnings["garh_not_dict:" + type(grouped).__name__] += 1
-        return rows
-    for group, entries in grouped.items():
+    for group, entries in iter_grouped_pairs(grouped, "garh", warnings):
         if entries is None:
             continue
         if not isinstance(entries, list):
@@ -127,10 +161,7 @@ def parse_fwaed(value: Any, warnings: Counter) -> list[dict[str, Any]]:
     rows = []
     if value is None:
         return rows
-    if not isinstance(value, dict):
-        warnings["fwaed_not_dict:" + type(value).__name__] += 1
-        return rows
-    for category, entries in value.items():
+    for category, entries in iter_grouped_pairs(value, "fwaed", warnings):
         if not isinstance(entries, list):
             warnings["fwaed_category_not_list"] += 1
             entries = [entries]
@@ -215,7 +246,7 @@ def main() -> int:
             criticism, criticism_state = parse_json(record.get("criticism_text"))
             bio_status[bio_state] += 1
             criticism_status[criticism_state] += 1
-            bio = bio if isinstance(bio, dict) else {}
+            bio = parse_biography(bio, warnings)
             criticism = criticism if isinstance(criticism, dict) else {}
 
             if record.get("narrator_type") is None:
