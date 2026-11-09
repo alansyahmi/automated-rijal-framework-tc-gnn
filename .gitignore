@@ -1,30 +1,20 @@
-# Local data and generated artifacts
-
 # Raw datasets: ignore by default
-data/raw/*
 data/1_raw/*
 
-# Keep directory placeholders
-!data/raw/.gitkeep
-!data/1_raw/.gitkeep
-
-# Allow dataset documentation
-!data/raw/hadithdb/
-!data/raw/hadithdb/README.md
-
-# Allow the Shamela narrator metadata dataset
+# Keep the Shamela narrator metadata dataset
 !data/1_raw/Shamela4_Full_DB/
 !data/1_raw/Shamela4_Full_DB/_meta/
 !data/1_raw/Shamela4_Full_DB/_meta/narrators.parquet
 
-# Ignore generated intermediate and processed data
-data/interim/*
-data/processed/*
+# Keep dataset documentation
+!data/1_raw/hadithdb/
+!data/1_raw/hadithdb/README.md
 
-!data/interim/.gitkeep
-!data/processed/.gitkeep
+# Intermediate and processed data
+# Explicitly decide which audit artefacts should be versioned.
+# Do not ignore data/2_interim wholesale until that decision is made.
 
-# Ignore database and analytical file formats by default
+# Database and analytical formats
 *.sqlite
 *.sqlite3
 *.db
@@ -32,5 +22,5 @@ data/processed/*
 *.arrow
 *.feather
 
-# Re-allow the specific Shamela file
+# Re-allow the selected Parquet file
 !data/1_raw/Shamela4_Full_DB/_meta/narrators.parquet
