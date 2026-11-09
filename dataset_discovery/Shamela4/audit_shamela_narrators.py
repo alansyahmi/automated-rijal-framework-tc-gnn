@@ -184,7 +184,9 @@ def main() -> int:
     bio_status = Counter()
     criticism_status = Counter()
     bio_presence = Counter()
-    evaluator_appearances = Counter()
+    evaluator_appearances = Counter()  # quotation occurrences per group
+    evaluator_record_pairs = set()  # distinct narrator/group pairs
+    citation_counts = Counter()  # citations, including rows without source IDs
     ibn_hajar = Counter()
     dhahabi = Counter()
     narrator_types = Counter()
@@ -263,12 +265,15 @@ def main() -> int:
                 citation = item["source_citation_raw"]
                 title = normalise_title(citation)
                 evaluator_appearances[group] += 1
+                evaluator_record_pairs.add((narrator_key, group))
                 quote_occurrences[quote] += 1
                 quote_narrators[quote].add(narrator_key)
                 quote_groups[quote].add(group)
                 if sid:
                     source_id_occurrences[sid] += 1
                     quote_source_ids[quote].add(sid)
+                if citation:
+                    citation_counts[citation] += 1
                 if sid and citation:
                     source_id_citations[sid].add(citation)
                     title_source_ids[title].add(sid)
@@ -381,7 +386,9 @@ def main() -> int:
         "evaluator_group_appearances": sum(evaluator_appearances.values()),
         "distinct_evaluator_group_strings": len(evaluator_appearances),
         "evaluator_group_top": evaluator_appearances.most_common(args.top),
-        "distinct_exact_citation_strings": len({c for values in source_id_citations.values() for c in values}),
+        "distinct_exact_citation_strings": len(citation_counts),
+        "distinct_citations_with_source_id": len({c for values in source_id_citations.values() for c in values}),
+        "distinct_narrator_group_pairs": len(evaluator_record_pairs),
         "source_ids_with_citations": len(source_id_citations),
         "source_ids_with_multiple_normalised_titles": len(source_id_collisions),
         "normalised_titles_with_multiple_source_ids": len(title_collisions),
@@ -403,9 +410,13 @@ def main() -> int:
         "narrator_id", "short_name", "long_name", "group_label_raw",
         "group_entry_index", "quotation_text", "source_citation_raw",
         "source_id_raw", "raw_entry_json", "normalised_title_candidate"])
-    write_csv(output / "evaluator_groups.csv",
-              counter_rows(evaluator_appearances, "group_label_raw", "appearance_count"),
-              ["group_label_raw", "appearance_count"])
+    evaluator_group_rows = [{
+        "group_label_raw": label,
+        "quotation_occurrences": count,
+        "narrator_record_appearances": sum(1 for pair in evaluator_record_pairs if pair[1] == label),
+    } for label, count in evaluator_appearances.most_common()]
+    write_csv(output / "evaluator_groups.csv", evaluator_group_rows,
+              ["group_label_raw", "quotation_occurrences", "narrator_record_appearances"])
     write_csv(output / "source_references.csv", source_rows, [
         "source_id", "occurrence_count", "citation_variant_count",
         "normalised_title_count", "citation_variants_json", "normalised_titles_json"])
@@ -465,7 +476,8 @@ def main() -> int:
         f"- Unique exact quotes: {len(quote_occurrences):,}",
         f"- Repeated exact quote strings: {summary['repeated_exact_quote_strings']:,}",
         f"- Occurrences in repeated quote strings: {summary['occurrences_in_repeated_quote_strings']:,}",
-        f"- Evaluator group appearances: {sum(evaluator_appearances.values()):,}",
+        f"- Evaluator-group quotation occurrences: {sum(evaluator_appearances.values()):,}",
+        f"- Distinct narrator/evaluator-group appearances: {len(evaluator_record_pairs):,}",
         f"- Distinct group labels: {len(evaluator_appearances):,}",
         f"- fwaed occurrences: {fwaed_total:,}",
         "",
@@ -516,7 +528,9 @@ def main() -> int:
         ("Unique exact quotes", len(quote_occurrences)),
         ("Repeated exact quote strings", summary["repeated_exact_quote_strings"]),
         ("Occurrences in repeated quote strings", summary["occurrences_in_repeated_quote_strings"]),
-        ("Evaluator group appearances", sum(evaluator_appearances.values())),
+        ("Evaluator-group quotation occurrences", sum(evaluator_appearances.values())),
+        ("Distinct narrator/evaluator-group appearances", len(evaluator_record_pairs)),
+        ("Distinct exact citation strings (including rows without source ID)", len(citation_counts)),
         ("Distinct group labels", len(evaluator_appearances)),
         ("Source IDs with citations", len(source_id_citations)),
         ("Source IDs -> multiple normalised titles", len(source_id_collisions)),
