@@ -1,0 +1,41 @@
+{
+  "source_ids_examined": 54334,
+  "source_ids_flagged_for_review": 432,
+  "source_citation_shape_flag_counts": {
+    "simple_single_line_candidate": 54260,
+    "multiline": 462,
+    "long_citation_string": 107,
+    "possible_multiple_work_or_clause": 13,
+    "multiple_volume_page_locators": 12
+  },
+  "title_candidates_linked_to_multiple_source_ids": 47,
+  "fwaed_occurrences": 15963,
+  "fwaed_distinct_labels": 25,
+  "fwaed_expected_labels_observed": {
+    "إثبات سماع الراوي": 2376,
+    "الإدراك": 1429,
+    "الإرسال": 5134,
+    "الاختلاط": 813,
+    "الاختلاف في سماع الراوي": 467,
+    "التدليس": 604,
+    "التضعيف الاستثنائي": 334,
+    "التضعيف الضمني": 87,
+    "التوثيق الاستثنائي": 136,
+    "التوثيق الضمني": 1573,
+    "المفاضلة بين الرواة": 2557,
+    "المفاضلة بين الرواة في بلد": 42,
+    "المفاضلة بين الرواة في راو": 395
+  },
+  "fwaed_unexpected_labels": 12,
+  "fwaed_unexpected_occurrences": 16,
+  "fwaed_entry_json_shapes": {
+    "list": 15963
+  },
+  "interpretation": [
+    "Source IDs remain opaque; observed citation mappings do not establish identifier semantics.",
+    "Citation flags are heuristics for prioritising manual review, not bibliographic parsing.",
+    "Unexpected fwaed labels are not automatically errors; inspect context before recoding.",
+    "Scholar-name detection is a weak string heuristic, not entity recognition.",
+    "fwaed entries are not assumed to be direct narrator reliability grades."
+  ]
+}
