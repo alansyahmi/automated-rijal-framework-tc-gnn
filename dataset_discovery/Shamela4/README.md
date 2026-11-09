@@ -35,7 +35,7 @@ See SHAMELA4_AUDIT_FINDINGS.md for consolidated findings and unresolved question
 After running the first-stage audit, inspect source-ID citation patterns and
 unexpected fwaed labels with:
 
-    python .\\dataset_discovery\\Shamela4\\diagnose_source_ids_and_fwaed.py .\\data\\2_interim\\shamela4_narrator_audit
+    python .\dataset_discovery\Shamela4\diagnose_source_ids_and_fwaed.py .\data\2_interim\shamela4_narrator_audit
 
 The script writes a separate stage2_diagnostics directory containing:
 - source_id_review_queue.csv — opaque IDs with multiple title candidates or citation-shape warnings;
