@@ -1,0 +1,452 @@
+{
+  "dataset": "AuthenticIlm/Shamela4_Full_DB",
+  "input_path": "C:\\Projects\\automated-rijal-framework-tc-gnn\\data\\1_raw\\Shamela4_Full_DB\\_meta\\narrators.parquet",
+  "file_bytes": 7963509,
+  "sha256": "82657fbae4e73a6514258102293b95be4e6031ab45faa65d69dad14cdc51ef34",
+  "audit_timestamp_utc": "2026-11-09T17:27:14.605201+00:00",
+  "parquet_rows": 18989,
+  "rows_iterated": 18989,
+  "row_groups": 1,
+  "columns": 6,
+  "biography_json_status": {
+    "valid": 18989
+  },
+  "criticism_json_status": {
+    "null": 3829,
+    "valid": 15160
+  },
+  "null_narrator_type": 9799,
+  "null_criticism_text": 3829,
+  "biography_field_presence": {},
+  "ibn_hajar_assessment_count": 0,
+  "ibn_hajar_distinct_strings": 0,
+  "ibn_hajar_top": [],
+  "al_dhahabi_assessment_count": 0,
+  "al_dhahabi_distinct_strings": 0,
+  "al_dhahabi_top": [],
+  "narrator_type_top": [
+    [
+      "141",
+      248
+    ],
+    [
+      "151",
+      203
+    ],
+    [
+      "161",
+      200
+    ],
+    [
+      "181",
+      197
+    ],
+    [
+      "121",
+      184
+    ],
+    [
+      "131",
+      159
+    ],
+    [
+      "171",
+      151
+    ],
+    [
+      "111",
+      147
+    ],
+    [
+      "191",
+      146
+    ],
+    [
+      "241",
+      136
+    ],
+    [
+      "211",
+      134
+    ],
+    [
+      "101",
+      132
+    ],
+    [
+      "231",
+      117
+    ],
+    [
+      "201",
+      117
+    ],
+    [
+      "251",
+      114
+    ],
+    [
+      "91",
+      109
+    ],
+    [
+      "221",
+      106
+    ],
+    [
+      "291",
+      85
+    ],
+    [
+      "100",
+      77
+    ],
+    [
+      "281",
+      77
+    ],
+    [
+      "250",
+      71
+    ],
+    [
+      "130",
+      66
+    ],
+    [
+      "81",
+      66
+    ],
+    [
+      "261",
+      65
+    ],
+    [
+      "200",
+      64
+    ],
+    [
+      "120",
+      64
+    ],
+    [
+      "240",
+      62
+    ],
+    [
+      "301",
+      60
+    ],
+    [
+      "150",
+      58
+    ],
+    [
+      "160",
+      57
+    ],
+    [
+      "271",
+      50
+    ],
+    [
+      "230",
+      48
+    ],
+    [
+      "258",
+      43
+    ],
+    [
+      "220",
+      41
+    ],
+    [
+      "71",
+      41
+    ],
+    [
+      "300",
+      41
+    ],
+    [
+      "180",
+      37
+    ],
+    [
+      "140",
+      36
+    ],
+    [
+      "244",
+      35
+    ],
+    [
+      "282",
+      35
+    ],
+    [
+      "224",
+      34
+    ],
+    [
+      "256",
+      34
+    ],
+    [
+      "190",
+      34
+    ],
+    [
+      "110",
+      33
+    ],
+    [
+      "61",
+      33
+    ],
+    [
+      "260",
+      33
+    ],
+    [
+      "245",
+      32
+    ],
+    [
+      "170",
+      32
+    ],
+    [
+      "204",
+      32
+    ],
+    [
+      "270",
+      32
+    ],
+    [
+      "311",
+      32
+    ],
+    [
+      "235",
+      31
+    ],
+    [
+      "249",
+      31
+    ],
+    [
+      "280",
+      31
+    ],
+    [
+      "290",
+      31
+    ],
+    [
+      "294",
+      31
+    ],
+    [
+      "228",
+      30
+    ],
+    [
+      "132",
+      30
+    ],
+    [
+      "242",
+      30
+    ],
+    [
+      "252",
+      30
+    ],
+    [
+      "286",
+      30
+    ],
+    [
+      "297",
+      30
+    ],
+    [
+      "293",
+      30
+    ],
+    [
+      "289",
+      29
+    ],
+    [
+      "248",
+      29
+    ],
+    [
+      "321",
+      29
+    ],
+    [
+      "310",
+      29
+    ],
+    [
+      "213",
+      28
+    ],
+    [
+      "234",
+      28
+    ],
+    [
+      "203",
+      27
+    ],
+    [
+      "210",
+      27
+    ],
+    [
+      "63",
+      27
+    ],
+    [
+      "307",
+      27
+    ],
+    [
+      "70",
+      26
+    ],
+    [
+      "238",
+      26
+    ],
+    [
+      "264",
+      26
+    ],
+    [
+      "257",
+      26
+    ],
+    [
+      "287",
+      26
+    ],
+    [
+      "350",
+      26
+    ],
+    [
+      "247",
+      25
+    ],
+    [
+      "292",
+      25
+    ],
+    [
+      "288",
+      25
+    ],
+    [
+      "306",
+      25
+    ],
+    [
+      "232",
+      24
+    ],
+    [
+      "206",
+      24
+    ],
+    [
+      "80",
+      24
+    ],
+    [
+      "262",
+      24
+    ],
+    [
+      "153",
+      23
+    ],
+    [
+      "265",
+      23
+    ],
+    [
+      "236",
+      23
+    ],
+    [
+      "145",
+      23
+    ],
+    [
+      "227",
+      23
+    ],
+    [
+      "226",
+      23
+    ],
+    [
+      "275",
+      23
+    ],
+    [
+      "323",
+      23
+    ],
+    [
+      "329",
+      23
+    ],
+    [
+      "229",
+      22
+    ],
+    [
+      "212",
+      22
+    ],
+    [
+      "167",
+      22
+    ],
+    [
+      "255",
+      22
+    ]
+  ],
+  "garh_occurrences": 0,
+  "unique_exact_quotes": 0,
+  "repeated_exact_quote_strings": 0,
+  "occurrences_in_repeated_quote_strings": 0,
+  "evaluator_group_appearances": 0,
+  "distinct_evaluator_group_strings": 0,
+  "evaluator_group_top": [],
+  "distinct_exact_citation_strings": 0,
+  "distinct_citations_with_source_id": 0,
+  "distinct_narrator_group_pairs": 0,
+  "source_ids_with_citations": 0,
+  "source_ids_with_multiple_normalised_titles": 0,
+  "normalised_titles_with_multiple_source_ids": 0,
+  "unique_narrator_group_quote_source_combinations": 0,
+  "repeated_documentary_combinations": 0,
+  "excess_documentary_duplicate_occurrences": 0,
+  "same_narrator_quote_source_multiple_group_cases": 0,
+  "fwaed_occurrences": 0,
+  "fwaed_category_counts": {},
+  "shape_warnings": {
+    "garh_not_dict:list": 15159,
+    "fwaed_not_dict:list": 4864
+  }
+}
