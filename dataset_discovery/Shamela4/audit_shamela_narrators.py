@@ -410,10 +410,11 @@ def main() -> int:
         "narrator_id", "short_name", "long_name", "group_label_raw",
         "group_entry_index", "quotation_text", "source_citation_raw",
         "source_id_raw", "raw_entry_json", "normalised_title_candidate"])
+    evaluator_record_counts = Counter(label for _, label in evaluator_record_pairs)
     evaluator_group_rows = [{
         "group_label_raw": label,
         "quotation_occurrences": count,
-        "narrator_record_appearances": sum(1 for pair in evaluator_record_pairs if pair[1] == label),
+        "narrator_record_appearances": evaluator_record_counts[label],
     } for label, count in evaluator_appearances.most_common()]
     write_csv(output / "evaluator_groups.csv", evaluator_group_rows,
               ["group_label_raw", "quotation_occurrences", "narrator_record_appearances"])
