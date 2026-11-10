@@ -1,0 +1,207 @@
+{
+  "version": "4.0.0",
+  "script": "dataset_discovery/Shamela4/tuple_validation_v4.py",
+  "execution_timestamp_utc": "2026-11-10T20:16:07.650117+00:00",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "sampling_seed": 20261111,
+  "per_stratum_target": 10,
+  "selected_tuple_count": 60,
+  "selected_unique_source_id_count": 60,
+  "selected_strata": {
+    "suffix_format_validation_only": 10,
+    "compound_or_multiple_locator": 10,
+    "mixed_source_ID": 10,
+    "suspected_or_unresolved": 10,
+    "normal_prose_then_citation": 10,
+    "citation_only_then_locator_bearing_prose": 10
+  },
+  "eligible_unique_source_ids_before_each_stratum": {
+    "suffix_format_validation_only": 12,
+    "compound_or_multiple_locator": 420,
+    "mixed_source_ID": 239,
+    "suspected_or_unresolved": 228,
+    "normal_prose_then_citation": 157,
+    "citation_only_then_locator_bearing_prose": 245
+  },
+  "source_parquet_read_only": true,
+  "sample_overlap_metrics": {
+    "distinct_source_id_count": 60,
+    "distinct_narrator_id_count": 53,
+    "recurring_narrator_count": 7,
+    "recurring_narrators": {
+      "1580": 2,
+      "3234": 2,
+      "7345": 2,
+      "1309": 2,
+      "4541": 2,
+      "5398": 2,
+      "5177": 2
+    },
+    "distinct_group_label_count": 19,
+    "suffix_format_variant_pattern": "بدون ترقيم",
+    "suffix_format_variant_ratio": "10/10",
+    "suffix_format_eligible_source_ids": 12
+  },
+  "prior_versions_verified_unchanged": {
+    "v1": {
+      "CONTROL_SAMPLE_VERIFICATION.csv": {
+        "bytes": 72084,
+        "sha256": "a3df125cf2756b86f2fda2c717a228669f5efc04b204244efcd7946b7a0a8aea",
+        "verified": true
+      },
+      "FORENSIC_VERIFICATION_SUMMARY.md": {
+        "bytes": 4002,
+        "sha256": "813fb36ffdf5f385e4ca7b3d28c96d7fa745d174b00578df1793b2e54fcb0fb8",
+        "verified": true
+      },
+      "FWAED_VERIFICATION.md": {
+        "bytes": 5735,
+        "sha256": "2cc5d4a89a1514f62d40993fbdfcf731f175b03e0023cb423332c69bce86514f",
+        "verified": true
+      },
+      "SOURCE_ID_SEMANTICS.md": {
+        "bytes": 1979,
+        "sha256": "ec219e3bfcfc16150cc78117f8bafe75b4638d339cf438c3c65de5fbe84f11c1",
+        "verified": true
+      },
+      "verification_manifest.json": {
+        "bytes": 2970,
+        "sha256": "b5a5a0cd7ff1c1318bb5a0214b163ae5b03e578cd2ea82353593547acf3ebf8a",
+        "verified": true
+      },
+      "VERIFIED_SOURCE_ID_CLASSIFICATION.csv": {
+        "bytes": 958531,
+        "sha256": "b5e0b85de01a935c49e81c6c735b0d5282d46d2e0e4fbadac55ce01fcf10b435",
+        "verified": true
+      },
+      "VERIFIED_TITLE_COLLISIONS.csv": {
+        "bytes": 2738144,
+        "sha256": "6849cbb652804a949c3ebb1b725eb638024592535053ab3e2c04fa5b696bbfc6",
+        "verified": true
+      }
+    },
+    "v2": {
+      "CONTROL_SAMPLE_VERIFICATION.csv": {
+        "bytes": 72084,
+        "sha256": "a3df125cf2756b86f2fda2c717a228669f5efc04b204244efcd7946b7a0a8aea",
+        "verified": true
+      },
+      "FORENSIC_VERIFICATION_SUMMARY.md": {
+        "bytes": 5709,
+        "sha256": "86c0ca2916299a7ec47566c45a11af40f4b6485f9f9a64cf4607dff6f64f2d39",
+        "verified": true
+      },
+      "FWAED_VERIFICATION.md": {
+        "bytes": 5735,
+        "sha256": "2cc5d4a89a1514f62d40993fbdfcf731f175b03e0023cb423332c69bce86514f",
+        "verified": true
+      },
+      "SOURCE_ID_SEMANTICS.md": {
+        "bytes": 1979,
+        "sha256": "ec219e3bfcfc16150cc78117f8bafe75b4638d339cf438c3c65de5fbe84f11c1",
+        "verified": true
+      },
+      "TITLE_COLLISION_CITATION_VARIANTS.csv": {
+        "bytes": 4977946,
+        "sha256": "479ec076f6c9397ec0502461146fbe9ea57ebe72a750187a5cd86a19ca2fed97",
+        "verified": true
+      },
+      "verification_manifest.json": {
+        "bytes": 3506,
+        "sha256": "7f2e8e601a8133642bae9c0b37e15bbf87300e294f2505dd60fa87f977b314a8",
+        "verified": true
+      },
+      "VERIFIED_SOURCE_ID_CLASSIFICATION.csv": {
+        "bytes": 1238188,
+        "sha256": "485b3520de45f41e9a89653c62ef9da504088a8adefea22472bd7af155b2e41b",
+        "verified": true
+      },
+      "VERIFIED_TITLE_COLLISIONS.csv": {
+        "bytes": 495706,
+        "sha256": "e2f3e115cbefc79ebcf02f8eced1c4fb527a1f3c880be8c603cb59a054643911",
+        "verified": true
+      }
+    },
+    "v3": {
+      "TUPLE_MANUAL_VALIDATION.csv": {
+        "bytes": 67672,
+        "sha256": "b798f472da05ce58cb16a1588f00325ae74bc70f1e62fa5407a3524c35fd8325",
+        "verified": true
+      },
+      "TUPLE_VALIDATION_PROTOCOL.md": {
+        "bytes": 9417,
+        "sha256": "3c7e64d083e986cd355f48e0f747461ce0f9aa8d4b42ec128e26a70572e24193",
+        "verified": true
+      },
+      "validation_manifest.json": {
+        "bytes": 2517,
+        "sha256": "e23d5be2accd77f9ef3357bf045e3c0c40a5d494daab419134e9777f11a471dd",
+        "verified": true
+      }
+    }
+  },
+  "inputs": {
+    "data\\1_raw\\Shamela4_Full_DB\\_meta\\narrators.parquet": {
+      "bytes": 7963509,
+      "sha256": "82657fbae4e73a6514258102293b95be4e6031ab45faa65d69dad14cdc51ef34"
+    },
+    "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v2\\VERIFIED_SOURCE_ID_CLASSIFICATION.csv": {
+      "bytes": 1238188,
+      "sha256": "485b3520de45f41e9a89653c62ef9da504088a8adefea22472bd7af155b2e41b"
+    },
+    "dataset_discovery\\Shamela4\\forensic_verification_v2.py": {
+      "bytes": 35674,
+      "sha256": "b0423046b7d735661326a83fd94a81856e7c7e2aa09a581e3fc5445443b86e7f"
+    },
+    "dataset_discovery\\Shamela4\\test_forensic_verification_v2.py": {
+      "bytes": 2806,
+      "sha256": "3f0207ea3b9bcc0f19f09504bac03c9df6597acbe83688583355f89f574687d1"
+    },
+    "dataset_discovery\\Shamela4\\tuple_validation_v3.py": {
+      "bytes": 20996,
+      "sha256": "8af30858e69b3fd1c11157c7a9e338adc7d7d1c64894a0f22a5092c6f4b710a2"
+    },
+    "dataset_discovery\\Shamela4\\test_tuple_validation_v3.py": {
+      "bytes": 2810,
+      "sha256": "32c7cd1f8a56ae7efc9f0190852bb4b74a2a456cf41a2aa02523d305c7af9d03"
+    },
+    "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v3\\TUPLE_MANUAL_VALIDATION.csv": {
+      "bytes": 67672,
+      "sha256": "b798f472da05ce58cb16a1588f00325ae74bc70f1e62fa5407a3524c35fd8325"
+    },
+    "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v3\\TUPLE_VALIDATION_PROTOCOL.md": {
+      "bytes": 9417,
+      "sha256": "3c7e64d083e986cd355f48e0f747461ce0f9aa8d4b42ec128e26a70572e24193"
+    },
+    "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v3\\validation_manifest.json": {
+      "bytes": 2517,
+      "sha256": "e23d5be2accd77f9ef3357bf045e3c0c40a5d494daab419134e9777f11a471dd"
+    },
+    "dataset_discovery\\Shamela4\\tuple_validation_v4.py": {
+      "bytes": 42478,
+      "sha256": "4c5978e265ea80f0a2686e68c6afce510f735a06b1ef18616da13e9f84511419"
+    },
+    "dataset_discovery\\Shamela4\\test_tuple_validation_v4.py": {
+      "bytes": 12324,
+      "sha256": "21313c79b6ae7f286f06030870a183aa89075c17211da609fb1f2e6290797949"
+    }
+  },
+  "outputs": {
+    "TUPLE_MANUAL_VALIDATION_REVIEWER.csv": {
+      "bytes": 51099,
+      "sha256": "1bca4ba3a82cea733bf6fb9753a57ad6b725cdbc4daca431c4cf9f9f7e5ec270"
+    },
+    "TUPLE_VALIDATION_KEY.csv": {
+      "bytes": 21314,
+      "sha256": "3661638cf341b7c172bbaf7110c2c905d8dd579eb184676e60d48621d405d892"
+    },
+    "OVERLAP_REPORT.md": {
+      "bytes": 9998,
+      "sha256": "1ea4180895af56f2f54bbb6fa6d2914a17727596f2d59287c04d4c2c9d533d8d"
+    },
+    "TUPLE_VALIDATION_PROTOCOL.md": {
+      "bytes": 11461,
+      "sha256": "4e359a96cb6666a6dd17b98053f774a4f3d9de8e2687ee60fc33e7abecaab507"
+    }
+  }
+}
