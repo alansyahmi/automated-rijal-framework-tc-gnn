@@ -184,6 +184,9 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             "immediate_source_work_as_written",
             "immediate_source_work_normalized",
             "compiler_or_source_author",
+            "work_title_as_written",
+            "work_role",
+            "immediate_source_work_verified",
             "cited_work_as_written",
             "cited_work_normalized",
             "source_locator_as_written",
@@ -196,6 +199,51 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         ]
         for col in required_provenance_cols:
             self.assertIn(col, eval_cols, f"Missing required provenance column '{col}' in evaluation template")
+
+    # 8b. Immediate source work cannot be inferred solely from cited title; unverified provenance remains unresolved
+    def test_immediate_source_work_unverified_provenance_safeguards(self) -> None:
+        eval_rows = read_csv(self.eval_path)
+        eval_cols = set(eval_rows[0].keys())
+        self.assertIn("work_title_as_written", eval_cols)
+        self.assertIn("work_role", eval_cols)
+        self.assertIn("immediate_source_work_verified", eval_cols)
+
+        codebook_text = self.codebook_path.read_text(encoding="utf-8")
+        # Ensure codebook warns against automatic inference from title
+        self.assertIn("immediate_source_work_verified", codebook_text)
+        self.assertIn("work_role", codebook_text)
+        self.assertIn("unresolved", codebook_text)
+        self.assertTrue(
+            "not infer the immediate source work solely from a title" in codebook_text
+            or "Pass 1 annotates textual evidence" in codebook_text
+        )
+        self.assertIn("Pass 1 text cannot establish documentary provenance that is absent from its text", codebook_text)
+
+    # 8c. Explicit evaluation_target field exists in schema, template, and codebook with 7 categories
+    def test_evaluation_target_schema_and_categories(self) -> None:
+        self.assertIn("evaluation_target", EVALUATION_FIELDS)
+        eval_rows = read_csv(self.eval_path)
+        eval_cols = set(eval_rows[0].keys())
+        self.assertIn("evaluation_target", eval_cols)
+
+        # All template rows have blank evaluation_target
+        for row in eval_rows:
+            self.assertEqual(row["evaluation_target"], "")
+
+        # Verify documentation of all 7 target categories in codebook
+        codebook_text = self.codebook_path.read_text(encoding="utf-8")
+        self.assertIn("evaluation_target", codebook_text)
+        expected_targets = [
+            "narrator_overall",
+            "memory_or_precision",
+            "specific_transmission_link",
+            "specific_hadith_or_report",
+            "comparative_narrator_assessment",
+            "not_applicable",
+            "unclear",
+        ]
+        for target in expected_targets:
+            self.assertIn(target, codebook_text, f"Missing evaluation_target category '{target}' in codebook")
 
     # 9. Revised statement-function taxonomy includes transmission observations without forcing negative orientation
     def test_statement_function_and_orientation_taxonomy(self) -> None:
@@ -214,6 +262,31 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         self.assertIn("evaluative_orientation", codebook_text)
         self.assertIn("neutral", codebook_text)
         self.assertIn("qualified", codebook_text)
+
+    # 9b. Factual transmission observations can have contains_evaluation = no
+    def test_factual_transmission_observation_can_have_contains_evaluation_no(self) -> None:
+        codebook_text = self.codebook_path.read_text(encoding="utf-8")
+        self.assertIn("contains_evaluation", codebook_text)
+        self.assertIn("yes", codebook_text)
+        self.assertIn("no", codebook_text)
+        self.assertIn("unclear", codebook_text)
+        # Verify that transmission observation does not automatically imply contains_evaluation = yes
+        clean_text = codebook_text.replace("**", "").replace("`", "")
+        self.assertIn("transmission_observation", clean_text)
+        self.assertIn("does not automatically imply contains_evaluation = yes", clean_text)
+        self.assertIn("contains_evaluation: no (when stating factual non-audition", clean_text)
+
+    # 9c. Comparative preference does not force positive orientation
+    def test_comparative_preference_does_not_force_positive_orientation(self) -> None:
+        codebook_text = self.codebook_path.read_text(encoding="utf-8")
+        self.assertIn("comparative_preference", codebook_text)
+        # Ensure guidance allows neutral or unclear
+        self.assertTrue(
+            "neutral or unclear" in codebook_text or "neutral" in codebook_text
+        )
+        self.assertTrue(
+            "Do not infer that both narrators are independently reliable merely because the response is" in codebook_text.replace("**", "")
+        )
 
     # 10. No automated classification fields leak into either reviewer stage
     def test_no_automated_fields_leak_into_reviewer_templates(self) -> None:
@@ -356,7 +429,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         with self.manifest_path.open("r", encoding="utf-8") as f:
             manifest = json.load(f)
 
-        self.assertEqual(manifest["version"], "2.1.0")
+        self.assertEqual(manifest["version"], "2.2.0")
         self.assertEqual(manifest["selected_case_count"], 20)
         self.assertEqual(len(manifest["selected_source_ids"]), 20)
         self.assertEqual(len(set(manifest["selected_source_ids"])), 20)

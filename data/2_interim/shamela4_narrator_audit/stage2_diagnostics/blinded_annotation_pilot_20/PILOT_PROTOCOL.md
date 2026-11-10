@@ -5,13 +5,14 @@
 This pilot study evaluates the feasibility, clarity, and precision of the human annotation codebook on a purposive sample of 20 criticism tuples extracted from Shamela4.
 
 Specific research questions investigated by this pilot:
-1. **Evaluative Content**: Can annotators reliably distinguish between genuine evaluative judgements, factual inqita statements, hadith rulings, and pure documentary citations?
+1. **Evaluative Content vs Factual Transmission**: Can annotators reliably distinguish between genuine qualitative appraisals (`contains_evaluation=yes`), factual transmission observations (`contains_evaluation=no` like `لم يسمع`), hadith rulings, and pure documentary citations?
 2. **Evaluation-Level Granularity**: Can complex tuples containing multiple evaluators or multiple evaluated persons be cleanly decomposed into distinct evaluation records?
-3. **Provenance Disambiguation**: Can immediate source works be separated from cited works, historical critics, and intermediate transmitters?
-4. **Statement Function vs Orientation**: Can functional categories (e.g. transmission observation, hadith appraisal) be separated from evaluative orientation (neutral, qualified, negative) without forcing negative bias?
-5. **Attribution Type**: Can direct statements, nested isnads, and passive consensus phrases (`كذبوه`) be systematically differentiated?
-6. **Blinded Reconciliation**: Does the database-attached narrator identity match the person actually evaluated in the text when evaluated without metadata bias?
-7. **Automated Concordance**: Do existing automated heuristic patterns align with human semantic understanding?
+3. **Explicit Evaluation Target**: Can annotators cleanly separate the evaluated aspect (`evaluation_target`: `narrator_overall`, `memory_or_precision`, `specific_transmission_link`, `specific_hadith_or_report`, `comparative_narrator_assessment`) from the evaluated person and statement function?
+4. **Provenance & Verification Disambiguation**: Can immediate source works be separated from cited works, historical critics, and intermediate transmitters, while preventing unsupported immediate-source inference from titles appearing in the text?
+5. **Statement Function vs Orientation**: Can functional categories (e.g. transmission observation, hadith appraisal, comparative preference) be separated from evaluative orientation (neutral, qualified, negative) without forcing negative bias?
+6. **Attribution Type**: Can direct statements, nested isnads, and passive consensus phrases (`كذبوه`) be systematically differentiated?
+7. **Blinded Reconciliation**: Does the database-attached narrator identity match the person actually evaluated in the text when evaluated without metadata bias?
+8. **Automated Concordance**: Do existing automated heuristic patterns align with human semantic understanding?
 
 ---
 

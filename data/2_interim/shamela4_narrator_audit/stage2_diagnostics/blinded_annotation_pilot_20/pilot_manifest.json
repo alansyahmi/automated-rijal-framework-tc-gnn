@@ -1,8 +1,8 @@
 {
-  "version": "2.1.0",
-  "description": "Blinded 20-case human manual annotation pilot (evaluation-level, two-pass design with strict source-ID purge and complete provenance schema)",
+  "version": "2.2.0",
+  "description": "Blinded 20-case human manual annotation pilot (evaluation target, unverified provenance safeguards, and decoupled transmission semantics)",
   "purposive_sample_declaration": "This 20-case pilot is purposively sampled from the 60-case validation pool to evaluate codebook clarity, semantic diversity, and annotation feasibility across all six strata. It is NOT a prevalence-representative or corpus-wide random sample.",
-  "execution_timestamp_utc": "2026-11-10T21:21:24.047773+00:00",
+  "execution_timestamp_utc": "2026-11-10T21:57:03.159956+00:00",
   "sampling_seed": 20261111,
   "input_dataset": {
     "path": "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v3\\TUPLE_MANUAL_VALIDATION.csv",
@@ -77,20 +77,20 @@
       "sha256": "0b2ad50d396b3c5072f392c521ded33c8b21eb21329bfda2340f22f505f6cc0b"
     },
     "PILOT_EVALUATIONS_BLANK.csv": {
-      "bytes": 1517,
-      "sha256": "e5be3ddde8a28ff6a9406bac322f721fdcdf0aeb121f972f72e249702fd9e238"
+      "bytes": 1678,
+      "sha256": "4b19001dac208da36792db43885bdd862470d40845e26b635afd25cd89470952"
     },
     "PILOT_PASS2_RECONCILIATION_BLANK.csv": {
       "bytes": 8537,
       "sha256": "a2c5bfdd784521e3ebfd1daaaddfcf85b1f3a2f272b3a4faac906460da473f13"
     },
     "ANNOTATION_CODEBOOK.md": {
-      "bytes": 16941,
-      "sha256": "70e8b1ba545d677b09e198390bda1930d94a97891df6be1edc3ed384d805b790"
+      "bytes": 24771,
+      "sha256": "2ce1e748b5f6d869e92a896274cbd64fe84c0ba31eb01f5ef1ac9315336d80b4"
     },
     "PILOT_PROTOCOL.md": {
-      "bytes": 6094,
-      "sha256": "19d855c6ffbea7697d6903133c26ca750077220e14cfb32ad34603b914f26934"
+      "bytes": 6631,
+      "sha256": "311c7a909ba7c8f2196919231606ae07e436f7f112a54251c46772b2e5f5f3e6"
     }
   }
 }
