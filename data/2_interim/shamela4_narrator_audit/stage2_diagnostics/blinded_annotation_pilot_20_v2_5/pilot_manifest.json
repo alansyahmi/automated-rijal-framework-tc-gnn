@@ -1,0 +1,101 @@
+{
+  "version": "2.5.0",
+  "schema_version": "2.5.0",
+  "description": "Blinded 20-case annotation pilot (claim targets include factual identity/biography; provenance is separated from textual mentions)",
+  "purposive_sample_declaration": "This 20-case pilot is purposively sampled from the 60-case validation pool to evaluate codebook clarity, semantic diversity, and annotation feasibility across all six strata. It is NOT a prevalence-representative or corpus-wide random sample.",
+  "execution_timestamp_utc": "2026-11-10T22:56:43.357919+00:00",
+  "sampling_seed": 20261111,
+  "input_dataset": {
+    "path": "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v3\\TUPLE_MANUAL_VALIDATION.csv",
+    "bytes": 67672,
+    "sha256": "b798f472da05ce58cb16a1588f00325ae74bc70f1e62fa5407a3524c35fd8325",
+    "total_input_cases": 60
+  },
+  "selected_case_count": 20,
+  "stratum_counts": {
+    "unnumbered_suffix_or_formatting": 3,
+    "compound_or_multiple_locator": 3,
+    "mixed_source_ID": 4,
+    "suspected_or_unresolved": 4,
+    "normal_prose_then_citation": 3,
+    "citation_only_then_locator_bearing_prose": 3
+  },
+  "selected_source_ids": [
+    "123796",
+    "125629",
+    "137006",
+    "292716",
+    "127749",
+    "205165",
+    "118902",
+    "295637",
+    "96646",
+    "26434",
+    "198246",
+    "97581",
+    "146571",
+    "149057",
+    "66597",
+    "135575",
+    "208385",
+    "145216",
+    "50725",
+    "127988"
+  ],
+  "selected_pilot_case_ids": [
+    "PILOT01",
+    "PILOT02",
+    "PILOT03",
+    "PILOT04",
+    "PILOT05",
+    "PILOT06",
+    "PILOT07",
+    "PILOT08",
+    "PILOT09",
+    "PILOT10",
+    "PILOT11",
+    "PILOT12",
+    "PILOT13",
+    "PILOT14",
+    "PILOT15",
+    "PILOT16",
+    "PILOT17",
+    "PILOT18",
+    "PILOT19",
+    "PILOT20"
+  ],
+  "outputs": {
+    "PILOT_SELECTION.csv": {
+      "bytes": 6459,
+      "sha256": "dec3acfc74c9dd4d08bac439d5fc0c4cb86f3f7ac073f59e4f86289749c95f7e"
+    },
+    "PILOT_INTERNAL_MAPPING.csv": {
+      "bytes": 13317,
+      "sha256": "70d06b6d52e497c0a214e887d3bd3d9f152ed26278cd75c57f4fc55246722eb4"
+    },
+    "PILOT_PASS1_TEXT_BLINDED.csv": {
+      "bytes": 14897,
+      "sha256": "0b2ad50d396b3c5072f392c521ded33c8b21eb21329bfda2340f22f505f6cc0b"
+    },
+    "PILOT_CLAIMS_BLANK.csv": {
+      "bytes": 1375,
+      "sha256": "61b892a4da6efe892139aac9d9155568b12b1ae7adc6730b9361f2130398403a"
+    },
+    "PILOT_PROVENANCE_RECONCILIATION_BLANK.csv": {
+      "bytes": 469,
+      "sha256": "f34605bfc68b228893d76df6397f63c661c78841c1a499c085fb7d228a9398c1"
+    },
+    "PILOT_PASS2_RECONCILIATION_BLANK.csv": {
+      "bytes": 8838,
+      "sha256": "a4c5e01eeea4fc7c90c8e9d1e61c14855f6150da0b6dd60a00b95943f8fe4a72"
+    },
+    "ANNOTATION_CODEBOOK.md": {
+      "bytes": 24534,
+      "sha256": "427f8d2c751f136b0fd9b4e6f0682bece5d54d2ad52e97016f7168a0042e3533"
+    },
+    "PILOT_PROTOCOL.md": {
+      "bytes": 7845,
+      "sha256": "b68d9f98c0cc1263c1e02177ee3f6255ff7c8b10bdb94aee0ad02fbcddbda452"
+    }
+  }
+}

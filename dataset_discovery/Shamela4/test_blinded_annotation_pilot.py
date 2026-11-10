@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Comprehensive test suite for refined Shamela4 evaluation-level two-pass pilot.
+"""Regression suite for refined Shamela4 claim-level two-pass pilot.
 
 Verifies:
 1. Exactly 20 selected cases.
@@ -15,9 +15,9 @@ Verifies:
 11. Preservation of original source text across all templates.
 12. Preservation of the original 60-case CSV (hash remains unchanged).
 13. Existing pilot source IDs and mappings remain strictly unchanged.
-14. Evaluation-level template allows multiple evaluation rows linked to one tuple.
-15. Unique evaluation IDs within each tuple.
-16. Evaluation-level and reconciliation templates contain no pre-filled annotations.
+14. Claim-level template allows factual and evaluative claims linked to one tuple.
+15. Unique claim IDs within each tuple.
+16. Claim-level and reconciliation templates contain no pre-filled annotations.
 17. Manifest/hash consistency (all recorded files match size and SHA-256).
 18. All six sampling strata represented.
 """
@@ -32,14 +32,14 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 from dataset_discovery.Shamela4.blinded_annotation_pilot import (
     CLAIM_TARGET_CATEGORIES,
-    EVALUATION_FIELDS,
+    CLAIM_FIELDS,
     MAPPING_FIELDS,
     PASS1_TEXT_FIELDS,
     PASS2_RECONCILIATION_FIELDS,
     SELECTION_FIELDS,
     V3_EXPECTED_HASH,
     V3_INPUT_RELATIVE,
-    build_evaluation_blank_rows,
+    build_claim_blank_rows,
     build_internal_mapping_rows,
     build_pass1_text_rows,
     build_pass2_reconciliation_rows,
@@ -57,11 +57,11 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         cls.root = PROJECT_ROOT
         cls.v3_csv_path = cls.root / V3_INPUT_RELATIVE
         cls.pilot_dir = (
-            cls.root / "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_4"
+            cls.root / "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_5"
         )
         cls.manifest_path = cls.pilot_dir / "pilot_manifest.json"
         cls.pass1_path = cls.pilot_dir / "PILOT_PASS1_TEXT_BLINDED.csv"
-        cls.eval_path = cls.pilot_dir / "PILOT_EVALUATIONS_BLANK.csv"
+        cls.claim_path = cls.pilot_dir / "PILOT_CLAIMS_BLANK.csv"
         cls.pass2_path = cls.pilot_dir / "PILOT_PASS2_RECONCILIATION_BLANK.csv"
         cls.mapping_path = cls.pilot_dir / "PILOT_INTERNAL_MAPPING.csv"
         cls.selection_path = cls.pilot_dir / "PILOT_SELECTION.csv"
@@ -178,8 +178,8 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
 
     # 8. Pass 1 records textual mentions; documentary provenance is reconciled separately
     def test_provenance_reconciliation_is_separate_from_textual_mentions(self) -> None:
-        eval_rows = read_csv(self.eval_path)
-        eval_cols = set(eval_rows[0].keys())
+        claim_rows = read_csv(self.claim_path)
+        eval_cols = set(claim_rows[0].keys())
         self.assertIn("work_title_as_written", eval_cols)
         self.assertIn("work_role", eval_cols)
         self.assertIn("source_locator_as_written", eval_cols)
@@ -205,15 +205,19 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
 
     # 8c. Explicit claim_target field exists in schema, template, and codebook with 8 categories
     def test_claim_target_schema_and_categories(self) -> None:
-        self.assertIn("claim_target", EVALUATION_FIELDS)
-        self.assertNotIn("evaluation_target", EVALUATION_FIELDS)
-        eval_rows = read_csv(self.eval_path)
-        eval_cols = set(eval_rows[0].keys())
+        self.assertIn("claim_target", CLAIM_FIELDS)
+        self.assertNotIn("evaluation_target", CLAIM_FIELDS)
+        claim_rows = read_csv(self.claim_path)
+        eval_cols = set(claim_rows[0].keys())
+        self.assertIn("claim_id", eval_cols)
+        self.assertNotIn("evaluation_id", eval_cols)
+        self.assertIn("claim_subject_as_written", eval_cols)
+        self.assertNotIn("evaluated_person_as_written", eval_cols)
         self.assertIn("claim_target", eval_cols)
         self.assertNotIn("evaluation_target", eval_cols)
 
         # All template rows have blank claim_target
-        for row in eval_rows:
+        for row in claim_rows:
             self.assertEqual(row["claim_target"], "")
 
         # Verify documentation of all 7 target categories in codebook
@@ -244,8 +248,8 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
 
     # 9. Revised statement-function taxonomy includes transmission observations without forcing negative orientation
     def test_statement_function_and_orientation_taxonomy(self) -> None:
-        eval_rows = read_csv(self.eval_path)
-        eval_cols = set(eval_rows[0].keys())
+        claim_rows = read_csv(self.claim_path)
+        eval_cols = set(claim_rows[0].keys())
 
         self.assertIn("statement_function", eval_cols)
         self.assertIn("evaluative_orientation", eval_cols)
@@ -297,7 +301,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             "sampling_stratum", "source_id_level_classification",
             "quotation_citation_separability", "v3_case_id", "source_id",
         ]
-        for path in [self.pass1_path, self.eval_path, self.pass2_path]:
+        for path in [self.pass1_path, self.claim_path, self.pass2_path]:
             rows = read_csv(path)
             for col in rows[0].keys():
                 col_lower = col.lower()
@@ -374,44 +378,78 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             self.assertEqual(actual["v3_case_id"], exp_v3)
             self.assertEqual(str(actual["source_id"]), exp_src)
 
-    # 14. Multiple evaluation rows can link to one tuple
-    def test_multiple_evaluation_rows_can_link_to_one_tuple(self) -> None:
-        multi_eval_rows = [
-            {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E01", "contains_evaluation": "yes"},
-            {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E02", "contains_evaluation": "yes"},
-            {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E03", "contains_evaluation": "yes"},
-            {"pilot_case_id": "PILOT02", "evaluation_id": "PILOT02_E01", "contains_evaluation": "yes"},
+    # 14. Multiple factual/evaluative claim rows can link to one tuple
+    def test_multiple_claim_rows_can_link_to_one_tuple(self) -> None:
+        multi_claim_rows = [
+            {"pilot_case_id": "PILOT09", "claim_id": "PILOT09_C01", "contains_evaluation": "unclear", "claim_target": "unclear"},
+            {"pilot_case_id": "PILOT09", "claim_id": "PILOT09_C02", "contains_evaluation": "yes", "claim_target": "memory_or_precision"},
+            {"pilot_case_id": "PILOT09", "claim_id": "PILOT09_C03", "contains_evaluation": "no", "claim_target": "narrator_identity_or_biography"},
         ]
-        p1_evals = [r for r in multi_eval_rows if r["pilot_case_id"] == "PILOT01"]
-        self.assertEqual(len(p1_evals), 3)
-        self.assertEqual(len(set(r["evaluation_id"] for r in p1_evals)), 3)
+        p1_claims = [r for r in multi_claim_rows if r["pilot_case_id"] == "PILOT09"]
+        self.assertEqual(len(p1_claims), 3)
+        self.assertEqual(len(set(r["claim_id"] for r in p1_claims)), 3)
+        self.assertEqual([r["contains_evaluation"] for r in p1_claims], ["unclear", "yes", "no"])
+        self.assertEqual([r["claim_target"] for r in p1_claims], ["unclear", "memory_or_precision", "narrator_identity_or_biography"])
 
-    # 15. Unique evaluation IDs within each tuple
-    def test_unique_evaluation_ids_in_template(self) -> None:
-        eval_rows = read_csv(self.eval_path)
-        eval_ids = [r["evaluation_id"] for r in eval_rows]
-        self.assertEqual(len(eval_ids), len(set(eval_ids)), "Evaluation IDs in template must be unique")
-        for row in eval_rows:
+    def test_pilot09_contains_three_distinct_claim_examples(self) -> None:
+        source_row = next(row for row in self.v3_rows if row["case_id"] == "TV038")
+        passage = source_row["original_field_1"]
+        self.assertEqual(str(source_row["source_id"]), "96646")
+        self.assertEqual(str(source_row["narrator_id"]), "1255")
+        claims = [
+            {
+                "claim_id": "PILOT09_C01",
+                "excerpt": "هذا حديث لا نعرفه إلا من هذا الوجه",
+                "contains_evaluation": "unclear",
+                "claim_target": "unclear",
+            },
+            {
+                "claim_id": "PILOT09_C02",
+                "excerpt": "وحارثة قد تكلم فيه من قبل حفظه",
+                "contains_evaluation": "yes",
+                "claim_target": "memory_or_precision",
+            },
+            {
+                "claim_id": "PILOT09_C03",
+                "excerpt": "وأبو الرجال اسمه محمد بن عبد الرحمن المديني",
+                "contains_evaluation": "no",
+                "claim_target": "narrator_identity_or_biography",
+            },
+        ]
+        self.assertEqual([claim["claim_id"] for claim in claims], ["PILOT09_C01", "PILOT09_C02", "PILOT09_C03"])
+        self.assertEqual([claim["contains_evaluation"] for claim in claims], ["unclear", "yes", "no"])
+        self.assertEqual([claim["claim_target"] for claim in claims], ["unclear", "memory_or_precision", "narrator_identity_or_biography"])
+        for claim in claims:
+            self.assertIn(claim["excerpt"], passage)
+        self.assertEqual(source_row["narrator_name"], "حارثة بن أبي الرجال")
+
+    # 15. Unique claim IDs within each tuple
+    def test_unique_claim_ids_in_template(self) -> None:
+        claim_rows = read_csv(self.claim_path)
+        claim_ids = [r["claim_id"] for r in claim_rows]
+        self.assertEqual(len(claim_ids), len(set(claim_ids)), "Claim IDs in template must be unique")
+        for row in claim_rows:
             self.assertTrue(
-                row["evaluation_id"].startswith(f"{row['pilot_case_id']}_"),
-                f"Evaluation ID '{row['evaluation_id']}' does not match pilot_case_id '{row['pilot_case_id']}'",
+                row["claim_id"].startswith(f"{row['pilot_case_id']}_C"),
+                f"Claim ID '{row['claim_id']}' does not match pilot_case_id '{row['pilot_case_id']}'",
             )
 
     # 16. Evaluation-level and reconciliation templates contain no pre-filled annotations
     def test_templates_contain_no_prefilled_annotations(self) -> None:
-        eval_rows = read_csv(self.eval_path)
-        eval_annotation_cols = [c for c in EVALUATION_FIELDS if c not in ("pilot_case_id", "evaluation_id")]
-        for row in eval_rows:
+        claim_rows = read_csv(self.claim_path)
+        eval_annotation_cols = [c for c in CLAIM_FIELDS if c not in ("pilot_case_id", "claim_id")]
+        for row in claim_rows:
             for col in eval_annotation_cols:
                 self.assertEqual(
                     row[col],
                     "",
-                    f"Pre-filled annotation detected in {row['evaluation_id']} column '{col}': '{row[col]}'",
+                    f"Pre-filled annotation detected in {row['claim_id']} column '{col}': '{row[col]}'",
                 )
 
         pass2_rows = read_csv(self.pass2_path)
         pass2_annotation_cols = [
-            "target_matches_attached_narrator",
+            "claim_subject_as_written",
+            "claim_subject_matches_attached_narrator",
             "reconciliation_status",
             "reconciled_narrator_id",
             "reconciliation_confidence",
@@ -424,6 +462,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
                     "",
                     f"Pre-filled annotation detected in Pass 2 {row['pilot_case_id']} column '{col}': '{row[col]}'",
                 )
+            self.assertEqual(row["claim_id"], f"{row['pilot_case_id']}_C01")
 
     # 17. Manifest/hash consistency
     def test_manifest_hash_consistency(self) -> None:
@@ -431,8 +470,8 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         with self.manifest_path.open("r", encoding="utf-8") as f:
             manifest = json.load(f)
 
-        self.assertEqual(manifest["version"], "2.4.0")
-        self.assertEqual(manifest["schema_version"], "2.4.0")
+        self.assertEqual(manifest["version"], "2.5.0")
+        self.assertEqual(manifest["schema_version"], "2.5.0")
         self.assertEqual(manifest["selected_case_count"], 20)
         self.assertEqual(len(manifest["selected_source_ids"]), 20)
         self.assertEqual(len(set(manifest["selected_source_ids"])), 20)

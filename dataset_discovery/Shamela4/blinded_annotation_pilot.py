@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reproducible generation of Shamela4 20-case blinded human annotation pilot.
 
-Integrity-hardened architecture (v2.4.0):
+Integrity-hardened architecture (v2.5.0):
 1. Strict Pass 1 Blinding:
    - Exposes only the two textual tuple elements in original_tuple_json (purges 3rd source-ID element).
    - Strictly omits attached narrator metadata (narrator_id, narrator_name), source_id,
@@ -13,15 +13,17 @@ Integrity-hardened architecture (v2.4.0):
 3. Explicit Claim Target:
    - Distinguishes the entity or aspect a statement concerns (narrator_overall, memory_or_precision,
      specific_transmission_link, specific_hadith_or_report, comparative_narrator_assessment,
-     not_applicable, unclear) from the evaluated person, function, and stance.
-4. Clarified Qualitative Appraisal vs Factual Transmission Observations:
+     narrator_identity_or_biography, not_applicable, unclear) from the claim subject, function, and stance.
+4. Claim-Level Unit:
+   - Each row represents one distinct proposition, factual or evaluative; contains_evaluation determines whether it is evaluative.
+5. Clarified Qualitative Appraisal vs Factual Transmission Observations:
    - contains_evaluation distinguishes qualitative appraisals (yes) from factual/descriptive/documentary
      observations (no) or ambiguous claims (unclear).
    - Factual transmission disconnects (inqita, nafy al-sama) can have contains_evaluation = no.
-5. Correct Comparative-Preference Guidance:
+6. Correct Comparative-Preference Guidance:
    - Comparative preference statements allow neutral or unclear orientation; annotators must
      not infer that both narrators are independently reliable merely from responses like 'كلاهما'.
-6. Quarantined Full Provenance:
+7. Quarantined Full Provenance:
    - Full 3-element tuple [field_1, field_2, source_id] preserved in PILOT_INTERNAL_MAPPING.csv.
 """
 from __future__ import annotations
@@ -49,15 +51,15 @@ PASS1_TEXT_FIELDS = [
     "original_tuple_json",
 ]
 
-# Evaluation-level annotation fields (Integrity-audited schema v2.4.0)
-EVALUATION_FIELDS = [
+# Claim-level annotation fields (Integrity-audited schema v2.5.0)
+CLAIM_FIELDS = [
     # Linking identifiers
     "pilot_case_id",
-    "evaluation_id",
-    # Evaluated person
-    "evaluated_person_as_written",
-    "evaluated_person_identity_confidence",
-    # Evaluative content, target & stance
+    "claim_id",
+    # Claim subject
+    "claim_subject_as_written",
+    "claim_subject_identity_confidence",
+    # Claim function, evaluation status, target & stance
     "contains_evaluation",
     "claim_target",
     "statement_function",
@@ -105,17 +107,19 @@ PROVENANCE_RECONCILIATION_FIELDS = [
     "reviewer_notes",
 ]
 
-DEFAULT_OUTPUT_RELATIVE = "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_4"
+DEFAULT_OUTPUT_RELATIVE = "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_5"
 
 # Pass 2: Identity reconciliation fields
 PASS2_RECONCILIATION_FIELDS = [
     "pilot_case_id",
+    "claim_id",
     "attached_narrator_id",
     "attached_narrator_name",
+    "claim_subject_as_written",
     "entry_index",
     "original_field_1",
     "original_field_2",
-    "target_matches_attached_narrator",
+    "claim_subject_matches_attached_narrator",
     "reconciliation_status",
     "reconciled_narrator_id",
     "reconciliation_confidence",
@@ -357,19 +361,19 @@ def build_pass1_text_rows(selected_cases: list[dict[str, Any]]) -> list[dict[str
     return pass1_rows
 
 
-def build_evaluation_blank_rows(selected_cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Build evaluation-level blank template with initial row per tuple and all annotations blank."""
-    eval_rows = []
+def build_claim_blank_rows(selected_cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Build claim-level blank template with one extendable starter row per tuple."""
+    claim_rows = []
     for case in selected_cases:
         row = {
             "pilot_case_id": case["pilot_case_id"],
-            "evaluation_id": f"{case['pilot_case_id']}_E01",
+            "claim_id": f"{case['pilot_case_id']}_C01",
         }
-        for field in EVALUATION_FIELDS:
+        for field in CLAIM_FIELDS:
             if field not in row:
                 row[field] = ""
-        eval_rows.append(row)
-    return eval_rows
+        claim_rows.append(row)
+    return claim_rows
 
 
 def build_provenance_reconciliation_rows(selected_cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -382,17 +386,19 @@ def build_provenance_reconciliation_rows(selected_cases: list[dict[str, Any]]) -
 
 
 def build_pass2_reconciliation_rows(selected_cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Build Pass 2 identity reconciliation template revealing attached narrator metadata."""
+    """Build Pass 2 starter rows for claim-level identity reconciliation."""
     pass2_rows = []
     for case in selected_cases:
         pass2_rows.append({
             "pilot_case_id": case["pilot_case_id"],
+            "claim_id": f"{case['pilot_case_id']}_C01",
             "attached_narrator_id": case["narrator_id"],
             "attached_narrator_name": case["narrator_name"],
+            "claim_subject_as_written": "",
             "entry_index": case["entry_index"],
             "original_field_1": case["original_field_1"],
             "original_field_2": case["original_field_2"],
-            "target_matches_attached_narrator": "",
+            "claim_subject_matches_attached_narrator": "",
             "reconciliation_status": "",
             "reconciled_narrator_id": "",
             "reconciliation_confidence": "",
@@ -443,7 +449,7 @@ def build_selection_rows(selected_cases: list[dict[str, Any]]) -> list[dict[str,
 
 def generate_codebook() -> str:
     """Generate the comprehensive Markdown annotation codebook."""
-    return """# Shamela4 Narrator Criticism Annotation Codebook (Evaluation-Level & Two-Pass Design)
+    return """# Shamela4 Narrator Criticism Annotation Codebook (Claim-Level & Two-Pass Design)
 
 ## 1. Research Context and Purpose
 
@@ -461,15 +467,16 @@ The objective is to establish the ground-truth interpretation of criticism tuple
 
 ---
 
-## 2. Unit of Analysis: Evaluation-Level Records
+## 2. Unit of Analysis: Claim-Level Records
 
 A single criticism tuple consists of two text fields (`field_1`, `field_2`) and an opaque `source_id`.
-- **Core Principle**: A single tuple may contain **multiple distinct evaluations**, different historical evaluators, multiple evaluated individuals, or nested attributions.
-- **Record Structure**: Annotations are recorded in `PILOT_EVALUATIONS_BLANK.csv`. Each row represents **one distinct evaluative claim** and links to its parent tuple via `pilot_case_id`.
-- **Multiple Evaluations per Tuple**:
-  - If a tuple contains only one evaluation, complete row `{pilot_case_id}_E01`.
-  - If a tuple quotes multiple critics (e.g., Malik and Yahya b. Ma'in) or evaluates multiple individuals, insert a new row with the same `pilot_case_id` and an incremented `evaluation_id` (e.g., `{pilot_case_id}_E02`, `{pilot_case_id}_E03`).
-  - There is no upper limit on the number of evaluation rows per tuple.
+- **Core Principle**: A tuple may express multiple distinct propositions, including factual biography, transmission observations, evaluations, reports, or nested attributions. Different claims in one tuple may have different subjects.
+- **Record Structure**: Annotations are recorded in `PILOT_CLAIMS_BLANK.csv`. Each row represents **one distinct claim**, whether factual or evaluative, and links to its tuple via `pilot_case_id`.
+- **Multiple Claims per Tuple**:
+  - The starter row uses `{pilot_case_id}_C01`.
+  - Add a separate row for each additional distinct claim, using `{pilot_case_id}_C02`, `{pilot_case_id}_C03`, and so on.
+  - `contains_evaluation` determines whether a claim is evaluative; factual claims remain in the table and do not contribute to evaluative analysis.
+  - Do not combine claims only because they concern the same narrator or occur in the same tuple. Do not assume every claim concerns the database-attached narrator.
 - **Non-Evaluative Entries**: If a tuple contains only bibliographic citations, book numbers, or hadith locators without human evaluative prose, annotate a single row with `contains_evaluation = no`, an appropriate `claim_target` (usually `not_applicable` for a pure citation), `statement_function = documentary_citation`, and `evaluative_orientation = not_applicable`.
 
 ---
@@ -479,7 +486,7 @@ A single criticism tuple consists of two text fields (`field_1`, `field_2`) and 
 To eliminate confirmation bias and prevent metadata contamination, annotation proceeds in two strictly decoupled stages:
 
 ### Pass 1: Blinded Text-Only Extraction
-1. The annotator opens `PILOT_PASS1_TEXT_BLINDED.csv` and `PILOT_EVALUATIONS_BLANK.csv`.
+1. The annotator opens `PILOT_PASS1_TEXT_BLINDED.csv` and `PILOT_CLAIMS_BLANK.csv`.
 2. `PILOT_PASS1_TEXT_BLINDED.csv` exposes **only**:
    - `pilot_case_id`
    - `entry_index`
@@ -488,7 +495,7 @@ To eliminate confirmation bias and prevent metadata contamination, annotation pr
    - `original_tuple_json` (sanitized 2-element array `[field_1, field_2]` with no source ID).
 3. The annotator **does not see** the database-attached `narrator_id`, `narrator_name`, or `source_id`.
 4. Based solely on the verbatim Arabic text, the annotator records visible textual mentions and roles, not external provenance:
-   - Person or entity referred to by each claim, as written.
+   - Claim subject as written, which may differ across claims in the same tuple.
    - Work titles and locators appearing in the passage, with textual role (`cited_work`, `other_referenced_work`, or `unclear`).
    - Historical evaluator and intermediate transmitter only when explicitly represented in the text.
    - Statement function, whether a qualitative evaluation is present, claim target, and orientation.
@@ -498,25 +505,23 @@ To eliminate confirmation bias and prevent metadata contamination, annotation pr
 ### Pass 2: Attached Identity Reconciliation
 1. After completing Pass 1, the annotator opens `PILOT_PASS2_RECONCILIATION_BLANK.csv`.
 2. This template reveals `attached_narrator_id` and `attached_narrator_name` alongside the text.
-3. The annotator reconciles their Pass 1 findings against the database attachment:
-   - Does the attached narrator match the person actually evaluated in the text?
-   - Is the entry an evaluation of an isnad partner, teacher, or hadith text?
-   - Was the database attachment a false attachment or contextual mention?
+3. Create one Pass 2 row for every claim in the frozen Pass 1 table, preserving its `claim_id` and copying `claim_subject_as_written` from that claim row. The generated C01 row is a starter; add rows for C02, C03, etc. where needed.
+4. Reconcile each claim subject separately against the attached narrator. A tuple may contain claims about multiple people, so the attachment must not be assigned as the subject of every claim.
 
 ---
 
-## 4. Evaluation-Level Schema and Field Definitions (`PILOT_EVALUATIONS_BLANK.csv`)
+## 4. Claim-Level Schema and Field Definitions (`PILOT_CLAIMS_BLANK.csv`)
 
 ### Identifiers
 - `pilot_case_id`: Blinded identifier linking to Pass 1 tuple context (e.g. `PILOT01` to `PILOT20`).
-- `evaluation_id`: Unique identifier for the evaluative claim (e.g. `PILOT01_E01`, `PILOT01_E02`).
+- `claim_id`: Unique identifier for a claim, whether factual or evaluative (e.g. `PILOT01_C01`, `PILOT01_C02`).
 
-### Section A: Evaluated Person
-- `evaluated_person_as_written`:
-  - **Definition**: Verbatim Arabic name of the person who is the subject of this specific claim, whether or not the claim evaluates them.
-  - **Allowed Values**: Exact Arabic string from text, or `[غير مصرح به]` (unnamed/implicit pronoun), or `[ليس راويا]` (if target is hadith text or book).
+### Section A: Claim Subject
+- `claim_subject_as_written`:
+  - **Definition**: Verbatim Arabic name of the person or entity that is the subject of this specific claim, whether or not the claim evaluates them.
+  - **Allowed Values**: Exact Arabic string or description from the text, or `[غير مصرح به]` for an unnamed/implicit subject. A report or route may be recorded as the textual subject where appropriate.
   - **Examples**: `معارك بن عباد العبدي`, `أبو جابر البياضي`, `حارثة`.
-- `evaluated_person_identity_confidence`:
+- `claim_subject_identity_confidence`:
   - **Definition**: Confidence that the text refers to the identified individual as the claim subject.
   - **Allowed Values**: `high`, `medium`, `low`, `unresolved`.
 
@@ -561,10 +566,10 @@ Pass 1 annotates textual mentions and roles only. It does not establish the extr
 
 ### Section C: Evaluative Content, Target, Function, and Orientation
 Annotators must rigorously separate:
-1. `contains_evaluation` (qualitative appraisal vs factual observation)
+1. `contains_evaluation` (whether this claim is an appraisal or a factual proposition)
 2. `claim_target` (the entity or aspect the claim concerns, whether factual or evaluative)
-3. `statement_function` (classical hadith function)
-4. `evaluative_orientation` (qualitative stance/valence)
+3. `statement_function` (the claim's function in context)
+4. `evaluative_orientation` (qualitative stance/valence only when `contains_evaluation = yes`)
 
 - `contains_evaluation`:
   - **Definition**: Does this specific claim contain a qualitative appraisal of a narrator, transmission link, or report? Explicitly distinguishes qualitative appraisal from factual, descriptive, or documentary observations.
@@ -574,7 +579,7 @@ Annotators must rigorously separate:
     - `unclear`: The distinction between qualitative appraisal and factual observation cannot be established confidently.
   - **Mandatory Guidance**: A `transmission_observation` does **not** automatically imply `contains_evaluation = yes`. For example, `لم يسمع من عنبسة شيئا` is a factual observation of isnad disconnection (*inqita'*), not a qualitative evaluation of the narrator's character or trustworthiness (`contains_evaluation = no`).
 - `claim_target`:
-  - **Definition**: The entity or aspect that the claim is about. It is distinct from the person named (`evaluated_person_as_written`), the function (`statement_function`), and the orientation (`evaluative_orientation`). This field applies to factual claims as well as appraisals.
+  - **Definition**: The entity or aspect that the claim is about. It is distinct from the claim subject (`claim_subject_as_written`), the function (`statement_function`), and the orientation (`evaluative_orientation`). This field applies to factual claims as well as appraisals.
   - **Allowed Values**:
     - `narrator_overall`: General moral integrity, religious reliability, truthfulness, or foundational trustworthiness of the narrator (e.g. `ثقة`, `كذاب`, `متروك`, `ضعيف`, `لا يحتج به`).
     - `memory_or_precision`: Cognitive retention, book precision, senility/confusion in old age, or accuracy in specific contexts (e.g. `ساء حفظه لما كبر`, `فيه لين`, `تكلم فيه من قبل حفظه`).
@@ -661,32 +666,37 @@ Annotators must rigorously separate:
 
 ## 5. Pass 2 Schema and Field Definitions (`PILOT_PASS2_RECONCILIATION_BLANK.csv`)
 
-- `pilot_case_id`: Blinded identifier linking to Pass 1.
+- `pilot_case_id`: Blinded identifier linking to the tuple in Pass 1.
+- `claim_id`: Claim identifier copied from the frozen Pass 1 claim table. Start with `{{pilot_case_id}}_C01`; add a row for every additional claim after Pass 1 is frozen.
 - `attached_narrator_id`: Numeric ID of the narrator to whom the tuple was attached in `narrators.parquet`.
 - `attached_narrator_name`: Short name of the narrator from the database.
+- `claim_subject_as_written`: Copy the subject from the matching frozen Pass 1 claim row; do not infer it from the attached narrator.
 - `entry_index`, `original_field_1`, `original_field_2`: Verbatim text retained for review.
-- `target_matches_attached_narrator`:
-  - `exact_match`: The evaluated person in Pass 1 is unambiguously the attached narrator.
-  - `different_person`: The text evaluates another person (e.g., father, teacher, narrator partner).
-  - `multiple_narrators_evaluated`: The text evaluates both the attached narrator and others.
-  - `no_narrator_evaluated`: The text evaluates a hadith text or is a pure documentary citation.
+- `claim_subject_matches_attached_narrator`:
+  - `exact_match`: The claim subject in Pass 1 is unambiguously the attached narrator.
+  - `different_person`: The claim concerns another person (e.g., father, teacher, or narrator partner).
+    - `multiple_narrators_as_subject`: This claim concerns multiple narrators.
+  - `no_narrator_subject`: The claim concerns a report or is a pure documentary citation.
   - `unresolved`: Textual ambiguity prevents conclusive determination.
 - `reconciliation_status`:
   - `confirmed_target`: Verified correct database attachment.
-  - `false_attachment_in_database`: The tuple was attached to a narrator not evaluated in the text.
-  - `isnad_partner_evaluated`: The evaluation belongs to another link in the transmission chain.
+  - `false_attachment_in_database`: This claim is about a different subject; this alone does not establish that the tuple is incorrectly attached if another claim in the tuple concerns the attached narrator.
+  - `isnad_partner_evaluated`: This claim concerns another link in the transmission chain.
   - `contextual_mention_only`: Attached narrator is mentioned only as a background reference.
   - `unclear`: Unresolved relationship.
 - `reconciled_narrator_id`: Confirmed narrator ID if resolved, or blank if external/unlinked.
 - `reconciliation_confidence`: `high`, `medium`, `low`, `unresolved`.
 - `reconciliation_notes`: Free-text explanation of how the attached identity relates to the passage.
+
+### Multi-Claim Unit Example
+A tuple may contain a report comment, a narrator memory appraisal, and a factual identity statement. Record each as its own claim row, with its own subject and target. If a clause's target or evaluative force cannot be resolved from context, preserve that uncertainty rather than borrowing the subject or interpretation from an adjacent clause. The database-attached narrator identifies the tuple's attachment only; it does not determine each claim's subject.
 """
 
 
 def generate_protocol(stratum_counts: dict[str, int], seed: int) -> str:
     """Generate the Markdown protocol document for the pilot study."""
     strata_lines = "\n".join(f"- `{stratum}`: {count} cases" for stratum, count in stratum_counts.items())
-    return f"""# Shamela4 20-Case Blinded Manual Annotation Pilot Protocol (Two-Pass & Evaluation-Level)
+    return f"""# Shamela4 20-Case Blinded Manual Annotation Pilot Protocol (Two-Pass & Claim-Level)
 
 ## 1. Objectives
 
@@ -694,12 +704,12 @@ This pilot study evaluates the feasibility, clarity, and precision of the human 
 
 Specific research questions investigated by this pilot:
 1. **Evaluative Content vs Factual Transmission**: Can annotators reliably distinguish between genuine qualitative appraisals (`contains_evaluation=yes`), factual transmission observations (`contains_evaluation=no` like `لم يسمع`), hadith rulings, and pure documentary citations?
-2. **Evaluation-Level Granularity**: Can complex tuples containing multiple evaluators or multiple evaluated persons be cleanly decomposed into distinct evaluation records?
+2. **Claim-Level Granularity**: Can tuples containing multiple propositions, including factual claims, be decomposed into distinct claim records with claim-specific subjects?
 3. **Explicit Claim Target**: Can annotators identify what a factual or evaluative claim concerns (`claim_target`) separately from the person named, statement function, and orientation?
 4. **Textual Mentions vs Documentary Provenance**: Can annotators record visible work-title/locator mentions and textual roles without inferring the extraction source? External provenance checks are recorded separately and may remain unresolved.
 5. **Statement Function vs Orientation**: Can functional categories be separated from orientation, using `not_applicable` for factual claims with no appraisal and reserving `neutral` for actual non-directional evaluations?
 6. **Attribution Type**: Can direct statements, nested isnads, and passive consensus phrases (`كذبوه`) be systematically differentiated?
-7. **Blinded Reconciliation**: Does the database-attached narrator identity match the person actually evaluated in the text when evaluated without metadata bias?
+7. **Blinded Reconciliation**: For each Pass 1 claim, does the database-attached narrator match that claim's subject when reconciled only after Pass 1 is frozen?
 8. **Automated Concordance**: Do existing automated heuristic patterns align with human semantic understanding? This is a tuple-interpretation comparison only, not historical attribution or narrator reliability validation.
 
 ---
@@ -736,26 +746,27 @@ To prevent metadata leakage and confirmation bias:
    - Attached narrator metadata (`narrator_id`, `narrator_name`) is **completely absent**.
    - Database `source_id` is completely purged from all fields and tuple elements (`original_tuple_json` is strictly a 2-element array `[field_1, field_2]`).
    - Automated classifier labels and sampling strata are **strictly excluded**.
-   - Annotations are recorded in `PILOT_EVALUATIONS_BLANK.csv`.
-   - Multiple evaluations per tuple are recorded as multiple rows sharing `pilot_case_id` with incremented `evaluation_id`.
+   - Annotations are recorded in `PILOT_CLAIMS_BLANK.csv`.
+   - All distinct factual and evaluative claims are recorded as separate rows sharing `pilot_case_id` with incremented `claim_id`.
 2. **Pass 2 (Identity Reconciliation)**:
    - After completing Pass 1, annotator opens `PILOT_PASS2_RECONCILIATION_BLANK.csv`.
    - Attached narrator metadata (`attached_narrator_id`, `attached_narrator_name`) is revealed alongside the original text.
-   - Annotator reconciles whether the attached narrator is the true target, an isnad partner, or a false attachment.
+   - Annotator reconciles the attached narrator separately against each frozen claim subject, not against the tuple as a single undivided unit.
    - Automated classifier labels and source IDs remain strictly blinded.
 
 ---
 
-## 4. Multi-Evaluation Recording Instructions
+## 4. Multi-Claim Recording Instructions
 
-Annotators must adhere to this rule: **One evaluative claim per row**.
-- An initial template row `{{pilot_case_id}}_E01` is provided for each pilot case.
-- When an entry contains several evaluations (e.g. `PILOT01` quotes Malik and Yahya b. Ma'in; `PILOT03` quotes 5+ critics):
+Annotators must adhere to this rule: **One distinct claim per row, whether factual or evaluative**.
+- An initial template row `{{pilot_case_id}}_C01` is provided for each pilot case.
+- When an entry contains several claims (e.g. it combines transmission commentary, a narrator appraisal, and factual biography):
   1. Insert a new row directly beneath the primary row.
   2. Set `pilot_case_id` to the parent case ID (e.g. `PILOT01`).
-  3. Set `evaluation_id` to `{{pilot_case_id}}_E02` (then `_E03`, etc.).
-  4. Fill in the specific evaluated person, historical evaluator, evaluative span, statement function, and orientation for that distinct claim.
-- There is no arbitrary maximum number of evaluation rows.
+  3. Set `claim_id` to `{{pilot_case_id}}_C02` (then `_C03`, etc.).
+  4. Record that claim's subject, target, function, evaluation status, attribution, and orientation where applicable.
+- `evaluative_orientation` does not apply to claims marked `contains_evaluation = no`. Keep all distinct claims; use `contains_evaluation` to identify which claims are evaluative.
+- There is no arbitrary maximum number of claim rows.
 
 ---
 
@@ -817,10 +828,10 @@ def main() -> int:
     pass1_path = output_dir / "PILOT_PASS1_TEXT_BLINDED.csv"
     write_csv(pass1_path, pass1_rows, PASS1_TEXT_FIELDS)
 
-    # 4. PILOT_EVALUATIONS_BLANK.csv (Evaluation-level blank template with full provenance & stance taxonomy)
-    eval_rows = build_evaluation_blank_rows(selected_cases)
-    eval_path = output_dir / "PILOT_EVALUATIONS_BLANK.csv"
-    write_csv(eval_path, eval_rows, EVALUATION_FIELDS)
+    # 4. PILOT_CLAIMS_BLANK.csv (claim-level blank template)
+    claim_rows = build_claim_blank_rows(selected_cases)
+    claims_path = output_dir / "PILOT_CLAIMS_BLANK.csv"
+    write_csv(claims_path, claim_rows, CLAIM_FIELDS)
 
     # 5. Separate documentary provenance reconciliation, populated only after blinded text review
     provenance_rows = build_provenance_reconciliation_rows(selected_cases)
@@ -852,7 +863,7 @@ def main() -> int:
         selection_path,
         mapping_path,
         pass1_path,
-        eval_path,
+        claims_path,
         provenance_path,
         pass2_path,
         codebook_path,
@@ -867,8 +878,8 @@ def main() -> int:
     }
 
     manifest = {
-        "version": "2.4.0",
-        "schema_version": "2.4.0",
+        "version": "2.5.0",
+        "schema_version": "2.5.0",
         "description": "Blinded 20-case annotation pilot (claim targets include factual identity/biography; provenance is separated from textual mentions)",
         "purposive_sample_declaration": (
             "This 20-case pilot is purposively sampled from the 60-case validation pool to evaluate "
@@ -895,7 +906,7 @@ def main() -> int:
 
     print(json.dumps({
         "status": "success",
-        "version": "2.4.0",
+        "version": "2.5.0",
         "output_directory": str(output_dir),
         "selected_count": len(selected_cases),
         "unique_source_ids": len(set(case["source_id"] for case in selected_cases)),
