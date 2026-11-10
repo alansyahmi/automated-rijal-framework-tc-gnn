@@ -56,7 +56,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         cls.root = PROJECT_ROOT
         cls.v3_csv_path = cls.root / V3_INPUT_RELATIVE
         cls.pilot_dir = (
-            cls.root / "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20"
+            cls.root / "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_3"
         )
         cls.manifest_path = cls.pilot_dir / "pilot_manifest.json"
         cls.pass1_path = cls.pilot_dir / "PILOT_PASS1_TEXT_BLINDED.csv"
@@ -175,64 +175,50 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             self.assertEqual(row["attached_narrator_id"], expected["narrator_id"])
             self.assertEqual(row["attached_narrator_name"], expected["narrator_name"])
 
-    # 8. Provenance fields distinguish immediate source work from cited work
-    def test_provenance_fields_distinguish_immediate_and_cited_works(self) -> None:
-        eval_rows = read_csv(self.eval_path)
-        eval_cols = set(eval_rows[0].keys())
-
-        required_provenance_cols = [
-            "immediate_source_work_as_written",
-            "immediate_source_work_normalized",
-            "compiler_or_source_author",
-            "work_title_as_written",
-            "work_role",
-            "immediate_source_work_verified",
-            "cited_work_as_written",
-            "cited_work_normalized",
-            "source_locator_as_written",
-            "historical_evaluator_as_written",
-            "historical_evaluator_normalized",
-            "intermediate_transmitter_as_written",
-            "other_quoted_speaker_as_written",
-            "attribution_type",
-            "attribution_evidence_verbatim",
-        ]
-        for col in required_provenance_cols:
-            self.assertIn(col, eval_cols, f"Missing required provenance column '{col}' in evaluation template")
-
-    # 8b. Immediate source work cannot be inferred solely from cited title; unverified provenance remains unresolved
-    def test_immediate_source_work_unverified_provenance_safeguards(self) -> None:
+    # 8. Pass 1 records textual mentions; documentary provenance is reconciled separately
+    def test_provenance_reconciliation_is_separate_from_textual_mentions(self) -> None:
         eval_rows = read_csv(self.eval_path)
         eval_cols = set(eval_rows[0].keys())
         self.assertIn("work_title_as_written", eval_cols)
         self.assertIn("work_role", eval_cols)
-        self.assertIn("immediate_source_work_verified", eval_cols)
+        self.assertIn("source_locator_as_written", eval_cols)
+        self.assertNotIn("immediate_source_work_as_written", eval_cols)
+        self.assertNotIn("immediate_source_work_verified", eval_cols)
+        self.assertNotIn("cited_work_as_written", eval_cols)
+
+        provenance_path = self.pilot_dir / "PILOT_PROVENANCE_RECONCILIATION_BLANK.csv"
+        self.assertTrue(provenance_path.is_file())
+        provenance_rows = read_csv(provenance_path)
+        self.assertEqual(len(provenance_rows), 20)
+        provenance_cols = set(provenance_rows[0])
+        self.assertTrue({"pilot_case_id", "documentary_source_work_title", "documentary_evidence_reference", "provenance_status", "reviewer_notes"}.issubset(provenance_cols))
+        for row in provenance_rows:
+            for col, value in row.items():
+                if col != "pilot_case_id":
+                    self.assertEqual(value, "")
 
         codebook_text = self.codebook_path.read_text(encoding="utf-8")
-        # Ensure codebook warns against automatic inference from title
-        self.assertIn("immediate_source_work_verified", codebook_text)
-        self.assertIn("work_role", codebook_text)
+        self.assertIn("PILOT_PROVENANCE_RECONCILIATION_BLANK.csv", codebook_text)
+        self.assertIn("Pass 1 annotates textual mentions and roles only", codebook_text)
         self.assertIn("unresolved", codebook_text)
-        self.assertTrue(
-            "not infer the immediate source work solely from a title" in codebook_text
-            or "Pass 1 annotates textual evidence" in codebook_text
-        )
-        self.assertIn("Pass 1 text cannot establish documentary provenance that is absent from its text", codebook_text)
 
-    # 8c. Explicit evaluation_target field exists in schema, template, and codebook with 7 categories
-    def test_evaluation_target_schema_and_categories(self) -> None:
-        self.assertIn("evaluation_target", EVALUATION_FIELDS)
+    # 8c. Explicit claim_target field exists in schema, template, and codebook with 7 categories
+    def test_claim_target_schema_and_categories(self) -> None:
+        self.assertIn("claim_target", EVALUATION_FIELDS)
+        self.assertNotIn("evaluation_target", EVALUATION_FIELDS)
         eval_rows = read_csv(self.eval_path)
         eval_cols = set(eval_rows[0].keys())
-        self.assertIn("evaluation_target", eval_cols)
+        self.assertIn("claim_target", eval_cols)
+        self.assertNotIn("evaluation_target", eval_cols)
 
-        # All template rows have blank evaluation_target
+        # All template rows have blank claim_target
         for row in eval_rows:
-            self.assertEqual(row["evaluation_target"], "")
+            self.assertEqual(row["claim_target"], "")
 
         # Verify documentation of all 7 target categories in codebook
         codebook_text = self.codebook_path.read_text(encoding="utf-8")
-        self.assertIn("evaluation_target", codebook_text)
+        self.assertIn("claim_target", codebook_text)
+        self.assertNotIn("evaluation_target", codebook_text)
         expected_targets = [
             "narrator_overall",
             "memory_or_precision",
@@ -243,7 +229,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             "unclear",
         ]
         for target in expected_targets:
-            self.assertIn(target, codebook_text, f"Missing evaluation_target category '{target}' in codebook")
+            self.assertIn(target, codebook_text, f"Missing claim_target category '{target}' in codebook")
 
     # 9. Revised statement-function taxonomy includes transmission observations without forcing negative orientation
     def test_statement_function_and_orientation_taxonomy(self) -> None:
@@ -275,6 +261,11 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         self.assertIn("transmission_observation", clean_text)
         self.assertIn("does not automatically imply contains_evaluation = yes", clean_text)
         self.assertIn("contains_evaluation: no (when stating factual non-audition", clean_text)
+        self.assertIn("claim_target: specific_transmission_link", clean_text)
+        self.assertIn("evaluative_orientation: not_applicable", clean_text)
+        self.assertIn("neutral is reserved for an actual evaluation", clean_text)
+        self.assertIn("لم يسمع من عنبسة شيئا | no | specific_transmission_link | transmission_observation | not_applicable", clean_text)
+        self.assertIn("تفرد به عبد العزيز... | no | specific_transmission_link | transmission_observation | not_applicable", clean_text)
 
     # 9c. Comparative preference does not force positive orientation
     def test_comparative_preference_does_not_force_positive_orientation(self) -> None:
@@ -429,7 +420,8 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         with self.manifest_path.open("r", encoding="utf-8") as f:
             manifest = json.load(f)
 
-        self.assertEqual(manifest["version"], "2.2.0")
+        self.assertEqual(manifest["version"], "2.3.0")
+        self.assertEqual(manifest["schema_version"], "2.3.0")
         self.assertEqual(manifest["selected_case_count"], 20)
         self.assertEqual(len(manifest["selected_source_ids"]), 20)
         self.assertEqual(len(set(manifest["selected_source_ids"])), 20)
