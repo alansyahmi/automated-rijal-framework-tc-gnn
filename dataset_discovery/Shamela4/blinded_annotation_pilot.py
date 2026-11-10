@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reproducible generation of Shamela4 20-case blinded human annotation pilot.
 
-Integrity-hardened architecture (v2.3.0):
+Integrity-hardened architecture (v2.4.0):
 1. Strict Pass 1 Blinding:
    - Exposes only the two textual tuple elements in original_tuple_json (purges 3rd source-ID element).
    - Strictly omits attached narrator metadata (narrator_id, narrator_name), source_id,
@@ -49,7 +49,7 @@ PASS1_TEXT_FIELDS = [
     "original_tuple_json",
 ]
 
-# Evaluation-level annotation fields (Integrity-audited schema v2.3.0)
+# Evaluation-level annotation fields (Integrity-audited schema v2.4.0)
 EVALUATION_FIELDS = [
     # Linking identifiers
     "pilot_case_id",
@@ -82,6 +82,18 @@ EVALUATION_FIELDS = [
     "reviewer_notes",
 ]
 
+# Allowed claim-target vocabulary; this defines categories but does not classify records.
+CLAIM_TARGET_CATEGORIES = [
+    "narrator_overall",
+    "memory_or_precision",
+    "narrator_identity_or_biography",
+    "specific_transmission_link",
+    "specific_hadith_or_report",
+    "comparative_narrator_assessment",
+    "not_applicable",
+    "unclear",
+]
+
 # Separate post-Pass-1 documentary provenance reconciliation; no values are prefilled.
 PROVENANCE_RECONCILIATION_FIELDS = [
     "pilot_case_id",
@@ -93,7 +105,7 @@ PROVENANCE_RECONCILIATION_FIELDS = [
     "reviewer_notes",
 ]
 
-DEFAULT_OUTPUT_RELATIVE = "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_3"
+DEFAULT_OUTPUT_RELATIVE = "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_4"
 
 # Pass 2: Identity reconciliation fields
 PASS2_RECONCILIATION_FIELDS = [
@@ -501,11 +513,11 @@ To eliminate confirmation bias and prevent metadata contamination, annotation pr
 
 ### Section A: Evaluated Person
 - `evaluated_person_as_written`:
-  - **Definition**: Verbatim Arabic name of the person evaluated in this specific claim.
+  - **Definition**: Verbatim Arabic name of the person who is the subject of this specific claim, whether or not the claim evaluates them.
   - **Allowed Values**: Exact Arabic string from text, or `[غير مصرح به]` (unnamed/implicit pronoun), or `[ليس راويا]` (if target is hadith text or book).
   - **Examples**: `معارك بن عباد العبدي`, `أبو جابر البياضي`, `حارثة`.
 - `evaluated_person_identity_confidence`:
-  - **Definition**: Confidence that the text refers to the identified individual.
+  - **Definition**: Confidence that the text refers to the identified individual as the claim subject.
   - **Allowed Values**: `high`, `medium`, `low`, `unresolved`.
 
 ### Section B: Textual Mentions and Attribution
@@ -566,10 +578,11 @@ Annotators must rigorously separate:
   - **Allowed Values**:
     - `narrator_overall`: General moral integrity, religious reliability, truthfulness, or foundational trustworthiness of the narrator (e.g. `ثقة`, `كذاب`, `متروك`, `ضعيف`, `لا يحتج به`).
     - `memory_or_precision`: Cognitive retention, book precision, senility/confusion in old age, or accuracy in specific contexts (e.g. `ساء حفظه لما كبر`, `فيه لين`, `تكلم فيه من قبل حفظه`).
+    - `narrator_identity_or_biography`: Factual identity, naming, lineage, or biographical information about a narrator (e.g. `أبو الرجال اسمه محمد`). This target does not imply a qualitative evaluation.
     - `specific_transmission_link`: Specific isnad audition (*sama'*), meeting (*liqā'*), generational non-contiguity (*inqita'*), or teacher-student transmission link (e.g. `لم يسمع من فلان`, `تفرد به فلان عن فلان`, `لم يدرك النبي صلى الله عليه وسلم`).
     - `specific_hadith_or_report`: Assessment directed at a specific narration, matn, or particular hadith wording rather than general narrator character (e.g. `هذا لا يثبت`, `لا يصح عن الزهري`, `حديث منكر`).
     - `comparative_narrator_assessment`: Relational evaluation or relative standing between two or more narrators (e.g. `يونس أحب إليك في الحسن أو حميد ؟ فقال كلاهما`).
-    - `not_applicable`: No relevant person, transmission link, report, or comparison is the subject (typically pure bibliographic citation/locator).
+    - `not_applicable`: `not_applicable` is reserved for claims with no identifiable subject, such as a standalone bibliographic citation or locator.
     - `unclear`: When the evaluation target cannot be established with confidence.
 - `statement_function`:
   - **Definition**: What function is the statement performing in classical *hadith* scholarship?
@@ -633,7 +646,7 @@ Annotators must rigorously separate:
 | `هذا حديث لا يثبت` | `yes` | `specific_hadith_or_report` | `hadith_or_report_appraisal` | `negative` | Qualitative invalidation directed at specific hadith text, not general narrator character. |
 | `أحب إليك... فقال كلاهما` | `yes` | `comparative_narrator_assessment` | `comparative_preference` | `neutral` | Relative preference query; responding `كلاهما` does not imply independent unconditional reliability. |
 | `سنن البيهقي الكبرى: (3/ 176)` | `no` | `not_applicable` | `documentary_citation` | `not_applicable` | Pure bibliographic book locator; zero evaluative content. |
-| `أبو الرجال اسمه محمد` | `no` | `not_applicable` | `biographical_description` | `not_applicable` | Purely factual biographical name clarification; zero evaluative content. |
+| `أبو الرجال اسمه محمد` | `no` | `narrator_identity_or_biography` | `biographical_description` | `not_applicable` | Factual identity claim about Abu al-Rijal; an identifiable subject is present, but no qualitative evaluation is made. |
 
 - `evaluative_span_verbatim`: Exact verbatim Arabic substring containing the evaluative judgement (or blank if none).
 - `qualification_or_context`: Specific contextual limitation (e.g., `في حفظه لا في عدالته`, `لما كبر في السن`, `عن عطاء خاصة`), or `none`.
@@ -750,6 +763,7 @@ Annotators must adhere to this rule: **One evaluative claim per row**.
 
 - **Sample Size**: $N = 20$ evaluates codebook clarity and annotation feasibility, but cannot estimate overall corpus error rates.
 - **Research Boundary**: This protocol tests tuple interpretation. It cannot establish historical attribution accuracy, original speaker identity, narrator reliability, or the number of independent historical evaluations. Agreement on field roles or boundaries is not evidence for those separate claims.
+- **Pilot Scope**: Twenty cases support feasibility and protocol refinement only; they are insufficient to establish robust corpus-wide annotation reliability or error rates.
 - **Independent Review**: Two Arabic-competent reviewers should annotate independently; a third reviewer should adjudicate difficult cases after both first-pass records are frozen. Report agreement separately for claim/field roles, quotation/citation boundaries, and automated-pattern correspondence. Describe disagreements by Arabic construction and formatting.
 - **Documentary Provenance**: Tuple text alone does not resolve the entity represented by the integer source ID. Work/record identity remains unresolved until documentary evidence is reviewed.
 - **Digital Ingestion Artifacts**: Shamela4 tuples reflect digital book extractions whose upstream Lucene/SQLite provenance remains unverified by official documentation.
@@ -853,9 +867,9 @@ def main() -> int:
     }
 
     manifest = {
-        "version": "2.3.0",
-        "schema_version": "2.3.0",
-        "description": "Blinded 20-case annotation pilot (claim target, separated textual mentions and documentary provenance, and factual transmission semantics)",
+        "version": "2.4.0",
+        "schema_version": "2.4.0",
+        "description": "Blinded 20-case annotation pilot (claim targets include factual identity/biography; provenance is separated from textual mentions)",
         "purposive_sample_declaration": (
             "This 20-case pilot is purposively sampled from the 60-case validation pool to evaluate "
             "codebook clarity, semantic diversity, and annotation feasibility across all six strata. "
@@ -881,7 +895,7 @@ def main() -> int:
 
     print(json.dumps({
         "status": "success",
-        "version": "2.3.0",
+        "version": "2.4.0",
         "output_directory": str(output_dir),
         "selected_count": len(selected_cases),
         "unique_source_ids": len(set(case["source_id"] for case in selected_cases)),

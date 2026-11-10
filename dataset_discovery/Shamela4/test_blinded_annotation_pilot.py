@@ -31,6 +31,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 from dataset_discovery.Shamela4.blinded_annotation_pilot import (
+    CLAIM_TARGET_CATEGORIES,
     EVALUATION_FIELDS,
     MAPPING_FIELDS,
     PASS1_TEXT_FIELDS,
@@ -56,7 +57,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         cls.root = PROJECT_ROOT
         cls.v3_csv_path = cls.root / V3_INPUT_RELATIVE
         cls.pilot_dir = (
-            cls.root / "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_3"
+            cls.root / "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20_v2_4"
         )
         cls.manifest_path = cls.pilot_dir / "pilot_manifest.json"
         cls.pass1_path = cls.pilot_dir / "PILOT_PASS1_TEXT_BLINDED.csv"
@@ -202,7 +203,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         self.assertIn("Pass 1 annotates textual mentions and roles only", codebook_text)
         self.assertIn("unresolved", codebook_text)
 
-    # 8c. Explicit claim_target field exists in schema, template, and codebook with 7 categories
+    # 8c. Explicit claim_target field exists in schema, template, and codebook with 8 categories
     def test_claim_target_schema_and_categories(self) -> None:
         self.assertIn("claim_target", EVALUATION_FIELDS)
         self.assertNotIn("evaluation_target", EVALUATION_FIELDS)
@@ -222,14 +223,24 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         expected_targets = [
             "narrator_overall",
             "memory_or_precision",
+            "narrator_identity_or_biography",
             "specific_transmission_link",
             "specific_hadith_or_report",
             "comparative_narrator_assessment",
             "not_applicable",
             "unclear",
         ]
+        self.assertEqual(CLAIM_TARGET_CATEGORIES, expected_targets)
         for target in expected_targets:
             self.assertIn(target, codebook_text, f"Missing claim_target category '{target}' in codebook")
+
+    def test_factual_identity_claim_has_biographical_target(self) -> None:
+        codebook_text = self.codebook_path.read_text(encoding="utf-8").replace("`", "")
+        self.assertIn(
+            "أبو الرجال اسمه محمد | no | narrator_identity_or_biography | biographical_description | not_applicable",
+            codebook_text,
+        )
+        self.assertIn("not_applicable is reserved for claims with no identifiable subject", codebook_text.replace("`", ""))
 
     # 9. Revised statement-function taxonomy includes transmission observations without forcing negative orientation
     def test_statement_function_and_orientation_taxonomy(self) -> None:
@@ -420,8 +431,8 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         with self.manifest_path.open("r", encoding="utf-8") as f:
             manifest = json.load(f)
 
-        self.assertEqual(manifest["version"], "2.3.0")
-        self.assertEqual(manifest["schema_version"], "2.3.0")
+        self.assertEqual(manifest["version"], "2.4.0")
+        self.assertEqual(manifest["schema_version"], "2.4.0")
         self.assertEqual(manifest["selected_case_count"], 20)
         self.assertEqual(len(manifest["selected_source_ids"]), 20)
         self.assertEqual(len(set(manifest["selected_source_ids"])), 20)
