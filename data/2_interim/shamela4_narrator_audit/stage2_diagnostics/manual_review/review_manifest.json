@@ -1,0 +1,72 @@
+{
+  "execution_metadata": {
+    "timestamp_utc": "2026-11-09T17:56:01.232033+00:00",
+    "script": "dataset_discovery/Shamela4/stage2_manual_review.py",
+    "sampling_seed": 42,
+    "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "input_files": {
+    "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\source_id_review_queue.csv": {
+      "bytes": 288484,
+      "sha256": "f280eb47c43169b7cf968cabef3a7d56cf6afef5bf2e1e33557dcfd27d5a3168"
+    },
+    "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\title_candidate_review_queue.csv": {
+      "bytes": 653394,
+      "sha256": "4df60df70f5cc03419f7b250bf5ec014e31193be5fa8dd80a59dd6fc70c5a909"
+    },
+    "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\fwaed_unexpected_labels.csv": {
+      "bytes": 4913,
+      "sha256": "2fa481e8c5229e3c5fa55d010547816c43ace7735a87006632150b10c067cc79"
+    },
+    "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\fwaed_entry_shapes.csv": {
+      "bytes": 4028,
+      "sha256": "42bb7d32cd40c7b87fbf9b6e7ab1b7c22ccbcd9c793637337419a13a966356e0"
+    },
+    "2_interim\\shamela4_narrator_audit\\source_references.csv": {
+      "bytes": 6294803,
+      "sha256": "5f379f06e62de54719ac65dbaeae2416a19eedd843eab10e52d0de98f2bd08af"
+    },
+    "2_interim\\shamela4_narrator_audit\\fwaed_raw.csv": {
+      "bytes": 5165859,
+      "sha256": "a4332688b31c6679a11b7f9b7e1ec1120de3eea8f7eccae6b42b40d403d866ca"
+    }
+  },
+  "generated_outputs": {
+    "SOURCE_ID_REVIEW.md": {
+      "description": "Comprehensive manual review of 432 flagged source IDs with categorized anomaly patterns and root-cause analysis.",
+      "path": "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\manual_review\\SOURCE_ID_REVIEW.md",
+      "bytes": 8260,
+      "sha256": "06740d92d94c5766d5bf026f4044fa523d51b999494064fd1de0427d8e05bbd4"
+    },
+    "TITLE_COLLISION_REVIEW.csv": {
+      "description": "Case-by-case review of all 47 title candidates associated with multiple source IDs.",
+      "path": "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\manual_review\\TITLE_COLLISION_REVIEW.csv",
+      "bytes": 36758,
+      "sha256": "aaa7374df6f13b3a3ce71de9e612b5021021f4c32ceda314ff1207555e5705cb"
+    },
+    "FWAED_LABEL_REVIEW.csv": {
+      "description": "Occurrence-level review of all 16 unexpected fwaed entries across 12 scholar labels.",
+      "path": "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\manual_review\\FWAED_LABEL_REVIEW.csv",
+      "bytes": 9529,
+      "sha256": "b5a4a68ec814917304a79d32571ae30c2ab9423332571254c94fba5e82cd5132"
+    },
+    "FWAED_STRUCTURE_REVIEW.md": {
+      "description": "Structural and semantic analysis of the 15,963 fwaed list entries across all 13 canonical categories.",
+      "path": "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\manual_review\\FWAED_STRUCTURE_REVIEW.md",
+      "bytes": 7499,
+      "sha256": "a262eabfa1e372c4bd73aaab7869370bc1e56280683e05bbaab8b83ed964a61c"
+    },
+    "UNFLAGGED_CONTROL_SAMPLE.csv": {
+      "description": "Stratified random sample of 30 unflagged source IDs for exploratory error analysis.",
+      "path": "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\manual_review\\UNFLAGGED_CONTROL_SAMPLE.csv",
+      "bytes": 7258,
+      "sha256": "7fb2970675353468e1cf32f875bc4a5aa9b3f2ab1c7891e4c72a4c2e81ca29f1"
+    },
+    "STAGE2_MANUAL_REVIEW_SUMMARY.md": {
+      "description": "Executive summary of findings, established facts, uncertainties, and dataset implications.",
+      "path": "2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\manual_review\\STAGE2_MANUAL_REVIEW_SUMMARY.md",
+      "bytes": 5823,
+      "sha256": "e13e4b10f88b7772eab3717eb24fdc8681417c35cf6162494fc0461806656f4d"
+    }
+  }
+}
