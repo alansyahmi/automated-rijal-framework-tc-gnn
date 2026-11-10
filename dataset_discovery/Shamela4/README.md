@@ -49,3 +49,22 @@ is not a verified bibliographic identity, an unexpected fwaed label is not neces
 an error, and scholar-name detection is only a weak string heuristic. Resolve meanings
 against upstream Shamela metadata and primary-source inspection before using these
 fields in a target, feature set, or graph.
+
+## Blinded human annotation pilot
+
+Generate the 20-case blinded pilot from the frozen 60-case validation sample:
+
+    python .\dataset_discovery\Shamela4\blinded_annotation_pilot.py
+
+Run test suite:
+
+    python -m unittest dataset_discovery/Shamela4/test_blinded_annotation_pilot.py
+
+Outputs are saved to `data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20`:
+- `PILOT_SELECTION.csv` — selected 20 cases with stratum and selection rationale;
+- `PILOT_REVIEWER_BLINDED.csv` — reviewer-facing copy with original text and blank annotation fields, strictly omitting all automated/stratum labels;
+- `PILOT_INTERNAL_MAPPING.csv` — quarantined key mapping blinded pilot case IDs (`PILOT01`–`PILOT20`) to original source IDs and classifications;
+- `ANNOTATION_CODEBOOK.md` — comprehensive field-by-field definitions, allowed values, and rules;
+- `PILOT_PROTOCOL.md` — protocol detailing research questions, sampling design, anti-leakage firewall, and limitations;
+- `pilot_manifest.json` — cryptographic hashes, input verification, seed, and purposive sampling declaration.
+

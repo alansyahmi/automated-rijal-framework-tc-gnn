@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "description": "Blinded 20-case human manual annotation pilot from Shamela4 tuple validation pool",
+  "purposive_sample_declaration": "This 20-case pilot is purposively sampled from the 60-case validation pool to evaluate codebook clarity, semantic diversity, and annotation feasibility across all six strata. It is NOT a prevalence-representative or corpus-wide random sample.",
+  "execution_timestamp_utc": "2026-11-10T20:39:39.546882+00:00",
+  "sampling_seed": 20261111,
+  "input_dataset": {
+    "path": "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v3\\TUPLE_MANUAL_VALIDATION.csv",
+    "bytes": 67672,
+    "sha256": "b798f472da05ce58cb16a1588f00325ae74bc70f1e62fa5407a3524c35fd8325",
+    "total_input_cases": 60
+  },
+  "selected_case_count": 20,
+  "stratum_counts": {
+    "unnumbered_suffix_or_formatting": 3,
+    "compound_or_multiple_locator": 3,
+    "mixed_source_ID": 4,
+    "suspected_or_unresolved": 4,
+    "normal_prose_then_citation": 3,
+    "citation_only_then_locator_bearing_prose": 3
+  },
+  "selected_source_ids": [
+    "123796",
+    "125629",
+    "137006",
+    "292716",
+    "127749",
+    "205165",
+    "118902",
+    "295637",
+    "96646",
+    "26434",
+    "198246",
+    "97581",
+    "146571",
+    "149057",
+    "66597",
+    "135575",
+    "208385",
+    "145216",
+    "50725",
+    "127988"
+  ],
+  "selected_pilot_case_ids": [
+    "PILOT01",
+    "PILOT02",
+    "PILOT03",
+    "PILOT04",
+    "PILOT05",
+    "PILOT06",
+    "PILOT07",
+    "PILOT08",
+    "PILOT09",
+    "PILOT10",
+    "PILOT11",
+    "PILOT12",
+    "PILOT13",
+    "PILOT14",
+    "PILOT15",
+    "PILOT16",
+    "PILOT17",
+    "PILOT18",
+    "PILOT19",
+    "PILOT20"
+  ],
+  "outputs": {
+    "PILOT_SELECTION.csv": {
+      "bytes": 6459,
+      "sha256": "dec3acfc74c9dd4d08bac439d5fc0c4cb86f3f7ac073f59e4f86289749c95f7e"
+    },
+    "PILOT_REVIEWER_BLINDED.csv": {
+      "bytes": 16854,
+      "sha256": "c763175ef24aed895d854b0fa378f2357aaa09de49a65ed53966ba84498982e7"
+    },
+    "PILOT_INTERNAL_MAPPING.csv": {
+      "bytes": 5748,
+      "sha256": "1b61d67b0f8d9a72d3742416340d665317f70363d19855556bfbad8463446d12"
+    },
+    "ANNOTATION_CODEBOOK.md": {
+      "bytes": 10837,
+      "sha256": "596ab5a5454239a729829d0dc40f98b131dc0d2c7b3114a8db4387e688e3fbb6"
+    },
+    "PILOT_PROTOCOL.md": {
+      "bytes": 5727,
+      "sha256": "57c4e9ed3d867ba47c9ca0d12285101f19fe75450b71dfd5db4961b18b16c3b5"
+    }
+  }
+}
