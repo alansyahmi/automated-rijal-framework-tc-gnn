@@ -1,0 +1,63 @@
+{
+  "version": "3.0.0",
+  "script": "dataset_discovery/Shamela4/tuple_validation_v3.py",
+  "execution_timestamp_utc": "2026-11-10T19:55:54.982695+00:00",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "sampling_seed": 20261111,
+  "per_stratum_target": 10,
+  "selected_tuple_count": 60,
+  "selected_unique_source_id_count": 60,
+  "selected_strata": {
+    "unnumbered_suffix_or_formatting": 10,
+    "compound_or_multiple_locator": 10,
+    "mixed_source_ID": 10,
+    "suspected_or_unresolved": 10,
+    "normal_prose_then_citation": 10,
+    "citation_only_then_locator_bearing_prose": 10
+  },
+  "eligible_unique_source_ids_before_each_stratum": {
+    "unnumbered_suffix_or_formatting": 12,
+    "compound_or_multiple_locator": 420,
+    "mixed_source_ID": 239,
+    "suspected_or_unresolved": 228,
+    "normal_prose_then_citation": 157,
+    "citation_only_then_locator_bearing_prose": 245
+  },
+  "source_parquet_read_only": true,
+  "inputs": {
+    "data\\1_raw\\Shamela4_Full_DB\\_meta\\narrators.parquet": {
+      "bytes": 7963509,
+      "sha256": "82657fbae4e73a6514258102293b95be4e6031ab45faa65d69dad14cdc51ef34"
+    },
+    "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v2\\VERIFIED_SOURCE_ID_CLASSIFICATION.csv": {
+      "bytes": 1238188,
+      "sha256": "485b3520de45f41e9a89653c62ef9da504088a8adefea22472bd7af155b2e41b"
+    },
+    "dataset_discovery\\Shamela4\\forensic_verification_v2.py": {
+      "bytes": 35674,
+      "sha256": "b0423046b7d735661326a83fd94a81856e7c7e2aa09a581e3fc5445443b86e7f"
+    },
+    "dataset_discovery\\Shamela4\\test_forensic_verification_v2.py": {
+      "bytes": 2806,
+      "sha256": "3f0207ea3b9bcc0f19f09504bac03c9df6597acbe83688583355f89f574687d1"
+    },
+    "dataset_discovery\\Shamela4\\tuple_validation_v3.py": {
+      "bytes": 20996,
+      "sha256": "8af30858e69b3fd1c11157c7a9e338adc7d7d1c64894a0f22a5092c6f4b710a2"
+    },
+    "dataset_discovery\\Shamela4\\test_tuple_validation_v3.py": {
+      "bytes": 2810,
+      "sha256": "32c7cd1f8a56ae7efc9f0190852bb4b74a2a456cf41a2aa02523d305c7af9d03"
+    }
+  },
+  "outputs": {
+    "TUPLE_MANUAL_VALIDATION.csv": {
+      "bytes": 67672,
+      "sha256": "b798f472da05ce58cb16a1588f00325ae74bc70f1e62fa5407a3524c35fd8325"
+    },
+    "TUPLE_VALIDATION_PROTOCOL.md": {
+      "bytes": 9417,
+      "sha256": "3c7e64d083e986cd355f48e0f747461ce0f9aa8d4b42ec128e26a70572e24193"
+    }
+  }
+}
