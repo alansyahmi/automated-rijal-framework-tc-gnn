@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 """Reproducible generation of Shamela4 20-case blinded human annotation pilot.
 
-Refined architecture:
-1. Evaluation-Level Annotation: Each record represents a distinct evaluative claim
-   linked to its parent pilot_case_id (PILOT_EVALUATIONS_BLANK.csv).
-2. Two-Pass Blinding Protocol:
-   - Pass 1 (PILOT_PASS1_TEXT_BLINDED.csv): Text-only tuple context strictly omitting
-     attached narrator metadata (narrator_id, narrator_name), source_id, and classifier labels.
-   - Pass 2 (PILOT_PASS2_RECONCILIATION_BLANK.csv): Reveals attached narrator metadata
-     to reconcile manually identified targets against database identities.
-3. Provenance and Stance Nuance: Distinguishes compiler, cited work, historical critic,
-   intermediate transmitter, isnad inqita, hadith rejection, and narrator reliability.
+Integrity-hardened architecture (v2.1.0):
+1. Strict Pass 1 Blinding:
+   - Exposes only the two textual tuple elements in original_tuple_json (purges 3rd source-ID element).
+   - Strictly omits attached narrator metadata (narrator_id, narrator_name), source_id,
+     v3_case_id, automated classifier labels, and stratum labels.
+2. Complete Provenance Schema:
+   - Distinguishes immediate source work from classical works cited inside the passage.
+   - Separate fields for compiler, historical evaluator, intermediate transmitter,
+     and other quoted speakers.
+3. Orthogonal Statement Function and Evaluative Orientation:
+   - Decouples functional category (e.g. transmission observation, hadith appraisal,
+     comparative preference) from evaluative orientation (positive, negative, neutral, qualified, etc.).
+   - Explicitly prevents descriptive transmission observations (e.g. tafarrud, inqita)
+     from being forced into negative reliability grades.
+4. Quarantined Full Provenance:
+   - Full 3-element tuple [field_1, field_2, source_id] preserved in PILOT_INTERNAL_MAPPING.csv.
 """
 from __future__ import annotations
 
@@ -28,7 +34,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 V3_INPUT_RELATIVE = "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/forensic_verification_v3/TUPLE_MANUAL_VALIDATION.csv"
 V3_EXPECTED_HASH = "b798f472da05ce58cb16a1588f00325ae74bc70f1e62fa5407a3524c35fd8325"
 
-# Pass 1: Text-only context fields (strictly excluding attached narrator metadata and classifier labels)
+# Pass 1: Text-only context fields (strictly excluding attached narrator metadata, source_id, and classifier labels)
 PASS1_TEXT_FIELDS = [
     "pilot_case_id",
     "entry_index",
@@ -37,33 +43,43 @@ PASS1_TEXT_FIELDS = [
     "original_tuple_json",
 ]
 
-# Evaluation-level annotation fields (Section 2 specification)
+# Evaluation-level annotation fields (Integrity-audited schema)
 EVALUATION_FIELDS = [
+    # Linking identifiers
     "pilot_case_id",
     "evaluation_id",
+    # Evaluated person
     "evaluated_person_as_written",
     "evaluated_person_identity_confidence",
+    # Provenance: Immediate source work & compiler
+    "immediate_source_work_as_written",
+    "immediate_source_work_normalized",
+    "compiler_or_source_author",
+    # Provenance: Cited classical work inside passage
+    "cited_work_as_written",
+    "cited_work_normalized",
+    "source_locator_as_written",
+    # Historical attribution & transmitters
     "historical_evaluator_as_written",
     "historical_evaluator_normalized",
     "intermediate_transmitter_as_written",
-    "compiler_or_source_author",
+    "other_quoted_speaker_as_written",
     "attribution_type",
     "attribution_evidence_verbatim",
-    "evaluative_span_verbatim",
+    # Evaluative content & stance
     "contains_evaluation",
-    "stance",
-    "evaluation_target",
+    "statement_function",
+    "evaluative_orientation",
+    "evaluative_span_verbatim",
     "qualification_or_context",
-    "source_work_as_written",
-    "source_work_normalized",
-    "source_locator_as_written",
+    # Quality & notes
     "transcription_confidence",
     "interpretation_confidence",
     "unresolved_ambiguity",
     "reviewer_notes",
 ]
 
-# Pass 2: Identity reconciliation fields (Section 3 specification)
+# Pass 2: Identity reconciliation fields
 PASS2_RECONCILIATION_FIELDS = [
     "pilot_case_id",
     "attached_narrator_id",
@@ -86,6 +102,7 @@ MAPPING_FIELDS = [
     "narrator_name",
     "group_label",
     "entry_index",
+    "original_tuple_3element_json",
     "sampling_stratum",
     "automated_pattern",
     "automated_certainty",
@@ -293,15 +310,21 @@ def select_pilot_cases(
 
 
 def build_pass1_text_rows(selected_cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Build Pass 1 text-only context rows strictly excluding attached narrator metadata."""
+    """Build Pass 1 text-only context rows strictly excluding attached narrator metadata and source_id.
+    
+    The original_tuple_json exposes ONLY the two textual elements [field_1, field_2], completely
+    purging the 3rd source-ID integer to ensure strict blinding.
+    """
     pass1_rows = []
     for case in selected_cases:
+        # Create sanitized 2-element textual tuple JSON
+        safe_2element_tuple = [case["original_field_1"], case["original_field_2"]]
         pass1_rows.append({
             "pilot_case_id": case["pilot_case_id"],
             "entry_index": case["entry_index"],
             "original_field_1": case["original_field_1"],
             "original_field_2": case["original_field_2"],
-            "original_tuple_json": case["original_tuple_json"],
+            "original_tuple_json": json.dumps(safe_2element_tuple, ensure_ascii=False),
         })
     return pass1_rows
 
@@ -353,6 +376,7 @@ def build_internal_mapping_rows(selected_cases: list[dict[str, Any]]) -> list[di
             "narrator_name": case["narrator_name"],
             "group_label": case["group_label"],
             "entry_index": case["entry_index"],
+            "original_tuple_3element_json": case["original_tuple_json"],
             "sampling_stratum": case["sampling_stratum"],
             "automated_pattern": case["automated_pattern"],
             "automated_certainty": case["automated_certainty"],
@@ -386,7 +410,7 @@ def generate_codebook() -> str:
 
 ## 1. Research Context and Purpose
 
-This codebook provides precise instructions for human annotators validating narrator criticism (`garh`) entries extracted from the Shamela4 database (`narrators.parquet`).
+This codebook provides instructions for human annotators validating narrator criticism (`garh`) entries extracted from the Shamela4 database (`narrators.parquet`).
 
 The objective is to establish the ground-truth interpretation of criticism tuples before any automated classification rules, representation models (such as AraBERT), or Graph Neural Networks (GNNs) are trained.
 
@@ -394,7 +418,7 @@ The objective is to establish the ground-truth interpretation of criticism tuple
 1. **Zero Fabrication**: Never guess or invent an attribution, stance, or date not justified by the verbatim text.
 2. **Preserve Verbatim Text**: Never normalize or edit Arabic quotations in verbatim fields.
 3. **No Group Label Conflation**: Do not assume the database `group_label` (e.g. `البخاري`, `الدارقطني`) is the historical evaluator. Many entries transmit quotes from other scholars.
-4. **No Binary Sentiment Forcing**: Do not force nuanced or ambiguous statements into binary positive or negative categories. Factual transmission disconnect (*inqita'*) or hadith-level rejection must not be silently converted into general narrator unreliability.
+4. **No Forced Binary Sentiment**: Do not force descriptive transmission observations or nuanced qualifications into binary positive or negative categories. Factual transmission disconnect (*inqita'*) or hadith-level rejection must not be silently converted into general narrator unreliability.
 5. **Separation of Entities**: Keep historical speaker attribution, intermediate transmission, source work authorship, narrator identity, and evaluative stance strictly distinct.
 
 ---
@@ -408,7 +432,7 @@ A single criticism tuple consists of two text fields (`field_1`, `field_2`) and 
   - If a tuple contains only one evaluation, complete row `{pilot_case_id}_E01`.
   - If a tuple quotes multiple critics (e.g., Malik and Yahya b. Ma'in) or evaluates multiple individuals, insert a new row with the same `pilot_case_id` and an incremented `evaluation_id` (e.g., `{pilot_case_id}_E02`, `{pilot_case_id}_E03`).
   - There is no upper limit on the number of evaluation rows per tuple.
-- **Non-Evaluative Entries**: If a tuple contains only bibliographic citations, book numbers, or hadith locators without human evaluative prose, annotate a single row with `contains_evaluation = no` and mark evaluative fields as `not_applicable`.
+- **Non-Evaluative Entries**: If a tuple contains only bibliographic citations, book numbers, or hadith locators without human evaluative prose, annotate a single row with `contains_evaluation = no`, `statement_function = documentary_citation`, and `evaluative_orientation = not_applicable`.
 
 ---
 
@@ -418,13 +442,19 @@ To eliminate confirmation bias and prevent metadata contamination, annotation pr
 
 ### Pass 1: Blinded Text-Only Extraction
 1. The annotator opens `PILOT_PASS1_TEXT_BLINDED.csv` and `PILOT_EVALUATIONS_BLANK.csv`.
-2. `PILOT_PASS1_TEXT_BLINDED.csv` exposes **only** `pilot_case_id`, `entry_index`, `original_field_1`, `original_field_2`, and `original_tuple_json`.
-3. The annotator **does not see** the database-attached `narrator_id` or `narrator_name`.
+2. `PILOT_PASS1_TEXT_BLINDED.csv` exposes **only**:
+   - `pilot_case_id`
+   - `entry_index`
+   - `original_field_1`
+   - `original_field_2`
+   - `original_tuple_json` (sanitized 2-element array `[field_1, field_2]` with no source ID).
+3. The annotator **does not see** the database-attached `narrator_id`, `narrator_name`, or `source_id`.
 4. Based solely on the verbatim Arabic text, the annotator identifies:
    - Evaluated person as written in the text.
-   - Evaluator, intermediate transmitter, and compiler.
-   - Exact evaluative span, stance, and evaluation target.
-   - Documentary citations and locators.
+   - Immediate source work vs cited classical work.
+   - Historical evaluator, intermediate transmitter, and compiler.
+   - Statement function and evaluative orientation.
+   - Verbatim evaluative span and locators.
 
 ### Pass 2: Attached Identity Reconciliation
 1. After completing Pass 1, the annotator opens `PILOT_PASS2_RECONCILIATION_BLANK.csv`.
@@ -451,27 +481,46 @@ To eliminate confirmation bias and prevent metadata contamination, annotation pr
   - **Definition**: Confidence that the text refers to the identified individual.
   - **Allowed Values**: `high`, `medium`, `low`, `unresolved`.
 
-### Section B: Historical Evaluator and Attribution Provenance
-Annotators must rigorously distinguish five distinct roles:
-1. **Immediate Compiler / Source Author**: Author of the book holding the text (e.g., al-Tirmidhi, al-Bayhaqi, al-Bazzar).
-2. **Cited Classical Work**: Classical compilation cited inside the passage (e.g., *al-Tarikh al-Kabir*, *al-Jarh wa al-Ta'dil*, *Tahdhib al-Tahdhib*).
-3. **Historical Evaluator**: Scholar whose personal judgement is reported (e.g., Ahmad b. Hanbal, Yahya b. Ma'in, al-Bukhari, Malik).
-4. **Intermediate Transmitter**: Authority who reported the critic's statement (e.g., Uthman al-Darimi asking Ibn Ma'in; Abu Talib from Ahmad).
-5. **Other Quoted Speaker**: Secondary scholars mentioned in isnad commentary.
+### Section B: Provenance and Attribution Architecture
+Annotators must rigorously distinguish separate provenance roles:
+1. **Immediate Source Work**: The specific compilation from which this Shamela excerpt was extracted.
+2. **Compiler / Source Author**: The author of the immediate source work.
+3. **Cited Work**: A separate historical compilation mentioned or quoted inside the passage.
+4. **Historical Evaluator**: The scholar whose personal judgement is reported.
+5. **Intermediate Transmitter**: The reporter who conveyed the critic's statement.
+6. **Other Quoted Speaker**: Secondary scholars mentioned in chain analysis.
 
+- `immediate_source_work_as_written`:
+  - **Definition**: Title of the immediate excerpted work as written in the text or locator string.
+  - **Allowed Values**: Verbatim Arabic string (e.g., `سنن البيهقي الكبرى`, `شرح مشكل الآثار`, `جامع الترمذي`), or `unresolved` if ambiguous.
+- `immediate_source_work_normalized`:
+  - **Definition**: Canonical title of the immediate excerpted work.
+  - **Allowed Values**: Standard title (e.g., `سنن البيهقي الكبرى`, `شرح مشكل الآثار`, `جامع الترمذي`, `مسند البزار`), or `unresolved`.
+- `compiler_or_source_author`:
+  - **Definition**: Immediate author of the excerpted source work.
+  - **Allowed Values**: Canonical compiler name (e.g., `البيهقي`, `الطحاوي`, `الترمذي`, `البزار`, `ابن حبان`), or `unresolved`.
+  - **Rule**: Do NOT assume compiler, cited-work author, and historical evaluator are the same person.
+- `cited_work_as_written`:
+  - **Definition**: Title of any distinct secondary or earlier classical work cited inside the passage.
+  - **Allowed Values**: Verbatim Arabic string (e.g., `لسان الميزان`, `تقريب التهذيب`, `الجرح والتعديل`, `صحيح مسلم`, `سنن الدارقطني`), or `none` if no secondary work is cited.
+- `cited_work_normalized`:
+  - **Definition**: Canonical title of the secondary cited work.
+  - **Allowed Values**: Standard title (e.g., `لسان الميزان`, `تقريب التهذيب`, `الجرح والتعديل لابن أبي حاتم`, `صحيح مسلم`), or `none`.
+- `source_locator_as_written`:
+  - **Definition**: Verbatim volume, page, or hadith number string (e.g. `(1/ 23) برقم: (81)`, `(12/ 362) (بدون ترقيم)`).
 - `historical_evaluator_as_written`:
-  - **Definition**: Verbatim name of the scholar to whom the judgment is attributed.
+  - **Definition**: Verbatim name of the critic whose judgment is reported.
   - **Allowed Values**: Exact Arabic string from text (e.g., `أحمد بن حنبل`, `مالك بن أنس`, `يحيى بن معين`), or `[المصنف]` (if spoken directly by compiler without attribution), or `[مجهول/صيغة تمريض]` (for passive/collective verbs like `كذبوه`).
-  - **Rule**: Do NOT copy the database group label unless the text explicitly confirms that scholar spoke it.
+  - **Rule**: Do NOT infer the historical evaluator from the database group label without explicit textual attribution.
 - `historical_evaluator_normalized`:
   - **Definition**: Standardized classical Arabic scholarly name.
   - **Allowed Values**: Canonical name (e.g., `أحمد بن حنبل`, `يحيى بن معين`, `الدارقطني`, `علي بن المديني`, `ابن حجر العسقلاني`, `مجهول/غير محدد`).
 - `intermediate_transmitter_as_written`:
   - **Definition**: Name of the intermediate reporter conveying the statement.
   - **Allowed Values**: Verbatim Arabic name (e.g., `عثمان الدارمي`, `أبو طالب`, `عبد الله بن أحمد`), `none`, or `unclear`.
-- `compiler_or_source_author`:
-  - **Definition**: Immediate compiler of the physical source passage.
-  - **Allowed Values**: Canonical compiler name (e.g., `الترمذي`, `البيهقي`, `ابن عدي`, `الطحاوي`, `البزار`, `ابن حجر`).
+- `other_quoted_speaker_as_written`:
+  - **Definition**: Other secondary speakers, isnad authorities, or interlocutors quoted in the passage.
+  - **Allowed Values**: Verbatim Arabic names (e.g., `سفيان الثوري`, `شعبة`), `none`, or `unclear`.
 - `attribution_type`:
   - **Definition**: Nature of speech attribution.
   - **Allowed Values**:
@@ -484,51 +533,60 @@ Annotators must rigorously distinguish five distinct roles:
 - `attribution_evidence_verbatim`:
   - **Definition**: The exact Arabic phrase demonstrating attribution (e.g., `قال أحمد بن حنبل`, `حدثنا عبد الرحمن نا محمد... سمعت أبا طالب قال قال أحمد`, `كان يحيى بن معين يقول`).
 
-### Section C: Evaluative Content and Stance Nuance
+### Section C: Evaluative Content, Statement Function, and Orientation
+Annotators must rigorously separate the **functional role** of the statement from its **evaluative orientation**:
+
 - `contains_evaluation`:
-  - **Definition**: Does this specific claim contain a qualitative evaluation of reliability, memory, or transmission?
+  - **Definition**: Does this specific claim contain a qualitative appraisal of a narrator, transmission link, or report?
   - **Allowed Values**: `yes`, `no`, `unclear`.
-- `evaluative_span_verbatim`:
-  - **Definition**: Exact verbatim Arabic substring containing the evaluative judgement.
-  - **Examples**: `ضعيف`, `كذبوه`, `ليس بالقوي`, `لا أعرفه`, `متروك الحديث`, `هو أحد أئمة المسلمين إلا أنه لما كبر ساء حفظه`.
-- `stance`:
-  - **Definition**: Scholarly orientation of the specific claim.
+- `statement_function`:
+  - **Definition**: What function is the statement performing in classical *hadith* scholarship?
   - **Allowed Values**:
-    - `positive`: Explicit praise or endorsement (e.g., `ثقة`, `صدوق`, `حجة`, `أحب إلي كلاهما`).
-    - `negative`: Severe moral or foundational reliability rejection (e.g., `كذاب`, `متروك`, `كذبوه`, `ساقط`).
-    - `memory_criticism`: Specific mnemonic defect or precision criticism without total moral rejection (e.g., `ساء حفظه`, `فيه لين`, `يخلط`, `تكلم فيه من قبل حفظه`, `ليس بالقوي`).
-    - `inqita_or_transmission_disconnect`: Factual or chronological non-hearing/disconnection (e.g., `لم يسمع من فلان`, `لم يدرك النبي صلى الله عليه وسلم`, `مرسل`, `منقطع`).
-    - `hadith_level_rejection`: Invalidation of the specific report/narration rather than the narrator (e.g., `هذا لا يثبت`, `لا يصح عن الزهري`, `حديث منكر`, `تفرد به`).
+    - `narrator_appraisal`: General moral, religious, or foundational reliability verdict on a narrator (e.g., `ثقة`, `كذاب`, `متروك`, `لا يحتج به`).
+    - `memory_or_precision_observation`: Specific assessment of cognitive retention, book-keeping, or senility (e.g., `ساء حفظه`, `فيه لين`, `يخلط`, `تكلم فيه من قبل حفظه`).
+    - `transmission_observation`: Descriptive observation of hearing, meeting, generational contiguity, or singularity (e.g., `لم يسمع من فلان`, `لم يدرك النبي صلى الله عليه وسلم`, `تفرد به فلان`, `مرسل`, `منقطع`).
+    - `hadith_or_report_appraisal`: Assessment directed at a specific text or narration rather than general narrator character (e.g., `هذا حديث لا يثبت`, `لا يصح عن الزهري`, `حديث منكر`).
+    - `comparative_preference`: Inquiring or ranking relative standing between two or more transmitters (e.g., `أحب إليك... فقال كلاهما`).
+    - `biographical_description`: Factual biographical remark (e.g., birth, death, residence, identity clarification like `أبو الرجال اسمه محمد`).
+    - `legal_or_other_commentary`: Juristic deduction or topical discussion not evaluating transmission.
+    - `documentary_citation`: Pure book title, chapter, or locator notation.
+    - `unclear`: Ambiguous function that cannot be determined with certainty.
+- `evaluative_orientation`:
+  - **Definition**: The qualitative orientation/valence conveyed by this specific claim in context.
+  - **Allowed Values**:
+    - `positive`: Explicit praise or favorable validation (e.g., `ثقة`, `صدوق`, `حجة`).
+    - `negative`: Explicit criticism or disparagement (e.g., `ضعيف`, `كذاب`, `متروك`, `كذبوه`).
     - `mixed`: Co-presence of praise and criticism in the same claim (e.g., `هو أحد أئمة المسلمين إلا أنه لما كبر ساء حفظه`).
-    - `qualified`: Restricted validity or conditional acceptance (e.g., reliable in a specific teacher or book, but weak in others).
-    - `neutral_descriptive`: Descriptive factual observation without evaluative force.
-    - `unclear`: Ambiguous wording that defies clear stance interpretation.
+    - `qualified`: Restricted validity or conditional acceptance (e.g., reliable in a specific teacher, but weak in others; or `ليس بالقوي`).
+    - `neutral`: Purely descriptive, non-evaluative statement (e.g., biographical notes, chronological inqita without disparagement, pure documentary citations).
+    - `unclear`: Ambiguous orientation.
     - `not_applicable`: When `contains_evaluation = no`.
-  - **Critical Scholarly Rule**: Do NOT force `لم يسمع من فلان`, `تفرد به`, or `لا يصح` into `negative` narrator reliability. In classical *rijal* criticism, transmission disconnect is distinct from moral unreliability.
-- `evaluation_target`:
-  - **Definition**: What exact entity is evaluated by this claim?
-  - **Allowed Values**:
-    - `narrator_overall`: General status of the narrator across all transmissions.
-    - `specific_transmission_link`: Contact or hearing between two specific individuals (e.g., `لم يسمع من عكرمة`).
-    - `specific_hadith_text`: Flaw or invalidation of a specific report (e.g., `هذا حديث لا يثبت`).
-    - `memory_or_precision`: Cognitive retention or book-keeping accuracy.
-    - `commentary_or_legal_discussion`: Legal or factual commentary that is not an evaluation of transmission reliability.
-    - `documentary_citation_only`: Non-evaluative locator or title.
-    - `not_applicable`: When `contains_evaluation = no`.
-- `qualification_or_context`:
-  - **Definition**: Specific contextual scope, condition, or limitation placed on the evaluation.
-  - **Allowed Values**: Explanatory text (e.g., `في حفظه لا في عدالته`, `لما كبر في السن`, `عن عطاء خاصة`), or `none`.
 
-### Section D: Documentary Provenance
-- `source_work_as_written`: Title of cited book as written in the text or locator span.
-- `source_work_normalized`: Canonical title of the referenced work.
-- `source_locator_as_written`: Verbatim volume, page, or hadith number string (e.g. `(1/ 23) برقم: (81)`).
+#### Contextual Interpretation Guidelines:
+1. **`تفرد به` (Singularity of Transmission)**:
+   - `statement_function`: `transmission_observation`
+   - `evaluative_orientation`: `neutral` or `qualified` depending on context. In classical criticism, *tafarrud* by an acceptable narrator is not inherently negative; it indicates uniqueness. Do NOT automatically classify as `negative`.
+2. **`لا أعرفه` (Non-Recognition)**:
+   - `statement_function`: `narrator_appraisal` or `transmission_observation`
+   - `evaluative_orientation`: `neutral`, `qualified`, or `negative` depending on whether it denotes total obscurity (*jahalah*) or local non-familiarity. Do not treat as a formal grade of deliberate weakness without context.
+3. **`أحب إليك... فقال كلاهما` (Comparative Preference)**:
+   - `statement_function`: `comparative_preference`
+   - `evaluative_orientation`: `positive` or `qualified`. It indicates relative preference between two acceptable authorities; do not treat as an unconditional absolute grade.
+4. **`لم يسمع من فلان` (Transmission Disconnect)**:
+   - `statement_function`: `transmission_observation`
+   - `evaluative_orientation`: `neutral` or `qualified`. It establishes *inqita'* (lack of direct hearing), not moral unreliability or fabrication.
+5. **`لا يصح عن الزهري` (Narration Invalidation)**:
+   - `statement_function`: `hadith_or_report_appraisal`
+   - `evaluative_orientation`: `negative` (directed at the hadith, not necessarily narrator unreliability).
 
-### Section E: Annotation Quality
+- `evaluative_span_verbatim`: Exact verbatim Arabic substring containing the evaluative judgement (or blank if none).
+- `qualification_or_context`: Specific contextual limitation (e.g., `في حفظه لا في عدالته`, `لما كبر في السن`, `عن عطاء خاصة`), or `none`.
+
+### Section D: Quality & Notes
 - `transcription_confidence`: `high`, `medium`, `low`, `unresolved`.
 - `interpretation_confidence`: `high`, `medium`, `low`, `unresolved`.
-- `unresolved_ambiguity`: Concise description of competing interpretations, or `none`.
-- `reviewer_notes`: Free-text observations, cross-references, or historical anomalies.
+- `unresolved_ambiguity`: Description of competing interpretations, or `none`.
+- `reviewer_notes`: Free-text observations, anomalies, or historical context.
 
 ---
 
@@ -568,9 +626,9 @@ This pilot study evaluates the feasibility, clarity, and precision of the human 
 Specific research questions investigated by this pilot:
 1. **Evaluative Content**: Can annotators reliably distinguish between genuine evaluative judgements, factual inqita statements, hadith rulings, and pure documentary citations?
 2. **Evaluation-Level Granularity**: Can complex tuples containing multiple evaluators or multiple evaluated persons be cleanly decomposed into distinct evaluation records?
-3. **Attribution Boundaries**: Can historical critics (e.g., Ahmad, Yahya b. Ma'in) be reliably differentiated from compilers (e.g., al-Tirmidhi, al-Bayhaqi) and intermediate transmitters?
-4. **Attribution Type**: Can direct statements, nested isnads, and passive consensus phrases (`كذبوه`) be systematically differentiated?
-5. **Span Isolation**: Can the evaluative span be isolated from surrounding biographical notes, isnad commentary, and legal debates?
+3. **Provenance Disambiguation**: Can immediate source works be separated from cited works, historical critics, and intermediate transmitters?
+4. **Statement Function vs Orientation**: Can functional categories (e.g. transmission observation, hadith appraisal) be separated from evaluative orientation (neutral, qualified, negative) without forcing negative bias?
+5. **Attribution Type**: Can direct statements, nested isnads, and passive consensus phrases (`كذبوه`) be systematically differentiated?
 6. **Blinded Reconciliation**: Does the database-attached narrator identity match the person actually evaluated in the text when evaluated without metadata bias?
 7. **Automated Concordance**: Do existing automated heuristic patterns align with human semantic understanding?
 
@@ -606,7 +664,8 @@ To prevent metadata leakage and confirmation bias:
 1. **Pass 1 (Text-Only Inspection)**:
    - Annotator reads `PILOT_PASS1_TEXT_BLINDED.csv`.
    - Attached narrator metadata (`narrator_id`, `narrator_name`) is **completely absent**.
-   - Opaque database `source_id` and all automated classifier labels/strata are **strictly excluded**.
+   - Database `source_id` is completely purged from all fields and tuple elements (`original_tuple_json` is strictly a 2-element array `[field_1, field_2]`).
+   - Automated classifier labels and sampling strata are **strictly excluded**.
    - Annotations are recorded in `PILOT_EVALUATIONS_BLANK.csv`.
    - Multiple evaluations per tuple are recorded as multiple rows sharing `pilot_case_id` with incremented `evaluation_id`.
 2. **Pass 2 (Identity Reconciliation)**:
@@ -625,7 +684,7 @@ Annotators must adhere to this rule: **One evaluative claim per row**.
   1. Insert a new row directly beneath the primary row.
   2. Set `pilot_case_id` to the parent case ID (e.g. `PILOT01`).
   3. Set `evaluation_id` to `{{pilot_case_id}}_E02` (then `_E03`, etc.).
-  4. Fill in the specific evaluated person, historical evaluator, evaluative span, stance, and target for that distinct claim.
+  4. Fill in the specific evaluated person, historical evaluator, evaluative span, statement function, and orientation for that distinct claim.
 - There is no arbitrary maximum number of evaluation rows.
 
 ---
@@ -674,17 +733,17 @@ def main() -> int:
     selection_path = output_dir / "PILOT_SELECTION.csv"
     write_csv(selection_path, selection_rows, SELECTION_FIELDS)
 
-    # 2. PILOT_INTERNAL_MAPPING.csv
+    # 2. PILOT_INTERNAL_MAPPING.csv (preserves 3-element tuple in quarantined artifact)
     mapping_rows = build_internal_mapping_rows(selected_cases)
     mapping_path = output_dir / "PILOT_INTERNAL_MAPPING.csv"
     write_csv(mapping_path, mapping_rows, MAPPING_FIELDS)
 
-    # 3. PILOT_PASS1_TEXT_BLINDED.csv (Pass 1 text-only context, NO narrator metadata)
+    # 3. PILOT_PASS1_TEXT_BLINDED.csv (Pass 1 text-only context, NO narrator metadata, NO source_id in tuple)
     pass1_rows = build_pass1_text_rows(selected_cases)
     pass1_path = output_dir / "PILOT_PASS1_TEXT_BLINDED.csv"
     write_csv(pass1_path, pass1_rows, PASS1_TEXT_FIELDS)
 
-    # 4. PILOT_EVALUATIONS_BLANK.csv (Evaluation-level blank template)
+    # 4. PILOT_EVALUATIONS_BLANK.csv (Evaluation-level blank template with full provenance & stance taxonomy)
     eval_rows = build_evaluation_blank_rows(selected_cases)
     eval_path = output_dir / "PILOT_EVALUATIONS_BLANK.csv"
     write_csv(eval_path, eval_rows, EVALUATION_FIELDS)
@@ -728,8 +787,8 @@ def main() -> int:
     }
 
     manifest = {
-        "version": "2.0.0",
-        "description": "Blinded 20-case human manual annotation pilot (evaluation-level and two-pass design)",
+        "version": "2.1.0",
+        "description": "Blinded 20-case human manual annotation pilot (evaluation-level, two-pass design with strict source-ID purge and complete provenance schema)",
         "purposive_sample_declaration": (
             "This 20-case pilot is purposively sampled from the 60-case validation pool to evaluate "
             "codebook clarity, semantic diversity, and annotation feasibility across all six strata. "
@@ -755,7 +814,7 @@ def main() -> int:
 
     print(json.dumps({
         "status": "success",
-        "version": "2.0.0",
+        "version": "2.1.0",
         "output_directory": str(output_dir),
         "selected_count": len(selected_cases),
         "unique_source_ids": len(set(case["source_id"] for case in selected_cases)),

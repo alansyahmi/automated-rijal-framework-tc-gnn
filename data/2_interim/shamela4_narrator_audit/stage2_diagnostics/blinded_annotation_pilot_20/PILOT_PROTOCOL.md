@@ -7,9 +7,9 @@ This pilot study evaluates the feasibility, clarity, and precision of the human 
 Specific research questions investigated by this pilot:
 1. **Evaluative Content**: Can annotators reliably distinguish between genuine evaluative judgements, factual inqita statements, hadith rulings, and pure documentary citations?
 2. **Evaluation-Level Granularity**: Can complex tuples containing multiple evaluators or multiple evaluated persons be cleanly decomposed into distinct evaluation records?
-3. **Attribution Boundaries**: Can historical critics (e.g., Ahmad, Yahya b. Ma'in) be reliably differentiated from compilers (e.g., al-Tirmidhi, al-Bayhaqi) and intermediate transmitters?
-4. **Attribution Type**: Can direct statements, nested isnads, and passive consensus phrases (`كذبوه`) be systematically differentiated?
-5. **Span Isolation**: Can the evaluative span be isolated from surrounding biographical notes, isnad commentary, and legal debates?
+3. **Provenance Disambiguation**: Can immediate source works be separated from cited works, historical critics, and intermediate transmitters?
+4. **Statement Function vs Orientation**: Can functional categories (e.g. transmission observation, hadith appraisal) be separated from evaluative orientation (neutral, qualified, negative) without forcing negative bias?
+5. **Attribution Type**: Can direct statements, nested isnads, and passive consensus phrases (`كذبوه`) be systematically differentiated?
 6. **Blinded Reconciliation**: Does the database-attached narrator identity match the person actually evaluated in the text when evaluated without metadata bias?
 7. **Automated Concordance**: Do existing automated heuristic patterns align with human semantic understanding?
 
@@ -50,7 +50,8 @@ To prevent metadata leakage and confirmation bias:
 1. **Pass 1 (Text-Only Inspection)**:
    - Annotator reads `PILOT_PASS1_TEXT_BLINDED.csv`.
    - Attached narrator metadata (`narrator_id`, `narrator_name`) is **completely absent**.
-   - Opaque database `source_id` and all automated classifier labels/strata are **strictly excluded**.
+   - Database `source_id` is completely purged from all fields and tuple elements (`original_tuple_json` is strictly a 2-element array `[field_1, field_2]`).
+   - Automated classifier labels and sampling strata are **strictly excluded**.
    - Annotations are recorded in `PILOT_EVALUATIONS_BLANK.csv`.
    - Multiple evaluations per tuple are recorded as multiple rows sharing `pilot_case_id` with incremented `evaluation_id`.
 2. **Pass 2 (Identity Reconciliation)**:
@@ -69,7 +70,7 @@ Annotators must adhere to this rule: **One evaluative claim per row**.
   1. Insert a new row directly beneath the primary row.
   2. Set `pilot_case_id` to the parent case ID (e.g. `PILOT01`).
   3. Set `evaluation_id` to `{pilot_case_id}_E02` (then `_E03`, etc.).
-  4. Fill in the specific evaluated person, historical evaluator, evaluative span, stance, and target for that distinct claim.
+  4. Fill in the specific evaluated person, historical evaluator, evaluative span, statement function, and orientation for that distinct claim.
 - There is no arbitrary maximum number of evaluation rows.
 
 ---

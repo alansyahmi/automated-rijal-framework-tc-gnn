@@ -6,16 +6,20 @@ Verifies:
 2. Unique source IDs across all 20 cases.
 3. Reproducibility with the same seed (identical IDs, orders, hashes).
 4. Text-only Pass 1 strictly excludes attached narrator metadata (narrator_id, narrator_name).
-5. Pass 2 retains the correct mapping to the original narrator (attached_narrator_id, attached_narrator_name).
-6. No automated classification fields leak into either reviewer stage (Pass 1, Evaluations, Pass 2).
-7. Preservation of original source text across all templates.
-8. Preservation of the original 60-case CSV (hash remains unchanged).
-9. Existing pilot source IDs and mapping remain strictly unchanged.
-10. Evaluation-level template allows multiple evaluation rows linked to one tuple.
-11. Unique evaluation IDs within each tuple.
-12. Evaluation-level and reconciliation templates contain no pre-filled annotations.
-13. Manifest/hash consistency (all recorded files match size and SHA-256).
-14. All six sampling strata represented.
+5. Pass 1 tuple JSON contains ONLY the two textual elements (purges 3rd source-ID element).
+6. No source ID can be recovered from any Pass 1 dedicated field or embedded tuple element.
+7. Pass 2 retains the correct mapping to the original narrator (attached_narrator_id, attached_narrator_name).
+8. Provenance fields rigorously distinguish immediate source work from cited classical work.
+9. Revised statement-function and evaluative-orientation taxonomy decouples function from valence.
+10. No automated classification fields leak into reviewer templates (Pass 1, Evaluations, Pass 2).
+11. Preservation of original source text across all templates.
+12. Preservation of the original 60-case CSV (hash remains unchanged).
+13. Existing pilot source IDs and mappings remain strictly unchanged.
+14. Evaluation-level template allows multiple evaluation rows linked to one tuple.
+15. Unique evaluation IDs within each tuple.
+16. Evaluation-level and reconciliation templates contain no pre-filled annotations.
+17. Manifest/hash consistency (all recorded files match size and SHA-256).
+18. All six sampling strata represented.
 """
 from __future__ import annotations
 
@@ -65,6 +69,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
 
         cls.v3_rows = read_csv(cls.v3_csv_path)
         cls.selected_cases, cls.stratum_counts = select_pilot_cases(cls.v3_rows, seed=20261111)
+        cls.known_source_ids = {str(c["source_id"]) for c in cls.selected_cases}
 
     # 1. Exactly 20 selected cases
     def test_exactly_twenty_selected_cases(self) -> None:
@@ -115,7 +120,47 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         self.assertIn("original_field_2", pass1_cols)
         self.assertIn("original_tuple_json", pass1_cols)
 
-    # 5. Pass 2 retains correct mapping to original narrator
+    # 5. Pass 1 tuple JSON contains ONLY the two textual elements
+    def test_pass1_tuple_json_contains_only_two_textual_elements(self) -> None:
+        pass1_rows = read_csv(self.pass1_path)
+        for row in pass1_rows:
+            raw_json = row["original_tuple_json"]
+            parsed = json.loads(raw_json)
+            self.assertIsInstance(parsed, list, f"Tuple in {row['pilot_case_id']} is not a JSON list")
+            self.assertEqual(
+                len(parsed),
+                2,
+                f"Pass 1 tuple JSON in {row['pilot_case_id']} must have exactly 2 elements, found {len(parsed)}",
+            )
+            self.assertIsInstance(parsed[0], str, f"Element 0 in {row['pilot_case_id']} is not string")
+            self.assertIsInstance(parsed[1], str, f"Element 1 in {row['pilot_case_id']} is not string")
+            self.assertEqual(parsed[0], row["original_field_1"])
+            self.assertEqual(parsed[1], row["original_field_2"])
+
+    # 6. No source ID can be recovered from Pass 1 fields or embedded elements
+    def test_no_source_id_leakage_in_pass1(self) -> None:
+        pass1_rows = read_csv(self.pass1_path)
+        for row in pass1_rows:
+            parsed = json.loads(row["original_tuple_json"])
+            # Ensure no tuple element is an integer or equal to any known source ID
+            for elem in parsed:
+                self.assertFalse(
+                    isinstance(elem, int),
+                    f"Found numeric element in Pass 1 tuple for {row['pilot_case_id']}: {elem}",
+                )
+                self.assertNotIn(
+                    str(elem).strip(),
+                    self.known_source_ids,
+                    f"Found raw source_id leaked in Pass 1 tuple for {row['pilot_case_id']}: {elem}",
+                )
+            for col_name, val in row.items():
+                self.assertNotIn(
+                    col_name.lower(),
+                    ("source_id", "sourceid", "src_id"),
+                    f"Found source_id column in Pass 1: {col_name}",
+                )
+
+    # 7. Pass 2 retains correct mapping to original narrator
     def test_pass2_retains_correct_narrator_mapping(self) -> None:
         self.assertTrue(self.pass2_path.is_file(), f"Missing Pass 2 file: {self.pass2_path}")
         pass2_rows = read_csv(self.pass2_path)
@@ -130,7 +175,47 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             self.assertEqual(row["attached_narrator_id"], expected["narrator_id"])
             self.assertEqual(row["attached_narrator_name"], expected["narrator_name"])
 
-    # 6. No automated classification fields leak into either reviewer stage
+    # 8. Provenance fields distinguish immediate source work from cited work
+    def test_provenance_fields_distinguish_immediate_and_cited_works(self) -> None:
+        eval_rows = read_csv(self.eval_path)
+        eval_cols = set(eval_rows[0].keys())
+
+        required_provenance_cols = [
+            "immediate_source_work_as_written",
+            "immediate_source_work_normalized",
+            "compiler_or_source_author",
+            "cited_work_as_written",
+            "cited_work_normalized",
+            "source_locator_as_written",
+            "historical_evaluator_as_written",
+            "historical_evaluator_normalized",
+            "intermediate_transmitter_as_written",
+            "other_quoted_speaker_as_written",
+            "attribution_type",
+            "attribution_evidence_verbatim",
+        ]
+        for col in required_provenance_cols:
+            self.assertIn(col, eval_cols, f"Missing required provenance column '{col}' in evaluation template")
+
+    # 9. Revised statement-function taxonomy includes transmission observations without forcing negative orientation
+    def test_statement_function_and_orientation_taxonomy(self) -> None:
+        eval_rows = read_csv(self.eval_path)
+        eval_cols = set(eval_rows[0].keys())
+
+        self.assertIn("statement_function", eval_cols)
+        self.assertIn("evaluative_orientation", eval_cols)
+
+        # Verify taxonomy in codebook text
+        codebook_text = self.codebook_path.read_text(encoding="utf-8")
+        self.assertIn("statement_function", codebook_text)
+        self.assertIn("transmission_observation", codebook_text)
+        self.assertIn("hadith_or_report_appraisal", codebook_text)
+        self.assertIn("comparative_preference", codebook_text)
+        self.assertIn("evaluative_orientation", codebook_text)
+        self.assertIn("neutral", codebook_text)
+        self.assertIn("qualified", codebook_text)
+
+    # 10. No automated classification fields leak into either reviewer stage
     def test_no_automated_fields_leak_into_reviewer_templates(self) -> None:
         forbidden_exact_or_prefixes = [
             "automated_pattern", "automated_certainty", "automated_evidence",
@@ -152,7 +237,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
                         f"Reviewer template {path.name} contains automated prefix in column '{col}'",
                     )
 
-    # 7. Preservation of original source text
+    # 11. Preservation of original source text
     def test_preservation_of_original_source_text(self) -> None:
         v3_by_case = {r["case_id"]: r for r in self.v3_rows}
         mapping_rows = read_csv(self.mapping_path)
@@ -168,9 +253,8 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             self.assertEqual(p1_row["entry_index"], orig_v3["entry_index"])
             self.assertEqual(p1_row["original_field_1"], orig_v3["original_field_1"])
             self.assertEqual(p1_row["original_field_2"], orig_v3["original_field_2"])
-            self.assertEqual(p1_row["original_tuple_json"], orig_v3["original_tuple_json"])
 
-    # 8. Preservation of original 60-case CSV
+    # 12. Preservation of original 60-case CSV
     def test_preservation_of_original_60_case_csv(self) -> None:
         self.assertTrue(self.v3_csv_path.is_file())
         current_hash = sha256(self.v3_csv_path)
@@ -180,7 +264,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             f"Original 60-case V3 CSV was modified! Expected {V3_EXPECTED_HASH}, got {current_hash}",
         )
 
-    # 9. Existing pilot source IDs and mappings remain unchanged
+    # 13. Existing pilot source IDs and mappings remain unchanged
     def test_existing_pilot_mapping_unchanged(self) -> None:
         mapping_rows = read_csv(self.mapping_path)
         self.assertEqual(len(mapping_rows), 20)
@@ -215,21 +299,19 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             self.assertEqual(actual["v3_case_id"], exp_v3)
             self.assertEqual(str(actual["source_id"]), exp_src)
 
-    # 10. Multiple evaluation rows can link to one tuple
+    # 14. Multiple evaluation rows can link to one tuple
     def test_multiple_evaluation_rows_can_link_to_one_tuple(self) -> None:
-        # Create a mock multi-evaluation set
         multi_eval_rows = [
             {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E01", "contains_evaluation": "yes"},
             {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E02", "contains_evaluation": "yes"},
             {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E03", "contains_evaluation": "yes"},
             {"pilot_case_id": "PILOT02", "evaluation_id": "PILOT02_E01", "contains_evaluation": "yes"},
         ]
-        # Verify pilot_case_id links properly and evaluation_ids are distinct
         p1_evals = [r for r in multi_eval_rows if r["pilot_case_id"] == "PILOT01"]
         self.assertEqual(len(p1_evals), 3)
         self.assertEqual(len(set(r["evaluation_id"] for r in p1_evals)), 3)
 
-    # 11. Unique evaluation IDs within each tuple
+    # 15. Unique evaluation IDs within each tuple
     def test_unique_evaluation_ids_in_template(self) -> None:
         eval_rows = read_csv(self.eval_path)
         eval_ids = [r["evaluation_id"] for r in eval_rows]
@@ -240,7 +322,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
                 f"Evaluation ID '{row['evaluation_id']}' does not match pilot_case_id '{row['pilot_case_id']}'",
             )
 
-    # 12. Evaluation-level and reconciliation templates contain no pre-filled annotations
+    # 16. Evaluation-level and reconciliation templates contain no pre-filled annotations
     def test_templates_contain_no_prefilled_annotations(self) -> None:
         eval_rows = read_csv(self.eval_path)
         eval_annotation_cols = [c for c in EVALUATION_FIELDS if c not in ("pilot_case_id", "evaluation_id")]
@@ -268,13 +350,13 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
                     f"Pre-filled annotation detected in Pass 2 {row['pilot_case_id']} column '{col}': '{row[col]}'",
                 )
 
-    # 13. Manifest/hash consistency
+    # 17. Manifest/hash consistency
     def test_manifest_hash_consistency(self) -> None:
         self.assertTrue(self.manifest_path.is_file(), f"Missing manifest: {self.manifest_path}")
         with self.manifest_path.open("r", encoding="utf-8") as f:
             manifest = json.load(f)
 
-        self.assertEqual(manifest["version"], "2.0.0")
+        self.assertEqual(manifest["version"], "2.1.0")
         self.assertEqual(manifest["selected_case_count"], 20)
         self.assertEqual(len(manifest["selected_source_ids"]), 20)
         self.assertEqual(len(set(manifest["selected_source_ids"])), 20)
@@ -293,7 +375,7 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             self.assertEqual(actual_size, meta["bytes"], f"Byte mismatch for {filename}")
             self.assertEqual(actual_hash, meta["sha256"], f"Hash mismatch for {filename}")
 
-    # 14. All six sampling strata represented
+    # 18. All six sampling strata represented
     def test_all_six_strata_represented(self) -> None:
         self.assertEqual(len(self.stratum_counts), 6, "Not all 6 strata are represented")
         for stratum, count in self.stratum_counts.items():

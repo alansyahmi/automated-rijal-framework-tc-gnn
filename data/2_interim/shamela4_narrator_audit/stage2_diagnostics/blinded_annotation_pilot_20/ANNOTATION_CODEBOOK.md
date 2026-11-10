@@ -2,7 +2,7 @@
 
 ## 1. Research Context and Purpose
 
-This codebook provides precise instructions for human annotators validating narrator criticism (`garh`) entries extracted from the Shamela4 database (`narrators.parquet`).
+This codebook provides instructions for human annotators validating narrator criticism (`garh`) entries extracted from the Shamela4 database (`narrators.parquet`).
 
 The objective is to establish the ground-truth interpretation of criticism tuples before any automated classification rules, representation models (such as AraBERT), or Graph Neural Networks (GNNs) are trained.
 
@@ -10,7 +10,7 @@ The objective is to establish the ground-truth interpretation of criticism tuple
 1. **Zero Fabrication**: Never guess or invent an attribution, stance, or date not justified by the verbatim text.
 2. **Preserve Verbatim Text**: Never normalize or edit Arabic quotations in verbatim fields.
 3. **No Group Label Conflation**: Do not assume the database `group_label` (e.g. `البخاري`, `الدارقطني`) is the historical evaluator. Many entries transmit quotes from other scholars.
-4. **No Binary Sentiment Forcing**: Do not force nuanced or ambiguous statements into binary positive or negative categories. Factual transmission disconnect (*inqita'*) or hadith-level rejection must not be silently converted into general narrator unreliability.
+4. **No Forced Binary Sentiment**: Do not force descriptive transmission observations or nuanced qualifications into binary positive or negative categories. Factual transmission disconnect (*inqita'*) or hadith-level rejection must not be silently converted into general narrator unreliability.
 5. **Separation of Entities**: Keep historical speaker attribution, intermediate transmission, source work authorship, narrator identity, and evaluative stance strictly distinct.
 
 ---
@@ -24,7 +24,7 @@ A single criticism tuple consists of two text fields (`field_1`, `field_2`) and 
   - If a tuple contains only one evaluation, complete row `{pilot_case_id}_E01`.
   - If a tuple quotes multiple critics (e.g., Malik and Yahya b. Ma'in) or evaluates multiple individuals, insert a new row with the same `pilot_case_id` and an incremented `evaluation_id` (e.g., `{pilot_case_id}_E02`, `{pilot_case_id}_E03`).
   - There is no upper limit on the number of evaluation rows per tuple.
-- **Non-Evaluative Entries**: If a tuple contains only bibliographic citations, book numbers, or hadith locators without human evaluative prose, annotate a single row with `contains_evaluation = no` and mark evaluative fields as `not_applicable`.
+- **Non-Evaluative Entries**: If a tuple contains only bibliographic citations, book numbers, or hadith locators without human evaluative prose, annotate a single row with `contains_evaluation = no`, `statement_function = documentary_citation`, and `evaluative_orientation = not_applicable`.
 
 ---
 
@@ -34,13 +34,19 @@ To eliminate confirmation bias and prevent metadata contamination, annotation pr
 
 ### Pass 1: Blinded Text-Only Extraction
 1. The annotator opens `PILOT_PASS1_TEXT_BLINDED.csv` and `PILOT_EVALUATIONS_BLANK.csv`.
-2. `PILOT_PASS1_TEXT_BLINDED.csv` exposes **only** `pilot_case_id`, `entry_index`, `original_field_1`, `original_field_2`, and `original_tuple_json`.
-3. The annotator **does not see** the database-attached `narrator_id` or `narrator_name`.
+2. `PILOT_PASS1_TEXT_BLINDED.csv` exposes **only**:
+   - `pilot_case_id`
+   - `entry_index`
+   - `original_field_1`
+   - `original_field_2`
+   - `original_tuple_json` (sanitized 2-element array `[field_1, field_2]` with no source ID).
+3. The annotator **does not see** the database-attached `narrator_id`, `narrator_name`, or `source_id`.
 4. Based solely on the verbatim Arabic text, the annotator identifies:
    - Evaluated person as written in the text.
-   - Evaluator, intermediate transmitter, and compiler.
-   - Exact evaluative span, stance, and evaluation target.
-   - Documentary citations and locators.
+   - Immediate source work vs cited classical work.
+   - Historical evaluator, intermediate transmitter, and compiler.
+   - Statement function and evaluative orientation.
+   - Verbatim evaluative span and locators.
 
 ### Pass 2: Attached Identity Reconciliation
 1. After completing Pass 1, the annotator opens `PILOT_PASS2_RECONCILIATION_BLANK.csv`.
@@ -67,27 +73,46 @@ To eliminate confirmation bias and prevent metadata contamination, annotation pr
   - **Definition**: Confidence that the text refers to the identified individual.
   - **Allowed Values**: `high`, `medium`, `low`, `unresolved`.
 
-### Section B: Historical Evaluator and Attribution Provenance
-Annotators must rigorously distinguish five distinct roles:
-1. **Immediate Compiler / Source Author**: Author of the book holding the text (e.g., al-Tirmidhi, al-Bayhaqi, al-Bazzar).
-2. **Cited Classical Work**: Classical compilation cited inside the passage (e.g., *al-Tarikh al-Kabir*, *al-Jarh wa al-Ta'dil*, *Tahdhib al-Tahdhib*).
-3. **Historical Evaluator**: Scholar whose personal judgement is reported (e.g., Ahmad b. Hanbal, Yahya b. Ma'in, al-Bukhari, Malik).
-4. **Intermediate Transmitter**: Authority who reported the critic's statement (e.g., Uthman al-Darimi asking Ibn Ma'in; Abu Talib from Ahmad).
-5. **Other Quoted Speaker**: Secondary scholars mentioned in isnad commentary.
+### Section B: Provenance and Attribution Architecture
+Annotators must rigorously distinguish separate provenance roles:
+1. **Immediate Source Work**: The specific compilation from which this Shamela excerpt was extracted.
+2. **Compiler / Source Author**: The author of the immediate source work.
+3. **Cited Work**: A separate historical compilation mentioned or quoted inside the passage.
+4. **Historical Evaluator**: The scholar whose personal judgement is reported.
+5. **Intermediate Transmitter**: The reporter who conveyed the critic's statement.
+6. **Other Quoted Speaker**: Secondary scholars mentioned in chain analysis.
 
+- `immediate_source_work_as_written`:
+  - **Definition**: Title of the immediate excerpted work as written in the text or locator string.
+  - **Allowed Values**: Verbatim Arabic string (e.g., `سنن البيهقي الكبرى`, `شرح مشكل الآثار`, `جامع الترمذي`), or `unresolved` if ambiguous.
+- `immediate_source_work_normalized`:
+  - **Definition**: Canonical title of the immediate excerpted work.
+  - **Allowed Values**: Standard title (e.g., `سنن البيهقي الكبرى`, `شرح مشكل الآثار`, `جامع الترمذي`, `مسند البزار`), or `unresolved`.
+- `compiler_or_source_author`:
+  - **Definition**: Immediate author of the excerpted source work.
+  - **Allowed Values**: Canonical compiler name (e.g., `البيهقي`, `الطحاوي`, `الترمذي`, `البزار`, `ابن حبان`), or `unresolved`.
+  - **Rule**: Do NOT assume compiler, cited-work author, and historical evaluator are the same person.
+- `cited_work_as_written`:
+  - **Definition**: Title of any distinct secondary or earlier classical work cited inside the passage.
+  - **Allowed Values**: Verbatim Arabic string (e.g., `لسان الميزان`, `تقريب التهذيب`, `الجرح والتعديل`, `صحيح مسلم`, `سنن الدارقطني`), or `none` if no secondary work is cited.
+- `cited_work_normalized`:
+  - **Definition**: Canonical title of the secondary cited work.
+  - **Allowed Values**: Standard title (e.g., `لسان الميزان`, `تقريب التهذيب`, `الجرح والتعديل لابن أبي حاتم`, `صحيح مسلم`), or `none`.
+- `source_locator_as_written`:
+  - **Definition**: Verbatim volume, page, or hadith number string (e.g. `(1/ 23) برقم: (81)`, `(12/ 362) (بدون ترقيم)`).
 - `historical_evaluator_as_written`:
-  - **Definition**: Verbatim name of the scholar to whom the judgment is attributed.
+  - **Definition**: Verbatim name of the critic whose judgment is reported.
   - **Allowed Values**: Exact Arabic string from text (e.g., `أحمد بن حنبل`, `مالك بن أنس`, `يحيى بن معين`), or `[المصنف]` (if spoken directly by compiler without attribution), or `[مجهول/صيغة تمريض]` (for passive/collective verbs like `كذبوه`).
-  - **Rule**: Do NOT copy the database group label unless the text explicitly confirms that scholar spoke it.
+  - **Rule**: Do NOT infer the historical evaluator from the database group label without explicit textual attribution.
 - `historical_evaluator_normalized`:
   - **Definition**: Standardized classical Arabic scholarly name.
   - **Allowed Values**: Canonical name (e.g., `أحمد بن حنبل`, `يحيى بن معين`, `الدارقطني`, `علي بن المديني`, `ابن حجر العسقلاني`, `مجهول/غير محدد`).
 - `intermediate_transmitter_as_written`:
   - **Definition**: Name of the intermediate reporter conveying the statement.
   - **Allowed Values**: Verbatim Arabic name (e.g., `عثمان الدارمي`, `أبو طالب`, `عبد الله بن أحمد`), `none`, or `unclear`.
-- `compiler_or_source_author`:
-  - **Definition**: Immediate compiler of the physical source passage.
-  - **Allowed Values**: Canonical compiler name (e.g., `الترمذي`, `البيهقي`, `ابن عدي`, `الطحاوي`, `البزار`, `ابن حجر`).
+- `other_quoted_speaker_as_written`:
+  - **Definition**: Other secondary speakers, isnad authorities, or interlocutors quoted in the passage.
+  - **Allowed Values**: Verbatim Arabic names (e.g., `سفيان الثوري`, `شعبة`), `none`, or `unclear`.
 - `attribution_type`:
   - **Definition**: Nature of speech attribution.
   - **Allowed Values**:
@@ -100,51 +125,60 @@ Annotators must rigorously distinguish five distinct roles:
 - `attribution_evidence_verbatim`:
   - **Definition**: The exact Arabic phrase demonstrating attribution (e.g., `قال أحمد بن حنبل`, `حدثنا عبد الرحمن نا محمد... سمعت أبا طالب قال قال أحمد`, `كان يحيى بن معين يقول`).
 
-### Section C: Evaluative Content and Stance Nuance
+### Section C: Evaluative Content, Statement Function, and Orientation
+Annotators must rigorously separate the **functional role** of the statement from its **evaluative orientation**:
+
 - `contains_evaluation`:
-  - **Definition**: Does this specific claim contain a qualitative evaluation of reliability, memory, or transmission?
+  - **Definition**: Does this specific claim contain a qualitative appraisal of a narrator, transmission link, or report?
   - **Allowed Values**: `yes`, `no`, `unclear`.
-- `evaluative_span_verbatim`:
-  - **Definition**: Exact verbatim Arabic substring containing the evaluative judgement.
-  - **Examples**: `ضعيف`, `كذبوه`, `ليس بالقوي`, `لا أعرفه`, `متروك الحديث`, `هو أحد أئمة المسلمين إلا أنه لما كبر ساء حفظه`.
-- `stance`:
-  - **Definition**: Scholarly orientation of the specific claim.
+- `statement_function`:
+  - **Definition**: What function is the statement performing in classical *hadith* scholarship?
   - **Allowed Values**:
-    - `positive`: Explicit praise or endorsement (e.g., `ثقة`, `صدوق`, `حجة`, `أحب إلي كلاهما`).
-    - `negative`: Severe moral or foundational reliability rejection (e.g., `كذاب`, `متروك`, `كذبوه`, `ساقط`).
-    - `memory_criticism`: Specific mnemonic defect or precision criticism without total moral rejection (e.g., `ساء حفظه`, `فيه لين`, `يخلط`, `تكلم فيه من قبل حفظه`, `ليس بالقوي`).
-    - `inqita_or_transmission_disconnect`: Factual or chronological non-hearing/disconnection (e.g., `لم يسمع من فلان`, `لم يدرك النبي صلى الله عليه وسلم`, `مرسل`, `منقطع`).
-    - `hadith_level_rejection`: Invalidation of the specific report/narration rather than the narrator (e.g., `هذا لا يثبت`, `لا يصح عن الزهري`, `حديث منكر`, `تفرد به`).
+    - `narrator_appraisal`: General moral, religious, or foundational reliability verdict on a narrator (e.g., `ثقة`, `كذاب`, `متروك`, `لا يحتج به`).
+    - `memory_or_precision_observation`: Specific assessment of cognitive retention, book-keeping, or senility (e.g., `ساء حفظه`, `فيه لين`, `يخلط`, `تكلم فيه من قبل حفظه`).
+    - `transmission_observation`: Descriptive observation of hearing, meeting, generational contiguity, or singularity (e.g., `لم يسمع من فلان`, `لم يدرك النبي صلى الله عليه وسلم`, `تفرد به فلان`, `مرسل`, `منقطع`).
+    - `hadith_or_report_appraisal`: Assessment directed at a specific text or narration rather than general narrator character (e.g., `هذا حديث لا يثبت`, `لا يصح عن الزهري`, `حديث منكر`).
+    - `comparative_preference`: Inquiring or ranking relative standing between two or more transmitters (e.g., `أحب إليك... فقال كلاهما`).
+    - `biographical_description`: Factual biographical remark (e.g., birth, death, residence, identity clarification like `أبو الرجال اسمه محمد`).
+    - `legal_or_other_commentary`: Juristic deduction or topical discussion not evaluating transmission.
+    - `documentary_citation`: Pure book title, chapter, or locator notation.
+    - `unclear`: Ambiguous function that cannot be determined with certainty.
+- `evaluative_orientation`:
+  - **Definition**: The qualitative orientation/valence conveyed by this specific claim in context.
+  - **Allowed Values**:
+    - `positive`: Explicit praise or favorable validation (e.g., `ثقة`, `صدوق`, `حجة`).
+    - `negative`: Explicit criticism or disparagement (e.g., `ضعيف`, `كذاب`, `متروك`, `كذبوه`).
     - `mixed`: Co-presence of praise and criticism in the same claim (e.g., `هو أحد أئمة المسلمين إلا أنه لما كبر ساء حفظه`).
-    - `qualified`: Restricted validity or conditional acceptance (e.g., reliable in a specific teacher or book, but weak in others).
-    - `neutral_descriptive`: Descriptive factual observation without evaluative force.
-    - `unclear`: Ambiguous wording that defies clear stance interpretation.
+    - `qualified`: Restricted validity or conditional acceptance (e.g., reliable in a specific teacher, but weak in others; or `ليس بالقوي`).
+    - `neutral`: Purely descriptive, non-evaluative statement (e.g., biographical notes, chronological inqita without disparagement, pure documentary citations).
+    - `unclear`: Ambiguous orientation.
     - `not_applicable`: When `contains_evaluation = no`.
-  - **Critical Scholarly Rule**: Do NOT force `لم يسمع من فلان`, `تفرد به`, or `لا يصح` into `negative` narrator reliability. In classical *rijal* criticism, transmission disconnect is distinct from moral unreliability.
-- `evaluation_target`:
-  - **Definition**: What exact entity is evaluated by this claim?
-  - **Allowed Values**:
-    - `narrator_overall`: General status of the narrator across all transmissions.
-    - `specific_transmission_link`: Contact or hearing between two specific individuals (e.g., `لم يسمع من عكرمة`).
-    - `specific_hadith_text`: Flaw or invalidation of a specific report (e.g., `هذا حديث لا يثبت`).
-    - `memory_or_precision`: Cognitive retention or book-keeping accuracy.
-    - `commentary_or_legal_discussion`: Legal or factual commentary that is not an evaluation of transmission reliability.
-    - `documentary_citation_only`: Non-evaluative locator or title.
-    - `not_applicable`: When `contains_evaluation = no`.
-- `qualification_or_context`:
-  - **Definition**: Specific contextual scope, condition, or limitation placed on the evaluation.
-  - **Allowed Values**: Explanatory text (e.g., `في حفظه لا في عدالته`, `لما كبر في السن`, `عن عطاء خاصة`), or `none`.
 
-### Section D: Documentary Provenance
-- `source_work_as_written`: Title of cited book as written in the text or locator span.
-- `source_work_normalized`: Canonical title of the referenced work.
-- `source_locator_as_written`: Verbatim volume, page, or hadith number string (e.g. `(1/ 23) برقم: (81)`).
+#### Contextual Interpretation Guidelines:
+1. **`تفرد به` (Singularity of Transmission)**:
+   - `statement_function`: `transmission_observation`
+   - `evaluative_orientation`: `neutral` or `qualified` depending on context. In classical criticism, *tafarrud* by an acceptable narrator is not inherently negative; it indicates uniqueness. Do NOT automatically classify as `negative`.
+2. **`لا أعرفه` (Non-Recognition)**:
+   - `statement_function`: `narrator_appraisal` or `transmission_observation`
+   - `evaluative_orientation`: `neutral`, `qualified`, or `negative` depending on whether it denotes total obscurity (*jahalah*) or local non-familiarity. Do not treat as a formal grade of deliberate weakness without context.
+3. **`أحب إليك... فقال كلاهما` (Comparative Preference)**:
+   - `statement_function`: `comparative_preference`
+   - `evaluative_orientation`: `positive` or `qualified`. It indicates relative preference between two acceptable authorities; do not treat as an unconditional absolute grade.
+4. **`لم يسمع من فلان` (Transmission Disconnect)**:
+   - `statement_function`: `transmission_observation`
+   - `evaluative_orientation`: `neutral` or `qualified`. It establishes *inqita'* (lack of direct hearing), not moral unreliability or fabrication.
+5. **`لا يصح عن الزهري` (Narration Invalidation)**:
+   - `statement_function`: `hadith_or_report_appraisal`
+   - `evaluative_orientation`: `negative` (directed at the hadith, not necessarily narrator unreliability).
 
-### Section E: Annotation Quality
+- `evaluative_span_verbatim`: Exact verbatim Arabic substring containing the evaluative judgement (or blank if none).
+- `qualification_or_context`: Specific contextual limitation (e.g., `في حفظه لا في عدالته`, `لما كبر في السن`, `عن عطاء خاصة`), or `none`.
+
+### Section D: Quality & Notes
 - `transcription_confidence`: `high`, `medium`, `low`, `unresolved`.
 - `interpretation_confidence`: `high`, `medium`, `low`, `unresolved`.
-- `unresolved_ambiguity`: Concise description of competing interpretations, or `none`.
-- `reviewer_notes`: Free-text observations, cross-references, or historical anomalies.
+- `unresolved_ambiguity`: Description of competing interpretations, or `none`.
+- `reviewer_notes`: Free-text observations, anomalies, or historical context.
 
 ---
 

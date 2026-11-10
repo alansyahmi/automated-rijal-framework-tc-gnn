@@ -1,8 +1,8 @@
 {
-  "version": "2.0.0",
-  "description": "Blinded 20-case human manual annotation pilot (evaluation-level and two-pass design)",
+  "version": "2.1.0",
+  "description": "Blinded 20-case human manual annotation pilot (evaluation-level, two-pass design with strict source-ID purge and complete provenance schema)",
   "purposive_sample_declaration": "This 20-case pilot is purposively sampled from the 60-case validation pool to evaluate codebook clarity, semantic diversity, and annotation feasibility across all six strata. It is NOT a prevalence-representative or corpus-wide random sample.",
-  "execution_timestamp_utc": "2026-11-10T21:02:39.348156+00:00",
+  "execution_timestamp_utc": "2026-11-10T21:21:24.047773+00:00",
   "sampling_seed": 20261111,
   "input_dataset": {
     "path": "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v3\\TUPLE_MANUAL_VALIDATION.csv",
@@ -69,28 +69,28 @@
       "sha256": "dec3acfc74c9dd4d08bac439d5fc0c4cb86f3f7ac073f59e4f86289749c95f7e"
     },
     "PILOT_INTERNAL_MAPPING.csv": {
-      "bytes": 5748,
-      "sha256": "1b61d67b0f8d9a72d3742416340d665317f70363d19855556bfbad8463446d12"
+      "bytes": 13317,
+      "sha256": "70d06b6d52e497c0a214e887d3bd3d9f152ed26278cd75c57f4fc55246722eb4"
     },
     "PILOT_PASS1_TEXT_BLINDED.csv": {
-      "bytes": 15012,
-      "sha256": "7c632f86b3c91f44f4f0520b986fd56c42f37ed86c6a9d8ef13d8c6ffc590e97"
+      "bytes": 14897,
+      "sha256": "0b2ad50d396b3c5072f392c521ded33c8b21eb21329bfda2340f22f505f6cc0b"
     },
     "PILOT_EVALUATIONS_BLANK.csv": {
-      "bytes": 1344,
-      "sha256": "438fc701c4b39b3674b077dbd77ba82883bfb9916809f5a9eacd29d410a57ec6"
+      "bytes": 1517,
+      "sha256": "e5be3ddde8a28ff6a9406bac322f721fdcdf0aeb121f972f72e249702fd9e238"
     },
     "PILOT_PASS2_RECONCILIATION_BLANK.csv": {
       "bytes": 8537,
       "sha256": "a2c5bfdd784521e3ebfd1daaaddfcf85b1f3a2f272b3a4faac906460da473f13"
     },
     "ANNOTATION_CODEBOOK.md": {
-      "bytes": 13967,
-      "sha256": "a1eb4246fafb2a4e7381dd36a7cd3ffdb4b4d7305cab217624a4c797318495d3"
+      "bytes": 16941,
+      "sha256": "70e8b1ba545d677b09e198390bda1930d94a97891df6be1edc3ed384d805b790"
     },
     "PILOT_PROTOCOL.md": {
-      "bytes": 5899,
-      "sha256": "7afea635ffcbe336209f69c1daa3688b0be6cf5231977cabca9e4a0ab7e0441b"
+      "bytes": 6094,
+      "sha256": "19d855c6ffbea7697d6903133c26ca750077220e14cfb32ad34603b914f26934"
     }
   }
 }
