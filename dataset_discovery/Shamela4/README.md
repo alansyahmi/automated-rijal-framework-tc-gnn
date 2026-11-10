@@ -61,10 +61,12 @@ Run test suite:
     python -m unittest dataset_discovery/Shamela4/test_blinded_annotation_pilot.py
 
 Outputs are saved to `data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20`:
+- `PILOT_PASS1_TEXT_BLINDED.csv` — Pass 1 text-only context strictly omitting attached narrator metadata and classifier labels;
+- `PILOT_EVALUATIONS_BLANK.csv` — evaluation-level annotation template representing one distinct evaluative claim per row linked to its parent `pilot_case_id`;
+- `PILOT_PASS2_RECONCILIATION_BLANK.csv` — Pass 2 identity reconciliation template revealing `attached_narrator_id` and `attached_narrator_name` for reconciliation against Pass 1 findings;
 - `PILOT_SELECTION.csv` — selected 20 cases with stratum and selection rationale;
-- `PILOT_REVIEWER_BLINDED.csv` — reviewer-facing copy with original text and blank annotation fields, strictly omitting all automated/stratum labels;
 - `PILOT_INTERNAL_MAPPING.csv` — quarantined key mapping blinded pilot case IDs (`PILOT01`–`PILOT20`) to original source IDs and classifications;
-- `ANNOTATION_CODEBOOK.md` — comprehensive field-by-field definitions, allowed values, and rules;
-- `PILOT_PROTOCOL.md` — protocol detailing research questions, sampling design, anti-leakage firewall, and limitations;
+- `ANNOTATION_CODEBOOK.md` — comprehensive field-by-field definitions, allowed values, attribution types, refined stances, and targets;
+- `PILOT_PROTOCOL.md` — protocol detailing two-pass workflow, evaluation-level policy, and limitations;
 - `pilot_manifest.json` — cryptographic hashes, input verification, seed, and purposive sampling declaration.
 

@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0",
-  "description": "Blinded 20-case human manual annotation pilot from Shamela4 tuple validation pool",
+  "version": "2.0.0",
+  "description": "Blinded 20-case human manual annotation pilot (evaluation-level and two-pass design)",
   "purposive_sample_declaration": "This 20-case pilot is purposively sampled from the 60-case validation pool to evaluate codebook clarity, semantic diversity, and annotation feasibility across all six strata. It is NOT a prevalence-representative or corpus-wide random sample.",
-  "execution_timestamp_utc": "2026-11-10T20:39:39.546882+00:00",
+  "execution_timestamp_utc": "2026-11-10T21:02:39.348156+00:00",
   "sampling_seed": 20261111,
   "input_dataset": {
     "path": "data\\2_interim\\shamela4_narrator_audit\\stage2_diagnostics\\forensic_verification_v3\\TUPLE_MANUAL_VALIDATION.csv",
@@ -68,21 +68,29 @@
       "bytes": 6459,
       "sha256": "dec3acfc74c9dd4d08bac439d5fc0c4cb86f3f7ac073f59e4f86289749c95f7e"
     },
-    "PILOT_REVIEWER_BLINDED.csv": {
-      "bytes": 16854,
-      "sha256": "c763175ef24aed895d854b0fa378f2357aaa09de49a65ed53966ba84498982e7"
-    },
     "PILOT_INTERNAL_MAPPING.csv": {
       "bytes": 5748,
       "sha256": "1b61d67b0f8d9a72d3742416340d665317f70363d19855556bfbad8463446d12"
     },
+    "PILOT_PASS1_TEXT_BLINDED.csv": {
+      "bytes": 15012,
+      "sha256": "7c632f86b3c91f44f4f0520b986fd56c42f37ed86c6a9d8ef13d8c6ffc590e97"
+    },
+    "PILOT_EVALUATIONS_BLANK.csv": {
+      "bytes": 1344,
+      "sha256": "438fc701c4b39b3674b077dbd77ba82883bfb9916809f5a9eacd29d410a57ec6"
+    },
+    "PILOT_PASS2_RECONCILIATION_BLANK.csv": {
+      "bytes": 8537,
+      "sha256": "a2c5bfdd784521e3ebfd1daaaddfcf85b1f3a2f272b3a4faac906460da473f13"
+    },
     "ANNOTATION_CODEBOOK.md": {
-      "bytes": 10837,
-      "sha256": "596ab5a5454239a729829d0dc40f98b131dc0d2c7b3114a8db4387e688e3fbb6"
+      "bytes": 13967,
+      "sha256": "a1eb4246fafb2a4e7381dd36a7cd3ffdb4b4d7305cab217624a4c797318495d3"
     },
     "PILOT_PROTOCOL.md": {
-      "bytes": 5727,
-      "sha256": "57c4e9ed3d867ba47c9ca0d12285101f19fe75450b71dfd5db4961b18b16c3b5"
+      "bytes": 5899,
+      "sha256": "7afea635ffcbe336209f69c1daa3688b0be6cf5231977cabca9e4a0ab7e0441b"
     }
   }
 }

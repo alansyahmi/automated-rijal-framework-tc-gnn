@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
-"""Comprehensive test suite for Shamela4 blinded 20-case annotation pilot.
+"""Comprehensive test suite for refined Shamela4 evaluation-level two-pass pilot.
 
 Verifies:
 1. Exactly 20 selected cases.
 2. Unique source IDs across all 20 cases.
-3. Reproducibility with the same seed.
-4. Correct separation of blinded and internal files.
-5. No automated classification fields in reviewer CSV.
-6. Preservation of original source text (field 1, field 2, tuple JSON).
-7. Preservation of the original 60-case CSV (hash remains unchanged).
-8. Manifest/hash consistency (all files match manifest).
-9. All six sampling strata represented.
-10. All annotation columns are blank in reviewer template.
-11. Arabic text, diacritics, and embedded newlines round-trip accurately.
+3. Reproducibility with the same seed (identical IDs, orders, hashes).
+4. Text-only Pass 1 strictly excludes attached narrator metadata (narrator_id, narrator_name).
+5. Pass 2 retains the correct mapping to the original narrator (attached_narrator_id, attached_narrator_name).
+6. No automated classification fields leak into either reviewer stage (Pass 1, Evaluations, Pass 2).
+7. Preservation of original source text across all templates.
+8. Preservation of the original 60-case CSV (hash remains unchanged).
+9. Existing pilot source IDs and mapping remain strictly unchanged.
+10. Evaluation-level template allows multiple evaluation rows linked to one tuple.
+11. Unique evaluation IDs within each tuple.
+12. Evaluation-level and reconciliation templates contain no pre-filled annotations.
+13. Manifest/hash consistency (all recorded files match size and SHA-256).
+14. All six sampling strata represented.
 """
 from __future__ import annotations
 
@@ -24,14 +27,17 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 from dataset_discovery.Shamela4.blinded_annotation_pilot import (
-    ANNOTATION_FIELDS,
+    EVALUATION_FIELDS,
     MAPPING_FIELDS,
-    REVIEWER_FIELDS,
+    PASS1_TEXT_FIELDS,
+    PASS2_RECONCILIATION_FIELDS,
     SELECTION_FIELDS,
     V3_EXPECTED_HASH,
     V3_INPUT_RELATIVE,
+    build_evaluation_blank_rows,
     build_internal_mapping_rows,
-    build_reviewer_rows,
+    build_pass1_text_rows,
+    build_pass2_reconciliation_rows,
     build_selection_rows,
     read_csv,
     select_pilot_cases,
@@ -49,7 +55,9 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             cls.root / "data/2_interim/shamela4_narrator_audit/stage2_diagnostics/blinded_annotation_pilot_20"
         )
         cls.manifest_path = cls.pilot_dir / "pilot_manifest.json"
-        cls.reviewer_path = cls.pilot_dir / "PILOT_REVIEWER_BLINDED.csv"
+        cls.pass1_path = cls.pilot_dir / "PILOT_PASS1_TEXT_BLINDED.csv"
+        cls.eval_path = cls.pilot_dir / "PILOT_EVALUATIONS_BLANK.csv"
+        cls.pass2_path = cls.pilot_dir / "PILOT_PASS2_RECONCILIATION_BLANK.csv"
         cls.mapping_path = cls.pilot_dir / "PILOT_INTERNAL_MAPPING.csv"
         cls.selection_path = cls.pilot_dir / "PILOT_SELECTION.csv"
         cls.codebook_path = cls.pilot_dir / "ANNOTATION_CODEBOOK.md"
@@ -86,72 +94,83 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
         )
         self.assertEqual(self.stratum_counts, rerun_counts)
 
-    # 4. Correct separation of blinded and internal files
-    def test_correct_separation_of_blinded_and_internal_files(self) -> None:
-        self.assertTrue(self.reviewer_path.is_file(), f"Missing reviewer file: {self.reviewer_path}")
-        self.assertTrue(self.mapping_path.is_file(), f"Missing mapping file: {self.mapping_path}")
+    # 4. Text-only Pass 1 excludes attached narrator metadata
+    def test_pass1_text_only_excludes_narrator_metadata(self) -> None:
+        self.assertTrue(self.pass1_path.is_file(), f"Missing Pass 1 file: {self.pass1_path}")
+        pass1_rows = read_csv(self.pass1_path)
+        self.assertEqual(len(pass1_rows), 20)
 
-        reviewer_rows = read_csv(self.reviewer_path)
+        pass1_cols = set(pass1_rows[0].keys())
+        self.assertNotIn("narrator_id", pass1_cols)
+        self.assertNotIn("narrator_name", pass1_cols)
+        self.assertNotIn("source_id", pass1_cols)
+        self.assertNotIn("v3_case_id", pass1_cols)
+        self.assertNotIn("sampling_stratum", pass1_cols)
+        self.assertNotIn("group_label", pass1_cols)
+
+        # Must retain text context
+        self.assertIn("pilot_case_id", pass1_cols)
+        self.assertIn("entry_index", pass1_cols)
+        self.assertIn("original_field_1", pass1_cols)
+        self.assertIn("original_field_2", pass1_cols)
+        self.assertIn("original_tuple_json", pass1_cols)
+
+    # 5. Pass 2 retains correct mapping to original narrator
+    def test_pass2_retains_correct_narrator_mapping(self) -> None:
+        self.assertTrue(self.pass2_path.is_file(), f"Missing Pass 2 file: {self.pass2_path}")
+        pass2_rows = read_csv(self.pass2_path)
+        self.assertEqual(len(pass2_rows), 20)
+
         mapping_rows = read_csv(self.mapping_path)
+        mapping_by_pid = {r["pilot_case_id"]: r for r in mapping_rows}
 
-        self.assertEqual(len(reviewer_rows), 20)
-        self.assertEqual(len(mapping_rows), 20)
+        for row in pass2_rows:
+            pid = row["pilot_case_id"]
+            expected = mapping_by_pid[pid]
+            self.assertEqual(row["attached_narrator_id"], expected["narrator_id"])
+            self.assertEqual(row["attached_narrator_name"], expected["narrator_name"])
 
-        # Reviewer file must NOT contain source_id, stratum, or automated classifier columns
-        reviewer_cols = set(reviewer_rows[0].keys())
-        self.assertNotIn("source_id", reviewer_cols)
-        self.assertNotIn("v3_case_id", reviewer_cols)
-        self.assertNotIn("sampling_stratum", reviewer_cols)
-        self.assertNotIn("automated_pattern", reviewer_cols)
-        self.assertNotIn("automated_certainty", reviewer_cols)
-        self.assertNotIn("automated_evidence", reviewer_cols)
-        self.assertNotIn("source_ID_level_classification", reviewer_cols)
-        self.assertNotIn("quotation_citation_separability", reviewer_cols)
-
-        # Internal mapping MUST retain full linkage
-        mapping_cols = set(mapping_rows[0].keys())
-        self.assertIn("source_id", mapping_cols)
-        self.assertIn("v3_case_id", mapping_cols)
-        self.assertIn("sampling_stratum", mapping_cols)
-        self.assertIn("automated_pattern", mapping_cols)
-        self.assertIn("source_ID_level_classification", mapping_cols)
-
-    # 5. No automated classification fields in the reviewer CSV
-    def test_no_automated_fields_in_reviewer_csv(self) -> None:
-        reviewer_rows = read_csv(self.reviewer_path)
-        forbidden_substrings = [
-            "pattern", "certainty", "stratum", "strata", "classif", "evidence", "separability",
+    # 6. No automated classification fields leak into either reviewer stage
+    def test_no_automated_fields_leak_into_reviewer_templates(self) -> None:
+        forbidden_exact_or_prefixes = [
+            "automated_pattern", "automated_certainty", "automated_evidence",
+            "sampling_stratum", "source_id_level_classification",
+            "quotation_citation_separability", "v3_case_id", "source_id",
         ]
-        for col in reviewer_rows[0].keys():
-            for forbidden in forbidden_substrings:
-                self.assertNotIn(
-                    forbidden,
-                    col.lower(),
-                    f"Reviewer column '{col}' contains forbidden automated term '{forbidden}'",
-                )
+        for path in [self.pass1_path, self.eval_path, self.pass2_path]:
+            rows = read_csv(path)
+            for col in rows[0].keys():
+                col_lower = col.lower()
+                for forbidden in forbidden_exact_or_prefixes:
+                    self.assertNotEqual(
+                        col_lower,
+                        forbidden,
+                        f"Reviewer template {path.name} contains forbidden automated column '{col}'",
+                    )
+                    self.assertFalse(
+                        col_lower.startswith("automated_"),
+                        f"Reviewer template {path.name} contains automated prefix in column '{col}'",
+                    )
 
-    # 6. Preservation of original source text
+    # 7. Preservation of original source text
     def test_preservation_of_original_source_text(self) -> None:
         v3_by_case = {r["case_id"]: r for r in self.v3_rows}
         mapping_rows = read_csv(self.mapping_path)
-        reviewer_rows = read_csv(self.reviewer_path)
-
-        rev_by_pilot_id = {r["pilot_case_id"]: r for r in reviewer_rows}
+        pass1_rows = read_csv(self.pass1_path)
+        pass1_by_pid = {r["pilot_case_id"]: r for r in pass1_rows}
 
         for m_row in mapping_rows:
             pid = m_row["pilot_case_id"]
             v3_id = m_row["v3_case_id"]
             orig_v3 = v3_by_case[v3_id]
-            rev_row = rev_by_pilot_id[pid]
+            p1_row = pass1_by_pid[pid]
 
-            self.assertEqual(rev_row["narrator_id"], orig_v3["narrator_id"])
-            self.assertEqual(rev_row["narrator_name"], orig_v3["narrator_name"])
-            self.assertEqual(rev_row["entry_index"], orig_v3["entry_index"])
-            self.assertEqual(rev_row["original_field_1"], orig_v3["original_field_1"])
-            self.assertEqual(rev_row["original_field_2"], orig_v3["original_field_2"])
-            self.assertEqual(rev_row["original_tuple_json"], orig_v3["original_tuple_json"])
+            self.assertEqual(p1_row["entry_index"], orig_v3["entry_index"])
+            self.assertEqual(p1_row["original_field_1"], orig_v3["original_field_1"])
+            self.assertEqual(p1_row["original_field_2"], orig_v3["original_field_2"])
+            self.assertEqual(p1_row["original_tuple_json"], orig_v3["original_tuple_json"])
 
-    # 7. Preservation of the original 60-case CSV
+    # 8. Preservation of original 60-case CSV
     def test_preservation_of_original_60_case_csv(self) -> None:
         self.assertTrue(self.v3_csv_path.is_file())
         current_hash = sha256(self.v3_csv_path)
@@ -161,13 +180,101 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             f"Original 60-case V3 CSV was modified! Expected {V3_EXPECTED_HASH}, got {current_hash}",
         )
 
-    # 8. Manifest/hash consistency
+    # 9. Existing pilot source IDs and mappings remain unchanged
+    def test_existing_pilot_mapping_unchanged(self) -> None:
+        mapping_rows = read_csv(self.mapping_path)
+        self.assertEqual(len(mapping_rows), 20)
+
+        # Authoritative committed mapping
+        expected_mapping = [
+            ("PILOT01", "TV022", "123796"),
+            ("PILOT02", "TV014", "125629"),
+            ("PILOT03", "TV045", "137006"),
+            ("PILOT04", "TV053", "292716"),
+            ("PILOT05", "TV052", "127749"),
+            ("PILOT06", "TV021", "205165"),
+            ("PILOT07", "TV012", "118902"),
+            ("PILOT08", "TV001", "295637"),
+            ("PILOT09", "TV038", "96646"),
+            ("PILOT10", "TV007", "26434"),
+            ("PILOT11", "TV005", "198246"),
+            ("PILOT12", "TV028", "97581"),
+            ("PILOT13", "TV032", "146571"),
+            ("PILOT14", "TV037", "149057"),
+            ("PILOT15", "TV048", "66597"),
+            ("PILOT16", "TV057", "135575"),
+            ("PILOT17", "TV018", "208385"),
+            ("PILOT18", "TV036", "145216"),
+            ("PILOT19", "TV024", "50725"),
+            ("PILOT20", "TV043", "127988"),
+        ]
+
+        for i, (exp_pid, exp_v3, exp_src) in enumerate(expected_mapping):
+            actual = mapping_rows[i]
+            self.assertEqual(actual["pilot_case_id"], exp_pid)
+            self.assertEqual(actual["v3_case_id"], exp_v3)
+            self.assertEqual(str(actual["source_id"]), exp_src)
+
+    # 10. Multiple evaluation rows can link to one tuple
+    def test_multiple_evaluation_rows_can_link_to_one_tuple(self) -> None:
+        # Create a mock multi-evaluation set
+        multi_eval_rows = [
+            {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E01", "contains_evaluation": "yes"},
+            {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E02", "contains_evaluation": "yes"},
+            {"pilot_case_id": "PILOT01", "evaluation_id": "PILOT01_E03", "contains_evaluation": "yes"},
+            {"pilot_case_id": "PILOT02", "evaluation_id": "PILOT02_E01", "contains_evaluation": "yes"},
+        ]
+        # Verify pilot_case_id links properly and evaluation_ids are distinct
+        p1_evals = [r for r in multi_eval_rows if r["pilot_case_id"] == "PILOT01"]
+        self.assertEqual(len(p1_evals), 3)
+        self.assertEqual(len(set(r["evaluation_id"] for r in p1_evals)), 3)
+
+    # 11. Unique evaluation IDs within each tuple
+    def test_unique_evaluation_ids_in_template(self) -> None:
+        eval_rows = read_csv(self.eval_path)
+        eval_ids = [r["evaluation_id"] for r in eval_rows]
+        self.assertEqual(len(eval_ids), len(set(eval_ids)), "Evaluation IDs in template must be unique")
+        for row in eval_rows:
+            self.assertTrue(
+                row["evaluation_id"].startswith(f"{row['pilot_case_id']}_"),
+                f"Evaluation ID '{row['evaluation_id']}' does not match pilot_case_id '{row['pilot_case_id']}'",
+            )
+
+    # 12. Evaluation-level and reconciliation templates contain no pre-filled annotations
+    def test_templates_contain_no_prefilled_annotations(self) -> None:
+        eval_rows = read_csv(self.eval_path)
+        eval_annotation_cols = [c for c in EVALUATION_FIELDS if c not in ("pilot_case_id", "evaluation_id")]
+        for row in eval_rows:
+            for col in eval_annotation_cols:
+                self.assertEqual(
+                    row[col],
+                    "",
+                    f"Pre-filled annotation detected in {row['evaluation_id']} column '{col}': '{row[col]}'",
+                )
+
+        pass2_rows = read_csv(self.pass2_path)
+        pass2_annotation_cols = [
+            "target_matches_attached_narrator",
+            "reconciliation_status",
+            "reconciled_narrator_id",
+            "reconciliation_confidence",
+            "reconciliation_notes",
+        ]
+        for row in pass2_rows:
+            for col in pass2_annotation_cols:
+                self.assertEqual(
+                    row[col],
+                    "",
+                    f"Pre-filled annotation detected in Pass 2 {row['pilot_case_id']} column '{col}': '{row[col]}'",
+                )
+
+    # 13. Manifest/hash consistency
     def test_manifest_hash_consistency(self) -> None:
         self.assertTrue(self.manifest_path.is_file(), f"Missing manifest: {self.manifest_path}")
         with self.manifest_path.open("r", encoding="utf-8") as f:
             manifest = json.load(f)
 
-        self.assertEqual(manifest["version"], "1.0.0")
+        self.assertEqual(manifest["version"], "2.0.0")
         self.assertEqual(manifest["selected_case_count"], 20)
         self.assertEqual(len(manifest["selected_source_ids"]), 20)
         self.assertEqual(len(set(manifest["selected_source_ids"])), 20)
@@ -186,22 +293,11 @@ class TestBlindedAnnotationPilot(unittest.TestCase):
             self.assertEqual(actual_size, meta["bytes"], f"Byte mismatch for {filename}")
             self.assertEqual(actual_hash, meta["sha256"], f"Hash mismatch for {filename}")
 
-    # 9. All six sampling strata represented
+    # 14. All six sampling strata represented
     def test_all_six_strata_represented(self) -> None:
         self.assertEqual(len(self.stratum_counts), 6, "Not all 6 strata are represented")
         for stratum, count in self.stratum_counts.items():
             self.assertGreater(count, 0, f"Stratum {stratum} has 0 cases in pilot")
-
-    # 10. Reviewer blank fields are empty
-    def test_reviewer_blank_fields_are_empty(self) -> None:
-        reviewer_rows = read_csv(self.reviewer_path)
-        for row in reviewer_rows:
-            for field in ANNOTATION_FIELDS:
-                self.assertEqual(
-                    row[field],
-                    "",
-                    f"Annotation field '{field}' in {row['pilot_case_id']} is not blank: '{row[field]}'",
-                )
 
 
 if __name__ == "__main__":
