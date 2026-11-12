@@ -1,0 +1,4227 @@
+{
+  "enums": {
+    "attribution_form": [
+      "direct_quotation",
+      "explicit_attribution",
+      "collective_attribution",
+      "compiler_synthesis",
+      "unclear",
+      "not_applicable",
+      "not_assessed"
+    ],
+    "candidate_comparison_source_span_status": [
+      "transcribed",
+      "not_found_after_review",
+      "unavailable",
+      "unresolved",
+      "not_assessed"
+    ],
+    "candidate_entry_text_status": [
+      "transcribed",
+      "not_found_after_review",
+      "unavailable",
+      "unresolved",
+      "not_assessed"
+    ],
+    "candidate_field_source_correspondence": [
+      "exact",
+      "minor_variation",
+      "partial_or_truncated",
+      "substantial_difference",
+      "not_found",
+      "unresolved",
+      "not_assessed"
+    ],
+    "compiler_authorship_status": [
+      "supported",
+      "contradicted",
+      "unresolved",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "corroboration_status": [
+      "independent_corroboration",
+      "dependent_corroboration",
+      "unresolved_corroboration",
+      "not_examined",
+      "not_applicable"
+    ],
+    "date_claim_status": [
+      "recorded_in_source",
+      "unknown",
+      "unresolved",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "date_kind": [
+      "evaluator_lifespan_or_death",
+      "approximate_judgment_date",
+      "source_work_composition_date",
+      "surviving_witness_date",
+      "modern_edition_publication_date"
+    ],
+    "edition_variant_status": [
+      "no_variant_marked",
+      "variant_marked_in_edition_metadata",
+      "editorial_insertion_verified",
+      "editorial_note_or_footnote",
+      "unclear",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "evaluator_value_status": [
+      "identified",
+      "collective_unidentified",
+      "none_named",
+      "unknown",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "evidence_role": [
+      "identity",
+      "passage_text",
+      "historical_attribution",
+      "transmission_route",
+      "temporal_date",
+      "edition_metadata",
+      "other"
+    ],
+    "evidence_text_status": [
+      "transcribed",
+      "not_found_after_review",
+      "unavailable",
+      "unresolved",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "feature_inclusion_status": [
+      "included",
+      "excluded",
+      "quarantined",
+      "not_assessed"
+    ],
+    "historical_evaluator_attribution_status": [
+      "supported_by_verified_source_or_route",
+      "explicitly_reported_but_historically_unverified",
+      "contradicted",
+      "unresolved",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "historical_input_eligibility": [
+      "eligible",
+      "quarantined_pending_verification",
+      "ineligible",
+      "not_applicable",
+      "not_assessed"
+    ],
+    "identity_match_status": [
+      "confirmed",
+      "probable",
+      "unresolved",
+      "mismatch",
+      "not_found",
+      "not_assessed"
+    ],
+    "migration_join_status": [
+      "matched",
+      "missing_component",
+      "duplicate_key",
+      "ambiguous_match",
+      "context_mismatch",
+      "not_assessed"
+    ],
+    "original_value_status": [
+      "present",
+      "absent_in_source",
+      "unavailable",
+      "not_assessed"
+    ],
+    "passage_evaluator_naming_status": [
+      "explicit_individual_named",
+      "collective_only",
+      "no_evaluator_named",
+      "unclear",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "rank_status": [
+      "assigned",
+      "unranked",
+      "not_applicable",
+      "not_assessed",
+      "unresolved",
+      "not_found"
+    ],
+    "source_author_metadata_status": [
+      "recorded",
+      "unknown",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "source_verification_status": [
+      "verified_in_corpus",
+      "verified_external_edition",
+      "unverified",
+      "contradicted",
+      "not_assessed"
+    ],
+    "statement_record_status": [
+      "provisional_work_item",
+      "reviewed_statement",
+      "superseded_placeholder"
+    ],
+    "statement_source_correspondence": [
+      "exact",
+      "minor_variation",
+      "substantial_difference",
+      "not_found",
+      "unresolved",
+      "not_assessed"
+    ],
+    "statement_text_status": [
+      "transcribed",
+      "not_transcribed",
+      "unavailable",
+      "unresolved",
+      "not_assessed"
+    ],
+    "statement_type": [
+      "standardized_narrator_grade",
+      "qualified_narrator_grade",
+      "attributed_earlier_critic_judgment",
+      "descriptive_or_generational_status",
+      "specific_transmission_criticism",
+      "biographical_or_factual_statement",
+      "mixed_or_unclear",
+      "not_assessed"
+    ],
+    "taqrib_statement_validity": [
+      "supported_taqrib_statement",
+      "not_supported_in_taqrib",
+      "unresolved",
+      "not_assessed"
+    ],
+    "target_task_scope": [
+      "ordinary_grade_candidate",
+      "status_only_candidate",
+      "not_in_defined_task",
+      "unresolved",
+      "not_assessed"
+    ],
+    "temporal_policy_result": [
+      "passes_policy",
+      "fails_policy",
+      "cannot_assess",
+      "not_applicable"
+    ],
+    "transmission_route_status": [
+      "documented_traceable",
+      "named_authority_route_unverified",
+      "route_examined_not_found",
+      "unresolved",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "transmitter_value_status": [
+      "identified",
+      "none_identified",
+      "unknown",
+      "not_assessed",
+      "not_applicable"
+    ],
+    "wording_author_value_status": [
+      "identified",
+      "unknown",
+      "not_assessed",
+      "not_applicable"
+    ]
+  },
+  "fields": [
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "audit_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "audit_record_id",
+      "output_table": "cases.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "dataset_name",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "dataset_name",
+      "output_table": "cases.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "dataset_narrator_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "dataset_narrator_id",
+      "output_table": "cases.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "dataset_narrator_name",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "dataset_narrator_name",
+      "output_table": "cases.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "original_grade_field",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "original_grade_field",
+      "output_table": "cases.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "original_grade_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "original_grade_verbatim",
+      "output_table": "cases.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "original_grade_source_location",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "original_grade_source_location",
+      "output_table": "cases.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "present",
+        "absent_in_source",
+        "unavailable",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "original_value_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "original_value_status",
+      "output_table": "cases.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 original_value_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "audit_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "audit_record_id",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_entry_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "candidate_entry_id",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "integer",
+      "frozen_schema_field": "within_case_candidate_index",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "within_case_candidate_index",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "dataset_name",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "dataset_name",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "dataset_narrator_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "dataset_narrator_id",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "dataset_narrator_name",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "dataset_narrator_name",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "original_grade_field",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "original_grade_field",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "original_grade_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "original_grade_verbatim",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "original_grade_source_location",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "original_grade_source_location",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "taqrib_book_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "taqrib_book_id",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "taqrib_printed_page_from_corpus",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "taqrib_printed_page_from_corpus",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "taqrib_entry_text_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "taqrib_entry_text_verbatim",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_found_after_review",
+        "unavailable",
+        "unresolved",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "candidate_entry_text_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "candidate_entry_text_status",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 candidate_entry_text_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "integer",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_entry_number_from_text",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_locator_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "source_locator_verbatim",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "canonical_source_locator_key",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "canonical_source_locator_key",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "exact",
+        "minor_variation",
+        "partial_or_truncated",
+        "substantial_difference",
+        "not_found",
+        "unresolved",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "candidate_field_source_correspondence",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "candidate_field_source_correspondence",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 candidate_field_source_correspondence registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_comparison_source_span",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "candidate_comparison_source_span",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Non-empty iff candidate_comparison_source_span_status=transcribed."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_found_after_review",
+        "unavailable",
+        "unresolved",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "candidate_comparison_source_span_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "candidate_comparison_source_span_status",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 candidate_comparison_source_span_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_comparison_rationale",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "candidate_comparison_rationale",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Required for an assessed candidate-field comparison."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_comparison_locator",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "candidate_comparison_locator",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Required for an assessed candidate-field comparison."
+    },
+    {
+      "allowed_enum_values": [
+        "confirmed",
+        "probable",
+        "unresolved",
+        "mismatch",
+        "not_found",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "identity_match_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "identity_match_status",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 identity_match_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "identity_evidence_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "identity_evidence_verbatim",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_found_after_review",
+        "unavailable",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "identity_evidence_text_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "identity_evidence_text_status",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "identity_evidence_record_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "identity_evidence_record_id",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Must link to transcribed identity evidence for this candidate from a verified source work distinct from the Taqrib target work."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "identity_evidence_locator",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "identity_evidence_locator",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "identity_evidence_independence_rationale",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "taqrib_source_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "taqrib_source_record_id",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "legacy_rank_candidate",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "legacy_reviewer_notes_verbatim",
+      "output_table": "candidate_entries.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "audit_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "audit_record_id",
+      "output_table": "statements.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_entry_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "candidate_entry_id",
+      "output_table": "statements.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_id",
+      "output_table": "statements.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [
+        "provisional_work_item",
+        "reviewed_statement",
+        "superseded_placeholder"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "statement_record_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_record_status",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 statement_record_status registry."
+    },
+    {
+      "allowed_enum_values": [
+        "standardized_narrator_grade",
+        "qualified_narrator_grade",
+        "attributed_earlier_critic_judgment",
+        "descriptive_or_generational_status",
+        "specific_transmission_criticism",
+        "biographical_or_factual_statement",
+        "mixed_or_unclear",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "statement_type",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_type",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 statement_type registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_text_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "statement_text_verbatim",
+      "output_table": "statements.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_transcribed",
+        "unavailable",
+        "unresolved",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "statement_text_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_text_status",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 statement_text_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "grade_base_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "grade_base_verbatim",
+      "output_table": "statements.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_found_after_review",
+        "unavailable",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "grade_base_text_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "grade_base_text_status",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "grade_qualification_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "grade_qualification_verbatim",
+      "output_table": "statements.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_found_after_review",
+        "unavailable",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "grade_qualification_text_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "grade_qualification_text_status",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "nullable_integer",
+      "frozen_schema_field": "taqrib_rank_number",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "taqrib_rank_number",
+      "output_table": "statements.csv",
+      "validation_rule": "Nullable integer 1..12; present iff rank_status=assigned."
+    },
+    {
+      "allowed_enum_values": [
+        "assigned",
+        "unranked",
+        "not_applicable",
+        "not_assessed",
+        "unresolved",
+        "not_found"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "rank_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "rank_status",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 rank_status registry."
+    },
+    {
+      "allowed_enum_values": [
+        "supported_taqrib_statement",
+        "not_supported_in_taqrib",
+        "unresolved",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "taqrib_statement_validity",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "taqrib_statement_validity",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 taqrib_statement_validity registry."
+    },
+    {
+      "allowed_enum_values": [
+        "ordinary_grade_candidate",
+        "status_only_candidate",
+        "not_in_defined_task",
+        "unresolved",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "target_task_scope",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "target_task_scope",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 target_task_scope registry."
+    },
+    {
+      "allowed_enum_values": [
+        "exact",
+        "minor_variation",
+        "substantial_difference",
+        "not_found",
+        "unresolved",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "statement_source_correspondence",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_source_correspondence",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 statement_source_correspondence registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_source_span_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "statement_source_span_verbatim",
+      "output_table": "statements.csv",
+      "validation_rule": "Non-empty iff statement_source_span_status=transcribed."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_found_after_review",
+        "unavailable",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "statement_source_span_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_source_span_status",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_source_correspondence_rationale",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "statement_source_correspondence_rationale",
+      "output_table": "statements.csv",
+      "validation_rule": "Required for an assessed statement-to-passage comparison."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_source_locator",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "statement_source_locator",
+      "output_table": "statements.csv",
+      "validation_rule": "Required for an assessed statement-to-passage comparison."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_source_evidence_record_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "statement_source_evidence_record_id",
+      "output_table": "statements.csv",
+      "validation_rule": "Must link to passage evidence attached to this statement."
+    },
+    {
+      "allowed_enum_values": [
+        "eligible",
+        "quarantined_pending_verification",
+        "ineligible",
+        "not_applicable",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "historical_input_eligibility",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "historical_input_eligibility",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 historical_input_eligibility registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "historical_input_eligibility_rationale",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "historical_input_eligibility_rationale",
+      "output_table": "statements.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "target_task_scope_rationale",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "target_task_scope_rationale",
+      "output_table": "statements.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "independent_corroboration",
+        "dependent_corroboration",
+        "unresolved_corroboration",
+        "not_examined",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "corroboration_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "corroboration_status",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 corroboration_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "temporal_policy_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "temporal_policy_id",
+      "output_table": "statements.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "temporal_policy_version",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "temporal_policy_version",
+      "output_table": "statements.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "passes_policy",
+        "fails_policy",
+        "cannot_assess",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "temporal_policy_result",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "temporal_policy_result",
+      "output_table": "statements.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 temporal_policy_result registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "attribution_link_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "attribution_link_id",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_id",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "named_historical_evaluator",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "named_historical_evaluator",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "identified",
+        "collective_unidentified",
+        "none_named",
+        "unknown",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "evaluator_value_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "evaluator_value_status",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 evaluator_value_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "intermediary_transmitter",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "intermediary_transmitter",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "identified",
+        "none_identified",
+        "unknown",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "transmitter_value_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "transmitter_value_status",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 transmitter_value_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "surviving_wording_author",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "surviving_wording_author",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "identified",
+        "unknown",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "wording_author_value_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "wording_author_value_status",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 wording_author_value_status registry."
+    },
+    {
+      "allowed_enum_values": [
+        "direct_quotation",
+        "explicit_attribution",
+        "collective_attribution",
+        "compiler_synthesis",
+        "unclear",
+        "not_applicable",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "attribution_form",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "attribution_form",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 attribution_form registry."
+    },
+    {
+      "allowed_enum_values": [
+        "explicit_individual_named",
+        "collective_only",
+        "no_evaluator_named",
+        "unclear",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "passage_evaluator_naming_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "passage_evaluator_naming_status",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 passage_evaluator_naming_status registry."
+    },
+    {
+      "allowed_enum_values": [
+        "supported_by_verified_source_or_route",
+        "explicitly_reported_but_historically_unverified",
+        "contradicted",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "historical_evaluator_attribution_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "historical_evaluator_attribution_status",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 historical_evaluator_attribution_status registry."
+    },
+    {
+      "allowed_enum_values": [
+        "documented_traceable",
+        "named_authority_route_unverified",
+        "route_examined_not_found",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "transmission_route_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "transmission_route_status",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 transmission_route_status registry."
+    },
+    {
+      "allowed_enum_values": [
+        "supported",
+        "contradicted",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "compiler_authorship_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "compiler_authorship_status",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 compiler_authorship_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "attribution_evidence_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "attribution_evidence_verbatim",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_found_after_review",
+        "unavailable",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "attribution_evidence_text_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "attribution_evidence_text_status",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "attribution_evidence_record_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "attribution_evidence_record_id",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Must link to evidence attached to this attribution record."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "attribution_evidence_locator",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "attribution_evidence_locator",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "transmission_route_evidence_record_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "transmission_route_evidence_record_id",
+      "output_table": "attribution_links.csv",
+      "validation_rule": "Required when transmission_route_status=documented_traceable."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_record_id",
+      "output_table": "sources.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_entry_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "candidate_entry_id",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_work_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_work_id",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_work_title",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_work_title",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "consulted_edition",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "consulted_edition",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "consulted_editor",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "consulted_editor",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "consulted_witness_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "consulted_witness_id",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "consulted_witness_type",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "consulted_witness_type",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "consulted_corpus_artifact_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "consulted_corpus_artifact_id",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "consulted_corpus_artifact_type",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "consulted_corpus_artifact_type",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_page_numbering_note",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "source_page_numbering_note",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_work_author_compiler",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "source_work_author_compiler",
+      "output_table": "sources.csv",
+      "validation_rule": "Source-work metadata only; never substitute for surviving_wording_author."
+    },
+    {
+      "allowed_enum_values": [
+        "recorded",
+        "unknown",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "source_author_metadata_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_author_metadata_status",
+      "output_table": "sources.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 source_author_metadata_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_locator_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "source_locator_verbatim",
+      "output_table": "sources.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "canonical_source_locator_key",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "canonical_source_locator_key",
+      "output_table": "sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "verified_in_corpus",
+        "verified_external_edition",
+        "unverified",
+        "contradicted",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "source_verification_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_verification_status",
+      "output_table": "sources.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 source_verification_status registry."
+    },
+    {
+      "allowed_enum_values": [
+        "no_variant_marked",
+        "variant_marked_in_edition_metadata",
+        "editorial_insertion_verified",
+        "editorial_note_or_footnote",
+        "unclear",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "edition_variant_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "edition_variant_status",
+      "output_table": "sources.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 edition_variant_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "edition_metadata_evidence_record_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "edition_metadata_evidence_record_id",
+      "output_table": "sources.csv",
+      "validation_rule": "Must link to source metadata evidence when edition or editorial status is assessed."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "evidence_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "evidence_record_id",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_record_id",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_entry_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "candidate_entry_id",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "statement_id",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "attribution_link_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "attribution_link_id",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "identity",
+        "passage_text",
+        "historical_attribution",
+        "transmission_route",
+        "temporal_date",
+        "edition_metadata",
+        "other"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "evidence_role",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "evidence_role",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_role registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "evidence_text_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "evidence_text_verbatim",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [
+        "transcribed",
+        "not_found_after_review",
+        "unavailable",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "evidence_text_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "evidence_text_status",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_locator",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "source_locator",
+      "output_table": "source_evidence.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "date_claim_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "date_claim_id",
+      "output_table": "date_claims.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "date_subject_role",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "date_subject_role",
+      "output_table": "date_claims.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "evaluator_lifespan_or_death",
+        "approximate_judgment_date",
+        "source_work_composition_date",
+        "surviving_witness_date",
+        "modern_edition_publication_date"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "date_kind",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "date_kind",
+      "output_table": "date_claims.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 date_kind registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "date_or_range_text",
+      "frozen_schema_field": "date_value",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "date_value",
+      "output_table": "date_claims.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "date_calendar",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "date_calendar",
+      "output_table": "date_claims.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "date_precision",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "date_precision",
+      "output_table": "date_claims.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "recorded_in_source",
+        "unknown",
+        "unresolved",
+        "not_assessed",
+        "not_applicable"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "date_claim_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "date_claim_status",
+      "output_table": "date_claims.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 date_claim_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "evidence_record_id",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "evidence_record_id",
+      "output_table": "date_claims.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "feature_source_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "feature_source_id",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_id",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_record_id",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "feature_input_name",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "feature_input_name",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "temporal_date_claim_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "temporal_date_claim_id",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Must link to a recorded date claim with its own evidence record."
+    },
+    {
+      "allowed_enum_values": [
+        "included",
+        "excluded",
+        "quarantined",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "feature_inclusion_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "feature_inclusion_status",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 feature_inclusion_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "feature_exclusion_policy_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "feature_exclusion_policy_id",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "feature_exclusion_policy_version",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "feature_exclusion_policy_version",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "decision_rationale",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "decision_rationale",
+      "output_table": "feature_sources.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_file",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "integer",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "input_row_index",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "audit_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "audit_record_id",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "integer",
+      "frozen_schema_field": "within_case_candidate_index",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "within_case_candidate_index",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "sha256_hex",
+      "frozen_schema_field": null,
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "taqrib_entry_text_sha256",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "source_locator_verbatim",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "source_locator_verbatim",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Exact source text or null; paired status controls whether text is present."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "canonical_source_locator_key",
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "canonical_source_locator_key",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_entry_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "candidate_entry_id",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "statement_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "statement_id",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [
+        "matched",
+        "missing_component",
+        "duplicate_key",
+        "ambiguous_match",
+        "context_mismatch",
+        "not_assessed"
+      ],
+      "field_origin": "frozen_schema",
+      "field_type": "enum",
+      "frozen_schema_field": "migration_join_status",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "migration_join_status",
+      "output_table": "migration_mapping.csv",
+      "validation_rule": "Required controlled value; allowed values are the v2.2 migration_join_status registry."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_file",
+      "output_table": "legacy_v1_values.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "integer",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "input_row_index",
+      "output_table": "legacy_v1_values.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "audit_record_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "audit_record_id",
+      "output_table": "legacy_v1_values.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "frozen_schema",
+      "field_type": "string",
+      "frozen_schema_field": "candidate_entry_id",
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "candidate_entry_id",
+      "output_table": "legacy_v1_values.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "field_name",
+      "output_table": "legacy_v1_values.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "nullable",
+      "nullable": true,
+      "output_column": "legacy_value",
+      "output_table": "legacy_v1_values.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "boolean",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "is_empty_cell",
+      "output_table": "legacy_v1_values.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_file",
+      "output_table": "column_mapping.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "source_column",
+      "output_table": "column_mapping.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "target_table",
+      "output_table": "column_mapping.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "target_column",
+      "output_table": "column_mapping.csv",
+      "validation_rule": "Required non-empty unique identifier/key component."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "mapping_type",
+      "output_table": "column_mapping.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "transformation_rule",
+      "output_table": "column_mapping.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    },
+    {
+      "allowed_enum_values": [],
+      "field_origin": "implementation_support",
+      "field_type": "string",
+      "frozen_schema_field": null,
+      "nullability": "required_nonempty",
+      "nullable": false,
+      "output_column": "review_required",
+      "output_table": "column_mapping.csv",
+      "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+    }
+  ],
+  "frozen_inventory_fields": {
+    "Attribution links": [
+      "attribution_link_id",
+      "statement_id",
+      "passage_evaluator_naming_status",
+      "attribution_form",
+      "historical_evaluator_attribution_status",
+      "transmission_route_status",
+      "named_historical_evaluator",
+      "evaluator_value_status",
+      "intermediary_transmitter",
+      "transmitter_value_status",
+      "surviving_wording_author",
+      "wording_author_value_status",
+      "attribution_evidence_verbatim",
+      "attribution_evidence_text_status",
+      "attribution_evidence_record_id",
+      "attribution_evidence_locator",
+      "transmission_route_evidence_record_id",
+      "compiler_authorship_status"
+    ],
+    "Candidate entries": [
+      "candidate_entry_id",
+      "audit_record_id",
+      "within_case_candidate_index",
+      "dataset_name",
+      "dataset_narrator_id",
+      "dataset_narrator_name",
+      "original_grade_field",
+      "original_grade_verbatim",
+      "original_grade_source_location",
+      "taqrib_book_id",
+      "taqrib_printed_page_from_corpus",
+      "taqrib_entry_text_verbatim",
+      "candidate_entry_text_status",
+      "source_locator_verbatim",
+      "canonical_source_locator_key",
+      "identity_match_status",
+      "identity_evidence_verbatim",
+      "identity_evidence_text_status",
+      "identity_evidence_record_id",
+      "identity_evidence_locator",
+      "candidate_field_source_correspondence",
+      "candidate_comparison_source_span",
+      "candidate_comparison_source_span_status",
+      "candidate_comparison_rationale",
+      "candidate_comparison_locator",
+      "taqrib_source_record_id"
+    ],
+    "Cases": [
+      "audit_record_id",
+      "dataset_name",
+      "dataset_narrator_id",
+      "dataset_narrator_name",
+      "original_grade_field",
+      "original_grade_verbatim",
+      "original_grade_source_location",
+      "original_value_status"
+    ],
+    "Evidence and dates": [
+      "evidence_record_id",
+      "source_record_id",
+      "candidate_entry_id",
+      "statement_id",
+      "attribution_link_id",
+      "evidence_role",
+      "evidence_text_verbatim",
+      "evidence_text_status",
+      "source_locator",
+      "date_claim_id",
+      "date_subject_role",
+      "date_kind",
+      "date_value",
+      "date_calendar",
+      "date_precision",
+      "date_claim_status"
+    ],
+    "Feature-source firewall": [
+      "feature_source_id",
+      "statement_id",
+      "source_record_id",
+      "feature_input_name",
+      "temporal_date_claim_id",
+      "feature_inclusion_status",
+      "feature_exclusion_policy_id",
+      "feature_exclusion_policy_version",
+      "decision_rationale"
+    ],
+    "Sources": [
+      "source_record_id",
+      "source_work_id",
+      "source_work_title",
+      "consulted_edition",
+      "consulted_editor",
+      "consulted_witness_id",
+      "consulted_witness_type",
+      "consulted_corpus_artifact_id",
+      "consulted_corpus_artifact_type",
+      "source_page_numbering_note",
+      "source_work_author_compiler",
+      "source_author_metadata_status",
+      "source_locator_verbatim",
+      "source_verification_status",
+      "edition_variant_status",
+      "edition_metadata_evidence_record_id"
+    ],
+    "Statements and research use": [
+      "statement_id",
+      "candidate_entry_id",
+      "statement_record_status",
+      "statement_type",
+      "statement_text_verbatim",
+      "statement_text_status",
+      "grade_base_verbatim",
+      "grade_base_text_status",
+      "grade_qualification_verbatim",
+      "grade_qualification_text_status",
+      "taqrib_rank_number",
+      "rank_status",
+      "taqrib_statement_validity",
+      "target_task_scope",
+      "target_task_scope_rationale",
+      "statement_source_correspondence",
+      "statement_source_span_verbatim",
+      "statement_source_span_status",
+      "statement_source_correspondence_rationale",
+      "statement_source_locator",
+      "statement_source_evidence_record_id",
+      "historical_input_eligibility",
+      "historical_input_eligibility_rationale",
+      "corroboration_status",
+      "temporal_policy_id",
+      "temporal_policy_version",
+      "temporal_policy_result"
+    ]
+  },
+  "implementation_version": "2.2.2",
+  "schema_name": "manual_collation_schema",
+  "schema_version": "2.2",
+  "tables": {
+    "attribution_links.csv": {
+      "attribution_evidence_locator": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "attribution_evidence_locator",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "attribution_evidence_locator",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "attribution_evidence_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "attribution_evidence_record_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "attribution_evidence_record_id",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Must link to evidence attached to this attribution record."
+      },
+      "attribution_evidence_text_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_found_after_review",
+          "unavailable",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "attribution_evidence_text_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "attribution_evidence_text_status",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+      },
+      "attribution_evidence_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "attribution_evidence_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "attribution_evidence_verbatim",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "attribution_form": {
+        "allowed_enum_values": [
+          "direct_quotation",
+          "explicit_attribution",
+          "collective_attribution",
+          "compiler_synthesis",
+          "unclear",
+          "not_applicable",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "attribution_form",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "attribution_form",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 attribution_form registry."
+      },
+      "attribution_link_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "attribution_link_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "attribution_link_id",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "compiler_authorship_status": {
+        "allowed_enum_values": [
+          "supported",
+          "contradicted",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "compiler_authorship_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "compiler_authorship_status",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 compiler_authorship_status registry."
+      },
+      "evaluator_value_status": {
+        "allowed_enum_values": [
+          "identified",
+          "collective_unidentified",
+          "none_named",
+          "unknown",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "evaluator_value_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "evaluator_value_status",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 evaluator_value_status registry."
+      },
+      "historical_evaluator_attribution_status": {
+        "allowed_enum_values": [
+          "supported_by_verified_source_or_route",
+          "explicitly_reported_but_historically_unverified",
+          "contradicted",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "historical_evaluator_attribution_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "historical_evaluator_attribution_status",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 historical_evaluator_attribution_status registry."
+      },
+      "intermediary_transmitter": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "intermediary_transmitter",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "intermediary_transmitter",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "named_historical_evaluator": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "named_historical_evaluator",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "named_historical_evaluator",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "passage_evaluator_naming_status": {
+        "allowed_enum_values": [
+          "explicit_individual_named",
+          "collective_only",
+          "no_evaluator_named",
+          "unclear",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "passage_evaluator_naming_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "passage_evaluator_naming_status",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 passage_evaluator_naming_status registry."
+      },
+      "statement_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_id",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "surviving_wording_author": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "surviving_wording_author",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "surviving_wording_author",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "transmission_route_evidence_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "transmission_route_evidence_record_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "transmission_route_evidence_record_id",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required when transmission_route_status=documented_traceable."
+      },
+      "transmission_route_status": {
+        "allowed_enum_values": [
+          "documented_traceable",
+          "named_authority_route_unverified",
+          "route_examined_not_found",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "transmission_route_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "transmission_route_status",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 transmission_route_status registry."
+      },
+      "transmitter_value_status": {
+        "allowed_enum_values": [
+          "identified",
+          "none_identified",
+          "unknown",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "transmitter_value_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "transmitter_value_status",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 transmitter_value_status registry."
+      },
+      "wording_author_value_status": {
+        "allowed_enum_values": [
+          "identified",
+          "unknown",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "wording_author_value_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "wording_author_value_status",
+        "output_table": "attribution_links.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 wording_author_value_status registry."
+      }
+    },
+    "candidate_entries.csv": {
+      "audit_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "audit_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "audit_record_id",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "candidate_comparison_locator": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_comparison_locator",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "candidate_comparison_locator",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Required for an assessed candidate-field comparison."
+      },
+      "candidate_comparison_rationale": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_comparison_rationale",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "candidate_comparison_rationale",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Required for an assessed candidate-field comparison."
+      },
+      "candidate_comparison_source_span": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_comparison_source_span",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "candidate_comparison_source_span",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Non-empty iff candidate_comparison_source_span_status=transcribed."
+      },
+      "candidate_comparison_source_span_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_found_after_review",
+          "unavailable",
+          "unresolved",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "candidate_comparison_source_span_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "candidate_comparison_source_span_status",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 candidate_comparison_source_span_status registry."
+      },
+      "candidate_entry_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_entry_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "candidate_entry_id",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "candidate_entry_text_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_found_after_review",
+          "unavailable",
+          "unresolved",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "candidate_entry_text_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "candidate_entry_text_status",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 candidate_entry_text_status registry."
+      },
+      "candidate_field_source_correspondence": {
+        "allowed_enum_values": [
+          "exact",
+          "minor_variation",
+          "partial_or_truncated",
+          "substantial_difference",
+          "not_found",
+          "unresolved",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "candidate_field_source_correspondence",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "candidate_field_source_correspondence",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 candidate_field_source_correspondence registry."
+      },
+      "canonical_source_locator_key": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "canonical_source_locator_key",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "canonical_source_locator_key",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "dataset_name": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "dataset_name",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "dataset_name",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "dataset_narrator_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "dataset_narrator_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "dataset_narrator_id",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "dataset_narrator_name": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "dataset_narrator_name",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "dataset_narrator_name",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "identity_evidence_independence_rationale": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "identity_evidence_independence_rationale",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "identity_evidence_locator": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "identity_evidence_locator",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "identity_evidence_locator",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "identity_evidence_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "identity_evidence_record_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "identity_evidence_record_id",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Must link to transcribed identity evidence for this candidate from a verified source work distinct from the Taqrib target work."
+      },
+      "identity_evidence_text_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_found_after_review",
+          "unavailable",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "identity_evidence_text_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "identity_evidence_text_status",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+      },
+      "identity_evidence_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "identity_evidence_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "identity_evidence_verbatim",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "identity_match_status": {
+        "allowed_enum_values": [
+          "confirmed",
+          "probable",
+          "unresolved",
+          "mismatch",
+          "not_found",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "identity_match_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "identity_match_status",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 identity_match_status registry."
+      },
+      "legacy_rank_candidate": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "legacy_rank_candidate",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "legacy_reviewer_notes_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "legacy_reviewer_notes_verbatim",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "original_grade_field": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "original_grade_field",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "original_grade_field",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "original_grade_source_location": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "original_grade_source_location",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "original_grade_source_location",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "original_grade_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "original_grade_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "original_grade_verbatim",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "source_entry_number_from_text": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "integer",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_entry_number_from_text",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "source_locator_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_locator_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "source_locator_verbatim",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "taqrib_book_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "taqrib_book_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "taqrib_book_id",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "taqrib_entry_text_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "taqrib_entry_text_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "taqrib_entry_text_verbatim",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "taqrib_printed_page_from_corpus": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "taqrib_printed_page_from_corpus",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "taqrib_printed_page_from_corpus",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "taqrib_source_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "taqrib_source_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "taqrib_source_record_id",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "within_case_candidate_index": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "integer",
+        "frozen_schema_field": "within_case_candidate_index",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "within_case_candidate_index",
+        "output_table": "candidate_entries.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      }
+    },
+    "cases.csv": {
+      "audit_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "audit_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "audit_record_id",
+        "output_table": "cases.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "dataset_name": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "dataset_name",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "dataset_name",
+        "output_table": "cases.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "dataset_narrator_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "dataset_narrator_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "dataset_narrator_id",
+        "output_table": "cases.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "dataset_narrator_name": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "dataset_narrator_name",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "dataset_narrator_name",
+        "output_table": "cases.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "original_grade_field": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "original_grade_field",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "original_grade_field",
+        "output_table": "cases.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "original_grade_source_location": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "original_grade_source_location",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "original_grade_source_location",
+        "output_table": "cases.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "original_grade_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "original_grade_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "original_grade_verbatim",
+        "output_table": "cases.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "original_value_status": {
+        "allowed_enum_values": [
+          "present",
+          "absent_in_source",
+          "unavailable",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "original_value_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "original_value_status",
+        "output_table": "cases.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 original_value_status registry."
+      }
+    },
+    "column_mapping.csv": {
+      "mapping_type": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "mapping_type",
+        "output_table": "column_mapping.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "review_required": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "review_required",
+        "output_table": "column_mapping.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "source_column": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_column",
+        "output_table": "column_mapping.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "source_file": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_file",
+        "output_table": "column_mapping.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "target_column": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "target_column",
+        "output_table": "column_mapping.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "target_table": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "target_table",
+        "output_table": "column_mapping.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "transformation_rule": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "transformation_rule",
+        "output_table": "column_mapping.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      }
+    },
+    "date_claims.csv": {
+      "date_calendar": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "date_calendar",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "date_calendar",
+        "output_table": "date_claims.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "date_claim_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "date_claim_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "date_claim_id",
+        "output_table": "date_claims.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "date_claim_status": {
+        "allowed_enum_values": [
+          "recorded_in_source",
+          "unknown",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "date_claim_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "date_claim_status",
+        "output_table": "date_claims.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 date_claim_status registry."
+      },
+      "date_kind": {
+        "allowed_enum_values": [
+          "evaluator_lifespan_or_death",
+          "approximate_judgment_date",
+          "source_work_composition_date",
+          "surviving_witness_date",
+          "modern_edition_publication_date"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "date_kind",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "date_kind",
+        "output_table": "date_claims.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 date_kind registry."
+      },
+      "date_precision": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "date_precision",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "date_precision",
+        "output_table": "date_claims.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "date_subject_role": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "date_subject_role",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "date_subject_role",
+        "output_table": "date_claims.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "date_value": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "date_or_range_text",
+        "frozen_schema_field": "date_value",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "date_value",
+        "output_table": "date_claims.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "evidence_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "evidence_record_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "evidence_record_id",
+        "output_table": "date_claims.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      }
+    },
+    "feature_sources.csv": {
+      "decision_rationale": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "decision_rationale",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "decision_rationale",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "feature_exclusion_policy_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "feature_exclusion_policy_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "feature_exclusion_policy_id",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "feature_exclusion_policy_version": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "feature_exclusion_policy_version",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "feature_exclusion_policy_version",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "feature_inclusion_status": {
+        "allowed_enum_values": [
+          "included",
+          "excluded",
+          "quarantined",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "feature_inclusion_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "feature_inclusion_status",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 feature_inclusion_status registry."
+      },
+      "feature_input_name": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "feature_input_name",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "feature_input_name",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "feature_source_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "feature_source_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "feature_source_id",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "source_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_record_id",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "statement_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_id",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "temporal_date_claim_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "temporal_date_claim_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "temporal_date_claim_id",
+        "output_table": "feature_sources.csv",
+        "validation_rule": "Must link to a recorded date claim with its own evidence record."
+      }
+    },
+    "legacy_v1_values.csv": {
+      "audit_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "audit_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "audit_record_id",
+        "output_table": "legacy_v1_values.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "candidate_entry_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_entry_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "candidate_entry_id",
+        "output_table": "legacy_v1_values.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "field_name": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "field_name",
+        "output_table": "legacy_v1_values.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "input_row_index": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "integer",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "input_row_index",
+        "output_table": "legacy_v1_values.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "is_empty_cell": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "boolean",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "is_empty_cell",
+        "output_table": "legacy_v1_values.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "legacy_value": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "legacy_value",
+        "output_table": "legacy_v1_values.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "source_file": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_file",
+        "output_table": "legacy_v1_values.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      }
+    },
+    "migration_mapping.csv": {
+      "audit_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "audit_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "audit_record_id",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "candidate_entry_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_entry_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "candidate_entry_id",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "canonical_source_locator_key": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "canonical_source_locator_key",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "canonical_source_locator_key",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "input_row_index": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "integer",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "input_row_index",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "migration_join_status": {
+        "allowed_enum_values": [
+          "matched",
+          "missing_component",
+          "duplicate_key",
+          "ambiguous_match",
+          "context_mismatch",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "migration_join_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "migration_join_status",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 migration_join_status registry."
+      },
+      "source_file": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "string",
+        "frozen_schema_field": null,
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_file",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "source_locator_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_locator_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "source_locator_verbatim",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "statement_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_id",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "taqrib_entry_text_sha256": {
+        "allowed_enum_values": [],
+        "field_origin": "implementation_support",
+        "field_type": "sha256_hex",
+        "frozen_schema_field": null,
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "taqrib_entry_text_sha256",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "within_case_candidate_index": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "integer",
+        "frozen_schema_field": "within_case_candidate_index",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "within_case_candidate_index",
+        "output_table": "migration_mapping.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      }
+    },
+    "source_evidence.csv": {
+      "attribution_link_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "attribution_link_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "attribution_link_id",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "candidate_entry_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_entry_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "candidate_entry_id",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "evidence_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "evidence_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "evidence_record_id",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "evidence_role": {
+        "allowed_enum_values": [
+          "identity",
+          "passage_text",
+          "historical_attribution",
+          "transmission_route",
+          "temporal_date",
+          "edition_metadata",
+          "other"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "evidence_role",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "evidence_role",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_role registry."
+      },
+      "evidence_text_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_found_after_review",
+          "unavailable",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "evidence_text_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "evidence_text_status",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+      },
+      "evidence_text_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "evidence_text_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "evidence_text_verbatim",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "source_locator": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_locator",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "source_locator",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "source_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_record_id",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "statement_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "statement_id",
+        "output_table": "source_evidence.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      }
+    },
+    "sources.csv": {
+      "candidate_entry_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_entry_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "candidate_entry_id",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "canonical_source_locator_key": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "canonical_source_locator_key",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "canonical_source_locator_key",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "consulted_corpus_artifact_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "consulted_corpus_artifact_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "consulted_corpus_artifact_id",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "consulted_corpus_artifact_type": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "consulted_corpus_artifact_type",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "consulted_corpus_artifact_type",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "consulted_edition": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "consulted_edition",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "consulted_edition",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "consulted_editor": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "consulted_editor",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "consulted_editor",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "consulted_witness_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "consulted_witness_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "consulted_witness_id",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "consulted_witness_type": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "consulted_witness_type",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "consulted_witness_type",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "edition_metadata_evidence_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "edition_metadata_evidence_record_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "edition_metadata_evidence_record_id",
+        "output_table": "sources.csv",
+        "validation_rule": "Must link to source metadata evidence when edition or editorial status is assessed."
+      },
+      "edition_variant_status": {
+        "allowed_enum_values": [
+          "no_variant_marked",
+          "variant_marked_in_edition_metadata",
+          "editorial_insertion_verified",
+          "editorial_note_or_footnote",
+          "unclear",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "edition_variant_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "edition_variant_status",
+        "output_table": "sources.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 edition_variant_status registry."
+      },
+      "source_author_metadata_status": {
+        "allowed_enum_values": [
+          "recorded",
+          "unknown",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "source_author_metadata_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_author_metadata_status",
+        "output_table": "sources.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 source_author_metadata_status registry."
+      },
+      "source_locator_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_locator_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "source_locator_verbatim",
+        "output_table": "sources.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "source_page_numbering_note": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_page_numbering_note",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "source_page_numbering_note",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "source_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_record_id",
+        "output_table": "sources.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "source_verification_status": {
+        "allowed_enum_values": [
+          "verified_in_corpus",
+          "verified_external_edition",
+          "unverified",
+          "contradicted",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "source_verification_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_verification_status",
+        "output_table": "sources.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 source_verification_status registry."
+      },
+      "source_work_author_compiler": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_work_author_compiler",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "source_work_author_compiler",
+        "output_table": "sources.csv",
+        "validation_rule": "Source-work metadata only; never substitute for surviving_wording_author."
+      },
+      "source_work_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_work_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_work_id",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "source_work_title": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "source_work_title",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "source_work_title",
+        "output_table": "sources.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      }
+    },
+    "statements.csv": {
+      "audit_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "audit_record_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "audit_record_id",
+        "output_table": "statements.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "candidate_entry_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "candidate_entry_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "candidate_entry_id",
+        "output_table": "statements.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "corroboration_status": {
+        "allowed_enum_values": [
+          "independent_corroboration",
+          "dependent_corroboration",
+          "unresolved_corroboration",
+          "not_examined",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "corroboration_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "corroboration_status",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 corroboration_status registry."
+      },
+      "grade_base_text_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_found_after_review",
+          "unavailable",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "grade_base_text_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "grade_base_text_status",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+      },
+      "grade_base_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "grade_base_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "grade_base_verbatim",
+        "output_table": "statements.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "grade_qualification_text_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_found_after_review",
+          "unavailable",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "grade_qualification_text_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "grade_qualification_text_status",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+      },
+      "grade_qualification_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "grade_qualification_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "grade_qualification_verbatim",
+        "output_table": "statements.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "historical_input_eligibility": {
+        "allowed_enum_values": [
+          "eligible",
+          "quarantined_pending_verification",
+          "ineligible",
+          "not_applicable",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "historical_input_eligibility",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "historical_input_eligibility",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 historical_input_eligibility registry."
+      },
+      "historical_input_eligibility_rationale": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "historical_input_eligibility_rationale",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "historical_input_eligibility_rationale",
+        "output_table": "statements.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "rank_status": {
+        "allowed_enum_values": [
+          "assigned",
+          "unranked",
+          "not_applicable",
+          "not_assessed",
+          "unresolved",
+          "not_found"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "rank_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "rank_status",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 rank_status registry."
+      },
+      "statement_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_id",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_id",
+        "output_table": "statements.csv",
+        "validation_rule": "Required non-empty unique identifier/key component."
+      },
+      "statement_record_status": {
+        "allowed_enum_values": [
+          "provisional_work_item",
+          "reviewed_statement",
+          "superseded_placeholder"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "statement_record_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_record_status",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 statement_record_status registry."
+      },
+      "statement_source_correspondence": {
+        "allowed_enum_values": [
+          "exact",
+          "minor_variation",
+          "substantial_difference",
+          "not_found",
+          "unresolved",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "statement_source_correspondence",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_source_correspondence",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 statement_source_correspondence registry."
+      },
+      "statement_source_correspondence_rationale": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_source_correspondence_rationale",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "statement_source_correspondence_rationale",
+        "output_table": "statements.csv",
+        "validation_rule": "Required for an assessed statement-to-passage comparison."
+      },
+      "statement_source_evidence_record_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_source_evidence_record_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "statement_source_evidence_record_id",
+        "output_table": "statements.csv",
+        "validation_rule": "Must link to passage evidence attached to this statement."
+      },
+      "statement_source_locator": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_source_locator",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "statement_source_locator",
+        "output_table": "statements.csv",
+        "validation_rule": "Required for an assessed statement-to-passage comparison."
+      },
+      "statement_source_span_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_found_after_review",
+          "unavailable",
+          "unresolved",
+          "not_assessed",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "statement_source_span_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_source_span_status",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 evidence_text_status registry."
+      },
+      "statement_source_span_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_source_span_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "statement_source_span_verbatim",
+        "output_table": "statements.csv",
+        "validation_rule": "Non-empty iff statement_source_span_status=transcribed."
+      },
+      "statement_text_status": {
+        "allowed_enum_values": [
+          "transcribed",
+          "not_transcribed",
+          "unavailable",
+          "unresolved",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "statement_text_status",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_text_status",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 statement_text_status registry."
+      },
+      "statement_text_verbatim": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "statement_text_verbatim",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "statement_text_verbatim",
+        "output_table": "statements.csv",
+        "validation_rule": "Exact source text or null; paired status controls whether text is present."
+      },
+      "statement_type": {
+        "allowed_enum_values": [
+          "standardized_narrator_grade",
+          "qualified_narrator_grade",
+          "attributed_earlier_critic_judgment",
+          "descriptive_or_generational_status",
+          "specific_transmission_criticism",
+          "biographical_or_factual_statement",
+          "mixed_or_unclear",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "statement_type",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "statement_type",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 statement_type registry."
+      },
+      "taqrib_rank_number": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "nullable_integer",
+        "frozen_schema_field": "taqrib_rank_number",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "taqrib_rank_number",
+        "output_table": "statements.csv",
+        "validation_rule": "Nullable integer 1..12; present iff rank_status=assigned."
+      },
+      "taqrib_statement_validity": {
+        "allowed_enum_values": [
+          "supported_taqrib_statement",
+          "not_supported_in_taqrib",
+          "unresolved",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "taqrib_statement_validity",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "taqrib_statement_validity",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 taqrib_statement_validity registry."
+      },
+      "target_task_scope": {
+        "allowed_enum_values": [
+          "ordinary_grade_candidate",
+          "status_only_candidate",
+          "not_in_defined_task",
+          "unresolved",
+          "not_assessed"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "target_task_scope",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "target_task_scope",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 target_task_scope registry."
+      },
+      "target_task_scope_rationale": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "target_task_scope_rationale",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "target_task_scope_rationale",
+        "output_table": "statements.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "temporal_policy_id": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "temporal_policy_id",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "temporal_policy_id",
+        "output_table": "statements.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      },
+      "temporal_policy_result": {
+        "allowed_enum_values": [
+          "passes_policy",
+          "fails_policy",
+          "cannot_assess",
+          "not_applicable"
+        ],
+        "field_origin": "frozen_schema",
+        "field_type": "enum",
+        "frozen_schema_field": "temporal_policy_result",
+        "nullability": "required_nonempty",
+        "nullable": false,
+        "output_column": "temporal_policy_result",
+        "output_table": "statements.csv",
+        "validation_rule": "Required controlled value; allowed values are the v2.2 temporal_policy_result registry."
+      },
+      "temporal_policy_version": {
+        "allowed_enum_values": [],
+        "field_origin": "frozen_schema",
+        "field_type": "string",
+        "frozen_schema_field": "temporal_policy_version",
+        "nullability": "nullable",
+        "nullable": true,
+        "output_column": "temporal_policy_version",
+        "output_table": "statements.csv",
+        "validation_rule": "Nullable string unless marked required; preserve source meaning without normalization."
+      }
+    }
+  }
+}

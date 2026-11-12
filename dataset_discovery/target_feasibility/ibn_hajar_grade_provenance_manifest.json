@@ -1,0 +1,418 @@
+{
+  "manifest_version": "1.2.0",
+  "generator_script": "dataset_discovery/target_feasibility/generate_grade_provenance_worksheet.py",
+  "timestamp_utc": "2026-11-11T11:43:40.704382+00:00",
+  "random_seed": 42,
+  "target_book": {
+    "book_id": 3076,
+    "title_ar": "تقريب التهذيب",
+    "author_ar": "ابن حجر العسقلاني",
+    "death_hijri": 852,
+    "editor_ar": "محمد عوامة",
+    "relative_path": "data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب",
+    "sha256_pages_jsonl": "45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa",
+    "sha256_book_metadata": "bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88"
+  },
+  "raw_source_hashes": {
+    "hadithdb_narrators_db_json": "67c183de90f779496f741a868120224c71fd32ff94525fb6a119ea8750b9c42a",
+    "shamela4_narrators_parquet": "82657fbae4e73a6514258102293b95be4e6031ab45faa65d69dad14cdc51ef34"
+  },
+  "output_hashes": {
+    "worksheet_csv": "2e18fe75ecf9a696bc0addca2de12d0bfb52d55feebf2c4040d764f176193198",
+    "codebook_md": "6688a0bae02c427549974f7d4af8c083f0a0cd9fa32db082ea404dd0329a34e5",
+    "protocol_md": "005eb4bee219a94067d9798a8f97b3002e3f02cdacd1b65ecebe8ca52c7d841b",
+    "firewall_spec_md": "668d45711161ea5b6e51f4f8c126edab5e474cdfc4c3a0bc86116bc619a57dc2",
+    "generator_script_py": "2f4f971473575f559e70fe374b3817e35dc1247db22454032ea240f7f249dd4d",
+    "test_suite_py": "9e1a7bcc1f7da336022bcd02abf68c1cf93d32d22b6759b3cd9ea65dc34c5fd7"
+  },
+  "population_statistics": {
+    "hadithdb": {
+      "total_candidate_records": 1508,
+      "flag_counts": {
+        "flag_conventional_grade": 1304,
+        "flag_compound_qualified_grade": 217,
+        "flag_descriptive_non_grade": 420,
+        "flag_explicit_attributed_quote": 33,
+        "flag_criticism_text_overlap": 877,
+        "flag_ambiguous_truncated_editorial": 6
+      },
+      "flag_percentages": {
+        "flag_conventional_grade": "86.47%",
+        "flag_compound_qualified_grade": "14.39%",
+        "flag_descriptive_non_grade": "27.85%",
+        "flag_explicit_attributed_quote": "2.19%",
+        "flag_criticism_text_overlap": "58.16%",
+        "flag_ambiguous_truncated_editorial": "0.40%"
+      },
+      "flag_count_per_record_distribution": {
+        "0": 10,
+        "1": 596,
+        "2": 481,
+        "3": 386,
+        "4": 34,
+        "5": 1
+      },
+      "pairwise_overlap_matrix": {
+        "flag_conventional_grade": {
+          "flag_conventional_grade": 1304,
+          "flag_compound_qualified_grade": 216,
+          "flag_descriptive_non_grade": 285,
+          "flag_explicit_attributed_quote": 17,
+          "flag_criticism_text_overlap": 704,
+          "flag_ambiguous_truncated_editorial": 4
+        },
+        "flag_compound_qualified_grade": {
+          "flag_conventional_grade": 216,
+          "flag_compound_qualified_grade": 217,
+          "flag_descriptive_non_grade": 35,
+          "flag_explicit_attributed_quote": 2,
+          "flag_criticism_text_overlap": 185,
+          "flag_ambiguous_truncated_editorial": 1
+        },
+        "flag_descriptive_non_grade": {
+          "flag_conventional_grade": 285,
+          "flag_compound_qualified_grade": 35,
+          "flag_descriptive_non_grade": 420,
+          "flag_explicit_attributed_quote": 9,
+          "flag_criticism_text_overlap": 362,
+          "flag_ambiguous_truncated_editorial": 4
+        },
+        "flag_explicit_attributed_quote": {
+          "flag_conventional_grade": 17,
+          "flag_compound_qualified_grade": 2,
+          "flag_descriptive_non_grade": 9,
+          "flag_explicit_attributed_quote": 33,
+          "flag_criticism_text_overlap": 23,
+          "flag_ambiguous_truncated_editorial": 3
+        },
+        "flag_criticism_text_overlap": {
+          "flag_conventional_grade": 704,
+          "flag_compound_qualified_grade": 185,
+          "flag_descriptive_non_grade": 362,
+          "flag_explicit_attributed_quote": 23,
+          "flag_criticism_text_overlap": 877,
+          "flag_ambiguous_truncated_editorial": 3
+        },
+        "flag_ambiguous_truncated_editorial": {
+          "flag_conventional_grade": 4,
+          "flag_compound_qualified_grade": 1,
+          "flag_descriptive_non_grade": 4,
+          "flag_explicit_attributed_quote": 3,
+          "flag_criticism_text_overlap": 3,
+          "flag_ambiguous_truncated_editorial": 6
+        }
+      }
+    },
+    "shamela4": {
+      "total_candidate_records": 8185,
+      "flag_counts": {
+        "flag_conventional_grade": 7038,
+        "flag_compound_qualified_grade": 826,
+        "flag_descriptive_non_grade": 1307,
+        "flag_explicit_attributed_quote": 173,
+        "flag_criticism_text_overlap": 6079,
+        "flag_ambiguous_truncated_editorial": 16
+      },
+      "flag_percentages": {
+        "flag_conventional_grade": "85.99%",
+        "flag_compound_qualified_grade": "10.09%",
+        "flag_descriptive_non_grade": "15.97%",
+        "flag_explicit_attributed_quote": "2.11%",
+        "flag_criticism_text_overlap": "74.27%",
+        "flag_ambiguous_truncated_editorial": "0.20%"
+      },
+      "flag_count_per_record_distribution": {
+        "0": 53,
+        "1": 2123,
+        "2": 4784,
+        "3": 1156,
+        "4": 65,
+        "5": 4
+      },
+      "pairwise_overlap_matrix": {
+        "flag_conventional_grade": {
+          "flag_conventional_grade": 7038,
+          "flag_compound_qualified_grade": 789,
+          "flag_descriptive_non_grade": 598,
+          "flag_explicit_attributed_quote": 65,
+          "flag_criticism_text_overlap": 5086,
+          "flag_ambiguous_truncated_editorial": 12
+        },
+        "flag_compound_qualified_grade": {
+          "flag_conventional_grade": 789,
+          "flag_compound_qualified_grade": 826,
+          "flag_descriptive_non_grade": 70,
+          "flag_explicit_attributed_quote": 6,
+          "flag_criticism_text_overlap": 709,
+          "flag_ambiguous_truncated_editorial": 7
+        },
+        "flag_descriptive_non_grade": {
+          "flag_conventional_grade": 598,
+          "flag_compound_qualified_grade": 70,
+          "flag_descriptive_non_grade": 1307,
+          "flag_explicit_attributed_quote": 41,
+          "flag_criticism_text_overlap": 1148,
+          "flag_ambiguous_truncated_editorial": 6
+        },
+        "flag_explicit_attributed_quote": {
+          "flag_conventional_grade": 65,
+          "flag_compound_qualified_grade": 6,
+          "flag_descriptive_non_grade": 41,
+          "flag_explicit_attributed_quote": 173,
+          "flag_criticism_text_overlap": 129,
+          "flag_ambiguous_truncated_editorial": 8
+        },
+        "flag_criticism_text_overlap": {
+          "flag_conventional_grade": 5086,
+          "flag_compound_qualified_grade": 709,
+          "flag_descriptive_non_grade": 1148,
+          "flag_explicit_attributed_quote": 129,
+          "flag_criticism_text_overlap": 6079,
+          "flag_ambiguous_truncated_editorial": 8
+        },
+        "flag_ambiguous_truncated_editorial": {
+          "flag_conventional_grade": 12,
+          "flag_compound_qualified_grade": 7,
+          "flag_descriptive_non_grade": 6,
+          "flag_explicit_attributed_quote": 8,
+          "flag_criticism_text_overlap": 8,
+          "flag_ambiguous_truncated_editorial": 16
+        }
+      }
+    }
+  },
+  "sample_statistics": {
+    "sample_size": 60,
+    "hadithdb_count": 30,
+    "shamela_count": 30,
+    "primary_selection_category_counts": {
+      "combined": {
+        "editorial_anomaly": 10,
+        "attributed_pure": 6,
+        "attributed_general": 6,
+        "descriptive_pure": 6,
+        "descriptive_general": 6,
+        "compound_qualified": 10,
+        "non_overlap_evaluation": 6,
+        "uncomplicated_conventional_grade_baseline": 8,
+        "fill_remainder": 2
+      },
+      "hadithdb": {
+        "editorial_anomaly": 5,
+        "attributed_pure": 3,
+        "attributed_general": 3,
+        "descriptive_pure": 3,
+        "descriptive_general": 3,
+        "compound_qualified": 5,
+        "non_overlap_evaluation": 3,
+        "uncomplicated_conventional_grade_baseline": 4,
+        "fill_remainder": 1
+      },
+      "shamela4": {
+        "editorial_anomaly": 5,
+        "attributed_pure": 3,
+        "attributed_general": 3,
+        "descriptive_pure": 3,
+        "descriptive_general": 3,
+        "compound_qualified": 5,
+        "non_overlap_evaluation": 3,
+        "uncomplicated_conventional_grade_baseline": 4,
+        "fill_remainder": 1
+      }
+    },
+    "flags_per_record_distribution": {
+      "1": 12,
+      "2": 24,
+      "3": 14,
+      "4": 7,
+      "5": 3
+    },
+    "single_flag_records_count": 12,
+    "multiple_flag_records_count": 48,
+    "records_without_rare_diagnostic_properties_count": 16,
+    "non_overlap_with_criticism_text_count": 20,
+    "diagnostic_descriptive_without_conventional_grade_count": 12,
+    "diagnostic_attributed_without_conventional_grade_count": 12,
+    "uncomplicated_conventional_grade_baseline_count": 16,
+    "strict_conventional_grade_baseline_without_criticism_overlap_count": 10,
+    "flag_representation": {
+      "flag_conventional_grade": {
+        "total_count": 40,
+        "hadithdb_count": 20,
+        "shamela_count": 20,
+        "percentage_of_sample": "66.67%"
+      },
+      "flag_compound_qualified_grade": {
+        "total_count": 15,
+        "hadithdb_count": 7,
+        "shamela_count": 8,
+        "percentage_of_sample": "25.00%"
+      },
+      "flag_descriptive_non_grade": {
+        "total_count": 22,
+        "hadithdb_count": 12,
+        "shamela_count": 10,
+        "percentage_of_sample": "36.67%"
+      },
+      "flag_explicit_attributed_quote": {
+        "total_count": 18,
+        "hadithdb_count": 8,
+        "shamela_count": 10,
+        "percentage_of_sample": "30.00%"
+      },
+      "flag_criticism_text_overlap": {
+        "total_count": 40,
+        "hadithdb_count": 20,
+        "shamela_count": 20,
+        "percentage_of_sample": "66.67%"
+      },
+      "flag_ambiguous_truncated_editorial": {
+        "total_count": 10,
+        "hadithdb_count": 5,
+        "shamela_count": 5,
+        "percentage_of_sample": "16.67%"
+      }
+    },
+    "sample_pairwise_overlap_matrix": {
+      "flag_conventional_grade": {
+        "flag_conventional_grade": 40,
+        "flag_compound_qualified_grade": 15,
+        "flag_descriptive_non_grade": 10,
+        "flag_explicit_attributed_quote": 6,
+        "flag_criticism_text_overlap": 25,
+        "flag_ambiguous_truncated_editorial": 8
+      },
+      "flag_compound_qualified_grade": {
+        "flag_conventional_grade": 15,
+        "flag_compound_qualified_grade": 15,
+        "flag_descriptive_non_grade": 4,
+        "flag_explicit_attributed_quote": 2,
+        "flag_criticism_text_overlap": 13,
+        "flag_ambiguous_truncated_editorial": 3
+      },
+      "flag_descriptive_non_grade": {
+        "flag_conventional_grade": 10,
+        "flag_compound_qualified_grade": 4,
+        "flag_descriptive_non_grade": 22,
+        "flag_explicit_attributed_quote": 5,
+        "flag_criticism_text_overlap": 17,
+        "flag_ambiguous_truncated_editorial": 5
+      },
+      "flag_explicit_attributed_quote": {
+        "flag_conventional_grade": 6,
+        "flag_compound_qualified_grade": 2,
+        "flag_descriptive_non_grade": 5,
+        "flag_explicit_attributed_quote": 18,
+        "flag_criticism_text_overlap": 13,
+        "flag_ambiguous_truncated_editorial": 6
+      },
+      "flag_criticism_text_overlap": {
+        "flag_conventional_grade": 25,
+        "flag_compound_qualified_grade": 13,
+        "flag_descriptive_non_grade": 17,
+        "flag_explicit_attributed_quote": 13,
+        "flag_criticism_text_overlap": 40,
+        "flag_ambiguous_truncated_editorial": 6
+      },
+      "flag_ambiguous_truncated_editorial": {
+        "flag_conventional_grade": 8,
+        "flag_compound_qualified_grade": 3,
+        "flag_descriptive_non_grade": 5,
+        "flag_explicit_attributed_quote": 6,
+        "flag_criticism_text_overlap": 6,
+        "flag_ambiguous_truncated_editorial": 10
+      }
+    }
+  },
+  "sampling_interpretation": {
+    "design": "Purposive quota-based diagnostic stress test, not a probability sample.",
+    "sample_flag_counts_scope": "Descriptive of the selected 60 records only; not population prevalence or dataset-wide error rates.",
+    "population_flag_counts_scope": "Descriptive diagnostics computed from the full candidate pools; not estimates of annotation error.",
+    "primary_selection_strata_vs_diagnostic_flags": "Primary selection category counts record the pass that selected each record. Diagnostic counts are recomputed row-level Boolean flag combinations and are non-exclusive; records selected in a general pass may also meet a pure diagnostic flag definition.",
+    "uncomplicated_conventional_grade_baseline_definition": "flag_conventional_grade TRUE AND flag_compound_qualified_grade FALSE AND flag_descriptive_non_grade FALSE AND flag_explicit_attributed_quote FALSE AND flag_ambiguous_truncated_editorial FALSE. Criticism-text overlap may remain, so this is not a leakage-clean baseline.",
+    "strict_conventional_grade_baseline_definition": "The uncomplicated definition plus flag_criticism_text_overlap FALSE."
+  },
+  "methodological_safeguards": {
+    "safeguard_1_attribution_vs_textual_witness": {
+      "principle": "Evaluator attribution is not proof of historical input eligibility.",
+      "attribution_categories": [
+        "directly_transmitted_historical_judgment",
+        "traceable_intermediary_historical_judgment",
+        "insufficient_evidence_historical_judgment",
+        "compiler_own_synthesis",
+        "modern_editorial_material"
+      ],
+      "input_eligibility_categories": [
+        "eligible_historical_input",
+        "quarantined_intermediary_input",
+        "quarantined_insufficient_evidence",
+        "target_evaluation_only",
+        "ineligible_compiler_synthesis",
+        "ineligible_editorial_material"
+      ],
+      "quarantine_to_eligibility_criteria": [
+        "provisional_temporal_rule: T <= 365 AH is an operational inclusion boundary requiring historical justification, not a universal division; evaluator death does not date an individual judgment.",
+        "traceable_transmission_lineage: Intermediary text cites identifiable source work or documented isnad.",
+        "corroboration_status: Classify as independent_corroboration, dependent_corroboration, or unresolved_corroboration; multiple compilations alone do not establish independence.",
+        "editorial_integrity_verification: Wording confirmed as critic appraisal without intermediary editorial distortion."
+      ],
+      "corroboration_status_allowed_values": [
+        "independent_corroboration",
+        "dependent_corroboration",
+        "unresolved_corroboration"
+      ],
+      "date_dimensions": [
+        "critic_lifespan_and_death",
+        "approximate_judgment_date_if_known",
+        "source_work_composition_date",
+        "surviving_manuscript_or_textual_witness_date",
+        "modern_editor_and_edition_date"
+      ],
+      "date_inference_rule": "Do not infer judgment date from critic death date, or surviving witness date from source-work composition date.",
+      "temporal_boundary": "T <= 365 AH is a provisional operational inclusion boundary requiring historical justification, not a universal historical division.",
+      "witness_rule": "A later surviving witness may preserve an earlier judgment; assess the surviving evidence and transmission uncertainty. A pre-365 AH physical witness is not an absolute eligibility requirement."
+    },
+    "safeguard_2_overlapping_multilabel_sampling": {
+      "principle": "The six diagnostic categories are non-exclusive and multi-label. The sample is purposive and quota-based; sample frequencies describe selected records only.",
+      "categories": [
+        "flag_conventional_grade",
+        "flag_compound_qualified_grade",
+        "flag_descriptive_non_grade",
+        "flag_explicit_attributed_quote",
+        "flag_criticism_text_overlap",
+        "flag_ambiguous_truncated_editorial"
+      ],
+      "sampling_strategy": "Deterministic purposive, quota-based diagnostic stress test balancing rare/difficult properties against uncomplicated conventional-grade baselines. It is not representative and does not estimate population prevalence or error rates."
+    }
+  },
+  "verification_dimensions": {
+    "dimensions": [
+      "textual_fidelity",
+      "attribution_fidelity",
+      "narrator_identity_resolution",
+      "historical_input_eligibility",
+      "target_candidate_suitability",
+      "construct_validity"
+    ],
+    "independence_rule": "Each dimension is assessed separately; passing one does not imply passing another.",
+    "record_disposition_scope": "Target-candidate disposition only; it does not determine historical input eligibility.",
+    "cautions": [
+      "A verified Ibn Hajar assessment is not automatically a valid historical input.",
+      "An attributed early critic judgment is not automatically eligible without provenance verification.",
+      "A verified target candidate does not establish construct validity."
+    ]
+  },
+  "reconciled_taxonomy": {
+    "record_disposition_allowed_values": [
+      "verified_ibn_hajar_assessment",
+      "excluded_not_a_grade",
+      "excluded_not_ibn_hajar",
+      "excluded_editorial_material",
+      "excluded_identity_mismatch",
+      "excluded_textual_corruption",
+      "quarantined_unattributed_synthesis",
+      "quarantined_uncertain"
+    ],
+    "construct_validity_note": "Textual verification of Ibn Hajar's authorship in Taqrib establishes source fidelity and attribution fidelity; it does not independently prove construct validity or machine-learning target suitability."
+  }
+}

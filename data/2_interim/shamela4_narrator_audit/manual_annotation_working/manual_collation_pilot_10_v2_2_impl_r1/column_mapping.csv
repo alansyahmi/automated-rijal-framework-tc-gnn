@@ -1,0 +1,107 @@
+source_file,source_column,target_table,target_column,mapping_type,transformation_rule,review_required
+MANUAL_COLLATION_PILOT_10.csv,audit_record_id,cases.csv,audit_record_id,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,audit_record_id,candidate_entries.csv,audit_record_id,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,audit_record_id,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,dataset_name,cases.csv,dataset_name,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,dataset_name,candidate_entries.csv,dataset_name,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,dataset_name,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,dataset_narrator_id,cases.csv,dataset_narrator_id,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,dataset_narrator_id,candidate_entries.csv,dataset_narrator_id,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,dataset_narrator_id,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,dataset_narrator_name,cases.csv,dataset_narrator_name,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,dataset_narrator_name,candidate_entries.csv,dataset_narrator_name,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,dataset_narrator_name,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,original_grade_field,cases.csv,original_grade_field,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,original_grade_field,candidate_entries.csv,original_grade_field,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,original_grade_field,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,original_grade_verbatim,cases.csv,original_grade_verbatim,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,original_grade_verbatim,candidate_entries.csv,original_grade_verbatim,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,original_grade_verbatim,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,original_source_location,cases.csv,original_grade_source_location,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,original_source_location,candidate_entries.csv,original_grade_source_location,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,original_source_location,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_book_id,candidate_entries.csv,taqrib_book_id,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,taqrib_book_id,sources.csv,source_work_id,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,taqrib_book_id,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_printed_page_from_corpus,candidate_entries.csv,taqrib_printed_page_from_corpus,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,taqrib_printed_page_from_corpus,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_entry_number,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_entry_text_verbatim,candidate_entries.csv,taqrib_entry_text_verbatim,copied,Exact logical cell copied without normalization.,false
+MANUAL_COLLATION_PILOT_10.csv,taqrib_entry_text_verbatim,candidate_entries.csv,source_entry_number_from_text,mechanically_transformed,Parse leading entry number for locator validation only; retain full source text verbatim.,false
+MANUAL_COLLATION_PILOT_10.csv,taqrib_entry_text_verbatim,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,retrieval_note,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_printed_page,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_entry_name_verbatim,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_grade_verbatim,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_qualification_verbatim,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_rank_number,candidate_entries.csv,legacy_rank_candidate,mechanically_transformed,Strict decimal 1..12 convenience value only; never assigned to the v2.2 rank.,false
+MANUAL_COLLATION_PILOT_10.csv,taqrib_rank_number,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_identity_match_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,taqrib_text_match_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,assessment_author,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,assessment_attribution_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,compiler_or_transmitter,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,editorial_material_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,attribution_evidence_verbatim,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,source_locator,candidate_entries.csv,source_locator_verbatim,mechanically_transformed,Exact locator retained; canonical tuple is separately parsed and validated.,false
+MANUAL_COLLATION_PILOT_10.csv,source_locator,sources.csv,source_locator_verbatim,mechanically_transformed,Exact locator retained; canonical tuple is separately parsed and validated.,false
+MANUAL_COLLATION_PILOT_10.csv,source_locator,candidate_entries.csv,canonical_source_locator_key,mechanically_transformed,Parse book/page/entry tuple after matching it against the frozen entry text.,false
+MANUAL_COLLATION_PILOT_10.csv,source_locator,sources.csv,canonical_source_locator_key,mechanically_transformed,Parse book/page/entry tuple after matching it against the frozen entry text.,false
+MANUAL_COLLATION_PILOT_10.csv,source_locator,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,source_verification_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,textual_fidelity,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,attribution_fidelity,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,identity_fidelity,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,record_disposition,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,input_eligibility,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,exclusion_or_quarantine_reason,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10.csv,reviewer_notes,candidate_entries.csv,legacy_reviewer_notes_verbatim,mechanically_transformed,Copied verbatim as a legacy note; not promoted to a new reviewer decision.,false
+MANUAL_COLLATION_PILOT_10.csv,reviewer_notes,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10.csv,corroboration_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,audit_record_id,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,dataset_name,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,dataset_narrator_id,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,dataset_narrator_name,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,original_grade_field,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,original_grade_verbatim,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,original_source_location,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_book_id,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_printed_page_from_corpus,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_entry_number,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_entry_text_verbatim,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,retrieval_note,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_printed_page,legacy_v1_values.csv,legacy_value,legacy_only,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_entry_name_verbatim,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_grade_verbatim,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_qualification_verbatim,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_rank_number,candidate_entries.csv,legacy_rank_candidate,mechanically_transformed,Strict decimal 1..12 convenience value only; never assigned to the v2.2 rank.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_rank_number,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_identity_match_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,taqrib_text_match_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,assessment_author,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,assessment_attribution_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,compiler_or_transmitter,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,editorial_material_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,attribution_evidence_verbatim,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,source_locator,candidate_entries.csv,source_locator_verbatim,mechanically_transformed,Exact locator retained; canonical tuple is separately parsed and validated.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,source_locator,sources.csv,source_locator_verbatim,mechanically_transformed,Exact locator retained; canonical tuple is separately parsed and validated.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,source_locator,candidate_entries.csv,canonical_source_locator_key,mechanically_transformed,Parse book/page/entry tuple after matching it against the frozen entry text.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,source_locator,sources.csv,canonical_source_locator_key,mechanically_transformed,Parse book/page/entry tuple after matching it against the frozen entry text.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,source_locator,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,source_verification_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,textual_fidelity,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,attribution_fidelity,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,identity_fidelity,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,record_disposition,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,input_eligibility,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,exclusion_or_quarantine_reason,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,reviewer_notes,candidate_entries.csv,legacy_reviewer_notes_verbatim,mechanically_transformed,Copied verbatim as a legacy note; not promoted to a new reviewer decision.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,reviewer_notes,legacy_v1_values.csv,legacy_value,legacy_only,Exact legacy value retained alongside the explicitly documented v2.2 mapping.,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,corroboration_status,legacy_v1_values.csv,legacy_value,deferred_for_review,Exact value retained in the immutable legacy snapshot; no v2.2 decision is inferred.,true
+MANUAL_COLLATION_PILOT_10_MANIFEST.json,source_corpus.book_id,sources.csv,source_work_id,copied,Exact source-corpus metadata copied from the pinned provenance manifest; no scholarly decision inferred.,false
+MANUAL_COLLATION_PILOT_10_MANIFEST.json,source_corpus.title,sources.csv,source_work_title,copied,Exact source-corpus metadata copied from the pinned provenance manifest; no scholarly decision inferred.,false
+MANUAL_COLLATION_PILOT_10_MANIFEST.json,source_corpus.editor,sources.csv,consulted_editor,copied,Exact source-corpus metadata copied from the pinned provenance manifest; no scholarly decision inferred.,false
+MANUAL_COLLATION_PILOT_10_MANIFEST.json,source_corpus.edition,sources.csv,consulted_edition,copied,Exact source-corpus metadata copied from the pinned provenance manifest; no scholarly decision inferred.,false
+MANUAL_COLLATION_PILOT_10_MANIFEST.json,source_corpus.page_numbering_note,sources.csv,source_page_numbering_note,copied,Exact source-corpus metadata copied from the pinned provenance manifest; no scholarly decision inferred.,false
+MANUAL_COLLATION_PILOT_10_MANIFEST.json,source_corpus.pages_jsonl_sha256,sources.csv,consulted_corpus_artifact_id,copied,Exact source-corpus metadata copied from the pinned provenance manifest; no scholarly decision inferred.,false
+MANUAL_COLLATION_PILOT_10_MANIFEST.json,source_corpus.pages_jsonl_sha256,sources.csv,consulted_corpus_artifact_type,mechanically_transformed,Fixed label describes the hashed JSONL corpus artifact; it is not treated as a manuscript witness.,false

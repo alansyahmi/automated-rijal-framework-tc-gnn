@@ -1,0 +1,585 @@
+{
+  "audit_name": "narrator_level_target_feasibility",
+  "script_version": "1.0.0",
+  "script_path": "dataset_discovery/target_feasibility/audit_target_feasibility.py",
+  "script_sha256": "f057f1b0a4a887a887ed47de214a2f6371c79258f5fe160ffcdd66811421304d",
+  "scripts": [
+    {
+      "path": "dataset_discovery/target_feasibility/audit_target_feasibility.py",
+      "version": "1.0.0",
+      "sha256": "f057f1b0a4a887a887ed47de214a2f6371c79258f5fe160ffcdd66811421304d"
+    },
+    {
+      "path": "dataset_discovery/target_feasibility/test_audit_target_feasibility.py",
+      "version": "1.0.0",
+      "sha256": "7ec1f6baf65d857c878ddabaf5e0e3ddcab2a9d56a8da6f7f25cbc77ea96c07f"
+    }
+  ],
+  "execution_timestamp_utc": "2026-11-11T03:13:04.927442+00:00",
+  "python_version": "3.13.7",
+  "inputs": [
+    {
+      "path": "data\\1_raw\\Shamela4_Full_DB\\_meta\\narrators.parquet",
+      "bytes": 7963509,
+      "sha256": "82657fbae4e73a6514258102293b95be4e6031ab45faa65d69dad14cdc51ef34"
+    },
+    {
+      "path": "data\\1_raw\\hadithdb\\narrators_db.json",
+      "bytes": 12402630,
+      "sha256": "67c183de90f779496f741a868120224c71fd32ff94525fb6a119ea8750b9c42a"
+    },
+    {
+      "path": "dataset_discovery\\Shamela4\\SHAMELA4_AUDIT_FINDINGS.md",
+      "bytes": 20163,
+      "sha256": "2a3c517ffe644ab903e0e972eda91aeb5e618240fe549058a4e38179e05e85d5"
+    },
+    {
+      "path": "dataset_discovery\\Shamela4\\SHAMELA_WEBSITE_ID_CROSSWALK.md",
+      "bytes": 5959,
+      "sha256": "a3fe7aebc1ea174a83248cff64a506d887aca446920b64e7420a6562a0db71df"
+    },
+    {
+      "path": "dataset_discovery\\hadithdb\\HADITHDB_AUDIT.md",
+      "bytes": 16095,
+      "sha256": "6432d1eef99d0b8235c89b5d770e539fdd0f2524484e2a000207dc5e058ca1b9"
+    },
+    {
+      "path": "data\\1_raw\\hadithdb\\README.md",
+      "bytes": 10634,
+      "sha256": "6f2d97d3292207e36a1a2ea841a54d2a91738000b492624221dd87de14ae6ba0"
+    },
+    {
+      "path": "data\\1_raw\\hadithdb\\bukhari_sultania_copy.json",
+      "bytes": 13649651,
+      "sha256": "f0844ea551957eaeb201c88666fb01b0bab2495723248d52401c334a75d9b9b0"
+    }
+  ],
+  "outputs": {
+    "TARGET_FEASIBILITY_REPORT.md": {
+      "bytes": 19710,
+      "sha256": "33e377d047ff08f9c58a93602c6ceda0f2214ecbf163b5edb8ab50df5c8ef0a5"
+    },
+    "LABEL_DISTRIBUTION.csv": {
+      "bytes": 1038377,
+      "sha256": "3baa49579c5060b292bc1b1d1d137d6fafba4f18fb2806409caac15716942706"
+    },
+    "DATASET_COVERAGE.csv": {
+      "bytes": 2061,
+      "sha256": "5430f1d79d133732ef25128d296d782effab1ad094cef6dd4150c63ab3ab41ff"
+    },
+    "IDENTITY_CROSSWALK_CANDIDATES.csv": {
+      "bytes": 443207,
+      "sha256": "de36d78cb2ff5ca0ab5da1c96f01f9ff399c8d01404563c78b495a0d8be2d068"
+    }
+  },
+  "summary": {
+    "shamela_records": 18989,
+    "hadithdb_records": 1524,
+    "shamela_duplicate_ids": 0,
+    "hadithdb_duplicate_record_ids": 0,
+    "hadithdb_key_id_mismatches": 0,
+    "shamela_exact_duplicate_rows": 0,
+    "hadithdb_exact_duplicate_rows": 0,
+    "shamela_duplicate_short_name_groups": 1032,
+    "shamela_records_in_duplicate_short_name_groups": 2874,
+    "hadithdb_duplicate_display_name_groups": 31,
+    "hadithdb_records_in_duplicate_display_name_groups": 103,
+    "numeric_id_overlap_not_used_for_matching": 1498,
+    "crosswalk_hadith_records_with_candidates": 261,
+    "crosswalk_ambiguous_hadith_records": 70,
+    "crosswalk_unmatched_hadith_records": 1263,
+    "crosswalk_candidate_pairs": 494,
+    "crosswalk_result_row_counts": {
+      "unmatched_candidate": 1263,
+      "candidate": 494
+    },
+    "crosswalk_candidate_records_by_best_method": {
+      "normalized_primary": 261
+    },
+    "crosswalk_exact_raw_full_name_records": 0,
+    "crosswalk_verified_matches": 0,
+    "grade_substring_in_criticism_evidence": {
+      "Shamela4": {
+        "الرتبة عند ابن حجر": 7513,
+        "الرتبة عند الذهبي": 4755
+      },
+      "HadithDB": {
+        "الرتبة عند ابن حجر": 1362,
+        "الرتبة عند الذهبي": 981
+      }
+    },
+    "raw_grade_values_with_possible_attribution_language": {
+      "Shamela4": {
+        "الرتبة عند ابن حجر": {
+          "unique_values_with_possible_attribution_language": 169,
+          "records_with_possible_attribution_language": 231,
+          "cues": [
+            "قال",
+            "وثقه",
+            "وثق",
+            "ضعفه",
+            "ضعف",
+            "حكى",
+            "يقال",
+            "ذكر"
+          ]
+        },
+        "الرتبة عند الذهبي": {
+          "unique_values_with_possible_attribution_language": 851,
+          "records_with_possible_attribution_language": 2145,
+          "cues": [
+            "قال",
+            "وثقه",
+            "وثق",
+            "ضعفه",
+            "ضعف",
+            "حكى",
+            "يقال",
+            "ذكر"
+          ]
+        }
+      },
+      "HadithDB": {
+        "الرتبة عند ابن حجر": {
+          "unique_values_with_possible_attribution_language": 45,
+          "records_with_possible_attribution_language": 45,
+          "cues": [
+            "قال",
+            "وثقه",
+            "وثق",
+            "ضعفه",
+            "ضعف",
+            "حكى",
+            "يقال",
+            "ذكر"
+          ]
+        },
+        "الرتبة عند الذهبي": {
+          "unique_values_with_possible_attribution_language": 241,
+          "records_with_possible_attribution_language": 322,
+          "cues": [
+            "قال",
+            "وثقه",
+            "وثق",
+            "ضعفه",
+            "ضعف",
+            "حكى",
+            "يقال",
+            "ذكر"
+          ]
+        }
+      }
+    },
+    "hadithdb_both_ibn_hajar_and_dhahabi_nonempty": 1156,
+    "hadithdb_both_fields_exactly_equal": 204,
+    "same_display_name_different_grade_strings": {
+      "Shamela4": {
+        "الرتبة عند ابن حجر": {
+          "same_name_groups_with_different_values": 342,
+          "records_in_those_groups": 1202
+        },
+        "الرتبة عند الذهبي": {
+          "same_name_groups_with_different_values": 121,
+          "records_in_those_groups": 503
+        },
+        "طبقة رواة التقريب": {
+          "same_name_groups_with_different_values": 329,
+          "records_in_those_groups": 1189
+        }
+      },
+      "HadithDB": {
+        "الرتبة عند ابن حجر": {
+          "same_name_groups_with_different_values": 29,
+          "records_in_those_groups": 98
+        },
+        "الرتبة عند الذهبي": {
+          "same_name_groups_with_different_values": 18,
+          "records_in_those_groups": 76
+        },
+        "طبقة رواة التقريب": {
+          "same_name_groups_with_different_values": 29,
+          "records_in_those_groups": 99
+        }
+      }
+    },
+    "quotation_evidence": {
+      "Shamela4": {
+        "records_with_quote_evidence": 14968,
+        "records_without_quote_evidence": 4021,
+        "quote_occurrences": 165862,
+        "group_appearances": 87463,
+        "group_key_appearances_including_empty": 87696,
+        "unique_group_labels": 2804
+      },
+      "HadithDB": {
+        "records_with_quote_evidence": 1521,
+        "records_without_quote_evidence": 3,
+        "quote_occurrences": 40524,
+        "group_appearances": 18964,
+        "group_key_appearances_including_empty": 18966,
+        "unique_group_labels": 1307
+      }
+    },
+    "bukhari_chain_structure": {
+      "rows": 7233,
+      "unique_hadith_numbers": 7166,
+      "rows_beyond_unique_hadith_numbers": 67,
+      "maximum_hadith_number": 7563,
+      "narrator_occurrences": 37094,
+      "unique_raw_narrator_names": 5698,
+      "unique_narrator_ids_in_chains": 1524,
+      "narrator_ids_found_in_narrator_database": 1524,
+      "unknown_narrator_ids": 0,
+      "missing_id_occurrences": 28,
+      "malformed_chain_rows": 0,
+      "ids_with_multiple_chain_name_strings": 1091,
+      "raw_names_linked_to_multiple_ids": 264
+    },
+    "target_fields": {
+      "Shamela4.الرتبة عند ابن حجر": {
+        "total": 18989,
+        "labelled": 8185,
+        "missing": 10804,
+        "ambiguous": 0,
+        "unique_values": 1343,
+        "top_values": [
+          [
+            "ثقة",
+            1411
+          ],
+          [
+            "مقبول",
+            1255
+          ],
+          [
+            "صدوق",
+            876
+          ],
+          [
+            "مجهول",
+            522
+          ],
+          [
+            "صحابي",
+            355
+          ],
+          [
+            "ضعيف",
+            295
+          ],
+          [
+            "مستور",
+            120
+          ],
+          [
+            "صدوق يخطئ",
+            101
+          ],
+          [
+            "لا بأس به",
+            98
+          ],
+          [
+            "لين الحديث",
+            91
+          ]
+        ]
+      },
+      "HadithDB.الرتبة عند ابن حجر": {
+        "total": 1524,
+        "labelled": 1508,
+        "missing": 16,
+        "ambiguous": 0,
+        "unique_values": 493,
+        "top_values": [
+          [
+            "ثقة",
+            485
+          ],
+          [
+            "صدوق",
+            101
+          ],
+          [
+            "ثقة ثبت",
+            55
+          ],
+          [
+            "صحابي",
+            45
+          ],
+          [
+            "ثقة حافظ",
+            43
+          ],
+          [
+            "ثقة عابد",
+            31
+          ],
+          [
+            "مقبول",
+            27
+          ],
+          [
+            "ثقة.",
+            20
+          ],
+          [
+            "ثقة فاضل",
+            19
+          ],
+          [
+            "صدوق يخطئ",
+            19
+          ]
+        ]
+      },
+      "Shamela4.الرتبة عند الذهبي": {
+        "total": 18989,
+        "labelled": 5370,
+        "missing": 13619,
+        "ambiguous": 0,
+        "unique_values": 1694,
+        "top_values": [
+          [
+            "ثقة",
+            968
+          ],
+          [
+            "وثق",
+            673
+          ],
+          [
+            "صدوق",
+            292
+          ],
+          [
+            "صحابي",
+            194
+          ],
+          [
+            "له صحبة",
+            140
+          ],
+          [
+            "ضعفوه",
+            73
+          ],
+          [
+            "وثقه النسائي",
+            71
+          ],
+          [
+            "الحافظ",
+            65
+          ],
+          [
+            "وثقوه",
+            62
+          ],
+          [
+            "ثقة.",
+            60
+          ]
+        ]
+      },
+      "HadithDB.الرتبة عند الذهبي": {
+        "total": 1524,
+        "labelled": 1165,
+        "missing": 359,
+        "ambiguous": 0,
+        "unique_values": 601,
+        "top_values": [
+          [
+            "ثقة",
+            254
+          ],
+          [
+            "صدوق",
+            53
+          ],
+          [
+            "الحافظ",
+            43
+          ],
+          [
+            "صحابي",
+            32
+          ],
+          [
+            "وثق",
+            32
+          ],
+          [
+            "وثقوه",
+            19
+          ],
+          [
+            "ثقة.",
+            17
+          ],
+          [
+            "أحد الأعلام",
+            11
+          ],
+          [
+            "حجة",
+            10
+          ],
+          [
+            "له صحبة",
+            9
+          ]
+        ]
+      },
+      "Shamela4.طبقة رواة التقريب": {
+        "total": 18989,
+        "labelled": 8178,
+        "missing": 10811,
+        "ambiguous": 0,
+        "unique_values": 294,
+        "top_values": [
+          [
+            "الثالثة",
+            1172
+          ],
+          [
+            "السادسة",
+            1079
+          ],
+          [
+            "السابعة",
+            905
+          ],
+          [
+            "العاشرة",
+            708
+          ],
+          [
+            "الرابعة",
+            632
+          ],
+          [
+            "التاسعة",
+            480
+          ],
+          [
+            "الحادية عشرة",
+            456
+          ],
+          [
+            "الثامنة",
+            437
+          ],
+          [
+            "الخامسة",
+            417
+          ],
+          [
+            "صحابي",
+            407
+          ]
+        ]
+      },
+      "HadithDB.طبقة رواة التقريب": {
+        "total": 1524,
+        "labelled": 1500,
+        "missing": 24,
+        "ambiguous": 0,
+        "unique_values": 145,
+        "top_values": [
+          [
+            "الثالثة",
+            187
+          ],
+          [
+            "العاشرة",
+            178
+          ],
+          [
+            "السادسة",
+            145
+          ],
+          [
+            "التاسعة",
+            124
+          ],
+          [
+            "الرابعة",
+            106
+          ],
+          [
+            "الخامسة",
+            89
+          ],
+          [
+            "السابعة",
+            89
+          ],
+          [
+            "الثامنة",
+            68
+          ],
+          [
+            "الحادية عشرة",
+            64
+          ],
+          [
+            "صحابي",
+            59
+          ]
+        ]
+      },
+      "Shamela4.narrator_type": {
+        "total": 18989,
+        "labelled": 9190,
+        "missing": 9799,
+        "ambiguous": 0,
+        "unique_values": 603,
+        "top_values": [
+          [
+            "141",
+            248
+          ],
+          [
+            "151",
+            203
+          ],
+          [
+            "161",
+            200
+          ],
+          [
+            "181",
+            197
+          ],
+          [
+            "121",
+            184
+          ],
+          [
+            "131",
+            159
+          ],
+          [
+            "171",
+            151
+          ],
+          [
+            "111",
+            147
+          ],
+          [
+            "191",
+            146
+          ],
+          [
+            "241",
+            136
+          ]
+        ]
+      }
+    }
+  },
+  "normalization": "Arabic NFKC; remove combining marks and tatweel; fold alef variants to ا and ى to ي; preserve ة, word order, and particles. Used only to generate candidate matches, never automatic merges."
+}

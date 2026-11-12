@@ -1,0 +1,1199 @@
+{
+  "annotations_inferred": false,
+  "column_mapping_file": "column_mapping.csv",
+  "counts": {
+    "candidate_entries": 11,
+    "cases": 10,
+    "legacy_empty_cells": 258,
+    "legacy_values": 748,
+    "provisional_work_items": 11,
+    "reviewed_scholarly_statements": 0
+  },
+  "frozen_specification": {
+    "path": "dataset_discovery\\target_feasibility\\MANUAL_COLLATION_SCHEMA_V2_2_FINAL.md",
+    "sha256": "2bcba2ade81ce57ec9075bd587c3ab62eafb09845183cfa1d44b6e709d38c860"
+  },
+  "implementation_version": "2.2.1",
+  "input_files": {
+    "MANUAL_COLLATION_PILOT_10.csv": {
+      "bytes": 7378,
+      "encoding": "utf-8-sig",
+      "headers": [
+        "audit_record_id",
+        "dataset_name",
+        "dataset_narrator_id",
+        "dataset_narrator_name",
+        "original_grade_field",
+        "original_grade_verbatim",
+        "original_source_location",
+        "taqrib_book_id",
+        "taqrib_printed_page_from_corpus",
+        "taqrib_entry_number",
+        "taqrib_entry_text_verbatim",
+        "retrieval_note",
+        "taqrib_printed_page",
+        "taqrib_entry_name_verbatim",
+        "taqrib_grade_verbatim",
+        "taqrib_qualification_verbatim",
+        "taqrib_rank_number",
+        "taqrib_identity_match_status",
+        "taqrib_text_match_status",
+        "assessment_author",
+        "assessment_attribution_status",
+        "compiler_or_transmitter",
+        "editorial_material_status",
+        "attribution_evidence_verbatim",
+        "source_locator",
+        "source_verification_status",
+        "textual_fidelity",
+        "attribution_fidelity",
+        "identity_fidelity",
+        "record_disposition",
+        "input_eligibility",
+        "exclusion_or_quarantine_reason",
+        "reviewer_notes",
+        "corroboration_status"
+      ],
+      "path": "dataset_discovery\\target_feasibility\\manual_collation_pilot_10\\MANUAL_COLLATION_PILOT_10.csv",
+      "role": "content",
+      "row_count": 11,
+      "row_count_semantics": "CSV data rows excluding header",
+      "sha256": "78cb15eb72b04c1b2c0d2e350e375615236df22a2918c38256977ccccffae958"
+    },
+    "MANUAL_COLLATION_PILOT_10_KEY.csv": {
+      "bytes": 3484,
+      "encoding": "utf-8-sig",
+      "headers": [
+        "audit_record_id",
+        "review_focus_category",
+        "selection_rationale",
+        "automated_flag_snapshot"
+      ],
+      "path": "dataset_discovery\\target_feasibility\\manual_collation_pilot_10\\MANUAL_COLLATION_PILOT_10_KEY.csv",
+      "role": "read_only_provenance",
+      "row_count": 10,
+      "row_count_semantics": "CSV data rows excluding header",
+      "sha256": "9eccd4533cb4482390a41861955e3636453d1f0bc39e8aac544f748f4dcc0684"
+    },
+    "MANUAL_COLLATION_PILOT_10_MANIFEST.json": {
+      "bytes": 3256,
+      "encoding": "utf-8",
+      "headers": [],
+      "path": "dataset_discovery\\target_feasibility\\manual_collation_pilot_10\\MANUAL_COLLATION_PILOT_10_MANIFEST.json",
+      "role": "read_only_provenance",
+      "row_count": 1,
+      "row_count_semantics": "one top-level JSON object",
+      "sha256": "9339ad77f1fa18e204b443e9a3ec888d6ec56924b801b85d94f3bb8ea49bf72d"
+    },
+    "MANUAL_COLLATION_PILOT_10_WORKING.csv": {
+      "bytes": 22596,
+      "encoding": "utf-8-sig",
+      "headers": [
+        "audit_record_id",
+        "dataset_name",
+        "dataset_narrator_id",
+        "dataset_narrator_name",
+        "original_grade_field",
+        "original_grade_verbatim",
+        "original_source_location",
+        "taqrib_book_id",
+        "taqrib_printed_page_from_corpus",
+        "taqrib_entry_number",
+        "taqrib_entry_text_verbatim",
+        "retrieval_note",
+        "taqrib_printed_page",
+        "taqrib_entry_name_verbatim",
+        "taqrib_grade_verbatim",
+        "taqrib_qualification_verbatim",
+        "taqrib_rank_number",
+        "taqrib_identity_match_status",
+        "taqrib_text_match_status",
+        "assessment_author",
+        "assessment_attribution_status",
+        "compiler_or_transmitter",
+        "editorial_material_status",
+        "attribution_evidence_verbatim",
+        "source_locator",
+        "source_verification_status",
+        "textual_fidelity",
+        "attribution_fidelity",
+        "identity_fidelity",
+        "record_disposition",
+        "input_eligibility",
+        "exclusion_or_quarantine_reason",
+        "reviewer_notes",
+        "corroboration_status"
+      ],
+      "path": "dataset_discovery\\target_feasibility\\manual_collation_pilot_10\\MANUAL_COLLATION_PILOT_10_WORKING.csv",
+      "role": "content",
+      "row_count": 11,
+      "row_count_semantics": "CSV data rows excluding header",
+      "sha256": "4b3f731b5a799c1df499c57391f4b502fcee84f129c2bae2e77325e738a04548"
+    }
+  },
+  "input_source_corpus_metadata": {
+    "book_id": "3076",
+    "book_metadata_sha256": "bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88",
+    "edition": "دار الرشيد، الطبعة الأولى، ١٤٠٦هـ / ١٩٨٦م",
+    "editor": "محمد عوامة",
+    "page_numbering_note": "The corpus metadata states that book pagination matches the printed edition. The packet records corpus page_num; reviewers should verify it in the cited edition when consulting the print source.",
+    "pages_jsonl_sha256": "45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa",
+    "title": "تقريب التهذيب"
+  },
+  "manifest_checksum_file": "MANIFEST.sha256",
+  "migration_script": "dataset_discovery\\target_feasibility\\migrate_manual_collation_v2_2.py",
+  "missingness_counts": {
+    "attribution_links.csv": {
+      "attribution_evidence_locator": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "attribution_evidence_record_id": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "attribution_evidence_text_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "attribution_evidence_verbatim": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "attribution_form": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "attribution_link_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "compiler_authorship_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "evaluator_value_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "historical_evaluator_attribution_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "intermediary_transmitter": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "named_historical_evaluator": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "passage_evaluator_naming_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "statement_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "surviving_wording_author": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "transmission_route_evidence_record_id": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "transmission_route_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "transmitter_value_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "wording_author_value_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      }
+    },
+    "candidate_entries.csv": {
+      "audit_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "candidate_comparison_locator": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "candidate_comparison_rationale": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "candidate_comparison_source_span": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "candidate_comparison_source_span_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "candidate_entry_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "candidate_entry_text_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "candidate_field_source_correspondence": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "canonical_source_locator_key": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "dataset_name": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "dataset_narrator_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "dataset_narrator_name": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "identity_evidence_independence_rationale": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "identity_evidence_locator": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "identity_evidence_record_id": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "identity_evidence_text_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "identity_evidence_verbatim": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "identity_match_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "legacy_rank_candidate": {
+        "empty_or_null": 2,
+        "nonempty": 9
+      },
+      "legacy_reviewer_notes_verbatim": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "original_grade_field": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "original_grade_source_location": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "original_grade_verbatim": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_entry_number_from_text": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_locator_verbatim": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "taqrib_book_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "taqrib_entry_text_verbatim": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "taqrib_printed_page_from_corpus": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "taqrib_source_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "within_case_candidate_index": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      }
+    },
+    "cases.csv": {
+      "audit_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 10
+      },
+      "dataset_name": {
+        "empty_or_null": 0,
+        "nonempty": 10
+      },
+      "dataset_narrator_id": {
+        "empty_or_null": 0,
+        "nonempty": 10
+      },
+      "dataset_narrator_name": {
+        "empty_or_null": 0,
+        "nonempty": 10
+      },
+      "original_grade_field": {
+        "empty_or_null": 0,
+        "nonempty": 10
+      },
+      "original_grade_source_location": {
+        "empty_or_null": 0,
+        "nonempty": 10
+      },
+      "original_grade_verbatim": {
+        "empty_or_null": 0,
+        "nonempty": 10
+      },
+      "original_value_status": {
+        "empty_or_null": 0,
+        "nonempty": 10
+      }
+    },
+    "column_mapping.csv": {
+      "mapping_type": {
+        "empty_or_null": 0,
+        "nonempty": 106
+      },
+      "review_required": {
+        "empty_or_null": 0,
+        "nonempty": 106
+      },
+      "source_column": {
+        "empty_or_null": 0,
+        "nonempty": 106
+      },
+      "source_file": {
+        "empty_or_null": 0,
+        "nonempty": 106
+      },
+      "target_column": {
+        "empty_or_null": 0,
+        "nonempty": 106
+      },
+      "target_table": {
+        "empty_or_null": 0,
+        "nonempty": 106
+      },
+      "transformation_rule": {
+        "empty_or_null": 0,
+        "nonempty": 106
+      }
+    },
+    "date_claims.csv": {
+      "date_calendar": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "date_claim_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "date_claim_status": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "date_kind": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "date_precision": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "date_subject_role": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "date_value": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "evidence_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      }
+    },
+    "feature_sources.csv": {
+      "decision_rationale": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "feature_exclusion_policy_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "feature_exclusion_policy_version": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "feature_inclusion_status": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "feature_input_name": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "feature_source_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "source_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "statement_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "temporal_date_claim_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      }
+    },
+    "legacy_v1_values.csv": {
+      "audit_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 748
+      },
+      "candidate_entry_id": {
+        "empty_or_null": 0,
+        "nonempty": 748
+      },
+      "field_name": {
+        "empty_or_null": 0,
+        "nonempty": 748
+      },
+      "input_row_index": {
+        "empty_or_null": 0,
+        "nonempty": 748
+      },
+      "is_empty_cell": {
+        "empty_or_null": 0,
+        "nonempty": 748
+      },
+      "legacy_value": {
+        "empty_or_null": 258,
+        "nonempty": 490
+      },
+      "source_file": {
+        "empty_or_null": 0,
+        "nonempty": 748
+      }
+    },
+    "migration_mapping.csv": {
+      "audit_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "candidate_entry_id": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "canonical_source_locator_key": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "input_row_index": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "migration_join_status": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "source_file": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "source_locator_verbatim": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "statement_id": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "taqrib_entry_text_sha256": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      },
+      "within_case_candidate_index": {
+        "empty_or_null": 0,
+        "nonempty": 22
+      }
+    },
+    "source_evidence.csv": {
+      "attribution_link_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "candidate_entry_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "evidence_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "evidence_role": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "evidence_text_status": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "evidence_text_verbatim": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "source_locator": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "source_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      },
+      "statement_id": {
+        "empty_or_null": 0,
+        "nonempty": 0
+      }
+    },
+    "sources.csv": {
+      "candidate_entry_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "canonical_source_locator_key": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "consulted_corpus_artifact_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "consulted_corpus_artifact_type": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "consulted_edition": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "consulted_editor": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "consulted_witness_id": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "consulted_witness_type": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "edition_metadata_evidence_record_id": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "edition_variant_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_author_metadata_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_locator_verbatim": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_page_numbering_note": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_verification_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_work_author_compiler": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "source_work_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "source_work_title": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      }
+    },
+    "statements.csv": {
+      "audit_record_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "candidate_entry_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "corroboration_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "grade_base_text_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "grade_base_verbatim": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "grade_qualification_text_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "grade_qualification_verbatim": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "historical_input_eligibility": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "historical_input_eligibility_rationale": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "rank_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "statement_id": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "statement_record_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "statement_source_correspondence": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "statement_source_correspondence_rationale": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "statement_source_evidence_record_id": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "statement_source_locator": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "statement_source_span_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "statement_source_span_verbatim": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "statement_text_status": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "statement_text_verbatim": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "statement_type": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "taqrib_rank_number": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "taqrib_statement_validity": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "target_task_scope": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "target_task_scope_rationale": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "temporal_policy_id": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      },
+      "temporal_policy_result": {
+        "empty_or_null": 0,
+        "nonempty": 11
+      },
+      "temporal_policy_version": {
+        "empty_or_null": 11,
+        "nonempty": 0
+      }
+    }
+  },
+  "no_human_annotation_decisions_populated": true,
+  "not_assessed_counts_are_decisions": false,
+  "outputs": {
+    "attribution_links.csv": {
+      "bytes": 2249,
+      "encoding": "utf-8",
+      "headers": [
+        "attribution_link_id",
+        "statement_id",
+        "named_historical_evaluator",
+        "evaluator_value_status",
+        "intermediary_transmitter",
+        "transmitter_value_status",
+        "surviving_wording_author",
+        "wording_author_value_status",
+        "attribution_form",
+        "passage_evaluator_naming_status",
+        "historical_evaluator_attribution_status",
+        "transmission_route_status",
+        "compiler_authorship_status",
+        "attribution_evidence_verbatim",
+        "attribution_evidence_text_status",
+        "attribution_evidence_record_id",
+        "attribution_evidence_locator",
+        "transmission_route_evidence_record_id"
+      ],
+      "path": "attribution_links.csv",
+      "rows": 11,
+      "sha256": "45e94a675df7b25de782f175b8aeb1cd6a884d71b66e6e87f319b49fe00d3e9e"
+    },
+    "candidate_entries.csv": {
+      "bytes": 16906,
+      "encoding": "utf-8",
+      "headers": [
+        "audit_record_id",
+        "candidate_entry_id",
+        "within_case_candidate_index",
+        "dataset_name",
+        "dataset_narrator_id",
+        "dataset_narrator_name",
+        "original_grade_field",
+        "original_grade_verbatim",
+        "original_grade_source_location",
+        "taqrib_book_id",
+        "taqrib_printed_page_from_corpus",
+        "taqrib_entry_text_verbatim",
+        "candidate_entry_text_status",
+        "source_entry_number_from_text",
+        "source_locator_verbatim",
+        "canonical_source_locator_key",
+        "candidate_field_source_correspondence",
+        "candidate_comparison_source_span",
+        "candidate_comparison_source_span_status",
+        "candidate_comparison_rationale",
+        "candidate_comparison_locator",
+        "identity_match_status",
+        "identity_evidence_verbatim",
+        "identity_evidence_text_status",
+        "identity_evidence_record_id",
+        "identity_evidence_locator",
+        "identity_evidence_independence_rationale",
+        "taqrib_source_record_id",
+        "legacy_rank_candidate",
+        "legacy_reviewer_notes_verbatim"
+      ],
+      "path": "candidate_entries.csv",
+      "rows": 11,
+      "sha256": "8371a9b81c851fba61c0943af9ed179c720f6c2e7b3f7e3c532f5d5c72ba149b"
+    },
+    "cases.csv": {
+      "bytes": 2284,
+      "encoding": "utf-8",
+      "headers": [
+        "audit_record_id",
+        "dataset_name",
+        "dataset_narrator_id",
+        "dataset_narrator_name",
+        "original_grade_field",
+        "original_grade_verbatim",
+        "original_grade_source_location",
+        "original_value_status"
+      ],
+      "path": "cases.csv",
+      "rows": 10,
+      "sha256": "fce014299bcbd59594adcd047305c654866ad6671734deb3aa232cb27f5bb5ae"
+    },
+    "column_mapping.csv": {
+      "bytes": 20270,
+      "encoding": "utf-8",
+      "headers": [
+        "source_file",
+        "source_column",
+        "target_table",
+        "target_column",
+        "mapping_type",
+        "transformation_rule",
+        "review_required"
+      ],
+      "path": "column_mapping.csv",
+      "rows": 106,
+      "sha256": "7781f4c9779bd3573061f47414dcbfcbc2f1b8f858789a13f6a7c8e57001b0c0"
+    },
+    "date_claims.csv": {
+      "bytes": 119,
+      "encoding": "utf-8",
+      "headers": [
+        "date_claim_id",
+        "date_subject_role",
+        "date_kind",
+        "date_value",
+        "date_calendar",
+        "date_precision",
+        "date_claim_status",
+        "evidence_record_id"
+      ],
+      "path": "date_claims.csv",
+      "rows": 0,
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab"
+    },
+    "feature_sources.csv": {
+      "bytes": 195,
+      "encoding": "utf-8",
+      "headers": [
+        "feature_source_id",
+        "statement_id",
+        "source_record_id",
+        "feature_input_name",
+        "temporal_date_claim_id",
+        "feature_inclusion_status",
+        "feature_exclusion_policy_id",
+        "feature_exclusion_policy_version",
+        "decision_rationale"
+      ],
+      "path": "feature_sources.csv",
+      "rows": 0,
+      "sha256": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1"
+    },
+    "legacy_v1_values.csv": {
+      "bytes": 91351,
+      "encoding": "utf-8",
+      "headers": [
+        "source_file",
+        "input_row_index",
+        "audit_record_id",
+        "candidate_entry_id",
+        "field_name",
+        "legacy_value",
+        "is_empty_cell"
+      ],
+      "path": "legacy_v1_values.csv",
+      "rows": 748,
+      "sha256": "894e915746dfdf902ea38bc392608321339e9776aeedc4ecdca5822dd62611d7"
+    },
+    "migration_mapping.csv": {
+      "bytes": 4384,
+      "encoding": "utf-8",
+      "headers": [
+        "source_file",
+        "input_row_index",
+        "audit_record_id",
+        "within_case_candidate_index",
+        "taqrib_entry_text_sha256",
+        "source_locator_verbatim",
+        "canonical_source_locator_key",
+        "candidate_entry_id",
+        "statement_id",
+        "migration_join_status"
+      ],
+      "path": "migration_mapping.csv",
+      "rows": 22,
+      "sha256": "5dba0c3f973cfdb3064a4e6f74a54986e6036b6cc999596b71a719a3d98c2634"
+    },
+    "schema_field_registry.json": {
+      "bytes": 160469,
+      "encoding": "utf-8",
+      "headers": null,
+      "path": "schema_field_registry.json",
+      "rows": 152,
+      "sha256": "e5be54b6f58355601e5b3b94b2dab121fd645d5a41794c78a97e37cea20841bf"
+    },
+    "source_evidence.csv": {
+      "bytes": 161,
+      "encoding": "utf-8",
+      "headers": [
+        "evidence_record_id",
+        "source_record_id",
+        "candidate_entry_id",
+        "statement_id",
+        "attribution_link_id",
+        "evidence_role",
+        "evidence_text_verbatim",
+        "evidence_text_status",
+        "source_locator"
+      ],
+      "path": "source_evidence.csv",
+      "rows": 0,
+      "sha256": "169bc1c0dcc62655fc858ccd9790e6cb02d8c1ebbe05f55c528867587e9489fc"
+    },
+    "sources.csv": {
+      "bytes": 6337,
+      "encoding": "utf-8",
+      "headers": [
+        "source_record_id",
+        "candidate_entry_id",
+        "source_work_id",
+        "source_work_title",
+        "consulted_edition",
+        "consulted_editor",
+        "consulted_witness_id",
+        "consulted_witness_type",
+        "consulted_corpus_artifact_id",
+        "consulted_corpus_artifact_type",
+        "source_page_numbering_note",
+        "source_work_author_compiler",
+        "source_author_metadata_status",
+        "source_locator_verbatim",
+        "canonical_source_locator_key",
+        "source_verification_status",
+        "edition_variant_status",
+        "edition_metadata_evidence_record_id"
+      ],
+      "path": "sources.csv",
+      "rows": 11,
+      "sha256": "1cf432096c94c85851f73bdb8af02aa355878088f4dc49ae1759732dd1edebda"
+    },
+    "statements.csv": {
+      "bytes": 3220,
+      "encoding": "utf-8",
+      "headers": [
+        "audit_record_id",
+        "candidate_entry_id",
+        "statement_id",
+        "statement_record_status",
+        "statement_type",
+        "statement_text_verbatim",
+        "statement_text_status",
+        "grade_base_verbatim",
+        "grade_base_text_status",
+        "grade_qualification_verbatim",
+        "grade_qualification_text_status",
+        "taqrib_rank_number",
+        "rank_status",
+        "taqrib_statement_validity",
+        "target_task_scope",
+        "statement_source_correspondence",
+        "statement_source_span_verbatim",
+        "statement_source_span_status",
+        "statement_source_correspondence_rationale",
+        "statement_source_locator",
+        "statement_source_evidence_record_id",
+        "historical_input_eligibility",
+        "historical_input_eligibility_rationale",
+        "target_task_scope_rationale",
+        "corroboration_status",
+        "temporal_policy_id",
+        "temporal_policy_version",
+        "temporal_policy_result"
+      ],
+      "path": "statements.csv",
+      "rows": 11,
+      "sha256": "da0c10816b544d33ce72440b635e17ace40849e1ce7784fc0d9008a85a32bbfe"
+    }
+  },
+  "outputs_sha256": {
+    "attribution_links.csv": "45e94a675df7b25de782f175b8aeb1cd6a884d71b66e6e87f319b49fe00d3e9e",
+    "candidate_entries.csv": "8371a9b81c851fba61c0943af9ed179c720f6c2e7b3f7e3c532f5d5c72ba149b",
+    "cases.csv": "fce014299bcbd59594adcd047305c654866ad6671734deb3aa232cb27f5bb5ae",
+    "column_mapping.csv": "7781f4c9779bd3573061f47414dcbfcbc2f1b8f858789a13f6a7c8e57001b0c0",
+    "date_claims.csv": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab",
+    "feature_sources.csv": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1",
+    "legacy_v1_values.csv": "894e915746dfdf902ea38bc392608321339e9776aeedc4ecdca5822dd62611d7",
+    "migration_mapping.csv": "5dba0c3f973cfdb3064a4e6f74a54986e6036b6cc999596b71a719a3d98c2634",
+    "schema_field_registry.json": "e5be54b6f58355601e5b3b94b2dab121fd645d5a41794c78a97e37cea20841bf",
+    "source_evidence.csv": "169bc1c0dcc62655fc858ccd9790e6cb02d8c1ebbe05f55c528867587e9489fc",
+    "sources.csv": "1cf432096c94c85851f73bdb8af02aa355878088f4dc49ae1759732dd1edebda",
+    "statements.csv": "da0c10816b544d33ce72440b635e17ace40849e1ce7784fc0d9008a85a32bbfe"
+  },
+  "provisional_work_items_excluded_from_analysis": true,
+  "rank_assignments_migrated": false,
+  "row_count_semantics": "provisional_work_items are operational placeholders, not scholarly statement counts.",
+  "row_mapping_file": "migration_mapping.csv",
+  "runtime": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python_implementation": "cpython",
+    "python_version": "3.13.7"
+  },
+  "schema_field_registry_file": "schema_field_registry.json",
+  "schema_name": "manual_collation_schema",
+  "schema_status": "frozen_implementation_baseline",
+  "schema_version": "2.2",
+  "script_sha256": "92dce857fa4931075d67cac9ba78c6ddf89d339ccfbf63fe2ccc8ae27220c3ca",
+  "statement_segmentation_inferred": false,
+  "status_counts": {
+    "attribution_links.csv": {
+      "attribution_evidence_text_status": {
+        "not_assessed": 11
+      },
+      "attribution_form": {
+        "not_assessed": 11
+      },
+      "compiler_authorship_status": {
+        "not_assessed": 11
+      },
+      "evaluator_value_status": {
+        "not_assessed": 11
+      },
+      "historical_evaluator_attribution_status": {
+        "not_assessed": 11
+      },
+      "passage_evaluator_naming_status": {
+        "not_assessed": 11
+      },
+      "transmission_route_status": {
+        "not_assessed": 11
+      },
+      "transmitter_value_status": {
+        "not_assessed": 11
+      },
+      "wording_author_value_status": {
+        "not_assessed": 11
+      }
+    },
+    "candidate_entries.csv": {
+      "candidate_comparison_source_span_status": {
+        "not_assessed": 11
+      },
+      "candidate_entry_text_status": {
+        "transcribed": 11
+      },
+      "candidate_field_source_correspondence": {
+        "not_assessed": 11
+      },
+      "identity_evidence_text_status": {
+        "not_assessed": 11
+      },
+      "identity_match_status": {
+        "not_assessed": 11
+      }
+    },
+    "cases.csv": {
+      "original_value_status": {
+        "present": 10
+      }
+    },
+    "date_claims.csv": {
+      "date_claim_status": {},
+      "date_kind": {}
+    },
+    "feature_sources.csv": {
+      "feature_inclusion_status": {}
+    },
+    "migration_mapping.csv": {
+      "migration_join_status": {
+        "matched": 22
+      }
+    },
+    "source_evidence.csv": {
+      "evidence_role": {},
+      "evidence_text_status": {}
+    },
+    "sources.csv": {
+      "edition_variant_status": {
+        "not_assessed": 11
+      },
+      "source_author_metadata_status": {
+        "not_assessed": 11
+      },
+      "source_verification_status": {
+        "not_assessed": 11
+      }
+    },
+    "statements.csv": {
+      "corroboration_status": {
+        "not_examined": 11
+      },
+      "grade_base_text_status": {
+        "not_assessed": 11
+      },
+      "grade_qualification_text_status": {
+        "not_assessed": 11
+      },
+      "historical_input_eligibility": {
+        "not_assessed": 11
+      },
+      "rank_status": {
+        "not_assessed": 11
+      },
+      "statement_record_status": {
+        "provisional_work_item": 11
+      },
+      "statement_source_correspondence": {
+        "not_assessed": 11
+      },
+      "statement_source_span_status": {
+        "not_assessed": 11
+      },
+      "statement_text_status": {
+        "not_transcribed": 11
+      },
+      "statement_type": {
+        "not_assessed": 11
+      },
+      "taqrib_statement_validity": {
+        "not_assessed": 11
+      },
+      "target_task_scope": {
+        "not_assessed": 11
+      },
+      "temporal_policy_result": {
+        "cannot_assess": 11
+      }
+    }
+  },
+  "validation_results": {
+    "column_mapping_coverage": "passed",
+    "field_schemas_enums_and_cross_field_invariants": "passed",
+    "foreign_keys_and_row_links": "passed",
+    "output_hash_manifest_and_checksum_validation": "passed",
+    "pinned_input_hashes_and_manifest_history": "passed",
+    "provisional_work_item_analytical_exclusion": "passed",
+    "source_row_join_and_unique_keys": "passed"
+  }
+}

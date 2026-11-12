@@ -1,0 +1,10 @@
+﻿dataset,field,total_records,labelled_records,missing_records,ambiguous_records,coverage_percentage,coverage_basis,validated_supervised_records,semantic_status
+Shamela4,الرتبة عند ابن حجر,18989,8185,10804,0,43.1039,non-empty source field; not validated gold labels,0,"source field present, but value-level mapping and provenance are not validated"
+HadithDB,الرتبة عند ابن حجر,1524,1508,16,0,98.9501,non-empty source field; not validated gold labels,0,upstream field observed; no data dictionary or record-level source verification
+Shamela4,الرتبة عند الذهبي,18989,5370,13619,0,28.2795,non-empty source field; not validated gold labels,0,"source field present, but value-level mapping and provenance are not validated"
+HadithDB,الرتبة عند الذهبي,1524,1165,359,0,76.4436,non-empty source field; not validated gold labels,0,upstream field observed; no data dictionary or record-level source verification
+Shamela4,طبقة رواة التقريب,18989,8178,10811,0,43.0670,non-empty source field; not validated gold labels,0,"source field present, but value-level mapping and provenance are not validated"
+HadithDB,طبقة رواة التقريب,1524,1500,24,0,98.4252,non-empty source field; not validated gold labels,0,upstream field observed; no data dictionary or record-level source verification
+Shamela4,narrator_type,18989,9190,9799,0,48.3964,non-empty source field; not validated gold labels,0,semantics unresolved
+Shamela4,garh / الجرح والتعديل quotation evidence,18989,14968,4021,14968,78.8246,records with at least one quotation occurrence (165862 occurrences total); not grade coverage,0,"quotation evidence only; speaker, statement type, target, independence, and grade are not validated"
+HadithDB,garh / الجرح والتعديل quotation evidence,1524,1521,3,1521,99.8031,records with at least one quotation occurrence (40524 occurrences total); not grade coverage,0,"quotation evidence only; speaker, statement type, target, independence, and grade are not validated"

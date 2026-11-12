@@ -1,0 +1,66 @@
+{
+  "package_name": "Shamela4/HadithDB 10-record manual source-collation pilot",
+  "package_version": "1.0.0",
+  "created_utc": "2026-11-11T12:01:20.693323+00:00",
+  "status": "Prepared for human source review; no scholarly decisions entered.",
+  "sampling_freeze": {
+    "source_worksheet": "dataset_discovery/target_feasibility/IBN_HAJAR_GRADE_PROVENANCE_WORKSHEET.csv",
+    "source_worksheet_sha256": "2e18fe75ecf9a696bc0addca2de12d0bfb52d55feebf2c4040d764f176193198",
+    "source_manifest_sha256": "c304e6525c3f8ecd9ac775ec30c55753259ec6e56e8e21423085e61cafea16ed",
+    "source_manifest_version": "1.2.0",
+    "source_case_count": 60,
+    "selected_case_count": 10,
+    "selected_unique_case_ids": [
+      "PROV-10",
+      "PROV-40",
+      "PROV-39",
+      "PROV-56",
+      "PROV-24",
+      "PROV-51",
+      "PROV-01",
+      "PROV-02",
+      "PROV-04",
+      "PROV-37"
+    ],
+    "selection_rule": "Ten distinct cases selected from the fixed 60-record sample using the planned review-focus quotas. Categories are review allocations; underlying automated flags may overlap.",
+    "corroboration_status_check": "All 60 source worksheet cells were blank before packet generation. No corroboration values were inferred or populated."
+  },
+  "source_corpus": {
+    "book_id": 3076,
+    "title": "تقريب التهذيب",
+    "editor": "محمد عوامة",
+    "edition": "دار الرشيد، الطبعة الأولى، ١٤٠٦هـ / ١٩٨٦م",
+    "page_numbering_note": "The corpus metadata states that book pagination matches the printed edition. The packet records corpus page_num; reviewers should verify it in the cited edition when consulting the print source.",
+    "pages_jsonl_sha256": "45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa",
+    "book_metadata_sha256": "bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88"
+  },
+  "case_count": 10,
+  "source_entry_row_count": 11,
+  "case_to_entry_counts": {
+    "PROV-10": 1,
+    "PROV-40": 1,
+    "PROV-39": 1,
+    "PROV-56": 1,
+    "PROV-24": 1,
+    "PROV-51": 1,
+    "PROV-01": 1,
+    "PROV-02": 1,
+    "PROV-04": 2,
+    "PROV-37": 1
+  },
+  "limitations": [
+    "Automated flags organize review and are not scholarly findings.",
+    "A text-search locator does not establish narrator identity, authorship, historical accuracy, or independent corroboration.",
+    "PROV-04 has two same-name candidate entries supplied without choosing between them.",
+    "PROV-24 has a kunya-only dataset name; the supplied Taqrib locator is a candidate and identity remains unresolved.",
+    "The packet transcribes the local Shamela Taqrib digital text; it does not independently inspect a physical print copy or manuscript witness.",
+    "No target-suitability or historical-input eligibility decision was made."
+  ],
+  "output_sha256": {
+    "MANUAL_COLLATION_PILOT_10.csv": "78cb15eb72b04c1b2c0d2e350e375615236df22a2918c38256977ccccffae958",
+    "MANUAL_COLLATION_PILOT_10_KEY.csv": "9eccd4533cb4482390a41861955e3636453d1f0bc39e8aac544f748f4dcc0684",
+    "README.md": "58c08e84b0fcd7cc69f0948afb30beff64989bf4615d339b04bcd47a4b6d654e"
+  },
+  "reviewer_field_count": 23,
+  "reviewer_fields_blank": true
+}

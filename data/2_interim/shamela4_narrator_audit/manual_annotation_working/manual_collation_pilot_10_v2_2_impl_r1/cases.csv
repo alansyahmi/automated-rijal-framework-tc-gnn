@@ -1,0 +1,11 @@
+audit_record_id,dataset_name,dataset_narrator_id,dataset_narrator_name,original_grade_field,original_grade_verbatim,original_grade_source_location,original_value_status
+PROV-10,HadithDB,515,عَبْدِ اللهِ بْنِ كَعْبِ بْنِ مَالِكٍ،,الرتبة عند ابن حجر,ثقة,"data[""الرتبة عند ابن حجر""]",present
+PROV-40,Shamela4,1813,خلف بن محمد بن عيسى,الرتبة عند ابن حجر,ثقة,"biography_text[""summary""][""الرتبة عند ابن حجر""]",present
+PROV-39,Shamela4,1811,خلف بن خليفة بن صاعد بن برام,الرتبة عند ابن حجر,صدوق، اختلط في الآخر,"biography_text[""summary""][""الرتبة عند ابن حجر""]",present
+PROV-56,Shamela4,6996,يحيى بن محمد بن عبد الله بن مهران,الرتبة عند ابن حجر,صدوق يخطئ.,"biography_text[""summary""][""الرتبة عند ابن حجر""]",present
+PROV-24,HadithDB,1214,أَبَا حَمْزَةَ،,الرتبة عند ابن حجر,وثقه: النسائي,"data[""الرتبة عند ابن حجر""]",present
+PROV-51,Shamela4,5498,محمد بن إسماعيل بن عياش بن سليم,الرتبة عند ابن حجر,عابوا عليه أنه حدث عن أبيه بغير سماع,"biography_text[""summary""][""الرتبة عند ابن حجر""]",present
+PROV-01,HadithDB,17,جَابِرَ بْنَ عَبْدِ اللهِ الْأَنْصَارِيَّ,الرتبة عند ابن حجر,صحابي,"data[""الرتبة عند ابن حجر""]",present
+PROV-02,HadithDB,27,وَمَعْمَرٌ,الرتبة عند ابن حجر,ثقة ثبت فاضل، إلا أن في روايته عن ثابت والأعمش وعاصم بن أبي النجود، وهشام بن عروة شيئا، وكذا فيما حدث به بالبصرة,"data[""الرتبة عند ابن حجر""]",present
+PROV-04,HadithDB,278,قَيْسُ بْنُ حَفْصٍ,الرتبة عند ابن حجر,ثقة له أفراد,"data[""الرتبة عند ابن حجر""]",present
+PROV-37,Shamela4,1740,خالد بن عبد الرحمن بن بكير,الرتبة عند ابن حجر,صدوق يخطئ.,"biography_text[""summary""][""الرتبة عند ابن حجر""]",present

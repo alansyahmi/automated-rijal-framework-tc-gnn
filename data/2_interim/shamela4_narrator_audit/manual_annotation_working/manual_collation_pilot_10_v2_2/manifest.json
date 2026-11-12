@@ -1,0 +1,224 @@
+{
+  "annotations_inferred": false,
+  "counts": {
+    "attribution_work_items": 11,
+    "candidate_entries": 11,
+    "cases": 10,
+    "legacy_empty_cells": 258,
+    "legacy_values": 748,
+    "provisional_work_items": 11
+  },
+  "input_files": {
+    "MANUAL_COLLATION_PILOT_10.csv": {
+      "bytes": 7378,
+      "path": "dataset_discovery\\target_feasibility\\manual_collation_pilot_10\\MANUAL_COLLATION_PILOT_10.csv",
+      "role": "content",
+      "sha256": "78cb15eb72b04c1b2c0d2e350e375615236df22a2918c38256977ccccffae958"
+    },
+    "MANUAL_COLLATION_PILOT_10_KEY.csv": {
+      "bytes": 3484,
+      "path": "dataset_discovery\\target_feasibility\\manual_collation_pilot_10\\MANUAL_COLLATION_PILOT_10_KEY.csv",
+      "role": "read_only_provenance",
+      "sha256": "9eccd4533cb4482390a41861955e3636453d1f0bc39e8aac544f748f4dcc0684"
+    },
+    "MANUAL_COLLATION_PILOT_10_MANIFEST.json": {
+      "bytes": 3256,
+      "path": "dataset_discovery\\target_feasibility\\manual_collation_pilot_10\\MANUAL_COLLATION_PILOT_10_MANIFEST.json",
+      "role": "read_only_provenance",
+      "sha256": "9339ad77f1fa18e204b443e9a3ec888d6ec56924b801b85d94f3bb8ea49bf72d"
+    },
+    "MANUAL_COLLATION_PILOT_10_WORKING.csv": {
+      "bytes": 22596,
+      "path": "dataset_discovery\\target_feasibility\\manual_collation_pilot_10\\MANUAL_COLLATION_PILOT_10_WORKING.csv",
+      "role": "content",
+      "sha256": "4b3f731b5a799c1df499c57391f4b502fcee84f129c2bae2e77325e738a04548"
+    }
+  },
+  "manifest_checksum_file": "MANIFEST.sha256",
+  "mapping_file": "migration_mapping.csv",
+  "migration_script": "dataset_discovery/target_feasibility/migrate_manual_collation_v2_2.py",
+  "not_assessed_counts_are_decisions": false,
+  "outputs": {
+    "attribution_links.csv": {
+      "bytes": 2330,
+      "path": "attribution_links.csv",
+      "rows": 11,
+      "sha256": "1424e903664364f47347292646f15a4d8b7d4b835287e8092b865e5b4e6daad3"
+    },
+    "candidate_entries.csv": {
+      "bytes": 7127,
+      "path": "candidate_entries.csv",
+      "rows": 11,
+      "sha256": "9e61c659202ee23f76d14c8607da1287fcf736c2fff1e0701257763dddaca2df"
+    },
+    "cases.csv": {
+      "bytes": 2284,
+      "path": "cases.csv",
+      "rows": 10,
+      "sha256": "fce014299bcbd59594adcd047305c654866ad6671734deb3aa232cb27f5bb5ae"
+    },
+    "date_claims.csv": {
+      "bytes": 119,
+      "path": "date_claims.csv",
+      "rows": 0,
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab"
+    },
+    "feature_sources.csv": {
+      "bytes": 153,
+      "path": "feature_sources.csv",
+      "rows": 0,
+      "sha256": "4a36e55965a9004f59618f795ce1f15aad05870e50deccac9f6abcd373a63797"
+    },
+    "legacy_v1_values.csv": {
+      "bytes": 91351,
+      "path": "legacy_v1_values.csv",
+      "rows": 748,
+      "sha256": "894e915746dfdf902ea38bc392608321339e9776aeedc4ecdca5822dd62611d7"
+    },
+    "migration_mapping.csv": {
+      "bytes": 2250,
+      "path": "migration_mapping.csv",
+      "rows": 11,
+      "sha256": "6e71c1abf83c3a90f3fb6aad90bb6e71953d676bc99a7509828dfd45738253df"
+    },
+    "source_evidence.csv": {
+      "bytes": 109,
+      "path": "source_evidence.csv",
+      "rows": 0,
+      "sha256": "d03901f665330980df450e339f72ea1c71e8d835504855d02fab4a7d21a7f97d"
+    },
+    "sources.csv": {
+      "bytes": 1274,
+      "path": "sources.csv",
+      "rows": 11,
+      "sha256": "9e099b5cc11bb937f025f31d3be6d3a9ee0da81ac0042e5f787fc740c5ce71ed"
+    },
+    "statements.csv": {
+      "bytes": 2781,
+      "path": "statements.csv",
+      "rows": 11,
+      "sha256": "415636aded90cc94abb1c4ef4b8b6b5df1a2e0a4b6343bdede786c8175ffe06b"
+    }
+  },
+  "outputs_sha256": {
+    "attribution_links.csv": "1424e903664364f47347292646f15a4d8b7d4b835287e8092b865e5b4e6daad3",
+    "candidate_entries.csv": "9e61c659202ee23f76d14c8607da1287fcf736c2fff1e0701257763dddaca2df",
+    "cases.csv": "fce014299bcbd59594adcd047305c654866ad6671734deb3aa232cb27f5bb5ae",
+    "date_claims.csv": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab",
+    "feature_sources.csv": "4a36e55965a9004f59618f795ce1f15aad05870e50deccac9f6abcd373a63797",
+    "legacy_v1_values.csv": "894e915746dfdf902ea38bc392608321339e9776aeedc4ecdca5822dd62611d7",
+    "migration_mapping.csv": "6e71c1abf83c3a90f3fb6aad90bb6e71953d676bc99a7509828dfd45738253df",
+    "source_evidence.csv": "d03901f665330980df450e339f72ea1c71e8d835504855d02fab4a7d21a7f97d",
+    "sources.csv": "9e099b5cc11bb937f025f31d3be6d3a9ee0da81ac0042e5f787fc740c5ce71ed",
+    "statements.csv": "415636aded90cc94abb1c4ef4b8b6b5df1a2e0a4b6343bdede786c8175ffe06b"
+  },
+  "provisional_work_items_excluded_from_analysis": true,
+  "python_version": "3.13.7",
+  "rank_assignments_migrated": false,
+  "schema_name": "manual_collation_schema",
+  "schema_status": "frozen_implementation_baseline",
+  "schema_version": "2.2",
+  "statement_segmentation_inferred": false,
+  "status_counts": {
+    "attribution_links.csv": {
+      "attribution_evidence_text_status": {
+        "not_assessed": 11
+      },
+      "attribution_form": {
+        "not_assessed": 11
+      },
+      "compiler_authorship_status": {
+        "not_assessed": 11
+      },
+      "evaluator_value_status": {
+        "not_assessed": 11
+      },
+      "historical_evaluator_attribution_status": {
+        "not_assessed": 11
+      },
+      "passage_evaluator_naming_status": {
+        "not_assessed": 11
+      },
+      "source_author_metadata_status": {
+        "not_assessed": 11
+      },
+      "transmission_route_status": {
+        "not_assessed": 11
+      },
+      "transmitter_value_status": {
+        "not_assessed": 11
+      },
+      "wording_author_value_status": {
+        "not_assessed": 11
+      }
+    },
+    "candidate_entries.csv": {
+      "candidate_comparison_source_span_status": {
+        "not_assessed": 11
+      },
+      "candidate_entry_text_status": {
+        "transcribed": 11
+      },
+      "candidate_field_source_correspondence": {
+        "not_assessed": 11
+      },
+      "identity_evidence_text_status": {
+        "not_assessed": 11
+      },
+      "identity_match_status": {
+        "not_assessed": 11
+      }
+    },
+    "migration_mapping.csv": {
+      "migration_join_status": {
+        "matched": 11
+      }
+    },
+    "sources.csv": {
+      "edition_variant_status": {
+        "not_assessed": 11
+      },
+      "source_verification_status": {
+        "not_assessed": 11
+      }
+    },
+    "statements.csv": {
+      "corroboration_status": {
+        "not_examined": 11
+      },
+      "grade_base_text_status": {
+        "not_assessed": 11
+      },
+      "grade_qualification_text_status": {
+        "not_assessed": 11
+      },
+      "historical_input_eligibility": {
+        "not_assessed": 11
+      },
+      "rank_status": {
+        "not_assessed": 11
+      },
+      "statement_record_status": {
+        "provisional_work_item": 11
+      },
+      "statement_source_correspondence": {
+        "not_assessed": 11
+      },
+      "statement_text_status": {
+        "not_transcribed": 11
+      },
+      "statement_type": {
+        "not_assessed": 11
+      },
+      "taqrib_statement_validity": {
+        "not_assessed": 11
+      },
+      "target_task_scope": {
+        "not_assessed": 11
+      },
+      "temporal_policy_result": {
+        "cannot_assess": 11
+      }
+    }
+  }
+}

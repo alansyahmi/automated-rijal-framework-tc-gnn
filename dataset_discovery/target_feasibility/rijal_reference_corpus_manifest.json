@@ -1,0 +1,645 @@
+{
+  "manifest_version": "1.0.0",
+  "dataset_repository": "AuthenticIlm/Shamela4_Full_DB",
+  "retrieval_timestamp_utc": "2026-11-11T09:16:00.002402+00:00",
+  "total_books_audited": 9,
+  "total_bytes_downloaded": 99002347,
+  "books": [
+    {
+      "spec": {
+        "book_id": 3076,
+        "repo_path": "26__التراجم-والطبقات/3076__تقريب-التهذيب",
+        "folder_name": "3076__تقريب-التهذيب",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "تقريب التهذيب",
+        "author_canonical": "ابن حجر العسقلاني",
+        "death_hijri": 852,
+        "tier": 4,
+        "research_role": "candidate_reference_target",
+        "role_rationale": "Ibn Hajar's 12-tier standardized narrator reliability grades and chronological layers; primary candidate for auditing HadithDB's target field."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1710,
+          "sha256": "bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\3076__تقريب-التهذيب\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 855,
+          "sha256": "ccab02ce8680a28b266ee4a96dae41684a4f84d2da48b1642c5652e1c483f369",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\3076__تقريب-التهذيب\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 33006,
+          "sha256": "ae3bed7baeba0a256a2b2e5905ad5da04505c5d1a036c78eed9dc434dc8159ae",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\3076__تقريب-التهذيب\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 2046945,
+          "sha256": "45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\3076__تقريب-التهذيب\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 3076,
+        "shamela_id": 8609,
+        "title_ar": "تقريب التهذيب",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "ابن حجر العسقلاني",
+        "main_author_death_hijri": 852,
+        "editor": "محمد عوامة",
+        "publisher": "دار الرشيد - سوريا",
+        "edition": "نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: تقريب التهذيب\rالمؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)\rالمحقق: محمد عوامة\rالناشر: دار الرشيد - سوريا\rالطبعة: الأولى، ١٤٠٦ - ١٩٨٦\rعدد الصفحات: ٧٦٥\r[ترقيم الكتاب موافق للمطبوع]\rاعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ\rأرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .\r(كذا في مصدر الكتاب: موقع الدرر السنية)"
+      },
+      "manifest_meta": {
+        "declared_page_count": 688,
+        "declared_toc_count": 249
+      },
+      "integrity_audit": {
+        "actual_page_count": 688,
+        "actual_toc_count": 249,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 75,
+        "max_page_num": 765,
+        "duplicate_page_nums_count": 0,
+        "page_gaps_in_range_count": 3,
+        "has_numbered_entries": true,
+        "first_page_snippet": "الطبقة الثانية عشرة: صغار الآخذين عن تبع الأتباع، كالترمذي، وألحقت بها باقي شيوخ الأئمة الستة، الذين تأخرت وفاتهم قليلاً، كبعض شيوخ النسائي.\rوذكرت وفاة من عرفت سنة وفاته منهم، فإن كان من الأولى والثانية: فهم قبل المائة، وإن كان من الثالثة إلى آخر الثامنة: فهم بعد المائة، وإن كان من التاسعة إلى آخر ا",
+        "last_page_snippet": "أة قدمت البصرة فنزلت قصر بني خلف [على أختها] كأنها أم عطية [والله أعلم] خ\r٨٨٢٦- أم ولد عبد الرحمن ابن عوف عن أم سلمة لا تعرف من الثالثة د\r\rآخر الكتاب\rفرغ - سوى ما أصلح فيه بعد- في يوم الأربعاء، رابع عِشْرِي [عشرى] جمادى الآخرة، عام سبعة وعشرين وثمانمائة\rملخصه أحمد بن علي بن حجر\rحامداً مصلياً مسلماً."
+      }
+    },
+    {
+      "spec": {
+        "book_id": 8246,
+        "repo_path": "26__التراجم-والطبقات/8246__تحرير-تقريب-التهذيب",
+        "folder_name": "8246__تحرير-تقريب-التهذيب",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "تحرير تقريب التهذيب",
+        "author_canonical": "شعيب الأرنؤوط وبشار عواد معروف",
+        "death_hijri": 1438,
+        "tier": 5,
+        "research_role": "later_scholarly_reassessment",
+        "role_rationale": "Systematic 4-volume modern critical re-evaluation of every grade in Taqrib; highlights nuanced qualifications, disagreements, and contested attributions."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1557,
+          "sha256": "bd3aa530b5db230d2e8b0b8e5900e045a1fc6a0bc12941d7d04013ea31d2bc61",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\8246__تحرير-تقريب-التهذيب\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 870,
+          "sha256": "4a7c778583884562560e6056f2bc7da40c44defb97457a51cab8171fcace5f1b",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\8246__تحرير-تقريب-التهذيب\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 27441,
+          "sha256": "b7cee56dfc3b2875d1ad168d2047599beecade489deb5c0f43116a6cc6e220cd",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\8246__تحرير-تقريب-التهذيب\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 3886707,
+          "sha256": "c745fc2058b77d659944514cddd377510fd3c98d63300121f442e3c77deb96b7",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\8246__تحرير-تقريب-التهذيب\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 8246,
+        "shamela_id": 127715,
+        "title_ar": "تحرير تقريب التهذيب",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "بشار عواد معروف",
+        "main_author_death_hijri": 99999,
+        "editor": "غير منصوص عليه صراحة",
+        "publisher": "مؤسسة الرسالة للطباعة والنشر والتوزيع، بيروت - لبنان",
+        "edition": "الأولى، ١٤١٧ هـ - ١٩٩٧ م",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: تحرير تقريب التهذيب للحافظ أحمد بن علي بن حجر العسقلاني\rتأليف: الدكتور بشار عواد معروف، الشيخ شعيب الأرنؤوط [ت ١٤٣٨ هـ]\rالناشر: مؤسسة الرسالة للطباعة والنشر والتوزيع، بيروت - لبنان\rالطبعة: الأولى، ١٤١٧ هـ - ١٩٩٧ م\rعدد الأجزاء: ٤\rأعده للشاملة: رابطة النساخ، تنفيذ (مركز النخب العلمية)، وبرعاية (أوقاف عبد الله بن تركي الضحيان الخيرية)\r[ترقيم الكتاب موافق للمطبوع]"
+      },
+      "manifest_meta": {
+        "declared_page_count": 1754,
+        "declared_toc_count": 190
+      },
+      "integrity_audit": {
+        "actual_page_count": 1754,
+        "actual_toc_count": 190,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 2,
+        "max_page_num": 459,
+        "duplicate_page_nums_count": 1292,
+        "page_gaps_in_range_count": 0,
+        "has_numbered_entries": false,
+        "first_page_snippet": "تحرير تقريب التهذيب\rللحافظ أحمد بن علي بن حجر العسقلاني (المتوفى سنة ٨٥٢ هـ)\r\rتأليف\rالدكتور بشار عواد معروف\rالشيخ شعيب الأرنؤوط\r\r[الجزء الأول]",
+        "last_page_snippet": "١٣/ ١٢٨، ورواية البخاري عنها في \"صحيحه\" برقم (٩٨٠) متابعة.\r٨٨٢٦ - أم ولد عبد الرحمن بن عوف، عن أمِّ سلمة: لا تُعرفُ، من الثالثة. د.\rآخر الكتاب، فَرَغَ - سوى ما أُصلحُ فيه بعدُ - في يوم الأربعاء، رابع عشري جُمادى الآخرة، عام سبعة وعشرين وثمان مئة، مُلخِّصُه أحمدُ بنُ علي بن حجر حامدًا مصليًّا مسلمًا."
+      }
+    },
+    {
+      "spec": {
+        "book_id": 1716,
+        "repo_path": "26__التراجم-والطبقات/1716__تهذيب-الكمال-في-أسماء-الرجال",
+        "folder_name": "1716__تهذيب-الكمال-في-أسماء-الرجال",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "تهذيب الكمال في أسماء الرجال",
+        "author_canonical": "يوسف بن عبد الرحمن المزي",
+        "death_hijri": 742,
+        "tier": 2,
+        "research_role": "biographical_synthesis_and_source_tracing",
+        "role_rationale": "Monumental 35-volume biographical dictionary of the Six Books (ed. Dr. Bashshār ʿAwwād Maʿrūf); primary baseline for narrator identities, lineages, teachers, students, and comprehensive classical critic citations."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1343,
+          "sha256": "619fd20be35e29a704ed1fde28d9f1b4aac44f20b658da7f8d921f929bc7e095",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1716__تهذيب-الكمال-في-أسماء-الرجال\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 893,
+          "sha256": "a41242e4caeae451f0f5ad84a23b6d137ba2bec7ae9a93cc5b3afd2e15665818",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1716__تهذيب-الكمال-في-أسماء-الرجال\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 2134144,
+          "sha256": "f2e96bb6811f0dc5bbec7cca9095e4bd747d570771ea2588fc7d1b63f1b27700",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1716__تهذيب-الكمال-في-أسماء-الرجال\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 47155847,
+          "sha256": "c22d5b549ae82c8282a37a9904971d72430295c049e1ffe76a3972bf8cc5c9a6",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1716__تهذيب-الكمال-في-أسماء-الرجال\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 1716,
+        "shamela_id": 3722,
+        "title_ar": "تهذيب الكمال في أسماء الرجال",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "المزي، جمال الدين",
+        "main_author_death_hijri": 742,
+        "editor": "غير منصوص عليه صراحة",
+        "publisher": "مؤسسة الرسالة - بيروت",
+        "edition": "الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: تهذيب الكمال في أسماء الرجال\rالمؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ)\rحققه وضبط نصه وعلق عليه: د بشار عواد معروف\rالناشر: مؤسسة الرسالة - بيروت\rالطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)\rعدد الأجزاء: ٣٥\r[ترقيم الكتاب موافق للمطبوع]"
+      },
+      "manifest_meta": {
+        "declared_page_count": 19002,
+        "declared_toc_count": 10456
+      },
+      "integrity_audit": {
+        "actual_page_count": 19002,
+        "actual_toc_count": 10456,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 1,
+        "max_page_num": 659,
+        "duplicate_page_nums_count": 18346,
+        "page_gaps_in_range_count": 3,
+        "has_numbered_entries": false,
+        "first_page_snippet": "ـ[تهذيب الكمال في أسماء الرجال]ـ\rالمؤلف: يوسف بن عبد الرحمن بن يوسف، أبو الحجاج، جمال الدين ابن الزكي أبي محمد القضاعي الكلبي الْمِزِّيّ (المتوفى: ٧٤٢هـ)\rالمحقق: د. بشار عواد معروف\rالناشر: مؤسسة الرسالة - بيروت\rالطبعة: الأولى، ١٤٠٠ - ١٩٨٠\rعدد الأجزاء: ٣٥\r[ترقيم الكتاب موافق للمطبوع، وهو مذيل بالحواش",
+        "last_page_snippet": "ظر فيه والمسلمين أجمعين، وأن يجعله لوجهه خالصا وإلى مرضاته مقربا ومن سخطه مبعدا إنه على كل شيء قدير وبالاجابة جدير. وكان ذلك في مدة أولها في التاسع من المحرم سنة خمس وسبع مئة وآخرها يوم عيد النحر من سنة اثنتي عشرة وسبع مئة. آخر الجزء الخمسين بعد المئتين، وهو آخر الكتاب، وكتب مصنفه عفا الله عنه (٢) ."
+      }
+    },
+    {
+      "spec": {
+        "book_id": 1615,
+        "repo_path": "26__التراجم-والطبقات/1615__الجرح-والتعديل-ابن-أبي-حاتم",
+        "folder_name": "1615__الجرح-والتعديل-ابن-أبي-حاتم",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "الجرح والتعديل",
+        "author_canonical": "ابن أبي حاتم الرازي",
+        "death_hijri": 327,
+        "tier": 1,
+        "research_role": "earlier_historical_criticism",
+        "role_rationale": "Foundational 3rd-century primary evaluation dictionary recording verbatim judgments of Abu Hatim, Abu Zur'ah, and classical critics; primary NLP input candidate."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1316,
+          "sha256": "cb92dcee32bf6e2437aea1c50f9ee317adfd88feac57b706c078f0c5126d8538",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1615__الجرح-والتعديل-ابن-أبي-حاتم\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 888,
+          "sha256": "5c379e9a26d8532f2917c3f6b3bf33841937f0748db4f4c4ed44262b5dc3e17b",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1615__الجرح-والتعديل-ابن-أبي-حاتم\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 141933,
+          "sha256": "79f432742c4ceb685f776b3472914a5d45f8fa313e600d185090ecdfd88e4e2b",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1615__الجرح-والتعديل-ابن-أبي-حاتم\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 10202926,
+          "sha256": "294de8576ead84287a50bb1107e4048fcbd692dc1dd23fbfcf87f72197d257e1",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1615__الجرح-والتعديل-ابن-أبي-حاتم\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 1615,
+        "shamela_id": 2170,
+        "title_ar": "الجرح والتعديل - ابن أبي حاتم",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "ابن أبي حاتم",
+        "main_author_death_hijri": 327,
+        "editor": "غير منصوص عليه صراحة",
+        "publisher": "مطبعة مجلس دائرة المعارف العثمانية، بحيدر آباد الدكن - الهند",
+        "edition": "الأولى، ١٣٧١ هـ - ١٩٥٢ م",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: الجرح والتعديل\rالمؤلف: أبو محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي (ت ٣٢٧ هـ)\rالناشر: مطبعة مجلس دائرة المعارف العثمانية، بحيدر آباد الدكن - الهند\rالطبعة: الأولى، ١٣٧١ هـ - ١٩٥٢ م\r[ترقيم الكتاب موافق للمطبوع]"
+      },
+      "manifest_meta": {
+        "declared_page_count": 4229,
+        "declared_toc_count": 1034
+      },
+      "integrity_audit": {
+        "actual_page_count": 4229,
+        "actual_toc_count": 1034,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 1,
+        "max_page_num": 625,
+        "duplicate_page_nums_count": 3596,
+        "page_gaps_in_range_count": 0,
+        "has_numbered_entries": false,
+        "first_page_snippet": "تقدمة المعرفة لكتاب الجرح والتعديل\rتأليف الامام الحافظ شيخ الاسلام ابى محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي\r(المتوفى ٣٢٧ هـ ﵀\r\rعن النسخة المحفوظة في كوپريلى [تحت رقم ٢٧٨] وعن النسخة لمحفوظة في مكتبة مراد ملا [تحت رقم ١٤٢٧] وعن النسخة المحفوظة في مكتبة دار الكتب",
+        "last_page_snippet": "عطار في العشر الاول من شهر ذى القعدة من سنة ثلاث وتسعين وسبعمائة الهلالية)\rتم طبع القسم الثاني من المجلد الرابع من كتاب الجرح والتعديل لابن ابى حاتم الرازي\rلسبع عشرة ليلة خلت من شهر ربيع الاول سنة ١٣٧٣ هـ\rوالحمد لله رب العالمين\rوصلى الله على سيدنا محمد وعلى آله الطيبين الطاهرين واصحابه الغر الميامين"
+      }
+    },
+    {
+      "spec": {
+        "book_id": 890,
+        "repo_path": "26__التراجم-والطبقات/890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني",
+        "folder_name": "890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "التاريخ الكبير",
+        "author_canonical": "محمد بن إسماعيل البخاري",
+        "death_hijri": 256,
+        "tier": 1,
+        "research_role": "earlier_historical_criticism",
+        "role_rationale": "Foundational 3rd-century narrator register by Imam al-Bukhari; provides earliest biographical and transmission disconnect statements."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1420,
+          "sha256": "b1a8597082667f9b7895101ce1ed19fb374d0f99f8e2dd000136a5f06cc418dd",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 913,
+          "sha256": "9e3d690050968991546292895430a67de5c04b953bf4c2057245a7b007ff9c33",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 2236969,
+          "sha256": "ebee70d0624866cc38cc69ca9f263f820001312779bd7c434db8fce35e95cd0b",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 9339616,
+          "sha256": "af6f8e5c8fa95732c29e757a251dc879d6610c67ec29b908077bce76b93335ad",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 890,
+        "shamela_id": 956,
+        "title_ar": "التاريخ الكبير للبخاري - ت المعلمي اليماني",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "البخاري",
+        "main_author_death_hijri": 256,
+        "editor": "غير منصوص عليه صراحة",
+        "publisher": "غير منصوص عليه صراحة",
+        "edition": "دائرة المعارف العثمانية، حيدر آباد - الدكن",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: التاريخ الكبير\rالمؤلف: محمد بن إسماعيل بن إبراهيم بن المغيرة البخاري، أبو عبد الله (ت ٢٥٦هـ)\rالطبعة: دائرة المعارف العثمانية، حيدر آباد - الدكن\rطبع تحت مراقبة: محمد عبد المعيد خان\rعدد الأجزاء: ٨\r[ترقيم الكتاب موافق للمطبوع]"
+      },
+      "manifest_meta": {
+        "declared_page_count": 3785,
+        "declared_toc_count": 12928
+      },
+      "integrity_audit": {
+        "actual_page_count": 3785,
+        "actual_toc_count": 12928,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 1,
+        "max_page_num": 549,
+        "duplicate_page_nums_count": 3236,
+        "page_gaps_in_range_count": 0,
+        "has_numbered_entries": false,
+        "first_page_snippet": "كتاب التاريخ الكبير\rتأليف: الحافظ النقاد شيخ الإسلام جبل الحفظ وإمام الدنيا أبي عبد الله اسماعيل بن ابراهيم الجعفي البخاري المتوفي سنة ٢٥٦ هجرية - ٨٦٩ ميلادية\rالقسم الثاني من الجزء الأول\rأحمد - حسين\rطبع تحت مراقبة الدكتور محمد عبد المعيد خان",
+        "last_page_snippet": "د ملاحظة مولانا العالمة عبد الله العمادى عضو شرف لجمعية دائرة المعارف غفر الله ذنوبهم وستر عيوبهم وكان تمامه يوم الاحد السادس والعشرين من شهر جمادى الاولى سنة ١٣٦٠ هـ وآخر دعوانا ان الحمدالله رب العالمين وصلى الله وسلم على سيدنا ومولانا محمد نبيه الامين وعلى آله وصحبه الطيبين الطاهرين إلى يوم الدين."
+      }
+    },
+    {
+      "spec": {
+        "book_id": 4609,
+        "repo_path": "26__التراجم-والطبقات/4609__الكامل-في-ضعفاء-الرجال",
+        "folder_name": "4609__الكامل-في-ضعفاء-الرجال",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "الكامل في ضعفاء الرجال",
+        "author_canonical": "ابن عدي الجرجاني",
+        "death_hijri": 365,
+        "tier": 1,
+        "research_role": "earlier_historical_criticism",
+        "role_rationale": "Exhaustive 4th-century evaluation of contested and weak narrators; preserves extensive verbatim statements from Yahya b. Ma'in, Ahmad, and Bukhari."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1424,
+          "sha256": "3fbd8d63f3976fca15ccb4d2aba9cf0b3622e39d6826f8d0be385a1a5316ecae",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\4609__الكامل-في-ضعفاء-الرجال\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 878,
+          "sha256": "f8c92172fdc7c0e422e764801b00d2c669159362a701a220563cd789334eab4e",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\4609__الكامل-في-ضعفاء-الرجال\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 406725,
+          "sha256": "dd4fbb35fa2f356f899fe6081056ec107793758342c7fe3f5c3577a721362078",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\4609__الكامل-في-ضعفاء-الرجال\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 11652138,
+          "sha256": "ff4d13863c550aa0434582497bc9c4871b0478a2f0906f831248919d9a1059f8",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\4609__الكامل-في-ضعفاء-الرجال\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 4609,
+        "shamela_id": 12579,
+        "title_ar": "الكامل في ضعفاء الرجال",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "ابن عدي",
+        "main_author_death_hijri": 365,
+        "editor": "عادل أحمد عبد الموجود-علي محمد معوض",
+        "publisher": "الكتب العلمية - بيروت-لبنان",
+        "edition": "الأولى، ١٤١٨ هـ ١٩٩٧ م",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: الكامل في ضعفاء الرجال\rالمؤلف: أبو أحمد بن عدي الجرجاني (ت ٣٦٥ هـ)\rتحقيق: عادل أحمد عبد الموجود-علي محمد معوض\rشارك في تحقيقه: عبد الفتاح أبو سنة\rالناشر: الكتب العلمية - بيروت-لبنان\rالطبعة: الأولى، ١٤١٨ هـ ١٩٩٧ م\rوضع حواشي هذه النسخة الإلكترونية: الشيخ محمود خليل جزاه الله خيرا\r[ترقيم الكتاب موافق للمطبوع]"
+      },
+      "manifest_meta": {
+        "declared_page_count": 4518,
+        "declared_toc_count": 2230
+      },
+      "integrity_audit": {
+        "actual_page_count": 4518,
+        "actual_toc_count": 2230,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 2,
+        "max_page_num": 586,
+        "duplicate_page_nums_count": 3933,
+        "page_gaps_in_range_count": 0,
+        "has_numbered_entries": false,
+        "first_page_snippet": "<span data-type=\"title\" id=toc-1>المجلد الأول</span>.\rقالوا في ابن عدي وكتابه الكامل:\rقال السبكي: كتاب طابق اسمه معناه، ووافق لفظه فحواه، بصحته حكم المحكمون، وإلى ما يقول رضي المتقدمون والمتاخرون. طبقات الشافعية (٣/٣١٥ /١٢) .\rوقال ابن كثير: له كتاب الكامل في الجرح والتعديل، لم يسبق إلى مثله، ولم يلح",
+        "last_page_snippet": "قَالَ الشَّيْخُ: وَمَوْلَى سِبَاعٍ هَذَا، لا أَعْرفُ لَهُ غَيْرَ هَذَا الْحَدِيثِ وَيَرْوِي عَنْهُ مُوسَى بْنُ عُبَيْدَةَ، وَهو مَجْهُولٌ، ولاَ يُعْرَفُ."
+      }
+    },
+    {
+      "spec": {
+        "book_id": 1976,
+        "repo_path": "26__التراجم-والطبقات/1976__الثقات-لابن-حبان",
+        "folder_name": "1976__الثقات-لابن-حبان",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "الثقات",
+        "author_canonical": "محمد بن حبان البستي",
+        "death_hijri": 354,
+        "tier": 1,
+        "research_role": "earlier_historical_criticism",
+        "role_rationale": "Major 4th-century compilation of reliable transmitters; critical for evaluating Ibn Hibban's distinct evaluation methodology and solitary acceptance."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1497,
+          "sha256": "541fdb354f19d71286145e1e2818726cae64dd8e573d80fa9099830bd3466158",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1976__الثقات-لابن-حبان\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 862,
+          "sha256": "1c1f33d43aa35f6cb4e5b59076b18fec36ac9777934c43ccec382cae18f9b89f",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1976__الثقات-لابن-حبان\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 22628,
+          "sha256": "fe2c8acf1b4b977241bc0cc8731b9c7a39ef9daa9e07f27bc42b5b79ea6ecd6d",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1976__الثقات-لابن-حبان\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 6721974,
+          "sha256": "17f3ff61577d7db94d3d79ec41de73f9dc63de5a0325af649f9c6095353ce607",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1976__الثقات-لابن-حبان\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 1976,
+        "shamela_id": 5816,
+        "title_ar": "الثقات لابن حبان",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "ابن حبان",
+        "main_author_death_hijri": 354,
+        "editor": "غير منصوص عليه صراحة",
+        "publisher": "دائرة المعارف العثمانية بحيدر آباد الدكن الهند",
+        "edition": "الأولى، ١٣٩٣ ه‍ = ١٩٧٣",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: الثقات\rالمؤلف: محمد بن حبان بن أحمد بن حبان بن معاذ بن مَعْبدَ، التميمي، أبو حاتم، الدارمي، البُستي (ت ٣٥٤ هـ)\rطبع بإعانة: وزارة المعارف للحكومة العالية الهندية\rتحت مراقبة: الدكتور محمد عبد المعيد خان مدير دائرة المعارف العثمانية\rالناشر: دائرة المعارف العثمانية بحيدر آباد الدكن الهند\rالطبعة: الأولى، ١٣٩٣ ه‍ = ١٩٧٣\rعدد الأجزاء: ٩\r[ترقيم الكتاب موافق للمطبوع]"
+      },
+      "manifest_meta": {
+        "declared_page_count": 4103,
+        "declared_toc_count": 168
+      },
+      "integrity_audit": {
+        "actual_page_count": 4103,
+        "actual_toc_count": 168,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 1,
+        "max_page_num": 671,
+        "duplicate_page_nums_count": 3432,
+        "page_gaps_in_range_count": 0,
+        "has_numbered_entries": false,
+        "first_page_snippet": "<span data-type=\"title\" id=toc-1>(مُقَدّمَة)</span>\r﷽\rصلى الله على سيدنَا مُحَمَّد وَآله وَسلم تَسْلِيمًا\rقَالَ أَبُو حَاتِم مُحَمَّد بْن حبَان بن أَحْمد التَّمِيمِي الْحَمد لله الَّذِي لَيْسَ لَهُ حد مَحْدُود فيتوى وَلَا لَهُ أجل مَعْدُود فيفنى وَلَا يُحِيط بِهِ جَوَامِع الْمَكَان وَلَا يشْتَمل عَل",
+        "last_page_snippet": "اب وَحصل الْفَرَاغ من تحريره يَوْم الْجُمُعَة الثَّامِن من شهر ربيع الآخر أحد شهور سنة اثْنَتَيْنِ وَتِسْعين وَمِائَتَيْنِ بعد الْألف من هِجْرَة من لَهُ الْمجد والمفاخر ﷺ عَلَيْهِ وعَلى آله وَصَحبه السادات الأكابر نسخه العَبْد الْفَقِير الى رَحْمَة ربه الْأَحَد مِسْكين احْمَد عفى الله تَعَالَى عَنهُ"
+      }
+    },
+    {
+      "spec": {
+        "book_id": 1981,
+        "repo_path": "26__التراجم-والطبقات/1981__الثقات-للعجلي-ت-البستوي",
+        "folder_name": "1981__الثقات-للعجلي-ت-البستوي",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "الثقات (تاريخ الثقات)",
+        "author_canonical": "أحمد بن عبد الله العجلي",
+        "death_hijri": 261,
+        "tier": 1,
+        "research_role": "earlier_historical_criticism",
+        "role_rationale": "Concise 3rd-century formulaic evaluations by al-Ijli; excellent for studying terse classical grades."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1380,
+          "sha256": "ddd90791296e63a121074ce1c8ebc511a573bf6d7ad90f307e7ff78c787fd35f",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1981__الثقات-للعجلي-ت-البستوي\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 872,
+          "sha256": "132ab7ae38c887806d4d224032b331e5d273c49db936edf78d3e020acf4b7d57",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1981__الثقات-للعجلي-ت-البستوي\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 36652,
+          "sha256": "e48ebe0941bf3a946119f649781109f71bcead153d08f082f27d08631a29ee32",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1981__الثقات-للعجلي-ت-البستوي\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 643644,
+          "sha256": "242f986aab8995a751496ab95f8edac4257b9fcdfe5732d5997fcb4cb4b0cd6f",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1981__الثقات-للعجلي-ت-البستوي\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 1981,
+        "shamela_id": 5825,
+        "title_ar": "الثقات للعجلي ت البستوي",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "العجلي",
+        "main_author_death_hijri": 261,
+        "editor": "عبد العليم عبد العظيم البستوي",
+        "publisher": "مكتبة الدار - المدينة المنورة - السعودية",
+        "edition": "الأولى، ١٤٠٥ - ١٩٨٥",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: معرفة الثقات من رجال أهل العلم والحديث ومن الضعفاء وذكر مذاهبهم وأخبارهم\rالمؤلف: أبو الحسن أحمد بن عبد الله بن صالح العجلى الكوفى (ت ٢٦١هـ)\rالمحقق: عبد العليم عبد العظيم البستوي\rالناشر: مكتبة الدار - المدينة المنورة - السعودية\rالطبعة: الأولى، ١٤٠٥ - ١٩٨٥\r[ترقيم الكتاب موافق للمطبوع]"
+      },
+      "manifest_meta": {
+        "declared_page_count": 765,
+        "declared_toc_count": 269
+      },
+      "integrity_audit": {
+        "actual_page_count": 765,
+        "actual_toc_count": 269,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 5,
+        "max_page_num": 484,
+        "duplicate_page_nums_count": 285,
+        "page_gaps_in_range_count": 0,
+        "has_numbered_entries": true,
+        "first_page_snippet": "﷽\rاللَّهُمَّ صل على سيدنَا مُحَمَّد وَآله وَسلم الْحَمد لله حق حَمده وصلواته على خير خلقه مُحَمَّد وعَلى آله وَصَحبه وَسَلَامه هَذَا كتاب تَرْتِيب سُؤَالَات أبي مُسلم الْعجلِيّ أَبَاهُ أَحْمد بن عبد الله رتبته على حُرُوف المعجم تسهيلا للوقوف عَلَيْهِ وَمِنْه مَا لَا يَتَأَتَّى فِيهِ ذَلِك فَجَعَلته",
+        "last_page_snippet": "٢٣٦٥ - أم مُوسَى كوفية تابعية ثِقَة\r<span data-type=\"title\" id=toc-268>(بَاب)</span>\r\r٢٣٦٦ - أُخْت ربعى بن حِرَاش وهى امْرَأَة حُذَيْفَة كوفية تابعية ثِقَة"
+      }
+    },
+    {
+      "spec": {
+        "book_id": 1616,
+        "repo_path": "26__التراجم-والطبقات/1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة",
+        "folder_name": "1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة",
+        "category": "26__التراجم-والطبقات",
+        "title_canonical": "الكاشف في معرفة من له رواية في الكتب الستة",
+        "author_canonical": "شمس الدين الذهبي",
+        "death_hijri": 748,
+        "tier": 3,
+        "research_role": "earlier_synthesis_and_abridgement",
+        "role_rationale": "Al-Dhahabi's earlier biographical synthesis and abridgement (d. 748 AH), drawing substantially on al-Mizzi's Tahdhib al-Kamal; provides an earlier comparative benchmark for 'الرتبة عند الذهبي'."
+      },
+      "files": {
+        "book_metadata.json": {
+          "bytes": 1436,
+          "sha256": "40fd358c716fa8764e6a25c15d40948c63900ab2f4d135073ae3657aedcef348",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة\\book_metadata.json"
+        },
+        "manifest.json": {
+          "bytes": 908,
+          "sha256": "8c57e40f941012e695e60699ed591f438d2f1f9f0bcf06d828b0655a852eca9e",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة\\manifest.json"
+        },
+        "toc.jsonl": {
+          "bytes": 13812,
+          "sha256": "ee76494e49f79fb53fbcd6a2b1e02c2502e3ab32cfdde398773ef67fba5bd8f6",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة\\toc.jsonl"
+        },
+        "pages.jsonl": {
+          "bytes": 2278218,
+          "sha256": "4fce530987ea73242de98a3e4170286b514aa162a7d41a0d87700b6f3dc291ef",
+          "local_path": "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة\\pages.jsonl"
+        }
+      },
+      "book_metadata": {
+        "book_id": 1616,
+        "shamela_id": 2171,
+        "title_ar": "الكاشف في معرفة من له رواية في الكتب الستة",
+        "category_name_ar": "التراجم والطبقات",
+        "main_author_name_ar": "شمس الدين الذهبي",
+        "main_author_death_hijri": 748,
+        "editor": "محمد عوامة أحمد محمد نمر الخطيب",
+        "publisher": "دار القبلة للثقافة الإسلامية - مؤسسة علوم القرآن، جدة",
+        "edition": "الأولى، ١٤١٣ هـ - ١٩٩٢ م",
+        "pub_date": "غير منصوص عليه صراحة",
+        "printed": true,
+        "betaka_text": "الكتاب: الكاشف في معرفة من له رواية في الكتب الستة\rالمؤلف: شمس الدين أبو عبد الله محمد بن أحمد بن عثمان بن قَايْماز الذهبي (ت ٧٤٨هـ)\rالمحقق: محمد عوامة أحمد محمد نمر الخطيب\rالناشر: دار القبلة للثقافة الإسلامية - مؤسسة علوم القرآن، جدة\rالطبعة: الأولى، ١٤١٣ هـ - ١٩٩٢ م\r[ترقيم الكتاب موافق للمطبوع]"
+      },
+      "manifest_meta": {
+        "declared_page_count": 1218,
+        "declared_toc_count": 106
+      },
+      "integrity_audit": {
+        "actual_page_count": 1218,
+        "actual_toc_count": 106,
+        "malformed_json_lines": 0,
+        "empty_body_pages": 0,
+        "min_page_num": 1,
+        "max_page_num": 697,
+        "duplicate_page_nums_count": 522,
+        "page_gaps_in_range_count": 1,
+        "has_numbered_entries": false,
+        "first_page_snippet": "الكاشف في معرفة من له رواية في الكتب الستة\r\rللامام شمس الدين أبي عبد الله محمد بن أحمد بن الذهبي الدمشقي\rولد سنة ٦٧٣ - وتوفي سنة ٧٤٨ هـ\rوحاشيته للامام برهان الدين أبي الوفاء إبراهيم بن محمد سبط ابن العجمي الحلبي ولد سنة ٧٥٣ - وتوفي سنة ٨٤١ هـ رحمهما الله تعالى\rقابلهما بأصل مؤلفيهما وقدم لهما وعلق عل",
+        "last_page_snippet": "صفية عن بعض أمهات المؤمنين س عمرة عن أختها هي أم هشام! عمرة عن أختها هي أم هشام ٧١٥٣ ليلى عن مولاتها هي أم عمارة ليلى عن مولاتها هي أم عمارة ٧١٣٣\r٧١٧٨- أم الحسن عمة غبطة عن جدتها د\r٧١٧٩- أم حكيم عن أمها عن أم سليم د س أم سلمة قالت أبى سائر أزواج النبي ﷺ أن يدخل عليهن أحد برضاعة الكبير س ق"
+      }
+    }
+  ],
+  "taqrib_deep_audit": {
+    "edition_verified": "Muḥammad ʿAwwāmah, Dār al-Rashīd, 1st ed. 1406 AH / 1986 CE",
+    "has_intro_layers": true,
+    "has_entry_1": true,
+    "first_entry_text": "<span data-type=\"title\" id=toc-1>حرف الألف</span>\r<span data-type=\"title\" id=toc-2>ذكر من اسمه أحمد</span>\r١- أحمد ابن إبراهيم ابن خالد الموصلي أبو علي نزيل بغداد صدوق من العاشرة مات سنة ست وثلاثين د فق\r٢- أحمد ابن إبراهيم ابن فيل باسم الحيوان المعرو",
+    "sample_alphabetical_checks": [
+      {
+        "target": "جرير ابن حازم",
+        "verified": true,
+        "page_num": 734
+      },
+      {
+        "target": "زياد ابن سعد",
+        "verified": true,
+        "page_num": 219
+      },
+      {
+        "target": "محمد ابن إبراهيم",
+        "verified": true,
+        "page_num": 83
+      },
+      {
+        "target": "يحيى ابن سعيد",
+        "verified": true,
+        "page_num": 84
+      }
+    ],
+    "has_entry_8825": true,
+    "has_entry_8826": true,
+    "final_entry_text": "خالة إبراهيم ابن ميسرة عن امرأة صدق هي ميمونة بنت كردم من صغار الصحابة والخالة ما عرفت اسمها\r[] امرأة قدمت البصرة فنزلت قصر بني خلف [على أختها] كأنها أم عطية [والله أعلم] خ\r٨٨٢٦- أم ولد عبد الرحمن ابن عوف عن أم سلمة لا تعرف من الثالثة د\r\rآخر الكتاب\rفرغ - سوى ما أصلح فيه بعد- في يوم الأربعاء، رابع عِشْرِي [عشرى] جمادى الآخرة، عام سبعة وعشرين وثمانمائة\rملخصه أحمد بن علي بن حجر\rحامداً مصلياً مسلماً.",
+    "has_authentic_colophon": true,
+    "completeness_verdict": "complete_unabridged_text"
+  }
+}

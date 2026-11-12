@@ -1,0 +1,749 @@
+source_file,input_row_index,audit_record_id,candidate_entry_id,field_name,legacy_value,is_empty_cell
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,audit_record_id,PROV-10,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,dataset_narrator_id,515,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,dataset_narrator_name,عَبْدِ اللهِ بْنِ كَعْبِ بْنِ مَالِكٍ،,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,original_grade_verbatim,ثقة,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_printed_page_from_corpus,319,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_entry_text_verbatim,٣٥٥٢- عبد الله ابن كعب ابن مالك الأنصاري المدني ثقة يقال له رؤية مات سنة سبع أو ثمان وتسعين خ م د س ق,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,1,PROV-10,PROV-10-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,audit_record_id,PROV-10,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,dataset_narrator_id,515,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,dataset_narrator_name,عَبْدِ اللهِ بْنِ كَعْبِ بْنِ مَالِكٍ،,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,original_grade_verbatim,ثقة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_printed_page_from_corpus,319,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_entry_number,3552,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_entry_text_verbatim,٣٥٥٢- عبد الله ابن كعب ابن مالك الأنصاري المدني ثقة يقال له رؤية مات سنة سبع أو ثمان وتسعين خ م د س ق,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_printed_page,319,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_entry_name_verbatim,عبد الله ابن كعب ابن مالك الأنصاري المدني,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_grade_verbatim,ثقة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_qualification_verbatim,يقال له رؤية (biographical),false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_rank_number,3,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,taqrib_text_match_status,exact_verbatim,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,attribution_evidence_verbatim,عبد الله ابن كعب ابن مالك الأنصاري المدني ثقة يقال له رؤية,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,source_locator,"Taqrib, p. 319, entry 3552",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,record_disposition,verified_ibn_hajar_assessment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,input_eligibility,target_evaluation_only,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,exclusion_or_quarantine_reason,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,reviewer_notes,"The HadithDB narrator is identified with high confidence as Taqrib entry 3552 through the compatible lineage, al-Ansari affiliation, Madinan association, reported sighting and death chronology. Entry 3553 is distinguished by a different lineage and affiliation. Ibn Hajar's assessment is ثقة. The accompanying phrase يقال له رؤية is biographical rather than a qualification of the reliability grade. Historical corroboration remains separately unresolved.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,1,PROV-10,PROV-10-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,audit_record_id,PROV-40,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,dataset_narrator_id,1813,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,dataset_narrator_name,خلف بن محمد بن عيسى,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,original_grade_verbatim,ثقة,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_printed_page_from_corpus,194,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_entry_text_verbatim,١٧٣٤- خلف ابن محمد ابن عيسى الخشاب القافلاني بقاف ثم فاء مكسورة أبو الحسين ابن أبي عبد الله الواسطي لقبه كردوس بضم الكاف ثقة من الحادية عشرة مات سنة أربع وسبعين وله أكثر من ثمانين ق,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,2,PROV-40,PROV-40-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,audit_record_id,PROV-40,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,dataset_narrator_id,1813,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,dataset_narrator_name,خلف بن محمد بن عيسى,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,original_grade_verbatim,ثقة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_printed_page_from_corpus,194,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_entry_number,1734,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_entry_text_verbatim,١٧٣٤- خلف ابن محمد ابن عيسى الخشاب القافلاني بقاف ثم فاء مكسورة أبو الحسين ابن أبي عبد الله الواسطي لقبه كردوس بضم الكاف ثقة من الحادية عشرة مات سنة أربع وسبعين وله أكثر من ثمانين ق,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_printed_page,194,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_entry_name_verbatim,خلف ابن محمد ابن عيسى الخشاب القافلاني بقاف ثم فاء مكسورة أبو الحسين ابن أبي عبد الله الواسطي لقبه كردوس بضم الكاف,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_grade_verbatim,ثقة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_qualification_verbatim,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_rank_number,3,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,taqrib_text_match_status,exact_verbatim,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,attribution_evidence_verbatim,لقبه كردوس بضم الكاف ثقة من الحادية عشرة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,source_locator,"Taqrib, p. 194, entry 1734",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,record_disposition,verified_ibn_hajar_assessment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,input_eligibility,target_evaluation_only,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,exclusion_or_quarantine_reason,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,reviewer_notes,"High-confidence identity match with Taqrib entry 1734 based on extended lineage, occupational nisbah (al-Khashshab al-Qaflani), regional association (al-Wasiti), kunyah Abu al-Husayn (with dataset alias Abu al-Hasan noted), sobriquet Kurdus, 11th tabaqah, and death date 274 AH. Ibn Hajar assesses him as ثقة without qualification (Rank 3). Earlier biographical sources reportedly contain favourable assessments, including صدوق attributed to Ibn Abi Hatim and ثقة attributed to al-Daraqutni and Maslamah al-Andalusi. These reports provide relevant historical context, but their original passages, attribution and transmission relationships have not yet been independently collated, so corroboration remains unresolved.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,2,PROV-40,PROV-40-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,audit_record_id,PROV-39,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,dataset_narrator_id,1811,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,dataset_narrator_name,خلف بن خليفة بن صاعد بن برام,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,original_grade_verbatim,صدوق، اختلط في الآخر,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_printed_page_from_corpus,194,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_entry_text_verbatim,١٧٣١- خلف ابن خليفة ابن صاعد الأشجعي مولاهم أبو أحمد الكوفي نزل واسط ثم بغداد صدوق اختلط في الآخر وادعى أنه رأى عمرو ابن حريث الصحابي فأنكر عليه ذلك ابن عيينة وأحمد من الثامنة مات سنة إحدى وثمانين على الصحيح بخ م ٤,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,3,PROV-39,PROV-39-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,audit_record_id,PROV-39,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,dataset_narrator_id,1811,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,dataset_narrator_name,خلف بن خليفة بن صاعد بن برام,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,original_grade_verbatim,صدوق، اختلط في الآخر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_printed_page_from_corpus,194,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_entry_number,1731,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_entry_text_verbatim,١٧٣١- خلف ابن خليفة ابن صاعد الأشجعي مولاهم أبو أحمد الكوفي نزل واسط ثم بغداد صدوق اختلط في الآخر وادعى أنه رأى عمرو ابن حريث الصحابي فأنكر عليه ذلك ابن عيينة وأحمد من الثامنة مات سنة إحدى وثمانين على الصحيح بخ م ٤,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_printed_page,194,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_entry_name_verbatim,خلف ابن خليفة ابن صاعد الأشجعي مولاهم أبو أحمد الكوفي,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_grade_verbatim,صدوق,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_qualification_verbatim,اختلط في الآخر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_rank_number,5,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,taqrib_text_match_status,exact_verbatim,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,attribution_evidence_verbatim,صدوق اختلط في الآخر وادعى أنه رأى عمرو ابن حريث الصحابي فأنكر عليه ذلك ابن عيينة وأحمد,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,source_locator,"Taqrib, p. 194, entry 1731",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,record_disposition,verified_ibn_hajar_assessment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,input_eligibility,target_evaluation_only,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,exclusion_or_quarantine_reason,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,reviewer_notes,"Resolved historical identity through lineage, nisbah, kunya, geographical migration, tabaqah and death chronology. Ibn Hajar's assessment is صدوق, qualified by اختلط في الآخر, corresponding to overall Rank 5 under the project's 12-rank scheme. This qualification introduces a chronological dimension to narrator reliability; the entry does not establish the acceptance or rejection of every individual transmission. The subsequent statement concerning the claimed sighting of ʿAmr ibn Ḥurayth is a separate historical report. Earlier criticism concerning deterioration has been identified, but independent corroboration and transmission dependence remain unverified.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,3,PROV-39,PROV-39-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,audit_record_id,PROV-56,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,dataset_narrator_id,6996,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,dataset_narrator_name,يحيى بن محمد بن عبد الله بن مهران,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,original_grade_verbatim,صدوق يخطئ.,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_printed_page_from_corpus,596,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_entry_text_verbatim,٧٦٣٨- يحيى ابن محمد ابن عبد الله ابن مهران المدني مولى بني نوفل يقال له الجاري بجيم وراء خفيفة صدوق يخطىء من كبار العاشرة د ت س,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,4,PROV-56,PROV-56-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,audit_record_id,PROV-56,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,dataset_narrator_id,6996,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,dataset_narrator_name,يحيى بن محمد بن عبد الله بن مهران,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,original_grade_verbatim,صدوق يخطئ.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_printed_page_from_corpus,596,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_entry_number,7638,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_entry_text_verbatim,٧٦٣٨- يحيى ابن محمد ابن عبد الله ابن مهران المدني مولى بني نوفل يقال له الجاري بجيم وراء خفيفة صدوق يخطىء من كبار العاشرة د ت س,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_printed_page,596,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_entry_name_verbatim,يحيى ابن محمد ابن عبد الله ابن مهران المدني مولى بني نوفل يقال له الجاري بجيم وراء خفيفة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_grade_verbatim,صدوق,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_qualification_verbatim,يخطىء,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_rank_number,5,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,taqrib_text_match_status,minor_variation,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,attribution_evidence_verbatim,صدوق يخطىء من كبار العاشرة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,source_locator,"Taqrib, p. 596, entry 7638",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,record_disposition,verified_ibn_hajar_assessment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,input_eligibility,target_evaluation_only,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,exclusion_or_quarantine_reason,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,reviewer_notes,"Resolved historical identity through 4-generation lineage, sobriquet al-Jari, patronage, and tabaqah. Ibn Hajar combines base grade صدوق with the defect qualification يخطىء, placing the narrator in Rank 5 under the project's 12-rank scheme. Text match recorded as minor_variation due to orthographic difference (يخطئ. vs يخطىء). Ibn Hajar's assessment appears alongside earlier reports of both favourable and critical evaluations; the precise textual and transmission relationship between those reports and his formulation has not yet been established. Dropping the qualification would falsely elevate a Rank 5 narrator to Rank 4. Corroboration remains unresolved.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,4,PROV-56,PROV-56-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,audit_record_id,PROV-24,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,dataset_narrator_id,1214,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,dataset_narrator_name,أَبَا حَمْزَةَ،,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,original_grade_verbatim,وثقه: النسائي,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_printed_page_from_corpus,283,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_entry_text_verbatim,٣٠٣٨- طلحة ابن يزيد الأيلي بفتح الهمزة وسكون الياء أبو حمزة مولى الأنصار نزل الكوفة وثقه النسائي من الثالثة خ ٤,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,retrieval_note,Candidate locator found by matching the kunya and reported phrase. The dataset name is only a kunya; identity is not established by this lookup.,false
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,5,PROV-24,PROV-24-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,audit_record_id,PROV-24,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,dataset_narrator_id,1214,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,dataset_narrator_name,أَبَا حَمْزَةَ،,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,original_grade_verbatim,وثقه: النسائي,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_printed_page_from_corpus,283,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_entry_number,3038,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_entry_text_verbatim,٣٠٣٨- طلحة ابن يزيد الأيلي بفتح الهمزة وسكون الياء أبو حمزة مولى الأنصار نزل الكوفة وثقه النسائي من الثالثة خ ٤,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,retrieval_note,Candidate locator found by matching the kunya and reported phrase. The dataset name is only a kunya; identity is not established by this lookup.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_printed_page,283,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_entry_name_verbatim,طلحة ابن يزيد الأيلي أبو حمزة مولى الأنصار,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_grade_verbatim,وثقه النسائي,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,taqrib_text_match_status,minor_variation,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,assessment_author,al-Nasai,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,assessment_attribution_status,traceable_intermediary_historical_judgment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,attribution_evidence_verbatim,وثقه النسائي من الثالثة خ ٤,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,source_locator,"Taqrib, p. 283, entry 3038",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,record_disposition,excluded_not_ibn_hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,input_eligibility,quarantined_intermediary_input,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,exclusion_or_quarantine_reason,"Stored grade is an attributed judgment of an earlier critic (al-Nasai), not Ibn Hajar's own synthesis; quarantined as intermediary input pending primary collation.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,reviewer_notes,"Identity resolved with high confidence to Taqrib entry 3038 (Talhah ibn Yazid al-Ayli, Abu Hamzah) through lineage, kunya, patronage, Kufan residence, third tabaqah, and transmission symbols. The dataset display name is an isolated accusative kunya (أَبَا حَمْزَةَ،). Ibn Hajar does not formulate an independent synthesis grade, but explicitly reports an earlier judgment (وثقه النسائي). Attribution certainty is high because al-Nasai is explicitly named, but verbatim quotation status is not established because the phrase reports al-Nasai's appraisal in the compiler's words rather than quoting him directly. Because this is an attributed assessment rather than Ibn Hajar's appraisal, it is excluded from target modeling under excluded_not_ibn_hajar; rank and qualification fields are left genuinely absent. Although al-Nasai (d. 303 AH) falls within the provisional historical window (T <= 365 AH), its preservation through an 852 AH compilation requires quarantine as quarantined_intermediary_input under Safeguard 1. The parallel statement reported in Sunan al-Nasai (وطلحة هذا ثقة) is noted as a candidate direct-source attestation, which requires separate primary inspection rather than assumed dependence or corroboration; corroboration remains unresolved.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,5,PROV-24,PROV-24-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,audit_record_id,PROV-51,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,dataset_narrator_id,5498,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,dataset_narrator_name,محمد بن إسماعيل بن عياش بن سليم,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,original_grade_verbatim,عابوا عليه أنه حدث عن أبيه بغير سماع,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_printed_page_from_corpus,468,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_entry_text_verbatim,٥٧٣٥- محمد ابن إسماعيل ابن عياش بالتحتانية والمعجمة الحمصي عابوا عليه أنه حدث عن أبيه بغير سماع من العاشرة ق,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,6,PROV-51,PROV-51-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,audit_record_id,PROV-51,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,dataset_narrator_id,5498,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,dataset_narrator_name,محمد بن إسماعيل بن عياش بن سليم,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,original_grade_verbatim,عابوا عليه أنه حدث عن أبيه بغير سماع,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_printed_page_from_corpus,468,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_entry_number,5735,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_entry_text_verbatim,٥٧٣٥- محمد ابن إسماعيل ابن عياش بالتحتانية والمعجمة الحمصي عابوا عليه أنه حدث عن أبيه بغير سماع من العاشرة ق,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_printed_page,468,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_entry_name_verbatim,محمد ابن إسماعيل ابن عياش بالتحتانية والمعجمة الحمصي,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_grade_verbatim,عابوا عليه أنه حدث عن أبيه بغير سماع,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_qualification_verbatim,أنه حدث عن أبيه بغير سماع,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,taqrib_text_match_status,exact_verbatim,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,assessment_author,Unidentified earlier critics (collective attribution),false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,assessment_attribution_status,insufficient_evidence_historical_judgment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,attribution_evidence_verbatim,عابوا عليه أنه حدث عن أبيه بغير سماع من العاشرة ق,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,source_locator,"Taqrib, p. 468, entry 5735",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,record_disposition,excluded_not_a_grade,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,input_eligibility,quarantined_intermediary_input,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,exclusion_or_quarantine_reason,"The stored text denotes a specific transmission-related criticism (lack of direct audition from his father), not an individualized general jarh-wa-ta'dil reliability grade.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,reviewer_notes,"Identity resolved with high confidence to Taqrib entry 5735 (Muhammad ibn Isma'il ibn 'Ayyash al-Himsi) through lineage, regional nisbah, tenth tabaqah, and canonical transmission symbol. Ibn Hajar reports that critics faulted him for transmitting from his father without direct audition (عابوا عليه أنه حدث عن أبيه بغير سماع). The entry provides no standardized twelve-rank reliability grade. The statement is therefore classified as a specific transmission-related criticism rather than a general narrator reliability grade and excluded from conventional reliability-grade target modelling. The collective attribution does not identify the individual critics in this passage. Earlier parallels are reported in al-Jarh wa-al-Ta'dil and Tahdhib al-Kamal, including a statement attributed to Abu Hatim al-Razi. Their textual correspondence and transmission relationships with Ibn Hajar's formulation have not been independently established.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,6,PROV-51,PROV-51-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,audit_record_id,PROV-01,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,dataset_narrator_id,17,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,dataset_narrator_name,جَابِرَ بْنَ عَبْدِ اللهِ الْأَنْصَارِيَّ,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,original_grade_verbatim,صحابي,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_printed_page_from_corpus,136,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_entry_text_verbatim,٨٧١- جابر ابن عبد الله ابن عمرو ابن حرام بمهملة وراء الأنصاري ثم السلمي بفتحتين صحابي ابن صحابي غزا تسع عشرة غزوة ومات بالمدينة بعد السبعين وهو ابن أربع وتسعين ع,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,7,PROV-01,PROV-01-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,audit_record_id,PROV-01,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,dataset_narrator_id,17,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,dataset_narrator_name,جَابِرَ بْنَ عَبْدِ اللهِ الْأَنْصَارِيَّ,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,original_grade_verbatim,صحابي,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_printed_page_from_corpus,136,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_entry_number,871,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_entry_text_verbatim,٨٧١- جابر ابن عبد الله ابن عمرو ابن حرام بمهملة وراء الأنصاري ثم السلمي بفتحتين صحابي ابن صحابي غزا تسع عشرة غزوة ومات بالمدينة بعد السبعين وهو ابن أربع وتسعين ع,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_printed_page,136,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_entry_name_verbatim,جابر ابن عبد الله ابن عمرو ابن حرام الأنصاري ثم السلمي,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_grade_verbatim,صحابي,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_qualification_verbatim,ابن صحابي,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_rank_number,1,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,taqrib_text_match_status,exact_verbatim,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,attribution_evidence_verbatim,صحابي ابن صحابي غزا تسع عشرة غزوة ومات بالمدينة بعد السبعين,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,source_locator,"Taqrib, p. 136, entry 871",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,record_disposition,excluded_not_a_grade,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,input_eligibility,ineligible_compiler_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,exclusion_or_quarantine_reason,"Companion status is a generational and theological classification (adalah shar'iyyah), not an individualized empirical jarh wa-ta'dil reliability grade.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,reviewer_notes,"Identity resolved with high confidence to Taqrib entry 871 through the extended lineage (Jabir ibn Abd Allah ibn Amr ibn Haram), dual nisbah (al-Ansari al-Sulami), and biographical details. Ibn Hajar places the Companions in Rank 1 of his twelve-tier taxonomy. However, the stored descriptor صحابي denotes generational and methodological status rather than an ordinary individualized jarh-wa-ta'dil reliability grade. The record is therefore excluded from conventional reliability-grade target modelling under the project codebook. Companion uprightness (adalat al-sahabah) should not be conflated with identical precision or immunity from transmission error. The biographical clauses are preserved as descriptive information, not treated as additional reliability judgements.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,7,PROV-01,PROV-01-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,audit_record_id,PROV-02,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,dataset_narrator_id,27,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,dataset_narrator_name,وَمَعْمَرٌ,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,original_grade_verbatim,ثقة ثبت فاضل، إلا أن في روايته عن ثابت والأعمش وعاصم بن أبي النجود، وهشام بن عروة شيئا، وكذا فيما حدث به بالبصرة,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_printed_page_from_corpus,541,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_entry_text_verbatim,٦٨٠٩- معمر ابن راشد الأزدي مولاهم أبو عروة البصري نزيل اليمن ثقة ثبت فاضل إلا أن في روايته عن ثابت والأعمش [وعاصم بن أبي النجود] وهشام ابن عروة شيئا وكذا فيما حدث به بالبصرة من كبار السابعة مات سنة أربع وخمسين وهو ابن ثمان وخمسين سنة ع,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,8,PROV-02,PROV-02-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,audit_record_id,PROV-02,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,dataset_narrator_id,27,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,dataset_narrator_name,وَمَعْمَرٌ,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,original_grade_verbatim,ثقة ثبت فاضل، إلا أن في روايته عن ثابت والأعمش وعاصم بن أبي النجود، وهشام بن عروة شيئا، وكذا فيما حدث به بالبصرة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_printed_page_from_corpus,541,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_entry_number,6809,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_entry_text_verbatim,٦٨٠٩- معمر ابن راشد الأزدي مولاهم أبو عروة البصري نزيل اليمن ثقة ثبت فاضل إلا أن في روايته عن ثابت والأعمش [وعاصم بن أبي النجود] وهشام ابن عروة شيئا وكذا فيما حدث به بالبصرة من كبار السابعة مات سنة أربع وخمسين وهو ابن ثمان وخمسين سنة ع,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_printed_page,541,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_entry_name_verbatim,معمر ابن راشد الأزدي مولاهم أبو عروة البصري نزيل اليمن,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_grade_verbatim,ثقة ثبت فاضل,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_qualification_verbatim,إلا أن في روايته عن ثابت والأعمش [وعاصم بن أبي النجود] وهشام ابن عروة شيئا وكذا فيما حدث به بالبصرة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_rank_number,2,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,taqrib_text_match_status,minor_variation,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,editorial_material_status,bracketed_addition,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,attribution_evidence_verbatim,ثقة ثبت فاضل إلا أن في روايته عن ثابت والأعمش [وعاصم بن أبي النجود] وهشام ابن عروة شيئا وكذا فيما حدث به بالبصرة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,source_locator,"Taqrib, p. 541, entry 6809",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,record_disposition,verified_ibn_hajar_assessment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,input_eligibility,target_evaluation_only,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,exclusion_or_quarantine_reason,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,reviewer_notes,"Identity resolved with high confidence to Taqrib entry 6809 (Ma'mar ibn Rashid al-Azdi mawlahum, Abu Urwah al-Basri) based on lineage, kunya, nisbah, Yemeni residence, 7th tabaqah, and 154 AH death. The dataset display name contains a prefixed conjunction artifact (وَمَعْمَرٌ). Ibn Hajar assesses him with the doubled praise formula ثقة ثبت فاضل, placing him in Rank 2. The entry appends teacher-specific qualifications (transmissions from Thabit, al-A'mash, [Asim ibn Abi al-Najud], and Hisham ibn Urwah) and a locational qualification (narrations transmitted in Basra). Ibn Hajar identifies a locational qualification affecting narrations Ma'mar transmitted in Basra; the precise circumstances underlying this qualification require corroboration from earlier biographical sources. The bracketed phrase [وعاصم بن أبي النجود] reflects editorial apparatus in Awwamah's critical edition; its omission in HadithDB constitutes a loss of editorial-status information. The qualifications have parallels in reports attributed to Yahya ibn Ma'in and Abu Hatim al-Razi, but their textual correspondence and transmission relationships with Ibn Hajar's formulation have not yet been independently established, so corroboration remains unresolved. Generational classification (من كبار السابعة) is distinguished from evaluative qualifications.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,8,PROV-02,PROV-02-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,audit_record_id,PROV-04,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,dataset_narrator_id,278,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,dataset_narrator_name,قَيْسُ بْنُ حَفْصٍ,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,original_grade_verbatim,ثقة له أفراد,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_printed_page_from_corpus,456,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_entry_text_verbatim,٥٥٦٩- قيس ابن حفص التميمي الدارمي أبو محمد البصري ثقة له أفراد من العاشرة مات سنة سبع وعشرين خ صد,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,retrieval_note,Two same-name Taqrib entries occur on the cited page; both are supplied. Do not select one without identity evidence.,false
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,9,PROV-04,PROV-04-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,audit_record_id,PROV-04,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,dataset_narrator_id,278,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,dataset_narrator_name,قَيْسُ بْنُ حَفْصٍ,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,original_grade_verbatim,ثقة له أفراد,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_printed_page_from_corpus,456,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_entry_number,5569,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_entry_text_verbatim,٥٥٦٩- قيس ابن حفص التميمي الدارمي أبو محمد البصري ثقة له أفراد من العاشرة مات سنة سبع وعشرين خ صد,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,retrieval_note,Two same-name Taqrib entries occur on the cited page; both are supplied. Do not select one without identity evidence.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_printed_page,456,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_entry_name_verbatim,قيس ابن حفص التميمي الدارمي أبو محمد البصري,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_grade_verbatim,ثقة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_qualification_verbatim,له أفراد,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_rank_number,3,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,taqrib_text_match_status,exact_verbatim,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,attribution_evidence_verbatim,ثقة له أفراد من العاشرة مات سنة سبع وعشرين خ صد,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,source_locator,"Taqrib, p. 456, entry 5569",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,record_disposition,verified_ibn_hajar_assessment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,input_eligibility,target_evaluation_only,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,exclusion_or_quarantine_reason,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,reviewer_notes,"Accepted identity candidate for PROV-04 (HadithDB narrator 278). Identity resolved with high confidence to Taqrib entry 5569 (Qays ibn Hafs al-Tamimi al-Darimi al-Basri, Abu Muhammad) based on tribal nisbah, 10th tabaqah, death date 227 AH, and transmission symbols (al-Bukhari and Abu Dawud in Fada'il al-Ansar). Ibn Hajar assesses him as ثقة (Rank 3) with the specific transmission qualification له أفراد, indicating that he has individual or less commonly shared narrations, without implying that such narrations are defective or rejected. Earlier critics' assessments (Yahya ibn Ma'in, al-Daraqutni, al-Ijli, Ibn Hibban) are reported parallels rather than established independent corroboration, so corroboration remains unresolved.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,9,PROV-04,PROV-04-C01,corroboration_status,unresolved_corroboration,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,audit_record_id,PROV-04,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,dataset_narrator_id,278,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,dataset_narrator_name,قَيْسُ بْنُ حَفْصٍ,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,original_grade_verbatim,ثقة له أفراد,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_printed_page_from_corpus,456,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_entry_text_verbatim,٥٥٧٠- قيس ابن حفص آخر بصري سكن مصر يكنى أبا محمد مقبول من الثانية عشرة مات سنة إحدى وثمانين تمييز,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,retrieval_note,Two same-name Taqrib entries occur on the cited page; both are supplied. Do not select one without identity evidence.,false
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,10,PROV-04,PROV-04-C02,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,audit_record_id,PROV-04,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,dataset_name,HadithDB,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,dataset_narrator_id,278,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,dataset_narrator_name,قَيْسُ بْنُ حَفْصٍ,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,original_grade_verbatim,ثقة له أفراد,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,original_source_location,"data[""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_printed_page_from_corpus,456,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_entry_number,5570,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_entry_text_verbatim,٥٥٧٠- قيس ابن حفص آخر بصري سكن مصر يكنى أبا محمد مقبول من الثانية عشرة مات سنة إحدى وثمانين تمييز,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,retrieval_note,Two same-name Taqrib entries occur on the cited page; both are supplied. Do not select one without identity evidence.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_printed_page,456,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_entry_name_verbatim,قيس ابن حفص آخر بصري سكن مصر يكنى أبا محمد,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_grade_verbatim,مقبول,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_qualification_verbatim,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_rank_number,6,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_identity_match_status,conflicting_identity,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,taqrib_text_match_status,substantial_difference,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,attribution_evidence_verbatim,مقبول من الثانية عشرة مات سنة إحدى وثمانين تمييز,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,source_locator,"Taqrib, p. 456, entry 5570",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,textual_fidelity,low,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,identity_fidelity,low,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,record_disposition,excluded_identity_mismatch,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,exclusion_or_quarantine_reason,"Homonym mismatch: Entry 5570 is a 12th-generation transmitter who settled in Egypt and died in 281 AH (tamayyiz), distinct from HadithDB narrator 278 (10th generation, died 227 AH, Entry 5569).",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,reviewer_notes,"Rejected homonym candidate for PROV-04. Candidate entry 5570 is definitively rejected as a homonym mismatch. Ibn Hajar explicitly designates him as a distinct individual (قيس ابن حفص آخر). He belonged to the 12th generation, migrated from Basra to Egypt, died in 281 AH (54 years after narrator 278), was graded مقبول (Rank 6), and was cited by al-Mizzi purely for differentiation (تمييز). Low textual fidelity and substantial difference describe the comparison against this rejected candidate entry, not evidence that HadithDB's stored grade for narrator 278 is inaccurate. Attribution fidelity within entry 5570 is high for Ibn Hajar's authorship, but identity fidelity is low. Input eligibility and corroboration fields are left blank because the entry belongs to a distinct historical person.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,10,PROV-04,PROV-04-C02,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,audit_record_id,PROV-37,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,dataset_narrator_id,1740,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,dataset_narrator_name,خالد بن عبد الرحمن بن بكير,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,original_grade_verbatim,صدوق يخطئ.,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_printed_page_from_corpus,189,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_entry_number,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_entry_text_verbatim,١٦٥٠- خالد ابن عبد الرحمن ابن بكير السلمي أبو أمية البصري صدوق يخطىء من الثامنة خ ت س,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_printed_page,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_entry_name_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_grade_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_qualification_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_rank_number,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_identity_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,taqrib_text_match_status,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,assessment_author,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,assessment_attribution_status,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,compiler_or_transmitter,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,editorial_material_status,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,attribution_evidence_verbatim,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,source_locator,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,source_verification_status,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,textual_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,attribution_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,identity_fidelity,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,record_disposition,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,input_eligibility,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,exclusion_or_quarantine_reason,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,reviewer_notes,,true
+MANUAL_COLLATION_PILOT_10.csv,11,PROV-37,PROV-37-C01,corroboration_status,,true
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,audit_record_id,PROV-37,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,dataset_name,Shamela4,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,dataset_narrator_id,1740,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,dataset_narrator_name,خالد بن عبد الرحمن بن بكير,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,original_grade_field,الرتبة عند ابن حجر,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,original_grade_verbatim,صدوق يخطئ.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,original_source_location,"biography_text[""summary""][""الرتبة عند ابن حجر""]",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_book_id,3076,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_printed_page_from_corpus,189,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_entry_number,1650,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_entry_text_verbatim,١٦٥٠- خالد ابن عبد الرحمن ابن بكير السلمي أبو أمية البصري صدوق يخطىء من الثامنة خ ت س,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,retrieval_note,Candidate entry located by name search in the local Taqrib text; identity and attribution decisions have not been made.,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_printed_page,189,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_entry_name_verbatim,خالد ابن عبد الرحمن ابن بكير السلمي أبو أمية البصري,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_grade_verbatim,صدوق,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_qualification_verbatim,يخطىء,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_rank_number,5,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_identity_match_status,exact_match,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,taqrib_text_match_status,minor_variation,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,assessment_author,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,assessment_attribution_status,compiler_own_synthesis,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,compiler_or_transmitter,Ibn Hajar,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,editorial_material_status,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,attribution_evidence_verbatim,صدوق يخطىء من الثامنة,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,source_locator,"Taqrib, p. 189, entry 1650",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,source_verification_status,verified_in_corpus,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,textual_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,attribution_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,identity_fidelity,high,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,record_disposition,verified_ibn_hajar_assessment,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,input_eligibility,target_evaluation_only,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,exclusion_or_quarantine_reason,none,false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,reviewer_notes,"Resolved historical identity through lineage (Ibn Bukayr), nisbah (al-Sulami, al-Basri), kunya (Abu Umayyah), tabaqah (eighth), and canonical symbols (خ ت س), decisively distinguishing the subject from homonym entry 1652 (Khalid ibn Abd al-Rahman al-Makhzumi al-Kufi, 9th tabaqah, also graded صدوق يخطىء). Ibn Hajar combines base grade صدوق with defect qualification يخطىء, placing the narrator in Rank 5 under the project's 12-rank scheme. Text match recorded as minor_variation due to orthographic difference (يخطئ. vs يخطىء). Earlier biographical sources reportedly contain both favourable and critical evaluations, including the expressions لا بأس به, يخطئ, and يخالف في حديثه; the original attribution and transmission relationships have not yet been independently collated.",false
+MANUAL_COLLATION_PILOT_10_WORKING.csv,11,PROV-37,PROV-37-C01,corroboration_status,unresolved_corroboration,false
