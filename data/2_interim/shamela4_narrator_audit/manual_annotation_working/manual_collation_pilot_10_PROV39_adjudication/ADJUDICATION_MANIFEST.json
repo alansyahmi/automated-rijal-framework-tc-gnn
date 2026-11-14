@@ -1,0 +1,51 @@
+{
+  "package_name": "PROV-39-C01_ADJUDICATION",
+  "schema_version": "2.2",
+  "created_utc": "2026-11-12T15:20:00Z",
+  "candidate_entry_id": "PROV-39-C01",
+  "decision": {
+    "statement_id": "PROV-39-C01-S01",
+    "taqrib_rank_number": 5,
+    "rank_status": "assigned",
+    "grade_base_verbatim": "صدوق",
+    "grade_qualification_verbatim": "اختلط في الآخر",
+    "historical_input_eligibility": "not_assessed",
+    "target_task_scope": "not_assessed"
+  },
+  "evidence": {
+    "citation": "Ibn Hajar, Taqrib al-Tahdhib, ed. Muhammad Awwama, Dar al-Rashid, 1st ed., 1406/1986, Muqaddima, section اما المراتب, pp. 74-75.",
+    "rule_text_arabic": "الخامسة: من قصر عن الرابعة قليلا، وعليه تدور عبارة: صدوق سيء الحفظ، أو صدوق يهم، أو له أوهام، أو يخطئ، أو تغير بأخرة، أو اختلط في الآخر.",
+    "verification": "Introductory taxonomy rule verified in local text transcription."
+  },
+  "attribution_boundaries": {
+    "work_author": "Ibn Hajar (from bibliographic metadata)",
+    "passage_wording_author": "unknown",
+    "historical_evaluator": "none_named",
+    "attribution_form": "unclear",
+    "compiler_authorship_status": "unresolved",
+    "transmission_route_status": "not_assessed"
+  },
+  "historical_investigation": {
+    "precautionary_finding": "Early biographical reports provide evidence that Khalaf experienced significant deterioration late in life. Ahmad's reported observation in 177 AH provides a chronological anchor for his condition, but does not independently establish the exact onset of ikhtilat or classify every subsequent transmission. The reliability of individual narrations therefore requires consideration of the student's audition period and the specific transmission. The relationship between these reports and Ibn Hajar's formulation remains unestablished.",
+    "three_propositions": [
+      "The narrator experienced ikhtilat (memory deterioration).",
+      "The deterioration occurred late in life (في الآخر).",
+      "Particular transmissions were affected by it (a chronological transmission-quality problem requiring student- and report-level examination)."
+    ],
+    "early_reports_independence": "unresolved"
+  },
+  "frozen_pass1_unchanged": true,
+  "output": {
+    "path": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV39_adjudication\\PROV-39-C01_ADJUDICATION.md",
+    "bytes": 8322,
+    "sha256": "cba85eb9fa2f5cfe9409384fe9fb3ca069071f56a9e1cc5dc5d5b639dc0f471b"
+  },
+  "remaining_open": [
+    "passage-level wording author of S01",
+    "historical evaluator attribution of S01",
+    "transmission route of S01",
+    "target suitability",
+    "historical-input eligibility",
+    "corroboration"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "book_id": 8246,
+  "shamela_id": 127715,
+  "title_ar": "تحرير تقريب التهذيب",
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "category_id": 26,
+  "category_name_ar": "التراجم والطبقات",
+  "main_author_id": 2939,
+  "main_author_name_ar": "بشار عواد معروف",
+  "main_author_death_hijri": 99999,
+  "main_author_death_hijri_text": null,
+  "authors_text": "2939",
+  "authors": [
+    {
+      "author_id": 2939,
+      "role": "author",
+      "name_ar": "بشار عواد معروف",
+      "death_hijri": 99999,
+      "death_hijri_text": null
+    }
+  ],
+  "hijri_era": 99999,
+  "printed": true,
+  "is_hidden": false,
+  "parent_id": null,
+  "group_id": 8609,
+  "version_major": 1,
+  "version_minor": 1,
+  "betaka_text": "الكتاب: تحرير تقريب التهذيب للحافظ أحمد بن علي بن حجر العسقلاني\rتأليف: الدكتور بشار عواد معروف، الشيخ شعيب الأرنؤوط [ت ١٤٣٨ هـ]\rالناشر: مؤسسة الرسالة للطباعة والنشر والتوزيع، بيروت - لبنان\rالطبعة: الأولى، ١٤١٧ هـ - ١٩٩٧ م\rعدد الأجزاء: ٤\rأعده للشاملة: رابطة النساخ، تنفيذ (مركز النخب العلمية)، وبرعاية (أوقاف عبد الله بن تركي الضحيان الخيرية)\r[ترقيم الكتاب موافق للمطبوع]",
+  "meta": {
+    "date": "19021440",
+    "group": 8609
+  },
+  "volume_count_observed": 4,
+  "has_multi_part": true
+}

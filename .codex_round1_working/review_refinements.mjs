@@ -1,0 +1,35 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import { Workbook } from '@oai/artifact-tool';
+const root=path.resolve('data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_review_round_1_working');
+const metaPath=path.resolve('data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/book_metadata.json');
+const metadata=JSON.parse(await fs.readFile(metaPath,'utf8'));
+const metadataBytes=await fs.readFile(metaPath);
+const metadataSha=crypto.createHash('sha256').update(metadataBytes).digest('hex');
+const metadataQuote=metadata.betaka_text;
+const author='أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ابن حجر)';
+const evidenceId='EVID-PROV-10-C01-TAQRIB-META01';
+const asText=v=>v==null?'':String(v);
+const csv=matrix=>matrix.map(row=>row.map(v=>{const s=asText(v);return /[",\r\n]/u.test(s)?`"${s.replaceAll('"','""')}"`:s}).join(',')).join('\r\n')+'\r\n';
+async function readTable(name){const raw=await fs.readFile(path.join(root,name),'utf8');const wb=await Workbook.fromCSV(raw,{sheetName:'Input'});const vals=wb.worksheets.getItem('Input').getUsedRange().values.map(r=>r.map(asText));return {headers:vals[0],rows:vals.slice(1).map(r=>Object.fromEntries(vals[0].map((h,i)=>[h,asText(r[i])])))};}
+async function writeTable(name,table){const matrix=[table.headers,...table.rows.map(r=>table.headers.map(h=>asText(r[h])))];const wb=await Workbook.fromCSV(csv(matrix),{sheetName:'Verify'});const round=wb.worksheets.getItem('Verify').getUsedRange().values.map(r=>r.map(asText));if(JSON.stringify(round)!==JSON.stringify(matrix))throw new Error(`${name}: Artifact Tool CSV round-trip failed`);await fs.writeFile(path.join(root,name),csv(round),'utf8');return {file:name,dataRows:table.rows.length,columns:table.headers.length};}
+const sources=await readTable('sources.csv');
+const source=sources.rows.find(r=>r.source_record_id==='SRC-PROV-10-C01');
+if(!source)throw new Error('Missing Taqrib source record');
+if(metadata.book_id!==3076||metadata.main_author_name_ar!=='ابن حجر العسقلاني')throw new Error('Local metadata did not match expected Taqrib work');
+Object.assign(source,{source_work_author_compiler:author,source_author_metadata_status:'recorded',edition_metadata_evidence_record_id:evidenceId,source_page_numbering_note:'The local pages.jsonl record was checked at page_num 319, sequence_num 3552, and its body matches the transcription. The local book_metadata.json identifies Ibn Hajar al-Asqalani as work author, Muhammad Awwama as editor, the Dar al-Rashid 1406/1986 edition, and states that its numbering matches print. This verifies the local corpus record and its metadata only; the printed page image was not independently inspected here.'});
+const statements=await readTable('statements.csv');
+const s02=statements.rows.find(r=>r.statement_id==='PROV-10-C01-S02');
+if(!s02||s02.statement_text_verbatim!=='يقال له رؤية')throw new Error('Expected exact S02 text not found');
+s02.statement_type='biographical_or_factual_statement';
+const evidence=await readTable('source_evidence.csv');
+if(evidence.rows.some(r=>r.evidence_record_id===evidenceId))throw new Error('Metadata evidence ID already exists');
+const metaRow=Object.fromEntries(evidence.headers.map(h=>[h,'']));
+Object.assign(metaRow,{evidence_record_id:evidenceId,source_record_id:'SRC-PROV-10-C01',candidate_entry_id:'PROV-10-C01',statement_id:'',attribution_link_id:'',evidence_role:'edition_metadata',evidence_text_verbatim:metadataQuote,evidence_text_status:'transcribed',source_locator:`Local Shamela4 book_metadata.json, book_id 3076, field betaka_text; file SHA-256 ${metadataSha}`});
+evidence.rows.push(metaRow);
+const out=[];
+out.push(await writeTable('sources.csv',sources));
+out.push(await writeTable('statements.csv',statements));
+out.push(await writeTable('source_evidence.csv',evidence));
+console.log(JSON.stringify({updates:out,metadata:{bookId:metadata.book_id,workAuthor:author,editor:metadata.betaka_text.includes('محمد عوامة'),metadataSha256:metadataSha},updatedStatement:'PROV-10-C01-S02',attributionForGradeStillUnresolved:true},null,2));

@@ -1,0 +1,33 @@
+{
+  "book_id": 890,
+  "shamela_id": 956,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "التاريخ الكبير للبخاري - ت المعلمي اليماني",
+  "page_count": 3785,
+  "toc_count": 12928,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "af6f8e5c8fa95732c29e757a251dc879d6610c67ec29b908077bce76b93335ad",
+      "bytes": 9339616,
+      "rows": 3785
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "ebee70d0624866cc38cc69ca9f263f820001312779bd7c434db8fce35e95cd0b",
+      "bytes": 2236969,
+      "rows": 12928
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "b1a8597082667f9b7895101ce1ed19fb374d0f99f8e2dd000136a5f06cc418dd",
+      "bytes": 1420,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

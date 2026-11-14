@@ -1,0 +1,254 @@
+evidence_record_id,source_record_id,candidate_entry_id,statement_id,attribution_link_id,evidence_role,evidence_text_verbatim,evidence_text_status,source_locator
+EVID-PROV-10-C01-ID01,SRC-PROV-10-C01-ID01,PROV-10-C01,,,identity,عبد الله بن كعب ابن مالك بن أبي كعب بن القين بن كعب بن سواد بن غنم بن كعب بن سلمة من الخزرج. […] وكان كعب بن مالك قد عمي، وكان ابنه عبد الله قائده من بين يديه. وقد سمع عبد الله بن كعب من عثمان.,transcribed,"Ibn Saʿd, al-Ṭabaqāt al-Kubrā, vol. 5, p. 272, entry headed عبد الله بن كعب"
+EVID-PROV-10-C01-S01-TEXT,SRC-PROV-10-C01,,PROV-10-C01-S01,,passage_text,ثقة,transcribed,"Taqrib, local corpus page_num 319, sequence_num 3552 (entry 3552)."
+EVID-PROV-10-C01-S01-ATTR,SRC-PROV-10-C01,,,PROV-10-C01-S01-A01,passage_text,ثقة,transcribed,"Taqrib, local corpus page_num 319, sequence_num 3552 (entry 3552)."
+EVID-PROV-10-C01-S02-TEXT,SRC-PROV-10-C01,,PROV-10-C01-S02,,passage_text,يقال له رؤية,transcribed,"Taqrib, local corpus page_num 319, sequence_num 3552 (entry 3552)."
+EVID-PROV-10-C01-S02-ATTR,SRC-PROV-10-C01,,,PROV-10-C01-S02-A01,passage_text,يقال له رؤية,transcribed,"Taqrib, local corpus page_num 319, sequence_num 3552 (entry 3552)."
+EVID-PROV-10-C01-S03-TEXT,SRC-PROV-10-C01,,PROV-10-C01-S03,,passage_text,مات سنة سبع أو ثمان وتسعين,transcribed,"Taqrib, local corpus page_num 319, sequence_num 3552 (entry 3552)."
+EVID-PROV-10-C01-S03-ATTR,SRC-PROV-10-C01,,,PROV-10-C01-S03-A01,passage_text,مات سنة سبع أو ثمان وتسعين,transcribed,"Taqrib, local corpus page_num 319, sequence_num 3552 (entry 3552)."
+EVID-PROV-10-C01-TAQRIB-META01,SRC-PROV-10-C01,PROV-10-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ
+أرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .
+(كذا في مصدر الكتاب: موقع الدرر السنية)",transcribed,"Local Shamela4 book_metadata.json, book_id 3076, field betaka_text; file SHA-256 bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88"
+EVID-PROV-40-C01-ID01,SRC-PROV-40-C01-ID01,PROV-40-C01,,,identity,١٧١٠ - ق: خلف بن مُحَمَّد بن عيسى الخشاب القافلاني، أَبُو الْحَسَينِ بن أَبي عَبد اللَّهِ الواسطي المعروف بكردوس. روى عن: أبي منصور الحارث بْن منصور الواسطي الزاهد... وعبد الكريم بْن روح (ق)... روى عنه: ابن ماجه... قال أَبُو الحسين ابْن المنادي: أَخْبَرَنَا أَنَّهُ توفي بواسط للنصف من ذي الحجة سنة أربع وسبعين ومئتين، وكان قد نيف عَلَى ثمانين سنة.,transcribed,"Al-Mizzi, Tahdhib al-Kamal, vol. 8, pp. 294-295, entry 1710"
+EVID-PROV-40-C01-S01-TEXT,SRC-PROV-40-C01,,PROV-40-C01-S01,,passage_text,ثقة,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1734 (entry 1734)."
+EVID-PROV-40-C01-S01-ATTR,SRC-PROV-40-C01,,,PROV-40-C01-S01-A01,passage_text,ثقة,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1734 (entry 1734)."
+EVID-PROV-40-C01-S02-TEXT,SRC-PROV-40-C01,,PROV-40-C01-S02,,passage_text,من الحادية عشرة,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1734 (entry 1734)."
+EVID-PROV-40-C01-S02-ATTR,SRC-PROV-40-C01,,,PROV-40-C01-S02-A01,passage_text,من الحادية عشرة,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1734 (entry 1734)."
+EVID-PROV-40-C01-S03-TEXT,SRC-PROV-40-C01,,PROV-40-C01-S03,,passage_text,مات سنة أربع وسبعين وله أكثر من ثمانين,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1734 (entry 1734)."
+EVID-PROV-40-C01-S03-ATTR,SRC-PROV-40-C01,,,PROV-40-C01-S03-A01,passage_text,مات سنة أربع وسبعين وله أكثر من ثمانين,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1734 (entry 1734)."
+EVID-PROV-40-C01-TAQRIB-META01,SRC-PROV-40-C01,PROV-40-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ
+أرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .
+(كذا في مصدر الكتاب: موقع الدرر السنية)",transcribed,"Local Shamela4 book_metadata.json, book_id 3076, field betaka_text; file SHA-256 bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88"
+EVID-PROV-39-C01-ID01,SRC-PROV-39-C01-ID01,PROV-39-C01,,,identity,١٧٠٧ - بخ م ٤: خلف بن خليفة بن صاعد بن برام الأشجعي مولاهم، أَبُو أَحْمَد الواسطي، كان بالكوفة ثم انتقل إِلَى واسط فسكنها مدة ثم تحول إِلَى بغداد فأقام بها إِلَى حين وفاته.,transcribed,"Al-Mizzi, Tahdhib al-Kamal, vol. 8, pp. 284-285, entry 1707"
+EVID-PROV-39-C01-S01-TEXT,SRC-PROV-39-C01,,PROV-39-C01-S01,,passage_text,صدوق اختلط في الآخر,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S01-ATTR,SRC-PROV-39-C01,,,PROV-39-C01-S01-A01,passage_text,صدوق اختلط في الآخر,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S02-TEXT,SRC-PROV-39-C01,,PROV-39-C01-S02,,passage_text,وادعى أنه رأى عمرو ابن حريث الصحابي,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S02-ATTR,SRC-PROV-39-C01,,,PROV-39-C01-S02-A01,passage_text,وادعى أنه رأى عمرو ابن حريث الصحابي,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S03-TEXT,SRC-PROV-39-C01,,PROV-39-C01-S03,,passage_text,فأنكر عليه ذلك ابن عيينة وأحمد,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S03-ATTR,SRC-PROV-39-C01,,,PROV-39-C01-S03-A01,passage_text,فأنكر عليه ذلك ابن عيينة وأحمد,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S04-TEXT,SRC-PROV-39-C01,,PROV-39-C01-S04,,passage_text,من الثامنة,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S04-ATTR,SRC-PROV-39-C01,,,PROV-39-C01-S04-A01,passage_text,من الثامنة,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S05-TEXT,SRC-PROV-39-C01,,PROV-39-C01-S05,,passage_text,مات سنة إحدى وثمانين على الصحيح,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-S05-ATTR,SRC-PROV-39-C01,,,PROV-39-C01-S05-A01,passage_text,مات سنة إحدى وثمانين على الصحيح,transcribed,"Taqrib, local corpus page_num 194, sequence_num 1731 (entry 1731)."
+EVID-PROV-39-C01-TAQRIB-META01,SRC-PROV-39-C01,PROV-39-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ
+أرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .
+(كذا في مصدر الكتاب: موقع الدرر السنية)",transcribed,"Local Shamela4 book_metadata.json, book_id 3076, field betaka_text; file SHA-256 bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88"
+EVID-PROV-56-C01-ID01,SRC-PROV-56-C01-ID01,PROV-56-C01,,,identity,٦٩١٣ - د ت س: يَحْيَى بْن مُحَمَّد بْن عَبد اللَّهِ بن مهران الجاري (٢) ، مولى بني نوفل بْن أسد، حجازي. والجار مرفأ السفن.,transcribed,"Al-Mizzi, Tahdhib al-Kamal, vol. 31, pp. 522-524, entry 6913; local corpus page_num 522, sequence_num 17071."
+EVID-PROV-56-C01-S01-TEXT,SRC-PROV-56-C01,,PROV-56-C01-S01,,passage_text,صدوق يخطىء,transcribed,"Taqrib, local corpus page_num 596, sequence_num 7632 (entry 7638)."
+EVID-PROV-56-C01-S01-ATTR,SRC-PROV-56-C01,,,PROV-56-C01-S01-A01,passage_text,صدوق يخطىء,transcribed,"Taqrib, local corpus page_num 596, sequence_num 7632 (entry 7638)."
+EVID-PROV-56-C01-S02-TEXT,SRC-PROV-56-C01,,PROV-56-C01-S02,,passage_text,من كبار العاشرة,transcribed,"Taqrib, local corpus page_num 596, sequence_num 7632 (entry 7638)."
+EVID-PROV-56-C01-S02-ATTR,SRC-PROV-56-C01,,,PROV-56-C01-S02-A01,passage_text,من كبار العاشرة,transcribed,"Taqrib, local corpus page_num 596, sequence_num 7632 (entry 7638)."
+EVID-PROV-56-C01-TAQRIB-META01,SRC-PROV-56-C01,PROV-56-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ
+أرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .
+(كذا في مصدر الكتاب: موقع الدرر السنية)",transcribed,"Local Shamela4 book_metadata.json, book_id 3076, field betaka_text; file SHA-256 bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88"
+EVID-PROV-37-C01-ID01,SRC-PROV-37-C01-ID01,PROV-37-C01,,,identity,١٦٢٨ - خ ت س: خالد بن عبد الرحمن بن بكير السلمي (١) ، أَبُو أمية البَصْرِيّ.,transcribed,"Al-Mizzi, Tahdhib al-Kamal, vol. 8, p. 119, entry 1628; local corpus part 8, page_num 119, sequence_num 3831."
+EVID-PROV-37-C01-S01-TEXT,SRC-PROV-37-C01,,PROV-37-C01-S01,,passage_text,صدوق يخطىء,transcribed,"Ibn Hajar, Taqrib al-Tahdhib, local corpus page_num 189, sequence_num 1647 (entry 1650)."
+EVID-PROV-37-C01-S02-TEXT,SRC-PROV-37-C01,,PROV-37-C01-S02,,passage_text,من الثامنة,transcribed,"Ibn Hajar, Taqrib al-Tahdhib, local corpus page_num 189, sequence_num 1647 (entry 1650)."
+EVID-PROV-37-C01-S01-ATTR,SRC-PROV-37-C01,,PROV-37-C01-S01,PROV-37-C01-S01-A01,historical_attribution,صدوق يخطىء,transcribed,"Ibn Hajar, Taqrib al-Tahdhib, local corpus page_num 189, sequence_num 1647 (entry 1650)."
+EVID-PROV-37-C01-S02-ATTR,SRC-PROV-37-C01,,PROV-37-C01-S02,PROV-37-C01-S02-A01,historical_attribution,من الثامنة,transcribed,"Ibn Hajar, Taqrib al-Tahdhib, local corpus page_num 189, sequence_num 1647 (entry 1650)."
+EVID-PROV-37-C01-TAQRIB-META01,SRC-PROV-37-C01,PROV-37-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ
+أرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .
+(كذا في مصدر الكتاب: موقع الدرر السنية)",transcribed,"Local Shamela4 book_metadata.json, book_id 3076, field betaka_text; file SHA-256 bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88"
+EVID-PROV-37-C01-ALMIZZI-REPORTS01,SRC-PROV-37-C01-ID01,PROV-37-C01,,,historical_attribution,"قال أَبُو حاتم (٢) : صدوق لا بأس بِهِ.
+وذكره ابنُ حِبَّان في ""الثقات"" وَقَال (٣) : يخطئ (٤) .",transcribed,"Al-Mizzi, Tahdhib al-Kamal, vol. 8, p. 119, entry 1628; local corpus part 8, page_num 119, sequence_num 3831."
+EVID-PROV-37-C01-ALMIZZI-FOOT01,SRC-PROV-37-C01-ID01,PROV-37-C01,,,historical_attribution,"(٤) وَقَال العقيلي في الضعفاء (الورقة ٥٩) : يخالف في حديثه""وَقَال الحاكم أبو عبد الله في سؤالاته الكبرى للدار قطني: قال أبو الحسن، لا بأس به. وسئل أبو زُرْعَة الرازي عنه فيما ذكره الباجي (الورقة ٥٣) فقال: لا أحدث عنه. وَقَال الذهبي في الكاشف: صدوق مقتل. وَقَال ابن حجر: صدوق يخطئ.",transcribed,"Al-Mizzi, Tahdhib al-Kamal, vol. 8, p. 119, entry 1628; local corpus part 8, page_num 119, sequence_num 3831."
+EVID-PROV-37-C01-ABUHATIM01,SRC-PROV-37-C01-HIST01,PROV-37-C01,,,historical_attribution,"١٥٣٩ - خالد بن عبد الرحمن (٥) بن بكير السلمي روى عن محمد بن سيرين ونافع وغالب القطان روى عنه ابن المبارك وعبد الرحمن بن
+مهدي ومحمد بن أبي عدي ووكيع وأبو الوليد الطيالسي سمعت أبي يقول ذلك، وسئل عنه فقال: لا بأس به.",transcribed,"Ibn Abi Hatim, al-Jarh wa al-ta'dil, vol. 3, entry 1539; local corpus part 3, page_num 341, sequence_num 1299."
+EVID-PROV-24-C01-DATA01,SRC-PROV-24-C01-DATA01,PROV-24-C01,,,other,"{""id"": 1214, ""name"": ""أَبَا حَمْزَةَ،"", ""data"": {""الاسم"": "": طلحة بن يزيد"", ""الشهرة"": ""أبو حمزة"", ""الكنية"": ""أبو حمزة"", ""النسب"": ""الأيلي، الأنصاري مولاهم، الكوفي"", ""بلد الإقامة"": ""الكوفة"", ""علاقات الراوي"": ""مولى قرظة بن كعب الأنصارى""}}",transcribed,"narrators_db.json JSON pointer /1214; identity fields only, grade excluded."
+EVID-PROV-24-C01-ID01,SRC-PROV-24-C01-ID01,PROV-24-C01,,,identity,٢٩٨٦ - خ ٤: طلحة بن يزيد الأَنْصارِيّ (٨) ، أبو حمزة الكوفي، مولى قرظة بن كعب الأَنْصارِيّ.,transcribed,"Al-Mizzi, Tahdhib al-Kamal, vol. 13, p. 446, entry 2986; local corpus part 13, page_num 446, sequence_num 6828."
+EVID-PROV-24-C01-S01-TEXT,SRC-PROV-24-C01,,PROV-24-C01-S01,,passage_text,وثقه النسائي,transcribed,"Taqrib, local corpus page_num 283, sequence_num 3028 (entry 3038); printed page image not inspected."
+EVID-PROV-24-C01-S01-ATTR,SRC-PROV-24-C01,,,PROV-24-C01-S01-A01,historical_attribution,وثقه النسائي,transcribed,"Taqrib, local corpus page_num 283, sequence_num 3028 (entry 3038); printed page image not inspected."
+EVID-PROV-24-C01-S02-TEXT,SRC-PROV-24-C01,,PROV-24-C01-S02,,passage_text,من الثالثة,transcribed,"Taqrib, local corpus page_num 283, sequence_num 3028 (entry 3038); printed page image not inspected."
+EVID-PROV-24-C01-TAQRIB-META01,SRC-PROV-24-C01,PROV-24-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ
+أرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .
+(كذا في مصدر الكتاب: موقع الدرر السنية)",transcribed,"Taqrib book_metadata.json, betaka_text; edition/author/pagination metadata."
+EVID-PROV-24-C01-TAHDHIB-META01,SRC-PROV-24-C01-ID01,PROV-24-C01,,,edition_metadata,"الكتاب: تهذيب الكمال في أسماء الرجال
+المؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ)
+حققه وضبط نصه وعلق عليه: د بشار عواد معروف
+الناشر: مؤسسة الرسالة - بيروت
+الطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)
+عدد الأجزاء: ٣٥
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"Tahdhib al-Kamal book_metadata.json, betaka_text; edition/author/pagination metadata."
+EVID-PROV-51-C01-ID01,SRC-PROV-51-C01-ID01,PROV-51-C01,,,identity,"٥٠٦٧ - د: مُحَمَّد بن إِسْمَاعِيل بن عياش (٣) ، بن سليم
+العنسي الحمصي.
+روى عَن أَبِيهِ إِسْمَاعِيل بْن عياش (د).",transcribed,"Tahdhib al-Kamal, vol. 24, pp. 483-484, entry 5067; local corpus part 24, sequence_num 12994-12995."
+EVID-PROV-51-C01-S01-TEXT,SRC-PROV-51-C01,,PROV-51-C01-S01,,passage_text,عابوا عليه أنه حدث عن أبيه بغير سماع,transcribed,"Taqrib, local corpus page_num 468, sequence_num 5727, entry 5735; printed page image not inspected."
+EVID-PROV-51-C01-S01-ATTR,SRC-PROV-51-C01,,,PROV-51-C01-S01-A01,passage_text,عابوا عليه أنه حدث عن أبيه بغير سماع,transcribed,"Taqrib, local corpus page_num 468, sequence_num 5727, entry 5735; printed page image not inspected."
+EVID-PROV-51-C01-S02-TEXT,SRC-PROV-51-C01,,PROV-51-C01-S02,,passage_text,من العاشرة,transcribed,"Taqrib, local corpus page_num 468, sequence_num 5727, entry 5735; printed page image not inspected."
+EVID-PROV-51-C01-TAQRIB-META01,SRC-PROV-51-C01,PROV-51-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على نسخة محمد عوَّامة طبعة دار الرشيد بحلب، الطبعة الأولى ١٤٠٦هـ.",transcribed,"Taqrib book_metadata.json, betaka_text; work-author, editor, edition and pagination metadata."
+EVID-PROV-51-C01-TAHDHIB-META01,SRC-PROV-51-C01-ID01,PROV-51-C01,,,edition_metadata,"الكتاب: تهذيب الكمال في أسماء الرجال
+المؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ)
+حققه وضبط نصه وعلق عليه: د بشار عواد معروف
+الناشر: مؤسسة الرسالة - بيروت
+الطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)
+عدد الأجزاء: ٣٥
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"Tahdhib al-Kamal book_metadata.json, betaka_text; edition and work-author metadata."
+EVID-PROV-51-C01-JARH-META01,SRC-PROV-51-C01-HIST01,PROV-51-C01,,,edition_metadata,"الكتاب: الجرح والتعديل
+المؤلف: أبو محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي (ت ٣٢٧ هـ)
+الناشر: مطبعة مجلس دائرة المعارف العثمانية، بحيدر آباد الدكن - الهند
+الطبعة: الأولى، ١٣٧١ هـ - ١٩٥٢ م
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"al-Jarh wa-al-taʿdil book_metadata.json, betaka_text; edition and work-author metadata."
+EVID-PROV-51-C01-JARH-ABUHATIM-CONTEXT01,SRC-PROV-51-C01-HIST01,PROV-51-C01,,,other,١٠٧٨ - محمد بن اسمعيل بن عياش روى عن أبيه روى عنه محمد بن عوف وأبو زرعة، نا عبد الرحمن قال سألت أبي عنه فقال لم يسمع من ابيه شيئا حملو على ان يحدث عنه فحدث.,transcribed,"al-Jarh wa-al-taʿdil, vol. 7, pp. 189-190, entry 1078; local corpus part 7, sequence_num 3107-3108. Context only: this earlier report names Abū Ḥātim through ʿAbd al-Raḥmān asking his father; it is not assigned as the evaluator behind Taqrīb’s collective wording."
+EVID-PROV-51-C01-TAHDHIB-ABUHATIM-CONTEXT01,SRC-PROV-51-C01-ID01,PROV-51-C01,,,other,قال أَبُو حاتم (١) : لم يسمع من أَبِيهِ شيئا، حملوه على أن يحدث فحدث.,transcribed,"Tahdhib al-Kamal, vol. 24, p. 484, entry 5067; local corpus part 24, sequence_num 12995. Context only; this distinct wording is not equated with Taqrīb’s unnamed collective."
+EVID-PROV-51-C01-TAHDHIB-ABUDAWUD-CONTEXT01,SRC-PROV-51-C01-ID01,PROV-51-C01,,,other,وَقَال أَبُو عُبَيد الآجُرِّيّ (٢) : سئل أَبُو داود عنه فقال: لم يكن بذاك، قد رأيته، ودخلت حمص غَيْر مرة وَهُوَ حي، وسألت عَمْرو ابن عُثْمَان عنه، فدفعه (٣).,transcribed,"Tahdhib al-Kamal, vol. 24, p. 484, entry 5067; local corpus part 24, sequence_num 12995. Separate al-Ajurri report concerning Abū Dāwūd; not an identification of Taqrīb’s collective."
+EVID-PROV-01-C01-ID01,SRC-PROV-01-C01-ID01,PROV-01-C01,,,identity,٢٠١٩ - جابر بن عبد الله بن عمرو بن حرام أبو عبد الله ويقال أبو محمد السلمي الأنصاري,transcribed,"al-Jarh wa-al-taʿdil, vol. 2, p. 492, entry 2019; local corpus part 2, page_num 492, sequence_num 897."
+EVID-PROV-01-C01-S01-TEXT,SRC-PROV-01-C01,,PROV-01-C01-S01,,passage_text,صحابي,transcribed,"Taqrib, local corpus page_num 136, sequence_num 863, entry 871; printed page image not inspected."
+EVID-PROV-01-C01-S02-TEXT,SRC-PROV-01-C01,,PROV-01-C01-S02,,passage_text,ابن صحابي,transcribed,"Taqrib, local corpus page_num 136, sequence_num 863, entry 871; printed page image not inspected."
+EVID-PROV-01-C01-S03-TEXT,SRC-PROV-01-C01,,PROV-01-C01-S03,,passage_text,غزا تسع عشرة غزوة,transcribed,"Taqrib, local corpus page_num 136, sequence_num 863, entry 871; printed page image not inspected."
+EVID-PROV-01-C01-S04-TEXT,SRC-PROV-01-C01,,PROV-01-C01-S04,,passage_text,ومات بالمدينة بعد السبعين,transcribed,"Taqrib, local corpus page_num 136, sequence_num 863, entry 871; printed page image not inspected."
+EVID-PROV-01-C01-S05-TEXT,SRC-PROV-01-C01,,PROV-01-C01-S05,,passage_text,وهو ابن أربع وتسعين,transcribed,"Taqrib, local corpus page_num 136, sequence_num 863, entry 871; printed page image not inspected."
+EVID-PROV-01-C01-JARH-CONTEXT01,SRC-PROV-01-C01-ID01,PROV-01-C01,,,other,٢٠١٩ - جابر بن عبد الله بن عمرو بن حرام أبو عبد الله ويقال أبو محمد السلمي الأنصاري له صحبة روى عنه سعيد بن المسيب وأبو سلمة وعطاء سمعت أبي يقول ذلك.,transcribed,"al-Jarh wa-al-taʿdil, vol. 2, p. 492, entry 2019; local corpus part 2, sequence_num 897. Context only; no separate evaluator or origin claim is inferred."
+EVID-PROV-01-C01-TAHDHIB-CONTEXT01,SRC-PROV-01-C01-HIST01,PROV-01-C01,,,other,السلمي، أَبُو عَبْد اللَّهِ، ويُقال: أَبُو عبد الرحمن، ويُقال: أَبُو مُحَمَّد المدني، صاحب رَسُول اللَّهِ ﷺ، وابن صاحبه.,transcribed,"Tahdhib al-Kamal, vol. 4, p. 444, entry 871; local corpus part 4, page_num 444, sequence_num 1958. HadithDB cites 4/443; locator discrepancy unresolved."
+EVID-PROV-01-C01-DATA01,SRC-PROV-01-C01-DATA01,PROV-01-C01,,,other,"{""id"":17,""name"":""جَابِرَ بْنَ عَبْدِ اللهِ الْأَنْصَارِيَّ"",""data"":{""الاسم"":"": جابر بن عبد الله بن عمرو بن حرام (جابر بن عبد الله بن عمرو بن حرام بن ثعلبة بن كعب بن غنم بن كعب بن سلمة بن سعد بن علي بن أسد بن ساردة بن تزيد بن جشم بن الخزرج)"",""الكنية"":""أبو عبد الله، ويقال: أبو عبد الرحمن، ويقال: أبو محمد"",""النسب"":""الخزرجي, الأنصاري، السلمي، المدني، عقبي"",""طبقة رواة التقريب"":""صحابي"",""الرتبة عند ابن حجر"":""صحابي""}}",transcribed,"narrators_db.json JSON pointer /17; selected fields as a raw-record excerpt, including the distinct grade and Taqrib-generation values."
+EVID-PROV-01-C01-TAQRIB-META01,SRC-PROV-01-C01,PROV-01-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"Taqrib book_metadata.json, betaka_text; author, editor, edition, pagination metadata."
+EVID-PROV-01-C01-JARH-META01,SRC-PROV-01-C01-ID01,PROV-01-C01,,,edition_metadata,"الكتاب: الجرح والتعديل
+المؤلف: أبو محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي (ت ٣٢٧ هـ)
+الناشر: مطبعة مجلس دائرة المعارف العثمانية، بحيدر آباد الدكن - الهند
+الطبعة: الأولى، ١٣٧١ هـ - ١٩٥٢ م
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"al-Jarh wa-al-taʿdil book_metadata.json, betaka_text; work-author, edition and pagination metadata."
+EVID-PROV-01-C01-TAHDHIB-META01,SRC-PROV-01-C01-HIST01,PROV-01-C01,,,edition_metadata,"الكتاب: تهذيب الكمال في أسماء الرجال
+المؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ)
+حققه وضبط نصه وعلق عليه: د بشار عواد معروف
+الناشر: مؤسسة الرسالة - بيروت
+الطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)
+عدد الأجزاء: ٣٥
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"Tahdhib al-Kamal book_metadata.json, betaka_text; work-author, edition and pagination metadata."
+EVID-PROV-01-C01-S01-JARH-CORR01,SRC-PROV-01-C01-ID01,,PROV-01-C01-S01,,other,له صحبة,transcribed,"al-Jarh wa-al-taʿdil, vol. 2, p. 492, entry 2019; local corpus part 2, page_num 492, sequence_num 897."
+EVID-PROV-01-C01-S01-TAHDHIB-CORR01,SRC-PROV-01-C01-HIST01,,PROV-01-C01-S01,,other,صاحب رَسُول اللَّهِ ﷺ,transcribed,"Tahdhib al-Kamal, vol. 4, p. 444, entry 871; local corpus part 4, page_num 444, sequence_num 1958. HadithDB cites 4/443; locator discrepancy unresolved."
+EVID-PROV-01-C01-S02-TAHDHIB-CORR01,SRC-PROV-01-C01-HIST01,,PROV-01-C01-S02,,other,وابن صاحبه,transcribed,"Tahdhib al-Kamal, vol. 4, p. 444, entry 871; local corpus part 4, page_num 444, sequence_num 1958. HadithDB cites 4/443; locator discrepancy unresolved."
+EVID-PROV-02-C01-ID01,SRC-PROV-02-C01-ID01,PROV-02-C01,,,identity,١١٦٥ - معمر بن راشد أبو عروة المهلبى مولى للازد سكن اليمن، وهو معمر بن أبي عمرو,transcribed,"al-Jarh wa-al-taʿdil, vol. 8, p. 255, entry 1165; local corpus part 8, page_num 255, sequence_num 3502."
+EVID-PROV-02-C01-ID02,SRC-PROV-02-C01-DATA01,PROV-02-C01,,,identity,"{""id"":27,""name"":""وَمَعْمَرٌ"",""data"":{""الاسم"":"": معمر بن راشد"",""الكنية"":""أبو عروة"",""النسب"":""الأزدي مولاهم، الحداني مولاهم، البصري، المهلبي"",""بلد الإقامة"":""اليمن، صنعاء، البصرة"",""علاقات الراوي"":""مولى عبد السلام بن عبد القدوس، أخوه: صالح بن عبد القدوس، امرأته: حليمة، زوج أخته: معن بن زائدة، وقيل: إنه مولى للمهلب بن أبي صفرة"",""تاريخ الوفاة"":""فى أول 150هـ، أو: 152 هـ، أو: 153 هـ، أو: 154هـ، 155 هـ"",""بلد الوفاة"":""اليمن، صنعاء"",""بلد الرحلة"":""صنعاء""}}",transcribed,"narrators_db.json, JSON pointer /27; grade-free biographical extract (excludes الرتبة عند ابن حجر, طبقة رواة التقريب, الرتبة عند الذهبي, and الجرح والتعديل)."
+EVID-PROV-02-C01-S01-TEXT,SRC-PROV-02-C01,,PROV-02-C01-S01,,passage_text,ثقة ثبت فاضل إلا أن في روايته عن ثابت والأعمش [وعاصم بن أبي النجود] وهشام ابن عروة شيئا وكذا فيما حدث به بالبصرة,transcribed,"Taqrib, local corpus page_num 541, sequence_num 6803, entry 6809; printed page image not inspected."
+EVID-PROV-02-C01-S02-TEXT,SRC-PROV-02-C01,,PROV-02-C01-S02,,passage_text,من كبار السابعة,transcribed,"Taqrib, local corpus page_num 541, sequence_num 6803, entry 6809; printed page image not inspected."
+EVID-PROV-02-C01-S03-TEXT,SRC-PROV-02-C01,,PROV-02-C01-S03,,passage_text,مات سنة أربع وخمسين,transcribed,"Taqrib, local corpus page_num 541, sequence_num 6803, entry 6809; printed page image not inspected."
+EVID-PROV-02-C01-S04-TEXT,SRC-PROV-02-C01,,PROV-02-C01-S04,,passage_text,وهو ابن ثمان وخمسين سنة,transcribed,"Taqrib, local corpus page_num 541, sequence_num 6803, entry 6809; printed page image not inspected."
+EVID-PROV-02-C01-S01-ATTR01,SRC-PROV-02-C01,,PROV-02-C01-S01,PROV-02-C01-S01-A01,passage_text,ثقة ثبت فاضل إلا أن في روايته عن ثابت والأعمش [وعاصم بن أبي النجود] وهشام ابن عروة شيئا وكذا فيما حدث به بالبصرة,transcribed,"Taqrib, local corpus p. 541, entry 6809; no evaluator is named in this grade passage."
+EVID-PROV-02-C01-TAQRIB-META01,SRC-PROV-02-C01,PROV-02-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"Taqrib book_metadata.json, betaka_text; author, editor, edition, pagination metadata."
+EVID-PROV-02-C01-JARH-META01,SRC-PROV-02-C01-ID01,PROV-02-C01,,,edition_metadata,"الكتاب: الجرح والتعديل
+المؤلف: أبو محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي (ت ٣٢٧ هـ)
+الناشر: مطبعة مجلس دائرة المعارف العثمانية، بحيدر آباد الدكن - الهند
+الطبعة: الأولى، ١٣٧١ هـ - ١٩٥٢ م
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"al-Jarh wa-al-taʿdil book_metadata.json, betaka_text; work-author, edition and pagination metadata."
+EVID-PROV-02-C01-TAHDHIB-META01,SRC-PROV-02-C01-HIST01,PROV-02-C01,,,edition_metadata,"الكتاب: تهذيب الكمال في أسماء الرجال
+المؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ)
+حققه وضبط نصه وعلق عليه: د بشار عواد معروف
+الناشر: مؤسسة الرسالة - بيروت
+الطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)
+عدد الأجزاء: ٣٥
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"Tahdhib al-Kamal book_metadata.json, betaka_text; work-author, edition and pagination metadata."
+EVID-PROV-02-C01-DATA01,SRC-PROV-02-C01-DATA01,PROV-02-C01,,,other,"{""id"":27,""name"":""وَمَعْمَرٌ"",""data"":{""الاسم"":"": معمر بن راشد"",""الكنية"":""أبو عروة"",""النسب"":""الأزدي مولاهم، الحداني مولاهم، البصري، المهلبي"",""بلد الإقامة"":""اليمن، صنعاء، البصرة"",""تاريخ الوفاة"":""فى أول 150هـ، أو: 152 هـ، أو: 153 هـ، أو: 154هـ، 155 هـ"",""طبقة رواة التقريب"":""كبار السابعة"",""الرتبة عند ابن حجر"":""ثقة ثبت فاضل، إلا أن في روايته عن ثابت والأعمش وعاصم بن أبي النجود، وهشام بن عروة شيئا، وكذا فيما حدث به بالبصرة"",""الجرح والتعديل"":{""ابن حجر"":[""... [تقريب التهذيب (1/ 961)]""]}}}",transcribed,"narrators_db.json, JSON pointer /27; selected original fields. Raw dataset record, not historical corroboration."
+EVID-PROV-02-C01-TAQRIB-EDITORIAL01,SRC-PROV-02-C01-ONLINE01,PROV-02-C01,,,edition_metadata,٦٨٠٩ - ((إلا أن في روايته ...)) يضاف: وعاصم بن أبي النَّجود، كما في آخر ترجمته من ((التهذيب)).,transcribed,"ScribeTools digital transcription of Awwamah Taqrib, p. 542, note on entry 6809; no printed page image inspected."
+EVID-PROV-02-C01-HIST-CONTEXT01,SRC-PROV-02-C01-HIST01,PROV-02-C01,,,other,وقال يحيى بن معين: ... ومعمر عن ثابت ضعيف. وقال أبو حاتم: ما حدث معمر بالبصرة فيه أغاليط، وهو صالح الحديث.,transcribed,"Tahdhib al-Kamal, vol. 28, pp. 309-310, entry 6104; digital transcription, print image not inspected."
+EVID-PROV-04-C01-TAQRIB-META01,SRC-PROV-04-C01,PROV-04-C01,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ
+أرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .
+(كذا في مصدر الكتاب: موقع الدرر السنية)",transcribed,"Taqrib book_metadata.json, betaka_text; author, editor, edition, pagination metadata."
+EVID-PROV-04-C02-TAQRIB-META01,SRC-PROV-04-C02,PROV-04-C02,,,edition_metadata,"الكتاب: تقريب التهذيب
+المؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)
+المحقق: محمد عوامة
+الناشر: دار الرشيد - سوريا
+الطبعة: الأولى، ١٤٠٦ - ١٩٨٦
+عدد الصفحات: ٧٦٥
+[ترقيم الكتاب موافق للمطبوع]
+اعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ
+أرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .
+(كذا في مصدر الكتاب: موقع الدرر السنية)",transcribed,"Taqrib book_metadata.json, betaka_text; author, editor, edition, pagination metadata."
+EVID-PROV-04-C01-JARH-META01,SRC-PROV-04-C01-ID01,PROV-04-C01,,,edition_metadata,"الكتاب: الجرح والتعديل
+المؤلف: أبو محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي (ت ٣٢٧ هـ)
+الناشر: مطبعة مجلس دائرة المعارف العثمانية، بحيدر آباد الدكن - الهند
+الطبعة: الأولى، ١٣٧١ هـ - ١٩٥٢ م
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"al-Jarh wa-al-taʿdil book_metadata.json, betaka_text; work-author, edition and pagination metadata."
+EVID-PROV-04-C01-TAHDHIB-META01,SRC-PROV-04-C01-HIST01,PROV-04-C01,,,edition_metadata,"الكتاب: تهذيب الكمال في أسماء الرجال
+المؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ)
+حققه وضبط نصه وعلق عليه: د بشار عواد معروف
+الناشر: مؤسسة الرسالة - بيروت
+الطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)
+عدد الأجزاء: ٣٥
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"Tahdhib al-Kamal book_metadata.json, betaka_text; work-author, edition and pagination metadata."
+EVID-PROV-04-C02-TAHDHIB-META01,SRC-PROV-04-C02-ID01,PROV-04-C02,,,edition_metadata,"الكتاب: تهذيب الكمال في أسماء الرجال
+المؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ)
+حققه وضبط نصه وعلق عليه: د بشار عواد معروف
+الناشر: مؤسسة الرسالة - بيروت
+الطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)
+عدد الأجزاء: ٣٥
+[ترقيم الكتاب موافق للمطبوع]",transcribed,"Tahdhib al-Kamal book_metadata.json, betaka_text; work-author, edition and pagination metadata."
+EVID-PROV-04-C01-ID01,SRC-PROV-04-C01-ID01,PROV-04-C01,,,identity,٥٤٦ - قيس بن حفص بن القعقاع الدارمي بصرى أبو محمد مولى روى عن أبي عوانة وعبد الواحد بن زياد ومسلمة بن علقمة وبشر بن المفضل ومعتمر ابن سليمان وخالد بن الحارث ودلهم بن دهثم العجلى روى عنه أبي وأبو زرعة ثنا عبد الرحمن قال سئل أبي عنه فقال شيخ.,transcribed,"al-Jarh wa-al-taʿdil, vol. 7, p. 95, entry 546; local corpus part 7, page_num 95, sequence_num 3013."
+EVID-PROV-04-C01-ID02,SRC-PROV-04-C01-DATA01,PROV-04-C01,,,identity,"{""id"":278,""name"":""قَيْسُ بْنُ حَفْصٍ"",""data"":{""الاسم"":"": قيس بن حفص بن القعقاع"",""الكنية"":""أبو محمد"",""النسب"":""التميمي, الدارمي مولاهم, البصري"",""علاقات الراوي"":""مولى الدارميين"",""تاريخ الوفاة"":""227 هـ""}}",transcribed,"narrators_db.json, JSON pointer /278; grade-free biographical extract (excludes الرتبة عند ابن حجر, طبقة رواة التقريب, and الجرح والتعديل)."
+EVID-PROV-04-C01-DATA01,SRC-PROV-04-C01-DATA01,PROV-04-C01,,,other,"{""id"":278,""name"":""قَيْسُ بْنُ حَفْصٍ"",""data"":{""الاسم"":"": قيس بن حفص بن القعقاع"",""الكنية"":""أبو محمد"",""النسب"":""التميمي, الدارمي مولاهم, البصري"",""علاقات الراوي"":""مولى الدارميين"",""تاريخ الوفاة"":""227 هـ"",""طبقة رواة التقريب"":""العاشرة"",""الرتبة عند ابن حجر"":""ثقة له أفراد"",""الجرح والتعديل"":{""أبو حاتم الرازي"":[""ثنا عبد الرحمن قال: سئل أبي عنه فقال: شيخ[الجرح والتعديل لابن أبي حاتم (7/ 95)]"",""وقال أبو حاتم: شيخ[تهذيب التهذيب (3/ 446)]"",""وقال أبو حاتم: شيخ[تهذيب الكمال (24/ 21)]""],""ابن حبان"":[""وذكره ابن حبان في \"" الثقات \""، وقال: يغرب[تهذيب التهذيب (3/ 446)]"",""يغرب[الثقات (9/ 15)]""],""ابن حجر"":[""ثقة له أفراد[تقريب التهذيب (1/ 803)]""],""الدارقطني"":[""وقال الدارقطني: ثقة[تهذيب التهذيب (3/ 446)]""],""العجلي"":[""وقال العجلي: لا بأس به، كتبت عنه شيئا يسيرا[تهذيب التهذيب (3/ 446)]"",""وقال العجلي: لا بأس به، كتبت عنه شيئا يسيرا[تهذيب الكمال (24/ 21)]""],""يحيى بن معين"":[""قال يحيى بن معين: ثقة[تهذيب الكمال (24/ 21)]"",""قال ابن معين: ثقة[تهذيب التهذيب (3/ 446)]""]}}}",transcribed,"narrators_db.json, JSON pointer /278; complete original raw record retained for auditability (not independent historical corroboration)."
+EVID-PROV-04-C01-HIST-CONTEXT01,SRC-PROV-04-C01-HIST01,PROV-04-C01,,,other,٤٨٩٩ - خ صد: قَيْس بن حَفْص بن القعقاع التَّمِيمِيّ الدارمي، مولاهم، أبو محمد البَصْرِيّ. ... قال يَحْيَى بْن مَعِين: ثقة. وَقَال العجلي: لا بأس بِهِ، كتبت عنه شيئا يسيرا. وَقَال أَبُو حاتم: شيخ. قال الْبُخَارِيّ مات سنة سبع وعشرين ومئتين أو نحوها.,transcribed,"Tahdhib al-Kamal, vol. 24, pp. 21-23, entry 4899 (sequences 12534-12536); digital transcription, print image not inspected. Separate historical context only; potential literary dependence noted."
+EVID-PROV-04-C01-S01-TEXT,SRC-PROV-04-C01,,PROV-04-C01-S01,,passage_text,ثقة له أفراد,transcribed,"Taqrib, local corpus page_num 456, sequence_num 5554, entry 5569; printed page image not inspected."
+EVID-PROV-04-C01-S02-TEXT,SRC-PROV-04-C01,,PROV-04-C01-S02,,passage_text,من العاشرة,transcribed,"Taqrib, local corpus page_num 456, sequence_num 5554, entry 5569; printed page image not inspected."
+EVID-PROV-04-C01-S03-TEXT,SRC-PROV-04-C01,,PROV-04-C01-S03,,passage_text,مات سنة سبع وعشرين,transcribed,"Taqrib, local corpus page_num 456, sequence_num 5554, entry 5569; printed page image not inspected."
+EVID-PROV-04-C01-S01-ATTR01,SRC-PROV-04-C01,,PROV-04-C01-S01,PROV-04-C01-S01-A01,passage_text,ثقة له أفراد,transcribed,"Taqrib, local corpus p. 456, sequence 5554, entry 5569; no evaluator is named in this grade passage."
+EVID-PROV-04-C02-ID01,SRC-PROV-04-C02-ID01,PROV-04-C02,,,identity,٤٩٠٠ - تمييز قَيْس بن حَفْص، بصري أيضا، يكنى أَبَا مُحَمَّد، نزل مصر، وكان حاجبا لبكار بْن قتيبة الْقَاضِي. ذكره أَبُو سَعِيد بْن يونس، وَقَال: بصري، قدم مصر، وقد كتب عنه. توفي فِي ذي الحجة سنة إحدى وثمانين ومئتين. ذكرناه للتمييز بينهما.,transcribed,"Tahdhib al-Kamal, vol. 24, p. 24, entry 4900 tamyiz (sequence 12537); identifies rejected homonym."
+EVID-PROV-04-C02-S01-TEXT,SRC-PROV-04-C02,,PROV-04-C02-S01,,passage_text,مقبول,transcribed,"Taqrib, local corpus page_num 456, sequence_num 5554, entry 5570 (rejected homonym candidate)."
+EVID-PROV-04-C02-S02-TEXT,SRC-PROV-04-C02,,PROV-04-C02-S02,,passage_text,من الثانية عشرة,transcribed,"Taqrib, local corpus page_num 456, sequence_num 5554, entry 5570 (rejected homonym candidate)."
+EVID-PROV-04-C02-S03-TEXT,SRC-PROV-04-C02,,PROV-04-C02-S03,,passage_text,مات سنة إحدى وثمانين,transcribed,"Taqrib, local corpus page_num 456, sequence_num 5554, entry 5570 (rejected homonym candidate)."
+EVID-PROV-04-C02-S01-ATTR01,SRC-PROV-04-C02,,PROV-04-C02-S01,PROV-04-C02-S01-A01,passage_text,مقبول,transcribed,"Taqrib, local corpus p. 456, sequence 5554, entry 5570 (rejected homonym candidate); no evaluator named."

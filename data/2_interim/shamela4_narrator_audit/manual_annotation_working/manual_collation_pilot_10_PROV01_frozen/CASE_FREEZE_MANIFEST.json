@@ -1,0 +1,181 @@
+{
+  "package_name": "manual_collation_pilot_10_PROV01_frozen",
+  "schema_version": "2.2",
+  "snapshot_created_utc": "2026-11-13T07:24:08Z",
+  "approval_status": "user_approved",
+  "approval_date": "2026-11-13",
+  "freeze_scope": [
+    "PROV-01-C01"
+  ],
+  "statement_ids": [
+    "PROV-01-C01-S01",
+    "PROV-01-C01-S02",
+    "PROV-01-C01-S03",
+    "PROV-01-C01-S04",
+    "PROV-01-C01-S05"
+  ],
+  "source_working_copy": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_review_round_1_working",
+  "source_working_copy_manifest_sha256": "1382038d913879e304e9ec2bc1ef991c15423a373c986bd777403e430f3585ce",
+  "source_research_memo": "source_research/PROV-01_source_research.md",
+  "source_research_memo_sha256": "402cabdab21eee105223834aae7979c11e8f698080d277ef48d40df0af7b7f67",
+  "decisions": {
+    "identity_match_status": "confirmed",
+    "candidate_field_source_correspondence": "exact",
+    "original_dataset_value": {
+      "field": "الرتبة عند ابن حجر",
+      "verbatim": "صحابي",
+      "dataset_narrator_id": "17"
+    },
+    "candidate_entry": {
+      "source_work": "Taqrib al-Tahdhib",
+      "entry_number": "871",
+      "local_corpus_page": "136",
+      "source_record_id": "SRC-PROV-01-C01"
+    },
+    "PROV-01-C01-S01": {
+      "type": "descriptive_or_generational_status",
+      "text": "صحابي",
+      "taqrib_rank_number": null,
+      "rank_status": "unranked",
+      "target_task_scope": "status_only_candidate",
+      "historical_input_eligibility": "not_applicable",
+      "corroboration_status": "unresolved_corroboration",
+      "evidence_record_ids": [
+        "EVID-PROV-01-C01-S01-TEXT",
+        "EVID-PROV-01-C01-S01-JARH-CORR01",
+        "EVID-PROV-01-C01-S01-TAHDHIB-CORR01"
+      ]
+    },
+    "PROV-01-C01-S02": {
+      "type": "biographical_or_factual_statement",
+      "text": "ابن صحابي",
+      "rank_status": "not_applicable",
+      "target_task_scope": "not_in_defined_task",
+      "corroboration_status": "unresolved_corroboration",
+      "evidence_record_ids": [
+        "EVID-PROV-01-C01-S02-TEXT",
+        "EVID-PROV-01-C01-S02-TAHDHIB-CORR01"
+      ]
+    },
+    "PROV-01-C01-S03": {
+      "type": "biographical_or_factual_statement",
+      "text": "غزا تسع عشرة غزوة",
+      "rank_status": "not_applicable",
+      "target_task_scope": "not_in_defined_task",
+      "corroboration_status": "not_examined"
+    },
+    "PROV-01-C01-S04": {
+      "type": "biographical_or_factual_statement",
+      "text": "ومات بالمدينة بعد السبعين",
+      "rank_status": "not_applicable",
+      "target_task_scope": "not_in_defined_task",
+      "corroboration_status": "not_examined"
+    },
+    "PROV-01-C01-S05": {
+      "type": "biographical_or_factual_statement",
+      "text": "وهو ابن أربع وتسعين",
+      "rank_status": "not_applicable",
+      "target_task_scope": "not_in_defined_task",
+      "corroboration_status": "not_examined"
+    },
+    "S00": "superseded_placeholder",
+    "attribution_status_for_S01_to_S05": {
+      "passage_evaluator_naming_status": "not_applicable",
+      "historical_evaluator_attribution_status": "not_applicable",
+      "surviving_wording_author_value_status": "unknown",
+      "compiler_authorship_status": "unresolved",
+      "transmission_route_status": "unresolved"
+    },
+    "corroboration_note": "Textual evidence is linked for S01 and S02; dependence remains unresolved and no independent corroboration is claimed."
+  },
+  "locator_note": "Local digital corpus locators are recorded; HadithDB discrepancies remain unresolved and printed source pages were not visually inspected.",
+  "scope_note": "Only PROV-01-C01 is frozen. Other cases in working_copy_snapshot are contextual, remain at their prior statuses, and are not approved by this package.",
+  "limitations": [
+    "AI-assisted single-reviewer feasibility annotation; not independent expert validation or inter-reviewer agreement.",
+    "Textual correspondence does not establish historical attribution, source independence, or the origin of the HadithDB value.",
+    "S01 is Companion status, not an ordinary reliability-grade target; no first-pass numeric rank is assigned.",
+    "No narrator-reliability conclusion or historical-input eligibility decision is established.",
+    "The full package-wide validator remains blocked by an unrelated pre-existing PROV-10 source metadata issue and omitted migration/legacy tables; PROV-01 case-scoped validation passed."
+  ],
+  "verification": {
+    "code_test_command": "python -m unittest discover -s dataset_discovery/target_feasibility -p \"test_*.py\"",
+    "tests_run": 72,
+    "result": "passed",
+    "run_utc": "2026-11-13T07:24:08Z",
+    "prov01_schema_enum_and_row_link_validation": "passed",
+    "package_wide_validator": "not_passed_due_to_pre_existing_issue_outside_PROV01",
+    "package_wide_validator_note": "Strict validator stopped at sources.csv row 13: SRC-PROV-10-C01-ID01 has blank source_work_id; mutable working copy also lacks migration_mapping.csv and legacy_v1_values.csv required by validator. No unrelated records changed.",
+    "freeze_file_hashes": "passed",
+    "working_copy_manifest_sidecar": "passed"
+  },
+  "files": {
+    "README.md": {
+      "bytes": 3599,
+      "sha256": "7dcc40094832bc5bd0cb0794327084fbff6ddad449fe0cb749e6f03142878c55"
+    },
+    "source_research/PROV-01_source_research.md": {
+      "bytes": 9076,
+      "sha256": "402cabdab21eee105223834aae7979c11e8f698080d277ef48d40df0af7b7f67"
+    },
+    "working_copy_snapshot/attribution_links.csv": {
+      "bytes": 7724,
+      "sha256": "8f137c7d5cf3690fba5dfd7fe6b046a3669ad6a196d5446df4a575d3d9772272"
+    },
+    "working_copy_snapshot/candidate_entries.csv": {
+      "bytes": 17411,
+      "sha256": "db4e3fe4a295b7dcfbce6b45fc11bf3054adc16b8aede211460cee08f0067b8e"
+    },
+    "working_copy_snapshot/cases.csv": {
+      "bytes": 2284,
+      "sha256": "b0a139e550009f57c44c4c1b4011a81c225f241200935ca2a83b20e22773617b"
+    },
+    "working_copy_snapshot/date_claims.csv": {
+      "bytes": 119,
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab"
+    },
+    "working_copy_snapshot/feature_sources.csv": {
+      "bytes": 195,
+      "sha256": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1"
+    },
+    "working_copy_snapshot/INDEPENDENT_TAQRIB_PILOT10_SOURCE_COLLATION.md": {
+      "bytes": 19270,
+      "sha256": "bedd142fb434fac0b403fb9899a729698cdcea29dffa79b41129000fd48a5955"
+    },
+    "working_copy_snapshot/README.md": {
+      "bytes": 26916,
+      "sha256": "fc614e4bfeebafaab26f290f11eef3dc3726ff4da050e2ee5c257f2174a03f68"
+    },
+    "working_copy_snapshot/source_evidence.csv": {
+      "bytes": 29303,
+      "sha256": "89c7958d17ec1dc1ddd79ac2fc1d6529a8fb464b1a5774d3ad5d75decbaf7e68"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_MANIFEST.json": {
+      "bytes": 2545,
+      "sha256": "7915dcf2805228d8369f95720979abf85bf81606d4723a065b4a1f585cf30df1"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_MANIFEST.sha256": {
+      "bytes": 87,
+      "sha256": "b3f3b2d1cb7d49cdba387884b04ece7703bdf96d6527c32ed0ee0818e6a1452e"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_README.md": {
+      "bytes": 3184,
+      "sha256": "9d006684ab790f7136640d796cd5218b519b760b86e64bffdf8b77a8b7090f36"
+    },
+    "working_copy_snapshot/sources.csv": {
+      "bytes": 14834,
+      "sha256": "a9bd11d8f12b907f9b74316950fd9394d92dc649ecb9c0dab22a3da4802e1c8c"
+    },
+    "working_copy_snapshot/statements.csv": {
+      "bytes": 20260,
+      "sha256": "d996083df5dfe30cd7a56a6e0f3bcbf1d406f8416b58132487a34874c08f24cb"
+    },
+    "working_copy_snapshot/WORKING_COPY_MANIFEST.json": {
+      "bytes": 24338,
+      "sha256": "1382038d913879e304e9ec2bc1ef991c15423a373c986bd777403e430f3585ce"
+    },
+    "working_copy_snapshot/WORKING_COPY_MANIFEST.sha256": {
+      "bytes": 94,
+      "sha256": "c9c3032ea1c9cb8c55301b76f4621d58894b007b0131baa1a7c30bda6c7d947f"
+    }
+  }
+}

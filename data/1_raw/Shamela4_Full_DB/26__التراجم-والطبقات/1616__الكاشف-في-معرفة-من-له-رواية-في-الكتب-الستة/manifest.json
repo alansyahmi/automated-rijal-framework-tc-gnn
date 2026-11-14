@@ -1,0 +1,33 @@
+{
+  "book_id": 1616,
+  "shamela_id": 2171,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "الكاشف في معرفة من له رواية في الكتب الستة",
+  "page_count": 1218,
+  "toc_count": 106,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "4fce530987ea73242de98a3e4170286b514aa162a7d41a0d87700b6f3dc291ef",
+      "bytes": 2278218,
+      "rows": 1218
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "ee76494e49f79fb53fbcd6a2b1e02c2502e3ab32cfdde398773ef67fba5bd8f6",
+      "bytes": 13812,
+      "rows": 106
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "40fd358c716fa8764e6a25c15d40948c63900ab2f4d135073ae3657aedcef348",
+      "bytes": 1436,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

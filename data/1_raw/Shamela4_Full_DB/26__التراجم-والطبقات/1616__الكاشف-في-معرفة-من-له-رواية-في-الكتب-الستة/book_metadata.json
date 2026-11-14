@@ -1,0 +1,36 @@
+{
+  "book_id": 1616,
+  "shamela_id": 2171,
+  "title_ar": "الكاشف في معرفة من له رواية في الكتب الستة",
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "category_id": 26,
+  "category_name_ar": "التراجم والطبقات",
+  "main_author_id": 362,
+  "main_author_name_ar": "شمس الدين الذهبي",
+  "main_author_death_hijri": 748,
+  "main_author_death_hijri_text": "748",
+  "authors_text": "362",
+  "authors": [
+    {
+      "author_id": 362,
+      "role": "author",
+      "name_ar": "شمس الدين الذهبي",
+      "death_hijri": 748,
+      "death_hijri_text": "748"
+    }
+  ],
+  "hijri_era": 748,
+  "printed": true,
+  "is_hidden": false,
+  "parent_id": null,
+  "group_id": null,
+  "version_major": 1,
+  "version_minor": 1,
+  "betaka_text": "الكتاب: الكاشف في معرفة من له رواية في الكتب الستة\rالمؤلف: شمس الدين أبو عبد الله محمد بن أحمد بن عثمان بن قَايْماز الذهبي (ت ٧٤٨هـ)\rالمحقق: محمد عوامة أحمد محمد نمر الخطيب\rالناشر: دار القبلة للثقافة الإسلامية - مؤسسة علوم القرآن، جدة\rالطبعة: الأولى، ١٤١٣ هـ - ١٩٩٢ م\r[ترقيم الكتاب موافق للمطبوع]",
+  "meta": {
+    "date": "08121431"
+  },
+  "volume_count_observed": 2,
+  "has_multi_part": true
+}

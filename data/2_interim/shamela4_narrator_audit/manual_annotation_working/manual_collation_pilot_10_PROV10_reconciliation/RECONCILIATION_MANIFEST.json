@@ -1,0 +1,48 @@
+{
+  "package_name": "manual_collation_pilot_10_PROV10_reconciliation",
+  "schema_version": "2.2",
+  "created_utc": "2026-11-12T13:23:24Z",
+  "candidate_entry_id": "PROV-10-C01",
+  "first_pass_frozen_before_prior_annotations_opened": true,
+  "reconciliation_scope": "Compare earlier PROV-10 annotation to the frozen AI-assisted first-pass record.",
+  "values_written_back_to_either_source": false,
+  "report": {
+    "bytes": 5454,
+    "path": "PROV10_PASS1_RECONCILIATION.md",
+    "sha256": "98f99179ff786869b6dc5d8f2e25c60b7d77a265d5bfcbddb94f912c9be4dc9d"
+  },
+  "inputs": [
+    {
+      "bytes": 22596,
+      "path": "dataset_discovery/target_feasibility/manual_collation_pilot_10/MANUAL_COLLATION_PILOT_10_WORKING.csv",
+      "sha256": "4b3f731b5a799c1df499c57391f4b502fcee84f129c2bae2e77325e738a04548"
+    },
+    {
+      "bytes": 91351,
+      "path": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_v2_2_impl_r2/legacy_v1_values.csv",
+      "sha256": "894e915746dfdf902ea38bc392608321339e9776aeedc4ecdca5822dd62611d7"
+    },
+    {
+      "bytes": 3483,
+      "path": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV10_pass1_frozen\\PASS1_MANIFEST.json",
+      "sha256": "0c6d0b85f2675b2abc80a18f344602993907e92763255209703b023517bb83ee"
+    },
+    {
+      "bytes": 86,
+      "path": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV10_pass1_frozen\\PASS1_MANIFEST.sha256",
+      "sha256": "b7711f6b44363f410bc0d9ded7e0810350f56339146a552dec02907041204aec"
+    },
+    {
+      "bytes": 4590,
+      "path": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV10_pass1_frozen\\WORKING_COPY_MANIFEST.json",
+      "sha256": "e3946e5169965ce53779dfe1b2b4a7fb2212b803052d18f1a0f81ae5e4048b32"
+    }
+  ],
+  "unresolved_topics": [
+    "Taqrib rank mapping (legacy 3 vs first-pass unranked)",
+    "passage-level authorship and grade attribution",
+    "editorial-material finding",
+    "eligibility mapping",
+    "corroboration status"
+  ]
+}

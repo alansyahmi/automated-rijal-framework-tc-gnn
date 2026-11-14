@@ -1,39 +1,30 @@
-# Dataset Discovery and Source Audit
+# Dataset Discovery
 
-## Purpose
+Use this directory to assess candidate datasets and audit their source evidence before dataset construction or modelling. Discovery is not approval: each candidate needs a record-level review of schema, provenance, attribution, identity linking, text integrity, coverage, leakage, and reproducibility.
 
-This directory records candidate datasets and the underlying primary sources. Discovery is not selection: no candidate is approved for modelling until it passes a record-level audit.
+## Start here
 
-## Audit each candidate in this order
+1. Review the [candidate dataset register](CANDIDATE_DATASETS.csv) to see what is under consideration.
+2. Record access, licence, source version, and audit findings in the [source register template](SOURCE_REGISTER_TEMPLATE.csv).
+3. Open the dataset guide below for its current evidence, tools, and next research step.
 
-1. **Access and licence:** Can the data be accessed lawfully? What can be downloaded, transformed, stored, and redistributed?
-2. **Schema:** What are the actual tables, fields, keys, and relations? Do not rely on promotional descriptions alone.
-3. **Provenance:** Can each statement be traced to a named work, edition, and locator?
-4. **Attribution:** Is the critic identified? Is the attribution explicit in the source or inferred by a pipeline?
-5. **Narrator linking:** How is a statement linked to a narrator? Are aliases, homonyms, kunyas, nisbas, and name variants handled?
-6. **Text integrity:** Is the original Arabic preserved? Are quotation boundaries and context retained? What normalisation was applied?
-7. **Coverage and missingness:** What is included, omitted, unresolved, duplicated, or uncertain?
-8. **Independence and leakage:** Does the candidate contain the same reference grades that will be predicted? Does it reproduce or derive from the target source?
-9. **Reproducibility:** Can the source version and transformation pipeline be reconstructed?
+## Dataset workspaces
 
-## Sampling protocol
+| Dataset | What is here | Current guide |
+| --- | --- | --- |
+| **Shamela4** | Narrator metadata audits, tuple-structure analysis, and the frozen claim-level human annotation pilot. | [Shamela4 guide](Shamela4/README.md) |
+| **HadithDB** | Quote extraction, profiling, duplicate-structure audits, and audit findings. | [HadithDB audit](hadithdb/HADITHDB_AUDIT.md) |
+| **HKG** | Audit findings for the HKG candidate dataset. | [HKG audit](HKG/HKG_AUDIT.md) |
 
-For each candidate, inspect a stratified sample that includes:
+Dataset-specific scripts and reference documents remain in their dataset folder. Generated analyses and versioned review packages belong under `data/2_interim/`, not alongside the source scripts.
 
-- clearly attributed positive and negative evaluations;
-- ambiguous or compound expressions;
-- multiple critics evaluating the same narrator;
-- multiple narrators with similar names;
-- missing or uncertain narrator links;
-- records with and without source locators;
-- cases where the candidate's grade appears to match the proposed target.
+## Evidence standards
 
-Record the sampling method, sample size, date, and all exceptions. Manually verify selected records against the underlying source text.
+- Preserve raw Arabic and make transformations traceable to their input and script versions.
+- Distinguish a database attachment or group label from a historically attributed speaker or claim subject.
+- Do not treat a citation, source ID, precomputed grade, or repeated quotation as proof of bibliographic identity or independent evaluation.
+- Keep unresolved findings explicit. Automated diagnostics organize review; they do not make historical judgements.
 
-## Important separation
+## Research sequence
 
-Maintain separate entities for source works, passages, critics, narrator identities, evaluative statements, reference grades, and transmission relations. A dataset's precomputed grade must not be silently treated as the same thing as a critic's statement.
-
-## Current candidates
-
-See [CANDIDATE_DATASETS.csv](CANDIDATE_DATASETS.csv) and record audited source details in [SOURCE_REGISTER_TEMPLATE.csv](SOURCE_REGISTER_TEMPLATE.csv).
+**Source and schema audit → manual evidence validation → target definition → dataset construction → graph design → modelling.** Do not build labels or a graph until the evidence and research target have been defined and validated.

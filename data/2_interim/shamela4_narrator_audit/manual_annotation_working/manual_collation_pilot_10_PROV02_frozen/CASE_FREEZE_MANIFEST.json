@@ -1,0 +1,149 @@
+{
+  "package_name": "manual_collation_pilot_10_PROV02_frozen",
+  "schema_version": "2.2",
+  "snapshot_created_utc": "2026-11-13T09:44:34Z",
+  "pass1_snapshot_origin": "original_contemporaneous_pass1_freeze",
+  "approval_status": "user_approved",
+  "approval_date": "2026-11-13",
+  "freeze_scope": [
+    "PROV-02-C01"
+  ],
+  "statement_ids": [
+    "PROV-02-C01-S01",
+    "PROV-02-C01-S02",
+    "PROV-02-C01-S03",
+    "PROV-02-C01-S04"
+  ],
+  "source_working_copy": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_review_round_1_working",
+  "source_working_copy_manifest_sha256": "8432809d989992503ad2935ec2fc04e5707afccc92b30142e6d61cbdb1b9bc1a",
+  "source_research_memo": "source_research/PROV-02_source_research.md",
+  "source_research_memo_sha256": "ad5e6e28c366c298dfe1c8387bb1c13ecb3131eaf6bedfe6c62eeafc4ab2295e",
+  "decisions": {
+    "identity_match_status": "confirmed",
+    "candidate_field_source_correspondence": "minor_variation",
+    "original_dataset_value": {
+      "field": "الرتبة عند ابن حجر",
+      "verbatim": "ثقة ثبت فاضل، إلا أن في روايته عن ثابت والأعمش وعاصم بن أبي النجود، وهشام بن عروة شيئا، وكذا فيما حدث به بالبصرة",
+      "dataset_narrator_id": "27"
+    },
+    "candidate_entry": {
+      "source_work": "Taqrib al-Tahdhib",
+      "entry_number": "6809",
+      "local_corpus_page": "541",
+      "local_corpus_sequence": "6803",
+      "source_record_id": "SRC-PROV-02-C01"
+    },
+    "statements": {
+      "PROV-02-C01-S01": {
+        "type": "qualified_narrator_grade",
+        "text": "ثقة ثبت فاضل إلا أن في روايته عن ثابت والأعمش [وعاصم بن أبي النجود] وهشام ابن عروة شيئا وكذا فيما حدث به بالبصرة",
+        "taqrib_rank_number": null,
+        "rank_status": "unranked",
+        "target_task_scope": "unresolved",
+        "historical_input_eligibility": "not_assessed",
+        "corroboration_status": "unresolved_corroboration"
+      },
+      "PROV-02-C01-S02": {
+        "type": "descriptive_or_generational_status",
+        "text": "من كبار السابعة",
+        "rank_status": "not_applicable",
+        "target_task_scope": "not_in_defined_task"
+      },
+      "PROV-02-C01-S03": {
+        "type": "biographical_or_factual_statement",
+        "text": "مات سنة أربع وخمسين",
+        "rank_status": "not_applicable",
+        "target_task_scope": "not_in_defined_task"
+      },
+      "PROV-02-C01-S04": {
+        "type": "biographical_or_factual_statement",
+        "text": "وهو ابن ثمان وخمسين سنة",
+        "rank_status": "not_applicable",
+        "target_task_scope": "not_in_defined_task"
+      }
+    }
+  },
+  "locator_note": "Taqrib local corpus p. 541 (sequence 6803) vs HadithDB 1/961 unresolved; Awwamah digital p. 542 footnote documented; printed page image not inspected.",
+  "scope_note": "Only PROV-02-C01 is frozen. Other cases in working_copy_snapshot are contextual only and not approved by this package.",
+  "limitations": [
+    "AI-assisted single-reviewer feasibility annotation; not independent expert validation or inter-reviewer agreement.",
+    "Textual correspondence does not establish historical attribution, source independence, or the origin of the HadithDB value.",
+    "S01 remains unranked with target_task_scope=unresolved; compound qualification not collapsed into scalar weakness.",
+    "Printed page images were not inspected."
+  ],
+  "verification": {
+    "prov02_schema_enum_and_row_link_validation": "passed",
+    "freeze_file_hashes": "passed",
+    "working_copy_manifest_sidecar": "passed"
+  },
+  "files": {
+    "README.md": {
+      "bytes": 3374,
+      "sha256": "0d4a29f045483ba03eca476736a43569c16e4e75c4fd89c44c9715e20dc447d6"
+    },
+    "source_research/PROV-02_source_research.md": {
+      "bytes": 7658,
+      "sha256": "ad5e6e28c366c298dfe1c8387bb1c13ecb3131eaf6bedfe6c62eeafc4ab2295e"
+    },
+    "working_copy_snapshot/attribution_links.csv": {
+      "bytes": 9441,
+      "sha256": "5175d041c15f94f06edd0b67911fcd60a7729fb15b22f430869fb65299f4105d"
+    },
+    "working_copy_snapshot/candidate_entries.csv": {
+      "bytes": 22997,
+      "sha256": "4be1214d4684499fa9a503d0637d3470e72f66f6ea203bb5988963fba9f0a7e6"
+    },
+    "working_copy_snapshot/cases.csv": {
+      "bytes": 2284,
+      "sha256": "b0a139e550009f57c44c4c1b4011a81c225f241200935ca2a83b20e22773617b"
+    },
+    "working_copy_snapshot/date_claims.csv": {
+      "bytes": 119,
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab"
+    },
+    "working_copy_snapshot/feature_sources.csv": {
+      "bytes": 195,
+      "sha256": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1"
+    },
+    "working_copy_snapshot/INDEPENDENT_TAQRIB_PILOT10_SOURCE_COLLATION.md": {
+      "bytes": 19270,
+      "sha256": "bedd142fb434fac0b403fb9899a729698cdcea29dffa79b41129000fd48a5955"
+    },
+    "working_copy_snapshot/README.md": {
+      "bytes": 31667,
+      "sha256": "d7349e4190361bf54b267ccf6d09a702280c128f355dfcd09fbdc87ca7491df4"
+    },
+    "working_copy_snapshot/source_evidence.csv": {
+      "bytes": 45983,
+      "sha256": "4989f21c1f0596d9ea5c569be7b2ea2b25dbe0b61f40c885d4425386681bae68"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_MANIFEST.json": {
+      "bytes": 2545,
+      "sha256": "7915dcf2805228d8369f95720979abf85bf81606d4723a065b4a1f585cf30df1"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_MANIFEST.sha256": {
+      "bytes": 87,
+      "sha256": "b3f3b2d1cb7d49cdba387884b04ece7703bdf96d6527c32ed0ee0818e6a1452e"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_README.md": {
+      "bytes": 3184,
+      "sha256": "9d006684ab790f7136640d796cd5218b519b760b86e64bffdf8b77a8b7090f36"
+    },
+    "working_copy_snapshot/sources.csv": {
+      "bytes": 19951,
+      "sha256": "867f36171c4c6490a58626e7aadf03f516cd5d4cf570ab67db7aed74555049cc"
+    },
+    "working_copy_snapshot/statements.csv": {
+      "bytes": 28634,
+      "sha256": "cd2e4706c5e391c12e799625c9c33a901ba4438aaea443d983b799cef044cea6"
+    },
+    "working_copy_snapshot/WORKING_COPY_MANIFEST.json": {
+      "bytes": 29248,
+      "sha256": "8432809d989992503ad2935ec2fc04e5707afccc92b30142e6d61cbdb1b9bc1a"
+    },
+    "working_copy_snapshot/WORKING_COPY_MANIFEST.sha256": {
+      "bytes": 93,
+      "sha256": "d37c93a605829cff8adbff54b35ce06c9797802f52e86d127316e44804f1c4e6"
+    }
+  }
+}

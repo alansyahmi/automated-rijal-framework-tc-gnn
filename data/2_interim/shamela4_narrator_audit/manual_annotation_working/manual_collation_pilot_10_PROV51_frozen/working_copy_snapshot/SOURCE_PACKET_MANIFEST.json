@@ -1,0 +1,74 @@
+{
+  "package_name": "manual_collation_pilot_10_review_round_1_blinded",
+  "schema_version": "2.2",
+  "source_implementation_version": "2.2.2",
+  "source_package": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_v2_2_impl_r2",
+  "source_package_manifest_sha256": "e11d45cc1e6c11a3479767478766b23bf33070e15c8c76596d3852db8526dc45",
+  "case_count": 10,
+  "candidate_entry_count": 11,
+  "case_order": [
+    "PROV-10",
+    "PROV-40",
+    "PROV-39",
+    "PROV-56",
+    "PROV-24",
+    "PROV-51",
+    "PROV-01",
+    "PROV-02",
+    "PROV-04",
+    "PROV-37"
+  ],
+  "legacy_columns_removed_from_reviewer_copy": [
+    "legacy_rank_candidate",
+    "legacy_reviewer_notes_verbatim"
+  ],
+  "legacy_v1_values_table_included": false,
+  "human_judgments_inferred_or_prefilled": false,
+  "files": {
+    "attribution_links.csv": {
+      "bytes": 2249,
+      "sha256": "45e94a675df7b25de782f175b8aeb1cd6a884d71b66e6e87f319b49fe00d3e9e"
+    },
+    "candidate_entries.csv": {
+      "bytes": 7413,
+      "sha256": "22e68583ba0fbc3105e4d439c9c380e19afedfcd643f54fabd6ff806acffc531"
+    },
+    "cases.csv": {
+      "bytes": 2284,
+      "sha256": "fce014299bcbd59594adcd047305c654866ad6671734deb3aa232cb27f5bb5ae"
+    },
+    "date_claims.csv": {
+      "bytes": 119,
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab"
+    },
+    "feature_sources.csv": {
+      "bytes": 195,
+      "sha256": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1"
+    },
+    "INDEPENDENT_TAQRIB_PILOT10_SOURCE_COLLATION.md": {
+      "bytes": 19270,
+      "sha256": "bedd142fb434fac0b403fb9899a729698cdcea29dffa79b41129000fd48a5955"
+    },
+    "README.md": {
+      "bytes": 3184,
+      "sha256": "9d006684ab790f7136640d796cd5218b519b760b86e64bffdf8b77a8b7090f36"
+    },
+    "source_evidence.csv": {
+      "bytes": 161,
+      "sha256": "169bc1c0dcc62655fc858ccd9790e6cb02d8c1ebbe05f55c528867587e9489fc"
+    },
+    "sources.csv": {
+      "bytes": 6337,
+      "sha256": "1cf432096c94c85851f73bdb8af02aa355878088f4dc49ae1759732dd1edebda"
+    },
+    "statements.csv": {
+      "bytes": 3220,
+      "sha256": "da0c10816b544d33ce72440b635e17ace40849e1ce7784fc0d9008a85a32bbfe"
+    }
+  },
+  "limitations": [
+    "Candidate entry text is a retrieval aid and does not establish narrator identity.",
+    "The Taqrib source-collation report checks the local electronic corpus, not a physical edition or manuscript.",
+    "The reviewer copy is a workspace and has not yet passed the full v2.2 package validator."
+  ]
+}

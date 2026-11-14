@@ -1,0 +1,180 @@
+{
+  "package_name": "manual_collation_pilot_10_review_round_1_working",
+  "schema_version": "2.2",
+  "source_package": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_review_round_1_blinded",
+  "source_packet_manifest_sha256": "7915dcf2805228d8369f95720979abf85bf81606d4723a065b4a1f585cf30df1",
+  "review_record": {
+    "candidate_entry_id": "PROV-10-C01",
+    "identity_match_status": "confirmed",
+    "identity_evidence_record_id": "EVID-PROV-10-C01-ID01",
+    "source_record_id": "SRC-PROV-10-C01-ID01",
+    "identity_decision_grade_blind": false
+  },
+  "statement_review": {
+    "candidate_entry_id": "PROV-10-C01",
+    "source_record_id": "SRC-PROV-10-C01",
+    "source_verification_status": "verified_in_corpus",
+    "source_author_metadata_evidence_record_id": "EVID-PROV-10-C01-TAQRIB-META01",
+    "source_metadata_scope": "Local book_metadata.json records the work author, editor, represented edition, and print-numbering note; it does not establish the passage-level wording author or grade provenance.",
+    "review_status": "ai_assisted_single_reviewer_feasibility_draft",
+    "statement_ids": [
+      "PROV-10-C01-S01",
+      "PROV-10-C01-S02",
+      "PROV-10-C01-S03"
+    ],
+    "attribution_summary": {
+      "PROV-10-C01-S01": "No evaluator is named in the passage; historical evaluator attribution, transmission route, and compiler authorship remain unresolved or unassessed.",
+      "PROV-10-C01-S02": "Reported biographical claim concerning possible ruʾyah; the passive marker يقال is present, but no source or route is identified. Not treated as proof of Companion status.",
+      "PROV-10-C01-S03": "The death report is preserved verbatim; its source is not identified and its date is not normalized."
+    },
+    "target_scope_and_historical_input_eligibility": "not_assessed"
+  },
+  "files": {
+    "INDEPENDENT_TAQRIB_PILOT10_SOURCE_COLLATION.md": {
+      "bytes": 19270,
+      "sha256": "bedd142fb434fac0b403fb9899a729698cdcea29dffa79b41129000fd48a5955"
+    },
+    "README.md": {
+      "bytes": 15997,
+      "sha256": "7e1beae09c4c13c774b299b915bb25874ef5397ee415215f1cc9378c3076664e"
+    },
+    "SOURCE_PACKET_MANIFEST.json": {
+      "bytes": 2545,
+      "sha256": "7915dcf2805228d8369f95720979abf85bf81606d4723a065b4a1f585cf30df1"
+    },
+    "SOURCE_PACKET_MANIFEST.sha256": {
+      "bytes": 87,
+      "sha256": "b3f3b2d1cb7d49cdba387884b04ece7703bdf96d6527c32ed0ee0818e6a1452e"
+    },
+    "SOURCE_PACKET_README.md": {
+      "bytes": 3184,
+      "sha256": "9d006684ab790f7136640d796cd5218b519b760b86e64bffdf8b77a8b7090f36"
+    },
+    "attribution_links.csv": {
+      "bytes": 5801,
+      "sha256": "5577f216624c8b60ffb1f54fe2451b3995f4f82829a18d5d8e91210630b4d846"
+    },
+    "candidate_entries.csv": {
+      "bytes": 13726,
+      "sha256": "692564a0cf3a98fd0bceccebe18f6d69efcec3c2c0a814748c560773c45d6eb4"
+    },
+    "cases.csv": {
+      "bytes": 2284,
+      "sha256": "b0a139e550009f57c44c4c1b4011a81c225f241200935ca2a83b20e22773617b"
+    },
+    "date_claims.csv": {
+      "bytes": 119,
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab"
+    },
+    "feature_sources.csv": {
+      "bytes": 195,
+      "sha256": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1"
+    },
+    "source_evidence.csv": {
+      "bytes": 15483,
+      "sha256": "82dc6819e2281699a8f05fce3f97969030bf72e16495abb126c1d83a2b4685c1"
+    },
+    "sources.csv": {
+      "bytes": 10431,
+      "sha256": "85d3a77d044ab56cd4ab74bd9344f492af0476b27240ade12c278b857fa7fd6c"
+    },
+    "statements.csv": {
+      "bytes": 12759,
+      "sha256": "611942b630515dad6be9edd2653d5712d183abc45c8b12908d7b0a9adb30d8dc"
+    }
+  },
+  "limitations": [
+    "The source packet exposed grade fields before the identity decision was recorded; this is not a genuinely grade-blind pass.",
+    "The identity decision is a single-reviewer feasibility record and does not establish historical grade provenance or inter-reviewer agreement.",
+    "The reviewer reports checking the Ibn Saʿd scan image and printed locator; the assistant checked only the accessible PDF text layer. The Taqrib statement was checked against local pages.jsonl and book_metadata.json, not a printed page image.",
+    "PROV-10-C01 statement segmentation and attribution are an AI-assisted single-reviewer working draft; they require user review and do not establish historical authorship, evaluator attribution, transmission routes, or input eligibility.",
+    "PROV-56-C01 Taqrib and Tahdhib text and metadata were checked in the local corpus; printed page images and the earlier works cited in al-Mizzi's footnotes were not independently inspected. Historical evaluations are treated as reports preserved by al-Mizzi, not as independent source attestations.",
+    "PROV-37: Taqrib and Tahdhib al-Kamal passages and edition metadata were checked in the local corpus; Ibn Abi Hatim's al-Jarh wa al-ta'dil report was also checked in its local corpus transcription. Printed page images were not independently inspected. The reports attributed by al-Mizzi to Ibn Hibban, al-Uqayli, al-Hakim/Daraqutni, and Abu Zur'a via al-Baji were not independently checked against those cited works. Dataset-to-source provenance and literary dependence remain unresolved."
+  ],
+  "reviewed_cases": {
+    "PROV-10-C01": {
+      "identity_match_status": "confirmed",
+      "identity_evidence_record_id": "EVID-PROV-10-C01-ID01",
+      "statements": [
+        "PROV-10-C01-S01",
+        "PROV-10-C01-S02",
+        "PROV-10-C01-S03"
+      ],
+      "adjudication_rank": 3
+    },
+    "PROV-40-C01": {
+      "identity_match_status": "confirmed",
+      "identity_evidence_record_id": "EVID-PROV-40-C01-ID01",
+      "source_record_id": "SRC-PROV-40-C01-ID01",
+      "statements": [
+        "PROV-40-C01-S01",
+        "PROV-40-C01-S02",
+        "PROV-40-C01-S03"
+      ],
+      "attribution_summary": {
+        "PROV-40-C01-S01": "No evaluator is named in the passage; passage-level wording author, historical evaluator attribution, transmission route, and compiler authorship remain unresolved or unassessed.",
+        "PROV-40-C01-S02": "Generational tier statement (الحادية عشرة); attribution not applicable.",
+        "PROV-40-C01-S03": "Death and longevity statement (مات سنة أربع وسبعين وله أكثر من ثمانين); attribution not applicable."
+      },
+      "adjudication_rank": 3,
+      "adjudication_package": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV40_adjudication"
+    },
+    "PROV-39-C01": {
+      "identity_match_status": "confirmed",
+      "identity_evidence_record_id": "EVID-PROV-39-C01-ID01",
+      "source_record_id": "SRC-PROV-39-C01-ID01",
+      "statements": [
+        "PROV-39-C01-S01",
+        "PROV-39-C01-S02",
+        "PROV-39-C01-S03",
+        "PROV-39-C01-S04",
+        "PROV-39-C01-S05"
+      ],
+      "attribution_summary": {
+        "PROV-39-C01-S01": "No evaluator is named in the passage; passage-level wording author, historical evaluator attribution, transmission route, and compiler authorship remain unresolved or unassessed.",
+        "PROV-39-C01-S02": "Disputed biographical claim of sighting a Companion (وادعى أنه رأى عمرو ابن حريث الصحابي); attribution not applicable.",
+        "PROV-39-C01-S03": "Specific transmission criticism (فأنكر عليه ذلك ابن عيينة وأحمد); explicitly attributes rejection of sighting claim to Sufyan ibn Uyaynah and Ahmad ibn Hanbal.",
+        "PROV-39-C01-S04": "Generational tier statement (من الثامنة); attribution not applicable.",
+        "PROV-39-C01-S05": "Death and chronology statement (مات سنة إحدى وثمانين على الصحيح); attribution not applicable."
+      },
+      "adjudication_rank": 5,
+      "adjudication_package": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV39_adjudication"
+    },
+    "PROV-56-C01": {
+      "identity_match_status": "confirmed",
+      "identity_evidence_record_id": "EVID-PROV-56-C01-ID01",
+      "source_record_id": "SRC-PROV-56-C01-ID01",
+      "statements": [
+        "PROV-56-C01-S01",
+        "PROV-56-C01-S02"
+      ],
+      "attribution_summary": {
+        "PROV-56-C01-S01": "No evaluator is named; wording author is unknown, attribution form unclear, historical evaluator attribution and compiler authorship unresolved, and transmission route not assessed.",
+        "PROV-56-C01-S02": "Generational classification (من كبار العاشرة); evaluator attribution not applicable."
+      },
+      "adjudication_rank": 5,
+      "adjudication_package": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV56_adjudication",
+      "candidate_field_source_correspondence": "minor_variation"
+    },
+    "PROV-37-C01": {
+      "identity_match_status": "confirmed",
+      "identity_evidence_record_id": "EVID-PROV-37-C01-ID01",
+      "source_record_id": "SRC-PROV-37-C01-ID01",
+      "statements": [
+        "PROV-37-C01-S01",
+        "PROV-37-C01-S02"
+      ],
+      "attribution_summary": {
+        "PROV-37-C01-S01": "No narrator-specific evaluator is named in the Taqrib entry; antecedent evaluation, wording attribution, and transmission route remain unresolved.",
+        "PROV-37-C01-S02": "Generational classification (من الثامنة); evaluator attribution not applicable."
+      },
+      "adjudication_rank": 5,
+      "adjudication_package": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV37_adjudication",
+      "candidate_field_source_correspondence": "minor_variation",
+      "historical_context_source_record_ids": [
+        "SRC-PROV-37-C01-ID01",
+        "SRC-PROV-37-C01-HIST01"
+      ]
+    }
+  }
+}

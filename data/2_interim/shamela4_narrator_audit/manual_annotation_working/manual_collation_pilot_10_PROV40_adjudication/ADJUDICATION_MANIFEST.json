@@ -1,0 +1,40 @@
+{
+  "package_name": "PROV-40-C01_ADJUDICATION",
+  "schema_version": "2.2",
+  "created_utc": "2026-11-12T14:50:51Z",
+  "candidate_entry_id": "PROV-40-C01",
+  "decision": {
+    "statement_id": "PROV-40-C01-S01",
+    "taqrib_rank_number": 3,
+    "rank_status": "assigned",
+    "historical_input_eligibility": "not_assessed",
+    "target_task_scope": "not_assessed"
+  },
+  "evidence": {
+    "citation": "Ibn Hajar, Taqrib al-Tahdhib, ed. Muhammad Awwama, Dar al-Rashid, 1st ed., 1406/1986, Muqaddima, section اما المراتب, p. 74.",
+    "rule_text_arabic": "الثالثة: من أفرد بصفة، كثقة، أو متقن، أو ثبت، أو عدل.",
+    "verification": "Introductory taxonomy rule verified in local text transcription."
+  },
+  "attribution_amendment": {
+    "work_author": "Ibn Hajar (from bibliographic metadata)",
+    "passage_wording_author": "unresolved",
+    "historical_evaluator": "none_named",
+    "attribution_form": "unclear",
+    "compiler_authorship_status": "unresolved",
+    "transmission_route_status": "not_assessed"
+  },
+  "frozen_pass1_unchanged": true,
+  "output": {
+    "path": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV40_adjudication\\PROV-40-C01_ADJUDICATION.md",
+    "bytes": 4173,
+    "sha256": "1cc2ca4a1d12b5f7f565adbc58d2c626f5ec3c49c1a58bd205eaf5a574cdbef1"
+  },
+  "remaining_open": [
+    "passage-level authorship",
+    "historical evaluator attribution",
+    "transmission route",
+    "target suitability",
+    "historical-input eligibility",
+    "corroboration"
+  ]
+}

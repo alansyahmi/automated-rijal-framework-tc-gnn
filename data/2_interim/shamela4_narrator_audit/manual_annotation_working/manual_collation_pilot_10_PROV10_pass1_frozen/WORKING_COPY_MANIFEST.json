@@ -1,0 +1,92 @@
+{
+  "package_name": "manual_collation_pilot_10_review_round_1_working",
+  "schema_version": "2.2",
+  "source_package": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_review_round_1_blinded",
+  "source_packet_manifest_sha256": "7915dcf2805228d8369f95720979abf85bf81606d4723a065b4a1f585cf30df1",
+  "review_record": {
+    "candidate_entry_id": "PROV-10-C01",
+    "identity_match_status": "confirmed",
+    "identity_evidence_record_id": "EVID-PROV-10-C01-ID01",
+    "source_record_id": "SRC-PROV-10-C01-ID01",
+    "identity_decision_grade_blind": false
+  },
+  "statement_review": {
+    "candidate_entry_id": "PROV-10-C01",
+    "source_record_id": "SRC-PROV-10-C01",
+    "source_verification_status": "verified_in_corpus",
+    "source_author_metadata_evidence_record_id": "EVID-PROV-10-C01-TAQRIB-META01",
+    "source_metadata_scope": "Local book_metadata.json records the work author, editor, represented edition, and print-numbering note; it does not establish the passage-level wording author or grade provenance.",
+    "review_status": "ai_assisted_single_reviewer_feasibility_draft",
+    "statement_ids": [
+      "PROV-10-C01-S01",
+      "PROV-10-C01-S02",
+      "PROV-10-C01-S03"
+    ],
+    "attribution_summary": {
+      "PROV-10-C01-S01": "No evaluator is named in the passage; historical evaluator attribution, transmission route, and compiler authorship remain unresolved or unassessed.",
+      "PROV-10-C01-S02": "Reported biographical claim concerning possible ruʾyah; the passive marker يقال is present, but no source or route is identified. Not treated as proof of Companion status.",
+      "PROV-10-C01-S03": "The death report is preserved verbatim; its source is not identified and its date is not normalized."
+    },
+    "target_scope_and_historical_input_eligibility": "not_assessed"
+  },
+  "files": {
+    "INDEPENDENT_TAQRIB_PILOT10_SOURCE_COLLATION.md": {
+      "bytes": 19270,
+      "sha256": "bedd142fb434fac0b403fb9899a729698cdcea29dffa79b41129000fd48a5955"
+    },
+    "README.md": {
+      "bytes": 3993,
+      "sha256": "2559d442cf43e62820f205034c610aebd4a876b4f3db3fad2568e3aa8034f99a"
+    },
+    "SOURCE_PACKET_MANIFEST.json": {
+      "bytes": 2545,
+      "sha256": "7915dcf2805228d8369f95720979abf85bf81606d4723a065b4a1f585cf30df1"
+    },
+    "SOURCE_PACKET_MANIFEST.sha256": {
+      "bytes": 87,
+      "sha256": "b3f3b2d1cb7d49cdba387884b04ece7703bdf96d6527c32ed0ee0818e6a1452e"
+    },
+    "SOURCE_PACKET_README.md": {
+      "bytes": 3184,
+      "sha256": "9d006684ab790f7136640d796cd5218b519b760b86e64bffdf8b77a8b7090f36"
+    },
+    "attribution_links.csv": {
+      "bytes": 2909,
+      "sha256": "96de565e7e4fb87cafad01faf7bd3e12fba71565ffe976fa296ab3b5585b12f1"
+    },
+    "candidate_entries.csv": {
+      "bytes": 8754,
+      "sha256": "b01287841a3ca4c97548b860e79adbc8148f03b014d8f9986fa1b0b9e4e52a36"
+    },
+    "cases.csv": {
+      "bytes": 2284,
+      "sha256": "fce014299bcbd59594adcd047305c654866ad6671734deb3aa232cb27f5bb5ae"
+    },
+    "date_claims.csv": {
+      "bytes": 119,
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab"
+    },
+    "feature_sources.csv": {
+      "bytes": 195,
+      "sha256": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1"
+    },
+    "source_evidence.csv": {
+      "bytes": 2839,
+      "sha256": "bc45c2859a6ffe14864de8afa439b7e84f3952d9c1e6bc9fa8398aecb9d58d34"
+    },
+    "sources.csv": {
+      "bytes": 7320,
+      "sha256": "8a189c4a3a8ce41f247ac4d5eb8f3cf378c7a157cd4527e73b2c0db5d7768a02"
+    },
+    "statements.csv": {
+      "bytes": 5037,
+      "sha256": "2c1d8888a490f422b2f002b4a90aa9b2fd135b3e54111d3e49ecedb78fc674a3"
+    }
+  },
+  "limitations": [
+    "The source packet exposed grade fields before the identity decision was recorded; this is not a genuinely grade-blind pass.",
+    "The identity decision is a single-reviewer feasibility record and does not establish historical grade provenance or inter-reviewer agreement.",
+    "The reviewer reports checking the Ibn Saʿd scan image and printed locator; the assistant checked only the accessible PDF text layer. The Taqrib statement was checked against local pages.jsonl and book_metadata.json, not a printed page image.",
+    "PROV-10-C01 statement segmentation and attribution are an AI-assisted single-reviewer working draft; they require user review and do not establish historical authorship, evaluator attribution, transmission routes, or input eligibility."
+  ]
+}

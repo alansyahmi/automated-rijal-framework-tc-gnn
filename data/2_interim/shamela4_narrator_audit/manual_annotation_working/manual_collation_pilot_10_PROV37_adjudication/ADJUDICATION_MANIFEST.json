@@ -1,0 +1,77 @@
+{
+  "package_name": "PROV-37-C01_ADJUDICATION",
+  "schema_version": "2.2",
+  "created_utc": "2026-11-12T16:13:43Z",
+  "candidate_entry_id": "PROV-37-C01",
+  "decision": {
+    "statement_id": "PROV-37-C01-S01",
+    "taqrib_rank_number": 5,
+    "rank_status": "assigned",
+    "grade_base_verbatim": "صدوق",
+    "grade_qualification_verbatim": "يخطىء",
+    "historical_input_eligibility": "not_assessed",
+    "target_task_scope": "not_assessed"
+  },
+  "identity_resolution": {
+    "identity_match_status": "confirmed",
+    "identity_evidence_record_id": "EVID-PROV-37-C01-ID01",
+    "source_record_id": "SRC-PROV-37-C01-ID01",
+    "independence_rationale": "The dataset name and Taqrib entry 1650 match the lineage خالد بن عبد الرحمن بن بكير; the entry also matches the dataset's أبو أمية, السلمي، البصري, and eighth-generation metadata. Al-Mizzi's Tahdhib entry 1628 also records the same lineage, al-Sulami nisbah, kunya, and Basran association. The adjacent Taqrib entry 1652 is a distinct al-Makhzumi al-Makki with a different lineage and generation. The grade is excluded from identity resolution. These matches do not establish the dataset's source route or literary independence between the works."
+  },
+  "candidate_field_correspondence": {
+    "status": "minor_variation",
+    "dataset_form": "صدوق يخطئ.",
+    "taqrib_form": "صدوق يخطىء",
+    "normalization_note": "Hamza spelling differs in يخطئ versus يخطىء, and the dataset value has a terminal period absent from the Taqrib span; both transcriptions are preserved."
+  },
+  "evidence": {
+    "candidate": "Ibn Hajar, Taqrib al-Tahdhib, local corpus page_num 189, sequence_num 1647 (entry 1650).",
+    "identity": "Al-Mizzi, Tahdhib al-Kamal, vol. 8, p. 119, entry 1628; local corpus part 8, page_num 119, sequence_num 3831.",
+    "primary_historical_report": "Ibn Abi Hatim, al-Jarh wa al-ta'dil, vol. 3, entry 1539; local corpus part 3, page_num 341, sequence_num 1299.",
+    "rank_rule": {
+      "citation": "Ibn Hajar, Taqrib al-Tahdhib, ed. Muhammad Awwama, Dar al-Rashid, 1st ed., 1406/1986, Muqaddima, section أما المراتب, rank 5, pp. 74-75.",
+      "rule_text_arabic": "الخامسة: من قصر عن الرابعة قليلا، وعليه تدور عبارة: صدوق سيء الحفظ، أو صدوق يهم، أو له أوهام، أو يخطئ، أو تغير بأخرة، أو اختلط في الآخر.",
+      "verification": "The rule is documented in the approved PROV-56 adjudication using a local text transcription and edition metadata; the printed page image was not independently inspected."
+    }
+  },
+  "attribution_boundaries": {
+    "work_author": "Ibn Hajar (from Taqrib bibliographic metadata)",
+    "passage_evaluator_naming_status": "no_evaluator_named",
+    "passage_wording_author": "not independently identified beyond work-level authorship",
+    "historical_evaluator": "unresolved",
+    "attribution_form": "unclear",
+    "transmission_route_status": "not_assessed"
+  },
+  "historical_investigation": {
+    "reports_preserved_by_al_mizzi": [
+      "Abu Hatim: صدوق لا بأس به (as reported by al-Mizzi)",
+      "Ibn Hibban: يخطئ (as reported by al-Mizzi)",
+      "Al-Uqayli: يخالف في حديثه (as reported in al-Mizzi's footnote)",
+      "Abu al-Hasan via al-Hakim's report of Daraqutni's questions: لا بأس به (as reported in al-Mizzi's footnote)",
+      "Abu Zur'a via al-Baji: لا أحدث عنه (as reported in al-Mizzi's footnote)"
+    ],
+    "independently_inspected_primary_source": "Ibn Abi Hatim, al-Jarh wa al-ta'dil, entry 1539; its local transcription records Abu Hatim saying لا بأس به.",
+    "primary_source_text_difference": "Ibn Abi Hatim's local wording says لا بأس به; al-Mizzi's summary adds صدوق. Both are preserved as recorded in their respective sources.",
+    "other_cited_sources_independently_inspected": false,
+    "reports_not_collapsed": [
+      "يخطئ",
+      "يخالف في حديثه",
+      "لا بأس به",
+      "لا أحدث عنه"
+    ],
+    "derivation_of_ibn_hajar_formula": "not established"
+  },
+  "research_implication": "Rank 5 is a qualitative category below Rank 4, characterized by qualifications such as weak retention, occasional error, or later-life deterioration; it is not a uniform numerical interval on a scalar reliability scale.",
+  "frozen_pass1_unchanged": true,
+  "output": {
+    "path": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV37_adjudication\\PROV-37-C01_ADJUDICATION.md",
+    "bytes": 4519,
+    "sha256": "f2b24c72b73d6d8dde23796e538601e38c1eb3cb4e4cbeb727473874c7f886d1"
+  },
+  "remaining_open": [
+    "dataset-to-Taqrib source route and literary dependence",
+    "independent inspection of Ibn Hibban, al-Uqayli, Daraqutni, and al-Baji sources cited by al-Mizzi",
+    "direct inspection of printed pages",
+    "historical-input eligibility, target-task scope, and corroboration"
+  ]
+}

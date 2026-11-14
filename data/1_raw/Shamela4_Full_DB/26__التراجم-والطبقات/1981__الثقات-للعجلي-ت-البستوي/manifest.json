@@ -1,0 +1,33 @@
+{
+  "book_id": 1981,
+  "shamela_id": 5825,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "الثقات للعجلي ت البستوي",
+  "page_count": 765,
+  "toc_count": 269,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "242f986aab8995a751496ab95f8edac4257b9fcdfe5732d5997fcb4cb4b0cd6f",
+      "bytes": 643644,
+      "rows": 765
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "e48ebe0941bf3a946119f649781109f71bcead153d08f082f27d08631a29ee32",
+      "bytes": 36652,
+      "rows": 269
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "ddd90791296e63a121074ce1c8ebc511a573bf6d7ad90f307e7ff78c787fd35f",
+      "bytes": 1380,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

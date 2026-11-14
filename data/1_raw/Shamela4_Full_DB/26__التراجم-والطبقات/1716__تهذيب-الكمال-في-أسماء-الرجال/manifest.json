@@ -1,0 +1,33 @@
+{
+  "book_id": 1716,
+  "shamela_id": 3722,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "تهذيب الكمال في أسماء الرجال",
+  "page_count": 19002,
+  "toc_count": 10456,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "c22d5b549ae82c8282a37a9904971d72430295c049e1ffe76a3972bf8cc5c9a6",
+      "bytes": 47155847,
+      "rows": 19002
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "f2e96bb6811f0dc5bbec7cca9095e4bd747d570771ea2588fc7d1b63f1b27700",
+      "bytes": 2134144,
+      "rows": 10456
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "619fd20be35e29a704ed1fde28d9f1b4aac44f20b658da7f8d921f929bc7e095",
+      "bytes": 1343,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

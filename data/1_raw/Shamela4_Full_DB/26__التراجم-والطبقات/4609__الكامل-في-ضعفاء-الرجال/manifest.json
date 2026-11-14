@@ -1,0 +1,33 @@
+{
+  "book_id": 4609,
+  "shamela_id": 12579,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "الكامل في ضعفاء الرجال",
+  "page_count": 4518,
+  "toc_count": 2230,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "ff4d13863c550aa0434582497bc9c4871b0478a2f0906f831248919d9a1059f8",
+      "bytes": 11652138,
+      "rows": 4518
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "dd4fbb35fa2f356f899fe6081056ec107793758342c7fe3f5c3577a721362078",
+      "bytes": 406725,
+      "rows": 2230
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "3fbd8d63f3976fca15ccb4d2aba9cf0b3622e39d6826f8d0be385a1a5316ecae",
+      "bytes": 1424,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

@@ -1,0 +1,65 @@
+{
+  "package_name": "PROV-56-C01_ADJUDICATION",
+  "schema_version": "2.2",
+  "created_utc": "2026-11-12T15:56:11Z",
+  "candidate_entry_id": "PROV-56-C01",
+  "decision": {
+    "statement_id": "PROV-56-C01-S01",
+    "taqrib_rank_number": 5,
+    "rank_status": "assigned",
+    "grade_base_verbatim": "صدوق",
+    "grade_qualification_verbatim": "يخطىء",
+    "historical_input_eligibility": "not_assessed",
+    "target_task_scope": "not_assessed"
+  },
+  "identity_resolution": {
+    "identity_match_status": "confirmed",
+    "identity_evidence_record_id": "EVID-PROV-56-C01-ID01",
+    "source_record_id": "SRC-PROV-56-C01-ID01",
+    "independence_rationale": "The full lineage, al-Jari sobriquet, Banu Nawfal patronage, and Hijazi identification align between the dataset/Taqrib candidate and al-Mizzi's Tahdhib entry 6913. Al-Mizzi explains that al-Jar is a port; no more precise geography is inferred. The grade is excluded from identity resolution. The works may be literarily dependent, so this is not treated as independent attestation."
+  },
+  "candidate_field_correspondence": {
+    "status": "minor_variation",
+    "dataset_form": "صدوق يخطئ.",
+    "taqrib_form": "صدوق يخطىء",
+    "normalization_note": "Hamza placement differs in يخطئ versus يخطىء, and the dataset value has a terminal period absent from the Taqrib span; both transcriptions are preserved."
+  },
+  "evidence": {
+    "citation": "Ibn Hajar, Taqrib al-Tahdhib, ed. Muhammad Awwama, Dar al-Rashid, 1st ed., 1406/1986, Muqaddima, section أما المراتب, rank 5, pp. 74-75.",
+    "rule_text_arabic": "الخامسة: من قصر عن الرابعة قليلا، وعليه تدور عبارة: صدوق سيء الحفظ، أو صدوق يهم، أو له أوهام، أو يخطئ، أو تغير بأخرة، أو اختلط في الآخر.",
+    "verification": "Rank rule checked in local text transcription and edition metadata; printed page image not independently inspected."
+  },
+  "attribution_boundaries": {
+    "work_author": "Ibn Hajar (from local bibliographic metadata)",
+    "passage_wording_author": "unknown",
+    "historical_evaluator": "none_named",
+    "attribution_form": "unclear",
+    "compiler_authorship_status": "unresolved",
+    "transmission_route_status": "not_assessed"
+  },
+  "historical_investigation": {
+    "precautionary_finding": "The earlier assessments preserved in Tahdhib al-Kamal show a varied biographical record. Some reports describe the narrator as trustworthy or acceptable, while others record criticism or unusual narrations. They provide historical context for Ibn Hajar's later assessment, صدوق يخطىء, but the precise relationship between each earlier report and Ibn Hajar's formulation has not been established. The expressions يغرب and يتكلمون فيه are not treated as direct equivalents of يخطئ.",
+    "reports_preserved_by_al_mizzi": [
+      "Al-Bahili: ثقة",
+      "Al-Bukhari report: يتكلمون فيه",
+      "Ibn Hibban: يغرب",
+      "Abu Awana report through Abbas al-Duri and Yahya al-Zimmi: ثقة",
+      "Ibn Adi: ليس بحديثه بأس"
+    ],
+    "primary_sources_independently_inspected": false,
+    "report_routes_and_independence": "unresolved"
+  },
+  "research_implication": "Rank 5 is a qualitative category below Rank 4, characterized by qualifications such as weak retention, occasional error, or later-life deterioration; it is not a uniform numerical interval on a scalar reliability scale.",
+  "frozen_pass1_unchanged": true,
+  "output": {
+    "path": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV56_adjudication\\PROV-56-C01_ADJUDICATION.md",
+    "bytes": 5412,
+    "sha256": "31313b632dc570d38dd48c6963f1f159daaf5d9d802a92adaff30b4bf8b4e587"
+  },
+  "remaining_open": [
+    "passage-level wording author and historical evaluator attribution of S01",
+    "transmission route and literary dependence of the narrator-specific grade",
+    "historical-input eligibility, target-task scope, and corroboration",
+    "direct inspection of printed pages and earlier works cited in al-Mizzi's footnotes"
+  ]
+}

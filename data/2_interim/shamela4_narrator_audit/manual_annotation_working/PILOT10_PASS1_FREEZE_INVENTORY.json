@@ -1,0 +1,244 @@
+{
+  "inventory_version": "1.0",
+  "generated_utc": "2026-11-13T09:44:34Z",
+  "scope": "10-case pilot (manual_collation_pilot_10)",
+  "status_vocabulary": {
+    "pass1_snapshot_status": [
+      "original_contemporaneous_pass1_freeze",
+      "retrospectively_reconstructed_pass1_freeze",
+      "pass1_working_draft_only",
+      "missing_unrecoverable"
+    ],
+    "rank_adjudication_status": [
+      "completed_separate_adjudication",
+      "not_started"
+    ],
+    "legacy_reconciliation_status": [
+      "completed_separate_reconciliation",
+      "not_started"
+    ]
+  },
+  "working_copy_manifest": {
+    "path": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_review_round_1_working/WORKING_COPY_MANIFEST.json",
+    "sha256": "8432809d989992503ad2935ec2fc04e5707afccc92b30142e6d61cbdb1b9bc1a",
+    "sidecar_verified": true,
+    "files_verified": true
+  },
+  "cases": [
+    {
+      "audit_record_id": "PROV-10",
+      "dataset_record": "HadithDB 515",
+      "pass1_snapshot_status": "original_contemporaneous_pass1_freeze",
+      "pass1_directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV10_pass1_frozen",
+      "pass1_manifest": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV10_pass1_frozen/PASS1_MANIFEST.json",
+      "pass1_manifest_sha256": "0c6d0b85f2675b2abc80a18f344602993907e92763255209703b023517bb83ee",
+      "pass1_sidecar_and_files_verified": true,
+      "pass1_created_utc": null,
+      "pass1_rank_status": "unranked",
+      "pass1_target_task_scope": "not_assessed",
+      "rank_adjudication_status": "completed_separate_adjudication",
+      "rank_adjudication": {
+        "status": "completed_separate_adjudication",
+        "directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV10_adjudication",
+        "manifest_sha256": "508102d0c1cf9a566fbfa86dcb688c6fa72e4bb321befea8114d241f0a617277",
+        "sidecar_verified": true,
+        "files_verified": true,
+        "created_utc": "2026-11-12T13:57:34Z",
+        "cites_pass1_freeze_hash": false
+      },
+      "legacy_reconciliation_status": "completed_separate_reconciliation",
+      "legacy_reconciliation": {
+        "directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV10_reconciliation",
+        "manifest_sha256": "d6d7b7488db2ce1402156bcddf5101ee6051d574fc176efc76334a12b0f37ab6",
+        "sidecar_and_files_verified": true,
+        "created_utc": "2026-11-12T13:23:24Z"
+      }
+    },
+    {
+      "audit_record_id": "PROV-40",
+      "dataset_record": "Shamela4 1813",
+      "pass1_snapshot_status": "missing_unrecoverable",
+      "pass1_directory": null,
+      "pass1_manifest": null,
+      "pass1_manifest_sha256": null,
+      "pass1_sidecar_and_files_verified": false,
+      "pass1_created_utc": null,
+      "pass1_rank_status": "unranked (current working copy)",
+      "pass1_target_task_scope": "not_assessed (current working copy)",
+      "rank_adjudication_status": "completed_separate_adjudication",
+      "rank_adjudication": {
+        "status": "completed_separate_adjudication",
+        "directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV40_adjudication",
+        "manifest_sha256": "c067c21a34149c72b0605d1271be3358987f6e805a2bab3ba6c092a11d3fe5db",
+        "sidecar_verified": true,
+        "files_verified": true,
+        "created_utc": "2026-11-12T14:50:51Z",
+        "cites_pass1_freeze_hash": false
+      },
+      "legacy_reconciliation_status": "not_started",
+      "recovery_investigation": {
+        "decision": "missing_unrecoverable_no_retroactive_freeze_created",
+        "adjudication_created_utc": "2026-11-12T14:50:51Z",
+        "missing_evidence": "PROV40_adjudication/ADJUDICATION_MANIFEST.json records no Pass 1 freeze manifest SHA-256, working-copy manifest hash, or CSV file hashes; no pre-adjudication snapshot directory or git commit exists between PROV10_pass1_frozen (13:20:29Z, where PROV-40 was still an S00 placeholder) and 14:50:51Z. The earliest archived snapshot containing reviewed PROV-40 rows is PROV56_frozen/working_copy_snapshot (16:48:39Z), which postdates adjudication, and PROV-40 rows were later modified in field_status_migrations and blank legacy-column additions."
+      }
+    },
+    {
+      "audit_record_id": "PROV-39",
+      "dataset_record": "Shamela4 1811",
+      "pass1_snapshot_status": "missing_unrecoverable",
+      "pass1_directory": null,
+      "pass1_manifest": null,
+      "pass1_manifest_sha256": null,
+      "pass1_sidecar_and_files_verified": false,
+      "pass1_created_utc": null,
+      "pass1_rank_status": "unranked (current working copy)",
+      "pass1_target_task_scope": "not_assessed (current working copy)",
+      "rank_adjudication_status": "completed_separate_adjudication",
+      "rank_adjudication": {
+        "status": "completed_separate_adjudication",
+        "directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV39_adjudication",
+        "manifest_sha256": "92b791ceec5a2313a28d6b6a8a41060c4c5ab458f2d44b3ea925dde7469c054b",
+        "sidecar_verified": true,
+        "files_verified": true,
+        "created_utc": "2026-11-12T15:20:00Z",
+        "cites_pass1_freeze_hash": false
+      },
+      "legacy_reconciliation_status": "not_started",
+      "recovery_investigation": {
+        "decision": "missing_unrecoverable_no_retroactive_freeze_created",
+        "adjudication_created_utc": "2026-11-12T15:20:00Z",
+        "missing_evidence": "PROV39_adjudication/ADJUDICATION_MANIFEST.json records no Pass 1 freeze manifest SHA-256 or source CSV hashes; no pre-adjudication snapshot or git commit exists between PROV10_pass1_frozen (13:20:29Z, where PROV-39 was still an S00 placeholder) and 15:20:00Z. The earliest archived snapshot containing reviewed PROV-39 rows is PROV56_frozen/working_copy_snapshot (16:48:39Z), which postdates adjudication, and PROV-39 rows were later modified during field_status_migrations and blank legacy-column additions."
+      }
+    },
+    {
+      "audit_record_id": "PROV-56",
+      "dataset_record": "Shamela4 6996",
+      "pass1_snapshot_status": "original_contemporaneous_pass1_freeze",
+      "pass1_directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV56_frozen",
+      "pass1_manifest": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV56_frozen/CASE_FREEZE_MANIFEST.json",
+      "pass1_manifest_sha256": "f956303c51f5c9a7864865a79896e2f718274001b762dd567415bd32072fc658",
+      "pass1_sidecar_and_files_verified": true,
+      "pass1_created_utc": "2026-11-12T16:48:39Z",
+      "pass1_rank_status": "unranked",
+      "pass1_target_task_scope": "not_assessed",
+      "rank_adjudication_status": "completed_separate_adjudication",
+      "rank_adjudication": {
+        "status": "completed_separate_adjudication",
+        "directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV56_adjudication",
+        "manifest_sha256": "12410a24d1f62877ee2f0d449d9b1583757e65ea7036dc99cb01073b90dc017c",
+        "sidecar_verified": true,
+        "files_verified": true,
+        "created_utc": "2026-11-12T15:56:11Z",
+        "cites_pass1_freeze_hash": false
+      },
+      "legacy_reconciliation_status": "not_started"
+    },
+    {
+      "audit_record_id": "PROV-37",
+      "dataset_record": "Shamela4 1740",
+      "pass1_snapshot_status": "missing_unrecoverable",
+      "pass1_directory": null,
+      "pass1_manifest": null,
+      "pass1_manifest_sha256": null,
+      "pass1_sidecar_and_files_verified": false,
+      "pass1_created_utc": null,
+      "pass1_rank_status": "unranked (current working copy)",
+      "pass1_target_task_scope": "not_assessed (current working copy)",
+      "rank_adjudication_status": "completed_separate_adjudication",
+      "rank_adjudication": {
+        "status": "completed_separate_adjudication",
+        "directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV37_adjudication",
+        "manifest_sha256": "f30569ceaeeb8700f5151f12c1d503870986f61a9f2ecfd3217d6fedbd4ec0ba",
+        "sidecar_verified": true,
+        "files_verified": true,
+        "created_utc": "2026-11-12T16:13:43Z",
+        "cites_pass1_freeze_hash": false
+      },
+      "legacy_reconciliation_status": "not_started",
+      "recovery_investigation": {
+        "decision": "missing_unrecoverable_no_retroactive_freeze_created",
+        "adjudication_created_utc": "2026-11-12T16:13:43Z",
+        "missing_evidence": "PROV37_adjudication/ADJUDICATION_MANIFEST.json records no Pass 1 freeze manifest SHA-256 or source CSV hashes; no pre-adjudication snapshot or git commit exists between PROV10_pass1_frozen (13:20:29Z, where PROV-37 was still an S00 placeholder) and 16:13:43Z. The earliest archived snapshot containing reviewed PROV-37 rows is PROV56_frozen/working_copy_snapshot (16:48:39Z), which postdates adjudication and includes later schema column additions in PROV01_frozen/working."
+      }
+    },
+    {
+      "audit_record_id": "PROV-24",
+      "dataset_record": "HadithDB 1214",
+      "pass1_snapshot_status": "original_contemporaneous_pass1_freeze",
+      "pass1_directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV24_frozen",
+      "pass1_manifest": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV24_frozen/CASE_FREEZE_MANIFEST.json",
+      "pass1_manifest_sha256": "d3494ce6189ea9b8fef5c09e3895728a307541edc80878b5df915ba22faef13f",
+      "pass1_sidecar_and_files_verified": true,
+      "pass1_created_utc": "2026-11-12T17:35:38Z",
+      "pass1_rank_status": "not_applicable",
+      "pass1_target_task_scope": "not_assessed",
+      "rank_adjudication_status": "not_started",
+      "legacy_reconciliation_status": "not_started"
+    },
+    {
+      "audit_record_id": "PROV-51",
+      "dataset_record": "Shamela4 5498",
+      "pass1_snapshot_status": "original_contemporaneous_pass1_freeze",
+      "pass1_directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV51_frozen",
+      "pass1_manifest": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV51_frozen/CASE_FREEZE_MANIFEST.json",
+      "pass1_manifest_sha256": "ad06502a216898ed3f4ca18bad81177c5b9c8e21a104dbaf813abe2b4cd8ce93",
+      "pass1_sidecar_and_files_verified": true,
+      "pass1_created_utc": "2026-11-13T06:13:19Z",
+      "pass1_rank_status": "unranked",
+      "pass1_target_task_scope": "not_in_defined_task",
+      "rank_adjudication_status": "not_started",
+      "legacy_reconciliation_status": "not_started"
+    },
+    {
+      "audit_record_id": "PROV-01",
+      "dataset_record": "HadithDB 17",
+      "pass1_snapshot_status": "original_contemporaneous_pass1_freeze",
+      "pass1_directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV01_frozen",
+      "pass1_manifest": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV01_frozen/CASE_FREEZE_MANIFEST.json",
+      "pass1_manifest_sha256": "9ce2088516799f6ce95c9243e14a347c7c5aaf5019cdbfdc243ca065a9c9f55e",
+      "pass1_sidecar_and_files_verified": true,
+      "pass1_created_utc": "2026-11-13T07:24:08Z",
+      "pass1_rank_status": "unranked",
+      "pass1_target_task_scope": "status_only_candidate",
+      "rank_adjudication_status": "not_started",
+      "legacy_reconciliation_status": "not_started"
+    },
+    {
+      "audit_record_id": "PROV-02",
+      "dataset_record": "HadithDB 27",
+      "pass1_snapshot_status": "original_contemporaneous_pass1_freeze",
+      "pass1_directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV02_frozen",
+      "pass1_manifest": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV02_frozen/CASE_FREEZE_MANIFEST.json",
+      "pass1_manifest_sha256": "fc560725dbd1f29eea5b621b48eda3d2461f6a48f6d14be46c79f42b89030626",
+      "pass1_sidecar_and_files_verified": true,
+      "pass1_created_utc": "2026-11-13T09:44:34Z",
+      "pass1_rank_status": "unranked",
+      "pass1_target_task_scope": "unresolved",
+      "rank_adjudication_status": "not_started",
+      "legacy_reconciliation_status": "not_started"
+    },
+    {
+      "audit_record_id": "PROV-04",
+      "dataset_record": "HadithDB 278",
+      "pass1_snapshot_status": "original_contemporaneous_pass1_freeze",
+      "pass1_directory": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV04_frozen",
+      "pass1_manifest": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV04_frozen/CASE_FREEZE_MANIFEST.json",
+      "pass1_manifest_sha256": "51ea392bfafb9257dab259b2d3f4d25704c05b254a2f811e95d4c8bb36511835",
+      "pass1_sidecar_and_files_verified": true,
+      "pass1_created_utc": "2026-11-13T09:44:34Z",
+      "pass1_rank_status": "unranked (C01 & C02)",
+      "pass1_target_task_scope": "C01: unresolved; C02: not_in_defined_task (mismatch)",
+      "rank_adjudication_status": "not_started",
+      "legacy_reconciliation_status": "not_started"
+    }
+  ],
+  "summary_counts": {
+    "total_cases": 10,
+    "original_contemporaneous_pass1_freeze": 7,
+    "retrospectively_reconstructed_pass1_freeze": 0,
+    "pass1_working_draft_only": 0,
+    "missing_unrecoverable": 3,
+    "completed_separate_adjudication": 5,
+    "completed_separate_reconciliation": 1
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "package_name": "PROV-10-C01_ADJUDICATION",
+  "schema_version": "2.2",
+  "created_utc": "2026-11-12T13:57:34Z",
+  "candidate_entry_id": "PROV-10-C01",
+  "decision": {
+    "rank_status": "assigned",
+    "statement_id": "PROV-10-C01-S01",
+    "historical_input_eligibility": "not_assessed",
+    "target_task_scope": "not_assessed",
+    "taqrib_rank_number": 3
+  },
+  "evidence": {
+    "primary_text_url": "https://scribetools.com/ar/library/rijal/1957-%D8%AA%D9%82%D8%B1%D9%8A%D8%A8-%D8%A7%D9%84%D8%AA%D9%87%D8%B0%D9%8A%D8%A8-%D8%B9%D9%88%D8%A7%D9%85%D8%A9-%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%82%D8%B1%D8%A7-%D8%A7%D9%88%D9%86%D9%84%D8%A7%D9%8A%D9%86-6ee55649/text/0005",
+    "verification": "Searchable transcription and page label checked; no physical page image independently inspected.",
+    "citation": "Ibn Hajar, Taqrib al-Tahdhib, ed. Muhammad Awwama, Dar al-Rashid, 1st ed., 1406/1986, Muqaddima, section أما المراتب, p. 74."
+  },
+  "source_artifacts": [
+    {
+      "sha256": "bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88",
+      "path": "data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/book_metadata.json",
+      "bytes": 1710
+    },
+    {
+      "sha256": "0c6d0b85f2675b2abc80a18f344602993907e92763255209703b023517bb83ee",
+      "path": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV10_pass1_frozen/PASS1_MANIFEST.json",
+      "bytes": 3483
+    },
+    {
+      "sha256": "98f99179ff786869b6dc5d8f2e25c60b7d77a265d5bfcbddb94f912c9be4dc9d",
+      "path": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_PROV10_reconciliation/PROV10_PASS1_RECONCILIATION.md",
+      "bytes": 5454
+    }
+  ],
+  "frozen_pass1_unchanged": true,
+  "output": {
+    "sha256": "668eef07e2248697c116873b18c9c3821330715a8b012c10fdd4f13555015b97",
+    "path": "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\manual_collation_pilot_10_PROV10_adjudication\\PROV-10-C01_ADJUDICATION.md",
+    "bytes": 4154
+  },
+  "remaining_open": [
+    "passage-level authorship",
+    "historical evaluator attribution",
+    "transmission route",
+    "edition variant and editorial intervention",
+    "target suitability",
+    "historical-input eligibility",
+    "corroboration"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "book_id": 1615,
+  "shamela_id": 2170,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "الجرح والتعديل - ابن أبي حاتم",
+  "page_count": 4229,
+  "toc_count": 1034,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "294de8576ead84287a50bb1107e4048fcbd692dc1dd23fbfcf87f72197d257e1",
+      "bytes": 10202926,
+      "rows": 4229
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "79f432742c4ceb685f776b3472914a5d45f8fa313e600d185090ecdfd88e4e2b",
+      "bytes": 141933,
+      "rows": 1034
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "cb92dcee32bf6e2437aea1c50f9ee317adfd88feac57b706c078f0c5126d8538",
+      "bytes": 1316,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

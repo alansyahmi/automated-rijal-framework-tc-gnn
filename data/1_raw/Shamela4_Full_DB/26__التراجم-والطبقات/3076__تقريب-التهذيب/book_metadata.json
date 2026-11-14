@@ -1,0 +1,37 @@
+{
+  "book_id": 3076,
+  "shamela_id": 8609,
+  "title_ar": "تقريب التهذيب",
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "category_id": 26,
+  "category_name_ar": "التراجم والطبقات",
+  "main_author_id": 202,
+  "main_author_name_ar": "ابن حجر العسقلاني",
+  "main_author_death_hijri": 852,
+  "main_author_death_hijri_text": "852",
+  "authors_text": "202",
+  "authors": [
+    {
+      "author_id": 202,
+      "role": "author",
+      "name_ar": "ابن حجر العسقلاني",
+      "death_hijri": 852,
+      "death_hijri_text": "852"
+    }
+  ],
+  "hijri_era": 852,
+  "printed": true,
+  "is_hidden": false,
+  "parent_id": null,
+  "group_id": 8609,
+  "version_major": 1,
+  "version_minor": 1,
+  "betaka_text": "الكتاب: تقريب التهذيب\rالمؤلف: أبو الفضل أحمد بن علي بن محمد بن أحمد بن حجر العسقلاني (ت ٨٥٢هـ)\rالمحقق: محمد عوامة\rالناشر: دار الرشيد - سوريا\rالطبعة: الأولى، ١٤٠٦ - ١٩٨٦\rعدد الصفحات: ٧٦٥\r[ترقيم الكتاب موافق للمطبوع]\rاعتمدنا على: نسخة محمد عوَّامة طبعة دار الرشيد بحلب الطبعة: الأولى ١٤٠٦هـ\rأرفقنا الفروقات التي بينها وبين طبعة: أبي الأشبال الباكستاني طبعة دار العاصمة الطبعة الأولى ١٤١٦هـ وذلك بوضعها بين معكوفتين هكذا [] .\r(كذا في مصدر الكتاب: موقع الدرر السنية)",
+  "meta": {
+    "date": "08121431",
+    "group": 8609
+  },
+  "volume_count_observed": 0,
+  "has_multi_part": false
+}

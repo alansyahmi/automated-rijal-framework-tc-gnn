@@ -1,0 +1,36 @@
+{
+  "book_id": 1716,
+  "shamela_id": 3722,
+  "title_ar": "تهذيب الكمال في أسماء الرجال",
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "category_id": 26,
+  "category_name_ar": "التراجم والطبقات",
+  "main_author_id": 328,
+  "main_author_name_ar": "المزي، جمال الدين",
+  "main_author_death_hijri": 742,
+  "main_author_death_hijri_text": "742",
+  "authors_text": "328",
+  "authors": [
+    {
+      "author_id": 328,
+      "role": "author",
+      "name_ar": "المزي، جمال الدين",
+      "death_hijri": 742,
+      "death_hijri_text": "742"
+    }
+  ],
+  "hijri_era": 742,
+  "printed": true,
+  "is_hidden": false,
+  "parent_id": null,
+  "group_id": null,
+  "version_major": 1,
+  "version_minor": 0,
+  "betaka_text": "الكتاب: تهذيب الكمال في أسماء الرجال\rالمؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ)\rحققه وضبط نصه وعلق عليه: د بشار عواد معروف\rالناشر: مؤسسة الرسالة - بيروت\rالطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م)\rعدد الأجزاء: ٣٥\r[ترقيم الكتاب موافق للمطبوع]",
+  "meta": {
+    "date": "08121431"
+  },
+  "volume_count_observed": 35,
+  "has_multi_part": true
+}

@@ -1,0 +1,85 @@
+{
+  "package_name": "manual_collation_pilot_10_PROV10_pass1_frozen",
+  "schema_version": "2.2",
+  "snapshot_created_utc": "2026-11-12T13:20:29Z",
+  "source_working_copy": "manual_collation_pilot_10_review_round_1_working",
+  "source_working_copy_manifest_sha256": "e3946e5169965ce53779dfe1b2b4a7fb2212b803052d18f1a0f81ae5e4048b32",
+  "freeze_scope": [
+    "PROV-10-C01"
+  ],
+  "reviewed_statement_ids": [
+    "PROV-10-C01-S01",
+    "PROV-10-C01-S02",
+    "PROV-10-C01-S03"
+  ],
+  "remaining_candidate_entries_not_reviewed": "All other candidate entries remain in provisional_work_item state; this snapshot does not represent a completed 10-case round.",
+  "prior_annotations": "Not opened before this snapshot was frozen; reconciliation is a separate post-freeze record.",
+  "files": {
+    "source_evidence.csv": {
+      "sha256": "bc45c2859a6ffe14864de8afa439b7e84f3952d9c1e6bc9fa8398aecb9d58d34",
+      "bytes": 2839
+    },
+    "WORKING_COPY_MANIFEST.json": {
+      "sha256": "e3946e5169965ce53779dfe1b2b4a7fb2212b803052d18f1a0f81ae5e4048b32",
+      "bytes": 4590
+    },
+    "date_claims.csv": {
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab",
+      "bytes": 119
+    },
+    "attribution_links.csv": {
+      "sha256": "96de565e7e4fb87cafad01faf7bd3e12fba71565ffe976fa296ab3b5585b12f1",
+      "bytes": 2909
+    },
+    "SOURCE_PACKET_MANIFEST.json": {
+      "sha256": "7915dcf2805228d8369f95720979abf85bf81606d4723a065b4a1f585cf30df1",
+      "bytes": 2545
+    },
+    "README.md": {
+      "sha256": "2559d442cf43e62820f205034c610aebd4a876b4f3db3fad2568e3aa8034f99a",
+      "bytes": 3993
+    },
+    "INDEPENDENT_TAQRIB_PILOT10_SOURCE_COLLATION.md": {
+      "sha256": "bedd142fb434fac0b403fb9899a729698cdcea29dffa79b41129000fd48a5955",
+      "bytes": 19270
+    },
+    "SOURCE_PACKET_README.md": {
+      "sha256": "9d006684ab790f7136640d796cd5218b519b760b86e64bffdf8b77a8b7090f36",
+      "bytes": 3184
+    },
+    "cases.csv": {
+      "sha256": "fce014299bcbd59594adcd047305c654866ad6671734deb3aa232cb27f5bb5ae",
+      "bytes": 2284
+    },
+    "statements.csv": {
+      "sha256": "2c1d8888a490f422b2f002b4a90aa9b2fd135b3e54111d3e49ecedb78fc674a3",
+      "bytes": 5037
+    },
+    "candidate_entries.csv": {
+      "sha256": "b01287841a3ca4c97548b860e79adbc8148f03b014d8f9986fa1b0b9e4e52a36",
+      "bytes": 8754
+    },
+    "sources.csv": {
+      "sha256": "8a189c4a3a8ce41f247ac4d5eb8f3cf378c7a157cd4527e73b2c0db5d7768a02",
+      "bytes": 7320
+    },
+    "SOURCE_PACKET_MANIFEST.sha256": {
+      "sha256": "b3f3b2d1cb7d49cdba387884b04ece7703bdf96d6527c32ed0ee0818e6a1452e",
+      "bytes": 87
+    },
+    "feature_sources.csv": {
+      "sha256": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1",
+      "bytes": 195
+    },
+    "WORKING_COPY_MANIFEST.sha256": {
+      "sha256": "a1a82075d3011479f6d8c740d7b40570df5b1c6162e753146e3f0047c12bed09",
+      "bytes": 93
+    }
+  },
+  "limitations": [
+    "AI-assisted single-reviewer feasibility record; not independent scholarly validation.",
+    "Grade target suitability, historical-input eligibility, and corroboration remain not assessed.",
+    "The local Taqrib transcription and its metadata were checked; its printed page image was not independently inspected here.",
+    "Work-level author metadata does not establish passage-level authorship, original evaluator, or historical transmission route."
+  ]
+}

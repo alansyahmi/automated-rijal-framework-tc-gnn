@@ -1,0 +1,33 @@
+{
+  "book_id": 3076,
+  "shamela_id": 8609,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "تقريب التهذيب",
+  "page_count": 688,
+  "toc_count": 249,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa",
+      "bytes": 2046945,
+      "rows": 688
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "ae3bed7baeba0a256a2b2e5905ad5da04505c5d1a036c78eed9dc434dc8159ae",
+      "bytes": 33006,
+      "rows": 249
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88",
+      "bytes": 1710,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

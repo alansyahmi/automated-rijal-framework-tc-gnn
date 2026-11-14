@@ -1,0 +1,37 @@
+{
+  "book_id": 1981,
+  "shamela_id": 5825,
+  "title_ar": "الثقات للعجلي ت البستوي",
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "category_id": 26,
+  "category_name_ar": "التراجم والطبقات",
+  "main_author_id": 359,
+  "main_author_name_ar": "العجلي",
+  "main_author_death_hijri": 261,
+  "main_author_death_hijri_text": "261",
+  "authors_text": "359",
+  "authors": [
+    {
+      "author_id": 359,
+      "role": "author",
+      "name_ar": "العجلي",
+      "death_hijri": 261,
+      "death_hijri_text": "261"
+    }
+  ],
+  "hijri_era": 261,
+  "printed": true,
+  "is_hidden": false,
+  "parent_id": null,
+  "group_id": 9170,
+  "version_major": 1,
+  "version_minor": 1,
+  "betaka_text": "الكتاب: معرفة الثقات من رجال أهل العلم والحديث ومن الضعفاء وذكر مذاهبهم وأخبارهم\rالمؤلف: أبو الحسن أحمد بن عبد الله بن صالح العجلى الكوفى (ت ٢٦١هـ)\rالمحقق: عبد العليم عبد العظيم البستوي\rالناشر: مكتبة الدار - المدينة المنورة - السعودية\rالطبعة: الأولى، ١٤٠٥ - ١٩٨٥\r[ترقيم الكتاب موافق للمطبوع]",
+  "meta": {
+    "date": "08121431",
+    "group": 9170
+  },
+  "volume_count_observed": 2,
+  "has_multi_part": true
+}

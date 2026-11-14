@@ -1,0 +1,33 @@
+{
+  "book_id": 8246,
+  "shamela_id": 127715,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "تحرير تقريب التهذيب",
+  "page_count": 1754,
+  "toc_count": 190,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "c745fc2058b77d659944514cddd377510fd3c98d63300121f442e3c77deb96b7",
+      "bytes": 3886707,
+      "rows": 1754
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "b7cee56dfc3b2875d1ad168d2047599beecade489deb5c0f43116a6cc6e220cd",
+      "bytes": 27441,
+      "rows": 190
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "bd3aa530b5db230d2e8b0b8e5900e045a1fc6a0bc12941d7d04013ea31d2bc61",
+      "bytes": 1557,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

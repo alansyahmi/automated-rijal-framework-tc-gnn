@@ -1,0 +1,39 @@
+{
+  "book_id": 890,
+  "shamela_id": 956,
+  "title_ar": "التاريخ الكبير للبخاري - ت المعلمي اليماني",
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "category_id": 26,
+  "category_name_ar": "التراجم والطبقات",
+  "main_author_id": 215,
+  "main_author_name_ar": "البخاري",
+  "main_author_death_hijri": 256,
+  "main_author_death_hijri_text": "256",
+  "authors_text": "215",
+  "authors": [
+    {
+      "author_id": 215,
+      "role": "author",
+      "name_ar": "البخاري",
+      "death_hijri": 256,
+      "death_hijri_text": "256"
+    }
+  ],
+  "hijri_era": 256,
+  "printed": true,
+  "is_hidden": false,
+  "parent_id": null,
+  "group_id": 113,
+  "version_major": 1,
+  "version_minor": 1,
+  "betaka_text": "الكتاب: التاريخ الكبير\rالمؤلف: محمد بن إسماعيل بن إبراهيم بن المغيرة البخاري، أبو عبد الله (ت ٢٥٦هـ)\rالطبعة: دائرة المعارف العثمانية، حيدر آباد - الدكن\rطبع تحت مراقبة: محمد عبد المعيد خان\rعدد الأجزاء: ٨\r[ترقيم الكتاب موافق للمطبوع]",
+  "meta": {
+    "date": "08121431",
+    "group": 113,
+    "prefix": "«التاريخ الكبير» للبخاري",
+    "suffix": "ت المعلمي اليماني"
+  },
+  "volume_count_observed": 9,
+  "has_multi_part": true
+}

@@ -1,0 +1,33 @@
+{
+  "book_id": 1976,
+  "shamela_id": 5816,
+  "book_type": 1,
+  "book_type_label": "كتاب",
+  "title_ar": "الثقات لابن حبان",
+  "page_count": 4103,
+  "toc_count": 168,
+  "files": [
+    {
+      "path": "pages.jsonl",
+      "sha256": "17f3ff61577d7db94d3d79ec41de73f9dc63de5a0325af649f9c6095353ce607",
+      "bytes": 6721974,
+      "rows": 4103
+    },
+    {
+      "path": "toc.jsonl",
+      "sha256": "fe2c8acf1b4b977241bc0cc8731b9c7a39ef9daa9e07f27bc42b5b79ea6ecd6d",
+      "bytes": 22628,
+      "rows": 168
+    },
+    {
+      "path": "book_metadata.json",
+      "sha256": "541fdb354f19d71286145e1e2818726cae64dd8e573d80fa9099830bd3466158",
+      "bytes": 1497,
+      "rows": 1
+    }
+  ],
+  "extracted_at": "2026-04-26T20:41:36.113769Z",
+  "extractor_version": "0.3.0",
+  "snapshot_id": "shamela4_full_extraction_pg_2026_04_26",
+  "rejects": []
+}

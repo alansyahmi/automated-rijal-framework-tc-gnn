@@ -1,0 +1,140 @@
+{
+  "package_name": "manual_collation_pilot_10_PROV51_frozen",
+  "schema_version": "2.2",
+  "snapshot_created_utc": "2026-11-13T06:13:19Z",
+  "approval_status": "user_approved",
+  "approval_date": "2026-11-13",
+  "freeze_scope": [
+    "PROV-51-C01"
+  ],
+  "statement_ids": [
+    "PROV-51-C01-S01",
+    "PROV-51-C01-S02"
+  ],
+  "source_working_copy": "data/2_interim/shamela4_narrator_audit/manual_annotation_working/manual_collation_pilot_10_review_round_1_working",
+  "source_working_copy_manifest_sha256": "cda1d1e4bad12da7ed5f571da7705628360b45d7c2bcccb86d48ceb17e77cc2c",
+  "source_research_memo": "source_research/PROV-51_source_research.md",
+  "source_research_memo_sha256": "2e711c0e3212a62e46e4e375add870fc2d965276a98913c667163fb326dc07be",
+  "decisions": {
+    "identity_match_status": "confirmed",
+    "candidate_field_source_correspondence": "exact",
+    "PROV-51-C01-S01": {
+      "type": "specific_transmission_criticism",
+      "text": "عابوا عليه أنه حدث عن أبيه بغير سماع",
+      "taqrib_rank_number": null,
+      "rank_status": "unranked",
+      "target_task_scope": "not_in_defined_task",
+      "historical_input_eligibility": "not_assessed",
+      "passage_evaluator_naming_status": "collective_only",
+      "historical_evaluator_attribution_status": "unresolved",
+      "transmission_route_status": "unresolved",
+      "compiler_authorship_status": "unresolved",
+      "corroboration_status": "unresolved_corroboration"
+    },
+    "PROV-51-C01-S02": {
+      "type": "descriptive_or_generational_status",
+      "text": "من العاشرة",
+      "taqrib_rank_number": null,
+      "rank_status": "not_applicable",
+      "target_task_scope": "not_in_defined_task",
+      "historical_input_eligibility": "not_applicable"
+    },
+    "context_evidence_record_ids": [
+      "EVID-PROV-51-C01-JARH-ABUHATIM-CONTEXT01",
+      "EVID-PROV-51-C01-TAHDHIB-ABUHATIM-CONTEXT01",
+      "EVID-PROV-51-C01-TAHDHIB-ABUDAWUD-CONTEXT01"
+    ],
+    "placeholder_status": {
+      "PROV-51-C01-S00": "superseded_placeholder"
+    },
+    "legacy_annotation_values_introduced": false
+  },
+  "locator_note": "The local Taqrib corpus records page_num 468 and entry 5735. Local metadata states pagination matches print; the Awwamah printed page image was not visually inspected.",
+  "scope_note": "The complete Round 1 working-copy snapshot is included for relational context. Only PROV-51-C01 is approved and frozen by this package; no other case decisions are frozen here.",
+  "limitations": [
+    "AI-assisted single-reviewer feasibility record; no independent expert review or inter-reviewer agreement.",
+    "The unnamed collective in Taqrib is not equated with Abu Hatim or Abu Dawud; historical attribution and route remain unresolved.",
+    "No conclusion on narrator reliability, historical grade provenance, or historical-input eligibility for S01.",
+    "The strict package-wide validator remains blocked by pre-existing issues in other case records; no unrelated records were changed."
+  ],
+  "verification": {
+    "code_test_command": "python -m unittest discover -s dataset_discovery/target_feasibility -p \"test_*.py\"",
+    "tests_run": 72,
+    "result": "passed",
+    "run_utc": "2026-11-13T06:13:19Z",
+    "prov51_case_row_link_integrity": "passed",
+    "freeze_file_hashes": "passed",
+    "working_manifest_sidecar": "passed",
+    "package_wide_validator": "not_passed_due_to_pre_existing_issues_outside_PROV51"
+  },
+  "files": {
+    "README.md": {
+      "bytes": 2526,
+      "sha256": "f05a2246bc969ec3b38ab4d38972b1b21ed6adede6b40ecbe43a0c568aea30ff"
+    },
+    "source_research/PROV-51_source_research.md": {
+      "bytes": 5840,
+      "sha256": "2e711c0e3212a62e46e4e375add870fc2d965276a98913c667163fb326dc07be"
+    },
+    "working_copy_snapshot/attribution_links.csv": {
+      "bytes": 6909,
+      "sha256": "b4770c60e02124b0cc92e3eb1dcd80e806f1baf4f32238a7524cb36420ac8272"
+    },
+    "working_copy_snapshot/candidate_entries.csv": {
+      "bytes": 16270,
+      "sha256": "9d00edadefbfd1d7ddbea962f3aaaf1b5ec9280de8fe09e5331b3b06087bc31f"
+    },
+    "working_copy_snapshot/cases.csv": {
+      "bytes": 2284,
+      "sha256": "b0a139e550009f57c44c4c1b4011a81c225f241200935ca2a83b20e22773617b"
+    },
+    "working_copy_snapshot/date_claims.csv": {
+      "bytes": 119,
+      "sha256": "4fed65cb0b7015a9fdc0e6c46f4529daeee70d51ea8275bfd39fb6a32c11daab"
+    },
+    "working_copy_snapshot/feature_sources.csv": {
+      "bytes": 195,
+      "sha256": "f60f0a40fc58a9a56647edd2e984d151551b8f88e2f4de8eb691944d828bf4f1"
+    },
+    "working_copy_snapshot/INDEPENDENT_TAQRIB_PILOT10_SOURCE_COLLATION.md": {
+      "bytes": 19270,
+      "sha256": "bedd142fb434fac0b403fb9899a729698cdcea29dffa79b41129000fd48a5955"
+    },
+    "working_copy_snapshot/README.md": {
+      "bytes": 22759,
+      "sha256": "8b8700cc827bc8ce2a281833d6a64359d6825ed1fdca86a3bda56b2f3c86b5be"
+    },
+    "working_copy_snapshot/source_evidence.csv": {
+      "bytes": 23346,
+      "sha256": "4876e01cd06b3490f2a276b46feeb1027cac31dce551094fa579442d2dabd25f"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_MANIFEST.json": {
+      "bytes": 2545,
+      "sha256": "7915dcf2805228d8369f95720979abf85bf81606d4723a065b4a1f585cf30df1"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_MANIFEST.sha256": {
+      "bytes": 87,
+      "sha256": "b3f3b2d1cb7d49cdba387884b04ece7703bdf96d6527c32ed0ee0818e6a1452e"
+    },
+    "working_copy_snapshot/SOURCE_PACKET_README.md": {
+      "bytes": 3184,
+      "sha256": "9d006684ab790f7136640d796cd5218b519b760b86e64bffdf8b77a8b7090f36"
+    },
+    "working_copy_snapshot/sources.csv": {
+      "bytes": 12912,
+      "sha256": "2e08e6522d7c05e2b518030413392965bb01f1d31bb09bee2339a8fe165aa68c"
+    },
+    "working_copy_snapshot/statements.csv": {
+      "bytes": 16047,
+      "sha256": "66089e39cfcfc36f16e2d04cf2f2216bdcacc0f607ad270ea88d40dd03ef56c2"
+    },
+    "working_copy_snapshot/WORKING_COPY_MANIFEST.json": {
+      "bytes": 16519,
+      "sha256": "cda1d1e4bad12da7ed5f571da7705628360b45d7c2bcccb86d48ceb17e77cc2c"
+    },
+    "working_copy_snapshot/WORKING_COPY_MANIFEST.sha256": {
+      "bytes": 94,
+      "sha256": "f9021e1872d3194383abaf00a590a13e434e6474b0f223510c08fa86eed84cef"
+    }
+  }
+}
