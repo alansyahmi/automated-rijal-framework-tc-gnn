@@ -1,0 +1,39 @@
+{
+  "package": "Taqrib two-layer rank-candidate inventory v0.1",
+  "status": "exact phrase inventory only; no labels assigned or accepted",
+  "generated_by": "dataset_discovery/target_feasibility/build_taqrib_two_layer_candidate_inventory_v0_1.py",
+  "policy_version": "RANK_TARGET_POLICY_V0_2.md",
+  "source_entry_count": 8827,
+  "phrase_definition_count": 50,
+  "grade_candidate_occurrences": 8555,
+  "context_note_occurrences": 3777,
+  "entries_with_earliest_lexical_candidate": 7494,
+  "entries_without_exact_candidate_hit": 1333,
+  "rank_assignments": 0,
+  "auto_accepted": 0,
+  "inputs": {
+    "ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "CUE_OCCURRENCES.csv": "518187b48b55026322c1ed84875108ee4441b6e4d1fdd8a80fdc4b0fb19b0b67",
+    "RANK_CUE_INVENTORY.csv": "49c551ac3e64a670067c6198d6a58a916bb1ed07d48bb617cf0282563ba638fd",
+    "RULE_REGISTRY_SNAPSHOT.csv": "2f902f496a0d304f9c8de773fc0120caf437889941ceb8cce9a791d5e4a671ae",
+    "PRIORITY_12_FIRST_GRADE_TARGETS_DRAFT_V0_2.csv": "bc819467dfbdf8b61563c9ada534270bf39ed9060cedd6e656fcbb2f0e426c24",
+    "PRIORITY_12_CONTEXT_NOTE_LEDGER_DRAFT_V0_2.csv": "78808c2853d284737ae568798d87fa2812795ce962fb3c107280e127d359fa33",
+    "RANK_TARGET_POLICY_V0_2.md": "dd7617398d6a0235edc45cb86d89b44b176dc518b550db1bf974dd2fbf27f31c"
+  },
+  "outputs": {
+    "PHRASE_INVENTORY.csv": "2b01ac32a646dd6ae7d19d0512607051caf11c32ac56289eab57a2bf3ddb5925",
+    "GRADE_CUE_OCCURRENCES.csv": "d59008d662ac6361d1518fbb4110563a8e364089a077a359eb0fc6f82cdd233b",
+    "CONTEXT_NOTE_OCCURRENCES.csv": "e8af99703630be1d10575658b057370060b31f388762dfeacea383c16d9d2471",
+    "ENTRY_FIRST_CANDIDATE_SUMMARY.csv": "f1f929e53fcab02564fd510fcfee44723923e9528d128231afaa4c6e15b2636d",
+    "PHRASE_COUNTS.csv": "cb4e3bcd216bbaeae78f51d3c9950a753c9fffdb8bbd13bae4cd64bd2971dd05",
+    "RUN_REPORT.md": "b16a652cc3bfdadb23fc6e5b79c35b197c6a62abae8d2da8347ee8d0efb3e2dd",
+    "README.md": "13e93e3cf58846752b02591ac82bfa7c9b773b935a2d42c4ce846ad82d5067e9"
+  },
+  "limits": [
+    "The source-defined cue examples are illustrative, not exhaustive.",
+    "Earliest lexical occurrence is not necessarily the first complete grade-bearing phrase.",
+    "Context-note relations and target rank are not inferred from occurrences.",
+    "Counts are not labels, coverage, precision, recall, or model performance.",
+    "The local extraction omits the opening rank introduction and excludes nonempty unnumbered chunks from this entry index."
+  ]
+}

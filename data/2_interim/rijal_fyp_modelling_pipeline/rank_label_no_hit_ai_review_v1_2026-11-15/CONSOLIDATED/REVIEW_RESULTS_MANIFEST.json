@@ -1,0 +1,78 @@
+{
+  "package": "Taqrib no-hit AI review v1 consolidated results",
+  "status": "provisional AI review suggestions; no human-approved labels",
+  "source_entry_count": 1211,
+  "unique_entry_ids": 1211,
+  "all_source_columns_preserved": true,
+  "exact_span_containment_checked": true,
+  "batch_results": [
+    {
+      "batch": "BATCH_01",
+      "input_rows": 403,
+      "result_rows": 403,
+      "candidate_status_rows": 234
+    },
+    {
+      "batch": "BATCH_02",
+      "input_rows": 404,
+      "result_rows": 404,
+      "candidate_status_rows": 274
+    },
+    {
+      "batch": "BATCH_03",
+      "input_rows": 404,
+      "result_rows": 404,
+      "candidate_status_rows": 259
+    }
+  ],
+  "prep_manifest_sha256": "c6c1e33e72814d54f83377310ad06e3617d1dd62133fc9a5010e61ea8e6b45c1",
+  "pre_review_template_hashes": {
+    "BATCH_01_INPUT.csv": "5ce79730997735d8bb704a703a63545019e03a5ca1636aa1d6f8cccb6ccc003c",
+    "BATCH_01_AI_REVIEW.csv": "d09785324dd685864ff3fb11c9419a07bc54ad732618f60284265600d91c10e3",
+    "BATCH_02_INPUT.csv": "233aa1a9ba94c1f9b93ca6a7f557b67c30524f0f72e2d544b0bed438dc85cf0d",
+    "BATCH_02_AI_REVIEW.csv": "06ea897ff32353465fffa6783165fbf545568d6ba2fe851337f3682ca6de9a39",
+    "BATCH_03_INPUT.csv": "5c88a0a0f7ef0676a2082a86f5d6b3dc426c37039cfcb076161fe1dff10623e3",
+    "BATCH_03_AI_REVIEW.csv": "36334b94233783aede30cc5c82252ae34af8420dc0245857759de56e3f80ff1c",
+    "AI_REVIEW_INSTRUCTIONS.md": "df256cd31a71dbde32d4e279ce5a24102939242deef29a47effa47f7c455e008",
+    "README.md": "ba001ef7dde720294189575d5ba3b7aa42a144ffd69dd315b46c65e0f115d575"
+  },
+  "review_result_hashes": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_no_hit_ai_review_v1_2026-11-15/BATCH_01_AI_REVIEW.csv": "fdac1b34d5700861634c4e13548f67e2f46cfab93a66d63d5e103d6c7c46cc93",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_no_hit_ai_review_v1_2026-11-15/BATCH_02_AI_REVIEW.csv": "a82cfa6bf34ce7f636f5c45f72127f7349e5f5e8968673454282cb3d4eb53fff",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_no_hit_ai_review_v1_2026-11-15/BATCH_03_AI_REVIEW.csv": "ed7b27d0a7332fff54ac04f0ee2d45ac5d34a0b67379539131b32bac611c2c80"
+  },
+  "outputs": {
+    "AI_REVIEW_ALL_1211.csv": "7e4ac25a4cb91f265f446b420f2c6b429bab1a14aa35a0b6373d8ee16ec38f73",
+    "AI_DISCOVERED_FIRST_PHRASE_FREQUENCIES.csv": "2b235b02b831efd602e374a1f38b27483c49f446cb370c870e6fed7dd4303a60",
+    "REVIEW_SUMMARY.md": "d9074188e16ca09f7905d5c3183b02e0f03401211f4c70e95c6b448f71141d70"
+  },
+  "rank_candidate_counts": {
+    "unresolved": 103,
+    "conditional": 202,
+    "not_applicable": 138,
+    "1": 701,
+    "3": 60,
+    "11": 4,
+    "2": 2,
+    "4": 1
+  },
+  "status_counts": {
+    "unresolved": 103,
+    "conditional": 203,
+    "no_candidate": 138,
+    "candidate": 767
+  },
+  "phrase_type_counts": {
+    "uncertain": 103,
+    "specialized_evaluation": 143,
+    "non_grade_description": 125,
+    "status_or_biography": 786,
+    "standardized_grade": 54
+  },
+  "limitations": [
+    "AI suggestions are not expert or human annotations.",
+    "No-hit status meant no exact match against an incomplete inventory; it did not imply no grade wording.",
+    "Exact span validation checks string containment only, not semantic correctness.",
+    "Counts are triage counts, not corpus prevalence, coverage, precision, recall, or model performance."
+  ]
+}

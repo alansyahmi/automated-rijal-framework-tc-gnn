@@ -1,0 +1,30 @@
+{
+  "package_id": "gate_a_morphological_candidate_scan_v0_1_2026-11-16",
+  "generated_at_utc": "2026-11-16T11:28:28.588521+00:00",
+  "scope": "Gate A morphological discovery scan (noun/adjective declensions + verb derivations) over 8,827 numbered Taqrib entries; zero canonical ranks assigned.",
+  "counts": {
+    "entries_scanned": 8827,
+    "entries_with_any_hit": 8506,
+    "families_scanned": 25,
+    "distinct_surface_forms": 177,
+    "total_occurrences": 10588,
+    "new_surface_forms_beyond_v0_1": 124,
+    "new_occurrences_beyond_v0_1": 1297,
+    "none_found_161_with_morph_hit": 44,
+    "canonical_ranks_assigned": 0,
+    "rules_enabled": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_shadow_run_v1_2026-11-15/ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_vocabulary_candidate_inventory_v0_1_2026-11-16/CANDIDATE_VOCABULARY_V0_1.csv": "948af9d43d6847f3b456915152d6c1f6a8d7be545ac78514d93f1b2b00ba245c",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_review_user_decisions_v1_2_2026-11-16/NONE_FOUND_USER_DECISIONS_161_V1_2.csv": "13b6d5185cd2a8caee5c5cc4e836a065895b85131a2fd0c56ced6f0d6ed59a25",
+    "dataset_discovery/target_feasibility/scan_taqrib_morphological_candidates_v0_1.py": "1f8904a20aa964116e98fff5d985dde0410f90b2dc7c3b72b3ff199ae56c96b2"
+  },
+  "outputs": {
+    "MORPHOLOGICAL_SURFACE_FORMS_V0_1.csv": "9db30bba483139cdc6a1009724e97d10f04e22a45ee7226c4f49e62493e53cd5",
+    "MORPHOLOGICAL_FAMILY_SUMMARY_V0_1.csv": "ce11c249c2307fa9210f6e1c6201099e463e043a5bbd117c9c2a40bc73cf7f00",
+    "NONE_FOUND_161_MORPH_HITS_V0_1.csv": "f9986eefb52e9c5cf5379bbb414a9815c2b5353b55daaba2516b1ddfda151357",
+    "README.md": "30205c4df273f535a0a0b52967067d57158058d8550bf8e4460ee90d20d41148"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

@@ -1,0 +1,44 @@
+{
+  "package_id": "task_a_deterministic_targets_v1_2_2026-11-17",
+  "generated_at_utc": "2026-11-16T22:31:06.582560+00:00",
+  "counts": {
+    "corpus_total": 8827,
+    "disposition_counts": {
+      "abstain_non_grade": 172,
+      "abstain_precondition_unmet": 3110,
+      "assigned_rank": 5545
+    },
+    "assigned_per_rank_counts": {
+      "1": 430,
+      "2": 257,
+      "3": 1714,
+      "4": 1165,
+      "5": 573,
+      "6": 100,
+      "7": 202,
+      "8": 322,
+      "9": 678,
+      "10": 96,
+      "11": 5,
+      "12": 3
+    },
+    "blind_120_label_exact": 120,
+    "blind_120_span_exact": 120,
+    "distinct_rules_applied": 28
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_shadow_run_v1_2026-11-15/ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_b_blind_human_only_labels_v0_1_2026-11-17/HUMAN_ONLY_BLIND_LABELS_120_V0_1.csv": "945ef2230c2c877edced2b8c552d0f52f951b0105c9f813f6e9e121d238fd4ad",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_review_user_decisions_v1_2_2026-11-16/NONE_FOUND_USER_DECISIONS_161_V1_2.csv": "13b6d5185cd2a8caee5c5cc4e836a065895b85131a2fd0c56ced6f0d6ed59a25",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_a_morphological_user_decisions_v0_1_2026-11-17/MORPHOLOGICAL_SURFACE_FORMS_USER_DECISIONS_V0_1.csv": "45a213130d72d7cf1433879a2b5f4577aecd292168570809d1cec4866177fa5d",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_a_morphological_candidate_scan_v0_2_2026-11-17/MORPHOLOGICAL_SURFACE_FORMS_V0_2.csv": "1a3c873c2684642d4a5311b28e5f4725475b99ff11b432c23f7f7f9e910f11da",
+    "dataset_discovery/target_feasibility/build_task_a_deterministic_targets_v1_2.py": "0c7495bed3d9d82601346ea527f5a4f503339b1cac185e4a2cb55c7072563e67"
+  },
+  "outputs": {
+    "TASK_A_DETERMINISTIC_TARGETS_8827_V1_2.csv": "ea5e5c9c540e7c6f9989985cffcd117003842a822482fcf345b895c62d5b8d98",
+    "TASK_A_DETERMINISTIC_RULE_CATALOG_V1_2.csv": "9dac042d0a2a371846d1376fef2fd686fcadfaa1f29d357c0dd7f77b3d5cf6a8",
+    "TASK_A_BLIND_120_VERIFICATION_V1_2.csv": "de918fbd24a4ef19b6037c45db5ce87dc99f9548d307d2e74f2a57a10d74353b",
+    "TASK_A_DETERMINISTIC_REPORT_V1_2.md": "509e66cc072be11ef60d9144dc342f2b3fd86eed8452ccf04ed4c7f8c328970e"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

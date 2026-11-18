@@ -1,0 +1,51 @@
+{
+  "package_name": "ai_assisted_pass_b_draft_six_case_v1",
+  "created_on": "2026-11-14",
+  "status": "ai_assisted_draft_for_human_review_not_blinded_not_independent",
+  "schema_baseline": "Manual Collation Schema v2.2",
+  "protocol_baseline": "Pilot Evaluation and Annotation Protocol v1.0",
+  "case_count": 6,
+  "candidate_row_count": 7,
+  "statement_row_count": 22,
+  "attribution_link_count": 6,
+  "source_evidence_row_count": 46,
+  "source_metadata_row_count": 18,
+  "input_hashes_sha256": {
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\02_PASS_B_OPEN_AFTER_PASS_A_FREEZE\\PASS_B_CASES.csv": "7ef6c500b41667d3880aa7c0fec64e5bf242bc325d570d02be9770febe522dce",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\02_PASS_B_OPEN_AFTER_PASS_A_FREEZE\\PASS_B_CANDIDATES.csv": "a6f1026b2fcb0394925f92617fe1836fc5f8ed0308c8755255ba24881b0185c5",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\02_PASS_B_OPEN_AFTER_PASS_A_FREEZE\\PASS_B_SOURCE_REFERENCES.csv": "80ab1814852be6a4b2d69918c89d51ddb0e29bc03e6fedd794346cccebc8b329",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\02_PASS_B_OPEN_AFTER_PASS_A_FREEZE\\PASS_B_CANDIDATE_DECISIONS_BLANK.csv": "7ae48f7ed22147da3e01d4b80309515e2acbeb26ad6e9e1e7b266501289e5620",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\02_PASS_B_OPEN_AFTER_PASS_A_FREEZE\\PASS_B_STATEMENT_DECISIONS_BLANK.csv": "e3f46e33178b7fc19559f3fb27529bb8d2c60853162ece3505a68b4ad14f61b7",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\02_PASS_B_OPEN_AFTER_PASS_A_FREEZE\\PASS_B_ATTRIBUTION_DECISIONS_BLANK.csv": "ec6eeb4b0c02321df1e751b453f4a508df3243742892f70d4b3f3d714aa2ee36",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\02_PASS_B_OPEN_AFTER_PASS_A_FREEZE\\PASS_B_SOURCE_EVIDENCE_DECISIONS_BLANK.csv": "1bede3063d2781ea126b03be2ac3a295dcccd8ca672401be49f99c5ba53f1401",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\02_PASS_B_OPEN_AFTER_PASS_A_FREEZE\\PASS_B_SOURCE_METADATA_DECISIONS_BLANK.csv": "28dfadec878e41b5be968bf9927affabe5b7c5fd9beb540f812ae898116e2f33",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\PASS_A_SUBMISSIONS\\PASS_A_FROZEN_IMMEDIATE_2026-11-14\\PASS_A_IDENTITY_DECISIONS.csv": "155b4b36f3ebb759bf6c9b5e1a4f49d5f6cbdbe95bbc79c59ecda53e0fc73014",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\consistency_reassessment_6case_v1\\REVIEWER_COPY\\PASS_A_SUBMISSIONS\\PASS_A_FROZEN_IMMEDIATE_2026-11-14\\PASS_A_FREEZE_MANIFEST.json": "da8b4d3fb19371aa226fdcd780e0a4c9b8d315706159c769633cfb86f34d4cb6",
+    "dataset_discovery\\target_feasibility\\MANUAL_COLLATION_SCHEMA_V2_2_FINAL.md": "2bcba2ade81ce57ec9075bd587c3ab62eafb09845183cfa1d44b6e709d38c860",
+    "data\\2_interim\\shamela4_narrator_audit\\manual_annotation_working\\PILOT_EVALUATION_AND_ANNOTATION_PROTOCOL_V1.md": "d64b0658071c2a1796e6eda593a295ce551a38aa10e85d42ac669f9aea87ed20",
+    "data\\1_raw\\hadithdb\\narrators_db.json": "67c183de90f779496f741a868120224c71fd32ff94525fb6a119ea8750b9c42a",
+    "data\\1_raw\\Shamela4_Full_DB\\_meta\\narrators.parquet": "82657fbae4e73a6514258102293b95be4e6031ab45faa65d69dad14cdc51ef34",
+    "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\3076__تقريب-التهذيب\\pages.jsonl": "45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa",
+    "data\\1_raw\\Shamela4_Full_DB\\26__التراجم-والطبقات\\3076__تقريب-التهذيب\\book_metadata.json": "bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88"
+  },
+  "output_hashes_sha256": {
+    "PASS_B_CANDIDATE_DECISIONS_AI_DRAFT.csv": "85835af3d2cf11e7251be97f5835b6c09f7e274667c6379151ad9ab5a3598c25",
+    "PASS_B_STATEMENT_DECISIONS_AI_DRAFT.csv": "08e0c5e0c29c147048539620bd3d1490c75ca6bd5d475e2ca7839d925ba62acc",
+    "PASS_B_ATTRIBUTION_DECISIONS_AI_DRAFT.csv": "439c27ef63d426ad02794ab7536eee81b8c846f3275dfbc04142794f49b81010",
+    "PASS_B_SOURCE_EVIDENCE_AI_DRAFT.csv": "78b41263bef4ff6d92dd3b3719c470604e2196b403b3a8788b8fc58228110abb",
+    "PASS_B_SOURCE_METADATA_AI_DRAFT.csv": "4270621451cc47e3a34785e5773cad9b91d8417b75a8630a9c591af0c7be75a2",
+    "AI_REVIEW_NOTES.md": "5a12177687ae1bc81f72e83b4c2f0c8475e02b1d0a2787590750a8b5217c4159",
+    "PASS_A_RPT05_KEY_ERRATUM.md": "f29551036c6b0e287ee253f4b47b70f0d32e840ff2e4eb592d2c8eb3ad6bb557",
+    "build_ai_pass_b_draft.py": "00fd16bcf4c109b89539e1da91bfd51b81b3353f11f6ba5eae21a070a75bc635"
+  },
+  "manifest_hashing": "This manifest is excluded from its own output hashes; PASS_B_AI_DRAFT_MANIFEST.sha256 hashes this manifest.",
+  "limitations": [
+    "The AI has seen earlier discussion of these cases; this is not a blind repeat, independent annotator, or inter-reviewer agreement result.",
+    "RPT-05 frozen Pass A candidate-key association is crossed; preserved unchanged and documented by an additive erratum.",
+    "Local Taqrib corpus text and metadata were inspected; printed page images were not visually inspected.",
+    "Inherited bibliographic references other than the local corpus sources and the official Taqrib introduction were not reopened.",
+    "Historical evaluator provenance, transmission routes, corroboration, and historical-input eligibility remain unresolved or not assessed.",
+    "No statement is certified as a supervised-learning target; the target-task manifest is not frozen.",
+    "Rank 2 for RPT-01 is an interpretive mapping from a composite descriptor to the introduction's semantic-affirmation example and needs human review."
+  ]
+}

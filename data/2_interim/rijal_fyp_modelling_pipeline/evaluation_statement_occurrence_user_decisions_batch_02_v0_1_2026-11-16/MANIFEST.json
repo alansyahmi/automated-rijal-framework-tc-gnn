@@ -1,0 +1,23 @@
+{
+  "package_id": "evaluation_statement_occurrence_user_decisions_batch_02_v0_1_2026-11-16",
+  "generated_at_utc": "2026-11-16T09:30:30.629893+00:00",
+  "decision_basis": "User explicitly adopted all AI advisory proposals in Batch 02.",
+  "decision_scope": "Acceptance applies to all proposed statement-layer fields for each selected review case only; it does not generalize to unselected phrase hits.",
+  "counts": {
+    "rows": 889,
+    "distinct_entries": 842,
+    "accepted_rows": 889,
+    "canonical_ranks_assigned": 0,
+    "numeric_scores_assigned": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_occurrence_advisory_batch_02_v0_1_2026-11-16/AI_ADVISORY_REVIEW_BATCH_02_V0_1.csv": "95be9d9b09d912c07f8785018a8145f88b909674c24d37bc90bd7cb8d838f1bd",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_occurrence_advisory_batch_02_v0_1_2026-11-16/MANIFEST.json": "bb4eaaabfaefcc440cc728109f20cfe495d18f2254db2be723a055925c8db875",
+    "dataset_discovery/target_feasibility/record_evaluative_statement_batch_02_user_acceptance.py": "ce1cf90d660d8573db02975c658275551577325d5a27139a35c47c55b8f5aac5"
+  },
+  "outputs": {
+    "HUMAN_DECISIONS_BATCH_02_V0_1.csv": "8fbe81c26ed8593aeeb660886e81165a6d6db6e4a5daf0155e85353c136535ce",
+    "README.md": "3b8e978c150be41d105776b9793c63b56c6033c578e7a860aecd98d91cc41aec"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

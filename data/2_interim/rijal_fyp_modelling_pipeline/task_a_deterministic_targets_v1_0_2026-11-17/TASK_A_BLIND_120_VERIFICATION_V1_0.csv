@@ -1,0 +1,121 @@
+﻿eval_id,entry_id,human_label,deterministic_label,label_exact_match,human_span,deterministic_span,span_exact_match,rule_id
+GB-EVAL-036,S3076-P080-C006-E0043,2,2,yes,ثقة حافظ,ثقة حافظ,yes,RULE-R2-COMPOUND
+GB-EVAL-098,S3076-P084-C008-E0103,2,2,yes,ثقة حافظ,ثقة حافظ,yes,RULE-R2-COMPOUND
+GB-EVAL-045,S3076-P092-C016-E0228,10,10,yes,متروك,متروك,yes,RULE-R10-STANDALONE
+GB-EVAL-021,S3076-P094-C008-E0253,abstain_precondition_unmet,abstain_precondition_unmet,yes,صدوق,صدوق,yes,GUARD-CTX-QUALIFIER
+GB-EVAL-023,S3076-P114-C003-E0542,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-030,S3076-P114-C018-E0556,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول أيضا,مقبول أيضا,yes,GUARD-R6-MAQBUL
+GB-EVAL-026,S3076-P117-C006-E0595,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-012,S3076-P119-C002-E0624,5,5,yes,صدوق يهم,صدوق يهم,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-086,S3076-P121-C007-E0654,9,9,yes,مجهول,مجهول,yes,RULE-R9-MAJHUL
+GB-EVAL-027,S3076-P123-C005-E0686,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-002,S3076-P125-C013-E0725,abstain_precondition_unmet,abstain_precondition_unmet,yes,متروك متهم,متروك متهم,yes,GUARD-RARE-STACKED
+GB-EVAL-035,S3076-P128-C002-E0761,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول رُمِيَ بالرفض,no,GUARD-R6-MAQBUL
+GB-EVAL-011,S3076-P130-C007-E0796,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-001,S3076-P130-C013-E0801,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-066,S3076-P142-C008-E0971,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-107,S3076-P144-C011-E1001,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-009,S3076-P145-C014-E1018,5,5,yes,صدوق يخطىء,صدوق يخطىء,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-003,S3076-P154-C009-E1151,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-041,S3076-P155-C008-E1166,5,5,yes,صدوق يهم,صدوق يهم,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-096,S3076-P155-C014-E1171,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-085,S3076-P163-C006-E1273,6,6,yes,لين الحديث,لين الحديث,yes,RULE-R6-LAYYIN
+GB-EVAL-013,S3076-P172-C005-E1404,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-016,S3076-P174-C003-E1434,9,9,yes,مجهول,مجهول,yes,RULE-R9-MAJHUL
+GB-EVAL-114,S3076-P178-C005-E1496,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-017,S3076-P204-C010-E1860,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-064,S3076-P216-C010-E2031,2,2,yes,ثقة حافظ,ثقة حافظ,yes,RULE-R2-COMPOUND
+GB-EVAL-028,S3076-P221-C007-E2104,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-078,S3076-P225-C013-E2165,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-099,S3076-P231-C002-E2235,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-057,S3076-P239-C010-E2366,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-065,S3076-P241-C016-E2403,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-056,S3076-P243-C015-E2434,8,8,yes,وهو ضعيف,وهو ضعيف,yes,RULE-R8-DAIF
+GB-EVAL-110,S3076-P251-C007-E2557,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-101,S3076-P257-C005-E2649,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-117,S3076-P258-C014-E2669,abstain_precondition_unmet,abstain_precondition_unmet,yes,ثقة,ثقة,yes,GUARD-CTX-QUALIFIER
+GB-EVAL-018,S3076-P261-C005-E2706,9,9,yes,مجهول,مجهول,yes,RULE-R9-MAJHUL
+GB-EVAL-095,S3076-P271-C019-E2856,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-038,S3076-P273-C006-E2878,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-083,S3076-P276-C004-E2925,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-077,S3076-P276-C013-E2934,abstain_precondition_unmet,abstain_precondition_unmet,yes,ثقة,ثقة,yes,GUARD-CTX-QUALIFIER
+GB-EVAL-070,S3076-P278-C001-E2952,2,2,yes,ثقة جليل,ثقة جليل,yes,RULE-R2-COMPOUND
+GB-EVAL-033,S3076-P282-C004-E3015,4,4,yes,صدوق عابد,صدوق عابد,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-080,S3076-P283-C009-E3036,5,5,yes,صدوق يخطىء,صدوق يخطىء,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-090,S3076-P286-C012-E3078,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-076,S3076-P295-C016-E3210,2,2,yes,ثقة حافظ,ثقة حافظ,yes,RULE-R2-COMPOUND
+GB-EVAL-010,S3076-P303-C011-E3326,10,10,yes,متروك اتهمه بالكذب أبو داود وغيره,متروك اتهمه بالكذب أبو داود وغيره,yes,RULE-R10-MATRUK-ACCUSATION
+GB-EVAL-094,S3076-P317-C006-E3524,8,8,yes,ضعيف,ضعيف,yes,RULE-R8-DAIF
+GB-EVAL-004,S3076-P318-C016-E3547,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-102,S3076-P319-C015-E3565,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-040,S3076-P331-C012-E3731,5,5,yes,صدوق يهم,صدوق يهم,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-063,S3076-P333-C008-E3759,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-103,S3076-P341-C020-E3885,5,5,yes,صدوق يخطىء,صدوق يخطىء,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-119,S3076-P357-C001-E4092,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-108,S3076-P368-C006-E4258,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-047,S3076-P371-C012-E4299,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-068,S3076-P378-C018-E4400,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-014,S3076-P383-C008-E4466,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-034,S3076-P387-C017-E4534,4,4,yes,لا بأس به,لا بأس به,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-092,S3076-P387-C018-E4535,4,4,yes,لا بأس به,لا بأس به,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-059,S3076-P395-C004-E4643,9,9,yes,مجهول,مجهول,yes,RULE-R9-MAJHUL
+GB-EVAL-072,S3076-P399-C008-E4706,2,2,yes,ثقة حافظ,ثقة حافظ,yes,RULE-R2-COMPOUND
+GB-EVAL-060,S3076-P400-C013-E4725,9,9,yes,مجهول,مجهول,yes,RULE-R9-MAJHUL
+GB-EVAL-043,S3076-P402-C017-E4757,8,8,yes,ضعيف,ضعيف,yes,RULE-R8-DAIF
+GB-EVAL-067,S3076-P403-C003-E4760,2,2,yes,ثقة ثبت إمام أعلم أهل عصره بالحديث وعلله,ثقة ثبت إمام أعلم أهل عصره بالحديث وعلله حتى قال البخاري ما استصغرت نفسي إلا عند علي ابن المديني,no,RULE-R2-COMPOUND
+GB-EVAL-087,S3076-P406-C006-E4812,abstain_precondition_unmet,abstain_precondition_unmet,yes,صدوق,صدوق,yes,GUARD-CTX-QUALIFIER
+GB-EVAL-005,S3076-P409-C002-E4845,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-058,S3076-P410-C018-E4874,8,8,yes,ضعيف,ضعيف,yes,RULE-R8-DAIF
+GB-EVAL-006,S3076-P417-C004-E4966,7,7,yes,مستور,مستور,yes,RULE-R7-MASTUR
+GB-EVAL-106,S3076-P424-C011-E5078,7,7,yes,مستور,مستور,yes,RULE-R7-MASTUR
+GB-EVAL-061,S3076-P429-C010-E5154,5,5,yes,صدوق يهم,صدوق يهم,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-062,S3076-P434-C007-E5227,1,1,yes,صحابي جليل,صحابي جليل,yes,RULE-R1-COMPANION
+GB-EVAL-071,S3076-P438-C004-E5286,abstain_precondition_unmet,abstain_precondition_unmet,yes,ثقة يغرب,ثقة يغرب,yes,GUARD-RARE-STACKED
+GB-EVAL-049,S3076-P446-C016-E5414,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-081,S3076-P453-C011-E5515,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-025,S3076-P462-C002-E5651,9,9,yes,مجهول,مجهول,yes,RULE-R9-MAJHUL
+GB-EVAL-111,S3076-P473-C001-E5798,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-084,S3076-P474-C007-E5819,5,abstain_precondition_unmet,no,صدوق فيه لين,صدوق فيه لين,yes,GUARD-CTX-QUALIFIER
+GB-EVAL-015,S3076-P477-C016-E5873,5,5,yes,صدوق يهم,صدوق يهم,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-091,S3076-P489-C002-E6034,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-104,S3076-P493-C015-E6091,2,2,yes,ثقة حافظ,ثقة حافظ,yes,RULE-R2-COMPOUND
+GB-EVAL-019,S3076-P498-C016-E6176,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-053,S3076-P501-C007-E6213,5,5,yes,صدوق له أوهام,صدوق له أوهام,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-105,S3076-P502-C002-E6220,5,5,yes,صدوق ربما وهم,صدوق ربما وهم,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-075,S3076-P502-C010-E6228,5,5,yes,صدوق يهم,صدوق يهم,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-109,S3076-P504-C003-E6251,5,5,yes,صدوق كثير الغلط,صدوق كثير الغلط,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-055,S3076-P526-C016-E6581,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-069,S3076-P528-C013-E6610,3,3,yes,ثقة عابد,ثقة عابد,yes,RULE-R3-STANDALONE
+GB-EVAL-088,S3076-P533-C002-E6683,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-022,S3076-P535-C001-E6712,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-007,S3076-P556-C001-E7043,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-054,S3076-P556-C002-E7044,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-051,S3076-P556-C008-E7050,5,5,yes,صدوق مدلس,صدوق مدلس,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-029,S3076-P558-C007-E7076,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-042,S3076-P565-C006-E7172,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-120,S3076-P575-C021-E7343,10,10,yes,متروك,متروك,yes,RULE-R10-STANDALONE
+GB-EVAL-074,S3076-P580-C008-E7398,7,7,yes,مستور,مستور,yes,RULE-R7-MASTUR
+GB-EVAL-024,S3076-P587-C012-E7500,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-044,S3076-P587-C013-E7501,5,5,yes,صدوق ربما أخطأ,صدوق ربما أخطأ,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-032,S3076-P590-C007-E7544,abstain_precondition_unmet,abstain_precondition_unmet,yes,[مقبول],مقبول],yes,GUARD-BRACKET-01
+GB-EVAL-050,S3076-P592-C001-E7569,9,9,yes,مجهول,مجهول,yes,RULE-R9-MAJHUL
+GB-EVAL-052,S3076-P593-C005-E7589,3,3,yes,ثقة,ثقة,yes,RULE-R3-STANDALONE
+GB-EVAL-118,S3076-P596-C012-E7641,2,2,yes,ثقة حافظ,ثقة حافظ,yes,RULE-R2-COMPOUND
+GB-EVAL-037,S3076-P597-C012-E7656,10,10,yes,متروك,متروك,yes,RULE-R10-STANDALONE
+GB-EVAL-031,S3076-P599-C016-E7689,9,9,yes,مجهول أيضا,مجهول أيضا,yes,RULE-R9-MAJHUL
+GB-EVAL-008,S3076-P611-C002-E7866,2,2,yes,ثقة حافظ,ثقة حافظ,yes,RULE-R2-COMPOUND
+GB-EVAL-093,S3076-P612-C006-E7887,4,4,yes,صدوق,صدوق,yes,RULE-R4-LOWER-PRAISE
+GB-EVAL-082,S3076-P613-C006-E7903,5,5,yes,صدوق يخطىء,صدوق يخطىء,yes,RULE-R5-QUALIFIED-SADUQ
+GB-EVAL-046,S3076-P617-C006-E7924,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-073,S3076-P620-C005-E7948,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-115,S3076-P624-C002-E7983,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-039,S3076-P656-C020-E8232,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-079,S3076-P664-C018-E8301,9,9,yes,مجهول,مجهول,yes,RULE-R9-MAJHUL
+GB-EVAL-097,S3076-P670-C008-E8336,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-116,S3076-P678-C007-E8410,1,1,yes,صحابي,صحابي,yes,RULE-R1-COMPANION
+GB-EVAL-100,S3076-P695-C026-E8478,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبول,مقبول,yes,GUARD-R6-MAQBUL
+GB-EVAL-113,S3076-P744-C009-E8544,1,1,yes,صحابية,صحابية,yes,RULE-R1-COMPANION
+GB-EVAL-020,S3076-P751-C015-E8651,1,1,yes,صحابية,صحابية,yes,RULE-R1-COMPANION
+GB-EVAL-048,S3076-P759-C002-E8769,abstain_precondition_unmet,abstain_precondition_unmet,yes,مقبولة,مقبولة,yes,GUARD-R6-MAQBUL
+GB-EVAL-089,S3076-P761-C005-E8789,abstain_non_grade,abstain_non_grade,yes,,,yes,GUARD-MUBHAMAT-REL
+GB-EVAL-112,S3076-P762-C014-E8801,abstain_non_grade,abstain_non_grade,yes,,,yes,GUARD-MUBHAMAT-REL

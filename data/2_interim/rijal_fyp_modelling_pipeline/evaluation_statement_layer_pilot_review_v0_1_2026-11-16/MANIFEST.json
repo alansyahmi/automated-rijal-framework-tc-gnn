@@ -1,0 +1,32 @@
+{
+  "package_id": "evaluation_statement_layer_pilot_review_v0_1_2026-11-16",
+  "generated_at_utc": "2026-11-16T10:13:02.758600+00:00",
+  "status": "pilot and codebook audit ready; REVIEW_SET.xlsx untouched; zero human decisions overwritten",
+  "counts": {
+    "pilot_cases_audited": 16,
+    "pilot_recommended_choices": {
+      "Looks right": 10,
+      "Change": 6
+    },
+    "example_proposals_audited": 21,
+    "consolidated_unresolved_domain_cases": 41,
+    "consolidated_unresolved_mode_cases": 19,
+    "human_decisions_filled": 0
+  },
+  "inputs": {
+    "outputs/evaluative_statement_layer_pilot_v0_1_2026-11-16/REVIEW_SET.xlsx": "4e47d1255fea524f5d2b7e2ac78cc48e12dc7f5201060673b9fe65576784d419",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_layer_context_pilot_v0_1_2026-11-16/MANIFEST.json": "8d16d28e3c53d238609f5d460c295c11a9d551079ddf45191e9648f047cd0e2d",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_layer_v0_1_2026-11-16/EVALUATIVE_STATEMENT_LAYER_CODEBOOK_DRAFT_V0_1.md": "407e5b708778c9b824a01cc422520425903bc2ac850402d3868054fb12213719",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_layer_v0_1_2026-11-16/EVALUATIVE_STATEMENT_LAYER_EXAMPLE_PROPOSALS_V0_1.csv": "b5aa8d25961639ea5d7b7419038cccf6b8e439cc22aa318fb7a2d9e85513b722",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_decisions_consolidated_v0_1_2026-11-16/CONSOLIDATED_REVIEW_CASE_DECISIONS_V0_1.csv": "53c9b01f5fdaf023bafbbe6813b72c8b0296f11b3f98183ce41e5bbb7b06415c",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_decisions_consolidated_v0_1_2026-11-16/MANIFEST.json": "3e98be98ea3818400dfb8e293f051376a5ccfffe728558e2f4f4758924929275",
+    "dataset_discovery/target_feasibility/audit_statement_layer_pilot_and_examples_v0_1.py": "7394c9072a194ec20b34fc1cc2c27fb4e9d909fd4a9597a69ccbd6ba3bbd2b95"
+  },
+  "outputs": {
+    "PILOT_16_AI_CRITIQUE_AND_RECOMMENDATIONS_V0_1.csv": "64c0d894551bc67bead57986f799dc41d3b88bd7bb9724d2089090703e2234b7",
+    "EXAMPLE_PROPOSALS_21_AUDIT_V0_1.csv": "62b085432e287a64147d68668d73a25687ab70886383d507e0f825a9b954d674",
+    "CODEBOOK_V0_2_REVISION_NOTES.md": "cccb0c1eb0724857ac979d2e69e466ff810e22b8d070f25c67e14f1c8c2342b9",
+    "README.md": "4fc03c8e6d94446733dab272df89b700b051f0b7f07e2c8c7ce00e5289300737"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

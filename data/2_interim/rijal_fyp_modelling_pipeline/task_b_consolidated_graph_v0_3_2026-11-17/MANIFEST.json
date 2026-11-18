@@ -1,0 +1,44 @@
+{
+  "package_id": "task_b_consolidated_graph_v0_3_2026-11-17",
+  "generated_at_utc": "2026-11-16T23:27:16.117060+00:00",
+  "counts": {
+    "cohort_total": 5250,
+    "split_counts": {
+      "test": 788,
+      "train": 3674,
+      "val": 788
+    },
+    "method1_matched_biographies": {
+      "method1_jarh_tadil": 4345,
+      "method1_kamil": 710,
+      "method1_tahdhib_alkamal": 4785,
+      "method1_tarikh_kabir": 3514,
+      "method1_thiqat_ibn_hibban": 4339,
+      "method1_thiqat_ijli": 1034
+    },
+    "total_consolidated_directed_edges": 59864,
+    "cohort_subgraph_edges": 29197,
+    "cohort_nodes_connected": 3987,
+    "sanadset_stats": {
+      "eligible_hadiths_processed": 429742,
+      "excluded_ibn_hajar_or_prohibited_book": 7355,
+      "no_sanad": 158969,
+      "short_or_invalid_chain": 54920,
+      "total_rows": 650986
+    }
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_4_2026-11-17/TASK_B_NARRATOR_ELIGIBILITY_8827_V0_4.csv": "f2e87160ba4aab152cfea20407eeba7170cf0647a9ae24e0831737107378d7f4",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_4_2026-11-17/MANIFEST.json": "895ccce4a58903b093b582ff6d561e16cb3f7a3b9058e338800a41ec94311d26",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_graph_and_splits_v0_1_2026-11-17/TASK_B_SPLITS_ELIGIBLE_NARRATORS_V0_1.csv": "a1d49d9e408d1fdfa5968bfe54b5347be3c8f23563eed10b911fdd265792ce80",
+    "data/1_raw/hadithdb/bukhari_sultania_copy.json": "f0844ea551957eaeb201c88666fb01b0bab2495723248d52401c334a75d9b9b0",
+    "dataset_discovery/target_feasibility/build_task_b_consolidated_graph_v0_3.py": "2ea630f8ff5bb140b363a75a57de0385572680e4ce7b8595a70b127734d6d8ae"
+  },
+  "outputs": {
+    "TASK_B_CONSOLIDATED_GRAPH_EDGES_V0_3.csv": "d1a6bab9f47ad1bcc96b28458893397b8f26da10bf76ec2273b98534bca84e1e",
+    "TASK_B_NODE_STRUCTURAL_FEATURES_V0_3.csv": "18ece6df16b5971d078f3d4dd3b63d679e5cce0f66f4832bbc8629e7b6db3a87",
+    "TASK_B_METHOD1_VS_METHOD2_COMPARISON_V0_3.csv": "cdaace3a7f2903faa4b1f5204f49092bbc676ad3e0ed40d1106f170def652536",
+    "TASK_B_CONSOLIDATED_GRAPH_REPORT_V0_3.md": "2b112337431c1f8614643c0cadc4ff05bbb885d7987b7cd77b0c8c1893d105ec"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

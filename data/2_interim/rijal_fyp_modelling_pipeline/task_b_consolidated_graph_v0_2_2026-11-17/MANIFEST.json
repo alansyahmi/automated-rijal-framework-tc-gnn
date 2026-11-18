@@ -1,0 +1,35 @@
+{
+  "package_id": "task_b_consolidated_graph_v0_2_2026-11-17",
+  "generated_at_utc": "2026-11-16T23:06:35.978248+00:00",
+  "counts": {
+    "sanadset_stats": {
+      "eligible_hadiths_processed": 429742,
+      "excluded_ibn_hajar_or_prohibited_book": 7355,
+      "no_sanad": 158969,
+      "short_or_invalid_chain": 54920,
+      "total_rows": 650986
+    },
+    "method1_matched_biographies": {
+      "method1_tahdhib_alkamal": 4835,
+      "method1_jarh_tadil": 192,
+      "method1_kamil": 1,
+      "method1_tarikh_kabir": 43
+    },
+    "total_consolidated_directed_edges": 49596,
+    "eligible_subgraph_edges": 23386,
+    "eligible_nodes_connected_consolidated": 3684
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_3_2026-11-17/TASK_B_NARRATOR_LINKAGE_AND_ELIGIBILITY_8827_V0_3.csv": "83a0c81dbe2235301128b42eab226844c1d4616dc1390cc4ed1225f6b8dfa4aa",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_3_2026-11-17/MANIFEST.json": "54c9e0d8d4c9e34d71cfebe5f4c9335b83979095e9c89b6c5d89bbc5acc45d5d",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_graph_and_splits_v0_1_2026-11-17/TASK_B_SPLITS_ELIGIBLE_NARRATORS_V0_1.csv": "a1d49d9e408d1fdfa5968bfe54b5347be3c8f23563eed10b911fdd265792ce80",
+    "data/1_raw/hadithdb/bukhari_sultania_copy.json": "f0844ea551957eaeb201c88666fb01b0bab2495723248d52401c334a75d9b9b0",
+    "dataset_discovery/target_feasibility/build_task_b_consolidated_graph_v0_2.py": "821cffe10f18f4251cd48b0add941be18ddc2753845929da25bc5b90bd372afd"
+  },
+  "outputs": {
+    "TASK_B_CONSOLIDATED_GRAPH_EDGES_V0_2.csv": "fee8f85fbc175268178d2962637a9c44d0a6c91fd058050cf6de80fe0fa9a87c",
+    "TASK_B_METHOD1_VS_METHOD2_COMPARISON_V0_2.csv": "1998cbcf692eaf8486334e2adaffabf3ee92a9d02bec62ddfb0d80e076d79ea8",
+    "TASK_B_CONSOLIDATED_GRAPH_REPORT_V0_2.md": "9cde841b26cc850ce4436860227793295163c7925e114b767de11007970e1f4d"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

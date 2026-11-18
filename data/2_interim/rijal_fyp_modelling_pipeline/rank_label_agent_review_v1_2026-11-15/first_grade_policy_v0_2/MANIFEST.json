@@ -1,0 +1,32 @@
+{
+  "package": "Priority-12 first-grade targets and context notes v0.2",
+  "status": "AI draft; no human decisions; no production labels or enabled rules",
+  "policy": "First complete grade-bearing phrase is primary target candidate; context notes preserved separately; detailed affiliation tags excluded as separate targets.",
+  "target_case_count": 12,
+  "context_note_count": 9,
+  "candidate_target_rank_counts": {
+    "4": 1,
+    "10": 2,
+    "2": 4,
+    "3": 1,
+    "5": 2,
+    "8": 1,
+    "7_or_9_unresolved": 1
+  },
+  "inputs": {
+    "priority_12_v0_1_sha256": "73a246b3d02efe886668b9b1cf71ebebc2ec989127ba45396d493d0b89a63769",
+    "human_triage_queue_sha256": "32b89f1bf9d0b454ed5622692c36f081ed7215844765a61702dec1c5d2741455",
+    "rank_target_policy_v0_2_sha256": "dd7617398d6a0235edc45cb86d89b44b176dc518b550db1bf974dd2fbf27f31c"
+  },
+  "outputs": {
+    "PRIORITY_12_FIRST_GRADE_TARGETS_DRAFT_V0_2.csv": "bc819467dfbdf8b61563c9ada534270bf39ed9060cedd6e656fcbb2f0e426c24",
+    "PRIORITY_12_CONTEXT_NOTE_LEDGER_DRAFT_V0_2.csv": "78808c2853d284737ae568798d87fa2812795ce962fb3c107280e127d359fa33",
+    "README.md": "7bfdd0c5ffea970b2036149780944f071b9287569e6cbfb6fb91aaa018553b58"
+  },
+  "limitations": [
+    "Priority-12 sample only, not an exhaustive corpus vocabulary.",
+    "AI proposals are not expert validation or labels.",
+    "Rank-definition preconditions may need evidence beyond Taqrib.",
+    "No AI or Taqrib-derived context field is authorized as a Task B model feature."
+  ]
+}

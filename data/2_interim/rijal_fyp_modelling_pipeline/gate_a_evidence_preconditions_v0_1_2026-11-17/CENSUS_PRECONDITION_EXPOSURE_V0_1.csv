@@ -1,0 +1,14 @@
+﻿exposure_id,source_rank,construction_scope,census_v0_2_entry_count,census_v0_2_pct_of_8827,example_spans
+EXP-R1_COMPANION_DISPUTED,1,Disputed companionship / رؤية / مختلف في صحبته,72,0.82%,رؤية ولم يثبت له سماع إلا من بعض الصحابة ووثقه العجلي | رؤية وسماعه من عمر أثبته يعقوب ابن شيبة | مختلف في صحبته والصحيح أنه مخضرم ثقة
+EXP-R2_COMPOUND_PRAISE,2,"Superlative or repeated/combined praise (ثقة حافظ, ثقة ثبت, ثقة ثقة, أوثق الناس)",268,3.04%,ثقة حافظ | ويعرف بدار أم سلمة ثقة حافظ | ثقة حافظ له غرائب
+EXP-R3_STANDALONE_THIQAH,3,Exact standalone ثقة / متقن / ثبت / عدل,1470,16.65%,ثقة
+EXP-R3_ATTRIBUTED_WATHAQA,3,Attributed critic authentication (وثقه ...),74,0.84%,وثقه الأئمة ووهم ابن حزم فجهله وابن عبد البر فضعفه | وثقه ابن حبان | رؤية ولم يثبت له سماع إلا من بعض الصحابة ووثقه العجلي
+EXP-R4_LOWER_PRAISE,4,Exact صدوق / لا بأس به / ليس به بأس / ما به بأس,1205,13.65%,صدوق | لا بأس به | ليس به بأس
+EXP-R5_QUALIFIED_OR_INNOVATION,5,"Memory/error/ikhtilat/innovation qualifiers (يهم, يخطىء, سيء الحفظ, أوهام, اختلط, التشيع, القدر, النصب, الإرجاء, التجهم)",356,4.03%,صدوق يهم | صدوق تغير آخرا | ثقة يهم قليلا
+EXP-R6_MAQBUL_CORROBORATION,6,Rank 6 corroboration-dependent (مقبول / مقبولة),1595,18.07%,مقبول | مقبول] | مقبول أيضا
+EXP-R7_MASTUR_GT1,7,Rank 7 transmitter-count + no-auth (مستور / مجهول الحال),218,2.47%,مستور | مجهول الحال | مستور مقل
+EXP-R8_DAIF_NO_TAWTHIQ,8,Rank 8 weakness requiring no-authentication check (ضعيف / ضعفه),443,5.02%,صدوق حافظ له أغلاط ضعفه بسببها أبو حاتم وما | ضعيف وسماعه للسيرة صحيح | صدوق ضعفه الأزدي بلا حجة
+EXP-R9_MAJHUL_EQ1,9,Rank 9 single-transmitter + no-auth (مجهول without الحال),729,8.26%,مجهول وضعفه الأزدي | مجهول] قيل هو أبو ثور وأنكر ذلك ابن خلفون وهو | مجهول تفرد عنه الأوزاعي وقد وُثِّق
+EXP-R10_MATRUK_DEFECT,10,"Rank 10 abandonment/defect (متروك, واهي, ساقط, هالك)",147,1.67%,متروك خلطه عثمان الدارمي بالذي قبله وفرق بينهما الخطيب فأصاب | متروك | متروك الحديث
+EXP-R11_ACCUSATION,11,"Rank 11 accusation of lying/fabrication (متهم, اتهم, رمي ب)",18,0.20%,متهم بالكذب | متروك متهم | متروك متهم بالوضع
+EXP-R12_APPLIED_LYING,12,"Rank 12 applied lying/fabrication (كذاب, وضاع, يضع, يكذب, كذبوه)",23,0.26%,كذبوه | صدوق يهم كثيرا وأطلق محمد ابن عوف أنه يكذب | متروك كذبوه

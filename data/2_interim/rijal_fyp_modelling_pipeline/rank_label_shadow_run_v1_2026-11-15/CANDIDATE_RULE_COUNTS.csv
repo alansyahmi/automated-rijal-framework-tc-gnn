@@ -1,0 +1,11 @@
+﻿rule_id,rule_version,rule_status,rule_family,exact_rule_string,candidate_rank_from_registry,candidate_statement_type_from_registry,entry_level_occurrence_count,unique_entry_count,auto_accept,applied_labels
+RANK_THIQA_EXACT_001,1.0,candidate_not_enabled,taxonomy_rank,ثقة,3,,2322,2313,false,0
+RANK_SADUQ_ERROR_EXACT_001,1.0,candidate_not_enabled,taxonomy_rank,صدوق يخطىء,5,,147,147,false,0
+RANK_SADUQ_IKHTILAT_EXACT_001,1.0,candidate_not_enabled,taxonomy_rank,صدوق اختلط في الآخر,5,,1,1,false,0
+GEN_FROM_THIRD_EXACT_001,1.0,candidate_not_enabled,generation_status,من الثالثة,,descriptive_or_generational_status,1314,1314,false,0
+GEN_FROM_TENTH_EXACT_001,1.0,candidate_not_enabled,generation_status,من العاشرة,,descriptive_or_generational_status,773,773,false,0
+GEN_FROM_SENIOR_TENTH_EXACT_001,1.0,candidate_not_enabled,generation_status,من كبار العاشرة,,descriptive_or_generational_status,108,108,false,0
+GEN_FROM_SENIOR_SEVENTH_EXACT_001,1.0,candidate_not_enabled,generation_status,من كبار السابعة,,descriptive_or_generational_status,31,31,false,0
+GEN_FROM_EIGHTH_EXACT_001,1.0,candidate_not_enabled,generation_status,من الثامنة,,descriptive_or_generational_status,510,510,false,0
+GEN_FROM_ELEVENTH_EXACT_001,1.0,candidate_not_enabled,generation_status,من الحادية عشرة,,descriptive_or_generational_status,534,534,false,0
+GEN_FROM_TWELFTH_EXACT_001,1.0,candidate_not_enabled,generation_status,من الثانية عشرة,,descriptive_or_generational_status,91,91,false,0

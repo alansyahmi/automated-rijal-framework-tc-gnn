@@ -1,0 +1,35 @@
+{
+  "package_id": "task_b_graph_and_splits_v0_1_2026-11-17",
+  "generated_at_utc": "2026-11-16T22:48:37.628941+00:00",
+  "counts": {
+    "eligible_narrators": 4830,
+    "split_counts": {
+      "test": 725,
+      "train": 3380,
+      "val": 725
+    },
+    "total_directed_edges": 6141,
+    "eligible_subgraph_edges": 2494,
+    "eligible_nodes_with_degree_ge_1": 1313,
+    "edge_source_counts": {
+      "bukhari_isnad_edge": 4740,
+      "tahdhib_alkamal_rawa_an": 726,
+      "tahdhib_alkamal_rawa_anhu": 675
+    },
+    "leakage_checks_passed": true
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_3_2026-11-17/TASK_B_NARRATOR_LINKAGE_AND_ELIGIBILITY_8827_V0_3.csv": "83a0c81dbe2235301128b42eab226844c1d4616dc1390cc4ed1225f6b8dfa4aa",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_3_2026-11-17/TASK_B_HADITHDB_NARRATOR_LINKS_1524_V0_3.csv": "deb5c60f7e0a658cf15da6a5e952852932d22e95795baf2191d8ac0bc29e34ba",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_3_2026-11-17/MANIFEST.json": "54c9e0d8d4c9e34d71cfebe5f4c9335b83979095e9c89b6c5d89bbc5acc45d5d",
+    "data/1_raw/hadithdb/bukhari_sultania_copy.json": "f0844ea551957eaeb201c88666fb01b0bab2495723248d52401c334a75d9b9b0",
+    "dataset_discovery/target_feasibility/prepare_task_b_graph_and_splits_v0_1.py": "908fc127e4bf5f19a085c132644c893223cbac0040c9f05d1e76413f764d8041"
+  },
+  "outputs": {
+    "TASK_B_GRAPH_EDGES_V0_1.csv": "5c98b57dc07e7387278e3b2acaa5a2a729f90ed05cc431c59a821f444f6927e3",
+    "TASK_B_SPLITS_ELIGIBLE_NARRATORS_V0_1.csv": "a1d49d9e408d1fdfa5968bfe54b5347be3c8f23563eed10b911fdd265792ce80",
+    "TASK_B_SPLIT_PER_RANK_SUMMARY_V0_1.csv": "39c746e2c3410223acecdef51b307fd2e81bd7aa57227dabf3fed5fee00fd214",
+    "TASK_B_GATE_C_READINESS_REPORT_V0_1.md": "573e9fe39d293b4d0d00ed10f3bdbad7d2e425f99b2b7af68f98c8bf647243db"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

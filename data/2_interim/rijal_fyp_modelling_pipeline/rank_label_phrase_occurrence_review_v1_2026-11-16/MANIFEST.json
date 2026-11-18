@@ -1,0 +1,48 @@
+{
+  "package": "Taqrib phrase occurrence review v1",
+  "generated_at_utc": "2026-11-15T19:41:39.883110+00:00",
+  "status": "human review queue prepared; all entry-level decisions blank",
+  "method": "Select no-hit AI rows whose ai_first_grade_span_exact, after outer whitespace trim, equals a phrase group with a human decision in phrase review v1.1. Join by entry_id to the local corpus ENTRY_INDEX; require exact full-entry text equality and exact phrase presence. Do not assign rank labels.",
+  "counts": {
+    "phrase_groups_in_scope": 18,
+    "distinct_source_entries": 81,
+    "accepted_phrase_group_occurrences": 54,
+    "conditional_phrase_group_occurrences": 27,
+    "human_entry_decisions_filled": 0,
+    "ai_suggestions_added": 81,
+    "ai_suggested_dispositions": {
+      "conditional_manual_review": 23,
+      "candidate_for_rank3_proxy": 44,
+      "candidate_with_context_note": 8,
+      "needs_span_review": 1,
+      "do_not_map_to_rank3_pending_review": 5
+    }
+  },
+  "inputs": {
+    "phrase_policy_manifest": {
+      "path": "../rank_label_phrase_review_v1_1_2026-11-16/MANIFEST.json",
+      "sha256": "99e809e3375326d84113b20b13071c28ed6a34fec99b8b1ac9e3a4ed0e86a043"
+    },
+    "phrase_policy_worksheet": {
+      "path": "../rank_label_phrase_review_v1_1_2026-11-16/PHRASE_REVIEW_WORKSHEET_V1_1.csv",
+      "sha256": "3fef35689dc32f99c4885473ab6df01374961731cd2ac8914841f295537008b0"
+    },
+    "ai_review_results_manifest": {
+      "path": "../rank_label_no_hit_ai_review_v1_2026-11-15/CONSOLIDATED_V1_3/REVIEW_RESULTS_MANIFEST.json",
+      "sha256": "ec7d6d6397eccf10cb6e166747b3a686c04b2cba0ce60da9b2e1fe1742d78edf"
+    },
+    "ai_review_all_1211": {
+      "path": "../rank_label_no_hit_ai_review_v1_2026-11-15/CONSOLIDATED_V1_3/AI_REVIEW_ALL_1211.csv",
+      "sha256": "7e4ac25a4cb91f265f446b420f2c6b429bab1a14aa35a0b6373d8ee16ec38f73"
+    },
+    "local_entry_index": {
+      "path": "../rank_label_shadow_run_v1_2026-11-15/ENTRY_INDEX.csv",
+      "sha256": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0"
+    }
+  },
+  "outputs": {
+    "ENTRY_LEVEL_REVIEW_V1.csv": "b10a15e94a29345d9bf11f207182bf8020680d5e3a24751705122179a26e8475",
+    "README.md": "879a273c5057b3c05984e2969ad52d592bb346ca588034875371074877170be6",
+    "AI_SUGGESTIONS_V1.csv": "a993cf5a10579e6e7f28caab407808e3e8de12bcf88df70692f07691c37da6c2"
+  }
+}

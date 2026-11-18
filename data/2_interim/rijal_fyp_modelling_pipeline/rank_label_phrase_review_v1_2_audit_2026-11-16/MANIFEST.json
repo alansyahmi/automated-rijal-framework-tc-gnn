@@ -1,0 +1,38 @@
+{
+  "package_id": "rank_label_phrase_review_v1_2_audit_2026-11-16",
+  "generated_at_utc": "2026-11-16T10:59:24.788172+00:00",
+  "status": "Step 4 audit ready for remaining 130 phrase groups and 161 none-found rows; human decisions blank pending approval",
+  "counts": {
+    "total_phrase_groups": 148,
+    "already_decided_in_v1_1": 18,
+    "newly_audited_blank_groups": 130,
+    "newly_audited_recommended_decisions": {
+      "accept": 49,
+      "conditional": 61,
+      "revise": 9,
+      "abstain": 11
+    },
+    "none_found_rows_audited": 161,
+    "none_found_recommended_decisions": {
+      "abstain": 136,
+      "conditional": 25
+    },
+    "canonical_ranks_assigned": 0,
+    "rules_enabled": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_review_v1_1_2026-11-16/PHRASE_REVIEW_WORKSHEET_V1_1.csv": "3fef35689dc32f99c4885473ab6df01374961731cd2ac8914841f295537008b0",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_review_v1_1_2026-11-16/NONE_FOUND_AUDIT_161.csv": "64ea2a3686d272ac48ed42d2257c22d0643d83f4c736bbc7e730b0d36577c719",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_review_v1_1_2026-11-16/MANIFEST.json": "99e809e3375326d84113b20b13071c28ed6a34fec99b8b1ac9e3a4ed0e86a043",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_decisions_report_v0_1_2026-11-16/PER_CANDIDATE_PHRASE_REVIEW_COUNTS_V0_1.csv": "4c0aaf8f6b91911e09bd720ded8180cf25dafce07d6a1bc95f9e432414a265da",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_decisions_report_v0_1_2026-11-16/MANIFEST.json": "2e6a9da2e8903a5e76b0ae7f87d68048120e45eea7e320c2bbd122852eb1c634",
+    "dataset_discovery/target_feasibility/audit_taqrib_phrase_review_130_and_161_v1_2.py": "252e81460385984bc5f44af0bd1102bff83a7ca655860e4dcfa771de859819d0"
+  },
+  "outputs": {
+    "PHRASE_REVIEW_148_AUDIT_V1_2.csv": "19864a333085d6c5af28c5fd66622b93b165312c62fbaf3946ee860c06e22f13",
+    "NONE_FOUND_161_AUDIT_V1_2.csv": "2bf3895fa0acdd31444d18ede9e1965db2e0584db52c70e7710bc602cc83b40c",
+    "AUDIT_SUMMARY_V1_2.md": "3b73dbdc571e1d6dcbc4fbf9767bfb04a7cfb31f2c251c679d72cfb96708dc7c",
+    "README.md": "4f72cb781340f72cc685073fe7b3d5c9414da5c509f9f1477720659a43f42824"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

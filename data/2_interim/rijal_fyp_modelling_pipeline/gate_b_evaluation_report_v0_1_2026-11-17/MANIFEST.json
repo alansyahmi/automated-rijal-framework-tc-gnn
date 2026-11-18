@@ -1,0 +1,37 @@
+{
+  "package_id": "gate_b_evaluation_report_v0_1_2026-11-17",
+  "generated_at_utc": "2026-11-16T19:39:35.243127+00:00",
+  "human_manifest_sha256": "65a340157627005d0c7107f4ef5f363cdb2dd2746ebdc690d1a8dbf0222598ed",
+  "sealed_manifest_sha256": "85e88e05ad601fc13253ce54fdd64ad276d9e59079eb49c659c8b328f69a4236",
+  "counts": {
+    "entries_evaluated": 120,
+    "span_match_counts": {
+      "exact_span_match": 90,
+      "machine_false_positive_non_grade": 2,
+      "machine_overextended_includes_context": 26,
+      "machine_underextended_truncated": 2
+    },
+    "rank_anchor_comparison_counts": {
+      "agreed_requires_review_or_conditional": 7,
+      "exact_anchor_rank_match": 53,
+      "false_suggestion_on_non_grade": 2,
+      "machine_unanchored_candidate_or_conditional": 39,
+      "rank_disagreement": 1,
+      "unsafe_anchor_when_precondition_unmet": 18
+    },
+    "rules_enabled": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_b_blind_human_only_labels_v0_1_2026-11-17/HUMAN_ONLY_BLIND_LABELS_120_V0_1.csv": "945ef2230c2c877edced2b8c552d0f52f951b0105c9f813f6e9e121d238fd4ad",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_b_blind_human_only_labels_v0_1_2026-11-17/MANIFEST.json": "65a340157627005d0c7107f4ef5f363cdb2dd2746ebdc690d1a8dbf0222598ed",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_b_blind_manual_eval_v0_1_2026-11-17/SEALED_MACHINE_PROPOSALS_120_V0_1.csv": "b8aaf3f61941e526a45823e73a53840bc18921147a99d7d597a6450b7a4b2605",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_b_blind_manual_eval_v0_1_2026-11-17/MANIFEST.json": "85e88e05ad601fc13253ce54fdd64ad276d9e59079eb49c659c8b328f69a4236",
+    "dataset_discovery/target_feasibility/evaluate_gate_b_blind_comparison_v0_1.py": "3d53d57d35159b51588ff40388f8286335216b974da551ccbb82b8ffd09dbe0b"
+  },
+  "outputs": {
+    "GATE_B_BLIND_VS_MACHINE_120_V0_1.csv": "bb44d93b41f49fc5c5ce2b842b397dc238b36d72bc8f5d7bb2a36effa5677171",
+    "GATE_B_PER_RANK_SUMMARY_V0_1.csv": "054b6d035304011cfafedb18aceb631d9f13503c31ec1c7ff5020c9cc32d6bbb",
+    "GATE_B_FEASIBILITY_REPORT_V0_1.md": "367fcdc8bf137927356f79af17609be4cb5ed0d6195825e129b203cb68318be1"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

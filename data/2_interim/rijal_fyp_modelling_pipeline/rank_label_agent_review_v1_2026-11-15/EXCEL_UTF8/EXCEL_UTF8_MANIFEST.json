@@ -1,0 +1,62 @@
+{
+  "purpose": "Excel-compatible UTF-8 CSV copies with BOM; source CSV files preserved unchanged",
+  "files": {
+    "BLINDED_REVIEW_PACKET.csv": {
+      "source_sha256": "2ab8e348d35529104221db39c684b960cd9bdf335eafca418d6074ac887a4087",
+      "excel_copy_sha256": "f5f2d32fcef9a82c9a18f236bf2f0d88296dec8bf7fd28a85630f7e54f479cdb",
+      "rows": 60,
+      "round_trip_exact": true,
+      "arabic_characters": 5552
+    },
+    "AI_REVIEW_TEMPLATE_BLANK.csv": {
+      "source_sha256": "053d8f0f39807d392b7c7798f658e55889589101a6d5b35a776e0e7e699f813c",
+      "excel_copy_sha256": "d84b6d1b12eb96fec53548a11ff7d90245d2ec3f96f00bd3650ad6d0c5578e23",
+      "rows": 60,
+      "round_trip_exact": true,
+      "arabic_characters": 0
+    },
+    "INTERNAL_SAMPLE_KEY.csv": {
+      "source_sha256": "d86fd87776d644e69be20aef144142dafb77435c5481d7c1bdfbd0c47bbda0d4",
+      "excel_copy_sha256": "b48b9e81b147903b7e14c68a81eea4f4a682cc8b49e4b1ba677b228bd20ea5de",
+      "rows": 60,
+      "round_trip_exact": true,
+      "arabic_characters": 731
+    },
+    "AI_REVIEWER_A.csv": {
+      "source_sha256": "8c712e089fc1cbe5027bd6ec1029ae589cf53a15fa9ab228f4fa5bbe9d7ae424",
+      "excel_copy_sha256": "c91075b71d6f19f7d800c1c68b3c2ac9f2a3be95724d21d87e74086517f6137b",
+      "rows": 60,
+      "round_trip_exact": true,
+      "arabic_characters": 1236
+    },
+    "AI_REVIEWER_B.csv": {
+      "source_sha256": "72bd1f5105f7431ab943d1181948cd698b5094d13863a0879fa168798ecd5d2b",
+      "excel_copy_sha256": "73ab0bf5dc36e815e2acf70fbc34ed5a30b95324ceebb38f79a8aca7b54c15a0",
+      "rows": 60,
+      "round_trip_exact": true,
+      "arabic_characters": 1017
+    },
+    "AI_REVIEWER_C.csv": {
+      "source_sha256": "843f0a7172fc397b62cf70319cafd5cee035a41960292e1b5515189e95b4ea58",
+      "excel_copy_sha256": "6f0495c0aa388904ae745aa246b60b68f09ff24f218e2728947fd308b90ffbe6",
+      "rows": 60,
+      "round_trip_exact": true,
+      "arabic_characters": 1073
+    },
+    "AI_REVIEW_COMPARISON.csv": {
+      "source_sha256": "0c17614ca42d368f46bb205e9c7225ca967b397de13d9aa7d122de04b22ad98d",
+      "excel_copy_sha256": "f3d3a70d78fe43ad99de49c3dbc7ff24888c68041a037f45e1034f49582cfabd",
+      "rows": 60,
+      "round_trip_exact": true,
+      "arabic_characters": 9189
+    },
+    "HUMAN_TRIAGE_QUEUE.csv": {
+      "source_sha256": "32b89f1bf9d0b454ed5622692c36f081ed7215844765a61702dec1c5d2741455",
+      "excel_copy_sha256": "56627887d19daa12c74796cdba17556c559b7319f41648bb4aae450229e53446",
+      "rows": 12,
+      "round_trip_exact": true,
+      "arabic_characters": 2891
+    }
+  },
+  "readme_sha256": "f7a6dcec28011e2d4eb636c2460007e6d8372f6d8d6e6907ca44388fcb19093b"
+}

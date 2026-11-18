@@ -1,0 +1,162 @@
+{
+  "book_stats": [
+    {
+      "book_id": "1716",
+      "source_label": "method1_tahdhib_alkamal",
+      "min_seq": 204,
+      "unique_bios_extracted": 3395,
+      "ambiguous_headers_logged": 1611,
+      "editorial_quarantine_events": 10
+    },
+    {
+      "book_id": "1615",
+      "source_label": "method1_jarh_tadil",
+      "min_seq": 34,
+      "unique_bios_extracted": 3189,
+      "ambiguous_headers_logged": 3400,
+      "editorial_quarantine_events": 0
+    },
+    {
+      "book_id": "1976",
+      "source_label": "method1_thiqat_ibn_hibban",
+      "min_seq": 658,
+      "unique_bios_extracted": 3167,
+      "ambiguous_headers_logged": 3309,
+      "editorial_quarantine_events": 0
+    },
+    {
+      "book_id": "890",
+      "source_label": "method1_tarikh_kabir",
+      "min_seq": 1,
+      "unique_bios_extracted": 2525,
+      "ambiguous_headers_logged": 2223,
+      "editorial_quarantine_events": 4
+    },
+    {
+      "book_id": "1981",
+      "source_label": "method1_thiqat_ijli",
+      "min_seq": 1,
+      "unique_bios_extracted": 788,
+      "ambiguous_headers_logged": 450,
+      "editorial_quarantine_events": 0
+    },
+    {
+      "book_id": "4609",
+      "source_label": "method1_kamil",
+      "min_seq": 191,
+      "unique_bios_extracted": 545,
+      "ambiguous_headers_logged": 561,
+      "editorial_quarantine_events": 0
+    }
+  ],
+  "train_only_rank_feasibility": [
+    {
+      "rank": "1",
+      "train_n": 275,
+      "m1_any_pct": 80.7,
+      "m1_tahdhib_pct": 66.5,
+      "m1_thiqat_ih_pct": 64.4,
+      "mean_critics_v03": 3.86,
+      "conflict_pct_v03": 0.0
+    },
+    {
+      "rank": "2",
+      "train_n": 175,
+      "m1_any_pct": 74.9,
+      "m1_tahdhib_pct": 65.7,
+      "m1_thiqat_ih_pct": 48.0,
+      "mean_critics_v03": 14.01,
+      "conflict_pct_v03": 9.7
+    },
+    {
+      "rank": "3",
+      "train_n": 1165,
+      "m1_any_pct": 74.9,
+      "m1_tahdhib_pct": 65.5,
+      "m1_thiqat_ih_pct": 53.1,
+      "mean_critics_v03": 7.29,
+      "conflict_pct_v03": 4.6
+    },
+    {
+      "rank": "4",
+      "train_n": 792,
+      "m1_any_pct": 70.5,
+      "m1_tahdhib_pct": 61.2,
+      "m1_thiqat_ih_pct": 45.3,
+      "mean_critics_v03": 5.63,
+      "conflict_pct_v03": 9.3
+    },
+    {
+      "rank": "5",
+      "train_n": 406,
+      "m1_any_pct": 76.4,
+      "m1_tahdhib_pct": 65.3,
+      "m1_thiqat_ih_pct": 47.5,
+      "mean_critics_v03": 10.29,
+      "conflict_pct_v03": 37.7
+    },
+    {
+      "rank": "6",
+      "train_n": 66,
+      "m1_any_pct": 66.7,
+      "m1_tahdhib_pct": 57.6,
+      "m1_thiqat_ih_pct": 39.4,
+      "mean_critics_v03": 4.92,
+      "conflict_pct_v03": 25.8
+    },
+    {
+      "rank": "7",
+      "train_n": 124,
+      "m1_any_pct": 59.7,
+      "m1_tahdhib_pct": 51.6,
+      "m1_thiqat_ih_pct": 24.2,
+      "mean_critics_v03": 1.75,
+      "conflict_pct_v03": 2.4
+    },
+    {
+      "rank": "8",
+      "train_n": 218,
+      "m1_any_pct": 67.4,
+      "m1_tahdhib_pct": 57.8,
+      "m1_thiqat_ih_pct": 22.0,
+      "mean_critics_v03": 11.83,
+      "conflict_pct_v03": 50.0
+    },
+    {
+      "rank": "9",
+      "train_n": 373,
+      "m1_any_pct": 47.2,
+      "m1_tahdhib_pct": 40.5,
+      "m1_thiqat_ih_pct": 17.4,
+      "mean_critics_v03": 1.34,
+      "conflict_pct_v03": 1.9
+    },
+    {
+      "rank": "10",
+      "train_n": 65,
+      "m1_any_pct": 66.2,
+      "m1_tahdhib_pct": 53.8,
+      "m1_thiqat_ih_pct": 16.9,
+      "mean_critics_v03": 16.42,
+      "conflict_pct_v03": 50.8
+    },
+    {
+      "rank": "11",
+      "train_n": 3,
+      "m1_any_pct": 66.7,
+      "m1_tahdhib_pct": 66.7,
+      "m1_thiqat_ih_pct": 33.3,
+      "mean_critics_v03": 9.0,
+      "conflict_pct_v03": 33.3
+    },
+    {
+      "rank": "12",
+      "train_n": 12,
+      "m1_any_pct": 33.3,
+      "m1_tahdhib_pct": 33.3,
+      "m1_thiqat_ih_pct": 16.7,
+      "mean_critics_v03": 20.17,
+      "conflict_pct_v03": 50.0
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "package": "Taqrib rank-cue AI review pilot v1",
+  "generated_by": "dataset_discovery/target_feasibility/prepare_taqrib_rank_agent_review_v1.py",
+  "sample_seed": 20261115,
+  "sample_size": 60,
+  "exact_cue_cases_per_source_rank_anchor": 5,
+  "no_exact_rank_cue_controls": 10,
+  "source_rank_anchors_represented": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "source_rank_anchors_not_represented_due_to_zero_exact_cue_hits": [
+    11,
+    12
+  ],
+  "unique_entry_ids": 60,
+  "input_hashes": {
+    "ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "CUE_OCCURRENCES.csv": "518187b48b55026322c1ed84875108ee4441b6e4d1fdd8a80fdc4b0fb19b0b67",
+    "CANDIDATE_RULE_HITS.csv": "1269bc665cbdc7fc9e09937aebb1349df70eb1567cd3ade0002c88be6fe4ef43"
+  },
+  "outputs": {
+    "BLINDED_REVIEW_PACKET.csv": "2ab8e348d35529104221db39c684b960cd9bdf335eafca418d6074ac887a4087",
+    "AI_REVIEW_TEMPLATE_BLANK.csv": "053d8f0f39807d392b7c7798f658e55889589101a6d5b35a776e0e7e699f813c",
+    "INTERNAL_SAMPLE_KEY.csv": "d86fd87776d644e69be20aef144142dafb77435c5481d7c1bdfbd0c47bbda0d4",
+    "README.md": "05df144d6f2d30849cc79364f91148e2370c5c6802a59b496cce974088cadc5f"
+  },
+  "rank_labels_assigned": 0,
+  "auto_accept": false
+}

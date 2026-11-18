@@ -1,0 +1,99 @@
+{
+  "counts": {
+    "abstention_count": 29,
+    "abstentions_by_reason": {
+      "candidate_identity_not_confirmed": 3,
+      "candidate_rule_not_enabled": 8,
+      "no_exact_enabled_rule_match": 13,
+      "statement_evidence_missing_or_mismatched": 4,
+      "statement_span_ambiguous_in_entry": 1
+    },
+    "candidate_entry_count": 11,
+    "case_count": 10,
+    "excluded_placeholder_or_nonreviewed_count": 3,
+    "proposal_row_count": 34,
+    "proposals_by_rule": {
+      "RANK_SADUQ_ERROR_EXACT_001": 2,
+      "RANK_SADUQ_IKHTILAT_EXACT_001": 1,
+      "RANK_THIQA_EXACT_001": 2
+    },
+    "proposed_for_human_review_count": 5,
+    "reviewed_statement_count": 34
+  },
+  "generated_at_utc": "2026-11-14T02:30:11Z",
+  "input_manifest_sha256": "b2524ea8329ea46a254e72bdc1e11d6b8847861a4fee377ea917db550d1b89c4",
+  "integrity_notes": [
+    "Original inputs and working annotations were read only.",
+    "Human review fields are blank; no machine proposal is auto-accepted.",
+    "The registry remains unchanged; only the three user-authorized rank rule IDs were used for this development run.",
+    "S00 and other non-reviewed placeholders are excluded from the proposal population.",
+    "No semantics are inferred from the dataset's integer source IDs.",
+    "This run does not estimate accuracy, precision, or corpus-wide coverage."
+  ],
+  "not_proposed": [
+    "candidate identity",
+    "statement segmentation",
+    "historical evaluator",
+    "compiler authorship",
+    "transmission route",
+    "target suitability",
+    "historical-input eligibility"
+  ],
+  "output_sha256": {
+    "ANNOTATION_AUTO_PROPOSALS.csv": "4cfce97579d2a97837c95364c26892aa2e1aae90bdcd5f04b4cbdb7b8366e0dd",
+    "HUMAN_REVIEW.csv": "8677f915d48e02c2af6c8739162a6152f8a08f9dd4381bc5c5f515c5972a76f9",
+    "INPUT_SAMPLE_MANIFEST.json": "b2524ea8329ea46a254e72bdc1e11d6b8847861a4fee377ea917db550d1b89c4",
+    "RULE_REGISTRY_SNAPSHOT.csv": "2f902f496a0d304f9c8de773fc0120caf437889941ceb8cce9a791d5e4a671ae"
+  },
+  "package_version": "1.0",
+  "proposed_dimensions": [
+    "Taqrib taxonomy rank only"
+  ],
+  "rank_taxonomy": {
+    "equal_interval_assumption": false,
+    "initial_executable_subset_only": {
+      "RANK_SADUQ_ERROR_EXACT_001": {
+        "exact_span": "صدوق يخطىء",
+        "rank": 5
+      },
+      "RANK_SADUQ_IKHTILAT_EXACT_001": {
+        "exact_span": "صدوق اختلط في الآخر",
+        "rank": 5
+      },
+      "RANK_THIQA_EXACT_001": {
+        "exact_span": "ثقة",
+        "rank": 3
+      }
+    },
+    "rank_1_companion_status_is_separate": true,
+    "rank_values": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "research_target_label_space": "Ibn Hajar's complete 12-rank taxonomy"
+  },
+  "registry_rule_status_preserved": true,
+  "rule_registry_sha256": "2f902f496a0d304f9c8de773fc0120caf437889941ceb8cce9a791d5e4a671ae",
+  "rules_enabled_for_this_run": [
+    "RANK_SADUQ_ERROR_EXACT_001",
+    "RANK_SADUQ_IKHTILAT_EXACT_001",
+    "RANK_THIQA_EXACT_001"
+  ],
+  "run_type": "controlled_read_only_dry_run",
+  "scope": "development_only_existing_pilot",
+  "software": {
+    "python_version": "3.13.7",
+    "script_path": "dataset_discovery/target_feasibility/generate_annotation_proposals_v1.py",
+    "script_sha256": "7e16eff8d4ffb77c6257b5d2329d643216e7c831e9057d1e9effcbefdca89936"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "package": "Taqrib phrase review v1.1 — partial human decisions",
+  "generated_at_utc": "2026-11-15T19:33:55.154180+00:00",
+  "decision_date": "2026-11-16",
+  "status": "partial phrase-level decisions recorded; no entry-level labels and no production rules enabled",
+  "scope": {
+    "worksheet_phrase_groups": 148,
+    "groups_with_human_decisions": 18,
+    "accepted_phrase_groups": 11,
+    "conditional_phrase_groups": 7,
+    "no_hit_entries_in_accepted_groups": 54,
+    "no_hit_entries_in_conditional_groups": 27,
+    "none_found_rows": 161,
+    "none_found_human_decisions": 0
+  },
+  "input_v1_hashes": {
+    "PHRASE_REVIEW_WORKSHEET_V1.csv": "1c183a0b6b401c7d488064ec82c3814f147344a0dc7dd91c81126a310a837833",
+    "NONE_FOUND_AUDIT_161.csv": "64ea2a3686d272ac48ed42d2257c22d0643d83f4c736bbc7e730b0d36577c719",
+    "PHRASE_REVIEW_BRIEFING.md": "98a084da34c01bde32f6b5034d0fa8603aa94618035a4164d1ca82b01c86afb0",
+    "MANIFEST.json": "1dabb099d2a3defff1680dbef4b57a76277aeb77fd7ebafe154668bdd5b19d8d",
+    "MANIFEST.sha256": "f4ac71b666e26dcb979ba009c3fe5618f42f38a36848cc70178d2b595f130a18"
+  },
+  "outputs": {
+    "HUMAN_DECISION_LOG_V1_1.md": "b94c676b0dd0a7056120005965b01d9a7ae842ab840fc1b6c86653d5b412c90b",
+    "NONE_FOUND_AUDIT_161.csv": "64ea2a3686d272ac48ed42d2257c22d0643d83f4c736bbc7e730b0d36577c719",
+    "PHRASE_REVIEW_BRIEFING_V1_SOURCE.md": "98a084da34c01bde32f6b5034d0fa8603aa94618035a4164d1ca82b01c86afb0",
+    "PHRASE_REVIEW_WORKSHEET_V1_1.csv": "3fef35689dc32f99c4885473ab6df01374961731cd2ac8914841f295537008b0",
+    "PHRASE_REVIEW_WORKSHEET_V1_SOURCE.csv": "1c183a0b6b401c7d488064ec82c3814f147344a0dc7dd91c81126a310a837833",
+    "README.md": "9e6d4429722893b49e4b2e34902effdc5814eb62507564a9d5a187ae00ff9209"
+  },
+  "manifest_hash_note": "This manifest is excluded from its own outputs hash map; MANIFEST.sha256 hashes MANIFEST.json."
+}

@@ -1,0 +1,35 @@
+{
+  "package_id": "gate_a_complete_span_census_v0_1_2026-11-17",
+  "generated_at_utc": "2026-11-16T16:47:30.233914+00:00",
+  "scope": "Gate A complete-span census v0.1 across 8,827 numbered Taqrib entries (Policy v0.2 two-layer split); human_* blank; zero canonical ranks assigned.",
+  "counts": {
+    "entries_total": 8827,
+    "gate_a_category_counts": {
+      "approved_phrase_candidate": 109,
+      "candidate_requiring_review": 2290,
+      "context_dependent_or_qualified": 686,
+      "explicit_source_example": 5374,
+      "non_grade_or_abstain": 368
+    },
+    "entries_with_target_span": 8459,
+    "entries_with_context_span": 353,
+    "distinct_complete_spans": 1775,
+    "canonical_ranks_assigned": 0,
+    "rules_enabled": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_shadow_run_v1_2026-11-15/ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_vocabulary_candidate_inventory_v0_1_2026-11-16/SOURCE_RANK_ANCHORS_V0_1.csv": "01c703137b987d660882e25913d420c9cdf2a02ede294dd52db6fabed81efd3c",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_review_user_decisions_v1_2_2026-11-16/PHRASE_REVIEW_USER_DECISIONS_148_V1_2.csv": "a7c8be1588091ce4d56353b575d8b92fa753b0ea43b1b85fa1fc335592decbaf",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_a_morphological_user_decisions_v0_1_2026-11-17/MORPHOLOGICAL_SURFACE_FORMS_USER_DECISIONS_V0_1.csv": "45a213130d72d7cf1433879a2b5f4577aecd292168570809d1cec4866177fa5d",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_review_user_decisions_v1_2_2026-11-16/NONE_FOUND_USER_DECISIONS_161_V1_2.csv": "13b6d5185cd2a8caee5c5cc4e836a065895b85131a2fd0c56ced6f0d6ed59a25",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_a_morphological_user_decisions_v0_1_2026-11-17/NONE_FOUND_44_MORPH_USER_DECISIONS_V0_1.csv": "694ddb5142f76dece761738006d3b82fa0c6fa4eefc81ee02eef58473340662a",
+    "dataset_discovery/target_feasibility/build_gate_a_complete_span_census_v0_1.py": "46d3fcfc4f57564b6d16463d130f1b00f9defaa523b6035520b9631633a54df1"
+  },
+  "outputs": {
+    "GATE_A_ENTRY_COMPLETE_SPAN_CENSUS_V0_1.csv": "f3017d89615fdacfe7ea6163d07a8388b34c81a3189f93c878f5881ee2814062",
+    "GATE_A_UNIQUE_SPAN_INVENTORY_V0_1.csv": "57db936a864f2a7bc53e0df67528c61613e746124e7480650e1e41d79147ff8a",
+    "CENSUS_SUMMARY_V0_1.md": "d93da1cec882658c41e9c87948c89fe60e235e1c9ea0c650d0f26c65c7c9845c"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

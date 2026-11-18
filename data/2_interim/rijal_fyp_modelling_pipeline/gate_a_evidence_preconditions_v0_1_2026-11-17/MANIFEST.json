@@ -1,0 +1,21 @@
+{
+  "package_id": "gate_a_evidence_preconditions_v0_1_2026-11-17",
+  "generated_at_utc": "2026-11-16T17:34:03.141409+00:00",
+  "counts": {
+    "ranks_documented": 12,
+    "exposure_checks_computed": 13,
+    "canonical_ranks_assigned": 0,
+    "rules_enabled": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_vocabulary_candidate_inventory_v0_1_2026-11-16/SOURCE_RANK_ANCHORS_V0_1.csv": "01c703137b987d660882e25913d420c9cdf2a02ede294dd52db6fabed81efd3c",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_a_complete_span_census_v0_2_2026-11-17/GATE_A_ENTRY_COMPLETE_SPAN_CENSUS_V0_2.csv": "e22c21f71c6520978d65bf9bbba6ed157c071580790d12f6ec3b1a83e67b35cc",
+    "dataset_discovery/target_feasibility/build_gate_a_evidence_preconditions_v0_1.py": "e3a5f19b5487535352d684236bcbac98069f855af6a56553b284604b29eb4ae5"
+  },
+  "outputs": {
+    "RANK_EVIDENCE_PRECONDITIONS_V0_1.csv": "873ca73d9ff35c75ad2eec74d11359eaba70847ee15daa229d6e3a10a43b8e8d",
+    "CENSUS_PRECONDITION_EXPOSURE_V0_1.csv": "87c70744b9c35fc40b0cb4bb2f5847bf1659217b184646560125207cd8108cc5",
+    "PRECONDITION_REPORT_V0_1.md": "f3354350dafeeaa77de262bbd597f8971861113c202bb2f4782d3e7771ddae54"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

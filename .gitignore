@@ -24,3 +24,9 @@ data/1_raw/*
 
 # Re-allow the selected Parquet file
 !data/1_raw/Shamela4_Full_DB/_meta/narrators.parquet
+
+# Python bytecode and tool scratch working directories
+__pycache__/
+*.py[cod]
+.codex_round1_working/
+~$*

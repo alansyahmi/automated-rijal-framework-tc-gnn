@@ -1,0 +1,15 @@
+{
+  "review_status": "pending_correction_not_frozen",
+  "observed_at_utc": "2026-11-14T13:49:43+00:00",
+  "submitted_copy": "PASS_A_UPDATE_2026-11-14.csv",
+  "sha256": "832730774889fb5166b3285bc2f43c36829512e0d85801f97351f13f8f733259",
+  "row_count": 7,
+  "findings": [
+    "Seven candidate rows are present and the extra unkeyed summary row has been removed.",
+    "identity_match_status still contains matched, which is not a Schema v2.2 enum.",
+    "RPT-05 CAND-02 is described as having a different kunya, but its supplied entry text says أبو محمد, the same kunya shown for CAND-01; reconcile the rationale against the text.",
+    "Identity locators remain abbreviated to entry numbers or malformed fragments rather than a complete source/page/entry locator.",
+    "The numeric identity_confidence field has no defined scale and is not used as a consistency measure."
+  ],
+  "protocol_timing": "The repeat began on the same date as the 2026-11-14 protocol freeze, so it is an immediate repeat, not a delayed reassessment."
+}

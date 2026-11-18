@@ -1,0 +1,32 @@
+{
+  "package": "Taqrib boundary pilot corrected draft v1.1",
+  "status": "AI repaired; pending human confirmation",
+  "generator": "dataset_discovery/target_feasibility/repair_taqrib_boundary_review_v1_1.py",
+  "inputs": {
+    "reviewer_submission": {
+      "path": "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/BOUNDARY_PILOT_REVIEWER_ANNOTATED_2026-11-15.csv",
+      "sha256": "c8eb9d73e04cb180d02e0fbba886f7474d94c1c91400da2a9613845ca15e1645"
+    },
+    "source_pages": {
+      "path": "data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/pages.jsonl",
+      "sha256": "45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa"
+    },
+    "source_manifest": {
+      "path": "data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/manifest.json",
+      "sha256": "ccab02ce8680a28b266ee4a96dae41684a4f84d2da48b1642c5652e1c483f369"
+    }
+  },
+  "outputs": {
+    "BOUNDARY_PILOT_REVIEW_CORRECTED_2026-11-15.csv": "cd664598d5a3573b863e2d79467b6069cf77927248a9a371be9c018cab0b3e6b"
+  },
+  "method": [
+    "Preserved all original reviewer data in the dated input copy; generated a separate corrected draft.",
+    "Restored exact source coverage, including entry-number prefixes, spaces, punctuation, and identified omitted text.",
+    "Standardized roles to the pilot guide, with source_entry_number added for the printed entry marker.",
+    "No rank number, historical attribution, or reliability judgment was assigned.",
+    "All completion flags are no and confidence fields blank until the reviewer confirms the repaired draft."
+  ],
+  "case_count": 25,
+  "max_segment_slots": 15,
+  "all_segment_concatenations_match_source": true
+}

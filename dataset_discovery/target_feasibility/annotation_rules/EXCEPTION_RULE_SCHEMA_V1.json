@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:shamela4:annotation-exception-rule-schema:1.0",
+  "title": "Shamela4 Annotation Exception Registry v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "registry_version",
+    "registry_id",
+    "status",
+    "activation_policy",
+    "conflict_policy",
+    "actions_are_advisory",
+    "rank_assignment_permitted",
+    "rules"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "registry_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+    "registry_id": {"const": "SHAMELA4_EXCEPTION_RULES_V1"},
+    "status": {"enum": ["inactive", "active"]},
+    "activation_policy": {"const": "human_approval_required"},
+    "conflict_policy": {"const": "multiple_match_abstain"},
+    "actions_are_advisory": {"const": true},
+    "rank_assignment_permitted": {"const": false},
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/exceptionRule"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"status": {"const": "inactive"}},
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "rules": {"items": {"properties": {"active": {"const": false}}}}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"status": {"const": "active"}},
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "rules": {
+            "contains": {
+              "properties": {"active": {"const": true}},
+              "required": ["active"]
+            },
+            "minContains": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "exceptionRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exception_id",
+        "rule_version",
+        "status",
+        "active",
+        "trigger",
+        "scope",
+        "actions",
+        "rationale",
+        "expected_behavior",
+        "supporting_pilot_refs",
+        "evidence_status",
+        "approval"
+      ],
+      "properties": {
+        "exception_id": {"type": "string", "pattern": "^EXC_[A-Z0-9_]+$"},
+        "rule_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+        "status": {"enum": ["proposed", "reviewed", "approved", "retired"]},
+        "active": {"type": "boolean"},
+        "trigger": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["match_type", "field", "exact_value"],
+          "properties": {
+            "match_type": {"const": "exact_complete_span"},
+            "field": {"const": "statement_text_verbatim"},
+            "exact_value": {"type": "string", "minLength": 1}
+          }
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "unit",
+            "interpretation_dimension",
+            "target_eligibility",
+            "requires_confirmed_candidate_identity",
+            "requires_human_confirmed_statement_span",
+            "requires_verified_source_text"
+          ],
+          "properties": {
+            "unit": {"const": "confirmed_statement_span"},
+            "interpretation_dimension": {
+              "enum": [
+                "compound_grade_qualification",
+                "attributed_evaluator_wording",
+                "grade_qualification",
+                "companion_status",
+                "specific_transmission_criticism"
+              ]
+            },
+            "target_eligibility": {"const": "not_assessed"},
+            "requires_confirmed_candidate_identity": {"const": true},
+            "requires_human_confirmed_statement_span": {"const": true},
+            "requires_verified_source_text": {"const": true}
+          }
+        },
+        "actions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "suppress_base_match",
+              "preserve_attributed_judgement",
+              "preserve_qualification",
+              "separate_status_from_reliability",
+              "classify_specific_criticism",
+              "abstain_for_review"
+            ]
+          }
+        },
+        "rationale": {"type": "string", "minLength": 1},
+        "expected_behavior": {"type": "string", "minLength": 1},
+        "supporting_pilot_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^PROV-[0-9]+-C[0-9]+-S[0-9]+$"}
+        },
+        "evidence_status": {"const": "pilot_pattern_only"},
+        "approval": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "approved_by", "approved_on", "approval_reference"],
+          "properties": {
+            "status": {"enum": ["not_approved", "approved"]},
+            "approved_by": {"type": ["string", "null"]},
+            "approved_on": {"type": ["string", "null"], "format": "date"},
+            "approval_reference": {"type": ["string", "null"]}
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {"status": {"const": "not_approved"}},
+                "required": ["status"]
+              },
+              "then": {
+                "properties": {
+                  "approved_by": {"type": "null"},
+                  "approved_on": {"type": "null"},
+                  "approval_reference": {"type": "null"}
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {"status": {"const": "approved"}},
+                "required": ["status"]
+              },
+              "then": {
+                "properties": {
+                  "approved_by": {"type": "string", "minLength": 1},
+                  "approved_on": {"type": "string", "format": "date"},
+                  "approval_reference": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"active": {"const": true}}},
+          "then": {
+            "properties": {
+              "status": {"const": "approved"},
+              "approval": {
+                "properties": {
+                  "status": {"const": "approved"},
+                  "approved_by": {"type": "string", "minLength": 1},
+                  "approved_on": {"type": "string", "format": "date"},
+                  "approval_reference": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

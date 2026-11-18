@@ -1,0 +1,206 @@
+﻿candidate_id,phrase_candidate_exact,exact_occurrences,unique_source_entries,selection_stratum,sampling_method,sample_entry_limit,prior_batch_01_accepted_occurrences_not_reselected,selected_phrase_hits,selected_unique_entries,seed
+MOD-001,جبل الحفظ,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+MOD-002,إمام الدنيا في فقه الحديث,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-001,أثنى عليه,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-002,أجمعوا على ثقته,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-003,أحد الحفاط,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-004,أحد الحفاظ,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-005,أحد السابقين الأولين,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-006,أحد العشرة,8,8,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,8,8,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-007,أحد العشرة المشهود لهم بالجنة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-008,أحد العلماء الأثبات الفقهاء الكبار,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-009,أحد النقباء,4,4,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,4,4,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-010,أسلم قديما وهاجر الهجرتين,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-011,أطلق عليه اسم الكذب والوضع,0,0,no_exact_occurrences,No exact hit in the numbered-entry inventory; retain for future review only.,0,0,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-012,أفرط فيه ابن معين فكذبه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-013,أم المؤمنين,15,15,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,14,14,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-014,أوثق الناس,0,0,no_exact_occurrences,No exact hit in the numbered-entry inventory; retain for future review only.,0,0,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-015,اتفق النقاد على تكذيبه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-016,اتهم بالكذب,0,0,no_exact_occurrences,No exact hit in the numbered-entry inventory; retain for future review only.,0,0,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-017,اتهمه جماعة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-018,الإرجاء,34,34,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-019,البدري,5,5,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,5,5,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-020,التجهم,0,0,no_exact_occurrences,No exact hit in the numbered-entry inventory; retain for future review only.,0,0,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-021,التشيع,44,44,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-022,الصحابة,118,117,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-023,الصحابي,17,17,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-024,الصديق الأكبر,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-025,القدر,52,51,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-026,النصب,10,10,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-027,بدري,33,33,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-028,تركه الدارقطني,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-029,تركوه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-030,تغير بأخرة,12,12,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,12,12,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-031,تكلم فيه بعضهم,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-032,تكلموا فيه,3,3,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,3,3,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-033,ثبت,211,203,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-034,ثقات الأمراء,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-035,ثقات التابعين,40,40,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-036,ثقة,2322,2313,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-037,ثقة ثبت,137,137,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-038,ثقة ثقة,6,6,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,5,5,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-039,ثقة حافظ,125,125,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-040,ثقة فقيه عابد,8,8,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,7,7,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-041,ثقة لكنه تغير بأخرة فلم يفحش اختلاطه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-042,ثقة متقن,15,15,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,14,14,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-043,ثقة متقنا,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-044,ثقه,84,84,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-045,ثم أسلم وصحب,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-046,جبل الحفظ وإمام الدنيا في فقه الحديث,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-047,حاضنة النبي ﷺ,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-048,حافظ,158,158,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-049,خادم النبي ﷺ,3,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,3,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-050,خادم رسول الله ﷺ خدمه عشر سنين,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-051,خلط بعد احتراق كتبه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-052,خلط في غيره,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-053,ذكره ابن حبان في الثقات,3,3,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,3,3,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-054,ذكره ابن حبان في ثقات التابعين,31,31,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-055,ذكره جماعة في ثقات التابعين,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-056,رافضي,7,7,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,7,7,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-057,رماه ابن معين بالكذب,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-058,رموه بالوضع,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-059,رمي بالتشيع,33,33,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-060,رمي بالنصب,9,9,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,9,9,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-061,رمي بالوضع,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-062,ساقط,0,0,no_exact_occurrences,No exact hit in the numbered-entry inventory; retain for future review only.,0,0,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-063,سيء الحفظ,23,23,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-064,شهد أحدا,8,8,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,8,8,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-065,شهد أحدا وما بعدها,5,5,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,5,5,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-066,شهد بدر,28,28,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-067,شهد بدرا,27,27,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-068,شهد بدرا وغيرها,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-069,شهد بدرا وهو مملوك,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-070,شهد بيعة الرضوان,5,5,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,5,5,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-071,صالح الحديث,4,4,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,4,4,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-072,صالح الحديث إلا عن بقية,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-073,صحابي,682,671,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-074,صحابي ابن صحابي,7,7,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,7,7,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-075,صحابي بدري,4,4,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,4,4,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-076,صحابي جليل,21,21,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-077,صحابي شهير,9,9,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,9,9,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-078,صحابي صغير,33,33,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-079,صحابي كبير,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-080,صحابي مشهور,44,44,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-081,صحابي معروف,9,9,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,9,9,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-082,صحابي مقل,13,13,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,13,13,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-083,صحابي من أهل الصفة,4,4,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,4,4,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-084,صحابية,84,83,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-085,صحابية مشهور,9,9,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,9,9,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-086,صحبا,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-087,صحبه وحفظ عنه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-088,صحبه ولازمه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-089,صدوق,1832,1830,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-090,صدوق حافظ,4,4,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,3,3,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-091,صدوق سيء الحفظ,21,21,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-092,صدوق يخطىء,147,147,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-093,صدوق يهم,94,94,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-094,ضعف مع إمامته ومعرفته,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-095,ضعفه أبو حاتم,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-096,ضعفه أبو زرعة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-097,ضعفه الأزدي من الرابعة ق,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-098,ضعفه يحيى ابن معين ورمي بالإرجاء من التاسعة مات سنة خمس عشرة ت,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-099,ضعفوه لكثرة تدليسه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-100,ضعيف,422,422,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-101,طعن فيه برأي جهم ثم اعتذر وتاب,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-102,عابوا عليه أنه حدث عن أبيه بغير سماع,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-103,عدل,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-104,فلين الحديث,0,0,no_exact_occurrences,No exact hit in the numbered-entry inventory; retain for future review only.,0,0,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-105,فهو صحابي ابن صحابي,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-106,في حديثه لين,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-107,فيه ضعف,8,8,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,8,8,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-108,فيه لين,52,52,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-109,قال ابن معين صالح,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-110,قيل إن له هو صحبة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-111,قيل لقهيد صحبة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-112,قيل له صحبة,16,16,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-113,قيل له صحبة أو رؤية,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-114,كأنها صحابية,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-115,كذبه أبو زرعة,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-116,كذبه أحمد وغيره,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-117,كذبه ابن حبان,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-118,كذبه الشعبي في رأيه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-119,كذبه مالك وغيره,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-120,كذبوه,15,15,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,14,14,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-121,لا أعرفه,3,3,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-122,لا بأس بحديثه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-123,لا بأس به,116,116,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-124,لا تعرف,30,30,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-125,لا يعرف,85,84,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-126,لا يعرف حاله,44,44,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-127,لا يعرف حالها,36,36,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,1,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-128,لا يعرف ولم يسم,7,7,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,6,6,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-129,لكنه تغير بأخرة فلم يفحش اختلاطه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-130,لم أقف على اسمها ولا على حالها,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-131,له أوهام,100,100,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-132,له رؤية,47,47,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-133,له صحبة,104,103,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-134,له وفادة,4,4,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,4,4,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-135,له ولأبويه صحبة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-136,له ولأبيه صحبة,9,9,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,9,9,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-137,له ولأبيه ولجده صحبه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-138,له ولابنه صحبة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-139,لها رؤية,3,3,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,3,3,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-140,لها صحبة,24,24,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-141,ليس بأهل أن يروى عنه,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-142,ليس بالقوي,12,12,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,12,12,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-143,ليس بالقوي وقد تغير في آخر عمره,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-144,ليس به بأس,17,17,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-145,لين,210,210,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-146,لين الحديث,115,115,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-147,ليّن,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-148,ما به بأس,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-149,ما عرف أبو حاتم حاله في الحديث,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-150,متروك,145,145,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-151,متروك الحديث,13,13,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,13,13,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-152,متقن,19,19,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-153,متهم بالكذب,3,3,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,3,3,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-154,متهم بالوضع,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-155,مجمع على ثقته,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-156,مجهول,795,794,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-157,مجهول الحال,62,62,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-158,مختلف في صحبته,35,35,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-159,مختلف في وجوده فقيل صحابي,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-160,مخلط في غيرهم,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-161,مستقيم الحديث إلا في حديث واحد يقال إن ابنه محمدا أدخله عليه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-162,مستور,161,161,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-163,مقبول,1600,1599,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-164,من السابقين الأولين,5,5,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,5,5,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-165,من السابقين الأولين هاجر الهجرتين وشهد المشاهد,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-166,من قدماء المهاجرين,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-167,من كبار التابعين الثقات,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-168,من مسلمة الفتح,12,12,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,12,12,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-169,منكر الحديث,18,18,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-170,مولى النبي ﷺ وخادمه,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-171,نسبه أبو حاتم إلى الكذب,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-172,واهي الحديث,0,0,no_exact_occurrences,No exact hit in the numbered-entry inventory; retain for future review only.,0,0,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-173,وثقه,79,79,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-174,وثقه أبو حاتم,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-175,وثقه أبو داود وغيره,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-176,وثقه أبو زرعة,3,3,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,3,3,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-177,وثقه أبو زرعة في الحديث,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-178,وثقه ابن حبان,10,10,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-179,وثقه ابن سعد,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-180,وثقه ابن معين,12,12,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,12,12,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-181,وثقه الأئمة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-182,وثقه الجمهور,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-183,وثقه الخطيب,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-184,وثقه الدارقطني,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-185,وثقه الشافعي,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-186,وثقه العجلي,21,21,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-187,وثقه العجلي وجماعة,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-188,وثقه النسائي,18,18,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-189,وثقه يعقوب ابن,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-190,وثقها العجلي,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-191,ورواية ابن المبارك وابن وهب عنه أعدل من غيرهما,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-192,وصحب,5,5,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,5,5,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-193,وقد وثق,5,5,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,5,5,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-194,وكأنها صحابية,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,1,1,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-195,وكذبه ابن معين,3,3,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,3,3,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-196,وله صحبة,2,2,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,2,2,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-197,ويقال إن لها صحبة,3,3,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,3,3,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-198,يخطئ,0,0,no_exact_occurrences,No exact hit in the numbered-entry inventory; retain for future review only.,0,0,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-199,يخطىء,162,162,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-200,يسرق الحديث,1,1,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,1,0,0,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-201,يقال له رؤية,11,11,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,11,11,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-202,يقال له صحبة,21,21,common_phrase_sampled,deterministic_sample_one_occurrence_from_10_distinct_entries,10,0,10,10,shamela4-occ-review-batch02-v0.1-2026-11-16
+VOC-203,يقال لها صحبة,6,6,rare_phrase_exhaustive,exhaustive_all_exact_occurrences_not_already_accepted_in_batch_01,all,0,6,6,shamela4-occ-review-batch02-v0.1-2026-11-16

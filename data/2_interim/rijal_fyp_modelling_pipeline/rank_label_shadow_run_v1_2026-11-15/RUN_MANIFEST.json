@@ -1,0 +1,87 @@
+{
+  "run": "Taqrib rank-cue shadow scan v1",
+  "generated_at_utc": "2026-11-14T19:00:17+00:00",
+  "status": "shadow only; no labels auto-assigned or accepted",
+  "source": {
+    "local_book_id": 3076,
+    "shamela_book_id": 8609,
+    "source_file": "data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/pages.jsonl",
+    "page_count_in_source_manifest": 688,
+    "entry_extraction": "split each source body on the recorded carriage-return delimiter; keep chunks beginning with printed Arabic/Western numeral plus hyphen",
+    "source_page_rows": 688,
+    "numbered_entries": 8827,
+    "pages_containing_numbered_entries": 658,
+    "duplicate_page_entry_number_keys": 3,
+    "extra_rows_with_duplicate_page_entry_number": 3,
+    "nonempty_unnumbered_chunks_excluded": 3459
+  },
+  "inputs": {
+    "pages.jsonl": {
+      "path": "data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/pages.jsonl",
+      "sha256": "45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa"
+    },
+    "manifest.json": {
+      "path": "data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/manifest.json",
+      "sha256": "ccab02ce8680a28b266ee4a96dae41684a4f84d2da48b1642c5652e1c483f369"
+    },
+    "IBN_HAJAR_12_RANK_SOURCE_INVENTORY_V0.md": {
+      "path": "data/2_interim/rijal_fyp_modelling_pipeline/IBN_HAJAR_12_RANK_SOURCE_INVENTORY_V0.md",
+      "sha256": "d65a660696d5a895c8bf8504680b25655156ae694d8f3ffbfeeba2fd4c9560eb"
+    },
+    "ANNOTATION_AUTOMATION_RULE_REGISTRY_V1.csv": {
+      "path": "dataset_discovery/target_feasibility/ANNOTATION_AUTOMATION_RULE_REGISTRY_V1.csv",
+      "sha256": "2f902f496a0d304f9c8de773fc0120caf437889941ceb8cce9a791d5e4a671ae"
+    },
+    "TAQRIB_BOUNDARY_ANNOTATIONS_FROZEN_V1.csv": {
+      "path": "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/frozen_2026-11-15/TAQRIB_BOUNDARY_ANNOTATIONS_FROZEN_V1.csv",
+      "sha256": "c7d808496802ba6ba04aac2bc2778f4acf0a04f5996e7866458b92e46d59a05f"
+    },
+    "FREEZE_MANIFEST.json": {
+      "path": "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/frozen_2026-11-15/FREEZE_MANIFEST.json",
+      "sha256": "f12e8aa07920915149daec9b62b11cffe58767ea61daf39f4eb22e4437f866d3"
+    }
+  },
+  "matching": {
+    "normalization": "none; exact Unicode substring matching only",
+    "entry_text_mutated": false,
+    "entry_statement_boundaries_inferred": false,
+    "rank_assignment": false,
+    "auto_accept": false,
+    "source_rank_cues_are_exhaustive": false,
+    "contextual_rank_preconditions_checked": false,
+    "human_dispositions_recorded": false
+  },
+  "counts": {
+    "source_page_rows": 688,
+    "numbered_entries": 8827,
+    "pages_containing_numbered_entries": 658,
+    "duplicate_page_entry_number_keys": 3,
+    "extra_rows_with_duplicate_page_entry_number": 3,
+    "nonempty_unnumbered_chunks_excluded": 3459,
+    "source_cue_definitions": 33,
+    "source_cue_occurrences": 8332,
+    "source_cue_occurrence_entries": 7445,
+    "registry_candidate_rules_scanned": 10,
+    "registry_rule_occurrences": 5831,
+    "registry_rule_hit_entries": 4696,
+    "rank_assignments": 0,
+    "auto_accepted_labels": 0
+  },
+  "outputs": {
+    "ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "RANK_CUE_INVENTORY.csv": "49c551ac3e64a670067c6198d6a58a916bb1ed07d48bb617cf0282563ba638fd",
+    "CUE_OCCURRENCES.csv": "518187b48b55026322c1ed84875108ee4441b6e4d1fdd8a80fdc4b0fb19b0b67",
+    "CANDIDATE_RULE_HITS.csv": "1269bc665cbdc7fc9e09937aebb1349df70eb1567cd3ade0002c88be6fe4ef43",
+    "CANDIDATE_RULE_COUNTS.csv": "855d29348c5b9120d5f8fc99339e1a87b65020fb50e1700d9101ccd8c8ae2dc8",
+    "RULE_REGISTRY_SNAPSHOT.csv": "2f902f496a0d304f9c8de773fc0120caf437889941ceb8cce9a791d5e4a671ae",
+    "CUE_COUNTS_BY_RANK.csv": "0b871e303e341f41b64b829d664ba750ad523600faa72f491b572740ba3a12e2",
+    "RUN_REPORT.md": "92e1f658b64a945a735061ae4b220821264ed74d3cd8532e5af9af2a7fd68250"
+  },
+  "limitations": [
+    "The source inventory's examples are illustrative, not an exhaustive phrase dictionary.",
+    "The local page extraction begins at printed page 75 and omits the rank-introduction passage; the source inventory is a separate edition-aligned searchable digital-text reference, not a scan.",
+    "Occurrences are located in whole entry text, not confirmed complete assessment spans.",
+    "A cue hit does not satisfy rank-definition conditions or establish identity, statement type, attribution, truth, or target eligibility.",
+    "Raw occurrence and unique-entry counts are not label counts, precision, recall, automation coverage, or model performance."
+  ]
+}

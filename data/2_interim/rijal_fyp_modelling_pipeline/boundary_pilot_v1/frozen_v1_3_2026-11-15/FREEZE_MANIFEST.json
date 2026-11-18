@@ -1,0 +1,36 @@
+{
+  "package": "Taqrib boundary annotations frozen granular revision v1.3",
+  "version": "1.3",
+  "status": "frozen_on_user_approval_2026-11-15",
+  "user_authorized_freeze": true,
+  "approval_basis": "The user explicitly approved the v1.3 granular-label revision in conversation.",
+  "review_status": "single-reviewer, AI-assisted; no independent expert review claimed",
+  "case_count": 25,
+  "original_reviewer_label_count": 189,
+  "rank_labels_assigned": 0,
+  "no_model_training": true,
+  "inputs": {
+    "v1_3_draft": {
+      "path": "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/granular_revision_v1_3_2026-11-15/TAQRIB_BOUNDARY_ANNOTATIONS_GRANULAR_V1_3_DRAFT.csv",
+      "sha256": "552b2b97b9675e8b467c27a19677f2b3347aeb9070d0e582d22c852f41100232"
+    },
+    "original_reviewer_label_ledger": {
+      "path": "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/granular_revision_v1_3_2026-11-15/ORIGINAL_REVIEWER_LABEL_LEDGER.csv",
+      "sha256": "f869459e03a81bc0544a98875892f0d8d04e72c9c04b656251d747c2f5a626e3"
+    },
+    "v1_frozen_snapshot": {
+      "path": "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/frozen_2026-11-15/TAQRIB_BOUNDARY_ANNOTATIONS_FROZEN_V1.csv",
+      "sha256": "c7d808496802ba6ba04aac2bc2778f4acf0a04f5996e7866458b92e46d59a05f"
+    },
+    "v1_3_revision_manifest": {
+      "path": "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/granular_revision_v1_3_2026-11-15/REVISION_MANIFEST.json",
+      "sha256": "2386f335a32db5aad8df1875a0d8962acdf6a763441b6444eadcddf46a71de25"
+    }
+  },
+  "outputs": {
+    "TAQRIB_BOUNDARY_ANNOTATIONS_FROZEN_V1_3.csv": "8e7b03b39bef29513f58363a654165e5209e7c023b0c31fb744f18e0ebf0886d",
+    "ORIGINAL_REVIEWER_LABEL_LEDGER.csv": "f869459e03a81bc0544a98875892f0d8d04e72c9c04b656251d747c2f5a626e3",
+    "README.md": "8d567fdf13eb7a68107e54c3c3f216c4a11e169e27185b489eaf95355d3a79cc"
+  },
+  "manifest_hash_note": "This manifest does not hash itself; FREEZE_MANIFEST.sha256 records its SHA-256."
+}

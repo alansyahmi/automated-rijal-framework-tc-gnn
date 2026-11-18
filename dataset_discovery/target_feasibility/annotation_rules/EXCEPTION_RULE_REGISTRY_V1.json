@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "registry_version": "1.0",
+  "registry_id": "SHAMELA4_EXCEPTION_RULES_V1",
+  "status": "inactive",
+  "activation_policy": "human_approval_required",
+  "conflict_policy": "multiple_match_abstain",
+  "actions_are_advisory": true,
+  "rank_assignment_permitted": false,
+  "rules": [
+    {
+      "exception_id": "EXC_PROV04_COMPOUND_THIQA_AFRAAD_001",
+      "rule_version": "1.0",
+      "status": "proposed",
+      "active": false,
+      "trigger": {
+        "match_type": "exact_complete_span",
+        "field": "statement_text_verbatim",
+        "exact_value": "ثقة له أفراد"
+      },
+      "scope": {
+        "unit": "confirmed_statement_span",
+        "interpretation_dimension": "compound_grade_qualification",
+        "target_eligibility": "not_assessed",
+        "requires_confirmed_candidate_identity": true,
+        "requires_human_confirmed_statement_span": true,
+        "requires_verified_source_text": true
+      },
+      "actions": ["suppress_base_match", "abstain_for_review"],
+      "rationale": "The complete span is compound. A standalone ثقة rule must not match inside the longer statement and decide the full span.",
+      "expected_behavior": "If a naive base matcher supplied a standalone-grade result, propose suppressing that result and sending the compound statement for human review. Do not assign a rank from this exception.",
+      "supporting_pilot_refs": ["PROV-04-C01-S01"],
+      "evidence_status": "pilot_pattern_only",
+      "approval": {
+        "status": "not_approved",
+        "approved_by": null,
+        "approved_on": null,
+        "approval_reference": null
+      }
+    },
+    {
+      "exception_id": "EXC_PROV24_ATTRIBUTED_NASAI_001",
+      "rule_version": "1.0",
+      "status": "proposed",
+      "active": false,
+      "trigger": {
+        "match_type": "exact_complete_span",
+        "field": "statement_text_verbatim",
+        "exact_value": "وثقه النسائي"
+      },
+      "scope": {
+        "unit": "confirmed_statement_span",
+        "interpretation_dimension": "attributed_evaluator_wording",
+        "target_eligibility": "not_assessed",
+        "requires_confirmed_candidate_identity": true,
+        "requires_human_confirmed_statement_span": true,
+        "requires_verified_source_text": true
+      },
+      "actions": ["suppress_base_match", "preserve_attributed_judgement", "abstain_for_review"],
+      "rationale": "The wording explicitly attributes the judgement to al-Nasa'i. It must not be treated as an unqualified standalone grade formulated by Ibn Hajar.",
+      "expected_behavior": "Preserve the attribution as written and keep evaluator, compiler authorship, and transmission route distinct. Do not assign a rank from this exception; require human review.",
+      "supporting_pilot_refs": ["PROV-24-C01-S01"],
+      "evidence_status": "pilot_pattern_only",
+      "approval": {
+        "status": "not_approved",
+        "approved_by": null,
+        "approved_on": null,
+        "approval_reference": null
+      }
+    },
+    {
+      "exception_id": "EXC_PROV39_PRESERVE_IKHTILAT_QUALIFICATION_001",
+      "rule_version": "1.0",
+      "status": "proposed",
+      "active": false,
+      "trigger": {
+        "match_type": "exact_complete_span",
+        "field": "statement_text_verbatim",
+        "exact_value": "صدوق اختلط في الآخر"
+      },
+      "scope": {
+        "unit": "confirmed_statement_span",
+        "interpretation_dimension": "grade_qualification",
+        "target_eligibility": "not_assessed",
+        "requires_confirmed_candidate_identity": true,
+        "requires_human_confirmed_statement_span": true,
+        "requires_verified_source_text": true
+      },
+      "actions": ["preserve_qualification"],
+      "rationale": "The qualification is part of the exact grade wording and is material to interpretation. The separate pilot adjudication maps this exact expression to Rank 5.",
+      "expected_behavior": "Preserve an already-supported Rank 5 base proposal and the verbatim qualification. This exception does not assign or override a rank, infer transmission timing, or determine a hadith-level outcome.",
+      "supporting_pilot_refs": ["PROV-39-C01-S01"],
+      "evidence_status": "pilot_pattern_only",
+      "approval": {
+        "status": "not_approved",
+        "approved_by": null,
+        "approved_on": null,
+        "approval_reference": null
+      }
+    },
+    {
+      "exception_id": "EXC_PROV01_COMPANION_STATUS_001",
+      "rule_version": "1.0",
+      "status": "proposed",
+      "active": false,
+      "trigger": {
+        "match_type": "exact_complete_span",
+        "field": "statement_text_verbatim",
+        "exact_value": "صحابي"
+      },
+      "scope": {
+        "unit": "confirmed_statement_span",
+        "interpretation_dimension": "companion_status",
+        "target_eligibility": "not_assessed",
+        "requires_confirmed_candidate_identity": true,
+        "requires_human_confirmed_statement_span": true,
+        "requires_verified_source_text": true
+      },
+      "actions": ["suppress_base_match", "separate_status_from_reliability", "abstain_for_review"],
+      "rationale": "Companion status is a biographical classification and must not leak into the ordinary narrator-reliability target.",
+      "expected_behavior": "Keep Companion status separate. Do not infer an ordinary reliability grade; any Rank 1 taxonomy mapping requires its own documented decision. Require human review.",
+      "supporting_pilot_refs": ["PROV-01-C01-S01"],
+      "evidence_status": "pilot_pattern_only",
+      "approval": {
+        "status": "not_approved",
+        "approved_by": null,
+        "approved_on": null,
+        "approval_reference": null
+      }
+    },
+    {
+      "exception_id": "EXC_PROV51_SPECIFIC_TRANSMISSION_CRITICISM_001",
+      "rule_version": "1.0",
+      "status": "proposed",
+      "active": false,
+      "trigger": {
+        "match_type": "exact_complete_span",
+        "field": "statement_text_verbatim",
+        "exact_value": "عابوا عليه أنه حدث عن أبيه بغير سماع"
+      },
+      "scope": {
+        "unit": "confirmed_statement_span",
+        "interpretation_dimension": "specific_transmission_criticism",
+        "target_eligibility": "not_assessed",
+        "requires_confirmed_candidate_identity": true,
+        "requires_human_confirmed_statement_span": true,
+        "requires_verified_source_text": true
+      },
+      "actions": ["suppress_base_match", "classify_specific_criticism", "abstain_for_review"],
+      "rationale": "The wording describes a specific transmission criticism. It is not one of the standardized narrator-grade expressions, and the collective is unnamed.",
+      "expected_behavior": "Propose a specific-criticism classification for review, assign no conventional grade, and preserve the collective's identity and transmission route as unresolved.",
+      "supporting_pilot_refs": ["PROV-51-C01-S01"],
+      "evidence_status": "pilot_pattern_only",
+      "approval": {
+        "status": "not_approved",
+        "approved_by": null,
+        "approved_on": null,
+        "approval_reference": null
+      }
+    }
+  ]
+}

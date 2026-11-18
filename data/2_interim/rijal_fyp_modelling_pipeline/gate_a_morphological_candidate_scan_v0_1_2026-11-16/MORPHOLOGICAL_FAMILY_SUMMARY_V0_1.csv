@@ -1,0 +1,26 @@
+﻿family_id,root_label,domain_role,unique_entries_matched,total_occurrences,distinct_surface_forms,new_surface_forms_beyond_v0_1,new_occurrences_beyond_v0_1,notes
+MF-01_WATHAQ,و-ث-ق,authentication_trustworthiness,2449,2464,13,5,18,"Includes Rank 2/3 praise, attributed authentication, and non-grade usages like ثقات الأمراء; requires clause context."
+MF-02_SADAQ,ص-د-ق,truthfulness_rank4_5,1833,1837,6,5,9,Covers Rank 4 صدوق and Rank 5 qualified صدوق forms.
+MF-03_SAHIB,ص-ح-ب,companionship_status_rank1,1053,1105,16,9,150,Companion status (Rank 1) vs. disputed companionship or general accompaniment.
+MF-04_THABAT,ث-ب-ت,precision_firmness_rank2_3,202,210,9,8,61,Rank 2/3 firmness; check against non-grade uses of ثبت.
+MF-05_ATQAN,ت-ق-ن,mastery_precision_rank3,21,21,5,3,3,Rank 3 precision term.
+MF-06_HAFIZ,ح-ف-ظ,memory_rank2_or_5,235,238,11,6,57,Appears in Rank 2 ثقة حافظ and Rank 5 سيء الحفظ.
+MF-07_ADL,ع-د-ل,uprightness_rank3,0,0,0,0,0,Rank 3 uprightness; exclude non-grade phrases unless evaluative.
+MF-08_HUJJA,ح-ج-ج,authority_rank2_3,40,40,4,4,40,Includes احتج به / لم يحتج به.
+MF-09_QABIL,ق-ب-ل,rank6_conditional_acceptance,1896,1940,7,6,407,Rank 6 مقبول depends on corroboration.
+MF-10_LAYIN,ل-ي-ن,leniency_weakness_rank6_8,209,209,4,3,14,Covers لين الحديث and related leniency cues.
+MF-11_DAIF,ض-ع-ف,weakness_rank8_10,459,461,13,9,18,Covers standalone ضعف/ضعيف and attributed critic weakness.
+MF-12_JAHIL,ج-ه-ل,unknownness_rank7_9,798,799,8,7,41,Rank 9 unknownness; check transmitter count conditions.
+MF-13_SATAR,س-ت-ر,mastur_rank7,157,157,4,3,4,Rank 7 mastur; check transmitter count and lack of authentication.
+MF-14_ARAF,ع-ر-ف,knownness_and_negation,258,264,12,8,99,Captures لا يعرف / لم يعرف / معروف / لا أعرف; negation context is essential.
+MF-15_TARAK,ت-ر-ك,abandonment_rank10,153,153,8,5,7,Rank 10 abandonment.
+MF-16_SAQAT,س-ق-ط,severe_weakness_rank10,1,1,1,1,1,Rank 10 severe weakness cue.
+MF-17_HALAK,ه-ل-ك,perished_rank10,0,0,0,0,0,Rank 10 severe weakness cue.
+MF-18_TAHAM,ت-ه-م,accusation_rank11,20,21,6,4,7,Rank 11 accusation of lying or fabrication.
+MF-19_WAHAM,و-ه-م,error_rank5,461,465,11,9,259,Rank 5 error qualification (e.g. صدوق يهم).
+MF-20_KADHAB,ك-ذ-ب,lying_rank11_12,84,86,12,6,10,Distinguish Rank 12 applied lying from Rank 11 accusation and non-hadith disputes.
+MF-21_WADA,و-ض-ع,fabrication_rank11_12,6,6,3,3,6,Distinguish applied fabrication from non-grade uses of وضع.
+MF-22_GHALAT,غ-ل-ط,error_rank5_10,37,37,7,7,37,Preserves error qualifiers such as كثير الغلط / يغلط.
+MF-23_KHALAT,خ-ل-ط,confusion_ikhtilat_rank5,36,38,9,6,33,Preserves memory-confusion qualifiers such as اختلط بأخرة / خلط في غيره.
+MF-24_NAKAR,ن-ك-ر,munkar_rank10,35,35,7,6,15,Includes منكر الحديث and critic rejection clauses.
+MF-25_QADAH,ق-د-ح,defect_rank10,1,1,1,1,1,Covers بقدح / بقادح (edition variant in Rank 10 definition).

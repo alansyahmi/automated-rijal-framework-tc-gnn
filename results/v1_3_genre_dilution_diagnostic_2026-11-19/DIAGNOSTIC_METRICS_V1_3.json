@@ -1,0 +1,537 @@
+{
+  "analyses_123": {
+    "analysis1_vocab_overlap_freq_ge3": {
+      "arm4_vocab_size": 11449,
+      "m1_full_vocab_size": 12429,
+      "m1_eval_filtered_vocab_size": 4898,
+      "shared_arm4_m1_vocab": 7471,
+      "jaccard_arm4_m1": 0.4554,
+      "jaccard_arm4_m1_eval": 0.3609,
+      "m1_unseen_in_arm4_vocab_pct": 39.9,
+      "m1_unseen_in_arm4_token_occ_pct": 3.4,
+      "top15_enriched_in_m1_vs_arm4": [
+        [
+          6.532,
+          "ومئة",
+          710,
+          0
+        ],
+        [
+          6.457,
+          "ومئتين",
+          659,
+          0
+        ],
+        [
+          5.302,
+          "الغنائم",
+          207,
+          0
+        ],
+        [
+          5.238,
+          "اسمعيل",
+          194,
+          0
+        ],
+        [
+          4.921,
+          "دس",
+          141,
+          0
+        ],
+        [
+          4.892,
+          "اخبرتنا",
+          137,
+          0
+        ],
+        [
+          4.848,
+          "ريذة",
+          131,
+          0
+        ],
+        [
+          4.628,
+          "الدرجي",
+          211,
+          1
+        ],
+        [
+          4.585,
+          "بدلا",
+          405,
+          3
+        ],
+        [
+          4.492,
+          "بدرجتين",
+          184,
+          1
+        ],
+        [
+          4.232,
+          "مئة",
+          213,
+          2
+        ],
+        [
+          4.184,
+          "فوافقناه",
+          203,
+          2
+        ],
+        [
+          3.87,
+          "طبرزذ",
+          148,
+          2
+        ],
+        [
+          3.836,
+          "خت",
+          239,
+          4
+        ],
+        [
+          3.772,
+          "وفضيل",
+          134,
+          2
+        ]
+      ],
+      "top15_enriched_in_arm4_vs_m1": [
+        [
+          7.128,
+          "خلفون",
+          1202,
+          0
+        ],
+        [
+          6.57,
+          "والحاكم",
+          688,
+          0
+        ],
+        [
+          5.904,
+          "والطوسي",
+          353,
+          0
+        ],
+        [
+          5.84,
+          "والدارمي",
+          331,
+          0
+        ],
+        [
+          5.645,
+          "مستدركه",
+          272,
+          0
+        ],
+        [
+          5.549,
+          "وثق",
+          247,
+          0
+        ],
+        [
+          5.392,
+          "برقم",
+          211,
+          0
+        ],
+        [
+          5.353,
+          "والعقيلي",
+          203,
+          0
+        ],
+        [
+          5.239,
+          "المزي",
+          727,
+          3
+        ],
+        [
+          5.228,
+          "العلائي",
+          179,
+          0
+        ],
+        [
+          5.176,
+          "صحيحه",
+          1708,
+          9
+        ],
+        [
+          5.153,
+          "الصلة",
+          166,
+          0
+        ],
+        [
+          5.079,
+          "والبلخي",
+          154,
+          0
+        ],
+        [
+          5.052,
+          "المستدرك",
+          150,
+          0
+        ],
+        [
+          4.809,
+          "وثقه",
+          591,
+          4
+        ]
+      ]
+    },
+    "analysis2_evaluative_density": {
+      "arm4_mean_tokens": 296.5,
+      "arm4_median_tokens": 123.0,
+      "arm4_eval_token_density_pct": 83.9,
+      "arm4_eval_clause_share_pct": 68.3,
+      "m1_full_mean_tokens": 436.8,
+      "m1_full_median_tokens": 289.5,
+      "m1_full_eval_token_density_pct": 24.9,
+      "m1_full_eval_clause_share_pct": 22.0,
+      "m1_filtered_eval_mean_tokens": 116.4,
+      "m1_filtered_eval_median_tokens": 60.0
+    },
+    "analysis3_source_specific_distributions": {
+      "jsd_vs_arm4": {
+        "m1_eval_filtered": 0.0712,
+        "method1_tahdhib_alkamal": 0.105,
+        "method1_jarh_tadil": 0.1436,
+        "method1_thiqat_ibn_hibban": 0.2145,
+        "method1_tarikh_kabir": 0.1606,
+        "method1_thiqat_ijli": 0.1993,
+        "method1_kamil": 0.1272
+      },
+      "per_book": {
+        "method1_tahdhib_alkamal": {
+          "train_bios": 2375,
+          "mean_tokens_per_bio": 298.7,
+          "eval_token_density_pct": 23.1,
+          "eval_clause_share_pct": 21.3,
+          "jsd_vs_arm4": 0.105,
+          "top_tokens": [
+            "بن",
+            "قال",
+            "عن",
+            "الله",
+            "عبد",
+            "ابي",
+            "ابو",
+            "محمد",
+            "ابن",
+            "وقال",
+            "في",
+            "روي"
+          ]
+        },
+        "method1_jarh_tadil": {
+          "train_bios": 2232,
+          "mean_tokens_per_bio": 62.2,
+          "eval_token_density_pct": 31.8,
+          "eval_clause_share_pct": 27.8,
+          "jsd_vs_arm4": 0.1436,
+          "top_tokens": [
+            "بن",
+            "ابي",
+            "عبد",
+            "عن",
+            "روي",
+            "قال",
+            "الرحمن",
+            "عنه",
+            "سمعت",
+            "يقول",
+            "نا",
+            "ابن"
+          ]
+        },
+        "method1_thiqat_ibn_hibban": {
+          "train_bios": 2186,
+          "mean_tokens_per_bio": 29.3,
+          "eval_token_density_pct": 17.2,
+          "eval_clause_share_pct": 11.8,
+          "jsd_vs_arm4": 0.2145,
+          "top_tokens": [
+            "بن",
+            "عن",
+            "عنه",
+            "يروي",
+            "روي",
+            "عبد",
+            "ابي",
+            "من",
+            "ابو",
+            "اهل",
+            "الله",
+            "سنة"
+          ]
+        },
+        "method1_tarikh_kabir": {
+          "train_bios": 1748,
+          "mean_tokens_per_bio": 34.6,
+          "eval_token_density_pct": 12.7,
+          "eval_clause_share_pct": 7.3,
+          "jsd_vs_arm4": 0.1606,
+          "top_tokens": [
+            "بن",
+            "عن",
+            "قال",
+            "سمع",
+            "ابن",
+            "عبد",
+            "ابي",
+            "الله",
+            "عنه",
+            "روي",
+            "وقال",
+            "النبي"
+          ]
+        },
+        "method1_thiqat_ijli": {
+          "train_bios": 534,
+          "mean_tokens_per_bio": 19.9,
+          "eval_token_density_pct": 61.6,
+          "eval_clause_share_pct": 37.8,
+          "jsd_vs_arm4": 0.1993,
+          "top_tokens": [
+            "بن",
+            "ثقة",
+            "من",
+            "قال",
+            "وكان",
+            "عبد",
+            "ابي",
+            "تابعي",
+            "الله",
+            "كوفي",
+            "ابو",
+            "عن"
+          ]
+        },
+        "method1_kamil": {
+          "train_bios": 361,
+          "mean_tokens_per_bio": 403.2,
+          "eval_token_density_pct": 32.6,
+          "eval_clause_share_pct": 27.7,
+          "jsd_vs_arm4": 0.1272,
+          "top_tokens": [
+            "بن",
+            "حدثنا",
+            "عن",
+            "قال",
+            "الله",
+            "ابي",
+            "عبد",
+            "محمد",
+            "من",
+            "ابن",
+            "علي",
+            "رسول"
+          ]
+        }
+      }
+    }
+  },
+  "paired_bootstrap": {
+    "Abl3_M1EvalPassages_ConcatDirGNN_vs_Abl2_M1Full_ConcatDirGNN": {
+      "delta_macro_f1": 0.032256905636238266,
+      "ci95_f1": [
+        0.010446180456487994,
+        0.05350518939766614
+      ],
+      "p_f1": 0.004,
+      "delta_acc": 0.02055837563451777,
+      "p_acc": 0.028,
+      "delta_qwk": 0.005110969404380361,
+      "p_qwk": 0.615
+    },
+    "Abl3_M1EvalPassages_LogReg_vs_Abl2_M1Full_LogReg": {
+      "delta_macro_f1": 0.007931815922995245,
+      "ci95_f1": [
+        -0.027168236506326174,
+        0.04132947512545446
+      ],
+      "p_f1": 0.642,
+      "delta_acc": 0.006345177664974555,
+      "p_acc": 0.606,
+      "delta_qwk": 0.005042129658885175,
+      "p_qwk": 0.743
+    },
+    "Abl3_M1EvalPassages_ConcatDirGNN_vs_Abl1_Arm4_ConcatDirGNN": {
+      "delta_macro_f1": 0.010181668264813282,
+      "ci95_f1": [
+        -0.012056209841437052,
+        0.03173024292351374
+      ],
+      "p_f1": 0.405,
+      "delta_acc": 0.03299492385786802,
+      "p_acc": 0.001,
+      "delta_qwk": 0.015701191427295515,
+      "p_qwk": 0.306
+    },
+    "Abl5_HierTextStream_ConcatDirGNN_vs_Abl2_M1Full_ConcatDirGNN": {
+      "delta_macro_f1": 0.033563581641309195,
+      "ci95_f1": [
+        0.012211376951025952,
+        0.055319990770166104
+      ],
+      "p_f1": 0.001,
+      "delta_acc": 0.03223350253807107,
+      "p_acc": 0.001,
+      "delta_qwk": 0.026489698592180887,
+      "p_qwk": 0.04
+    },
+    "Abl5_HierFullWithMeta_ConcatDirGNN_vs_Abl1_Arm4_ConcatDirGNN": {
+      "delta_macro_f1": 0.007497471028070213,
+      "ci95_f1": [
+        -0.02199712959405507,
+        0.03836462050191201
+      ],
+      "p_f1": 0.632,
+      "delta_acc": 0.03502538071065988,
+      "p_acc": 0.003,
+      "delta_qwk": 0.026940718383297212,
+      "p_qwk": 0.088
+    },
+    "Abl4_Arm4PlusMetaAndStruct_ConcatDirGNN_vs_Abl1_Arm4_ConcatDirGNN": {
+      "delta_macro_f1": 0.009667669606969641,
+      "ci95_f1": [
+        -0.017481447168274836,
+        0.03693093537176191
+      ],
+      "p_f1": 0.533,
+      "delta_acc": 0.03680203045685278,
+      "p_acc": 0.0,
+      "delta_qwk": 0.03832837130524389,
+      "p_qwk": 0.014
+    }
+  },
+  "subgroups": {
+    "Abl1_Arm4_BaseText_LogReg": {
+      "r7_f1": 0.16216216216216217,
+      "r7_to_r9": 21.0,
+      "zq_all_f1": 0.22173913043478258,
+      "zq_conn_f1": 0.10670731707317074,
+      "zq_conn_acc": 0.6538461538461539,
+      "zq_iso_f1": 0.24264705882352938
+    },
+    "Abl1_Arm4_EarlyMLP": {
+      "r7_f1": 0.027586206896551724,
+      "r7_to_r9": 24.0,
+      "zq_all_f1": 0.2293683899083619,
+      "zq_conn_f1": 0.12369918699186991,
+      "zq_conn_acc": 0.6615384615384615,
+      "zq_iso_f1": 0.25113840407958055
+    },
+    "Abl1_Arm4_ConcatDirGNN": {
+      "r7_f1": 0.25526855047454705,
+      "r7_to_r9": 16.8,
+      "zq_all_f1": 0.27204842332213597,
+      "zq_conn_f1": 0.22302931387608807,
+      "zq_conn_acc": 0.6538461538461539,
+      "zq_iso_f1": 0.25331839402427636
+    },
+    "Abl2_Arm4PlusM1Full_BaseText_LogReg": {
+      "r7_f1": 0.22222222222222224,
+      "r7_to_r9": 18.0,
+      "zq_all_f1": 0.23026947212993726,
+      "zq_conn_f1": 0.1212962962962963,
+      "zq_conn_acc": 0.5769230769230769,
+      "zq_iso_f1": 0.2676984126984127
+    },
+    "Abl2_Arm4PlusM1Full_EarlyMLP": {
+      "r7_f1": 0.16888711288711292,
+      "r7_to_r9": 17.6,
+      "zq_all_f1": 0.2162101400105366,
+      "zq_conn_f1": 0.12567350833604704,
+      "zq_conn_acc": 0.5846153846153845,
+      "zq_iso_f1": 0.25058356676003735
+    },
+    "Abl2_Arm4PlusM1Full_ConcatDirGNN": {
+      "r7_f1": 0.20623647193193273,
+      "r7_to_r9": 15.4,
+      "zq_all_f1": 0.24023338955228338,
+      "zq_conn_f1": 0.17650722482676287,
+      "zq_conn_acc": 0.5461538461538462,
+      "zq_iso_f1": 0.25259270374816595
+    },
+    "Abl3_Arm4PlusM1EvalPassages_BaseText_LogReg": {
+      "r7_f1": 0.2127659574468085,
+      "r7_to_r9": 18.0,
+      "zq_all_f1": 0.2112938596491228,
+      "zq_conn_f1": 0.09999999999999999,
+      "zq_conn_acc": 0.38461538461538464,
+      "zq_iso_f1": 0.2676984126984127
+    },
+    "Abl3_Arm4PlusM1EvalPassages_EarlyMLP": {
+      "r7_f1": 0.0742921146953405,
+      "r7_to_r9": 23.0,
+      "zq_all_f1": 0.2060085877501608,
+      "zq_conn_f1": 0.10288130235498656,
+      "zq_conn_acc": 0.5461538461538462,
+      "zq_iso_f1": 0.2553418803418803
+    },
+    "Abl3_Arm4PlusM1EvalPassages_ConcatDirGNN": {
+      "r7_f1": 0.21075936268155945,
+      "r7_to_r9": 18.8,
+      "zq_all_f1": 0.23312209042080595,
+      "zq_conn_f1": 0.16308559070418652,
+      "zq_conn_acc": 0.5461538461538462,
+      "zq_iso_f1": 0.25214939309056955
+    },
+    "Abl4_Arm4PlusMetaAndStruct_EarlyMLP": {
+      "r7_f1": 0.08897744245047481,
+      "r7_to_r9": 22.2,
+      "zq_all_f1": 0.22978655000394127,
+      "zq_conn_f1": 0.12434959349593495,
+      "zq_conn_acc": 0.6615384615384616,
+      "zq_iso_f1": 0.2527756589815413
+    },
+    "Abl4_Arm4PlusMetaAndStruct_ConcatDirGNN": {
+      "r7_f1": 0.26950139643638094,
+      "r7_to_r9": 17.4,
+      "zq_all_f1": 0.2643471759618045,
+      "zq_conn_f1": 0.21346489617836864,
+      "zq_conn_acc": 0.623076923076923,
+      "zq_iso_f1": 0.2519549486461251
+    },
+    "Abl5_HierStreams_TextOnlyPlusTopo_ConcatDirGNN": {
+      "r7_f1": 0.20018748072772125,
+      "r7_to_r9": 20.2,
+      "zq_all_f1": 0.2720209661266433,
+      "zq_conn_f1": 0.22842245989304813,
+      "zq_conn_acc": 0.6923076923076923,
+      "zq_iso_f1": 0.2525676937441643
+    },
+    "Abl5_HierStreams_FullWithMeta_EarlyMLP": {
+      "r7_f1": 0.22391463967640707,
+      "r7_to_r9": 17.0,
+      "zq_all_f1": 0.25485963392185385,
+      "zq_conn_f1": 0.17334834834834836,
+      "zq_conn_acc": 0.6692307692307693,
+      "zq_iso_f1": 0.25660146280734514
+    },
+    "Abl5_HierStreams_FullWithMeta_ConcatDirGNN": {
+      "r7_f1": 0.27499057655895065,
+      "r7_to_r9": 16.0,
+      "zq_all_f1": 0.2618351191797597,
+      "zq_conn_f1": 0.2104955177737436,
+      "zq_conn_acc": 0.6307692307692307,
+      "zq_iso_f1": 0.2476323862878485
+    }
+  }
+}

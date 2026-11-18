@@ -1,0 +1,730 @@
+{
+  "book_audits": [
+    {
+      "prefix": "1716",
+      "source_label": "method1_tahdhib_alkamal",
+      "folder_name": "1716__تهذيب-الكمال-في-أسماء-الرجال",
+      "title_ar": "تهذيب الكمال في أسماء الرجال",
+      "author_ar": "المزي، جمال الدين",
+      "death_hijri": 742,
+      "betaka_text": "الكتاب: تهذيب الكمال في أسماء الرجال | المؤلف: جمال الدين أبو الحجاج يوسف المزي (٦٥٤ - ٧٤٢ هـ) | حققه وضبط نصه وعلق عليه: د بشار عواد معروف | الناشر: مؤسسة الرسالة - بيروت | الطبعة: الأولى، (١٤٠٠ - ١٤١٣ هـ) (١٩٨٠ - ١٩٩٢ م) | عدد الأجزاء: ٣٥ | [ترقيم الكتاب موافق للمطبوع]",
+      "pages_jsonl_size_mb": 44.97,
+      "total_pages": 19002,
+      "nonempty_body_pages": 19002,
+      "nonempty_footnotes_field_pages": 17777,
+      "pages_with_inline_footnote_separator": 8,
+      "parsed_non_heading_entries": 8611,
+      "link_status_counts": {
+        "unmatched": 3590,
+        "ambiguous_candidate": 1612,
+        "unique_fallback": 2684,
+        "unique_exact": 711,
+        "empty": 14
+      },
+      "unique_cohort_5250_narrators_linked": 3179,
+      "cohort_5250_coverage_pct": 60.55,
+      "cohort_zero_quote_420_linked": 143,
+      "dev_4462_linked": 2696,
+      "dev_zero_quote_357_linked": 123,
+      "entries_exceeding_5000_raw_chars": 188,
+      "clean_entry_char_len_median": 1372,
+      "clean_entry_char_len_p90": 3665,
+      "contamination_raw_entry_hits": {
+        "al_hafiz": 642,
+        "shuayb": 412,
+        "bashar_awwad": 129,
+        "ibn_hajar": 10,
+        "al_dhahabi": 6,
+        "al_kashif": 4,
+        "taqrib": 3,
+        "al_muallimi": 1,
+        "tahdhib_al_tahdhib": 1
+      },
+      "contamination_after_sep_strip_hits": {
+        "al_hafiz": 641,
+        "shuayb": 411,
+        "bashar_awwad": 127,
+        "ibn_hajar": 6,
+        "taqrib": 3,
+        "al_dhahabi": 3,
+        "al_muallimi": 1,
+        "al_kashif": 3,
+        "tahdhib_al_tahdhib": 1
+      }
+    },
+    {
+      "prefix": "1615",
+      "source_label": "method1_jarh_tadil",
+      "folder_name": "1615__الجرح-والتعديل-ابن-أبي-حاتم",
+      "title_ar": "الجرح والتعديل - ابن أبي حاتم",
+      "author_ar": "ابن أبي حاتم",
+      "death_hijri": 327,
+      "betaka_text": "الكتاب: الجرح والتعديل | المؤلف: أبو محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي (ت ٣٢٧ هـ) | الناشر: مطبعة مجلس دائرة المعارف العثمانية، بحيدر آباد الدكن - الهند | الطبعة: الأولى، ١٣٧١ هـ - ١٩٥٢ م | [ترقيم الكتاب موافق للمطبوع]",
+      "pages_jsonl_size_mb": 9.73,
+      "total_pages": 4229,
+      "nonempty_body_pages": 4229,
+      "nonempty_footnotes_field_pages": 4034,
+      "pages_with_inline_footnote_separator": 0,
+      "parsed_non_heading_entries": 17146,
+      "link_status_counts": {
+        "unmatched": 10540,
+        "unique_fallback": 2784,
+        "ambiguous_candidate": 3400,
+        "unique_exact": 405,
+        "empty": 17
+      },
+      "unique_cohort_5250_narrators_linked": 2534,
+      "cohort_5250_coverage_pct": 48.27,
+      "cohort_zero_quote_420_linked": 63,
+      "dev_4462_linked": 2139,
+      "dev_zero_quote_357_linked": 48,
+      "entries_exceeding_5000_raw_chars": 1,
+      "clean_entry_char_len_median": 235,
+      "clean_entry_char_len_p90": 614,
+      "contamination_raw_entry_hits": {
+        "shuayb": 102,
+        "taqrib": 1,
+        "al_hafiz": 4,
+        "bashar_awwad": 26,
+        "ibn_hajar": 1
+      },
+      "contamination_after_sep_strip_hits": {
+        "shuayb": 102,
+        "taqrib": 1,
+        "al_hafiz": 4,
+        "bashar_awwad": 26,
+        "ibn_hajar": 1
+      }
+    },
+    {
+      "prefix": "1976",
+      "source_label": "method1_thiqat_ibn_hibban",
+      "folder_name": "1976__الثقات-لابن-حبان",
+      "title_ar": "الثقات لابن حبان",
+      "author_ar": "ابن حبان",
+      "death_hijri": 354,
+      "betaka_text": "الكتاب: الثقات | المؤلف: محمد بن حبان بن أحمد بن حبان بن معاذ بن مَعْبدَ، التميمي، أبو حاتم، الدارمي، البُستي (ت ٣٥٤ هـ) | طبع بإعانة: وزارة المعارف للحكومة العالية الهندية | تحت مراقبة: الدكتور محمد عبد المعيد خان مدير دائرة المعارف العثمانية | الناشر: دائرة المعارف العثمانية بحيدر آباد الدكن الهند | الطبعة: الأولى، ١٣٩٣ ه‍ = ١٩٧٣ | عدد الأجزاء: ٩ | [ترقيم الكتاب موافق للمطبوع]",
+      "pages_jsonl_size_mb": 6.41,
+      "total_pages": 4103,
+      "nonempty_body_pages": 4103,
+      "nonempty_footnotes_field_pages": 0,
+      "pages_with_inline_footnote_separator": 0,
+      "parsed_non_heading_entries": 16335,
+      "link_status_counts": {
+        "unmatched": 9857,
+        "ambiguous_candidate": 3311,
+        "unique_fallback": 3111,
+        "unique_exact": 56
+      },
+      "unique_cohort_5250_narrators_linked": 2326,
+      "cohort_5250_coverage_pct": 44.3,
+      "cohort_zero_quote_420_linked": 41,
+      "dev_4462_linked": 1967,
+      "dev_zero_quote_357_linked": 33,
+      "entries_exceeding_5000_raw_chars": 1,
+      "clean_entry_char_len_median": 146,
+      "clean_entry_char_len_p90": 325,
+      "contamination_raw_entry_hits": {
+        "bashar_awwad": 6,
+        "shuayb": 34,
+        "al_hafiz": 1
+      },
+      "contamination_after_sep_strip_hits": {
+        "bashar_awwad": 6,
+        "shuayb": 34,
+        "al_hafiz": 1
+      }
+    },
+    {
+      "prefix": "890",
+      "source_label": "method1_tarikh_kabir",
+      "folder_name": "890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني",
+      "title_ar": "التاريخ الكبير للبخاري - ت المعلمي اليماني",
+      "author_ar": "البخاري",
+      "death_hijri": 256,
+      "betaka_text": "الكتاب: التاريخ الكبير | المؤلف: محمد بن إسماعيل بن إبراهيم بن المغيرة البخاري، أبو عبد الله (ت ٢٥٦هـ) | الطبعة: دائرة المعارف العثمانية، حيدر آباد - الدكن | طبع تحت مراقبة: محمد عبد المعيد خان | عدد الأجزاء: ٨ | [ترقيم الكتاب موافق للمطبوع]",
+      "pages_jsonl_size_mb": 8.91,
+      "total_pages": 3785,
+      "nonempty_body_pages": 3785,
+      "nonempty_footnotes_field_pages": 3582,
+      "pages_with_inline_footnote_separator": 1,
+      "parsed_non_heading_entries": 11716,
+      "link_status_counts": {
+        "unmatched": 6967,
+        "ambiguous_candidate": 2223,
+        "unique_exact": 456,
+        "unique_fallback": 2069,
+        "empty": 1
+      },
+      "unique_cohort_5250_narrators_linked": 2084,
+      "cohort_5250_coverage_pct": 39.7,
+      "cohort_zero_quote_420_linked": 35,
+      "dev_4462_linked": 1750,
+      "dev_zero_quote_357_linked": 27,
+      "entries_exceeding_5000_raw_chars": 0,
+      "clean_entry_char_len_median": 134,
+      "clean_entry_char_len_p90": 535,
+      "contamination_raw_entry_hits": {
+        "shuayb": 44,
+        "bashar_awwad": 16,
+        "al_hafiz": 3,
+        "ibn_hajar": 7
+      },
+      "contamination_after_sep_strip_hits": {
+        "shuayb": 44,
+        "bashar_awwad": 16,
+        "al_hafiz": 3,
+        "ibn_hajar": 7
+      }
+    },
+    {
+      "prefix": "1981",
+      "source_label": "method1_thiqat_ijli",
+      "folder_name": "1981__الثقات-للعجلي-ت-البستوي",
+      "title_ar": "الثقات للعجلي ت البستوي",
+      "author_ar": "العجلي",
+      "death_hijri": 261,
+      "betaka_text": "الكتاب: معرفة الثقات من رجال أهل العلم والحديث ومن الضعفاء وذكر مذاهبهم وأخبارهم | المؤلف: أبو الحسن أحمد بن عبد الله بن صالح العجلى الكوفى (ت ٢٦١هـ) | المحقق: عبد العليم عبد العظيم البستوي | الناشر: مكتبة الدار - المدينة المنورة - السعودية | الطبعة: الأولى، ١٤٠٥ - ١٩٨٥ | [ترقيم الكتاب موافق للمطبوع]",
+      "pages_jsonl_size_mb": 0.61,
+      "total_pages": 765,
+      "nonempty_body_pages": 765,
+      "nonempty_footnotes_field_pages": 0,
+      "pages_with_inline_footnote_separator": 0,
+      "parsed_non_heading_entries": 2352,
+      "link_status_counts": {
+        "unique_fallback": 786,
+        "ambiguous_candidate": 450,
+        "unmatched": 1114,
+        "unique_exact": 2
+      },
+      "unique_cohort_5250_narrators_linked": 759,
+      "cohort_5250_coverage_pct": 14.46,
+      "cohort_zero_quote_420_linked": 9,
+      "dev_4462_linked": 633,
+      "dev_zero_quote_357_linked": 7,
+      "entries_exceeding_5000_raw_chars": 0,
+      "clean_entry_char_len_median": 59,
+      "clean_entry_char_len_p90": 247,
+      "contamination_raw_entry_hits": {
+        "shuayb": 4,
+        "bashar_awwad": 1
+      },
+      "contamination_after_sep_strip_hits": {
+        "shuayb": 4,
+        "bashar_awwad": 1
+      }
+    },
+    {
+      "prefix": "4609",
+      "source_label": "method1_kamil",
+      "folder_name": "4609__الكامل-في-ضعفاء-الرجال",
+      "title_ar": "الكامل في ضعفاء الرجال",
+      "author_ar": "ابن عدي",
+      "death_hijri": 365,
+      "betaka_text": "الكتاب: الكامل في ضعفاء الرجال | المؤلف: أبو أحمد بن عدي الجرجاني (ت ٣٦٥ هـ) | تحقيق: عادل أحمد عبد الموجود-علي محمد معوض | شارك في تحقيقه: عبد الفتاح أبو سنة | الناشر: الكتب العلمية - بيروت-لبنان | الطبعة: الأولى، ١٤١٨ هـ ١٩٩٧ م | وضع حواشي هذه النسخة الإلكترونية: الشيخ محمود خليل جزاه الله خيرا | [ترقيم الكتاب موافق للمطبوع]",
+      "pages_jsonl_size_mb": 11.11,
+      "total_pages": 4518,
+      "nonempty_body_pages": 4518,
+      "nonempty_footnotes_field_pages": 94,
+      "pages_with_inline_footnote_separator": 0,
+      "parsed_non_heading_entries": 2164,
+      "link_status_counts": {
+        "unmatched": 1058,
+        "unique_exact": 99,
+        "ambiguous_candidate": 561,
+        "unique_fallback": 446
+      },
+      "unique_cohort_5250_narrators_linked": 517,
+      "cohort_5250_coverage_pct": 9.85,
+      "cohort_zero_quote_420_linked": 5,
+      "dev_4462_linked": 426,
+      "dev_zero_quote_357_linked": 3,
+      "entries_exceeding_5000_raw_chars": 89,
+      "clean_entry_char_len_median": 2010,
+      "clean_entry_char_len_p90": 6393,
+      "contamination_raw_entry_hits": {
+        "bashar_awwad": 11,
+        "shuayb": 79,
+        "al_hafiz": 3
+      },
+      "contamination_after_sep_strip_hits": {
+        "bashar_awwad": 11,
+        "shuayb": 79,
+        "al_hafiz": 3
+      }
+    }
+  ],
+  "cohort_6book_union_5250": 3697,
+  "cohort_zero_quote_420_union": 168,
+  "dev_rank7_vs_rank9_coverage": {
+    "method1_tahdhib_alkamal": {
+      "dev_R7_covered": 77,
+      "dev_R7_total": 151,
+      "dev_R7_pct": 51.0,
+      "dev_R9_covered": 179,
+      "dev_R9_total": 452,
+      "dev_R9_pct": 39.6
+    },
+    "method1_jarh_tadil": {
+      "dev_R7_covered": 46,
+      "dev_R7_total": 151,
+      "dev_R7_pct": 30.5,
+      "dev_R9_covered": 98,
+      "dev_R9_total": 452,
+      "dev_R9_pct": 21.7
+    },
+    "method1_thiqat_ibn_hibban": {
+      "dev_R7_covered": 36,
+      "dev_R7_total": 151,
+      "dev_R7_pct": 23.8,
+      "dev_R9_covered": 75,
+      "dev_R9_total": 452,
+      "dev_R9_pct": 16.6
+    },
+    "method1_tarikh_kabir": {
+      "dev_R7_covered": 37,
+      "dev_R7_total": 151,
+      "dev_R7_pct": 24.5,
+      "dev_R9_covered": 74,
+      "dev_R9_total": 452,
+      "dev_R9_pct": 16.4
+    },
+    "method1_thiqat_ijli": {
+      "dev_R7_covered": 3,
+      "dev_R7_total": 151,
+      "dev_R7_pct": 2.0,
+      "dev_R9_covered": 6,
+      "dev_R9_total": 452,
+      "dev_R9_pct": 1.3
+    },
+    "method1_kamil": {
+      "dev_R7_covered": 2,
+      "dev_R7_total": 151,
+      "dev_R7_pct": 1.3,
+      "dev_R9_covered": 15,
+      "dev_R9_total": 452,
+      "dev_R9_pct": 3.3
+    }
+  },
+  "dev_contamination_samples": [
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P087-C012-E0144",
+      "in_stripped_body": "True",
+      "snippet": "الخراساني، وابي عيسي المروزي. روي عنه: خادمه ابراهيم (٢) بن بشار الخراساني الطويل، وابو اسحاق ابراهيم بن محمد الفزاري، واشعث بن شعبة المصيصي، وبقية بن الوليد (ت) ، وخازم بن جبلة بن"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P090-C009-E0187",
+      "in_stripped_body": "True",
+      "snippet": "والفضل بن يعقوب الجزري، ومحمد بن ابان البلخي (ت) ، ومحمد بن بشار بندار، ومحمد بن مرزوق ابن بنت مهدي بن ميمون. قال ابو حاتم: شيخ. وقال علي بن الحسين بن الجنيد: محله الصدق (١) . روي "
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P092-C015-E0227",
+      "in_stripped_body": "True",
+      "snippet": "د بن حيان التيمي (س) ، وابي طالب القاص. روي عنه: ابراهيم بن بشار الرمادي، واحمد بن بديل اليامي، واسحاق بن اسماعيل الطالقاني، والحسن بن حماد الضبي، والحسن بن علي بن عفان العامري، وه"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P097-C020-E0307",
+      "in_stripped_body": "True",
+      "snippet": "لقرشي، وعلي ابن المديني (خ) ، وعمرو بن علي (خ س) ، ومحمد بن بشار بندار (د) ، ومحمد بن رافع النيسابوري (عس) ، وابو موسي محمد بن المثني (م) ، ومحمد بن يحيي الذهلي (ت عس) ، ومحمد بن ي"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "ibn_hajar",
+      "dev_entry_id": "S3076-P102-C004-E0370",
+      "in_stripped_body": "False",
+      "snippet": "ه النسائي هو\"ابن ابي مليكة\"متابعا المراوزة، واعتبره مغلطاي وابن حجر هو\"ابن ابي المهاجر\"وقد تابعا فيه ابن عساكر. اما قول ابن حجر في ترجمة\"ابن ابي المهاجر\": ذكره ابن حبان في الثقات\"ف"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P102-C004-E0370",
+      "in_stripped_body": "False",
+      "snippet": "ابي مليكة. روي عنه الوليد بن مسلم. \" (١ / الروقة: ٢٨) . قال بشار ايضا: ويمكننا مما تقدم ملاحظة الامور الاتية: ا- ان البخاري والنسائي وابن حبان لم يذكروا غير\"اسحاق بن عبيد الله المد"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P120-C014-E0645",
+      "in_stripped_body": "True",
+      "snippet": "جنيد الدقاق، ومحمد بن اسماعيل بن ابي سمينة البصري، ومحمد بن بشار بندار (د) ، ومحمد بن الحسين البرجلاني، ومحمد بن سعيد بن يزيد بن ابراهيم التستري. ومحمد بن سفيان بن ابي الزرد الابلي"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P123-C005-E0686",
+      "in_stripped_body": "True",
+      "snippet": "وان هذه الايام ايام اكل وشرب\" (١) . رواه النسائي عن محمد بن بشار، عن عبد الرحمن بن مهدي، به، ورواه ابن ماجه عن ابي بكر بن ابي شيبة، وعلي بن محمد الطنافسي، كلاهما عن وكيع، به."
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P124-C011-E0708",
+      "in_stripped_body": "True",
+      "snippet": "نماطي مربع، ومحمد بن اسماعيل البخاري في \"التاريخ\"، ومحمد بن بشار بندار (تم) ، وابو موسي محمد بن المثني، ومحمد بن مسلم بن وارة الرازي، وهلال بن بشر البصري. وقال ابو بكر بن ابي الدني"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P127-C007-E0748",
+      "in_stripped_body": "True",
+      "snippet": "اهيم بن محمد بن عرعرة، واحمد بن حنبل وخلف بن سالم، ومحمد بن بشار بندار، ومحمد بن عبد الله المخرمي، وابو موسي محمد بن المثني (س) . قال ابو بكر الاثرم: سمعت ابا عبد الله، حدث عنه، فا"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P128-C013-E0771",
+      "in_stripped_body": "True",
+      "snippet": "سعيد، وابو بكر محمد بن احمد بن نافع العبدي (م س) ، ومحمد بن بشار بندار (م س) ، ومحمد بن حاتم السمين (م) ، وابو بكر محمد بن خلاد الباهلي (د ق) ، ومحمد بن عثمان بن ابي صفوان الثقفي ("
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P128-C015-E0773",
+      "in_stripped_body": "True",
+      "snippet": "وعمرو بن علي، ومحمد بن احمد بن ابي العوام الرياحي، ومحمد بن بشار بندار، ومحمد بن __PAGE_BREAK__ الحسين البرجلاني، وابو موسي محمد بن المثني، ومحمد بن يونس الكديمي. قال ابو زرعة، واب"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P132-C002-E0810",
+      "in_stripped_body": "True",
+      "snippet": "ء، وبزيع بن حسان ابو الخليل البصري، وبسطام بن مسلم العوذي، وبشار بن الحكم الضبي، وابو بشر بكر بن الحكم المزلق، وبكر بن خنيس الكوفي العابد، وثابت بن عجلان الشامي، وثمامة بن عبيدة ال"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P157-C014-E1196",
+      "in_stripped_body": "True",
+      "snippet": "ينة يرتمون يبصرون وقع سهامهم. رواه النسائي (١) ، عن محمد بن بشار، عن محمد بن جعفر نحوه، وليس له عنده غيره."
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P166-C005-E1317",
+      "in_stripped_body": "True",
+      "snippet": " وعبيد الله بن محمد بن عائشة، وعمرو بن علي الفلاس، ومحمد بن بشار بندار، وابو موسي محمد بن المثني (خ م) ، ومحمد بن هشام بن ابي خيرة (٣) السدوسي، ونعيم بن حماد المروزي، ويحيي بن معين"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "ibn_hajar",
+      "dev_entry_id": "S3076-P167-C001-E1326",
+      "in_stripped_body": "False",
+      "snippet": " . قال افقر العباد ابو محمد بشار بن عواد: هذا وهم من الحافظ ابن حجر وذهول، فكانه اغتر بما في \"الميزان: ٢٠١٧\": الحسين بن عبد الرحمن (د) عن سعد، واسامة بن سعد. مجهول. ووثقه ابن حبان\""
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "bashar_awwad",
+      "dev_entry_id": "S3076-P167-C001-E1326",
+      "in_stripped_body": "False",
+      "snippet": "خبر امره\" (تهذيب: ٢ / ٣٤٢ - ٣٤٣) . قال افقر العباد ابو محمد بشار بن عواد: هذا وهم من الحافظ ابن حجر وذهول، فكانه اغتر بما في \"الميزان: ٢٠١٧\": الحسين بن عبد الرحمن (د) عن سعد، واسام"
+    },
+    {
+      "book": "method1_tahdhib_alkamal",
+      "term": "ibn_hajar",
+      "dev_entry_id": "S3076-P169-C002-E1357",
+      "in_stripped_body": "True",
+      "snippet": "بن ميمون الخندقي لا ادري هو من خندق جرجان او غيره\"وكذا ضبطه ابن حجر في \"التقريب\"- بالقاف - تقييد الحروف. وقال الشيخ عبد الرحمن المعلمي في تعليقه علي\"الاكمال\" (٣ / ٣٠٥) : اما حسين ب"
+    }
+  ],
+  "dev_rank7_zero_quote_samples": [
+    {
+      "dev_entry_id": "S3076-P081-C010-E0062",
+      "book": "method1_tahdhib_alkamal",
+      "clean_len": "70",
+      "clean_preview": "رَوَى عَن: يزيد بْن أَبي حكيم العدني (ق) . رَوَى عَنه: ابْن ماجه (٣) ."
+    },
+    {
+      "dev_entry_id": "S3076-P086-C003-E0128",
+      "book": "method1_tahdhib_alkamal",
+      "clean_len": "449",
+      "clean_preview": ". رَوَى عَن: زهير بْن معاوية الجعفي (خ) ، وعبد الرحمن بْن عَبد اللَّهِ المسعودي، وعيسى بْن يونس، وفليح بْن سُلَيْمان، والقاسم ابن معن المسعودي، ومطلب بْن زياد. رَوَى عَنه: عَبد المَلِك بْن الوليد البجلي، وأَبُو مُحَمَّد فهد بْن سُلَيْمان النحاس، وأَبُو الْعَبَ"
+    },
+    {
+      "dev_entry_id": "S3076-P086-C003-E0128",
+      "book": "method1_tahdhib_alkamal",
+      "clean_len": "185",
+      "clean_preview": "مُحَمَّد بْن عقبة القاضي (ق) ، عَن أَبِيهِ عَنْ جده عَنْ تميم الداري، فِي فضل من ارتبط فرسا فِي سبيل الله. رَوَى عَنه: أَبُو عُمَير عيسى بن محمد ابن النحاس الرملي (ق) . روى له ابن ماجه."
+    },
+    {
+      "dev_entry_id": "S3076-P088-C010-E0157",
+      "book": "method1_tahdhib_alkamal",
+      "clean_len": "231",
+      "clean_preview": ". سمع طاووسا (س) (٢) يسأل عَن ذلك، فَقَالَ: إن هذا ليسألني عَن الكفر، يعني الذي يأتي امرأته في دبرها. ورَوَى عَن: مجاهد. رَوَى عَنه: عَبد الله بْن أَبي نجيح، وعبد الملك بْن عَبْد العزيز ابن جُرَيْج (س) (٣) . روى له النَّسَائي (٤) ."
+    },
+    {
+      "dev_entry_id": "S3076-P100-C013-E0349",
+      "book": "method1_tahdhib_alkamal",
+      "clean_len": "441",
+      "clean_preview": ". رَوَى عَن: عَبد اللَّهِ بْن إدريس، وعَن أبي بكر بْن عياش (قد) ، عَن الأعمش قال: قال أبو جعفر (٦) : يقولون: إني أنا المهدي، والله لو أن الناس أطبقوا أن الفرج يجيئهم من باب، لخالفهم القدر حتى يجيئهم من باب آخر. رَوَى عَنه: الحسن بْن الصباح البزار (قد) ، وأبو ب"
+    },
+    {
+      "dev_entry_id": "S3076-P172-C001-E1400",
+      "book": "method1_tahdhib_alkamal",
+      "clean_len": "265",
+      "clean_preview": ". رَوَى عَن: إسرائيل بن يونس، وداود بْن نصير الطائي، وزائدة بْن قدامة (د) ، وزهير بن معاوية، وسفيان الثوري. رَوَى عَنه: أَحْمَد بن بديل اليامي، وعبد الرحمن بن صالح الأزدي، وأَبُو كريب مُحَمَّد بن العلاء الهمداني (د) ، وأبو الوليد الكلبي (٣) . روى له: أَبُو دَا"
+    },
+    {
+      "dev_entry_id": "S3076-P180-C015-E1538",
+      "book": "method1_tahdhib_alkamal",
+      "clean_len": "425",
+      "clean_preview": ". رَوَى عَن: أسد بْن موسى، وسَعِيد بْن الحكم بن أَبي مريم (د) ، وسَعِيد بن كثير بن عفير، وعَبْد اللَّهِ بن مُحَمَّد بن المغيرة، ويحيى بن حسان التنيسي. رَوَى عَنه: أَبُو داود، وعلي بْن أَحْمَد بْن سُلَيْمان الحافظ المِصْرِي المعروف بعلان بن الصيقل، وأَبُو بكر م"
+    },
+    {
+      "dev_entry_id": "S3076-P180-C015-E1538",
+      "book": "method1_tahdhib_alkamal",
+      "clean_len": "147",
+      "clean_preview": ". يروي عَن: مقاتل بن حيان، ومقاتل بن سُلَيْمان. ويروي عَنه: زهير بن عباد الرؤاسي، وغيره. وهو متقدم عن هذا (٢) يقال: إنه جده. ذكرناه للتمييز بينهما."
+    }
+  ],
+  "stage3_critic_v03_dev": {
+    "label": "v0.3_strict_passages_dev",
+    "dev_passages": 48696,
+    "dev_narrators_covered": 4154,
+    "dev_coverage_pct": 93.1,
+    "distinct_critic_strings_total": 1398,
+    "ambiguous_or_compound_critic_rows": 13,
+    "mean_distinct_critics_per_covered_narrator": 7.5,
+    "median_distinct_critics_per_covered_narrator": 5.0,
+    "narrators_with_both_praise_and_criticism_critics": 563,
+    "passage_stance_distribution": {
+      "pure_praise_cue": 13213,
+      "no_simple_cue": 28189,
+      "qualified_or_mixed_cue": 2502,
+      "criticism_cue": 4792
+    },
+    "top_10_critics": [
+      [
+        "يحيى بن معين",
+        5203
+      ],
+      [
+        "ابن حبان",
+        4638
+      ],
+      [
+        "أبو حاتم الرازي",
+        4502
+      ],
+      [
+        "أحمد بن حنبل",
+        2937
+      ],
+      [
+        "الذهبى",
+        2782
+      ],
+      [
+        "النسائي",
+        2109
+      ],
+      [
+        "ابن عدي",
+        1597
+      ],
+      [
+        "أبو زرعة الرازي",
+        1488
+      ],
+      [
+        "المزي",
+        1466
+      ],
+      [
+        "البخاري",
+        1182
+      ]
+    ],
+    "dev_rank_breakdown": {
+      "R1": {
+        "dev_n": 334,
+        "mean_distinct_critics": 3.8,
+        "median_distinct_critics": 3.0,
+        "pct_with_critic_conflict": 0.0
+      },
+      "R2": {
+        "dev_n": 213,
+        "mean_distinct_critics": 14.28,
+        "median_distinct_critics": 12.0,
+        "pct_with_critic_conflict": 10.3
+      },
+      "R3": {
+        "dev_n": 1415,
+        "mean_distinct_critics": 7.27,
+        "median_distinct_critics": 6.0,
+        "pct_with_critic_conflict": 5.1
+      },
+      "R4": {
+        "dev_n": 961,
+        "mean_distinct_critics": 5.59,
+        "median_distinct_critics": 4.0,
+        "pct_with_critic_conflict": 9.4
+      },
+      "R5": {
+        "dev_n": 494,
+        "mean_distinct_critics": 10.38,
+        "median_distinct_critics": 8.0,
+        "pct_with_critic_conflict": 37.9
+      },
+      "R6": {
+        "dev_n": 80,
+        "mean_distinct_critics": 4.78,
+        "median_distinct_critics": 3.0,
+        "pct_with_critic_conflict": 21.2
+      },
+      "R7": {
+        "dev_n": 151,
+        "mean_distinct_critics": 1.68,
+        "median_distinct_critics": 1.0,
+        "pct_with_critic_conflict": 2.6
+      },
+      "R8": {
+        "dev_n": 265,
+        "mean_distinct_critics": 11.85,
+        "median_distinct_critics": 10.0,
+        "pct_with_critic_conflict": 43.8
+      },
+      "R9": {
+        "dev_n": 452,
+        "mean_distinct_critics": 1.37,
+        "median_distinct_critics": 1.0,
+        "pct_with_critic_conflict": 1.5
+      },
+      "R10": {
+        "dev_n": 79,
+        "mean_distinct_critics": 16.53,
+        "median_distinct_critics": 14.0,
+        "pct_with_critic_conflict": 50.6
+      }
+    }
+  },
+  "stage3_critic_v04_abl_dev": {
+    "label": "v0.4_tahdhib_ablation_dev",
+    "dev_passages": 22828,
+    "dev_narrators_covered": 3820,
+    "dev_coverage_pct": 85.6,
+    "distinct_critic_strings_total": 1003,
+    "ambiguous_or_compound_critic_rows": 7,
+    "mean_distinct_critics_per_covered_narrator": 5.37,
+    "median_distinct_critics_per_covered_narrator": 4.0,
+    "narrators_with_both_praise_and_criticism_critics": 452,
+    "passage_stance_distribution": {
+      "pure_praise_cue": 7181,
+      "no_simple_cue": 12165,
+      "criticism_cue": 2455,
+      "qualified_or_mixed_cue": 1027
+    },
+    "top_10_critics": [
+      [
+        "ابن حبان",
+        3045
+      ],
+      [
+        "يحيى بن معين",
+        2198
+      ],
+      [
+        "أبو حاتم الرازي",
+        1838
+      ],
+      [
+        "النسائي",
+        1654
+      ],
+      [
+        "أحمد بن حنبل",
+        1344
+      ],
+      [
+        "العجلي",
+        822
+      ],
+      [
+        "أبو زرعة الرازي",
+        662
+      ],
+      [
+        "أبو داود السجستاني",
+        653
+      ],
+      [
+        "الدارقطني",
+        644
+      ],
+      [
+        "محمد بن سعد",
+        642
+      ]
+    ],
+    "dev_rank_breakdown": {
+      "R1": {
+        "dev_n": 334,
+        "mean_distinct_critics": 0.7,
+        "median_distinct_critics": 0.0,
+        "pct_with_critic_conflict": 0.0
+      },
+      "R2": {
+        "dev_n": 213,
+        "mean_distinct_critics": 9.78,
+        "median_distinct_critics": 8.0,
+        "pct_with_critic_conflict": 5.2
+      },
+      "R3": {
+        "dev_n": 1415,
+        "mean_distinct_critics": 4.67,
+        "median_distinct_critics": 4.0,
+        "pct_with_critic_conflict": 3.7
+      },
+      "R4": {
+        "dev_n": 961,
+        "mean_distinct_critics": 3.72,
+        "median_distinct_critics": 3.0,
+        "pct_with_critic_conflict": 6.8
+      },
+      "R5": {
+        "dev_n": 494,
+        "mean_distinct_critics": 7.41,
+        "median_distinct_critics": 6.5,
+        "pct_with_critic_conflict": 33.6
+      },
+      "R6": {
+        "dev_n": 80,
+        "mean_distinct_critics": 3.69,
+        "median_distinct_critics": 3.0,
+        "pct_with_critic_conflict": 15.0
+      },
+      "R7": {
+        "dev_n": 151,
+        "mean_distinct_critics": 1.03,
+        "median_distinct_critics": 1.0,
+        "pct_with_critic_conflict": 0.7
+      },
+      "R8": {
+        "dev_n": 265,
+        "mean_distinct_critics": 8.6,
+        "median_distinct_critics": 7.0,
+        "pct_with_critic_conflict": 36.6
+      },
+      "R9": {
+        "dev_n": 452,
+        "mean_distinct_critics": 0.91,
+        "median_distinct_critics": 0.0,
+        "pct_with_critic_conflict": 0.9
+      },
+      "R10": {
+        "dev_n": 79,
+        "mean_distinct_critics": 11.99,
+        "median_distinct_critics": 12.0,
+        "pct_with_critic_conflict": 45.6
+      }
+    }
+  },
+  "stage3_novel_v04_pairs": 3388
+}

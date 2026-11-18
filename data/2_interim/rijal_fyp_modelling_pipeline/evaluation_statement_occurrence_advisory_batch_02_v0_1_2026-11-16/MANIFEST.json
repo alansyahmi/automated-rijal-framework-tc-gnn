@@ -1,0 +1,44 @@
+{
+  "package_id": "evaluation_statement_occurrence_advisory_batch_02_v0_1_2026-11-16",
+  "generated_at_utc": "2026-11-16T09:27:33.215987+00:00",
+  "status": "AI advisory only for Batch 02; no human decisions, canonical ranks, or numeric scores assigned",
+  "counts": {
+    "batch_02_cases": 889,
+    "unique_source_entries": 842,
+    "match_use_counts": {
+      "component_of_larger_statement": 527,
+      "complete_statement": 351,
+      "unrelated_substring": 11
+    },
+    "statement_family_counts": {
+      "praise": 212,
+      "status_or_biography": 319,
+      "mixed": 51,
+      "criticism": 222,
+      "unresolved": 1,
+      "unknownness": 73,
+      "not_applicable": 11
+    },
+    "confidence_counts": {
+      "medium": 260,
+      "high": 597,
+      "low": 32
+    },
+    "human_decisions_filled": 0,
+    "canonical_ranks_assigned": 0,
+    "numeric_scores_assigned": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_occurrence_review_batch_02_v0_1_2026-11-16/BATCH_02_REVIEW_CASES_V0_1.csv": "5ee129165fd08d743e499a09a0ea011b50670af7fe6663de515b592ec1234b5f",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_occurrence_review_batch_02_v0_1_2026-11-16/PHRASE_HIT_TO_REVIEW_CASE_LINKS_V0_1.csv": "0b663578097f9b3a53eb96f65284061934a5b7d0987f85a3fc72d8316d717be2",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_occurrence_review_batch_02_v0_1_2026-11-16/MANIFEST.json": "fc2d5d3cefb48ca6b1610840a2c3da05831d6258c82ccaabd3c39538e723b831",
+    "data/2_interim/rijal_fyp_modelling_pipeline/evaluation_statement_layer_v0_1_2026-11-16/EVALUATIVE_STATEMENT_LAYER_CODEBOOK_DRAFT_V0_1.md": "407e5b708778c9b824a01cc422520425903bc2ac850402d3868054fb12213719",
+    "dataset_discovery/target_feasibility/prepare_evaluative_statement_ai_advisory_batch_02.py": "e235d539c2ec6a374e96ef0a423d1767fa92b5f11380daa410514e75438d9f3e"
+  },
+  "outputs": {
+    "AI_ADVISORY_REVIEW_BATCH_02_V0_1.csv": "95be9d9b09d912c07f8785018a8145f88b909674c24d37bc90bd7cb8d838f1bd",
+    "AI_ADVISORY_SUMMARY_V0_1.md": "321a2f98dab4d100bef31a9a1c160f4130e5e67c2ad545c8309a6586687b1f1b",
+    "README.md": "8fac717b917cf695242cec6841a7367a72872121452754c97276873f1f288114"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

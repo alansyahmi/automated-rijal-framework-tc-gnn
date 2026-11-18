@@ -1,0 +1,29 @@
+{
+  "package": "Priority-12 first-grade target candidates v0.1",
+  "status": "AI draft; no labels approved; no rules enabled",
+  "policy": "Use the first complete grade-bearing Taqrib phrase as target candidate; preserve attribution; out-of-scope affiliation details are not separate labels.",
+  "case_count": 12,
+  "rank_candidate_counts": {
+    "4": 1,
+    "10": 2,
+    "2": 4,
+    "3": 1,
+    "5": 2,
+    "8": 1,
+    "7_or_9_unresolved": 1
+  },
+  "inputs": {
+    "triage_queue_sha256": "32b89f1bf9d0b454ed5622692c36f081ed7215844765a61702dec1c5d2741455",
+    "rank_target_policy_sha256": "9f95c59b77e33c6cd883226101ad162329f58d6a9fb3ced2291f5c4cd7849721",
+    "source_inventory_sha256": "d65a660696d5a895c8bf8504680b25655156ae694d8f3ffbfeeba2fd4c9560eb"
+  },
+  "outputs": {
+    "PRIORITY_12_FIRST_GRADE_CANDIDATES_DRAFT_V0_1.csv": "73a246b3d02efe886668b9b1cf71ebebc2ec989127ba45396d493d0b89a63769",
+    "README.md": "b9dfadc2dc590646c03a43cbf7c3cdfd60ddd1e7a26028454d0d1b268676df46"
+  },
+  "limitations": [
+    "Purposive priority set only; not an exhaustive phrase vocabulary.",
+    "Some rank-definition preconditions are not established by the entry text.",
+    "Human decision fields remain blank."
+  ]
+}

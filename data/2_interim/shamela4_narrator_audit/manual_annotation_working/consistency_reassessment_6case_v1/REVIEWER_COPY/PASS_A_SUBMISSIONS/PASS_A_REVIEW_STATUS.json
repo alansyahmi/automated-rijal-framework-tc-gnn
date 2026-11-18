@@ -1,0 +1,16 @@
+{
+  "review_status": "pending_correction_not_frozen",
+  "observed_at_utc": "2026-11-14T13:38:00+00:00",
+  "submitted_copy": "PASS_A_AS_SUBMITTED_2026-11-14.csv",
+  "sha256": "12f53c6b1327653b489008e1d561afc30127960a9e9a67e7c1bc14d4acc7ba9d",
+  "row_count": 8,
+  "expected_candidate_decision_rows": 7,
+  "findings": [
+    "Seven candidate decision rows are present, plus one free-text summary row with blank repeat_case_id and candidate_key.",
+    "identity_match_status uses matched, which is not a Schema v2.2 identity enum; choose a valid enum for each candidate.",
+    "Identity rationales are blank on six candidate rows; record grade-independent evidence reasoning as required by Protocol v1.0.",
+    "RPT-05 has both candidates marked matched while its note leaves the relationship for future investigation; the two candidate dispositions are not yet resolved.",
+    "The confidence values have no calibrated scale in Schema v2.2 or Protocol v1.0; do not interpret them quantitatively."
+  ],
+  "protocol_timing": "Protocol v1.0 was frozen on 2026-11-14; this submission is dated the same day and therefore cannot be described as the planned two-to-four-week delayed reassessment."
+}

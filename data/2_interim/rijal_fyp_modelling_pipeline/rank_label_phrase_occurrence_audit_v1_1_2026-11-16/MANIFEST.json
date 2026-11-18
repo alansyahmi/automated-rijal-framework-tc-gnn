@@ -1,0 +1,31 @@
+{
+  "package_id": "rank_label_phrase_occurrence_audit_v1_1_2026-11-16",
+  "generated_at_utc": "2026-11-16T10:16:45.569384+00:00",
+  "status": "second-pass audit ready; all human_decision columns blank pending user confirmation",
+  "counts": {
+    "entries_audited": 81,
+    "audit_status_counts": {
+      "agree_with_ai_v1": 74,
+      "revise_ai_v1": 7
+    },
+    "recommended_disposition_counts": {
+      "conditional": 28,
+      "retain_as_candidate": 51,
+      "needs_repair": 2
+    },
+    "human_decisions_filled": 0,
+    "canonical_ranks_assigned": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_occurrence_review_v1_2026-11-16/ENTRY_LEVEL_REVIEW_V1.csv": "b10a15e94a29345d9bf11f207182bf8020680d5e3a24751705122179a26e8475",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_occurrence_review_v1_2026-11-16/AI_SUGGESTIONS_V1.csv": "a993cf5a10579e6e7f28caab407808e3e8de12bcf88df70692f07691c37da6c2",
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_phrase_occurrence_review_v1_2026-11-16/MANIFEST.json": "a2a739d0ec0fbc520b86a8cf5fc787bc3900c33d9dc84b83f758afd55fd19b60",
+    "dataset_discovery/target_feasibility/audit_taqrib_phrase_occurrence_review_81_v1_1.py": "fec7152d8b692a32841d454868cd33933dd4f92503f8b9cc4e48c39ddd8ddd19"
+  },
+  "outputs": {
+    "ENTRY_LEVEL_AUDIT_81_V1_1.csv": "3a52f0d1ef67253c4f0f8f36c58154cc9470051ea336d57719d5043bf4991bd4",
+    "AUDIT_SUMMARY_81_V1_1.md": "c9d1282601d9c63983574012c9f5e5dd4b34df326e94f416508989b50052f248",
+    "README.md": "1cf09e08f8d1cad3478811c3dd1bf0f69df46cad2853bb9db84b68d35150e888"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

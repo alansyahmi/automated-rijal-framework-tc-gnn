@@ -1,9 +1,12 @@
 # Pilot Evaluation and Annotation Protocol v1.0
 
-**Status:** Research protocol for a single-reviewer feasibility pilot
+**Status:** Frozen operational baseline for a single-reviewer feasibility pilot
 **Schema baseline:** Manual Collation Schema v2.2
 **Prepared:** 2026-11-14
+**Frozen:** 2026-11-14
 **Scope:** Ten purposively selected narrator records in the Round 1 pilot
+
+This v1.0 protocol is frozen for the delayed within-researcher consistency reassessment. Preserve it as the baseline used for that reassessment. If the reassessment reveals a genuine operational defect, document the evidence and make a separately versioned revision; do not silently revise this baseline while comparing decisions against it.
 
 ## 1. Purpose and decision
 

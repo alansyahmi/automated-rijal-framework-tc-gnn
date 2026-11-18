@@ -1,0 +1,53 @@
+{
+  "package_id": "task_b_historical_inputs_v0_1_2026-11-17",
+  "generated_at_utc": "2026-11-16T22:43:57.025803+00:00",
+  "counts": {
+    "taqrib_entries": 8827,
+    "taqrib_shamela_linked_1to1": 4985,
+    "hadithdb_links": {
+      "linked_shamela_only": 62,
+      "linked_with_task_a": 608,
+      "unlinked": 854
+    },
+    "passage_filter_counts": {
+      "eligible_primary_historical_passage": 46193,
+      "eligible_secondary_summary_work": 3876,
+      "excluded_prohibited_taqrib_or_ibn_hajar": 34738
+    },
+    "eligible_passages_retained": 50069,
+    "narrator_eligibility_counts": {
+      "eligible_assigned_secondary_only": 42,
+      "eligible_assigned_with_primary_text": 3030,
+      "not_eligible_missing_target_or_text": 5755
+    },
+    "eligible_primary_rank_counts": {
+      "1": 319,
+      "2": 149,
+      "3": 926,
+      "4": 670,
+      "5": 285,
+      "6": 77,
+      "7": 86,
+      "8": 223,
+      "9": 209,
+      "10": 75,
+      "11": 5,
+      "12": 6
+    }
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_shadow_run_v1_2026-11-15/ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_a_deterministic_targets_v1_3_2026-11-17/TASK_A_DETERMINISTIC_TARGETS_8827_V1_3.csv": "108927d41aed3cd22f480e97e9cd132110ed8dd32c1b76d067b5af128d69d0c8",
+    "data/2_interim/shamela4_narrator_audit/narrators.csv": "60d5798eacacb18003e88870de388e39a520217cea9d635c671e50190ae643e1",
+    "data/2_interim/shamela4_narrator_audit/evaluations_raw.csv": "60345263b3391a62aea0d39c96864d1bb2056c6e67853235dd4a6bd0ab11d3e6",
+    "data/1_raw/hadithdb/narrators_db.json": "67c183de90f779496f741a868120224c71fd32ff94525fb6a119ea8750b9c42a",
+    "dataset_discovery/target_feasibility/prepare_task_b_historical_passages_v0_1.py": "666b44d1e9c81c81c81dba1282c5a70a0f6f3f1bbf88c9cf05675d23e56692cb"
+  },
+  "outputs": {
+    "TASK_B_ELIGIBLE_HISTORICAL_PASSAGES_V0_1.csv": "2018b63bfe3bc2028e8b7365b85a8368ce413bacc26bf256a793aaa08ea78780",
+    "TASK_B_NARRATOR_LINKAGE_AND_ELIGIBILITY_8827_V0_1.csv": "01a77b37e2e351b67c705f6bb6bb9535af41de10922f47d9215df8a67e5e961e",
+    "TASK_B_HADITHDB_NARRATOR_LINKS_1524_V0_1.csv": "275ad8d9859ffe979edf7a300332fa5e82ac5fea97de14729ebcc9d534947ddc",
+    "TASK_B_INPUTS_REPORT_V0_1.md": "8d066bc79010a7ce30c45e2f77a1314d08afd5c72d0946fc486fe1a68deab196"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

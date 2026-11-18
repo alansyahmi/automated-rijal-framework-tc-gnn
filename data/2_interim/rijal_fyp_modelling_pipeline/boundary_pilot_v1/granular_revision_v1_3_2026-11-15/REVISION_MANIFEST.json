@@ -1,0 +1,116 @@
+{
+  "package": "Taqrib boundary annotation granular revision v1.3 draft",
+  "status": "revised_copy_pending_user_review; frozen_v1_preserved",
+  "generated_by": "dataset_discovery/target_feasibility/revise_taqrib_boundary_granularity_v1_3.py",
+  "case_count": 25,
+  "original_labeled_span_count": 189,
+  "original_label_counts": {
+    "assessment_or_grade": 5,
+    "assessment_qualification_or_scope": 3,
+    "biographical_fact": 8,
+    "biographical_fact_death": 1,
+    "biographical_fact_occupation": 7,
+    "biographical_fact_residence": 4,
+    "death_age": 3,
+    "death_location": 1,
+    "death_year": 14,
+    "disambiguation_note": 2,
+    "full_name": 24,
+    "generation_classification": 19,
+    "grade_or_assessment": 13,
+    "kunya": 14,
+    "kunya_1": 1,
+    "kunya_2": 1,
+    "name_ism": 1,
+    "nickname_laqab": 1,
+    "nisba": 13,
+    "nisba_1": 9,
+    "nisba_2": 9,
+    "nisba_3": 1,
+    "pronunciation_guide": 3,
+    "source_citation": 14,
+    "source_citations": 4,
+    "specific_criticism_or_attributed_report": 11,
+    "status_or_companion_classification": 3
+  },
+  "restored_subrole_counts": {
+    "kunya": 13,
+    "kunya_1": 1,
+    "kunya_2": 1,
+    "nisba": 13,
+    "nisba_1": 9,
+    "nisba_2": 9,
+    "nisba_3": 1,
+    "temporal_transition": 1
+  },
+  "tb022_split": [
+    {
+      "index": 1,
+      "text": "٢٣٣-",
+      "role": "source_entry_number",
+      "subrole": "printed_entry_number"
+    },
+    {
+      "index": 2,
+      "text": " إبراهيم ابن محمد ابن سعد ابن أبي وقاص",
+      "role": "narrator_name_or_identity",
+      "subrole": "full_name_or_lineage"
+    },
+    {
+      "index": 3,
+      "text": " المدني",
+      "role": "narrator_name_or_identity",
+      "subrole": "nisba_1"
+    },
+    {
+      "index": 4,
+      "text": " ثم",
+      "role": "temporal_sequence_marker",
+      "subrole": "temporal_transition"
+    },
+    {
+      "index": 5,
+      "text": " الكوفي",
+      "role": "narrator_name_or_identity",
+      "subrole": "nisba_2"
+    },
+    {
+      "index": 6,
+      "text": " ثقة",
+      "role": "assessment_or_grade",
+      "subrole": "assessment_formula_or_cluster"
+    },
+    {
+      "index": 7,
+      "text": " قال ابن حبان لم يسمع من صحابي",
+      "role": "specific_criticism_or_attributed_report",
+      "subrole": "specific_criticism_or_report"
+    },
+    {
+      "index": 8,
+      "text": " من السادسة",
+      "role": "generation_classification",
+      "subrole": "generation_phrase"
+    },
+    {
+      "index": 9,
+      "text": " ت س",
+      "role": "source_or_transmission_symbol",
+      "subrole": "source_reference_symbol"
+    }
+  ],
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/BOUNDARY_PILOT_REVIEWER_ANNOTATED_2026-11-15.csv": "c8eb9d73e04cb180d02e0fbba886f7474d94c1c91400da2a9613845ca15e1645",
+    "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/BOUNDARY_PILOT_REVIEW_CORRECTED_GRANULAR_2026-11-15.csv": "168d7f3ad5b9ea77bc19b56215e69d2acee157719038424ce01c5dd73eedcafe",
+    "data/2_interim/rijal_fyp_modelling_pipeline/boundary_pilot_v1/frozen_2026-11-15/TAQRIB_BOUNDARY_ANNOTATIONS_FROZEN_V1.csv": "c7d808496802ba6ba04aac2bc2778f4acf0a04f5996e7866458b92e46d59a05f"
+  },
+  "outputs": {
+    "TAQRIB_BOUNDARY_ANNOTATIONS_GRANULAR_V1_3_DRAFT.csv": "552b2b97b9675e8b467c27a19677f2b3347aeb9070d0e582d22c852f41100232",
+    "ORIGINAL_REVIEWER_LABEL_LEDGER.csv": "f869459e03a81bc0544a98875892f0d8d04e72c9c04b656251d747c2f5a626e3",
+    "REVISION_NOTE.md": "3902a8d9d466b3873d94601f00abd76fa939d2a5b3054f94b7ed74b087bf1a9c",
+    "README.md": "76859ad47b2bcb8f988fef0a5d48a86dea9a5c149ca977a90c64b945658f24fe"
+  },
+  "source_reconstruction": "all revised segment sequences checked against the original verbatim entry text",
+  "original_label_alignment": "all labeled original snippets found sequentially as exact substrings; offsets stored in ledger",
+  "no_rank_labels_assigned": true
+}

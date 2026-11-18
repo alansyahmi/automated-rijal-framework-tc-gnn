@@ -1,0 +1,35 @@
+{
+  "package_id": "gate_a_census_sample_audit_v0_1_2026-11-17",
+  "generated_at_utc": "2026-11-16T16:52:26.922251+00:00",
+  "scope": "Gate A 100-entry stratified sample audit (TODO lines 28 & 30); human_* blank; zero canonical ranks assigned.",
+  "counts": {
+    "sample_size": 100,
+    "stratum_quotas": {
+      "explicit_source_example": 25,
+      "candidate_requiring_review": 30,
+      "context_dependent_or_qualified": 20,
+      "approved_phrase_candidate": 10,
+      "non_grade_or_abstain": 15
+    },
+    "audit_status_counts": {
+      "confirmed_non_grade_or_abstain": 7,
+      "context_split_needed": 7,
+      "exact_span_match": 78,
+      "missed_grade_in_abstain": 8
+    },
+    "clean_exact_or_confirmed_abstain": 85,
+    "canonical_ranks_assigned": 0,
+    "rules_enabled": 0
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_shadow_run_v1_2026-11-15/ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_a_complete_span_census_v0_1_2026-11-17/GATE_A_ENTRY_COMPLETE_SPAN_CENSUS_V0_1.csv": "f3017d89615fdacfe7ea6163d07a8388b34c81a3189f93c878f5881ee2814062",
+    "data/2_interim/rijal_fyp_modelling_pipeline/gate_a_complete_span_census_v0_1_2026-11-17/MANIFEST.json": "6cf1490f3389531dc7721b8e12bfff0859637f52b52ce675f804a5da65b69109",
+    "dataset_discovery/target_feasibility/sample_and_audit_gate_a_census_v0_1.py": "c05763be10ad6d9c0804067280b6a7602bd2144ddd55bcea4b0a2dbf317ee651"
+  },
+  "outputs": {
+    "GATE_A_CENSUS_SAMPLE_100_AUDIT_V0_1.csv": "67ec218408dd331920fb0bc4efb6ff7f2e2cf26fa597f78b50fc9ade1cdc0d2d",
+    "SAMPLE_AUDIT_REPORT_V0_1.md": "8919ffa075dfc745a144f47524c79b22a2403cbb483b4c77346179d19e2b0978"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

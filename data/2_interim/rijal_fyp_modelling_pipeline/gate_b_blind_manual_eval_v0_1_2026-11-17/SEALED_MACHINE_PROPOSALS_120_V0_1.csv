@@ -1,0 +1,121 @@
+﻿eval_id,entry_id,hidden_stratum,sealed_machine_target_span_exact,sealed_machine_context_span_exact,sealed_machine_matched_source_ranks,sealed_machine_gate_a_category,sealed_note
+GB-EVAL-001,S3076-P130-C013-E0801,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-002,S3076-P125-C013-E0725,rare_rank_11_12,متروك متهم,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-003,S3076-P154-C009-E1151,unanchored_multiword_or_qualified,صحابي له حديث واحد,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-004,S3076-P318-C016-E3547,unanchored_multiword_or_qualified,ثقة مخضرم,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-005,S3076-P409-C002-E4845,companion_status_cue,صحابي نزل الكوفة وتأخر إلى بعد السبعين,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-006,S3076-P417-C004-E4966,anchor_rank_7_8_9,مستور,,7,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-007,S3076-P556-C001-E7043,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-008,S3076-P611-C002-E7866,anchor_rank_2_5_10,ثقة حافظ,,2,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-009,S3076-P145-C014-E1018,rare_rank_11_12,صدوق يخطىء ورمي بالرفض,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-010,S3076-P303-C011-E3326,rare_rank_11_12,متروك اتهمه بالكذب أبو داود وغيره,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-011,S3076-P130-C007-E0796,companion_status_cue,صحابي له حديث واحد,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-012,S3076-P119-C002-E0624,anchor_rank_2_5_10,صدوق يهم,,5,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-013,S3076-P172-C005-E1404,tamiz_boundary,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-014,S3076-P383-C008-E4466,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-015,S3076-P477-C016-E5873,anchor_rank_2_5_10,صدوق يهم,,5,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-016,S3076-P174-C003-E1434,anchor_rank_7_8_9,مجهول,,9,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-017,S3076-P204-C010-E1860,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-018,S3076-P261-C005-E2706,anchor_rank_7_8_9,مجهول,,9,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-019,S3076-P498-C016-E6176,anchor_rank_3_4,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-020,S3076-P751-C015-E8651,companion_status_cue,صحابية لها حديث في الاستحاضة,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-021,S3076-P094-C008-E0253,anchor_rank_3_4,صدوق,تكلم فيه أحمد لأجل القرآن,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-022,S3076-P535-C001-E6712,unanchored_multiword_or_qualified,صحابي,أسلم يوم الفتح ونزل المدينة ومات بها,,context_dependent_or_qualified,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-023,S3076-P114-C003-E0542,unanchored_multiword_or_qualified,صحابي قال البخاري المزني أصح,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-024,S3076-P587-C012-E7500,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-025,S3076-P462-C002-E5651,anchor_rank_7_8_9,مجهول,,9,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-026,S3076-P117-C006-E0595,anchor_rank_3_4,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-027,S3076-P123-C005-E0686,unanchored_multiword_or_qualified,صحابي وله رواية عن علي,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-028,S3076-P221-C007-E2104,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-029,S3076-P558-C007-E7076,unanchored_multiword_or_qualified,صحابي فتحي وأمره عمر على مكة قأقام بها إلى أن مات,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-030,S3076-P114-C018-E0556,unanchored_multiword_or_qualified,مقبول أيضا,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-031,S3076-P599-C016-E7689,tamiz_boundary,مجهول أيضا,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-032,S3076-P590-C007-E7544,tamiz_boundary,مقبول],,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-033,S3076-P282-C004-E3015,unanchored_multiword_or_qualified,صدوق عابد,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-034,S3076-P387-C017-E4534,anchor_rank_3_4,لا بأس به,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-035,S3076-P128-C002-E0761,unanchored_multiword_or_qualified,مقبول رُمِيَ بالرفض,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-036,S3076-P080-C006-E0043,anchor_rank_2_5_10,ثقة حافظ,,2,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-037,S3076-P597-C012-E7656,anchor_rank_2_5_10,متروك,,10,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-038,S3076-P273-C006-E2878,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-039,S3076-P656-C020-E8232,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-040,S3076-P331-C012-E3731,anchor_rank_2_5_10,صدوق يهم,,5,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-041,S3076-P155-C008-E1166,anchor_rank_2_5_10,صدوق يهم,,5,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-042,S3076-P565-C006-E7172,unanchored_multiword_or_qualified,يعرف بالمجمر بسكون الجيم وضم الميم [الأولى] وكسر الثانية وكذا [كان] أبوه ثقة,,,context_dependent_or_qualified,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-043,S3076-P402-C017-E4757,anchor_rank_7_8_9,ضعيف,,8,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-044,S3076-P587-C013-E7501,unanchored_multiword_or_qualified,صدوق ربما أخطأ,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-045,S3076-P092-C016-E0228,anchor_rank_2_5_10,متروك,,10,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-046,S3076-P617-C006-E7924,companion_status_cue,صحابي نزل بيت المقدس وهو آخر من مات من الصحابة بها وزعم ابن حبان أن اسمه شمعون,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-047,S3076-P371-C012-E4299,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-048,S3076-P759-C002-E8769,unanchored_multiword_or_qualified,مقبولة,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-049,S3076-P446-C016-E5414,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-050,S3076-P592-C001-E7569,anchor_rank_7_8_9,مجهول,,9,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-051,S3076-P556-C008-E7050,unanchored_multiword_or_qualified,صدوق مدلس,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-052,S3076-P593-C005-E7589,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-053,S3076-P501-C007-E6213,tamiz_boundary,صدوق,له أوهام,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-054,S3076-P556-C002-E7044,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-055,S3076-P526-C016-E6581,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-056,S3076-P243-C015-E2434,anchor_rank_7_8_9,ضعيف,,8,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-057,S3076-P239-C010-E2366,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-058,S3076-P410-C018-E4874,anchor_rank_7_8_9,ضعيف,,8,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-059,S3076-P395-C004-E4643,anchor_rank_7_8_9,مجهول,,9,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-060,S3076-P400-C013-E4725,anchor_rank_7_8_9,مجهول,,9,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-061,S3076-P429-C010-E5154,unanchored_multiword_or_qualified,صدوق يهم ورمي برأي الخوارج,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-062,S3076-P434-C007-E5227,unanchored_multiword_or_qualified,صحابي جليل له حديث في الأضاحي,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-063,S3076-P333-C008-E3759,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-064,S3076-P216-C010-E2031,anchor_rank_2_5_10,ثقة حافظ,,2,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-065,S3076-P241-C016-E2403,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-066,S3076-P142-C008-E0971,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-067,S3076-P403-C003-E4760,unanchored_multiword_or_qualified,ثقة ثبت إمام أعلم أهل عصره بالحديث وعلله حتى قال البخاري ما استصغرت نفسي إلا عند علي ابن المديني,وقال فيه شيخه ابن عيينة كنت أتعلم منه أكثر مما يتعلم مني وقال النسائي كأن الله خلقه للحديث عابوا عليه إجابته في المحنة لكنه تنصل وتاب واعتذر بأنه كان خاف على نفسه,,context_dependent_or_qualified,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-068,S3076-P378-C018-E4400,anchor_rank_3_4,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-069,S3076-P528-C013-E6610,unanchored_multiword_or_qualified,ثقة عابد,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-070,S3076-P278-C001-E2952,unanchored_multiword_or_qualified,ثقة جليل,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-071,S3076-P438-C004-E5286,unanchored_multiword_or_qualified,ثقة يغرب,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-072,S3076-P399-C008-E4706,anchor_rank_2_5_10,ثقة حافظ,,2,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-073,S3076-P620-C005-E7948,companion_status_cue,صحابي له حديث,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-074,S3076-P580-C008-E7398,anchor_rank_7_8_9,مستور,,7,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-075,S3076-P502-C010-E6228,anchor_rank_2_5_10,صدوق يهم,,5,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-076,S3076-P295-C016-E3210,anchor_rank_2_5_10,ثقة حافظ,,2,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-077,S3076-P276-C013-E2934,unanchored_multiword_or_qualified,ثقة وكان,يدلس تدليس التسوية قاله أبو زرعة الدمشقي,,context_dependent_or_qualified,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-078,S3076-P225-C013-E2165,companion_status_cue,صحابي له حديث ذكر أبو موسي المديني أن اسم أبيه بولا بموحدة وكان عبدا نوبيا,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-079,S3076-P664-C018-E8301,anchor_rank_7_8_9,مجهول,,9,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-080,S3076-P283-C009-E3036,unanchored_multiword_or_qualified,صدوق يخطىء,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-081,S3076-P453-C011-E5515,unanchored_multiword_or_qualified,صحابي سكن البصرة,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-082,S3076-P613-C006-E7903,rare_rank_11_12,صدوق يخطىء ورمي بالرفض,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-083,S3076-P276-C004-E2925,companion_status_cue,صحابي,,,approved_phrase_candidate,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-084,S3076-P474-C007-E5819,rare_rank_11_12,صدوق فيه لين ورمي بالقدر,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-085,S3076-P163-C006-E1273,unanchored_multiword_or_qualified,لين الحديث,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-086,S3076-P121-C007-E0654,anchor_rank_7_8_9,مجهول,,9,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-087,S3076-P406-C006-E4812,anchor_rank_3_4,صدوق,تكلم فيه للوقف في القرآن,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-088,S3076-P533-C002-E6683,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-089,S3076-P761-C005-E8789,unanchored_multiword_or_qualified,صحابية],,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-090,S3076-P286-C012-E3078,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-091,S3076-P489-C002-E6034,anchor_rank_3_4,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-092,S3076-P387-C018-E4535,anchor_rank_3_4,لا بأس به,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-093,S3076-P612-C006-E7887,anchor_rank_3_4,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-094,S3076-P317-C006-E3524,anchor_rank_7_8_9,ضعيف,,8,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-095,S3076-P271-C019-E2856,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-096,S3076-P155-C014-E1171,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-097,S3076-P670-C008-E8336,unanchored_multiword_or_qualified,صحابي,,,approved_phrase_candidate,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-098,S3076-P084-C008-E0103,unanchored_multiword_or_qualified,ثقة حافظ له تصانيف,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-099,S3076-P231-C002-E2235,companion_status_cue,صحابي له حديث في العيادة والطب أخرجه أبو داود عن سعد غير منسوب فذكره المزي تبعا لغيره في مسند سعد ابن أبي وقاص وأفرده ابن حبان والطبراني والباوردي,,,context_dependent_or_qualified,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-100,S3076-P695-C026-E8478,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-101,S3076-P257-C005-E2649,anchor_rank_3_4,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-102,S3076-P319-C015-E3565,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-103,S3076-P341-C020-E3885,unanchored_multiword_or_qualified,صدوق يخطىء,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-104,S3076-P493-C015-E6091,anchor_rank_2_5_10,ثقة حافظ,,2,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-105,S3076-P502-C002-E6220,tamiz_boundary,صدوق ربما وهم,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-106,S3076-P424-C011-E5078,anchor_rank_7_8_9,مستور,,7,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-107,S3076-P144-C011-E1001,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-108,S3076-P368-C006-E4258,anchor_rank_3_4,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-109,S3076-P504-C003-E6251,unanchored_multiword_or_qualified,صدوق كثير الغلط,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-110,S3076-P251-C007-E2557,anchor_rank_3_4,صدوق,,4,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-111,S3076-P473-C001-E5798,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-112,S3076-P762-C014-E8801,companion_status_cue,صحابية لها حديث,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-113,S3076-P744-C009-E8544,unanchored_multiword_or_qualified,صحابية لها سابقة وهجرة عاشت إلى خلافة معاوية,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-114,S3076-P178-C005-E1496,unanchored_multiword_or_qualified,ثقة أمي,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-115,S3076-P624-C002-E7983,anchor_rank_6_corroboration,مقبول,,6,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-116,S3076-P678-C007-E8410,companion_status_cue,صحابي له رواية عن جرير ابن عبد الله حسب,,,candidate_requiring_review,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-117,S3076-P258-C014-E2669,anchor_rank_3_4,ثقة,رمي بالقدر,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-118,S3076-P596-C012-E7641,anchor_rank_2_5_10,ثقة حافظ,,2,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-119,S3076-P357-C001-E4092,anchor_rank_3_4,ثقة,,3,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
+GB-EVAL-120,S3076-P575-C021-E7343,anchor_rank_2_5_10,متروك,,10,explicit_source_example,DO NOT OPEN until human labels in BLIND_EVALUATION_SHEET_120_V0_1.csv are frozen.
