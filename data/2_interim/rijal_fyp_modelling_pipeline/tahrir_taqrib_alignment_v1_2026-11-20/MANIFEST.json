@@ -1,0 +1,23 @@
+{
+  "generated_utc": "2026-11-20T06:13:32.644184+00:00",
+  "script": "dataset_discovery/target_feasibility/extract_tahrir_taqrib_alignment_v1.py",
+  "total_entries": 8827,
+  "matched_entries": 8823,
+  "dispositions": {
+    "dissent_bal": 2621,
+    "agreed_no_bullet": 5766,
+    "other_commentary": 325,
+    "qualification_qawluhu": 111,
+    "unmatched_in_tahrir": 4
+  },
+  "files": {
+    "TAHRIR_TAQRIB_ALIGNED_8827_V1.csv": {
+      "sha256": "f853cf976a00ce8c9901bc0567ea4a0bfdc9e18f56e79b6eed9c0c58673f1557",
+      "bytes": 5822317
+    },
+    "TAHRIR_TAQRIB_ALIGNMENT_REPORT_V1.md": {
+      "sha256": "a645a4cbe9ad1e68f4055947b9ad657d847e91ae8efbebfaf4d0a8696083e0a1",
+      "bytes": 1529
+    }
+  }
+}

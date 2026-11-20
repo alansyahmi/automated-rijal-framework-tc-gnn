@@ -1,8 +1,0 @@
-﻿repeat_case_id,candidate_key,identity_match_status,identity_evidence_verbatim,identity_evidence_locator_sourceid_pagenum_entry,identity_rationale,identity_confidence,alternative_candidate_considered,reviewer_notes
-RPT-01,CAND-01,confirmed,معمر ابن راشد الأزدي,3076; 541; ٦٨٠٩,"the only guy with the matching order of teknonym, kunyas",100%,,His name should be مَعْمَرٌ
-RPT-02,CAND-01,confirmed,طلحة ابن يزيد الأيلي بفتح الهمزة وسكون الياء أبو حمزة,3076; 283; 3038,"the only guy with the matching order of teknonym, kunyas and nisba",100%,,
-RPT-03,CAND-01,confirmed,محمد ابن إسماعيل ابن عياش بالتحتانية والمعجمة الحمصي,3076; 468; 5735,"the only guy with the matching order of teknonym, kunyas",100%,,
-RPT-04,CAND-01,confirmed,جابر ابن عبد الله ابن عمرو ابن حرام بمهملة وراء الأنصاري ثم السلمي بفتحتين,3076; 136; 871,"the only guy with the matching order of teknonym, kunyas and nisba",100%,,
-RPT-05,CAND-01,confirmed,قيس ابن حفص التميمي الدارمي أبو محمد البصري,3076; 382; 5569,"the only guy in hadithDB, matched name, teknonym, nisba",100%,,
-RPT-05,CAND-02,unresolved, قيس ابن حفص آخر بصري سكن مصر يكنى أبا محمد,3076; 383; 5570,"In Taqrib, there are 2 individuals named Qays bin Hafs, but in HadithDB only one ID or individual that has the matching name and teknonym",100%,,
-RPT-06,CAND-01,confirmed, عبد الله ابن كعب ابن مالك الأنصاري المدني,3076; 319; ٣٥٥٢,"in Taqrib, said to died in 97 or 98 H, matching with HadithDB",100%,,

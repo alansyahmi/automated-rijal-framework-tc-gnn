@@ -1,8 +1,0 @@
-﻿repeat_case_id,candidate_key,statement_id,statement_record_status,statement_type,statement_text_verbatim,statement_text_status,grade_base_verbatim,grade_base_text_status,grade_qualification_verbatim,grade_qualification_text_status,taqrib_rank_number,rank_status,taqrib_statement_validity,target_task_scope,statement_source_correspondence,statement_source_span_verbatim,statement_source_span_status,statement_source_correspondence_rationale,statement_source_locator,statement_source_evidence_record_id,historical_input_eligibility,historical_input_eligibility_rationale,target_task_scope_rationale,corroboration_status,temporal_policy_id,temporal_policy_version,temporal_policy_result,reviewer_notes
-RPT-01,CAND-01,,,,,,,,,,,,,,,,,,,,,,,,,,,
-RPT-02,CAND-01,,,,,,,,,,,,,,,,,,,,,,,,,,,
-RPT-03,CAND-01,,,,,,,,,,,,,,,,,,,,,,,,,,,
-RPT-04,CAND-01,,,,,,,,,,,,,,,,,,,,,,,,,,,
-RPT-05,CAND-01,,,,,,,,,,,,,,,,,,,,,,,,,,,
-RPT-05,CAND-02,,,,,,,,,,,,,,,,,,,,,,,,,,,
-RPT-06,CAND-01,,,,,,,,,,,,,,,,,,,,,,,,,,,

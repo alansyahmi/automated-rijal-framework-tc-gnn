@@ -1,9 +1,0 @@
-﻿repeat_case_id,candidate_key,identity_match_status,identity_evidence_verbatim,identity_evidence_locator,identity_rationale,identity_confidence,alternative_candidate_considered,reviewer_notes
-RPT-01,CAND-01,matched,معمر ابن راشد الأزدي,٦٨٠٩ (,,1,,His name should be مَعْمَرٌ
-RPT-02,CAND-01,matched,طلحة ابن يزيد الأيلي بفتح الهمزة وسكون الياء أبو حمزة,٣٠٣٨,,1,,
-RPT-03,CAND-01,matched,محمد ابن إسماعيل ابن عياش بالتحتانية والمعجمة الحمصي,٥٧٣٥,,1,,
-RPT-04,CAND-01,matched,جابر ابن عبد الله ابن عمرو ابن حرام بمهملة وراء الأنصاري ثم السلمي بفتحتين,٨٧١,the only guy with the combination of names/words,1,,
-RPT-05,CAND-01,matched,قيس ابن حفص التميمي الدارمي أبو محمد البصري,5569 (page 382),,0.5,,
-RPT-05,CAND-02,matched, قيس ابن حفص آخر بصري سكن مصر يكنى أبا محمد,5570 (page 383),,0.5,,"matched with CAND-01 because in HadithDB they're the same individual, should investigate if Shamela4 differentiates them, if yes, we will prioritise or even build on Shamela4 first to streamline things"
-RPT-06,CAND-01,matched, عبد الله ابن كعب ابن مالك الأنصاري المدني,٣٥٥٢ (319),"in Taqrib, said to died in 97 or 98 H, matching with HadithDB",1,,
-,,,,,,,,"Overall, our copy of Taqrib is consistent with the one in Shamela's live website, proceed full trust on our copy."
