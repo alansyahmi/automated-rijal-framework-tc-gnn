@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Gold-50 Well-Known Narrators Two-Score Showcase & Visualizations.
+"""Generate Gold-50 Well-Known Narrators Two-Score Showcase & Visualizations (0-100 Reliability Scale).
 
 Reads:
   - main:data/2_interim/rijal_fyp_modelling_pipeline/v2_gold50_adjudication_v2_1_2026-11-19/GOLD_50_ADJUDICATED_REFERENCE_V2_1.csv
@@ -18,14 +18,12 @@ from __future__ import annotations
 import csv
 import io
 import subprocess
-from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 import numpy as np
 import seaborn as sns
 
@@ -74,10 +72,14 @@ def main() -> None:
                 "matched_in_taqrib": False,
                 "split": "unmatched",
                 "score1_ibn_hajar_rank": "",
+                "score1_reliability_0_100": "",
                 "tahrir_scholar_rank": "",
-                "tahrir_disposition": "",
+                "tahrir_reliability_0_100": "",
                 "score2_tc_gnn_continuous": "",
                 "score2_tc_gnn_rank": "",
+                "score2_reliability_0_1": "",
+                "score2_reliability_0_100": "",
+                "reliability_delta_0_100": "",
                 "score2_predicted_shift": "",
                 "score2_rank_entropy": "",
                 "tc_sanad_out_degree": "",
@@ -96,10 +98,14 @@ def main() -> None:
                 "matched_in_taqrib": True,
                 "split": f["split"],
                 "score1_ibn_hajar_rank": f["score1_ibn_hajar_rank_1_to_12"],
+                "score1_reliability_0_100": float(f["score1_reliability_0_100"]) if f["score1_reliability_0_100"] else "",
                 "tahrir_scholar_rank": f["tahrir_scholar_rank_1_to_12"],
-                "tahrir_disposition": f["tahrir_disposition"],
+                "tahrir_reliability_0_100": float(f["tahrir_reliability_0_100"]) if f["tahrir_reliability_0_100"] else "",
                 "score2_tc_gnn_continuous": float(f["score2_tc_gnn_continuous"]),
                 "score2_tc_gnn_rank": int(f["score2_tc_gnn_rank_1_to_12"]),
+                "score2_reliability_0_1": float(f["score2_reliability_0_1"]),
+                "score2_reliability_0_100": float(f["score2_reliability_0_100"]),
+                "reliability_delta_0_100": float(f["reliability_delta_0_100"]) if f["reliability_delta_0_100"] else "",
                 "score2_predicted_shift": f["score2_predicted_shift"],
                 "score2_rank_entropy": float(f["score2_rank_entropy"]),
                 "tc_sanad_out_degree": int(f["tc_sanad_out_degree"]),
@@ -108,7 +114,8 @@ def main() -> None:
         )
 
     matched = [r for r in showcase_rows if r["matched_in_taqrib"]]
-    matched.sort(key=lambda r: (r["group_profile"], r["score2_tc_gnn_continuous"], r["english_name"]))
+    # Sort each profile highest reliability -> lowest reliability
+    matched.sort(key=lambda r: (r["group_profile"], -r["score2_reliability_0_100"], r["english_name"]))
     ordered_all = matched + unmatched_rows
 
     out_csv = OUT_DIR / "GOLD50_TWO_SCORE_SHOWCASE.csv"
@@ -117,7 +124,7 @@ def main() -> None:
         w.writeheader()
         w.writerows(ordered_all)
 
-    # 1. Dumbbell Chart (3 stacked panels)
+    # 1. Dumbbell Chart on 0-100 Reliability Scale (0=Weakest, 50=Ta'dil/Jarh boundary, 100=Highest)
     groups = ["1_highly_reliable", "2_nuanced_mixed", "3_criticised_weaker"]
     by_grp = {g: [r for r in matched if r["group_profile"] == g] for g in groups}
     heights = [len(by_grp[g]) for g in groups]
@@ -127,18 +134,18 @@ def main() -> None:
     )
 
     for ax, g in zip(axes, groups):
-        items = list(reversed(by_grp[g]))  # top item = lowest/strongest score2
+        items = list(reversed(by_grp[g]))  # top item = highest 0-100 reliability
         y_pos = np.arange(len(items))
 
-        ax.axvspan(0.5, 6.5, color="#e8f5e9", alpha=0.45, zorder=0)
-        ax.axvspan(6.5, 12.5, color="#ffebee", alpha=0.45, zorder=0)
-        ax.axvline(6.5, color="#555555", linestyle="--", linewidth=1.2, zorder=1)
+        ax.axvspan(-2.0, 50.0, color="#ffebee", alpha=0.45, zorder=0)
+        ax.axvspan(50.0, 102.0, color="#e8f5e9", alpha=0.45, zorder=0)
+        ax.axvline(50.0, color="#555555", linestyle="--", linewidth=1.2, zorder=1)
 
         ylabels = []
         for idx, it in enumerate(items):
-            s2 = it["score2_tc_gnn_continuous"]
-            s1 = float(it["score1_ibn_hajar_rank"]) if it["score1_ibn_hajar_rank"] else None
-            th = float(it["tahrir_scholar_rank"]) if it["tahrir_scholar_rank"] else None
+            s2 = it["score2_reliability_0_100"]
+            s1 = it["score1_reliability_0_100"] if it["score1_reliability_0_100"] != "" else None
+            th = it["tahrir_reliability_0_100"] if it["tahrir_reliability_0_100"] != "" else None
 
             xs = [x for x in (s1, th, s2) if x is not None]
             if len(xs) >= 2:
@@ -158,36 +165,36 @@ def main() -> None:
             elif it["split"] == "excluded_unranked":
                 tag = " [UNRANKED]"
             ylabels.append(f"{it['english_name']}{tag}")
-            ax.text(12.25, idx, f"out={it['tc_sanad_out_degree']}", va="center", ha="left", fontsize=8.5, color="#4a5568")
+            ax.text(102.5, idx, f"out={it['tc_sanad_out_degree']}", va="center", ha="left", fontsize=8.5, color="#4a5568")
 
         ax.set_yticks(y_pos)
         ax.set_yticklabels(ylabels, fontsize=9.5)
         ax.set_ylim(-0.6, len(items) - 0.4)
-        ax.set_title(GROUP_TITLES[g], loc="left", fontsize=11.5, fontweight="bold", pad=14 if idx == 0 else 6)
+        ax.set_title(GROUP_TITLES[g], loc="left", fontsize=11.5, fontweight="bold", pad=6)
         ax.grid(axis="x", linestyle=":", alpha=0.6)
 
     axes[0].set_title(GROUP_TITLES[groups[0]], loc="left", fontsize=11.5, fontweight="bold", pad=22)
-    axes[-1].set_xlim(0.6, 13.15)
-    axes[-1].set_xticks(range(1, 13))
-    axes[-1].set_xlabel("Bilgin (2026) 12-Rank Scale   (1–6: Ta'dīl / Reliable   |   7–12: Jarḥ / Weak)", fontsize=11, fontweight="bold")
+    axes[-1].set_xlim(-2.0, 111.0)
+    axes[-1].set_xticks(range(0, 101, 10))
+    axes[-1].set_xlabel("Quantified Reliability Score (0–100:  0–50 = Jarḥ / Weak   |   50–100 = Ta'dīl / Reliable)", fontsize=11, fontweight="bold")
 
-    axes[0].text(3.5, len(by_grp[groups[0]]) - 0.1, "Ta'dīl (Ranks 1–6)", ha="center", va="bottom", fontsize=9.5, color="#2e7d32", fontweight="bold")
-    axes[0].text(9.5, len(by_grp[groups[0]]) - 0.1, "Jarḥ (Ranks 7–12)", ha="center", va="bottom", fontsize=9.5, color="#c62828", fontweight="bold")
+    axes[0].text(25.0, len(by_grp[groups[0]]) - 0.1, "Jarḥ / Weak (< 50)", ha="center", va="bottom", fontsize=9.5, color="#c62828", fontweight="bold")
+    axes[0].text(75.0, len(by_grp[groups[0]]) - 0.1, "Ta'dīl / Reliable (≥ 50)", ha="center", va="bottom", fontsize=9.5, color="#2e7d32", fontweight="bold")
 
     legend_handles = [
         plt.Line2D([0], [0], marker="o", color="w", markerfacecolor="none", markeredgecolor="#1f77b4", markeredgewidth=2.0, markersize=8, label="Score 1: Ibn Ḥajar Taqrīb Baseline"),
         plt.Line2D([0], [0], marker="D", color="w", markerfacecolor="#2ca02c", markersize=7.5, label="Taḥrīr Scholar Verdict (8246)"),
-        plt.Line2D([0], [0], marker="o", color="w", markerfacecolor="#d62728", markersize=8.5, label="Score 2: TC-GNN Continuous Score (G4a)"),
+        plt.Line2D([0], [0], marker="o", color="w", markerfacecolor="#d62728", markersize=8.5, label="Score 2: TC-GNN Reliability (0–100)"),
     ]
     fig.legend(handles=legend_handles, loc="upper center", bbox_to_anchor=(0.56, 0.976), ncol=3, frameon=True, fontsize=9.5)
-    fig.suptitle("Gold-50 Well-Known Narrators: Score 1 Baseline vs. Taḥrīr Verdict vs. Score 2 TC-GNN", fontsize=13.5, fontweight="bold", y=0.994)
+    fig.suptitle("Gold-50 Well-Known Narrators: Quantified Reliability Scores (0–100 Scale)", fontsize=13.5, fontweight="bold", y=0.994)
     fig.subplots_adjust(left=0.28, right=0.95, top=0.925, bottom=0.045)
 
     dumbbell_png = OUT_DIR / "GOLD50_TWO_SCORE_DUMBBELL_CHART.png"
     fig.savefig(dumbbell_png, dpi=300)
     plt.close(fig)
 
-    # 2. Uncertainty & Test Shift Scatter (2-panel)
+    # 2. Uncertainty & Test Shift Scatter (0-100 Reliability Axes)
     fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(14.5, 6.2))
 
     grp_labels = {
@@ -204,16 +211,17 @@ def main() -> None:
     ax1.set_title("A. Calibrated Uncertainty Across Gold-50 Profiles", fontsize=11.5, fontweight="bold")
     ax1.set_ylim(-0.02, max(max(x) for x in ent_data) + 0.08)
 
-    # Right panel: held-out test split (N=1,089) + Gold-50 [TEST] overlay
     test_f2s = [r for r in f2s_rows if r["split"] == "test"]
     s1_te, s2_te, shift_te = [], [], []
     for r in test_f2s:
-        r1 = float(r["score1_ibn_hajar_rank_1_to_12"])
-        r2 = float(r["score2_tc_gnn_continuous"])
-        rt = float(r["tahrir_scholar_rank_1_to_12"])
-        sh = "upgraded" if rt < r1 else ("unchanged" if rt == r1 else "downgraded")
-        s1_te.append(r1 + np.random.default_rng(abs(hash(r["entry_id"])) % (2**31)).uniform(-0.18, 0.18))
-        s2_te.append(r2)
+        r1_val = float(r["score1_reliability_0_100"])
+        r2_val = float(r["score2_reliability_0_100"])
+        rt_rank = float(r["tahrir_scholar_rank_1_to_12"])
+        r1_rank = float(r["score1_ibn_hajar_rank_1_to_12"])
+        sh = "upgraded" if rt_rank < r1_rank else ("unchanged" if rt_rank == r1_rank else "downgraded")
+        jitter = np.random.default_rng(abs(hash(r["entry_id"])) % (2**31)).uniform(-1.5, 1.5)
+        s1_te.append(r1_val + jitter)
+        s2_te.append(r2_val)
         shift_te.append(sh)
 
     palette_map = {"upgraded": "#1b9e77", "unchanged": "#8da0cb", "downgraded": "#e7298a"}
@@ -222,31 +230,37 @@ def main() -> None:
         ys = [s2_te[i] for i, s in enumerate(shift_te) if s == sh]
         ax2.scatter(xs, ys, s=16, alpha=0.45, color=palette_map[sh], label=f"True Taḥrīr: {sh} (n={len(xs)})")
 
-    ax2.plot([1, 12], [1, 12], "k--", alpha=0.5, linewidth=1.1, label="Score 2 = Score 1 (Identity)")
+    ax2.plot([0, 100], [0, 100], "k--", alpha=0.5, linewidth=1.1, label="Score 2 = Score 1 (Identity)")
+    ax2.axvline(50.0, color="#666666", linestyle=":", alpha=0.5)
+    ax2.axhline(50.0, color="#666666", linestyle=":", alpha=0.5)
 
-    # Overlay Gold-50 [TEST] narrators (spread labels around clusters so zero overlap)
-    g50_test = [r for r in matched if r["split"] == "test" and r["score1_ibn_hajar_rank"]]
+    g50_test = [r for r in matched if r["split"] == "test" and r["score1_reliability_0_100"] != ""]
     custom_offsets = {
-        "Abd al-Rahman ibn Mahdi": (32, -30),
-        "Hammad ibn Zayd": (-12, 52),
-        "Shu'bah ibn al-Hajjaj": (32, -14),
-        "Hammad ibn Salamah": (34, 4),
-        "Nafi' mawla Ibn Umar": (-12, 32),
-        "Yahya ibn Abi Kathir": (32, -48),
-        "Tawus ibn Kaysan": (16, 28),
-        "Mujahid ibn Jabr": (48, -6),
-        "Jabir ibn Yazid al-Ju'fi": (-16, 18),
-        "Muhammad ibn al-Sa'ib al-Kalbi": (-14, -22),
+        "Abd al-Rahman ibn Mahdi": (10, -24),
+        "Hammad ibn Zayd": (-32, -4),
+        "Shu'bah ibn al-Hajjaj": (-28, 14),
+        "Hammad ibn Salamah": (10, -44),
+        "Nafi' mawla Ibn Umar": (-6, 28),
+        "Yahya ibn Abi Kathir": (-20, -48),
+        "Tawus ibn Kaysan": (-36, 16),
+        "Mujahid ibn Jabr": (-48, -6),
+        "Jabir ibn Yazid al-Ju'fi": (14, -14),
+        "Muhammad ibn al-Sa'ib al-Kalbi": (16, 10),
     }
     for r in g50_test:
-        x = float(r["score1_ibn_hajar_rank"])
-        y = r["score2_tc_gnn_continuous"]
+        x = r["score1_reliability_0_100"]
+        y = r["score2_reliability_0_100"]
         ax2.scatter(x, y, s=95, color="#111111", edgecolor="white", linewidth=1.2, zorder=8)
         dx, dy = custom_offsets.get(r["english_name"], (10, 10))
         ha = "left" if dx >= 0 else "right"
-        short_name = r["english_name"]
-        if len(short_name) > 20:
-            short_name = short_name.replace("Muhammad ibn al-Sa'ib al-Kalbi", "Ibn al-Kalbi").replace("Abd al-Rahman ibn Mahdi", "Ibn Mahdi").replace("Nafi' mawla Ibn Umar", "Nafi' (Mawla)").replace("Yahya ibn Abi Kathir", "Yahya b. Abi Kathir").replace("Shu'bah ibn al-Hajjaj", "Shu'bah").replace("Jabir ibn Yazid al-Ju'fi", "Jabir al-Ju'fi")
+        short_name = (
+            r["english_name"]
+            .replace("Muhammad ibn al-Sa'ib al-Kalbi", "Ibn al-Kalbi")
+            .replace("Abd al-Rahman ibn Mahdi", "Ibn Mahdi")
+            .replace("Nafi' mawla Ibn Umar", "Nafi' (Mawla)")
+            .replace("Shu'bah ibn al-Hajjaj", "Shu'bah")
+            .replace("Jabir ibn Yazid al-Ju'fi", "Jabir al-Ju'fi")
+        )
         ax2.annotate(
             short_name,
             xy=(x, y),
@@ -260,12 +274,12 @@ def main() -> None:
             zorder=9,
         )
 
-    ax2.set_xlim(0.5, 12.5)
-    ax2.set_ylim(0.5, 12.5)
-    ax2.set_xticks(range(1, 13))
-    ax2.set_yticks(range(1, 13))
-    ax2.set_xlabel("Score 1: Ibn Ḥajar Taqrīb Baseline Rank", fontsize=10)
-    ax2.set_ylabel("Score 2: TC-GNN Continuous Score", fontsize=10)
+    ax2.set_xlim(-3, 103)
+    ax2.set_ylim(-3, 103)
+    ax2.set_xticks(range(0, 101, 10))
+    ax2.set_yticks(range(0, 101, 10))
+    ax2.set_xlabel("Score 1: Ibn Ḥajar Baseline Reliability (0–100)", fontsize=10)
+    ax2.set_ylabel("Score 2: TC-GNN Reliability Score (0–100)", fontsize=10)
     ax2.set_title("B. Held-Out Test Split (N=1,089) + Gold-50 [TEST] Overlay", fontsize=11.5, fontweight="bold")
     ax2.legend(loc="upper left", fontsize=8.2, frameon=True)
 
@@ -276,7 +290,8 @@ def main() -> None:
 
     # 3. Markdown Report + Metrics
     eval_items = [r for r in matched if r["tahrir_scholar_rank"]]
-    g50_mae = float(np.mean([abs(float(r["tahrir_scholar_rank"]) - r["score2_tc_gnn_continuous"]) for r in eval_items]))
+    g50_mae_rank = float(np.mean([abs(float(r["tahrir_scholar_rank"]) - r["score2_tc_gnn_continuous"]) for r in eval_items]))
+    g50_mae_100 = float(np.mean([abs(r["tahrir_reliability_0_100"] - r["score2_reliability_0_100"]) for r in eval_items]))
     g50_bin = float(
         np.mean(
             [
@@ -286,7 +301,7 @@ def main() -> None:
         )
     )
     te_items = [r for r in eval_items if r["split"] == "test"]
-    te_mae = float(np.mean([abs(float(r["tahrir_scholar_rank"]) - r["score2_tc_gnn_continuous"]) for r in te_items]))
+    te_mae_100 = float(np.mean([abs(r["tahrir_reliability_0_100"] - r["score2_reliability_0_100"]) for r in te_items]))
     te_bin = float(
         np.mean(
             [
@@ -297,13 +312,14 @@ def main() -> None:
     )
 
     lines = [
-        "# Gold-50 Well-Known Narrators: Two-Score Showcase Report",
+        "# Gold-50 Well-Known Narrators: Two-Score Showcase Report (`0–100` Reliability Scale)",
         "",
+        "- **Scoring Conversion:** $S_{[0,1]}(r) = (12 - r)/11$ and $S_{[0,100]}(r) = 100\\,(12 - r)/11$ (`100.0` = Rank 1 *Ṣaḥābah*, `50.0` = *Taʿdīl*/*Jarḥ* boundary $r=6.5$, `0.0` = Rank 12 *Kadhdhāb*).",
         f"- **Matched in `FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv`:** {len(matched)} / {len(g50_rows)}",
         f"- **Unmatched Gold-50 entry (`1`):** "
         + (", ".join(f"`{u['entry_id']}` ({u['english_name']})" for u in unmatched_rows) if unmatched_rows else "None"),
-        f"- **Gold-50 vs. Taḥrīr (`n={len(eval_items)}` ranked):** MAE = **{g50_mae:.4f}**, Binary *Taʿdīl*/*Jarḥ* Acc = **{g50_bin * 100:.2f}%**",
-        f"- **Held-Out Gold-50 `[TEST]` Subset (`n={len(te_items)}`):** MAE = **{te_mae:.4f}**, Binary *Taʿdīl*/*Jarḥ* Acc = **{te_bin * 100:.2f}%**",
+        f"- **Gold-50 vs. Taḥrīr (`n={len(eval_items)}` ranked):** `0–100` MAE = **{g50_mae_100:.2f}** (Rank MAE = **{g50_mae_rank:.4f}**), Binary *Taʿdīl*/*Jarḥ* Acc = **{g50_bin * 100:.2f}%**",
+        f"- **Held-Out Gold-50 `[TEST]` Subset (`n={len(te_items)}`):** `0–100` MAE = **{te_mae_100:.2f}**, Binary *Taʿdīl*/*Jarḥ* Acc = **{te_bin * 100:.2f}%**",
         "",
         "## Mean TC-GNN Rank Entropy by Gold-50 Profile",
         "",
@@ -317,28 +333,29 @@ def main() -> None:
     lines.extend(
         [
             "",
-            "## Full Gold-50 Two-Score Table",
+            "## Full Gold-50 Quantified Two-Score Table (`0–100` & `0–1` Scales)",
             "",
-            "| Gold ID | Profile | Narrator | Split | Score 1 (Ibn Ḥajar) | Taḥrīr Verdict | Score 2 (TC-GNN Cont.) | Score 2 (Rank) | Pred. Shift | Entropy | TC-Sanad Out |",
-            "|---|---|---|---|---:|---:|---:|---:|---|---:|---:|",
+            "| Gold ID | Profile | Narrator | Split | Score 1 (`0–100`) | Taḥrīr (`0–100`) | Score 2 (`0–100`) | Score 2 (`0–1`) | Δ (`0–100`) | Pred. Shift | Entropy | Out-Deg |",
+            "|---|---|---|---|---:|---:|---:|---:|---:|---|---:|---:|",
         ]
     )
     for r in ordered_all:
         if not r["matched_in_taqrib"]:
-            lines.append(f"| `{r['gold_id']}` | `{r['group_profile']}` | {r['english_name']} (`{r['entry_id']}`) | `unmatched` | — | — | — | — | — | — | — |")
+            lines.append(f"| `{r['gold_id']}` | `{r['group_profile']}` | {r['english_name']} (`{r['entry_id']}`) | `unmatched` | — | — | — | — | — | — | — | — |")
         else:
-            s1 = r["score1_ibn_hajar_rank"] or "*(unranked)*"
-            th = r["tahrir_scholar_rank"] or "*(unranked)*"
+            s1 = f"{r['score1_reliability_0_100']:.2f}" if r["score1_reliability_0_100"] != "" else "*(unranked)*"
+            th = f"{r['tahrir_reliability_0_100']:.2f}" if r["tahrir_reliability_0_100"] != "" else "*(unranked)*"
+            dl = f"{r['reliability_delta_0_100']:+.2f}" if r["reliability_delta_0_100"] != "" else "—"
             lines.append(
                 f"| `{r['gold_id']}` | `{r['group_profile']}` | {r['english_name']} | `{r['split']}` | {s1} | {th} | "
-                f"{r['score2_tc_gnn_continuous']:.3f} | {r['score2_tc_gnn_rank']} | `{r['score2_predicted_shift']}` | "
-                f"{r['score2_rank_entropy']:.3f} | {r['tc_sanad_out_degree']} |"
+                f"**{r['score2_reliability_0_100']:.2f}** | {r['score2_reliability_0_1']:.4f} | {dl} | "
+                f"`{r['score2_predicted_shift']}` | {r['score2_rank_entropy']:.3f} | {r['tc_sanad_out_degree']} |"
             )
 
     report_md = OUT_DIR / "GOLD50_SHOWCASE_REPORT.md"
     report_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("Generated Gold-50 showcase in", OUT_DIR)
-    print(f"All ranked ({len(eval_items)}): MAE={g50_mae:.4f}, BinAcc={g50_bin:.4f} | Test ({len(te_items)}): MAE={te_mae:.4f}, BinAcc={te_bin:.4f}")
+    print("Generated 0-100 Gold-50 showcase in", OUT_DIR)
+    print(f"All ranked ({len(eval_items)}): 0-100 MAE={g50_mae_100:.2f} (Rank MAE={g50_mae_rank:.4f}), BinAcc={g50_bin:.4f} | Test ({len(te_items)}): 0-100 MAE={te_mae_100:.2f}, BinAcc={te_bin:.4f}")
 
 
 if __name__ == "__main__":

@@ -812,12 +812,20 @@ def main() -> None:
     final_csv = OUT_DIR / "FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv"
     final_fields = [
         "entry_id", "entry_number_numeric", "split",
-        "score1_ibn_hajar_rank_1_to_12", "taqrib_is_conditional_maqbul",
-        "tahrir_scholar_rank_1_to_12", "tahrir_disposition",
+        "score1_ibn_hajar_rank_1_to_12", "score1_reliability_0_1", "score1_reliability_0_100",
+        "taqrib_is_conditional_maqbul",
+        "tahrir_scholar_rank_1_to_12", "tahrir_reliability_0_1", "tahrir_reliability_0_100",
+        "tahrir_disposition",
         "score2_tc_gnn_continuous", "score2_tc_gnn_rank_1_to_12",
+        "score2_reliability_0_1", "score2_reliability_0_100", "reliability_delta_0_100",
         "score2_predicted_shift", "score2_p_upgraded", "score2_p_unchanged", "score2_p_downgraded",
         "score2_rank_entropy", "tc_sanad_out_degree", "tc_sanad_in_degree", "tc_sanad_is_isolated",
     ]
+
+    def rank_to_rel(r_val: float) -> tuple[float, float]:
+        rel01 = (12.0 - r_val) / 11.0
+        return rel01, rel01 * 100.0
+
     with final_csv.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=final_fields)
         w.writeheader()
@@ -828,16 +836,40 @@ def main() -> None:
             rdisc = int(np.clip(np.rint(rexp), 1, 12))
             sp = fp["shift_probs"][i]
             assert not (math.isnan(rexp) or math.isnan(ent)), f"NaN in final export row {i}"
+            s2_01, s2_100 = rank_to_rel(rexp)
+
+            s1_str = r["taqrib_rank_bilgin_1_to_12"].strip()
+            if s1_str:
+                s1_01, s1_100 = rank_to_rel(float(s1_str))
+                s1_01_s, s1_100_s = f"{s1_01:.4f}", f"{s1_100:.2f}"
+                delta_s = f"{(s2_100 - s1_100):.2f}"
+            else:
+                s1_01_s = s1_100_s = delta_s = ""
+
+            th_str = r["tahrir_rank_bilgin_1_to_12"].strip()
+            if th_str:
+                th_01, th_100 = rank_to_rel(float(th_str))
+                th_01_s, th_100_s = f"{th_01:.4f}", f"{th_100:.2f}"
+            else:
+                th_01_s = th_100_s = ""
+
             w.writerow({
                 "entry_id": r["entry_id"],
                 "entry_number_numeric": r["entry_number_numeric"],
                 "split": r["split"],
-                "score1_ibn_hajar_rank_1_to_12": r["taqrib_rank_bilgin_1_to_12"],
+                "score1_ibn_hajar_rank_1_to_12": s1_str,
+                "score1_reliability_0_1": s1_01_s,
+                "score1_reliability_0_100": s1_100_s,
                 "taqrib_is_conditional_maqbul": r["taqrib_is_conditional_maqbul"],
-                "tahrir_scholar_rank_1_to_12": r["tahrir_rank_bilgin_1_to_12"],
+                "tahrir_scholar_rank_1_to_12": th_str,
+                "tahrir_reliability_0_1": th_01_s,
+                "tahrir_reliability_0_100": th_100_s,
                 "tahrir_disposition": r["tahrir_disposition"],
                 "score2_tc_gnn_continuous": f"{rexp:.4f}",
                 "score2_tc_gnn_rank_1_to_12": rdisc,
+                "score2_reliability_0_1": f"{s2_01:.4f}",
+                "score2_reliability_0_100": f"{s2_100:.2f}",
+                "reliability_delta_0_100": delta_s,
                 "score2_predicted_shift": SHIFT_LABELS[int(sp.argmax())],
                 "score2_p_upgraded": f"{sp[0]:.4f}",
                 "score2_p_unchanged": f"{sp[1]:.4f}",

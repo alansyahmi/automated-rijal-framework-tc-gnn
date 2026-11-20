@@ -64,9 +64,12 @@ Why use a **Directional Temporal-Causal Graph Neural Network (TC-GNN)** rather t
 
 ---
 
-## 4. Final Two-Score Deliverable (`8,827 × 17` Columns, `0` NaNs)
+## 4. Final Two-Score Deliverable (`8,827 × 24` Columns, `0` NaNs)
 
 Exported to [FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv](../results/stage3_tc_gnn_benchmarks_v2_2026-11-20/FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv) from the 5-seed ensemble of primary flagship `G4a_Directed_TC_GNN_Sanad`:
-- **Ibn Ḥajar Baseline (Preserved Untouched):** `score1_ibn_hajar_rank_1_to_12`, `taqrib_is_conditional_maqbul`.
-- **Scholarly Reference (When Available):** `tahrir_scholar_rank_1_to_12`, `tahrir_disposition`.
-- **TC-GNN Computational Enrichment:** `score2_tc_gnn_continuous`, `score2_tc_gnn_rank_1_to_12`, `score2_predicted_shift`, `score2_p_upgraded`, `score2_p_unchanged`, `score2_p_downgraded`, `score2_rank_entropy` (normalized Shannon uncertainty), and `tc_sanad_out_degree` / `tc_sanad_in_degree` / `tc_sanad_is_isolated`.
+- **Higher-Is-Better Reliability Index Conversion:** Every continuous or discrete rank $r \in [1, 12]$ is linearly mapped onto $[0, 1]$ and $[0, 100]$ via:
+  $$S_{[0,1]}(r) = \frac{12 - r}{11}, \qquad S_{[0,100]}(r) = 100 \times \frac{12 - r}{11}$$
+  Under this affine normalization, Rank `1` (*Ṣaḥābah*) = **`1.0000` / `100.00`**, Rank `12` (*Kadhdhāb*) = **`0.0000` / `0.00`**, and the classical *Taʿdīl*/*Jarḥ* boundary ($r = 6.5$) maps cleanly to exact **`0.5000` / `50.00`**.
+- **Ibn Ḥajar Baseline (Preserved Untouched):** `score1_ibn_hajar_rank_1_to_12`, `score1_reliability_0_1`, `score1_reliability_0_100`, `taqrib_is_conditional_maqbul`.
+- **Scholarly Reference (When Available):** `tahrir_scholar_rank_1_to_12`, `tahrir_reliability_0_1`, `tahrir_reliability_0_100`, `tahrir_disposition`.
+- **TC-GNN Computational Enrichment:** `score2_tc_gnn_continuous`, `score2_tc_gnn_rank_1_to_12`, `score2_reliability_0_1`, `score2_reliability_0_100`, `reliability_delta_0_100`, `score2_predicted_shift`, `score2_p_upgraded`, `score2_p_unchanged`, `score2_p_downgraded`, `score2_rank_entropy` (normalized Shannon uncertainty), and `tc_sanad_out_degree` / `tc_sanad_in_degree` / `tc_sanad_is_isolated`.
