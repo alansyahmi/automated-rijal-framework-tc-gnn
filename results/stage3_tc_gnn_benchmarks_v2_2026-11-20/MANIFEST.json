@@ -1,0 +1,62 @@
+{
+  "generated_utc": "2026-11-20T08:09:17.347643+00:00",
+  "script": "experiments/run_stage3_tc_gnn_benchmarks_v2.py",
+  "elapsed_sec": 408.27,
+  "tc_sanad_kept_edges": 37364,
+  "tc_sanad_pruned_edges": 4647,
+  "gate_logs": {
+    "G1_GraphOnly_NoText": {
+      "g_fwd_connected": 0.4611,
+      "g_fwd_isolated": 0.4906,
+      "g_rev_connected": 0.4417,
+      "g_rev_isolated": 0.487
+    },
+    "G4a_Directed_TC_GNN_Sanad": {
+      "g_fwd_connected": 0.4572,
+      "g_fwd_isolated": 0.4954,
+      "g_rev_connected": 0.4486,
+      "g_rev_isolated": 0.4944
+    },
+    "G4b_Directed_TC_GNN_UnprunedSanad": {
+      "g_fwd_connected": 0.4584,
+      "g_fwd_isolated": 0.4943,
+      "g_rev_connected": 0.4517,
+      "g_rev_isolated": 0.4942
+    },
+    "G4c_MV_TC_GNN_Sanad_Plus_kNN": {
+      "g_fwd_connected": 0.4614,
+      "g_fwd_isolated": 0.499,
+      "g_rev_connected": 0.4529,
+      "g_rev_isolated": 0.4971,
+      "g_knn_all": 0.5008
+    },
+    "G4d_Directed_TC_GNN_Consolidated": {
+      "g_fwd_connected": 0.459,
+      "g_fwd_isolated": 0.4938,
+      "g_rev_connected": 0.4502,
+      "g_rev_isolated": 0.4909
+    }
+  },
+  "files": {
+    "STAGE3_MODEL_COMPARISON_5SEED_V2.csv": {
+      "sha256": "4cff8f3a95150c9a7d00c449d6aa5594a04d266c65f0defff2f72fdf3834d598",
+      "bytes": 10430
+    },
+    "STAGE3_SUBGROUP_AND_SIGNIFICANCE_V2.csv": {
+      "sha256": "01906d11b2006cac070cd6faecd0caf0bb63e73d74d0cfaf9002af3c15b9b661",
+      "bytes": 4003
+    },
+    "STAGE3_TEST_PREDICTIONS_V2.csv": {
+      "sha256": "847c8aa7724907d1631e012774c93c1b02239a10b2b5b143b3fa8b80e00c1709",
+      "bytes": 248184
+    },
+    "FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv": {
+      "sha256": "c6537521ea8068ff475be6fb45466959c0c2d6f234f696e8b181876931fd00f7",
+      "bytes": 1006775
+    },
+    "STAGE3_RESULTS_SUMMARY_V2.md": {
+      "sha256": "99450454312945ca6f91e990522632b6baed8c617ab3534a0a878d8fee7ac66b",
+      "bytes": 4376
+    }
+  }
+}
