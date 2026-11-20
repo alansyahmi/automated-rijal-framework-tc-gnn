@@ -1,0 +1,1579 @@
+{
+  "generated_utc": "2026-11-18T22:17:01.762269+00:00",
+  "verified_input_manifests": {
+    "task_b_historical_inputs_v0_3_2026-11-17": 4,
+    "task_b_historical_inputs_v0_4_2026-11-17": 4,
+    "task_b_consolidated_graph_v0_3_2026-11-17": 4,
+    "task_b_method1_clean_bios_v1_2_2026-11-18": 6
+  },
+  "part_a_reproducibility_and_benchmarks": {
+    "device": "cuda",
+    "arm4_oof_logreg_cfg": {
+      "C": 2.0,
+      "class_weight": "sqrt",
+      "train_oof_macro_f1": 0.44857393748558055
+    },
+    "forward_logit_max_abs_diff_sparse_vs_precomputed": 3.5762786865234375e-07,
+    "sparse_cuda_3runs_seed42": [
+      {
+        "val_f1": 0.5638036440208342,
+        "test_f1": 0.4768312694010241,
+        "pred_sha256": "7dcf5a6eec1ee152f3e2df165a5e6b44b3822f58ed09afa327c506650e4e51e7"
+      },
+      {
+        "val_f1": 0.5638036440208342,
+        "test_f1": 0.4768312694010241,
+        "pred_sha256": "7dcf5a6eec1ee152f3e2df165a5e6b44b3822f58ed09afa327c506650e4e51e7"
+      },
+      {
+        "val_f1": 0.5689241721885848,
+        "test_f1": 0.47462998928923456,
+        "pred_sha256": "803301005f0824da7bc5ebe8539963e78f17da977f0c7fa8893196b24ed847a4"
+      }
+    ],
+    "sparse_cuda_bit_exact": false,
+    "precomputed_cuda_3runs_seed42": [
+      {
+        "val_f1": 0.5638036440208342,
+        "test_f1": 0.4768312694010241,
+        "pred_sha256": "7dcf5a6eec1ee152f3e2df165a5e6b44b3822f58ed09afa327c506650e4e51e7"
+      },
+      {
+        "val_f1": 0.5638036440208342,
+        "test_f1": 0.4768312694010241,
+        "pred_sha256": "7dcf5a6eec1ee152f3e2df165a5e6b44b3822f58ed09afa327c506650e4e51e7"
+      },
+      {
+        "val_f1": 0.5638036440208342,
+        "test_f1": 0.4768312694010241,
+        "pred_sha256": "7dcf5a6eec1ee152f3e2df165a5e6b44b3822f58ed09afa327c506650e4e51e7"
+      }
+    ],
+    "precomputed_cuda_bit_exact": true,
+    "seed42_vs_5seed_val_selection_arm4_deterministic": [
+      {
+        "config_id": "cfg_1",
+        "cfg": {
+          "hidden_dim": 128,
+          "dropout": 0.4,
+          "lr": 0.005,
+          "wd": 0.005,
+          "cw": "sqrt"
+        },
+        "seed42_val_macro_f1": 0.5638036440208342,
+        "val_5seed_mean_macro_f1": 0.5512476680705112,
+        "val_5seed_std": 0.015333289757044462,
+        "test_5seed_mean_macro_f1": 0.4673640557053954,
+        "test_5seed_std": 0.012615918290200352,
+        "test_5seed_mean_acc": 0.6588832487309645
+      },
+      {
+        "config_id": "cfg_2",
+        "cfg": {
+          "hidden_dim": 256,
+          "dropout": 0.4,
+          "lr": 0.005,
+          "wd": 0.005,
+          "cw": "sqrt"
+        },
+        "seed42_val_macro_f1": 0.567601254609339,
+        "val_5seed_mean_macro_f1": 0.5647736541652891,
+        "val_5seed_std": 0.01649346518716828,
+        "test_5seed_mean_macro_f1": 0.47634805062944985,
+        "test_5seed_std": 0.009635430273412033,
+        "test_5seed_mean_acc": 0.6596446700507614
+      },
+      {
+        "config_id": "cfg_3",
+        "cfg": {
+          "hidden_dim": 128,
+          "dropout": 0.5,
+          "lr": 0.003,
+          "wd": 0.01,
+          "cw": "balanced"
+        },
+        "seed42_val_macro_f1": 0.48225887058555245,
+        "val_5seed_mean_macro_f1": 0.4855860698622621,
+        "val_5seed_std": 0.026744646491923627,
+        "test_5seed_mean_macro_f1": 0.45434833915349904,
+        "test_5seed_std": 0.00782769231414075,
+        "test_5seed_mean_acc": 0.6129441624365483
+      }
+    ],
+    "v1_1_vs_v1_2_logreg_diff_cause": "v1.1 used max_features=30000 and max_iter=150 vs v1.2 max_features=35000 and max_iter=160 (0.4549 vs 0.4528).",
+    "v1_2_vs_v1_3_gnn_diff_cause": "Identical Arm 4 OOF/topo features (EarlyMLP exact 0.4601); ConcatDirGNN drifted (0.4762 vs 0.4649) purely from CUDA torch.sparse.mm non-determinism plus single-seed (seed=42) val config selection."
+  },
+  "part_b_statement_and_attribution_integrity": {
+    "duplicate_summaries": [
+      {
+        "source_file": "v03_eligible_passages",
+        "total_rows": 79597,
+        "unique_eid_norm_text": 69000,
+        "excess_rows_by_text": 10597,
+        "unique_provenance_preserving_rows": 78980,
+        "excess_pure_extraction_or_exact_prov_duplicates": 617,
+        "train_total_rows": 39840,
+        "train_unique_provenance_rows": 39508,
+        "dup_category_counts_overall": {
+          "class1_shamela_multi_group_same_citation_diff_label": 9702,
+          "class1b_exact_same_work_citation_and_label": 502,
+          "class2_same_critic_distinct_source_work": 92,
+          "class4_distinct_critic_distinct_or_parallel_work": 295,
+          "class3_same_critic_same_work_distinct_citation": 6
+        },
+        "dup_category_counts_train": {
+          "class1_shamela_multi_group_same_citation_diff_label": 4942,
+          "class2_same_critic_distinct_source_work": 38,
+          "class1b_exact_same_work_citation_and_label": 266,
+          "class4_distinct_critic_distinct_or_parallel_work": 138,
+          "class3_same_critic_same_work_distinct_citation": 2
+        },
+        "train_examples": {
+          "class1_shamela_multi_group_same_citation_diff_label": [
+            {
+              "entry_id": "S3076-P086-C015-E0132",
+              "anchor": {
+                "critic": "احمد بن حنبل",
+                "work": "الجرح والتعديل لابن ابي حاتم",
+                "cit": "الجرح والتعديل لابن ابي حاتم (2/ 268)"
+              },
+              "dup": {
+                "critic": "ادم بن ابي اياس",
+                "work": "الجرح والتعديل لابن ابي حاتم",
+                "cit": "الجرح والتعديل لابن ابي حاتم (2/ 268)"
+              },
+              "text_preview": "وقال له رجل: سمعت احمد [بن محمد] بن حنبل وسئل عن شعبة كان يملي عليهم ببغداد او يقرا ؟ قال: كان يقرا، وكان اربعة انفس يكت"
+            },
+            {
+              "entry_id": "S3076-P086-C015-E0132",
+              "anchor": {
+                "critic": "ابن حبان",
+                "work": "اكمال تهذيب الكمال",
+                "cit": "اكمال تهذيب الكمال (2/ 29)"
+              },
+              "dup": {
+                "critic": "العجلي",
+                "work": "اكمال تهذيب الكمال",
+                "cit": "اكمال تهذيب الكمال (2/ 29)"
+              },
+              "text_preview": "ذكره العجلي، وذكره ابن حبان في كتاب « الثقات » وقال: كان وراقا وكان قصير القامة. وخرج هو والحاكم حديثه في صحيحيهما."
+            }
+          ],
+          "class2_same_critic_distinct_source_work": [
+            {
+              "entry_id": "S3076-P090-C013-E0191",
+              "anchor": {
+                "critic": "ابو حاتم الرازي",
+                "work": "الكواكب النيرات",
+                "cit": "الكواكب النيرات (1/ 78)"
+              },
+              "dup": {
+                "critic": "ابو حاتم الرازي",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (2/ 116)"
+              },
+              "text_preview": "وقال ابو حاتم: شيخ"
+            },
+            {
+              "entry_id": "S3076-P088-C005-E0152",
+              "anchor": {
+                "critic": "ابو حاتم الرازي",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (2/ 50)"
+              },
+              "dup": {
+                "critic": "ابو حاتم الرازي",
+                "work": "اكمال تهذيب الكمال",
+                "cit": "اكمال تهذيب الكمال (1/ 182)"
+              },
+              "text_preview": "قال ابو حاتم: مجهول"
+            }
+          ],
+          "class1b_exact_same_work_citation_and_label": [
+            {
+              "entry_id": "S3076-P088-C001-E0148",
+              "anchor": {
+                "critic": "يحيي بن معين",
+                "work": "الكامل في الضعفاء",
+                "cit": "الكامل في الضعفاء (1/ 377)"
+              },
+              "dup": {
+                "critic": "يحيي بن معين",
+                "work": "الكامل في الضعفاء",
+                "cit": "الكامل في الضعفاء (1/ 377)"
+              },
+              "text_preview": "حدثنا محمد بن احمد بن حماد، حدثنا معاوية بن صالح، عن يحيي بن معين قال: وحدثنا العباس بن محمد قال: سمعت يحيي بن معين يقول"
+            },
+            {
+              "entry_id": "S3076-P090-C001-E0181",
+              "anchor": {
+                "critic": "يحيي بن معين",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (2/ 99)"
+              },
+              "dup": {
+                "critic": "يحيي بن معين",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (2/ 99)"
+              },
+              "text_preview": "وقال ابراهيم بن عبد الله بن الجنيد، وجعفر بن ابي عثمان الطيالسي، وابو داود، ومعاوية بن صالح بن ابي عبيد الله الاشعري عن "
+            }
+          ],
+          "class4_distinct_critic_distinct_or_parallel_work": [
+            {
+              "entry_id": "S3076-P623-C012-E7976",
+              "anchor": {
+                "critic": "الذهبي",
+                "work": "الكاشف في معرفة من له رواية في الكتب الستة",
+                "cit": "الكاشف في معرفة من له رواية في الكتب الستة (5/ 17)"
+              },
+              "dup": {
+                "critic": "المزي",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (33/ 112)"
+              },
+              "text_preview": "احد الفقهاء السبعة"
+            },
+            {
+              "entry_id": "S3076-P628-C005-E8011",
+              "anchor": {
+                "critic": "الذهبي",
+                "work": "الكاشف في معرفة من له رواية في الكتب الستة",
+                "cit": "الكاشف في معرفة من له رواية في الكتب الستة (5/ 25)"
+              },
+              "dup": {
+                "critic": "المزي",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (33/ 181)"
+              },
+              "text_preview": "له صحبة"
+            }
+          ],
+          "class3_same_critic_same_work_distinct_citation": [
+            {
+              "entry_id": "S3076-P224-C015-E2154",
+              "anchor": {
+                "critic": "المزي",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (35/ 7)"
+              },
+              "dup": {
+                "critic": "المزي",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (10/ 103)"
+              },
+              "text_preview": "له صحبة"
+            },
+            {
+              "entry_id": "S3076-P229-C011-E2217",
+              "anchor": {
+                "critic": "المزي",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (35/ 46)"
+              },
+              "dup": {
+                "critic": "المزي",
+                "work": "تهذيب الكمال",
+                "cit": "تهذيب الكمال (10/ 215)"
+              },
+              "text_preview": "له صحبة"
+            }
+          ]
+        }
+      },
+      {
+        "source_file": "v04_tahdhib_early_ablation",
+        "total_rows": 36673,
+        "unique_eid_norm_text": 32558,
+        "excess_rows_by_text": 4115,
+        "unique_provenance_preserving_rows": 36504,
+        "excess_pure_extraction_or_exact_prov_duplicates": 169,
+        "train_total_rows": 18673,
+        "train_unique_provenance_rows": 18593,
+        "dup_category_counts_overall": {
+          "class1_shamela_multi_group_same_citation_diff_label": 3963,
+          "class1b_exact_same_work_citation_and_label": 147,
+          "class4_distinct_critic_distinct_or_parallel_work": 5
+        },
+        "dup_category_counts_train": {
+          "class1_shamela_multi_group_same_citation_diff_label": 2098,
+          "class1b_exact_same_work_citation_and_label": 68,
+          "class4_distinct_critic_distinct_or_parallel_work": 3
+        },
+        "train_examples": {
+          "class1_shamela_multi_group_same_citation_diff_label": [
+            {
+              "entry_id": "S3076-P087-C004-E0138",
+              "anchor": {
+                "critic": "العجلي",
+                "work": "تهذيب التهذيب",
+                "cit": "تهذيب التهذيب (1/ 54)"
+              },
+              "dup": {
+                "critic": "النسائي",
+                "work": "تهذيب التهذيب",
+                "cit": "تهذيب التهذيب (1/ 54)"
+              },
+              "text_preview": "وقال العجلي، والنسائي: ثقة."
+            },
+            {
+              "entry_id": "S3076-P087-C004-E0138",
+              "anchor": {
+                "critic": "ابراهيم الحربي",
+                "work": "تهذيب التهذيب",
+                "cit": "تهذيب التهذيب (1/ 54)"
+              },
+              "dup": {
+                "critic": "العقيلي",
+                "work": "تهذيب التهذيب",
+                "cit": "تهذيب التهذيب (1/ 54)"
+              },
+              "text_preview": "وقال العقيلي، والحربي: اختلط باخرة"
+            }
+          ],
+          "class1b_exact_same_work_citation_and_label": [
+            {
+              "entry_id": "S3076-P090-C001-E0181",
+              "anchor": {
+                "critic": "يحيي بن معين",
+                "work": "تهذيب التهذيب",
+                "cit": "تهذيب التهذيب (1/ 67)"
+              },
+              "dup": {
+                "critic": "يحيي بن معين",
+                "work": "تهذيب التهذيب",
+                "cit": "تهذيب التهذيب (1/ 67)"
+              },
+              "text_preview": "وقال ابن معين فيما رواه ابو داود، وابراهيم بن الجنيد وجعفر الطيالسي، ومعاوية بن صالح: ثقة. زاد معاوية بن صالح عنه: صحيح "
+            },
+            {
+              "entry_id": "S3076-P090-C001-E0181",
+              "anchor": {
+                "critic": "يحيي بن معين",
+                "work": "تهذيب التهذيب",
+                "cit": "تهذيب التهذيب (1/ 67)"
+              },
+              "dup": {
+                "critic": "يحيي بن معين",
+                "work": "تهذيب التهذيب",
+                "cit": "تهذيب التهذيب (1/ 67)"
+              },
+              "text_preview": "وقال ابن معين فيما رواه ابو داود، وابراهيم بن الجنيد وجعفر الطيالسي، ومعاوية بن صالح: ثقة. زاد معاوية بن صالح عنه: صحيح "
+            }
+          ],
+          "class4_distinct_critic_distinct_or_parallel_work": [
+            {
+              "entry_id": "S3076-P138-C018-E0911",
+              "anchor": {
+                "critic": "ابو حاتم الرازي",
+                "work": "وقال ابو حاتم تغير قبل موته بسنة تهذيب التهذيب",
+                "cit": "وقال ابو حاتم تغير قبل موته بسنة تهذيب التهذيب (1/ 294)"
+              },
+              "dup": {
+                "critic": "احمد بن حنبل",
+                "work": "وقال مهنا، عن احمد جرير كثير الغلط تهذيب التهذيب",
+                "cit": "وقال مهنا، عن احمد جرير كثير الغلط تهذيب التهذيب (1/ 294)"
+              },
+              "text_preview": "الاحاديث المختارة: (7/ 84) برقم: (2488)"
+            },
+            {
+              "entry_id": "S3076-P423-C002-E5050",
+              "anchor": {
+                "critic": "ابو عمرو بن العلاء",
+                "work": "وقال ابو عمرو بن العلاء كان يعاب علي قتادة، وعمرو بن شعيب انهما كانا لا يسمعان شيئا الا حدثا به تهذيب التهذيب",
+                "cit": "وقال ابو عمرو بن العلاء كان يعاب علي قتادة، وعمرو بن شعيب انهما كانا لا يسمعان شيئا الا حدثا به تهذيب التهذيب (3/ 277)"
+              },
+              "dup": {
+                "critic": "احمد بن حنبل",
+                "work": "وقال البخاري رايت احمد بن حنبل وعلي ابن المديني، واسحاق بن راهويه، وابا عبيد، وعامة اصحابنا يحتجون بحديث عمرو بن شعيب، عن ابيه، عن جده ما تركه احد من المسلمين. قال البخاري من الناس بعدهم ؟ تهذيب التهذيب",
+                "cit": "وقال البخاري رايت احمد بن حنبل وعلي ابن المديني، واسحاق بن راهويه، وابا عبيد، وعامة اصحابنا يحتجون بحديث عمرو بن شعيب، عن ابيه، عن جده ما تركه احد من المسلمين. قال البخاري من الناس بعدهم ؟ تهذيب التهذيب (3/ 277)"
+              },
+              "text_preview": "سنن البيهقي الكبري: (7/ 318) برقم: (14987)"
+            }
+          ]
+        }
+      },
+      {
+        "source_file": "v04_fwaed_passages",
+        "total_rows": 9458,
+        "unique_eid_norm_text": 9053,
+        "excess_rows_by_text": 405,
+        "unique_provenance_preserving_rows": 9457,
+        "excess_pure_extraction_or_exact_prov_duplicates": 1,
+        "train_total_rows": 4341,
+        "train_unique_provenance_rows": 4341,
+        "dup_category_counts_overall": {
+          "class1b_exact_same_work_citation_and_label": 398,
+          "class3_same_critic_same_work_distinct_citation": 7
+        },
+        "dup_category_counts_train": {
+          "class1b_exact_same_work_citation_and_label": 145,
+          "class3_same_critic_same_work_distinct_citation": 2
+        },
+        "train_examples": {
+          "class1b_exact_same_work_citation_and_label": [
+            {
+              "entry_id": "S3076-P092-C001-E0213",
+              "anchor": {
+                "critic": "",
+                "work": "",
+                "cit": "تحفة التحصيل في المراسيل (1/ 9)"
+              },
+              "dup": {
+                "critic": "",
+                "work": "",
+                "cit": "تحفة التحصيل في المراسيل (1/ 9)"
+              },
+              "text_preview": "الا ان الذهبي قال في \" التذهيب \" و \" مختصر المستدرك \": انه ارسل عن ابن عمر، فكان العلائي اخذه منه، وزاد كونه لم يدركه، و"
+            },
+            {
+              "entry_id": "S3076-P093-C002-E0233",
+              "anchor": {
+                "critic": "",
+                "work": "",
+                "cit": "اكمال تهذيب الكمال (1/ 274)"
+              },
+              "dup": {
+                "critic": "",
+                "work": "",
+                "cit": "اكمال تهذيب الكمال (1/ 274)"
+              },
+              "text_preview": "وخرج الحاكم حديثه في \" مستدركه \"، وقال في كتاب \" علوم الحديث \": لم يسمع من احد من الصحابة، وربما نسب الي جده فيتوهمه الر"
+            }
+          ],
+          "class3_same_critic_same_work_distinct_citation": [
+            {
+              "entry_id": "S3076-P250-C006-E2538",
+              "anchor": {
+                "critic": "",
+                "work": "",
+                "cit": "تهذيب الكمال (11/ 370)"
+              },
+              "dup": {
+                "critic": "",
+                "work": "",
+                "cit": "تحفة التحصيل في المراسيل (1/ 166)"
+              },
+              "text_preview": "وقال البخاري: لم يذكر سماعا عن ابيه"
+            },
+            {
+              "entry_id": "S3076-P608-C003-E7818",
+              "anchor": {
+                "critic": "",
+                "work": "",
+                "cit": "تهذيب الكمال (32/ 335)"
+              },
+              "dup": {
+                "critic": "",
+                "work": "",
+                "cit": "تحفة التحصيل في المراسيل (1/ 590)"
+              },
+              "text_preview": "قال البخاري: لا يعرف لسلمة سماع من ابي هريرة ولا ليعقوب من ابيه"
+            }
+          ]
+        }
+      }
+    ],
+    "recommended_dedup_key": "(entry_id, normalized_historical_attribution_critic_or_category, normalized_source_work, normalized_source_citation, normalized_quotation_text)",
+    "rationale_dedup_key": "Collapses Shamela4 multi-group extraction duplicates sharing the same source_citation while preserving genuine cross-work recurrence and distinct critic attributions.",
+    "train_raw_arm4_passages": 62854,
+    "train_dedup_arm4_passages": 62442,
+    "train_dedup_removed_rows": 412,
+    "train_quote_passages_for_segmentation": 58101,
+    "train_estimated_atomic_units_from_quote_passages": 73204,
+    "train_segmentation_categories": {
+      "ambiguous_pronominal_or_nested_isnad": 6605,
+      "clean_atomic_explicit_speaker": 24161,
+      "clean_atomic_header_attributed": 19866,
+      "splittable_compound_multi_clause": 7291,
+      "biographical_or_transmission_mix_no_internal_speaker": 178
+    },
+    "train_segmentation_pct": {
+      "ambiguous_pronominal_or_nested_isnad": 11.37,
+      "clean_atomic_explicit_speaker": 41.58,
+      "clean_atomic_header_attributed": 34.19,
+      "splittable_compound_multi_clause": 12.55,
+      "biographical_or_transmission_mix_no_internal_speaker": 0.31
+    },
+    "train_segmentation_examples": {
+      "ambiguous_pronominal_or_nested_isnad": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "ابو حاتم الرازي",
+          "source_work": "الجرح والتعديل لابن ابي حاتم",
+          "text": "روي عن: شعبة، واسرائيل، والمسعودي، وورقاء، سمعت ابي يقول ذلك، وسمعته يقول: هو ثقة صدوق",
+          "n_clauses_split": 2
+        },
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "احمد بن حنبل",
+          "source_work": "الجرح والتعديل لابن ابي حاتم",
+          "text": "وقال له رجل: سمعت احمد [بن محمد] بن حنبل وسئل عن شعبة كان يملي عليهم ببغداد او يقرا ؟ قال: كان يقرا، وكان اربعة انفس يكتبون ادم وعلي النسائي، فقال ادم: صدق كنت سريع الخط، وكنت اكتب",
+          "n_clauses_split": 4
+        },
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "ادم بن ابي اياس",
+          "source_work": "الجرح والتعديل لابن ابي حاتم",
+          "text": "وقال له رجل: سمعت احمد [بن محمد] بن حنبل وسئل عن شعبة كان يملي عليهم ببغداد او يقرا ؟ قال: كان يقرا، وكان اربعة انفس يكتبون ادم وعلي النسائي، فقال ادم: صدق كنت سريع الخط، وكنت اكتب",
+          "n_clauses_split": 4
+        }
+      ],
+      "clean_atomic_explicit_speaker": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "ابو حاتم الرازي",
+          "source_work": "تهذيب الكمال",
+          "text": "وقال ابو حاتم: ثقة مامون. متعبد من خيار عباد الله",
+          "n_clauses_split": 1
+        },
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "ابو حاتم الرازي",
+          "source_work": "الكاشف في معرفة من له رواية في الكتب الستة",
+          "text": "قال ابو حاتم: ثقة مامون متعبد من خيار عباد الله",
+          "n_clauses_split": 1
+        },
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "ابو حاتم الرازي",
+          "source_work": "اكمال تهذيب الكمال",
+          "text": "وقال ابو حاتم الرازي: صدوق.",
+          "n_clauses_split": 1
+        }
+      ],
+      "clean_atomic_header_attributed": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "ابو حاتم الرازي",
+          "source_work": "الجرح والتعديل لابن ابي حاتم",
+          "text": "سئل ابي عن ادم بن ابي اياس فقال: ثقة مامون متعبد من خيار عباد الله",
+          "n_clauses_split": 1
+        },
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "ابو سعد السمعاني",
+          "source_work": "اكمال تهذيب الكمال",
+          "text": "وقال السمعاني: كان ثقة حافظا.",
+          "n_clauses_split": 1
+        },
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "احمد بن محمد القرطبي",
+          "source_work": "اكمال تهذيب الكمال",
+          "text": "وذكره الحافظ ابو عبد الملك بن احمد بن محمد بن عبد البر في « تاريخ قرطبة » فقال: ثقة",
+          "n_clauses_split": 1
+        }
+      ],
+      "splittable_compound_multi_clause": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "شعبة بن الحجاج",
+          "source_work": "تهذيب الكمال",
+          "text": "قال وقال احمد: كان مكينا عند شعبة",
+          "n_clauses_split": 2
+        },
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "critic_field": "يحيي بن معين",
+          "source_work": "تهذيب الكمال",
+          "text": "وقال ابو العباس بن عقدة، عن القاسم بن عبد الله بن عامر: سمعت يحيي بن معين: سئل عن ادم بن ابي اياس، فقال: ثقة، ربما حدث عن قوم ضعفي.",
+          "n_clauses_split": 3
+        },
+        {
+          "entry_id": "S3076-P086-C017-E0134",
+          "critic_field": "ابن حبان",
+          "source_work": "اكمال تهذيب الكمال",
+          "text": "ولما ذكره ابو حاتم ابن حبان في كتاب « الثقات »، قال: مات في ولاية هشام بن عبد الملك بن مروان، وخرج ايضا حديثه في « صحيحه »",
+          "n_clauses_split": 2
+        }
+      ],
+      "biographical_or_transmission_mix_no_internal_speaker": [
+        {
+          "entry_id": "S3076-P091-C011-E0207",
+          "critic_field": "ابن عدي",
+          "source_work": "الكامل في الضعفاء",
+          "text": "روي عن الثقات احاديث مناكير وهو بصري",
+          "n_clauses_split": 1
+        },
+        {
+          "entry_id": "S3076-P091-C005-E0201",
+          "critic_field": "ابن حبان",
+          "source_work": "الثقات",
+          "text": "روي عنه: اهل الحجاز، وقد قيل: انه سمع من ميمونة زوج النبي صلي الله عليه وسلم، وليس ذلك بصحيح عندنا، فلذلك ادخلناه في اتباع التابعين",
+          "n_clauses_split": 1
+        },
+        {
+          "entry_id": "S3076-P093-C003-E0234",
+          "critic_field": "ابن ابي حاتم الرازي",
+          "source_work": "الجرح والتعديل لابن ابي حاتم",
+          "text": "سمع منه ابي بمكة",
+          "n_clauses_split": 1
+        }
+      ]
+    }
+  },
+  "part_c_esa_coverage_and_gaps_train": {
+    "taqrib_phrase_inventory_size": 205,
+    "train_dedup_passages_total": 62442,
+    "train_passages_with_taqrib_205_hit": 24182,
+    "train_passages_without_taqrib_205_hit": 38260,
+    "train_passages_without_taqrib_hit_pct": 61.27,
+    "train_narrators_with_any_arm4_passage": 3491,
+    "train_narrators_with_taqrib_205_hit": 3171,
+    "train_passages_with_early_idiom_hit": 26467,
+    "top_unmatched_tokens_in_no_taqrib_hit_passages": [
+      [
+        "عبد",
+        10843
+      ],
+      [
+        "الله",
+        7740
+      ],
+      [
+        "علي",
+        6765
+      ],
+      [
+        "الثقات",
+        5806
+      ],
+      [
+        "حبان",
+        5634
+      ],
+      [
+        "محمد",
+        5571
+      ],
+      [
+        "احمد",
+        5217
+      ],
+      [
+        "يحيي",
+        5150
+      ],
+      [
+        "عنه",
+        5074
+      ],
+      [
+        "وذكره",
+        4762
+      ],
+      [
+        "حديثه",
+        4700
+      ],
+      [
+        "يقول",
+        4213
+      ],
+      [
+        "فقال",
+        4023
+      ],
+      [
+        "كتاب",
+        3922
+      ],
+      [
+        "وكان",
+        3832
+      ],
+      [
+        "روي",
+        3086
+      ],
+      [
+        "الرحمن",
+        3002
+      ],
+      [
+        "ثنا",
+        2811
+      ],
+      [
+        "عليه",
+        2801
+      ],
+      [
+        "ليس",
+        2739
+      ],
+      [
+        "حاتم",
+        2716
+      ],
+      [
+        "سعيد",
+        2578
+      ],
+      [
+        "معين",
+        2401
+      ],
+      [
+        "وابو",
+        2378
+      ],
+      [
+        "وابن",
+        2287
+      ],
+      [
+        "الحديث",
+        2252
+      ],
+      [
+        "وهو",
+        2107
+      ],
+      [
+        "صالح",
+        2090
+      ],
+      [
+        "ذكره",
+        2067
+      ],
+      [
+        "انه",
+        2045
+      ],
+      [
+        "حديث",
+        1872
+      ],
+      [
+        "عمرو",
+        1824
+      ],
+      [
+        "البخاري",
+        1774
+      ],
+      [
+        "ولا",
+        1757
+      ],
+      [
+        "منه",
+        1747
+      ]
+    ],
+    "existing_task_a_6d_distributions": {
+      "statement_family": {
+        "status_or_biography": 321,
+        "unresolved": 3,
+        "criticism": 229,
+        "praise": 226,
+        "mixed": 52,
+        "unknownness": 80,
+        "not_applicable": 11
+      },
+      "statement_domain": {
+        "companion_status": 320,
+        "unresolved": 41,
+        "honesty_veracity": 30,
+        "general_reliability": 251,
+        "memory_precision": 102,
+        "jurisprudential_or_scholarly_merit": 1,
+        "unknownness_or_majhul_status": 79,
+        "transmission_practice": 22,
+        "other": 2,
+        "doctrinal_position": 57,
+        "not_applicable": 11,
+        "biographical_information": 1,
+        "fabrication": 5
+      },
+      "claim_content": {
+        "status_assertion": 319,
+        "unresolved": 2,
+        "accusation_of_lying": 30,
+        "general_commendation": 205,
+        "mixed_assessment": 47,
+        "superlative_commendation": 5,
+        "unknownness_assertion": 79,
+        "qualified_commendation": 20,
+        "hadith_theft_or_appropriation": 1,
+        "general_criticism": 151,
+        "biographical_fact": 3,
+        "specific_transmission_criticism": 44,
+        "not_applicable": 11,
+        "fabrication_label": 5
+      },
+      "claim_mode": {
+        "status_or_biographical_statement": 262,
+        "unresolved": 19,
+        "direct_statement": 389,
+        "reported_or_hedged_claim": 129,
+        "attributed_individual_judgement": 105,
+        "first_person_knowledge_gap": 4,
+        "specific_behavior_or_transmission_observation": 3,
+        "not_applicable": 11
+      },
+      "wording_force": {
+        "not_applicable": 263,
+        "unresolved": 3,
+        "plain_direct": 442,
+        "qualified_limited": 204,
+        "superlative": 5,
+        "emphatic": 5
+      },
+      "consensus_wording": {
+        "not_applicable": 263,
+        "unresolved": 1,
+        "collective_agreement_claimed": 2,
+        "unanimity_wording_claimed": 2,
+        "none": 625,
+        "scope_or_referents_unclear": 29
+      }
+    },
+    "train_rank_counts_and_arm4_coverage": {
+      "R1": {
+        "train_n": 275,
+        "with_arm4_passage": 268
+      },
+      "R2": {
+        "train_n": 175,
+        "with_arm4_passage": 175
+      },
+      "R3": {
+        "train_n": 1165,
+        "with_arm4_passage": 1155
+      },
+      "R4": {
+        "train_n": 792,
+        "with_arm4_passage": 773
+      },
+      "R5": {
+        "train_n": 406,
+        "with_arm4_passage": 406
+      },
+      "R6": {
+        "train_n": 66,
+        "with_arm4_passage": 64
+      },
+      "R7": {
+        "train_n": 124,
+        "with_arm4_passage": 97
+      },
+      "R8": {
+        "train_n": 218,
+        "with_arm4_passage": 215
+      },
+      "R9": {
+        "train_n": 373,
+        "with_arm4_passage": 259
+      },
+      "R10": {
+        "train_n": 65,
+        "with_arm4_passage": 64
+      },
+      "R11": {
+        "train_n": 3,
+        "with_arm4_passage": 3
+      },
+      "R12": {
+        "train_n": 12,
+        "with_arm4_passage": 12
+      }
+    }
+  },
+  "part_d_biographical_assertions_train": {
+    "train_n": 3674,
+    "r7_vs_r9_student_evidence_summary": {
+      "6": {
+        "rank": 6,
+        "train_n": 66,
+        "has_early_quote_n": 63,
+        "has_early_quote_pct": 95.5,
+        "m1_any_linked_n": 44,
+        "tahdhib_kamal_linked_n": 38,
+        "cohort_m1_edge_students_ge2_n": 26,
+        "unrestricted_m1_edge_students_ge2_n": 31,
+        "raw_bio_named_students_ge2_n": 37,
+        "raw_bio_named_students_ge2_of_linked_pct": 84.1,
+        "raw_bio_named_students_eq1_n": 6,
+        "raw_bio_named_students_0_of_linked_n": 1,
+        "median_raw_bio_students_linked": 4.0,
+        "median_raw_bio_teachers_linked": 3.0,
+        "unrestricted_sanadset_students_ge2_n": 24
+      },
+      "7": {
+        "rank": 7,
+        "train_n": 124,
+        "has_early_quote_n": 80,
+        "has_early_quote_pct": 64.5,
+        "m1_any_linked_n": 74,
+        "tahdhib_kamal_linked_n": 64,
+        "cohort_m1_edge_students_ge2_n": 17,
+        "unrestricted_m1_edge_students_ge2_n": 24,
+        "raw_bio_named_students_ge2_n": 50,
+        "raw_bio_named_students_ge2_of_linked_pct": 67.6,
+        "raw_bio_named_students_eq1_n": 24,
+        "raw_bio_named_students_0_of_linked_n": 0,
+        "median_raw_bio_students_linked": 2.0,
+        "median_raw_bio_teachers_linked": 2.0,
+        "unrestricted_sanadset_students_ge2_n": 22
+      },
+      "9": {
+        "rank": 9,
+        "train_n": 373,
+        "has_early_quote_n": 202,
+        "has_early_quote_pct": 54.2,
+        "m1_any_linked_n": 176,
+        "tahdhib_kamal_linked_n": 151,
+        "cohort_m1_edge_students_ge2_n": 19,
+        "unrestricted_m1_edge_students_ge2_n": 29,
+        "raw_bio_named_students_ge2_n": 40,
+        "raw_bio_named_students_ge2_of_linked_pct": 22.7,
+        "raw_bio_named_students_eq1_n": 123,
+        "raw_bio_named_students_0_of_linked_n": 13,
+        "median_raw_bio_students_linked": 1.0,
+        "median_raw_bio_teachers_linked": 1.0,
+        "unrestricted_sanadset_students_ge2_n": 39
+      }
+    },
+    "book_indicator_status_by_rank_r1_to_r12": {
+      "R1": {
+        "method1_tahdhib_alkamal": {
+          "ambiguous_candidate": 35,
+          "unmatched_in_book": 57,
+          "linked_unique": 183
+        },
+        "method1_jarh_tadil": {
+          "ambiguous_candidate": 33,
+          "linked_unique": 149,
+          "unmatched_in_book": 93
+        },
+        "method1_thiqat_ibn_hibban": {
+          "ambiguous_candidate": 30,
+          "linked_unique": 177,
+          "unmatched_in_book": 68
+        },
+        "method1_tarikh_kabir": {
+          "unmatched_in_book": 114,
+          "ambiguous_candidate": 26,
+          "linked_unique": 135
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 246,
+          "ambiguous_candidate": 11,
+          "linked_unique": 18
+        },
+        "method1_kamil": {
+          "unmatched_in_book": 267,
+          "ambiguous_candidate": 6,
+          "linked_unique": 2
+        }
+      },
+      "R2": {
+        "method1_tahdhib_alkamal": {
+          "linked_unique": 115,
+          "ambiguous_candidate": 36,
+          "unmatched_in_book": 24
+        },
+        "method1_jarh_tadil": {
+          "ambiguous_candidate": 64,
+          "unmatched_in_book": 23,
+          "linked_unique": 88
+        },
+        "method1_thiqat_ibn_hibban": {
+          "ambiguous_candidate": 59,
+          "linked_unique": 84,
+          "unmatched_in_book": 32
+        },
+        "method1_tarikh_kabir": {
+          "ambiguous_candidate": 50,
+          "unmatched_in_book": 56,
+          "linked_unique": 69
+        },
+        "method1_thiqat_ijli": {
+          "ambiguous_candidate": 38,
+          "unmatched_in_book": 84,
+          "linked_unique": 53
+        },
+        "method1_kamil": {
+          "ambiguous_candidate": 32,
+          "unmatched_in_book": 139,
+          "linked_unique": 4
+        }
+      },
+      "R3": {
+        "method1_tahdhib_alkamal": {
+          "ambiguous_candidate": 225,
+          "unmatched_in_book": 177,
+          "linked_unique": 763
+        },
+        "method1_jarh_tadil": {
+          "ambiguous_candidate": 295,
+          "unmatched_in_book": 238,
+          "linked_unique": 632
+        },
+        "method1_thiqat_ibn_hibban": {
+          "ambiguous_candidate": 324,
+          "linked_unique": 619,
+          "unmatched_in_book": 222
+        },
+        "method1_tarikh_kabir": {
+          "ambiguous_candidate": 268,
+          "unmatched_in_book": 377,
+          "linked_unique": 520
+        },
+        "method1_thiqat_ijli": {
+          "ambiguous_candidate": 205,
+          "unmatched_in_book": 699,
+          "linked_unique": 261
+        },
+        "method1_kamil": {
+          "unmatched_in_book": 979,
+          "ambiguous_candidate": 159,
+          "linked_unique": 27
+        }
+      },
+      "R4": {
+        "method1_tahdhib_alkamal": {
+          "linked_unique": 485,
+          "unmatched_in_book": 145,
+          "ambiguous_candidate": 162
+        },
+        "method1_jarh_tadil": {
+          "linked_unique": 385,
+          "unmatched_in_book": 174,
+          "ambiguous_candidate": 233
+        },
+        "method1_thiqat_ibn_hibban": {
+          "linked_unique": 359,
+          "unmatched_in_book": 193,
+          "ambiguous_candidate": 240
+        },
+        "method1_tarikh_kabir": {
+          "linked_unique": 302,
+          "ambiguous_candidate": 193,
+          "unmatched_in_book": 297
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 612,
+          "ambiguous_candidate": 103,
+          "linked_unique": 77
+        },
+        "method1_kamil": {
+          "linked_unique": 52,
+          "unmatched_in_book": 613,
+          "ambiguous_candidate": 127
+        }
+      },
+      "R5": {
+        "method1_tahdhib_alkamal": {
+          "linked_unique": 265,
+          "ambiguous_candidate": 78,
+          "unmatched_in_book": 63
+        },
+        "method1_jarh_tadil": {
+          "linked_unique": 211,
+          "unmatched_in_book": 67,
+          "ambiguous_candidate": 128
+        },
+        "method1_thiqat_ibn_hibban": {
+          "linked_unique": 193,
+          "unmatched_in_book": 89,
+          "ambiguous_candidate": 124
+        },
+        "method1_tarikh_kabir": {
+          "unmatched_in_book": 118,
+          "linked_unique": 181,
+          "ambiguous_candidate": 107
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 263,
+          "ambiguous_candidate": 72,
+          "linked_unique": 71
+        },
+        "method1_kamil": {
+          "unmatched_in_book": 218,
+          "linked_unique": 100,
+          "ambiguous_candidate": 88
+        }
+      },
+      "R6": {
+        "method1_tahdhib_alkamal": {
+          "linked_unique": 38,
+          "unmatched_in_book": 19,
+          "ambiguous_candidate": 9
+        },
+        "method1_jarh_tadil": {
+          "unmatched_in_book": 20,
+          "linked_unique": 31,
+          "ambiguous_candidate": 15
+        },
+        "method1_thiqat_ibn_hibban": {
+          "linked_unique": 26,
+          "unmatched_in_book": 25,
+          "ambiguous_candidate": 15
+        },
+        "method1_tarikh_kabir": {
+          "unmatched_in_book": 28,
+          "linked_unique": 24,
+          "ambiguous_candidate": 14
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 56,
+          "ambiguous_candidate": 7,
+          "linked_unique": 3
+        },
+        "method1_kamil": {
+          "unmatched_in_book": 41,
+          "linked_unique": 15,
+          "ambiguous_candidate": 10
+        }
+      },
+      "R7": {
+        "method1_tahdhib_alkamal": {
+          "linked_unique": 64,
+          "unmatched_in_book": 23,
+          "ambiguous_candidate": 37
+        },
+        "method1_jarh_tadil": {
+          "unmatched_in_book": 40,
+          "linked_unique": 42,
+          "ambiguous_candidate": 42
+        },
+        "method1_thiqat_ibn_hibban": {
+          "linked_unique": 30,
+          "unmatched_in_book": 57,
+          "ambiguous_candidate": 37
+        },
+        "method1_tarikh_kabir": {
+          "unmatched_in_book": 61,
+          "linked_unique": 30,
+          "ambiguous_candidate": 33
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 106,
+          "ambiguous_candidate": 17,
+          "linked_unique": 1
+        },
+        "method1_kamil": {
+          "unmatched_in_book": 102,
+          "ambiguous_candidate": 20,
+          "linked_unique": 2
+        }
+      },
+      "R8": {
+        "method1_tahdhib_alkamal": {
+          "ambiguous_candidate": 58,
+          "linked_unique": 126,
+          "unmatched_in_book": 34
+        },
+        "method1_jarh_tadil": {
+          "ambiguous_candidate": 67,
+          "unmatched_in_book": 38,
+          "linked_unique": 113
+        },
+        "method1_thiqat_ibn_hibban": {
+          "ambiguous_candidate": 66,
+          "unmatched_in_book": 104,
+          "linked_unique": 48
+        },
+        "method1_tarikh_kabir": {
+          "ambiguous_candidate": 60,
+          "linked_unique": 88,
+          "unmatched_in_book": 70
+        },
+        "method1_thiqat_ijli": {
+          "ambiguous_candidate": 36,
+          "unmatched_in_book": 163,
+          "linked_unique": 19
+        },
+        "method1_kamil": {
+          "ambiguous_candidate": 57,
+          "unmatched_in_book": 70,
+          "linked_unique": 91
+        }
+      },
+      "R9": {
+        "method1_tahdhib_alkamal": {
+          "linked_unique": 151,
+          "ambiguous_candidate": 97,
+          "unmatched_in_book": 125
+        },
+        "method1_jarh_tadil": {
+          "unmatched_in_book": 172,
+          "ambiguous_candidate": 118,
+          "linked_unique": 83
+        },
+        "method1_thiqat_ibn_hibban": {
+          "unmatched_in_book": 209,
+          "ambiguous_candidate": 99,
+          "linked_unique": 65
+        },
+        "method1_tarikh_kabir": {
+          "unmatched_in_book": 220,
+          "ambiguous_candidate": 88,
+          "linked_unique": 65
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 317,
+          "ambiguous_candidate": 50,
+          "linked_unique": 6
+        },
+        "method1_kamil": {
+          "unmatched_in_book": 310,
+          "ambiguous_candidate": 50,
+          "linked_unique": 13
+        }
+      },
+      "R10": {
+        "method1_tahdhib_alkamal": {
+          "ambiguous_candidate": 17,
+          "linked_unique": 35,
+          "unmatched_in_book": 13
+        },
+        "method1_jarh_tadil": {
+          "ambiguous_candidate": 23,
+          "unmatched_in_book": 11,
+          "linked_unique": 31
+        },
+        "method1_thiqat_ibn_hibban": {
+          "ambiguous_candidate": 23,
+          "unmatched_in_book": 31,
+          "linked_unique": 11
+        },
+        "method1_tarikh_kabir": {
+          "ambiguous_candidate": 19,
+          "unmatched_in_book": 20,
+          "linked_unique": 26
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 50,
+          "ambiguous_candidate": 10,
+          "linked_unique": 5
+        },
+        "method1_kamil": {
+          "ambiguous_candidate": 23,
+          "linked_unique": 31,
+          "unmatched_in_book": 11
+        }
+      },
+      "R11": {
+        "method1_tahdhib_alkamal": {
+          "linked_unique": 2,
+          "unmatched_in_book": 1
+        },
+        "method1_jarh_tadil": {
+          "linked_unique": 2,
+          "ambiguous_candidate": 1
+        },
+        "method1_thiqat_ibn_hibban": {
+          "ambiguous_candidate": 2,
+          "linked_unique": 1
+        },
+        "method1_tarikh_kabir": {
+          "linked_unique": 1,
+          "unmatched_in_book": 2
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 3
+        },
+        "method1_kamil": {
+          "linked_unique": 2,
+          "ambiguous_candidate": 1
+        }
+      },
+      "R12": {
+        "method1_tahdhib_alkamal": {
+          "unmatched_in_book": 2,
+          "ambiguous_candidate": 6,
+          "linked_unique": 4
+        },
+        "method1_jarh_tadil": {
+          "unmatched_in_book": 3,
+          "ambiguous_candidate": 6,
+          "linked_unique": 3
+        },
+        "method1_thiqat_ibn_hibban": {
+          "unmatched_in_book": 6,
+          "ambiguous_candidate": 4,
+          "linked_unique": 2
+        },
+        "method1_tarikh_kabir": {
+          "unmatched_in_book": 4,
+          "ambiguous_candidate": 6,
+          "linked_unique": 2
+        },
+        "method1_thiqat_ijli": {
+          "unmatched_in_book": 7,
+          "ambiguous_candidate": 4,
+          "linked_unique": 1
+        },
+        "method1_kamil": {
+          "unmatched_in_book": 4,
+          "ambiguous_candidate": 5,
+          "linked_unique": 3
+        }
+      }
+    },
+    "shamela_summary_key_examples": {
+      "الكنية": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "أبو الحسن",
+          "exact_in_taqrib": false,
+          "exact_in_m1": true,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P758-C005-E8756",
+          "value": "أم قيس",
+          "exact_in_taqrib": true,
+          "exact_in_m1": true,
+          "taqrib_tail": "٨٧٥٦- أم قيس بنت محصن الأسدية أخت عكاشة يقال إن اسمها آمنة صحابية مشهورة لها أحاديث ع"
+        }
+      ],
+      "النسب": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "العسقلاني، الخرساني الأصل، المروذي، التيمى مولاهم",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P086-C016-E0133",
+          "value": "القرشي مولاهم، الكوفي",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "١٣٣- آدم ابن سليمان القرشي الكوفي والد يحيى صدوق من السابعة م ت س"
+        }
+      ],
+      "بلد الإقامة": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "عسقلان، بغداد",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P758-C005-E8756",
+          "value": "مكة",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "٨٧٥٦- أم قيس بنت محصن الأسدية أخت عكاشة يقال إن اسمها آمنة صحابية مشهورة لها أحاديث ع"
+        }
+      ],
+      "علاقات الراوي": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "مولى بني تميم أو تيم، ابنه عبيد",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P086-C016-E0133",
+          "value": "والد يحيى، مولى خالد بن خالد بن عقبة بن أبي معيط",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "١٣٣- آدم ابن سليمان القرشي الكوفي والد يحيى صدوق من السابعة م ت س"
+        }
+      ],
+      "تاريخ الوفاة": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "220 هـ، وقيل: 221 هـ",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P086-C016-E0133",
+          "value": "131 هـ: 140 هـ",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "١٣٣- آدم ابن سليمان القرشي الكوفي والد يحيى صدوق من السابعة م ت س"
+        }
+      ],
+      "بلد الوفاة": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "عسقلان",
+          "exact_in_taqrib": true,
+          "exact_in_m1": true,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P087-C007-E0141",
+          "value": "المدينة",
+          "exact_in_taqrib": false,
+          "exact_in_m1": true,
+          "taqrib_tail": "ان ابن عثمان ابن عفان الأموي أبو سعيد وقيل أبو عبد الله مدني ثقة من الثالثة مات سنة خمس ومائة بخ م ٤"
+        }
+      ],
+      "بلد الرحلة": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "الكوفة, والبصرة, والحجاز, ومصر, والشام",
+          "exact_in_taqrib": false,
+          "exact_in_m1": true,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P758-C005-E8756",
+          "value": "المدينة",
+          "exact_in_taqrib": false,
+          "exact_in_m1": true,
+          "taqrib_tail": "٨٧٥٦- أم قيس بنت محصن الأسدية أخت عكاشة يقال إن اسمها آمنة صحابية مشهورة لها أحاديث ع"
+        }
+      ],
+      "طبقة رواة التقريب": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "التاسعة",
+          "exact_in_taqrib": true,
+          "exact_in_m1": false,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P086-C016-E0133",
+          "value": "السابعة",
+          "exact_in_taqrib": true,
+          "exact_in_m1": false,
+          "taqrib_tail": "١٣٣- آدم ابن سليمان القرشي الكوفي والد يحيى صدوق من السابعة م ت س"
+        }
+      ],
+      "الرتبة عند ابن حجر": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "ثقة عابد",
+          "exact_in_taqrib": true,
+          "exact_in_m1": false,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P086-C016-E0133",
+          "value": "صدوق",
+          "exact_in_taqrib": true,
+          "exact_in_m1": false,
+          "taqrib_tail": "١٣٣- آدم ابن سليمان القرشي الكوفي والد يحيى صدوق من السابعة م ت س"
+        }
+      ],
+      "الرتبة عند الذهبي": [
+        {
+          "entry_id": "S3076-P086-C015-E0132",
+          "value": "قال أبو حاتم: ثقة مأمون متعبد من خيار عباد الله",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": " العسقلاني أصله خراساني يكنى أبا الحسن نشأ ببغداد ثقة عابد من التاسعة مات سنة إحدى وعشرين خ خد ت س ق"
+        },
+        {
+          "entry_id": "S3076-P086-C017-E0134",
+          "value": "ثقة",
+          "exact_in_taqrib": false,
+          "exact_in_m1": true,
+          "taqrib_tail": "١٣٤- آدم ابن علي العجلي الشيباني صدوق من الثالثة خ س"
+        }
+      ],
+      "اللقب": [
+        {
+          "entry_id": "S3076-P088-C006-E0153",
+          "value": "البراد",
+          "exact_in_taqrib": true,
+          "exact_in_m1": true,
+          "taqrib_tail": "١٥٣- إبراهيم ابن أبي أسيد بفتح الهمزة البراد المدني صدوق من السابعة د"
+        },
+        {
+          "entry_id": "S3076-P089-C010-E0172",
+          "value": "أبو ثور",
+          "exact_in_taqrib": true,
+          "exact_in_m1": true,
+          "taqrib_tail": "إبراهيم ابن خالد ابن أبي اليمان الكلبي أبو ثور الفقيه صاحب الشافعي ثقة من العاشرة مات سنة أربعين د ق"
+        }
+      ],
+      "الشهرة": [
+        {
+          "entry_id": "S3076-P090-C013-E0191",
+          "value": "السامري",
+          "exact_in_taqrib": true,
+          "exact_in_m1": true,
+          "taqrib_tail": "١٩١- إبراهيم ابن أبي العباس السامري بفتح الميم وتشديد الراء ثقة تغير بأخرة فلم يحدث من العاشرة س"
+        },
+        {
+          "entry_id": "S3076-P089-C001-E0164",
+          "value": "المقسمي",
+          "exact_in_taqrib": true,
+          "exact_in_m1": false,
+          "taqrib_tail": "١٦٤- إبراهيم ابن الحسن ابن الهيثم الخثعمي أبو إسحاق المصيصي المقسمي ثقة من الحادية عشرة د س"
+        }
+      ],
+      "بلد الميلاد": [
+        {
+          "entry_id": "S3076-P087-C012-E0144",
+          "value": "مكة",
+          "exact_in_taqrib": false,
+          "exact_in_m1": true,
+          "taqrib_tail": "أدهم ابن منصور العجلي وقيل التميمي أبو إسحاق البلخي الزاهد صدوق من الثامنة مات سنة اثنتين وستين بخ ت"
+        },
+        {
+          "entry_id": "S3076-P088-C014-E0159",
+          "value": "الموصل",
+          "exact_in_taqrib": false,
+          "exact_in_m1": true,
+          "taqrib_tail": "م ابن الحارث ابن إسماعيل البغدادي أبو إسحاق نزيل نيسابور صدوق من الحادية عشرة مات سنة خمس وستين خ كد"
+        }
+      ],
+      "المذهب العقدي": [
+        {
+          "entry_id": "S3076-P087-C013-E0145",
+          "value": "مرجئ",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "ون مولاهم أبو إسحاق الطالقاني نزيل مرو وربما نسب إلى جده صدوق يغرب من التاسعة مات سنة خمس عشرة م د ت"
+        },
+        {
+          "entry_id": "S3076-P089-C010-E0172",
+          "value": "كان أولا يتفقه بالرأي، ويذهب إلى قول أهل العراق، ورجع عن الرأي إلى الحديث",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "إبراهيم ابن خالد ابن أبي اليمان الكلبي أبو ثور الفقيه صاحب الشافعي ثقة من العاشرة مات سنة أربعين د ق"
+        }
+      ],
+      "تاريخ الميلاد": [
+        {
+          "entry_id": "S3076-P092-C002-E0214",
+          "value": "قيل: إنه ولد في عهد النبي صلى الله عليه وسلم",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "٤- إبراهيم ابن عبيد ابن رفاعة ابن رافع ابن مالك ابن العجلان الزرقي الأنصاري المدني صدوق من الرابعة م"
+        },
+        {
+          "entry_id": "S3076-P093-C006-E0237",
+          "value": "36 هـ",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": " ابن عبيد الله ابن معمر التيمي المعمري أبو إسحاق البصري قاضيها ثقة من الحادية عشرة مات سنة خمسين د س"
+        }
+      ],
+      "تاريخ الرحلة": [
+        {
+          "entry_id": "S3076-P095-C009-E0273",
+          "value": "245هـ",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "ني بضم الجيم الأولى وزاي وجيم نزيل دمشق ثقة حافظ رمي بالنصب من الحادية عشرة مات سنة تسع وخمسين د ت س"
+        },
+        {
+          "entry_id": "S3076-P079-C015-E0037",
+          "value": "في أيام أحمد بن حنبل",
+          "exact_in_taqrib": false,
+          "exact_in_m1": false,
+          "taqrib_tail": "بن إبراهيم الرباطي المروزي أبو عبد الله الأشقر ثقة حافظ من الحادية عشرة مات سنة ست وأربعين خ م د ت س"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "package_id": "v2_gold50_and_atomic_esa_v0_2_2026-11-19",
+  "generated_at_utc": "2026-11-19T02:29:12.330369+00:00",
+  "counts": {
+    "gold_50_total": 50,
+    "gold_50_taqrib_entries": 49,
+    "gold_50_adjudication_queue": 13,
+    "gold_50_v1_3_assigned": 32,
+    "gold_50_v1_4_assigned": 47,
+    "gold_50_atomic_units": 8278,
+    "gold_50_weight_eligible_units": 3558,
+    "pilot_narrators": 120,
+    "pilot_irr_narrators": 60,
+    "pilot_atomic_units": 826
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_shadow_run_v1_2026-11-15/ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_a_deterministic_targets_v1_3_2026-11-17/TASK_A_DETERMINISTIC_TARGETS_8827_V1_3.csv": "108927d41aed3cd22f480e97e9cd132110ed8dd32c1b76d067b5af128d69d0c8",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_a_deterministic_targets_v1_4_2026-11-19/TASK_A_DETERMINISTIC_TARGETS_8827_V1_4.csv": "58e49a108fdf9ba7752d9f776359b130c276d4b6def8a463829ebe061663410f",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_3_2026-11-17/TASK_B_NARRATOR_LINKAGE_AND_ELIGIBILITY_8827_V0_3.csv": "83a0c81dbe2235301128b42eab226844c1d4616dc1390cc4ed1225f6b8dfa4aa",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_graph_and_splits_v0_1_2026-11-17/TASK_B_SPLITS_ELIGIBLE_NARRATORS_V0_1.csv": "a1d49d9e408d1fdfa5968bfe54b5347be3c8f23563eed10b911fdd265792ce80",
+    "dataset_discovery/target_feasibility/build_v2_gold50_and_atomic_esa_phase1.py": "7c8ce9476468b276afb9c62797adc019f1484867a42e0eda7faa29a7d9051a13"
+  },
+  "outputs": {
+    "GOLD_50_RECONCILED_VALIDATION_SET_V2_0.csv": "8800dac54daa98520214d07a0866364d088dd3a3adb797e85c96fd2558818c96",
+    "GOLD_50_ATOMIC_STAGE2_CLAIMS_V2_0.csv": "adbc963e944123324f7ac905adfe08cf59fa2e43f57baf8b0c7df7493c537a1d",
+    "GOLD_50_ADJUDICATION_QUEUE_V2_0.csv": "05b32c419582fc5fc3f171b717eafdf1fa8f44f25acec5ec61cee70b9e2ee29f",
+    "TRAIN_120_STRATIFIED_ESA_PILOT_WORKSHEET_V2_0.csv": "d8d8908d083c16890d733e31698c070b5c46d1fc2d1fe329a8e945229ec6cf64",
+    "GOLD_50_RECONCILIATION_REPORT_V2_0.md": "47ac4d70c0c1678f19c42c8bae01f40637a372a3ad26eecb2e4a00cc7f9dfbcd"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}

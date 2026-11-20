@@ -1,0 +1,30 @@
+{
+  "package_id": "v2_gold50_and_atomic_esa_v0_1_2026-11-19",
+  "generated_at_utc": "2026-11-19T02:22:07.510843+00:00",
+  "counts": {
+    "gold_50_total": 50,
+    "gold_50_taqrib_entries": 49,
+    "gold_50_v1_3_assigned": 32,
+    "gold_50_v1_4_assigned": 47,
+    "gold_50_atomic_units": 8983,
+    "gold_50_weight_eligible_units": 3743,
+    "pilot_narrators": 120,
+    "pilot_irr_narrators": 60,
+    "pilot_atomic_units": 895
+  },
+  "inputs": {
+    "data/2_interim/rijal_fyp_modelling_pipeline/rank_label_shadow_run_v1_2026-11-15/ENTRY_INDEX.csv": "d88432abbfc185c022a7b4c8b8294a8b6a6420db57e14eaa7e5c3092c9e6b4a0",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_a_deterministic_targets_v1_3_2026-11-17/TASK_A_DETERMINISTIC_TARGETS_8827_V1_3.csv": "108927d41aed3cd22f480e97e9cd132110ed8dd32c1b76d067b5af128d69d0c8",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_a_deterministic_targets_v1_4_2026-11-19/TASK_A_DETERMINISTIC_TARGETS_8827_V1_4.csv": "58e49a108fdf9ba7752d9f776359b130c276d4b6def8a463829ebe061663410f",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_historical_inputs_v0_3_2026-11-17/TASK_B_NARRATOR_LINKAGE_AND_ELIGIBILITY_8827_V0_3.csv": "83a0c81dbe2235301128b42eab226844c1d4616dc1390cc4ed1225f6b8dfa4aa",
+    "data/2_interim/rijal_fyp_modelling_pipeline/task_b_graph_and_splits_v0_1_2026-11-17/TASK_B_SPLITS_ELIGIBLE_NARRATORS_V0_1.csv": "a1d49d9e408d1fdfa5968bfe54b5347be3c8f23563eed10b911fdd265792ce80",
+    "dataset_discovery/target_feasibility/build_v2_gold50_and_atomic_esa_phase1.py": "b16fd91ad06cddf4f92844d550c8c09b2d4441679bfbfa9ebf0fcc7037451f3a"
+  },
+  "outputs": {
+    "GOLD_50_RECONCILED_VALIDATION_SET_V2_0.csv": "c53face907845b0003e41553022d62a05bf99a97098fa910efd5e7eb82de69d7",
+    "GOLD_50_ATOMIC_STAGE2_CLAIMS_V2_0.csv": "f28276bde2b9784c5348bb811b65ef89fa409cea10fec741df23a22576ed51e1",
+    "TRAIN_120_STRATIFIED_ESA_PILOT_WORKSHEET_V2_0.csv": "2a207038daf076250741daece5d113586c89fc980ba6dc2024d40b6fcbbe34e4",
+    "GOLD_50_RECONCILIATION_REPORT_V2_0.md": "43e4c6d88bdaf71a4e443dcc216b2e1aeecfc6ff94a4176727335e3fec661b5e"
+  },
+  "manifest_hash_policy": "MANIFEST.sha256 records this manifest hash separately; it is not recursively embedded."
+}
