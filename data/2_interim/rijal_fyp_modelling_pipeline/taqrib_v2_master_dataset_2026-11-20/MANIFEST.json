@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-20T06:43:02.817412+00:00",
+  "generated_utc": "2026-11-20T06:51:15.808644+00:00",
   "script": "dataset_discovery/target_feasibility/build_taqrib_v2_master_dataset_and_splits.py",
   "total_nodes": 8827,
   "core_cohort": 7258,
@@ -15,19 +15,19 @@
     "unchanged": 4498,
     "downgraded": 1639
   },
-  "tabaqa_covered": 8442,
-  "sigil_covered": 8638,
+  "tabaqa_covered": 8544,
+  "sigil_covered": 8705,
   "files": {
     "TAQRIB_V2_MASTER_NODES_8827.csv": {
-      "sha256": "0180bbed376afcb9930e17ed8e3e2df374680bfabf8bbb7afdc0f61d5a7568c3",
-      "bytes": 3962737
+      "sha256": "70ae7fc56795b70997c1640db8fd26e0c1b1faf53bdd2af30b3d64ab1b60b3fd",
+      "bytes": 3963911
     },
     "TAQRIB_V2_GRAPH_EDGES.csv": {
       "sha256": "7e4b0511223e0d47fec9fc9e0ab4b94f1fd46345d33794ef4f9e1d748eed38a0",
       "bytes": 4932703
     },
     "TAQRIB_V2_MASTER_REPORT.md": {
-      "sha256": "6bc248b15cf64f77e6da89cb906612738b7be4674718d3b509292e910e0197ef",
+      "sha256": "0a11e0a1978dfd7c95cebfc2c050c992fe74de45f70f45dabde4eaf125b7c472",
       "bytes": 1828
     }
   }

@@ -66,6 +66,7 @@ SIGIL_VOCAB = {
     "بخ", "خت", "عخ", "تخ", "مد", "دس", "دت", "مدت",
     "قد", "فق", "ل", "ز", "سي", "كن", "ص", "عس",
     "سق", "مق", "ر", "ي", "تمييز",
+    "خد", "كد", "صد", "تم",
 }
 
 QUAL_PATTERNS = {
@@ -98,7 +99,7 @@ def extract_tabaqa(text: str) -> tuple[str, str]:
         m2 = TABAQA_FALLBACK_RE.search(s)
         if m2:
             tab_num = str(ORDINAL_TO_INT[m2.group(1)])
-        elif ("صحابي" in s or "صحابية" in s) and "لا صحبة" not in s and "لا تصح" not in s:
+        elif ("صحابي" in s or "صحابية" in s or "صحبة" in s) and "لا صحبة" not in s and "لا تصح" not in s:
             tab_num = "1"
 
     subtier = "unspecified"
@@ -330,6 +331,8 @@ def main() -> None:
         post_tab_spans = v14.get("post_tabaqa_context_spans", "")
 
         tab_num, tab_subtier = extract_tabaqa(txt)
+        if not tab_num and r["taqrib_rank_bilgin_1_to_12"] == "1":
+            tab_num = "1"
         if tab_num:
             tabaqa_covered += 1
         sig = extract_sigils(txt)

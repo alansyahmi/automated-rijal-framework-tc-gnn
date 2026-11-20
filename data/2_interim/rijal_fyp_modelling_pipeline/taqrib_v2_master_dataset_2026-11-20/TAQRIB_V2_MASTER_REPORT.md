@@ -1,6 +1,6 @@
 # Taqrīb v2 Master Feature + Graph Dataset Report (Stage 1)
 
-- **Generated (UTC):** 2026-11-20 06:43:02Z
+- **Generated (UTC):** 2026-11-20 06:51:15Z
 - **Total Taqrīb entries (`TAQRIB_V2_MASTER_NODES_8827.csv`):** 8827
 - **Core supervised cohort (`in_core_cohort_7258 == 1`):** 7258
 - **Total directed edges (`TAQRIB_V2_GRAPH_EDGES.csv`):** 59864
@@ -13,8 +13,8 @@
 - All graph neighbor baseline aggregations (`nbr_out_*`, `nbr_in_*`) use **only Score 1 (`taqrib_rank_bilgin_1_to_12`)**, which precedes *Taḥrīr* (`1417 AH`) — zero Score 2 (`tahrir_rank`) leakage.
 
 ## 2. Feature & Graph Coverage
-- ***Ṭabaqah* extracted (`tabaqa_1_to_12`):** 8442 / 8827 (95.64%)
-- **Canonical sigils extracted (`sigil_tokens_raw`):** 8638 / 8827 (97.86%)
+- ***Ṭabaqah* extracted (`tabaqa_1_to_12`):** 8544 / 8827 (96.79%)
+- **Canonical sigils extracted (`sigil_tokens_raw`):** 8705 / 8827 (98.62%)
 - **Core 7,258 non-isolated in consolidated graph:** 5101 / 7258 (70.28%)
 - **Core 7,258 connected via pure Sanad/Bukhari edges:** 4776 / 7258 (65.80%)
 
