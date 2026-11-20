@@ -1,0 +1,51 @@
+﻿gold_id,group_profile,english_name,entry_id,matched_in_taqrib,split,score1_ibn_hajar_rank,tahrir_scholar_rank,tahrir_disposition,score2_tc_gnn_continuous,score2_tc_gnn_rank,score2_predicted_shift,score2_rank_entropy,tc_sanad_out_degree,tc_sanad_in_degree
+29,1_highly_reliable,Isma'il ibn Ulayyah,S3076-P105-C011-E0416,True,train,2,2,agreed_no_bullet,2.1326,2,unchanged,0.1349,16,19
+6,1_highly_reliable,Abd al-Rahman ibn Mahdi,S3076-P351-C006-E4018,True,test,2,2,agreed_no_bullet,2.1332,2,unchanged,0.134,83,150
+8,1_highly_reliable,al-Layth ibn Sa'd,S3076-P464-C009-E5684,True,train,2,2,agreed_no_bullet,2.1366,2,unchanged,0.1332,103,122
+23,1_highly_reliable,Hammad ibn Zayd,S3076-P178-C007-E1498,True,test,2,2,agreed_no_bullet,2.14,2,unchanged,0.139,150,160
+25,1_highly_reliable,al-Fadl ibn Dukayn,S3076-P446-C001-E5401,True,train,2,2,agreed_no_bullet,2.143,2,unchanged,0.1383,26,135
+22,1_highly_reliable,Waki' ibn al-Jarrah,S3076-P581-C007-E7414,True,val,2,2,agreed_no_bullet,2.1435,2,unchanged,0.1437,49,70
+26,1_highly_reliable,Abd Allah ibn Wahb,S3076-P328-C015-E3694,True,train,2,2,agreed_no_bullet,2.1447,2,unchanged,0.1443,23,52
+3,1_highly_reliable,Sufyan al-Thawri,S3076-P244-C011-E2445,True,val,2,2,agreed_no_bullet,2.1447,2,unchanged,0.1423,58,108
+2,1_highly_reliable,Shu'bah ibn al-Hajjaj,S3076-P266-C013-E2790,True,test,2,2,agreed_no_bullet,2.1459,2,unchanged,0.1424,84,136
+5,1_highly_reliable,Yahya ibn Sa'id al-Qattan,S3076-P591-C002-E7557,True,train,2,2,agreed_no_bullet,2.1483,2,unchanged,0.1477,15,39
+1,1_highly_reliable,Malik ibn Anas,S3076-P516-C004-E6425,True,train,2,2,agreed_no_bullet,2.1493,2,unchanged,0.141,161,136
+7,1_highly_reliable,al-Awza'i,S3076-P347-C016-E3967,True,train,2,2,agreed_no_bullet,2.1493,2,unchanged,0.1602,15,15
+28,1_highly_reliable,Jarir ibn Abd al-Hamid,S3076-P139-C002-E0916,True,train,2,2,qualification_qawluhu,2.1498,2,unchanged,0.1553,57,41
+21,1_highly_reliable,Abd Allah ibn al-Mubarak,S3076-P320-C005-E3570,True,train,2,2,agreed_no_bullet,2.1517,2,unchanged,0.1442,65,127
+30,1_highly_reliable,Abu Dawud al-Tayalisi,S3076-P250-C019-E2550,True,val,2,2,qualification_qawluhu,2.1557,2,unchanged,0.1564,47,110
+27,1_highly_reliable,Yazid ibn Harun,S3076-P606-C001-E7789,True,train,2,2,agreed_no_bullet,2.1587,2,unchanged,0.1538,157,262
+4,1_highly_reliable,Sufyan ibn Uyaynah,S3076-P245-C001-E2451,True,train,2,2,qualification_qawluhu,2.1835,2,unchanged,0.1609,229,228
+24,1_highly_reliable,Hammad ibn Salamah,S3076-P178-C008-E1499,True,test,2,2,other_commentary,2.2235,2,unchanged,0.2028,182,169
+35,2_nuanced_mixed,Ikrimah mawla Ibn Abbas,S3076-P397-C001-E4673,True,val,2,2,agreed_no_bullet,2.1181,2,unchanged,0.1555,23,4
+32,2_nuanced_mixed,Nafi' mawla Ibn Umar,S3076-P559-C003-E7086,True,test,2,2,agreed_no_bullet,2.1273,2,unchanged,0.1443,36,13
+13,2_nuanced_mixed,Qatadah ibn Di'amah,S3076-P453-C014-E5518,True,train,2,2,other_commentary,2.1346,2,unchanged,0.1383,23,27
+33,2_nuanced_mixed,Amr ibn Dinar,S3076-P421-C004-E5024,True,train,2,2,agreed_no_bullet,2.1358,2,unchanged,0.1396,16,27
+31,2_nuanced_mixed,Muhammad ibn Shihab al-Zuhri,S3076-P506-C020-E6296,True,val,2,2,agreed_no_bullet,2.1539,2,unchanged,0.1533,36,62
+12,2_nuanced_mixed,al-A'mash,S3076-P254-C018-E2615,True,val,2,4,dissent_bal,2.1649,2,unchanged,0.1604,38,32
+34,2_nuanced_mixed,Yahya ibn Abi Kathir,S3076-P596-C001-E7632,True,test,2,2,other_commentary,2.2003,2,unchanged,0.193,85,104
+14,2_nuanced_mixed,Hisham ibn Urwah,S3076-P573-C007-E7302,True,train,3,3,qualification_qawluhu,3.0251,3,unchanged,0.1735,277,73
+37,2_nuanced_mixed,Tawus ibn Kaysan,S3076-P281-C015-E3009,True,test,3,3,agreed_no_bullet,3.0268,3,unchanged,0.1151,0,0
+38,2_nuanced_mixed,Mujahid ibn Jabr,S3076-P520-C006-E6481,True,test,3,3,agreed_no_bullet,3.0324,3,unchanged,0.1335,30,10
+39,2_nuanced_mixed,Sufyan ibn Husayn,S3076-P244-C002-E2437,True,train,3,3,agreed_no_bullet,3.0438,3,unchanged,0.0894,15,17
+10,2_nuanced_mixed,Abu Ishaq al-Sabi'i,S3076-P423-C018-E5065,True,train,3,3,qualification_qawluhu,3.0526,3,unchanged,0.1743,9,21
+36,2_nuanced_mixed,Ata ibn Abi Rabah,S3076-P391-C008-E4591,True,train,3,3,other_commentary,3.0745,3,unchanged,0.1945,172,41
+9,2_nuanced_mixed,Muhammad ibn Ishaq,S3076-P467-C014-E5725,True,train,4,3,dissent_bal,3.654,4,upgraded,0.4358,4,59
+11,2_nuanced_mixed,Ata ibn al-Sa'ib,S3076-P391-C009-E4592,True,train,4,3,dissent_bal,3.9033,4,upgraded,0.5055,85,62
+15,2_nuanced_mixed,Abd Allah ibn Lahi'ah,S3076-P319-C013-E3563,True,train,4,7,dissent_bal,3.9739,4,upgraded,0.5228,88,128
+40,2_nuanced_mixed,Isma'il ibn Ayyash,S3076-P109-C008-E0473,True,train,4,4,agreed_no_bullet,4.2973,4,upgraded,0.5904,108,125
+17,3_criticised_weaker,al-Harith al-A'war,S3076-P146-C012-E1029,True,excluded_unranked,,,agreed_no_bullet,3.5806,4,unchanged,0.6763,15,5
+19,3_criticised_weaker,Layth ibn Abi Sulaym,S3076-P464-C010-E5685,True,val,4,4,agreed_no_bullet,3.9723,4,upgraded,0.548,0,0
+50,3_criticised_weaker,Hisham ibn Sa'd,S3076-P572-C015-E7294,True,train,5,7,dissent_bal,4.5964,5,upgraded,0.6516,46,44
+20,3_criticised_weaker,al-Hajjaj ibn Artah,S3076-P152-C015-E1119,True,train,5,4,dissent_bal,5.1762,5,upgraded,0.7257,26,30
+41,3_criticised_weaker,Muhammad ibn Abd al-Rahman ibn Abi Layla,S3076-P493-C002-E6081,True,train,5,7,dissent_bal,6.6643,7,downgraded,0.6886,25,13
+43,3_criticised_weaker,Abu Bakr ibn Abi Maryam,S3076-P623-C010-E7974,True,val,8,8,agreed_no_bullet,7.8857,8,unchanged,0.2191,0,0
+42,3_criticised_weaker,Isma'il ibn Muslim al-Makki,S3076-P110-C004-E0484,True,train,8,8,agreed_no_bullet,7.9208,8,unchanged,0.2228,0,0
+46,3_criticised_weaker,Salih ibn Bashir al-Murri,S3076-P271-C007-E2845,True,train,8,8,agreed_no_bullet,7.9373,8,unchanged,0.211,1,0
+18,3_criticised_weaker,Abd al-Rahman ibn Zayd ibn Aslam,S3076-P340-C014-E3865,True,train,8,8,agreed_no_bullet,7.9441,8,unchanged,0.2164,34,10
+16,3_criticised_weaker,Jabir ibn Yazid al-Ju'fi,S3076-P137-C002-E0878,True,test,8,8,agreed_no_bullet,7.9565,8,unchanged,0.2265,0,0
+48,3_criticised_weaker,Muqatil ibn Sulayman,S3076-P545-C001-E6868,True,excluded_unranked,,,agreed_no_bullet,8.2315,8,unchanged,0.8566,6,11
+47,3_criticised_weaker,Muhammad ibn al-Sa'ib al-Kalbi,S3076-P479-C017-E5901,True,test,11,11,agreed_no_bullet,8.3714,8,unchanged,0.8099,4,2
+45,3_criticised_weaker,Umar ibn Harun al-Balkhi,S3076-P417-C018-E4979,True,train,10,10,agreed_no_bullet,9.5591,10,unchanged,0.3289,2,3
+44,3_criticised_weaker,Abd Allah ibn Muharrar,S3076-P320-C008-E3573,True,train,10,10,agreed_no_bullet,9.6139,10,unchanged,0.3078,11,5
+49,3_criticised_weaker,Amr ibn Shimr al-Ju'fi,EXTERNAL-SH12587,False,unmatched,,,,,,,,,
