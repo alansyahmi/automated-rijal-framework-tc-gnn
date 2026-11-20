@@ -42,11 +42,21 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def map_tahrir_verdict_to_rank(verdict_lead: str, full_commentary: str) -> tuple[str, str]:
+def map_tahrir_verdict_to_rank(
+    verdict_lead: str, full_commentary: str, entry_id: str = ""
+) -> tuple[str, str]:
     """Map Taḥrīr's `• بل:` verdict lead to Bilgin (2026) 1–12 rank + rule_id."""
     v = DIACRITICS_RE.sub("", verdict_lead).strip()
     if not v:
         return "", "TAHRIR-EMPTY-LEAD"
+
+    # Guarded Shamela 8246 OCR typos (gated by exact entry_id + exact normalized lead)
+    if entry_id == "S3076-P438-C002-E5284" and v == "ورقة":
+        return "3", "TAHRIR-R3-OCR-TYPO-WARAQAH"
+    if entry_id == "S3076-P466-C002-E5699" and v == "قوله":
+        return "9", "TAHRIR-R9-OCR-TYPO-QAWLUHU"
+    if entry_id == "S3076-P524-C010-E6546" and v == "جهول":
+        return "9", "TAHRIR-R9-OCR-TYPO-JAHUL"
 
     # Rank 12: Kadhdhab / Wadda'
     if re.search(r"كذاب|كذبوه|وضاع|يضع\s+الحديث", v):
@@ -60,20 +70,27 @@ def map_tahrir_verdict_to_rank(verdict_lead: str, full_commentary: str) -> tuple
     if re.search(r"متروك|ضعيف\s+جدا|واه\b|واهي|ساقط|ذاهب\s+الحديث", v):
         return "10", "TAHRIR-R10-MATRUK-OR-JIDDAN"
 
-    # Rank 9: Majhul (excluding majhul al-hal which is Rank 7)
-    if re.search(r"مجهول(?:ة)?(?:\s+العين)?$", v) or re.search(r"لا\s+يعرف\b|لا\s+تعرف\b", v):
-        return "9", "TAHRIR-R9-MAJHUL"
-
-    # Rank 7: Da'if yu'tabaru bih / Mastur / Majhul al-hal / Layyin (per Tahrir intro & Bilgin Table 4)
-    if re.search(r"ضعيف\s+يعتبر\s+به|مستور|مجهول[ة]?\s+الحال|لين\s+الحديث|فيه\s+لين", v):
+    # Rank 7: Da'if yu'tabaru bih / Mastur / Majhul al-hal / Layyin (checked BEFORE Rank 9 so مجهول الحال is never swallowed)
+    if re.search(
+        r"ضعيف\s+يعتبر\s+به|مستور|مجهول[ة]?\s+الحال|لين\s+الحديث|فيه\s+لين|يكتب\s+حديثه\s+مع\s+ضعفه",
+        v,
+    ):
         return "7", "TAHRIR-R7-YUTABAR-OR-MASTUR"
+
+    # Rank 9: Majhul (excluding majhul al-hal)
+    if re.search(r"^(?:هو\s+|هي\s+)?مجهول(?:ة)?(?:\s+العين|\s+كسابقه)?(?=$|[:,،])", v) or re.search(
+        r"لا\s+يعرف\b|لا\s+تعرف\b", v
+    ):
+        return "9", "TAHRIR-R9-MAJHUL"
 
     # Rank 8: Da'if (unqualified / without yu'tabaru bih or jiddan)
     if re.search(r"ضعيف|منكر\s+الحديث", v):
         return "8", "TAHRIR-R8-DAIF"
 
     # Rank 6: Maqbul
-    if re.search(r"^مقبول", v):
+    if re.search(
+        r"^مقبول|(?:في\s+أحسن\s+أحواله|هو\s+مثل\s+الذي\s+قبله)\s*:\s*مقبول", v
+    ):
         return "6", "TAHRIR-R6-MAQBUL"
 
     # Rank 5: Qualified Saduq (saduq yahim / yukhti / lahu awham / sayyi' al-hifz)
@@ -88,22 +105,26 @@ def map_tahrir_verdict_to_rank(verdict_lead: str, full_commentary: str) -> tuple
     if re.search(r"ثقة\s+(?:ثقة|ثبت|حافظ|حجة|إمام|متقن|مأمون)", v):
         return "2", "TAHRIR-R2-COMPOUND-THIQAH"
 
-    # Rank 3: Thiqah
-    if re.search(r"^ثقة", v):
+    # Rank 3: Thiqah / Qawi
+    if re.search(r"^(?:هو\s+)?ثقة|^قوي$|:\s*ثقة$", v):
         return "3", "TAHRIR-R3-THIQAH"
 
     # Rank 1: Sahabi
     if re.search(r"^صحابي|له\s+صحبة", v) and "لا تصح" not in v:
         return "1", "TAHRIR-R1-SAHABI"
 
-    # Check if "لا تصح صحبته" is followed by an explicit rank in the commentary
-    if "لا تصح صحبته" in v:
+    # Check if refuted companionship is followed by an explicit rank in the commentary
+    if re.search(r"لا\s+تصح\s+(?:له\s+)?صحب[ةت]", v):
         c = DIACRITICS_RE.sub("", full_commentary)
         if re.search(r"مجهول\s+الحال", c):
             return "7", "TAHRIR-R7-NOT-SAHABI-MAJHUL-HAL"
+        if re.search(r"(?:وهو|فهو)\s*:\s*مقبول", c):
+            return "6", "TAHRIR-R6-NOT-SAHABI-MAQBUL"
+        if re.search(r"(?:وهو|فهو)\s*:\s*(?:تابعي\s+)?صدوق", c):
+            return "4", "TAHRIR-R4-NOT-SAHABI-SADUQ"
         if re.search(r"مجهول", c):
             return "9", "TAHRIR-R9-NOT-SAHABI-MAJHUL"
-        if re.search(r"تابعي\s+ثقة|ثقة", c):
+        if re.search(r"تابعي\s+ثقة|(?:وهو|فهو)\s*:\s*ثقة", c):
             return "3", "TAHRIR-R3-NOT-SAHABI-THIQAH"
 
     return "", "TAHRIR-UNMAPPED-LEAD"
@@ -165,7 +186,7 @@ def main() -> None:
                 tah_rule = "TAHRIR-AGREED-UNRANKED-TAQRIB"
         elif tahrir_disp == "dissent_bal":
             tah_bilgin_rank, tah_rule = map_tahrir_verdict_to_rank(
-                row["tahrir_verdict_lead"], row["tahrir_commentary_text"]
+                row["tahrir_verdict_lead"], row["tahrir_commentary_text"], eid
             )
             if not tah_bilgin_rank and row["tahrir_verdict_lead"]:
                 unmapped_leads[row["tahrir_verdict_lead"]] += 1

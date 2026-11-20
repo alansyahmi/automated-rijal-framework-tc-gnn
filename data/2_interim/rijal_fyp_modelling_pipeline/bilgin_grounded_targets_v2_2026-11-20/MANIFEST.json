@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-11-20T06:24:47.948574+00:00",
+  "generated_utc": "2026-11-20T06:30:22.070768+00:00",
   "script": "dataset_discovery/target_feasibility/build_bilgin_grounded_targets_v2.py",
   "taqrib_ranked_total": 7261,
-  "tahrir_ranked_total": 7449,
+  "tahrir_ranked_total": 7469,
   "taqrib_rank_counts": {
     "4": 1183,
     "2": 280,
@@ -18,32 +18,32 @@
     "11": 5
   },
   "tahrir_rank_counts": {
-    "3": 2275,
+    "3": 2280,
     "2": 279,
-    "4": 1289,
+    "4": 1291,
     "8": 466,
+    "7": 992,
     "5": 125,
-    "7": 991,
-    "6": 78,
-    "9": 1359,
+    "6": 82,
+    "9": 1367,
     "10": 121,
     "12": 15,
     "1": 446,
     "11": 5
   },
   "rank_shifts": {
-    "upgraded_more_reliable": 1117,
-    "unchanged": 4497,
-    "downgraded_less_reliable": 1629
+    "upgraded_more_reliable": 1121,
+    "unchanged": 4498,
+    "downgraded_less_reliable": 1639
   },
   "files": {
     "BILGIN_GROUNDED_TAQRIB_TAHRIR_8827_V2.csv": {
-      "sha256": "d74a93e1070cc07e80eb341d14ea88d9e69ec83fb46f3813ed85207044cbdd74",
-      "bytes": 6290782
+      "sha256": "db9617247e7ce1454b36c8230893be5343850cc7ca31f5190ebebbcd9ba294e9",
+      "bytes": 6290803
     },
     "BILGIN_GROUNDED_TARGETS_REPORT_V2.md": {
-      "sha256": "398e5cb2d56c51c8b3e962c1e052f3be3fb9fa5b2b14428b3e6e8664d97c5b11",
-      "bytes": 1920
+      "sha256": "15af1c203af1a3512ca4dec0ef8037b4ba21852b040d98c571fa1d4eab40dfb4",
+      "bytes": 1231
     }
   }
 }
