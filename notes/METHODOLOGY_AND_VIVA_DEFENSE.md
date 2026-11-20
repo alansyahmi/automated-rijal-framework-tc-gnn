@@ -25,3 +25,14 @@
   1. `E4397` (*ʿUbayd b. Naḍlah*): Present in `8246` Part 2, p. 423 with digit swap + spelling variant (`٣٤٩٧ - عبيد بن نضيلة`); no `•` bullet (*Taḥrīr* agrees: `ثقة`).
   2. `E7859` (*Yūsuf b. al-Ḥakam b. Abī ʿAqīl*): Present in `8246` Part 4, p. 132 as `٧٨٥٩ ب -`; no `•` bullet (*Taḥrīr* agrees: `مقبول`).
   3. `E8522` & `E8523`: *Mubhamāt* (unnamed narrators) formatted as `° -` cross-references in `8246`.
+
+---
+
+## 3. Corpus Alignment Digitization-Noise Audit (< 0.6%)
+
+A systematic audit across all `8,827` aligned rows in `TAHRIR_TAQRIB_ALIGNED_8827_V1.csv` confirmed **>99.4%** structural cleanliness, with total Shamela `8246` digitization edge cases confined to ~45 entries (< 0.6%):
+1. **Swallowed out-of-range OCR entry headers (`3` rows):** `E1803` swallowed `١١٨٠٤` (`1804`), `E5509` swallowed `٩٣١٠` (`5510`), and `E5339` swallowed `٩٣٤٠` (`5340`).
+2. **Page-break missing-header bleed-over (`E2615` / `E2616`):** On `E2615` (*al-Aʿmash*), Shamela `8246` dropped the opening header of `E2616` (*Sulaymān b. Mūsā al-Ashdaq*) at a page break, attaching `2616`'s commentary (`• بل: فقيه صدوق حسن الحديث`) onto `E2615`. (TC-GNN still scored *al-Aʿmash* accurately at `89.41`.)
+3. **ASCII `* بل:` / `° بل:` overrides (`11` rows):** Early entries (`E0138`, `E0143`–`E0145`, `E0153`, `E0155`, `E0159`, etc.) used ASCII `*` instead of Unicode `•`, leaving them marked `agreed_no_bullet`.
+4. **Duplicate `normalized_name_fallback` collisions (`28` pairs = `56` rows):** Adjacent namesakes matched to an already-claimed `exact_entry_number` entry when the target entry's number was missing/corrupted in `8246`.
+
