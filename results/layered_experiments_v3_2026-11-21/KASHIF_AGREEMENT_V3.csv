@@ -1,0 +1,17 @@
+﻿layer,subset,n,tier3_acc,tier3_macro_f1,tier3_weighted_f1,tier3_qwk,tier5_qwk,tier5_spearman
+Exp_A_score_B,all_observed,3300,0.6294,0.6225,0.6714,0.5774,0.6786,0.6436
+Exp_A_score_B,paired_B_E2_common,3300,0.6294,0.6225,0.6714,0.5774,0.6786,0.6436
+Exp_A_score_B,non_verbatim,2566,0.5257,0.5427,0.5749,0.4912,0.6174,0.5927
+Exp_A_score_B,paired_non_verbatim,2566,0.5257,0.5427,0.5749,0.4912,0.6174,0.5927
+Exp_A_score_B,paired_non_verbatim_excl_sahabi,2460,0.5065,0.5325,0.5518,0.4792,0.5803,0.5436
+Exp_B_score_E1,all_observed,3300,0.6294,0.6225,0.6714,0.5774,0.6786,0.6431
+Exp_B_score_E1,paired_B_E2_common,3300,0.6294,0.6225,0.6714,0.5774,0.6786,0.6431
+Exp_B_score_E1,non_verbatim,2566,0.5257,0.5427,0.5749,0.4912,0.6174,0.5928
+Exp_B_score_E1,paired_non_verbatim,2566,0.5257,0.5427,0.5749,0.4912,0.6174,0.5928
+Exp_B_score_E1,paired_non_verbatim_excl_sahabi,2460,0.5065,0.5325,0.5518,0.4792,0.5803,0.5438
+Exp_C_score_E2,all_observed,3378,0.706,0.6391,0.7233,0.5516,0.6582,0.6623
+Exp_C_score_E2,paired_B_E2_common,3300,0.7082,0.6418,0.7252,0.5523,0.6615,0.6665
+Exp_C_score_E2,non_verbatim,2633,0.643,0.5838,0.6641,0.4911,0.6115,0.6189
+Exp_C_score_E2,paired_non_verbatim,2566,0.6422,0.5839,0.6633,0.4867,0.6111,0.6192
+Exp_C_score_E2,paired_non_verbatim_excl_sahabi,2460,0.628,0.5779,0.6475,0.4768,0.5781,0.574
+Exp_C_score_E2,observed_first_grade_abstained_B,78,0.6154,0.511,0.6398,0.5132,0.5161,0.4802

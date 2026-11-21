@@ -1,0 +1,6 @@
+﻿experiment,track,model_or_layer,eval_target,status,n_eval,rank_mae,rank_qwk,rank_spearman,bin_acc,tier3_acc,tier3_macro_f1,shift_macro_f1,r6_rank_mae
+Exp_A_Baseline_B,Track_R_Deterministic,score_B (Ibn Hajar Taqrib),tahrir_clean_test_descriptive,COMPLETED,1077,0.7233,0.8603,0.893,0.7994,0.7066,0.698,0.255,1.978
+Exp_B_Qualifiers_E1_Det,Track_R_Deterministic,score_E1 (B + within-band E1 qualifiers),tahrir_clean_test_descriptive,COMPLETED,1077,0.7253,0.8603,0.8923,0.7994,0.7066,0.698,0.255,1.9783
+Exp_B_ESA_Learned,Track_L_ESA,M3b_AraBERTv02_Full / M3a_GenericSentiment,tahrir_clean_test,PENDING_CUDA_GPU,1077,,,,,,,,
+Exp_C_Scholarly_E2,Track_R_Deterministic,score_E2 (B + E1 + Tahrir),al_kashif_paired_non_verbatim,COMPLETED,2566,,0.4867,0.6192,,0.6422,0.5839,,
+Exp_D_TC_GNN,Track_L_TC_GNN,G4a_Directed_TC_GNN_Sanad (vs G2b & G0),tahrir_clean_test_5seed_ens,PENDING_CUDA_GPU,1077,,,,,,,,

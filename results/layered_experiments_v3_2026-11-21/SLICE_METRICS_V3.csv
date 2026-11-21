@@ -1,0 +1,6 @@
+﻿slice,n,description,B_vs_E2_rank_mae,E1_vs_E2_rank_mae,B_vs_E2_tier3_mf1,E1_vs_E2_tier3_mf1,B_vs_E2_qwk,E1_vs_E2_qwk
+clean_test_cohort,1077,Core test split after excluding missing + suspect_alignment,0.7233,0.7253,0.698,0.698,0.8603,0.8603
+test_connected_chrono_sanad,689,Clean test narrators with >=1 chrono_pruned sanad edge,0.656,0.6585,0.7149,0.7149,0.8538,0.8538
+test_isolated_chrono_sanad,388,Clean test narrators with 0 chrono_pruned sanad edges,0.8428,0.8438,0.6572,0.6572,0.8493,0.8493
+test_rank6_maqbul,227,Clean test conditional maqbul narrators,1.978,1.9783,0.1164,0.1164,0.0,0.0
+full_rank6_maqbul_paired,1569,All clean paired conditional maqbul narrators,1.9885,1.9884,0.1222,0.1222,0.0,0.0

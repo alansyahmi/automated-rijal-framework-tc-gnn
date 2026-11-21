@@ -1,0 +1,16 @@
+﻿comparison,subset,n_common,metric,delta,ci95_low,ci95_high,p_value_2sided
+E2_vs_B,paired_B_E2_common,3300,tier3_acc,0.0788,0.0652,0.0933,0.0
+E2_vs_B,paired_B_E2_common,3300,tier3_macro_f1,0.0193,0.0038,0.0358,0.013
+E2_vs_B,paired_B_E2_common,3300,tier3_qwk,-0.0252,-0.0444,-0.0039,0.022
+E2_vs_B,paired_B_E2_common,3300,tier5_qwk,-0.0171,-0.0313,-0.0018,0.022
+E2_vs_B,paired_B_E2_common,3300,tier5_spearman,0.0229,0.0104,0.0365,0.0
+E2_vs_B,paired_non_verbatim,2566,tier3_acc,0.1165,0.1002,0.1337,0.0
+E2_vs_B,paired_non_verbatim,2566,tier3_macro_f1,0.0412,0.023,0.059,0.0
+E2_vs_B,paired_non_verbatim,2566,tier3_qwk,-0.0045,-0.0274,0.0187,0.703
+E2_vs_B,paired_non_verbatim,2566,tier5_qwk,-0.0064,-0.0231,0.0109,0.464
+E2_vs_B,paired_non_verbatim,2566,tier5_spearman,0.0266,0.0107,0.0431,0.002
+E2_vs_B,paired_non_verbatim_excl_sahabi,2460,tier3_acc,0.1215,0.1041,0.1394,0.0
+E2_vs_B,paired_non_verbatim_excl_sahabi,2460,tier3_macro_f1,0.0454,0.0272,0.0633,0.0
+E2_vs_B,paired_non_verbatim_excl_sahabi,2460,tier3_qwk,-0.0024,-0.0261,0.022,0.83
+E2_vs_B,paired_non_verbatim_excl_sahabi,2460,tier5_qwk,-0.0022,-0.0199,0.0161,0.806
+E2_vs_B,paired_non_verbatim_excl_sahabi,2460,tier5_spearman,0.0305,0.0123,0.0491,0.0

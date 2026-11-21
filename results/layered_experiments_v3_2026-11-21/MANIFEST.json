@@ -1,0 +1,117 @@
+{
+  "generated_utc": "2026-11-21T11:47:33.787521+00:00",
+  "script": "experiments/run_layered_experiments_v3.py",
+  "elapsed_sec": 114.14,
+  "stage2_dir": null,
+  "stage3_dir": null,
+  "disagreement_audit": {
+    "status_B": {
+      "observed": 7262,
+      "abstained": 1565
+    },
+    "status_E1": {
+      "not_applicable": 7031,
+      "abstained": 1565,
+      "observed": 231
+    },
+    "status_E2": {
+      "observed_dissent": 2398,
+      "observed_agreement": 4177,
+      "abstained": 1339,
+      "observed_first_grade": 211,
+      "observed_no_grade": 181,
+      "observed_qualification": 56,
+      "observed_maqbul_to_r7": 398,
+      "missing": 10,
+      "suspect_alignment": 57
+    },
+    "rank_shifts_paired_obs": {
+      "upgraded": 1123,
+      "unchanged": 4466,
+      "downgraded": 1621
+    },
+    "binary_crossings": {
+      "jarh_to_tadil": 31,
+      "tadil_to_jarh": 1437
+    },
+    "tier3_crossings": {
+      "T1->T2": 589,
+      "T1->T0": 1410,
+      "T2->T1": 82,
+      "T0->T1": 28,
+      "T2->T0": 27,
+      "T0->T2": 3
+    },
+    "e1_alignment_with_e2": {
+      "toward": 119,
+      "away": 19,
+      "unchanged_dist": 91
+    }
+  },
+  "homophily": {
+    "n_nodes": 8827,
+    "sanad_edges_raw": 42011,
+    "sanad_edges_chrono_kept": 37364,
+    "sanad_edges_chrono_pruned": 4647,
+    "chrono_sanad_rank_B_12": {
+      "n_labeled_edges": 22973,
+      "edge_homophily": 0.2303,
+      "class_homophily": 0.0556
+    },
+    "chrono_sanad_rank_B_3tier": {
+      "n_labeled_edges": 22973,
+      "edge_homophily": 0.4986,
+      "class_homophily": 0.1388
+    },
+    "chrono_sanad_rank_E2_12": {
+      "n_labeled_edges": 24278,
+      "edge_homophily": 0.2725,
+      "class_homophily": 0.0474
+    },
+    "chrono_sanad_rank_E2_3tier": {
+      "n_labeled_edges": 24278,
+      "edge_homophily": 0.5316,
+      "class_homophily": 0.1477
+    },
+    "unpruned_sanad_rank_E2_12": {
+      "n_labeled_edges": 27290,
+      "edge_homophily": 0.2679,
+      "class_homophily": 0.0441
+    },
+    "unpruned_sanad_rank_E2_3tier": {
+      "n_labeled_edges": 27290,
+      "edge_homophily": 0.5272,
+      "class_homophily": 0.1446
+    }
+  },
+  "files": {
+    "EXPERIMENT_A_TO_D_METRICS_V3.csv": {
+      "sha256": "347f8387f4f809f5ee3935b8adb42ec3b25268c18294206036f4af26a6c30e95",
+      "bytes": 894
+    },
+    "KASHIF_AGREEMENT_V3.csv": {
+      "sha256": "4163cf32b58a87a9a927490255abaaec52c8f4d149dc1268329e303b49df448a",
+      "bytes": 1400
+    },
+    "KASHIF_PAIRED_BOOTSTRAP_V3.csv": {
+      "sha256": "1af2e1c797ee273e77f58be03380d984beedbc2221499534fc4e18bf32b3c82a",
+      "bytes": 1208
+    },
+    "E1_SENSITIVITY_SUMMARY_V3.csv": {
+      "sha256": "2efe6ffd1acb703fb38e38dfdd5a91a0dd26f818428a1664e2827f3de603154d",
+      "bytes": 636
+    },
+    "SLICE_METRICS_V3.csv": {
+      "sha256": "4b7fce6a1be2749a8f9df754db483a392d25622c615d84426e5b10346af62e15",
+      "bytes": 707
+    },
+    "FINAL_LAYERED_RIJAL_SCORES_8827_V3.csv": {
+      "sha256": "b1a72752defdd9488be5cb0f8e422667411d41e57e2d59f329a4460d73777c78",
+      "bytes": 1621750
+    },
+    "LAYERED_EXPERIMENTS_REPORT_V3.md": {
+      "sha256": "f983bd2941fe4dd1e65453e39c838121dc513159d8fd83d53e88b15c9690e22c",
+      "bytes": 7047
+    }
+  }
+}
