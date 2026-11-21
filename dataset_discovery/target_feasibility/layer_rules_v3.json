@@ -1,0 +1,64 @@
+{
+  "schema_version": "3.0",
+  "description": "Deterministic layered scoring constants and rules (B, E1, E2) for taqrib-oriented-v2 (v3).",
+  "scale": {
+    "min_rank": 1,
+    "max_rank": 12,
+    "score_formula": "100.0 * (12 - rank) / 11.0",
+    "band_half_width_h": 4.545454545454546,
+    "clamp_min": 0.0,
+    "clamp_max": 100.0
+  },
+  "layer_B": {
+    "gold50_rank_overrides": {
+      "S3076-P545-C001-E6868": {
+        "rank": 12,
+        "rule_id": "RULE-R12-PLURAL-KADHABUHU",
+        "span": "كذبوه وهجروه",
+        "basis": "v2_gold50_adjudication_v2_1 (Muqatil b. Sulayman)"
+      }
+    }
+  },
+  "layer_E1": {
+    "cap_in_h": 1.0,
+    "qualifier_weights_in_h": {
+      "qual_ikhtalata": -0.5,
+      "qual_yudallis": -0.25,
+      "qual_yursil": -0.15,
+      "qual_sayyi_hifz": -0.5,
+      "qual_lin": -0.5,
+      "qual_yukhti_yahim": -0.4,
+      "qual_qalil_hadith": 0.0,
+      "qual_rumiya_bidah": 0.0
+    },
+    "praise_weights_in_h": {
+      "praise_hafiz": 0.25,
+      "praise_faqih": 0.25
+    },
+    "sensitivity_presets": {
+      "default": 1.0,
+      "halved": 0.5,
+      "doubled": 2.0,
+      "off": 0.0
+    }
+  },
+  "layer_E2": {
+    "qawluhu_offset_in_h": 0.0,
+    "qawluhu_max_abs_in_h": 0.5,
+    "dissent_carry_e1_ranks": [3, 4, 5, 6, 7, 8],
+    "unmappable_entry_ids": [
+      "S3076-P111-C017-E0511",
+      "S3076-P175-C001-E1442",
+      "S3076-P203-C010-E1848",
+      "S3076-P337-C014-E3822",
+      "S3076-P391-C012-E4595",
+      "S3076-P481-C003-E5919"
+    ],
+    "page_break_bleed_ids": [
+      "S3076-P254-C018-E2615",
+      "S3076-P255-C001-E2616"
+    ],
+    "maqbul_uncommented_rule_id": "TAHRIR-AGREED-MAQBUL-TO-R7",
+    "maqbul_uncommented_citation": "Tahrir Taqrīb al-Tahdhīb, introduction, p. 45"
+  }
+}
