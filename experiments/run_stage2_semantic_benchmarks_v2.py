@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Stage 2: Semantic Sentiment / Stance Analysis Benchmarks (taqrib-oriented v2).
+"""Stage 2: Evaluative Stance Analysis (ESA) Benchmarks (taqrib-oriented v2; v3-aligned naming).
 
 Evaluates strictly on Ibn Hajar's Taqrib al-Tahdhib (3076) text + structured metadata
 (ZERO graph columns, ZERO Tahrir text/verdict leakage) for Dual-Target prediction:
-  - Target A (Score 2 Ordinal): Tahrir Bilgin-grounded 1-12 rank
-  - Target B (3-Class Shift): upgraded / unchanged / downgraded vs Score 1
+  - Target A (Tahrir Ordinal): Tahrir Bilgin-grounded 1-12 rank (score_E2 target)
+  - Target B (3-Class Shift): upgraded / unchanged / downgraded vs Baseline B (score_B)
 
 Aligned with:
   - Wahba et al. (2026): Weighted Precision/Recall/F1, Accuracy (12-class + Binary Ta'dil/Jarh)
   - Alturayeif et al. (2024, StanceEval): Macro-F1 & Active Macro-F1 across 3 shift classes
   - Bilgin (2026): 12-rank ordinal scale & Rank 6 Maqbul subgroup resolution
 
-Exports 5-fold zero-leakage OOF semantic features across all 8,827 rows for Stage 3 TC-GNN.
+Exports 5-fold zero-leakage OOF ESA features across all 8,827 rows for Stage 3 TC-GNN (Text-Classification-informed GNN).
 """
 
 from __future__ import annotations
@@ -694,8 +694,8 @@ def main() -> None:
         "Decision 2 Ablation: Name-stripped TF-IDF + X_meta",
     )
 
-    # 4. M3a CAMeLBERT Zero-Shot Sentiment + Meta
-    print("Running CAMeLBERT zero-shot sentiment inference on 8,827 entries...")
+    # 4. M3a CAMeLBERT Zero-Shot Generic-Sentiment Baseline + Meta
+    print("Running CAMeLBERT zero-shot generic-sentiment baseline inference on 8,827 entries...")
     camel_feats = extract_camelbert_zero_shot(texts_full, batch_size=64)
     Xcm_tr = np.hstack([X_meta_all[idx_train], camel_feats[idx_train]])
     Xcm_va = np.hstack([X_meta_all[idx_val], camel_feats[idx_val]])
@@ -713,7 +713,7 @@ def main() -> None:
         m3a_cls.predict(Xcm_va),
         np.clip(m3a_reg.predict(Xcm_te), 1, 12),
         m3a_cls.predict(Xcm_te),
-        "Zero-shot CAMeLBERT-MSA-sentiment + X_meta (HistGBDT)",
+        "Generic-sentiment baseline: zero-shot CAMeLBERT-MSA-sentiment + X_meta (HistGBDT)",
     )
 
     # 5. M3b AraBERTv02 Full Dual-Head & 5-Fold OOF inside train
@@ -933,7 +933,7 @@ def main() -> None:
     # Write Markdown Report
     test_rows = [r for r in comparison_rows if r["split"] == "test"]
     md_lines = [
-        "# Stage 2: Semantic Sentiment / Stance Analysis Benchmark Report (v2)",
+        "# Stage 2: Evaluative Stance Analysis (ESA) Benchmark Report (v2)",
         "",
         f"- **Generated (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%SZ')}",
         f"- **Elapsed:** {time.time() - t0:.1f}s | **Device:** {'CUDA (' + torch.cuda.get_device_name(0) + ')' if torch.cuda.is_available() else 'CPU'}",

@@ -7,9 +7,9 @@
 
 **Working research area:** Computational analysis of narrator evaluations in ʿIlm al-Rijāl.
 
-**Working title:** A Multi-Modal Framework for Quantifying Narrator Reliability in ʿIlm al-Rijāl Using Evaluative Stance Analysis and Graph Neural Networks.
+**Thesis title (controlling):** *A Multi-Modal Framework for Quantifying Narrator Reliability in ʿIlm ar-Rijāl Using Evaluative Stance and Graph Neural Networks*.
 
-The approved title and PO1–PO3 remain controlling academic requirements. This working wording records the terminology change from “Semantic Sentiment Analysis” to **“Evaluative Stance Analysis (ESA)”**; confirm any formal title change with the supervisor before submission.
+The controlling thesis title and supervisor-approved PO1–PO3 govern the formal FYP scope. This protocol records the aligned terminology: **Evaluative Stance Analysis (ESA)** (reclassifying generic polarity models as a generic-sentiment baseline, per `DEC-001` and `DEC-006`) and **TC-GNN = Text-Classification-informed Graph Neural Network** (`DEC-006`).
 
 ## 2. Problem framing
 
@@ -45,16 +45,27 @@ Do not treat these questions as approved replacements for PO1–PO3. Map each qu
 
 ## 5. Research objectives
 
-Copy the exact approved PO1, PO2, and PO3 wording into this section before finalising the protocol. For each objective, record:
+> **Approval status:** **Awaiting supervisor approval** for the revised PO1–PO3 wording below (Alan selected **PO3 Option A** on 2026-11-21; see [IMPLEMENTATION_PLAN_LAYERED_SCORE_V3.md](IMPLEMENTATION_PLAN_LAYERED_SCORE_V3.md) §9). Until formal supervisor confirmation is recorded, both the earlier project objectives and the proposed revisions are preserved side-by-side.
 
-- the research question it addresses;
-- the evidence and data required;
-- the method used;
-- the measurable output;
-- the acceptance or completion criteria;
-- known limitations.
+### 5.1 Earlier project objectives (historical baseline)
 
-**Approved objective wording:** TODO — insert verbatim from the approved proposal.
+- **Old PO1:** NLP classification model mapping *Jarḥ wa Taʿdīl* judgements to a reliability index $S \in [0, 1]$ and a 3-tier ordinal class $y \in \{0, 1, 2\}$, under zero leakage.
+- **Old PO2:** Audited narrator transmission knowledge graph + controlled multi-arm ablation testing whether structural features help or heterophily hurts.
+- **Old PO3 *(dropped per DEC-007 / Option A)*:** Isnād-level scores (weakest-link + preliminary *mutābaʿāt*/*shawāhid*) vs al-Albānī and Darussalam hadith grades (conflicts with §6 scope boundary against automatic hadith authentication; no data/code exists in the workspace).
+
+### 5.2 Proposed revised objectives (awaiting supervisor approval)
+
+- **PO1:** To develop an Evaluative Stance Analysis (ESA) text-classification model, together with a deterministic, provenance-traceable layered scoring scheme, that maps Ibn Ḥajar's *Jarḥ wa Taʿdīl* judgements in *Taqrīb al-Tahdhīb* and the editorial verdicts of *Taḥrīr Taqrīb al-Tahdhīb* onto a standardised reliability index ($S \in [0, 1]$, also reported on a 0–100 scale), Ibn Ḥajar's 12-rank ordinal scale, and a 3-tier classification (`1–3 / 4–6 / 7–12`), under strict zero-leakage conditions.
+- **PO2:** To construct an audited, chronology-checked knowledge graph of narrator transmission relationships, and to run a controlled multi-arm ablation study testing whether a Text-Classification-informed Graph Neural Network (TC-GNN) explains the *Taḥrīr* editors' revisions of Ibn Ḥajar's grades beyond text-only and simple graph-feature baselines, including an analysis of transmission-network heterophily.
+- **PO3 *(chosen by Alan on 2026-11-21: Option A — awaiting supervisor approval)*:** To evaluate the validity of the resulting reliability scores by measuring the incremental contribution of each enrichment layer (*Taqrīb* baseline, *Taqrīb* qualifiers, *Taḥrīr* verdicts, graph) and their agreement with an independent existing scholarly classification (al-Dhahabī's *al-Kāshif*), with explicit treatment of missing evidence and source overlap.
+
+### 5.3 Objective-to-pipeline mapping (`taqrib-oriented-v2`)
+
+| Objective | RQs | Track / Layers | Experiments & Scripts | Measurable Outputs & Acceptance |
+|---|---|---|---|---|
+| **PO1** | RQ1, RQ2 | **Track R:** `B` (`score_B`), `E₁` (`score_E1`) + **Track L:** Stage 2 ESA (`M0–M3c`) | P2 (`build_layered_scores_v3.py`), P4.1 (`run_stage2_esa_benchmarks_v3.py`), P5 (`Exp A`, `Exp B`) | `LAYER_EVIDENCE_LONG_V3.csv`, `LAYERED_SCORES_WIDE_V3.csv`, 12-rank MAE/QWK/Macro-F1, 3-tier (`1–3/4–6/7–12`) Macro-F1, binary *taʿdīl*/*jarḥ*, 3-class shift Macro-F1, zero-leakage assertions |
+| **PO2** | RQ3 | **Track L:** Audited Sanad KG (`chrono_pruned`: 42,011 → 37,364) + Stage 3 TC-GNN (`G0–G4d`) | P4.2 (`run_stage3_tc_gnn_benchmarks_v3.py`), P5 (`Exp D`: `G4` vs `G2b` & `G0`, plus edge/class homophily) | 5-seed mean metrics + paired bootstrap ($B = 2{,}000$), explicit `G4` vs `G2b` 1-hop baseline comparison, homophily/heterophily diagnostics, `score_G_estimate` (`source = model_estimate` only where *Taḥrīr* is missing/abstained) |
+| **PO3 (Opt A)** | RQ1, RQ4 | **Track R + L:** `B → B+E₁ → B+E₁+E₂` + *al-Kāshif* (`1616`) external validation | P2, P3 (`build_kashif_validation_v1.py`), P5 (`Exp A–D`, E₁ weight sensitivity) | Per-layer Δ & missingness audit, E₁ sensitivity table, convergent 3-tier Macro-F1 / κ / Spearman vs *al-Kāshif* reported on both full linked set and non-verbatim subset, `FINAL_LAYERED_RIJAL_SCORES_8827_V3.csv` |
 
 ## 6. Scope boundaries
 

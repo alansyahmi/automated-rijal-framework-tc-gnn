@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
-"""Stage 3: TC-GNN Graph Enrichment & Controlled Ablation Study (taqrib-oriented v2).
+"""Stage 3: TC-GNN (Text-Classification-informed GNN) Graph Enrichment & Controlled Ablation Study (taqrib-oriented v2).
 
-Evaluates directional temporal-causal message passing over the Hadith Sanad / Bukhari
-transmission network fused with Stage 2 5-fold OOF AraBERTv02 semantics and structured
-Taqrib metadata, grounded in Zeng et al. (2024, MV-HGNN) and Mahmoud et al. (2024).
+Evaluates directional message passing over the Hadith Sanad / Bukhari transmission network
+with tabaqah chronology pruning (chrono_pruned), fused with Stage 2 5-fold OOF AraBERTv02
+ESA representations and structured Taqrib metadata, grounded in Zeng et al. (2024, MV-HGNN)
+and Mahmoud et al. (2024).
 
 Controlled ablation ladder (seeds 42..46):
   - G0_Stage2_AraBERT_NoGraph: Stage 2 text+metadata anchor (from 5-fold OOF export)
-  - G1_GraphOnly_NoText: Pure graph structure + tabaqa + sigils (NO text, NO Score 1)
+  - G1_GraphOnly_NoText: Pure graph structure + tabaqa + sigils (NO text, NO score_B)
   - G2a_Sem_Plus_SanadStruct_HistGBDT: Non-GNN HistGBDT over Meta + Sem + SanadStruct
   - G2b_Sem_Plus_SanadStruct_MLP: Non-GNN Dual-Head MLP over Meta + Sem + SanadStruct
   - G3a_Undirected_GCN: Symmetrized 2-layer GCN + residual skip
   - G3b_Undirected_GraphSAGE: Symmetrized 2-layer GraphSAGE + residual skip
   - G3c_Undirected_GATv2: Symmetrized 2-layer GATv2 + residual skip
-  - G4a_Directed_TC_GNN_Sanad (PRIMARY): Residual-gated directed Forward+Reverse edge-conditioned GATv2 on TC-pruned Pure Sanad (37,364 edges)
+  - G4a_Directed_TC_GNN_Sanad (PRIMARY): Residual-gated directed Forward+Reverse edge-conditioned GATv2 on chronology-pruned Pure Sanad (37,364 edges)
   - G4b_Directed_TC_GNN_UnprunedSanad: Decision 2 ablation on unpruned Pure Sanad (42,011 edges)
   - G4c_MV_TC_GNN_Sanad_Plus_kNN: Decision 3 ablation (G4a + Semantic kNN k=8 view per Zeng 2024)
-  - G4d_Directed_TC_GNN_Consolidated: Decision 1 ablation on TC-pruned Consolidated graph (59,864 minus impossible edges)
+  - G4d_Directed_TC_GNN_Consolidated: Decision 1 ablation on chronology-pruned Consolidated graph (59,864 minus impossible edges)
 """
 
 from __future__ import annotations

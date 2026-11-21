@@ -1,24 +1,25 @@
 # Stage 1 & Stage 2 Methodology (`taqrib-oriented` v2)
 
-This document specifies the exact implemented methodology, data pipelines, zero-leakage controls, evaluation metrics, and verified empirical outcomes for **Stage 1 (Corpus Alignment, Bilgin-Grounded Target Operationalization & Graph Construction)** and **Stage 2 (Semantic Sentiment / Stance Analysis)** on branch `taqrib-oriented`.
+This document specifies the exact implemented methodology, data pipelines, zero-leakage controls, evaluation metrics, and verified empirical outcomes for **Stage 1 (Corpus Alignment, Bilgin-Grounded Target Operationalization & Graph Construction)** and **Stage 2 (Evaluative Stance Analysis [ESA])** on `taqrib-oriented` (v2 frozen) and aligned for `taqrib-oriented-v2` (v3).
 
 ---
 
-## 0. Conceptual Architecture: The Two-Score Paradigm
+## 0. Conceptual Architecture: Layered Representation (`Track R`) & Learning (`Track L`)
 
-To preserve classical scholarly integrity while introducing modern computational enrichment, the framework maintains two strictly separated numerical outputs:
+To preserve classical scholarly integrity while introducing modern computational enrichment, `taqrib-oriented-v2` separates deterministic score layers (`DEC-005`) from learned validation/estimation (`TC-GNN = Text-Classification-informed GNN`, `DEC-006`):
 
-1. **Score 1 — Ibn Ḥajar Baseline (`taqrib_rank_bilgin_1_to_12`):** Deterministic operationalization of Ibn Ḥajar al-ʿAsqalānī's 12-rank (*marātib*) taxonomy in *Taqrīb al-Tahdhīb* (`3076`), grounded in **Bilgin (2026, OMÜİFD)**.
-2. **Score 2 — Scholar-Verified & Computationally Enriched Score (`tahrir_rank_bilgin_1_to_12`):** Scholar-authored critical reassessment extracted from Shaykh Shuʿayb al-Arnāʾūṭ & Dr. Bashshār ʿAwwād Maʿrūf's *Taḥrīr Taqrīb al-Tahdhīb* (`8246`, 1417 AH / 1997 CE), serving as the non-subjective, tradition-grounded target for **Stage 2 (Semantic NLP)** and **Stage 3 (TC-GNN)**.
+1. **Baseline `B` (`score_B`, formerly Score 1 — `taqrib_rank_bilgin_1_to_12`):** Deterministic operationalization of Ibn Ḥajar al-ʿAsqalānī's 12-rank (*marātib*) taxonomy in *Taqrīb al-Tahdhīb* (`3076`), grounded in **Bilgin (2026, OMÜİFD)**.
+2. **Editorial Layer `E₂` (`score_E2`, formerly Score 2 Target — `tahrir_rank_bilgin_1_to_12`):** Scholar-authored critical reassessment extracted from Shaykh Shuʿayb al-Arnāʾūṭ & Dr. Bashshār ʿAwwād Maʿrūf's *Taḥrīr Taqrīb al-Tahdhīb* (`8246`, 1417 AH / 1997 CE), serving as the non-subjective, tradition-grounded target for **Stage 2 (ESA)** and **Stage 3 (TC-GNN)**.
+3. **Model Estimate `G` (`score_G_estimate`):** Supplied only where *Taḥrīr* is missing or unmappable (`source = model_estimate`), never overwriting observed scholarly verdicts.
 
 ```mermaid
 flowchart TD
     RAW["Raw Shamela4 Corpus<br>Taqrīb (3076) + Taḥrīr (8246)"] --> ALIGN["Stage 1.1: Entry Alignment (v1)<br>8,823 / 8,827 (99.95%)"]
-    ALIGN --> TAX["Stage 1.2: Bilgin (2026) 12-Rank Mapper (v2)<br>Score 1 (7,261) & Score 2 Target (7,469)"]
+    ALIGN --> TAX["Stage 1.2: Bilgin (2026) 12-Rank Mapper (v2)<br>score_B (7,261) & Taḥrīr Target (7,469)"]
     TAX --> MASTER["Stage 1.3: Zero-Leakage Master Dataset & Graph<br>N=7,258 Core Cohort | 59,864 Directed Edges"]
-    MASTER --> S2["Stage 2: Semantic Sentiment / Stance (No Graph)<br>M0 → M1 (Meta) → M2 (TF-IDF) → M3 (CAMeLBERT / AraBERTv02)"]
-    S2 --> OOF["5-Fold Zero-Leakage OOF Semantic Features<br>(8,827 × 59, 0 NaNs)"]
-    OOF --> S3["Stage 3: Multi-Modal TC-GNN<br>Semantic + Metadata + Sanad/Rijāl Graph → Score 2"]
+    MASTER --> S2["Stage 2: Evaluative Stance Analysis (ESA, No Graph)<br>M0 → M1 (Meta) → M2 (TF-IDF) → M3 (Generic-Sentiment Baseline / AraBERTv02)"]
+    S2 --> OOF["5-Fold Zero-Leakage OOF ESA Features<br>(8,827 × 59, 0 NaNs)"]
+    OOF --> S3["Stage 3: Text-Classification-Informed GNN (TC-GNN)<br>ESA + Metadata + Sanad/Rijāl Graph → Taḥrīr Shift & score_G_estimate"]
 ```
 
 ---
@@ -68,7 +69,7 @@ flowchart TD
 
 ---
 
-## 2. Stage 2: Semantic Sentiment / Stance Analysis Module
+## 2. Stage 2: Evaluative Stance Analysis (ESA) Module
 
 - **Script:** [run_stage2_semantic_benchmarks_v2.py](../experiments/run_stage2_semantic_benchmarks_v2.py)
 - **Results:** [STAGE2_RESULTS_SUMMARY_V2.md](../results/stage2_semantic_benchmarks_v2_2026-11-20/STAGE2_RESULTS_SUMMARY_V2.md) & [STAGE2_MODEL_COMPARISON_V2.csv](../results/stage2_semantic_benchmarks_v2_2026-11-20/STAGE2_MODEL_COMPARISON_V2.csv)
@@ -88,7 +89,7 @@ flowchart TD
 1. **`M0_Identity_Baseline`:** Predicts Score 1 and `unchanged`.
 2. **`M1a–c` (Metadata Only):** Ridge + Balanced Logistic Regression (`M1a`), HistGBDT (`M1b`), Random Forest (`M1c`) on `X_meta` alone.
 3. **`M2a–c` (Classical TF-IDF + Metadata):** Word `(1,2)` + Char `(3,5)` TF-IDF + `X_meta` (`M2a` Linear, `M2b` SVD-64 HistGBDT, `M2c` Name-Stripped ablation).
-4. **`M3a_CAMeLBERT_Sentiment_Plus_Meta`:** Zero-shot GPU sentiment probabilities `[p_pos, p_neu, p_neg, polarity]` from `CAMeL-Lab/bert-base-arabic-camelbert-msa-sentiment` + `X_meta` → HistGBDT.
+4. **`M3a_CAMeLBERT_Sentiment_Plus_Meta` (Generic-Sentiment Baseline):** Zero-shot GPU polarity probabilities `[p_pos, p_neu, p_neg, polarity]` from `CAMeL-Lab/bert-base-arabic-camelbert-msa-sentiment` + `X_meta` → HistGBDT (weaker than ESA `M3b`, MAE `0.725` vs `0.660`, demonstrating that generic sentiment ≠ evaluative stance).
 5. **`M3b_AraBERTv02_Full_DualHead`:** Fine-tuned `aubmindlab/bert-base-arabertv02` (`[CLS]` 768-d) fused with normalized `X_meta` projection (`Linear → LayerNorm → ReLU`), trained with combined loss $\mathcal{L} = \text{CE}_{\text{rank}} + 0.35\,\text{SmoothL1}(\hat{r}_{\text{exp}}, r) + \text{WeightedCE}_{\text{shift}}$ (`5`-fold CV inside `train=5,080`, early stopping on `val` composite `shift_macro_f1 - 0.1 * rank_mae`, `seed=42`).
 6. **`M3c_AraBERTv02_NameStripped_DualHead`:** Identical `M3b` architecture trained with narrator names/lineages stripped (`text_name_stripped`), retaining only grade span, context notes, *ṭabaqah*, and sigils.
 

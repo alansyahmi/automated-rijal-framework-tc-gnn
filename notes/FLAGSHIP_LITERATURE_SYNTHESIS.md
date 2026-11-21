@@ -29,8 +29,8 @@ Critical comparative synthesis positioning our `taqrib-oriented` framework again
 3. **Adapting Alturayeif et al. (2024 — StanceEval) to Evaluative Shift:**
    - We cast *Taḥrīr*'s revision relative to Ibn Ḥajar as a 3-class evaluative stance/shift task (`upgraded` / `unchanged` / `downgraded`) and evaluate with **3-class Macro-F1** and **Active-Shift Macro-F1** ($\frac{1}{2}(\text{F1}_{\text{up}} + \text{F1}_{\text{down}})$), reaching **`0.7301` Shift Macro-F1** (`G4a` ensemble).
 
-4. **Extending Mahmoud et al. (2024) from Identity to Temporal-Causal Reliability:**
-   - Whereas Mahmoud et al. combine Sanad graphs with `AraBERT` for narrator *identification*, we pair 5-fold OOF `AraBERTv02` representations with **temporal-causal pruning** ($\Delta\text{ṭabaqah} \le -2$, removing `4,647` noisy edges) and **directional edge-conditioned `GATv2`** (`Teacher → Student` + `Student → Teacher` corroboration) for narrator *reliability enrichment*.
+4. **Extending Mahmoud et al. (2024) from Identity to Chronology-Checked Reliability:**
+   - Whereas Mahmoud et al. combine Sanad graphs with `AraBERT` for narrator *identification*, we pair 5-fold OOF `AraBERTv02` ESA representations with **ṭabaqah chronology pruning** (`chrono_pruned`: $\Delta\text{ṭabaqah} \le -2$, removing `4,647` noisy edges) and **directional edge-conditioned `GATv2`** (`Teacher → Student` + `Student → Teacher` corroboration) in a **Text-Classification-informed GNN (TC-GNN)** for narrator *reliability enrichment*.
 
 5. **Validating Zeng et al. (2024)'s Multi-View Similarity Insight on Sparse Historians:**
    - Because `34.2%` of core narrators are isolated in pure Sanad chains, adding Zeng et al.'s **Semantic kNN (`k=8`) view (`G4c`)** reduces 5-seed Rank MAE variance (`0.0124 → 0.0017`) and significantly boosts Binary Accuracy over Stage 2 (`0.9063`, `p = 0.009`), while keeping pure historical edges (`G4a`) cleanly separated for interpretability.

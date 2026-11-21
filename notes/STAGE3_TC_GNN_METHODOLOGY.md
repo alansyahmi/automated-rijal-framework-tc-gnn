@@ -6,21 +6,23 @@
 
 ---
 
-## 1. Domain Justification & Temporal-Causal Pruning Discovery
+## 1. Domain Justification & Ṭabaqah Chronology Pruning (`chrono_pruned`)
 
-Why use a **Directional Temporal-Causal Graph Neural Network (TC-GNN)** rather than a standard undirected GCN?
+What is **TC-GNN (Text-Classification-informed Graph Neural Network)**, and why use a directed architecture rather than a standard undirected GCN?
 
-1. **Asymmetric Scholarly Corroboration (`Teacher → Student` vs. `Student → Teacher`):**
-   - In *Taḥrīr Taqrīb al-Tahdhīb* (`8246`), upgrading ambiguous narrators (especially the `1,581` Rank 6 *Maqbūl* entries) depends on **student out-degree corroboration** (*mutābaʿāt* / `روى عنه جمع من الثقات`) rather than merely narrating from a strong teacher.
-   - Stage 1 already verified that among Rank 6 *Maqbūl* entries, `graph_out_ge2` is **51.13%** for `upgraded` narrators vs. **26.09%** for `downgraded` narrators.
+- **Definition (`TC-GNN = Text-Classification-informed GNN`, `DEC-006`):** Stage 2 **Evaluative Stance Analysis (ESA)** text-classifier out-of-fold (OOF) predictions and representations serve as the GNN's node inputs (`X_sem`), fused with *Taqrīb* metadata (`X_meta`) and sanad graph structural features (`X_struct_sanad`). Under Track L (`DEC-005`), TC-GNN tests whether transmission-network structure explains *Taḥrīr* revisions beyond Stage 2 text/metadata and supplies a clearly flagged `model_estimate` (`score_G_estimate`) only where *Taḥrīr* is missing or abstained—never overwriting observed scholarly verdicts.
 
-2. **Empirical Temporal-Causal Pruning on Pure Sanad/Bukhārī Edges (`42,011` → `37,364`):**
-   - Auditing the generational delta $\Delta\text{ṭabaqah} = \text{ṭabaqah}_{\text{student}} - \text{ṭabaqah}_{\text{teacher}}$ across all `42,011` pure Sanad/Bukhārī edges revealed:
-     - `28,516` (**67.9%**) strictly forward ($\Delta > 0$)
-     - `3,981` (**9.5%**) peer narrations (*riwāyat al-aqrān*, $\Delta = 0$)
-     - `1,962` (**4.7%**) adjacent generational overlap ($\Delta = -1$)
-     - **`4,647` (11.1%) chronologically impossible ($\Delta \le -2$)** — Sanadset disambiguation noise (`2,905` missing *ṭabaqah*).
-   - **TC-Pruning Rule:** Remove edges where both endpoints have known *ṭabaqah* and $\Delta\text{ṭabaqah} \le -2$, retaining **`37,364` TC-clean pure Sanad edges** for the primary graph (`G4a`).
+### 1.1 Asymmetric Scholarly Corroboration (`Teacher → Student` vs. `Student → Teacher`)
+- In *Taḥrīr Taqrīb al-Tahdhīb* (`8246`), upgrading ambiguous narrators (especially the `1,581` Rank 6 *Maqbūl* entries) depends on **student out-degree corroboration** (*mutābaʿāt* / `روى عنه جمع من الثقات`) rather than merely narrating from a strong teacher.
+- Stage 1 already verified that among Rank 6 *Maqbūl* entries, `graph_out_ge2` is **51.13%** for `upgraded` narrators vs. **26.09%** for `downgraded` narrators.
+
+### 1.2 Ṭabaqah Chronology Pruning (`chrono_pruned`) on Pure Sanad/Bukhārī Edges (`42,011` → `37,364`)
+- Auditing the generational delta $\Delta\text{ṭabaqah} = \text{ṭabaqah}_{\text{student}} - \text{ṭabaqah}_{\text{teacher}}$ across all `42,011` pure Sanad/Bukhārī edges revealed:
+  - `28,516` (**67.9%**) strictly forward ($\Delta > 0$)
+  - `3,981` (**9.5%**) peer narrations (*riwāyat al-aqrān*, $\Delta = 0$)
+  - `1,962` (**4.7%**) adjacent generational overlap ($\Delta = -1$)
+  - **`4,647` (11.1%) chronologically impossible ($\Delta \le -2$)** — Sanadset disambiguation noise (`2,905` missing *ṭabaqah*).
+- **Chronology Pruning Rule (`chrono_pruned`):** Remove edges where both endpoints have known *ṭabaqah* and $\Delta\text{ṭabaqah} \le -2$, retaining **`37,364` chronology-pruned pure Sanad edges** for the primary graph (`G4a`).
 
 ---
 
@@ -29,7 +31,7 @@ Why use a **Directional Temporal-Causal Graph Neural Network (TC-GNN)** rather t
 - **Transductive Topology, Strict Split Isolation:** Message passing operates over all `8,827` nodes, but loss & gradients are computed **strictly on `train` (`5,080`)**, early stopping monitors `val` (`1,089`), and `test` (`1,089`) remains untouched.
 - **Node Features (all standardized strictly on `train`):**
   1. `X_meta` (`39` dims): Stage 2 *Taqrīb* metadata (Score 1 + 12-dim one-hot, `is_conditional_maqbul`, *ṭabaqah* + subtier, 12 sigils, 9 qualifiers, char/word counts).
-  2. `X_sem` (`56` dims): Stage 2 **5-fold OOF** semantic features from [STAGE2_OOF_SEMANTIC_FEATURES_8827_V2.csv](../results/stage2_semantic_benchmarks_v2_2026-11-20/STAGE2_OOF_SEMANTIC_FEATURES_8827_V2.csv) (`CAMeLBERT` sentiment 4, `M2` OOF 4, `AraBERTv02` OOF 16, `AraBERTv02` CLS PCA-32 fitted strictly on `train`).
+  2. `X_sem` (`56` dims): Stage 2 **5-fold OOF** ESA & text-classification features from [STAGE2_OOF_SEMANTIC_FEATURES_8827_V2.csv](../results/stage2_semantic_benchmarks_v2_2026-11-20/STAGE2_OOF_SEMANTIC_FEATURES_8827_V2.csv) (generic-sentiment baseline `CAMeLBERT` 4, `M2` OOF 4, `AraBERTv02` OOF 16, `AraBERTv02` CLS PCA-32 fitted strictly on `train`).
   3. `X_struct_sanad` (`17` dims): Recomputed strictly on the active Sanad graph (`log1p` degrees/weights, distinct books, Bukhārī degrees, `is_isolated`, `out_ge2`, and Score-1-only neighbor aggregations — **zero Score-2 leakage**).
 - **5-Dim Directed Edge Attributes:**
   $$e_{u \to v} = \left[\log(1 + w_{uv}),\; \log(1 + \text{books}_{uv}),\; \frac{\text{clip}(\Delta\text{ṭabaqah}, -5, 10)}{10},\; \mathbb{I}(\text{peer}),\; \mathbb{I}(\text{missing\_ṭabaqah})\right]$$
@@ -54,22 +56,22 @@ Why use a **Directional Temporal-Causal Graph Neural Network (TC-GNN)** rather t
 | **`G4d_Directed_TC_GNN_Consolidated`** | **0.6535**±0.0023 | **0.8903**±0.0008 | 0.9047±0.0009 | 0.7216±0.0064 | **1.4495**±0.0041 | **0.6523** | 0.7243 |
 
 ### Key Analytical Findings (Paired Bootstrap `B = 2,000` vs. `G0`)
-1. **Pure Graph Signal (`G1`):** Without text or Score 1, pure TC-Sanad topology + *ṭabaqah*/sigils achieves **81.10% Binary *Taʿdīl*/*Jarḥ* accuracy** (`QWK = 0.7044`), proving Sanad topology carries strong reliability signal.
-2. **Temporal-Causal Pruning Benefit (`G4a` vs. `G4b`):** Pruning the `4,647` impossible edges improves Shift Macro-F1 (`0.7246` / ens **`0.7301`** vs. `0.7195` / ens `0.7269`).
+1. **Pure Graph Signal (`G1`):** Without text or Baseline (`score_B`), pure chronology-pruned Sanad topology + *ṭabaqah*/sigils achieves **81.10% Binary *Taʿdīl*/*Jarḥ* accuracy** (`QWK = 0.7044`), proving Sanad topology carries strong reliability signal.
+2. **Chronology Pruning Benefit (`G4a` vs. `G4b`):** Pruning the `4,647` impossible edges improves Shift Macro-F1 (`0.7246` / ens **`0.7301`** vs. `0.7195` / ens `0.7269`).
 3. **Statistically Significant Binary Gains over Stage 2 (`G0`):**
-   - `G4a` (TC-Sanad): `BinAcc = 0.9054` (`+0.0138`, **p = 0.017**) and highest Shift Macro-F1 (**`0.7301`**, `+0.0165`, `p = 0.076`).
+   - `G4a` (chrono-pruned Sanad): `BinAcc = 0.9054` (`+0.0138`, **p = 0.017**) and highest Shift Macro-F1 (**`0.7301`**, `+0.0165`, `p = 0.076`).
    - `G4c` (+kNN): `BinAcc = 0.9063` (`+0.0147`, **p = 0.009**) and stabilizes MAE variance (`std = 0.0017`).
    - `G4d` (Consolidated): `BinAcc = 0.9045` (**p = 0.048**), lowest Rank MAE (**`0.6523`**), highest QWK (**`0.8903`**), and lowest R6 *Maqbūl* MAE (**`1.4477`**).
-4. **Honest Non-GNN vs. GNN Attribution (`G2b` vs. `G4`):** `G2b` (`MLP + 1-hop Sanad features`) reaches `MAE = 0.6527` and `BinAcc = 0.9073` (`p = 0.011`), demonstrating that **1-hop Sanad degree & Score-1 neighbor features** drive most of the rank/binary improvement, while **multi-hop Directional TC-GNN** achieves the highest Shift Macro-F1 (`G4a: 0.7301` vs. `0.7166`) and lowest R6 *Maqbūl* MAE (`G4d: 1.4477` vs. `1.4672`).
+4. **Honest Non-GNN vs. GNN Attribution (`G2b` vs. `G4`):** `G2b` (`MLP + 1-hop Sanad features`) reaches `MAE = 0.6527` and `BinAcc = 0.9073` (`p = 0.011`), demonstrating that **1-hop Sanad degree & `score_B` neighbor features** drive most of the rank/binary improvement, while **multi-hop Directional TC-GNN** achieves the highest Shift Macro-F1 (`G4a: 0.7301` vs. `0.7166`) and lowest R6 *Maqbūl* MAE (`G4d: 1.4477` vs. `1.4672`).
 
 ---
 
-## 4. Final Two-Score Deliverable (`8,827 × 24` Columns, `0` NaNs)
+## 4. Frozen v2 Deliverable (`8,827 × 24` Columns, `0` NaNs; Superseded in v3 by Layered Schema)
 
-Exported to [FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv](../results/stage3_tc_gnn_benchmarks_v2_2026-11-20/FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv) from the 5-seed ensemble of primary flagship `G4a_Directed_TC_GNN_Sanad`:
+Exported to [FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv](../results/stage3_tc_gnn_benchmarks_v2_2026-11-20/FINAL_TWO_SCORE_RIJAL_REPRESENTATION_8827.csv) from the 5-seed ensemble of primary flagship `G4a_Directed_TC_GNN_Sanad` (note: in `v3`, columns are renamed to `score_B`, `score_E1`, `score_E2`, `score_G_estimate`, and `sanad_chrono_pruned_*`, and `score_G_estimate` never overwrites observed *Taḥrīr* verdicts per `DEC-005`):
 - **Higher-Is-Better Reliability Index Conversion:** Every continuous or discrete rank $r \in [1, 12]$ is linearly mapped onto $[0, 1]$ and $[0, 100]$ via:
   $$S_{[0,1]}(r) = \frac{12 - r}{11}, \qquad S_{[0,100]}(r) = 100 \times \frac{12 - r}{11}$$
   Under this affine normalization, Rank `1` (*Ṣaḥābah*) = **`1.0000` / `100.00`**, Rank `12` (*Kadhdhāb*) = **`0.0000` / `0.00`**, and the classical *Taʿdīl*/*Jarḥ* boundary ($r = 6.5$) maps cleanly to exact **`0.5000` / `50.00`**.
-- **Ibn Ḥajar Baseline (Preserved Untouched):** `score1_ibn_hajar_rank_1_to_12`, `score1_reliability_0_1`, `score1_reliability_0_100`, `taqrib_is_conditional_maqbul`.
-- **Scholarly Reference (When Available):** `tahrir_scholar_rank_1_to_12`, `tahrir_reliability_0_1`, `tahrir_reliability_0_100`, `tahrir_disposition`.
-- **TC-GNN Computational Enrichment:** `score2_tc_gnn_continuous`, `score2_tc_gnn_rank_1_to_12`, `score2_reliability_0_1`, `score2_reliability_0_100`, `reliability_delta_0_100`, `score2_predicted_shift`, `score2_p_upgraded`, `score2_p_unchanged`, `score2_p_downgraded`, `score2_rank_entropy` (normalized Shannon uncertainty), and `tc_sanad_out_degree` / `tc_sanad_in_degree` / `tc_sanad_is_isolated`.
+- **Ibn Ḥajar Baseline (Preserved Untouched; `score_B` in v3):** `score1_ibn_hajar_rank_1_to_12`, `score1_reliability_0_1`, `score1_reliability_0_100`, `taqrib_is_conditional_maqbul`.
+- **Scholarly Reference (When Available; `score_E2` in v3):** `tahrir_scholar_rank_1_to_12`, `tahrir_reliability_0_1`, `tahrir_reliability_0_100`, `tahrir_disposition`.
+- **TC-GNN Model Output (Frozen v2 names; `score_G_*` and `sanad_chrono_pruned_*` in v3):** `score2_tc_gnn_continuous`, `score2_tc_gnn_rank_1_to_12`, `score2_reliability_0_1`, `score2_reliability_0_100`, `reliability_delta_0_100`, `score2_predicted_shift`, `score2_p_upgraded`, `score2_p_unchanged`, `score2_p_downgraded`, `score2_rank_entropy` (normalized Shannon uncertainty), and `tc_sanad_out_degree` / `tc_sanad_in_degree` / `tc_sanad_is_isolated`.
