@@ -16,6 +16,10 @@
   - **`• قوله` / `•` (`qualification_qawluhu` / `other_commentary`):** Phrase-level qualification or correction (`111` + `325` entries).
 - **Framing for Thesis & Viva:** Describe this as **"rule-based operationalization of classical and scholarly taxonomies"** (not manual annotation). The only empirical check required is **extraction accuracy** (verifying the parser reads the Arabic text accurately — already verified at `120/120` on the blind `v1.4` sample, and `99.95%` alignment with *Taḥrīr*).
 
+### C. Why `main` v2.0's 120-Narrator Dual-Reviewer ESA Pilot Is Dropped (`DEC-007`)
+- **Archival Notice:** Prior to the `taqrib-oriented` pivot (`DEC-004`), `origin/main` drafted a 120-narrator manual ESA pilot (`TRAIN_120_STRATIFIED_ESA_PILOT_WORKSHEET_V2_0.csv` with a `STOP-AND-APPROVE` gate under the earlier critic-level Task B framing). That pilot is **formally superseded (`DEC-007`)**.
+- **Justification:** In the *Taqrīb* → *Taḥrīr* paradigm, reliability grades and overrides are authored directly by named classical and modern *ḥadīth* authorities (Ibn Ḥajar, al-Arnāʾūṭ, Maʿrūf), so inventing subjective dual-reviewer labels on modern summaries would replace scholarly ground truth with annotator opinion. Instead, label validity rests on: (1) blind extraction QA (`120/120` Bilgin rules, `99.95%` `3076↔8246` alignment, Gold-50 adjudication), and (2) independent external validation against al-Dhahabī's *al-Kāshif* (`1616`, `N = 2,566` non-verbatim linked narrators).
+
 ---
 
 ## 2. *Taḥrīr* (`8246`) ↔ *Taqrīb* (`3076`) Alignment Coverage (`v1`)
