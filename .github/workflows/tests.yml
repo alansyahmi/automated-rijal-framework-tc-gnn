@@ -1,0 +1,29 @@
+name: Tests
+
+on:
+  push:
+    branches: ["main", "taqrib-oriented-v2", "layered-score"]
+  pull_request:
+    branches: ["main", "taqrib-oriented-v2"]
+
+jobs:
+  pytest-cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+          cache-dependency-path: "requirements-cpu.txt"
+
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-cpu.txt
+
+      - name: Run unit test suite (CPU)
+        run: pytest -q -m "not gpu"

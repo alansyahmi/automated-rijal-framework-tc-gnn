@@ -307,6 +307,7 @@ class TestAnnotationExceptionRegistryV1(unittest.TestCase):
         self.assertEqual(result["simulated_effect"]["decision"], "abstain_for_review")
         self.assertIsNone(result["simulated_effect"]["taqrib_rank_number"])
 
+    @unittest.skipUnless(PILOT_DIR.is_dir(), "Legacy shamela4_narrator_audit archive pruned on taqrib-oriented")
     def test_prov02_compound_span_has_no_exception_match_and_base_generator_abstains(self):
         compound_span = (
             "ثقة ثبت فاضل إلا أن في روايته عن ثابت والأعمش "
@@ -337,6 +338,7 @@ class TestAnnotationExceptionRegistryV1(unittest.TestCase):
         self.assertEqual(proposal["abstention_reason"], "no_exact_enabled_rule_match")
         self.assertEqual(proposal["proposed_taqrib_rank_number"], "")
 
+    @unittest.skipUnless(PILOT_DIR.is_dir() and DRY_RUN_DIR.is_dir(), "Legacy shamela4_narrator_audit archive pruned on taqrib-oriented")
     def test_inactive_registry_does_not_change_existing_generator_output_or_review_files(self):
         input_rows = {
             name: read_dicts(PILOT_DIR / f"{name}.csv")

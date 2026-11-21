@@ -13,10 +13,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 import unittest
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from common.hashing import normalize_manifest_path
 OUTPUT_DIR = PROJECT_ROOT / "dataset_discovery/target_feasibility"
 MANIFEST_PATH = OUTPUT_DIR / "rijal_reference_corpus_manifest.json"
 REPORT_PATH = OUTPUT_DIR / "RIJAL_REFERENCE_CORPUS_INVENTORY.md"
@@ -85,7 +90,7 @@ class TestRijalReferenceCorpus(unittest.TestCase):
             self.assertTrue(book_dir.is_dir(), f"Missing book directory: {book_dir}")
 
             for comp, finfo in b["files"].items():
-                file_path = self.root / finfo["local_path"]
+                file_path = self.root / normalize_manifest_path(finfo["local_path"])
                 self.assertTrue(file_path.is_file(), f"Missing file: {file_path}")
                 self.assertEqual(
                     file_path.stat().st_size,

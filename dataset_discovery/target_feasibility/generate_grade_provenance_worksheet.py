@@ -26,6 +26,7 @@ import csv
 import hashlib
 import json
 import random
+import sys
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -37,6 +38,10 @@ SAMPLE_SIZE_PER_DATASET = 30
 TOTAL_SAMPLE_SIZE = 60
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from common.hashing import sha256_text_normalized
 OUT_DIR = ROOT / "dataset_discovery" / "target_feasibility"
 HADITHDB_PATH = ROOT / "data/1_raw/hadithdb/narrators_db.json"
 SHAMELA_PATH = ROOT / "data/1_raw/Shamela4_Full_DB/_meta/narrators.parquet"
@@ -574,12 +579,12 @@ def generate_worksheet_and_manifest() -> dict[str, Any]:
             "shamela4_narrators_parquet": compute_sha256(SHAMELA_PATH),
         },
         "output_hashes": {
-            "worksheet_csv": compute_sha256(CSV_PATH),
-            "codebook_md": compute_sha256(CODEBOOK_PATH),
-            "protocol_md": compute_sha256(PROTOCOL_PATH),
-            "firewall_spec_md": compute_sha256(FIREWALL_SPEC_PATH),
-            "generator_script_py": compute_sha256(Path(__file__)),
-            "test_suite_py": compute_sha256(OUT_DIR / "test_grade_provenance_worksheet.py") if (OUT_DIR / "test_grade_provenance_worksheet.py").is_file() else "",
+            "worksheet_csv": sha256_text_normalized(CSV_PATH),
+            "codebook_md": sha256_text_normalized(CODEBOOK_PATH),
+            "protocol_md": sha256_text_normalized(PROTOCOL_PATH),
+            "firewall_spec_md": sha256_text_normalized(FIREWALL_SPEC_PATH),
+            "generator_script_py": sha256_text_normalized(Path(__file__)),
+            "test_suite_py": sha256_text_normalized(OUT_DIR / "test_grade_provenance_worksheet.py") if (OUT_DIR / "test_grade_provenance_worksheet.py").is_file() else "",
         },
         "population_statistics": {
             "hadithdb": hadithdb_pop_metrics,

@@ -19,6 +19,11 @@ from typing import Iterable, Mapping, Sequence
 
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from common.hashing import sha256_bytes_normalized, sha256_text_normalized
+
 DEFAULT_INPUT_DIR = ROOT / "dataset_discovery" / "target_feasibility" / "manual_collation_pilot_10"
 DEFAULT_OUTPUT_DIR = (
     ROOT
@@ -37,9 +42,9 @@ MANIFEST_NAME = "MANUAL_COLLATION_PILOT_10_MANIFEST.json"
 
 EXPECTED_INPUT_HASHES = {
     FROZEN_NAME: "78cb15eb72b04c1b2c0d2e350e375615236df22a2918c38256977ccccffae958",
-    WORKING_NAME: "4b3f731b5a799c1df499c57391f4b502fcee84f129c2bae2e77325e738a04548",
+    WORKING_NAME: "4721667b3d582a460c48416b1259109ae6ec0e3e93b1aab20cb3d9d986775d84",
     KEY_NAME: "9eccd4533cb4482390a41861955e3636453d1f0bc39e8aac544f748f4dcc0684",
-    MANIFEST_NAME: "9339ad77f1fa18e204b443e9a3ec888d6ec56924b801b85d94f3bb8ea49bf72d",
+    MANIFEST_NAME: "bdfe66d27ada1ee453a0282835fe9252c75367f562ba8bff6ad5fea31f8e670d",
 }
 
 EXPECTED_HEADERS = [
@@ -514,11 +519,11 @@ class MigrationError(RuntimeError):
 
 
 def sha256_bytes(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
+    return sha256_bytes_normalized(data)
 
 
 def sha256_file(path: Path) -> str:
-    return sha256_bytes(path.read_bytes())
+    return sha256_text_normalized(path)
 
 
 def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
@@ -2065,10 +2070,8 @@ def migrate_package(
             write_csv_file(stage / filename, rows, OUTPUT_TABLES[filename])
         registry = build_schema_field_registry()
         registry_path = stage / "schema_field_registry.json"
-        registry_path.write_text(
-            json.dumps(registry, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-            encoding="utf-8",
-            newline="\n",
+        registry_path.write_bytes(
+            (json.dumps(registry, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8")
         )
 
         input_meta = {}
@@ -2128,7 +2131,7 @@ def migrate_package(
             "schema_version": "2.2",
             "schema_status": "frozen_implementation_baseline",
             "implementation_version": IMPLEMENTATION_VERSION,
-            "migration_script": str(script_path.relative_to(ROOT)),
+            "migration_script": script_path.relative_to(ROOT).as_posix(),
             "script_sha256": sha256_file(script_path),
             "runtime": {
                 "python_version": sys.version.split()[0],
@@ -2136,7 +2139,7 @@ def migrate_package(
                 "platform": platform.platform(),
             },
             "frozen_specification": {
-                "path": str(frozen_spec_path.relative_to(ROOT)),
+                "path": frozen_spec_path.relative_to(ROOT).as_posix(),
                 "sha256": sha256_file(frozen_spec_path),
             },
             "input_files": input_meta,
@@ -2168,9 +2171,9 @@ def migrate_package(
             "row_count_semantics": "provisional_work_items are operational placeholders, not scholarly statement counts.",
         }
         manifest_path = stage / "manifest.json"
-        manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+        manifest_path.write_bytes((json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8"))
         manifest_hash = sha256_file(manifest_path)
-        (stage / "MANIFEST.sha256").write_text(f"{manifest_hash}  manifest.json\n", encoding="ascii", newline="\n")
+        (stage / "MANIFEST.sha256").write_bytes(f"{manifest_hash}  manifest.json\n".encode("ascii"))
 
         validate = validator or _validate_staged_package
         try:

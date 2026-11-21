@@ -19,37 +19,37 @@
   "python_version": "3.13.7",
   "inputs": [
     {
-      "path": "data\\1_raw\\Shamela4_Full_DB\\_meta\\narrators.parquet",
+      "path": "data/1_raw/Shamela4_Full_DB/_meta/narrators.parquet",
       "bytes": 7963509,
       "sha256": "82657fbae4e73a6514258102293b95be4e6031ab45faa65d69dad14cdc51ef34"
     },
     {
-      "path": "data\\1_raw\\hadithdb\\narrators_db.json",
+      "path": "data/1_raw/hadithdb/narrators_db.json",
       "bytes": 12402630,
       "sha256": "67c183de90f779496f741a868120224c71fd32ff94525fb6a119ea8750b9c42a"
     },
     {
-      "path": "dataset_discovery\\Shamela4\\SHAMELA4_AUDIT_FINDINGS.md",
+      "path": "dataset_discovery/Shamela4/SHAMELA4_AUDIT_FINDINGS.md",
       "bytes": 20163,
       "sha256": "2a3c517ffe644ab903e0e972eda91aeb5e618240fe549058a4e38179e05e85d5"
     },
     {
-      "path": "dataset_discovery\\Shamela4\\SHAMELA_WEBSITE_ID_CROSSWALK.md",
+      "path": "dataset_discovery/Shamela4/SHAMELA_WEBSITE_ID_CROSSWALK.md",
       "bytes": 5959,
       "sha256": "a3fe7aebc1ea174a83248cff64a506d887aca446920b64e7420a6562a0db71df"
     },
     {
-      "path": "dataset_discovery\\hadithdb\\HADITHDB_AUDIT.md",
+      "path": "dataset_discovery/hadithdb/HADITHDB_AUDIT.md",
       "bytes": 16095,
       "sha256": "6432d1eef99d0b8235c89b5d770e539fdd0f2524484e2a000207dc5e058ca1b9"
     },
     {
-      "path": "data\\1_raw\\hadithdb\\README.md",
+      "path": "data/1_raw/hadithdb/README.md",
       "bytes": 10634,
       "sha256": "6f2d97d3292207e36a1a2ea841a54d2a91738000b492624221dd87de14ae6ba0"
     },
     {
-      "path": "data\\1_raw\\hadithdb\\bukhari_sultania_copy.json",
+      "path": "data/1_raw/hadithdb/bukhari_sultania_copy.json",
       "bytes": 13649651,
       "sha256": "f0844ea551957eaeb201c88666fb01b0bab2495723248d52401c334a75d9b9b0"
     }

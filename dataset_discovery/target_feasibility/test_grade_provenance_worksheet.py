@@ -16,12 +16,16 @@ Tests verify:
   12. Dash policy: Strictly ZERO em-dash (\\u2014) and ZERO en-dash (\\u2013) across all deliverables.
 """
 import csv
-import hashlib
 import json
+import sys
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from common.hashing import sha256_text_normalized
 TARGET_DIR = ROOT / "dataset_discovery" / "target_feasibility"
 CSV_PATH = TARGET_DIR / "IBN_HAJAR_GRADE_PROVENANCE_WORKSHEET.csv"
 MANIFEST_PATH = TARGET_DIR / "ibn_hajar_grade_provenance_manifest.json"
@@ -275,7 +279,7 @@ class TestGradeProvenanceWorksheet(unittest.TestCase):
             "test_suite_py": TARGET_DIR / "test_grade_provenance_worksheet.py",
         }
         for key, path in expected_paths.items():
-            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            digest = sha256_text_normalized(path)
             self.assertEqual(self.manifest["output_hashes"][key], digest, f"Hash mismatch for {key}")
 
     def test_documentation_files_present(self):

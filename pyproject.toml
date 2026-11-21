@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+pythonpath = [".", "dataset_discovery/target_feasibility", "experiments"]
+testpaths = ["common", "dataset_discovery/target_feasibility", "experiments"]
+markers = [
+    "gpu: tests requiring a CUDA-capable GPU (skipped in CPU CI)",
+]

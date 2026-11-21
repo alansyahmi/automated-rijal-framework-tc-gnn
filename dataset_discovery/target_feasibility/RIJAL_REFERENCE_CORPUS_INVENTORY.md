@@ -3,7 +3,7 @@
 **Audit Execution Timestamp:** 2026-11-11 09:16:00 UTC  
 **Upstream Source Repository:** [`AuthenticIlm/Shamela4_Full_DB`](https://huggingface.co/datasets/AuthenticIlm/Shamela4_Full_DB)  
 **Local Storage Directory:** `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/` (Immutable raw storage; excluded from Git tracking)  
-**Provenance & Firewall Specification:** [`PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md`](file:///c:/Projects/automated-rijal-framework-tc-gnn/dataset_discovery/target_feasibility/PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md)  
+**Provenance & Firewall Specification:** [`PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md`](PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md)  
 
 ---
 
@@ -174,7 +174,7 @@ This formulation is methodologically unassailable for Alan's FYP defense:
 
 ## 6. Passage-Level Provenance & Temporal Firewall Rules
 
-To operationalize this epistemological firewall across the FYP pipeline, researchers must adhere to the formal specification in [`PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md`](file:///c:/Projects/automated-rijal-framework-tc-gnn/dataset_discovery/target_feasibility/PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md):
+To operationalize this epistemological firewall across the FYP pipeline, researchers must adhere to the formal specification in [`PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md`](PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md):
 
 1. **Passage-Level Provenance & Date Separation**: An author death date is not sufficient to establish passage eligibility. The passage-level provenance schema explicitly separates the historical evaluator and date (`attributed_evaluator`, `historical_evaluator_date`) from the surviving textual witness compiler and date (`source_work_author`, `source_work_date`), ensuring that early judgments quoted in later compilations are not misattributed or assigned a single conflated date.
 2. **Exclusion of Modern Editorial Commentary**: Editorial footnotes (`حاشية`), editor brackets, variant reading notes, and introductory essays (e.g., by Dr. Bashshār ʿAwwād or Shaykh Shuʿayb al-Arnāʾūṭ) are strictly `ineligible` for NLP feature extraction.
@@ -190,10 +190,10 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 - **Page Count**: complete_unabridged_text; 688 digitized pages spanning printed pages 75 to 765 (`[ترقيم الكتاب موافق للمطبوع]`).
 - **Author's Introduction**: Verified present (`page_num: 75`). Contains the 12 chronological generational layers (*ṭabaqāt*) and Six Books symbol key.
 - **First Entry**: Verified present (`page_num: 77`, Entry #1):
-  > `<span data-type="title" id=toc-1>حرف الألف</span><span data-type="title" id=toc-2>ذكر من اسمه أحمد</span>١- أحمد ابن إبراهيم ابن خالد الموصلي أبو علي نزيل بغداد صدوق من العاشرة مات سنة ست وثلاثين د فق٢- أحمد ابن إبراهيم ابن فيل باسم الحيوان المعرو`
+  > `<span data-type="title" id=toc-1>حرف الألف</span> <span data-type="title" id=toc-2>ذكر من اسمه أحمد</span> ١- أحمد ابن إبراهيم ابن خالد الموصلي أبو علي نزيل بغداد صدوق من العاشرة مات سنة ست وثلاثين د فق ٢- أحمد ابن إبراهيم ابن فيل باسم الحيوان المعرو`
 - **Sequential Alphabetical Coverage**: Verified across letters (Alif, Jim, Zay, Mim, Ya).
 - **Final Entries & Colophon**: Verified present (`page_num: 765`, Entries #8825 and #8826):
-  > `خالة إبراهيم ابن ميسرة عن امرأة صدق هي ميمونة بنت كردم من صغار الصحابة والخالة ما عرفت اسمها[] امرأة قدمت البصرة فنزلت قصر بني خلف [على أختها] كأنها أم عطية [والله أعلم] خ٨٨٢٦- أم ولد عبد الرحمن ابن عوف عن أم سلمة لا تعرف من الثالثة دآخر الكتابفرغ - سوى ما أصلح فيه بعد- في يوم الأربعاء، رابع عِشْرِي [عشرى] جمادى الآخرة، عام سبعة وعشرين وثمانمائةملخصه أحمد بن علي بن حجرحامداً مصلياً مسلماً.`
+  > `خالة إبراهيم ابن ميسرة عن امرأة صدق هي ميمونة بنت كردم من صغار الصحابة والخالة ما عرفت اسمها [] امرأة قدمت البصرة فنزلت قصر بني خلف [على أختها] كأنها أم عطية [والله أعلم] خ ٨٨٢٦- أم ولد عبد الرحمن ابن عوف عن أم سلمة لا تعرف من الثالثة د  آخر الكتاب فرغ - سوى ما أصلح فيه بعد- في يوم الأربعاء، رابع عِشْرِي [عشرى] جمادى الآخرة، عام سبعة وعشرين وثمانمائة ملخصه أحمد بن علي بن حجر حامداً مصلياً مسلماً.`
 - **Colophon Verification**: Contains Ibn Ḥajar's authentic completion date (Wednesday, 24 Jumādā al-Ākhirah, 827 AH).
 
 ---
@@ -217,16 +217,16 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,710 | `bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\3076__تقريب-التهذيب\book_metadata.json` |
-| `manifest.json` | 855 | `ccab02ce8680a28b266ee4a96dae41684a4f84d2da48b1642c5652e1c483f369` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\3076__تقريب-التهذيب\manifest.json` |
-| `toc.jsonl` | 33,006 | `ae3bed7baeba0a256a2b2e5905ad5da04505c5d1a036c78eed9dc434dc8159ae` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\3076__تقريب-التهذيب\toc.jsonl` |
-| `pages.jsonl` | 2,046,945 | `45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\3076__تقريب-التهذيب\pages.jsonl` |
+| `book_metadata.json` | 1,710 | `bfa5cb7a35851ce33829cf1b6b137c094ef649216048ce433f7b420621087b88` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/book_metadata.json` |
+| `manifest.json` | 855 | `ccab02ce8680a28b266ee4a96dae41684a4f84d2da48b1642c5652e1c483f369` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/manifest.json` |
+| `toc.jsonl` | 33,006 | `ae3bed7baeba0a256a2b2e5905ad5da04505c5d1a036c78eed9dc434dc8159ae` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/toc.jsonl` |
+| `pages.jsonl` | 2,046,945 | `45c2f611cee35f7394da23f58ded71280fbf18d99be163347d1ad38b8fc824fa` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/3076__تقريب-التهذيب/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 75`):**
-> الطبقة الثانية عشرة: صغار الآخذين عن تبع الأتباع، كالترمذي، وألحقت بها باقي شيوخ الأئمة الستة، الذين تأخرت وفاتهم قليلاً، كبعض شيوخ النسائي.وذكرت وفاة من عرفت سنة وفاته منهم، فإن كان من الأولى والثانية: فهم قبل المائة، وإن كان من الثالثة إلى آخر الث...
+> الطبقة الثانية عشرة: صغار الآخذين عن تبع الأتباع، كالترمذي، وألحقت بها باقي شيوخ الأئمة الستة، الذين تأخرت وفاتهم قليلاً، كبعض شيوخ النسائي. وذكرت وفاة من عرفت سنة وفاته منهم، فإن كان من الأولى والثانية: فهم قبل المائة، وإن كان من الثالثة إلى آخر الث...
 
 **Closing Text Excerpt (`page_num: 765`):**
-> ... أم عطية [والله أعلم] خ٨٨٢٦- أم ولد عبد الرحمن ابن عوف عن أم سلمة لا تعرف من الثالثة دآخر الكتابفرغ - سوى ما أصلح فيه بعد- في يوم الأربعاء، رابع عِشْرِي [عشرى] جمادى الآخرة، عام سبعة وعشرين وثمانمائةملخصه أحمد بن علي بن حجرحامداً مصلياً مسلماً.
+> ... أم عطية [والله أعلم] خ ٨٨٢٦- أم ولد عبد الرحمن ابن عوف عن أم سلمة لا تعرف من الثالثة د  آخر الكتاب فرغ - سوى ما أصلح فيه بعد- في يوم الأربعاء، رابع عِشْرِي [عشرى] جمادى الآخرة، عام سبعة وعشرين وثمانمائة ملخصه أحمد بن علي بن حجر حامداً مصلياً مسلماً.
 
 ---
 
@@ -247,16 +247,16 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,557 | `bd3aa530b5db230d2e8b0b8e5900e045a1fc6a0bc12941d7d04013ea31d2bc61` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\8246__تحرير-تقريب-التهذيب\book_metadata.json` |
-| `manifest.json` | 870 | `4a7c778583884562560e6056f2bc7da40c44defb97457a51cab8171fcace5f1b` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\8246__تحرير-تقريب-التهذيب\manifest.json` |
-| `toc.jsonl` | 27,441 | `b7cee56dfc3b2875d1ad168d2047599beecade489deb5c0f43116a6cc6e220cd` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\8246__تحرير-تقريب-التهذيب\toc.jsonl` |
-| `pages.jsonl` | 3,886,707 | `c745fc2058b77d659944514cddd377510fd3c98d63300121f442e3c77deb96b7` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\8246__تحرير-تقريب-التهذيب\pages.jsonl` |
+| `book_metadata.json` | 1,557 | `bd3aa530b5db230d2e8b0b8e5900e045a1fc6a0bc12941d7d04013ea31d2bc61` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/8246__تحرير-تقريب-التهذيب/book_metadata.json` |
+| `manifest.json` | 870 | `4a7c778583884562560e6056f2bc7da40c44defb97457a51cab8171fcace5f1b` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/8246__تحرير-تقريب-التهذيب/manifest.json` |
+| `toc.jsonl` | 27,441 | `b7cee56dfc3b2875d1ad168d2047599beecade489deb5c0f43116a6cc6e220cd` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/8246__تحرير-تقريب-التهذيب/toc.jsonl` |
+| `pages.jsonl` | 3,886,707 | `c745fc2058b77d659944514cddd377510fd3c98d63300121f442e3c77deb96b7` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/8246__تحرير-تقريب-التهذيب/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 2`):**
-> تحرير تقريب التهذيبللحافظ أحمد بن علي بن حجر العسقلاني (المتوفى سنة ٨٥٢ هـ)تأليفالدكتور بشار عواد معروفالشيخ شعيب الأرنؤوط[الجزء الأول]...
+> تحرير تقريب التهذيب للحافظ أحمد بن علي بن حجر العسقلاني (المتوفى سنة ٨٥٢ هـ)  تأليف الدكتور بشار عواد معروف الشيخ شعيب الأرنؤوط  [الجزء الأول]...
 
 **Closing Text Excerpt (`page_num: 459`):**
-> ... متابعة.٨٨٢٦ - أم ولد عبد الرحمن بن عوف، عن أمِّ سلمة: لا تُعرفُ، من الثالثة. د.آخر الكتاب، فَرَغَ - سوى ما أُصلحُ فيه بعدُ - في يوم الأربعاء، رابع عشري جُمادى الآخرة، عام سبعة وعشرين وثمان مئة، مُلخِّصُه أحمدُ بنُ علي بن حجر حامدًا مصليًّا مسلمًا.
+> ... متابعة. ٨٨٢٦ - أم ولد عبد الرحمن بن عوف، عن أمِّ سلمة: لا تُعرفُ، من الثالثة. د. آخر الكتاب، فَرَغَ - سوى ما أُصلحُ فيه بعدُ - في يوم الأربعاء، رابع عشري جُمادى الآخرة، عام سبعة وعشرين وثمان مئة، مُلخِّصُه أحمدُ بنُ علي بن حجر حامدًا مصليًّا مسلمًا.
 
 ---
 
@@ -277,13 +277,13 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,343 | `619fd20be35e29a704ed1fde28d9f1b4aac44f20b658da7f8d921f929bc7e095` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1716__تهذيب-الكمال-في-أسماء-الرجال\book_metadata.json` |
-| `manifest.json` | 893 | `a41242e4caeae451f0f5ad84a23b6d137ba2bec7ae9a93cc5b3afd2e15665818` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1716__تهذيب-الكمال-في-أسماء-الرجال\manifest.json` |
-| `toc.jsonl` | 2,134,144 | `f2e96bb6811f0dc5bbec7cca9095e4bd747d570771ea2588fc7d1b63f1b27700` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1716__تهذيب-الكمال-في-أسماء-الرجال\toc.jsonl` |
-| `pages.jsonl` | 47,155,847 | `c22d5b549ae82c8282a37a9904971d72430295c049e1ffe76a3972bf8cc5c9a6` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1716__تهذيب-الكمال-في-أسماء-الرجال\pages.jsonl` |
+| `book_metadata.json` | 1,343 | `619fd20be35e29a704ed1fde28d9f1b4aac44f20b658da7f8d921f929bc7e095` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1716__تهذيب-الكمال-في-أسماء-الرجال/book_metadata.json` |
+| `manifest.json` | 893 | `a41242e4caeae451f0f5ad84a23b6d137ba2bec7ae9a93cc5b3afd2e15665818` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1716__تهذيب-الكمال-في-أسماء-الرجال/manifest.json` |
+| `toc.jsonl` | 2,134,144 | `f2e96bb6811f0dc5bbec7cca9095e4bd747d570771ea2588fc7d1b63f1b27700` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1716__تهذيب-الكمال-في-أسماء-الرجال/toc.jsonl` |
+| `pages.jsonl` | 47,155,847 | `c22d5b549ae82c8282a37a9904971d72430295c049e1ffe76a3972bf8cc5c9a6` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1716__تهذيب-الكمال-في-أسماء-الرجال/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 1`):**
-> ـ[تهذيب الكمال في أسماء الرجال]ـالمؤلف: يوسف بن عبد الرحمن بن يوسف، أبو الحجاج، جمال الدين ابن الزكي أبي محمد القضاعي الكلبي الْمِزِّيّ (المتوفى: ٧٤٢هـ)المحقق: د. بشار عواد معروفالناشر: مؤسسة الرسالة - بيروتالطبعة: الأولى، ١٤٠٠ - ١٩٨٠عدد الأجزاء...
+> ـ[تهذيب الكمال في أسماء الرجال]ـ المؤلف: يوسف بن عبد الرحمن بن يوسف، أبو الحجاج، جمال الدين ابن الزكي أبي محمد القضاعي الكلبي الْمِزِّيّ (المتوفى: ٧٤٢هـ) المحقق: د. بشار عواد معروف الناشر: مؤسسة الرسالة - بيروت الطبعة: الأولى، ١٤٠٠ - ١٩٨٠ عدد الأجزاء...
 
 **Closing Text Excerpt (`page_num: 659`):**
 > ...ى مرضاته مقربا ومن سخطه مبعدا إنه على كل شيء قدير وبالاجابة جدير. وكان ذلك في مدة أولها في التاسع من المحرم سنة خمس وسبع مئة وآخرها يوم عيد النحر من سنة اثنتي عشرة وسبع مئة. آخر الجزء الخمسين بعد المئتين، وهو آخر الكتاب، وكتب مصنفه عفا الله عنه (٢) .
@@ -307,16 +307,16 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,316 | `cb92dcee32bf6e2437aea1c50f9ee317adfd88feac57b706c078f0c5126d8538` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1615__الجرح-والتعديل-ابن-أبي-حاتم\book_metadata.json` |
-| `manifest.json` | 888 | `5c379e9a26d8532f2917c3f6b3bf33841937f0748db4f4c4ed44262b5dc3e17b` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1615__الجرح-والتعديل-ابن-أبي-حاتم\manifest.json` |
-| `toc.jsonl` | 141,933 | `79f432742c4ceb685f776b3472914a5d45f8fa313e600d185090ecdfd88e4e2b` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1615__الجرح-والتعديل-ابن-أبي-حاتم\toc.jsonl` |
-| `pages.jsonl` | 10,202,926 | `294de8576ead84287a50bb1107e4048fcbd692dc1dd23fbfcf87f72197d257e1` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1615__الجرح-والتعديل-ابن-أبي-حاتم\pages.jsonl` |
+| `book_metadata.json` | 1,316 | `cb92dcee32bf6e2437aea1c50f9ee317adfd88feac57b706c078f0c5126d8538` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1615__الجرح-والتعديل-ابن-أبي-حاتم/book_metadata.json` |
+| `manifest.json` | 888 | `5c379e9a26d8532f2917c3f6b3bf33841937f0748db4f4c4ed44262b5dc3e17b` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1615__الجرح-والتعديل-ابن-أبي-حاتم/manifest.json` |
+| `toc.jsonl` | 141,933 | `79f432742c4ceb685f776b3472914a5d45f8fa313e600d185090ecdfd88e4e2b` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1615__الجرح-والتعديل-ابن-أبي-حاتم/toc.jsonl` |
+| `pages.jsonl` | 10,202,926 | `294de8576ead84287a50bb1107e4048fcbd692dc1dd23fbfcf87f72197d257e1` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1615__الجرح-والتعديل-ابن-أبي-حاتم/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 1`):**
-> تقدمة المعرفة لكتاب الجرح والتعديلتأليف الامام الحافظ شيخ الاسلام ابى محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي(المتوفى ٣٢٧ هـ ﵀عن النسخة المحفوظة في كوپريلى [تحت رقم ٢٧٨] وعن النسخة لمحفوظة في مكتبة مراد ملا [تحت...
+> تقدمة المعرفة لكتاب الجرح والتعديل تأليف الامام الحافظ شيخ الاسلام ابى محمد عبد الرحمن بن أبي حاتم محمد بن إدريس بن المنذر التميمي الحنظلي الرازي (المتوفى ٣٢٧ هـ ﵀  عن النسخة المحفوظة في كوپريلى [تحت رقم ٢٧٨] وعن النسخة لمحفوظة في مكتبة مراد ملا [تحت...
 
 **Closing Text Excerpt (`page_num: 625`):**
-> ...تسعين وسبعمائة الهلالية)تم طبع القسم الثاني من المجلد الرابع من كتاب الجرح والتعديل لابن ابى حاتم الرازيلسبع عشرة ليلة خلت من شهر ربيع الاول سنة ١٣٧٣ هـوالحمد لله رب العالمينوصلى الله على سيدنا محمد وعلى آله الطيبين الطاهرين واصحابه الغر الميامين
+> ...تسعين وسبعمائة الهلالية) تم طبع القسم الثاني من المجلد الرابع من كتاب الجرح والتعديل لابن ابى حاتم الرازي لسبع عشرة ليلة خلت من شهر ربيع الاول سنة ١٣٧٣ هـ والحمد لله رب العالمين وصلى الله على سيدنا محمد وعلى آله الطيبين الطاهرين واصحابه الغر الميامين
 
 ---
 
@@ -337,13 +337,13 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,420 | `b1a8597082667f9b7895101ce1ed19fb374d0f99f8e2dd000136a5f06cc418dd` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني\book_metadata.json` |
-| `manifest.json` | 913 | `9e3d690050968991546292895430a67de5c04b953bf4c2057245a7b007ff9c33` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني\manifest.json` |
-| `toc.jsonl` | 2,236,969 | `ebee70d0624866cc38cc69ca9f263f820001312779bd7c434db8fce35e95cd0b` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني\toc.jsonl` |
-| `pages.jsonl` | 9,339,616 | `af6f8e5c8fa95732c29e757a251dc879d6610c67ec29b908077bce76b93335ad` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني\pages.jsonl` |
+| `book_metadata.json` | 1,420 | `b1a8597082667f9b7895101ce1ed19fb374d0f99f8e2dd000136a5f06cc418dd` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني/book_metadata.json` |
+| `manifest.json` | 913 | `9e3d690050968991546292895430a67de5c04b953bf4c2057245a7b007ff9c33` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني/manifest.json` |
+| `toc.jsonl` | 2,236,969 | `ebee70d0624866cc38cc69ca9f263f820001312779bd7c434db8fce35e95cd0b` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني/toc.jsonl` |
+| `pages.jsonl` | 9,339,616 | `af6f8e5c8fa95732c29e757a251dc879d6610c67ec29b908077bce76b93335ad` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/890__التاريخ-الكبير-للبخاري-ت-المعلمي-اليماني/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 1`):**
-> كتاب التاريخ الكبيرتأليف: الحافظ النقاد شيخ الإسلام جبل الحفظ وإمام الدنيا أبي عبد الله اسماعيل بن ابراهيم الجعفي البخاري المتوفي سنة ٢٥٦ هجرية - ٨٦٩ ميلاديةالقسم الثاني من الجزء الأولأحمد - حسينطبع تحت مراقبة الدكتور محمد عبد المعيد خان...
+> كتاب التاريخ الكبير تأليف: الحافظ النقاد شيخ الإسلام جبل الحفظ وإمام الدنيا أبي عبد الله اسماعيل بن ابراهيم الجعفي البخاري المتوفي سنة ٢٥٦ هجرية - ٨٦٩ ميلادية القسم الثاني من الجزء الأول أحمد - حسين طبع تحت مراقبة الدكتور محمد عبد المعيد خان...
 
 **Closing Text Excerpt (`page_num: 549`):**
 > ...جمعية دائرة المعارف غفر الله ذنوبهم وستر عيوبهم وكان تمامه يوم الاحد السادس والعشرين من شهر جمادى الاولى سنة ١٣٦٠ هـ وآخر دعوانا ان الحمدالله رب العالمين وصلى الله وسلم على سيدنا ومولانا محمد نبيه الامين وعلى آله وصحبه الطيبين الطاهرين إلى يوم الدين.
@@ -367,13 +367,13 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,424 | `3fbd8d63f3976fca15ccb4d2aba9cf0b3622e39d6826f8d0be385a1a5316ecae` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\4609__الكامل-في-ضعفاء-الرجال\book_metadata.json` |
-| `manifest.json` | 878 | `f8c92172fdc7c0e422e764801b00d2c669159362a701a220563cd789334eab4e` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\4609__الكامل-في-ضعفاء-الرجال\manifest.json` |
-| `toc.jsonl` | 406,725 | `dd4fbb35fa2f356f899fe6081056ec107793758342c7fe3f5c3577a721362078` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\4609__الكامل-في-ضعفاء-الرجال\toc.jsonl` |
-| `pages.jsonl` | 11,652,138 | `ff4d13863c550aa0434582497bc9c4871b0478a2f0906f831248919d9a1059f8` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\4609__الكامل-في-ضعفاء-الرجال\pages.jsonl` |
+| `book_metadata.json` | 1,424 | `3fbd8d63f3976fca15ccb4d2aba9cf0b3622e39d6826f8d0be385a1a5316ecae` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/4609__الكامل-في-ضعفاء-الرجال/book_metadata.json` |
+| `manifest.json` | 878 | `f8c92172fdc7c0e422e764801b00d2c669159362a701a220563cd789334eab4e` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/4609__الكامل-في-ضعفاء-الرجال/manifest.json` |
+| `toc.jsonl` | 406,725 | `dd4fbb35fa2f356f899fe6081056ec107793758342c7fe3f5c3577a721362078` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/4609__الكامل-في-ضعفاء-الرجال/toc.jsonl` |
+| `pages.jsonl` | 11,652,138 | `ff4d13863c550aa0434582497bc9c4871b0478a2f0906f831248919d9a1059f8` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/4609__الكامل-في-ضعفاء-الرجال/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 2`):**
-> <span data-type="title" id=toc-1>المجلد الأول</span>.قالوا في ابن عدي وكتابه الكامل:قال السبكي: كتاب طابق اسمه معناه، ووافق لفظه فحواه، بصحته حكم المحكمون، وإلى ما يقول رضي المتقدمون والمتاخرون. طبقات الشافعية (٣/٣١٥ /١٢) .وقال ابن كثير: له كتاب ا...
+> <span data-type="title" id=toc-1>المجلد الأول</span>. قالوا في ابن عدي وكتابه الكامل: قال السبكي: كتاب طابق اسمه معناه، ووافق لفظه فحواه، بصحته حكم المحكمون، وإلى ما يقول رضي المتقدمون والمتاخرون. طبقات الشافعية (٣/٣١٥ /١٢) . وقال ابن كثير: له كتاب ا...
 
 **Closing Text Excerpt (`page_num: 586`):**
 > ...قَالَ الشَّيْخُ: وَمَوْلَى سِبَاعٍ هَذَا، لا أَعْرفُ لَهُ غَيْرَ هَذَا الْحَدِيثِ وَيَرْوِي عَنْهُ مُوسَى بْنُ عُبَيْدَةَ، وَهو مَجْهُولٌ، ولاَ يُعْرَفُ.
@@ -397,13 +397,13 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,497 | `541fdb354f19d71286145e1e2818726cae64dd8e573d80fa9099830bd3466158` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1976__الثقات-لابن-حبان\book_metadata.json` |
-| `manifest.json` | 862 | `1c1f33d43aa35f6cb4e5b59076b18fec36ac9777934c43ccec382cae18f9b89f` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1976__الثقات-لابن-حبان\manifest.json` |
-| `toc.jsonl` | 22,628 | `fe2c8acf1b4b977241bc0cc8731b9c7a39ef9daa9e07f27bc42b5b79ea6ecd6d` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1976__الثقات-لابن-حبان\toc.jsonl` |
-| `pages.jsonl` | 6,721,974 | `17f3ff61577d7db94d3d79ec41de73f9dc63de5a0325af649f9c6095353ce607` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1976__الثقات-لابن-حبان\pages.jsonl` |
+| `book_metadata.json` | 1,497 | `541fdb354f19d71286145e1e2818726cae64dd8e573d80fa9099830bd3466158` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1976__الثقات-لابن-حبان/book_metadata.json` |
+| `manifest.json` | 862 | `1c1f33d43aa35f6cb4e5b59076b18fec36ac9777934c43ccec382cae18f9b89f` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1976__الثقات-لابن-حبان/manifest.json` |
+| `toc.jsonl` | 22,628 | `fe2c8acf1b4b977241bc0cc8731b9c7a39ef9daa9e07f27bc42b5b79ea6ecd6d` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1976__الثقات-لابن-حبان/toc.jsonl` |
+| `pages.jsonl` | 6,721,974 | `17f3ff61577d7db94d3d79ec41de73f9dc63de5a0325af649f9c6095353ce607` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1976__الثقات-لابن-حبان/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 1`):**
-> <span data-type="title" id=toc-1>(مُقَدّمَة)</span>﷽صلى الله على سيدنَا مُحَمَّد وَآله وَسلم تَسْلِيمًاقَالَ أَبُو حَاتِم مُحَمَّد بْن حبَان بن أَحْمد التَّمِيمِي الْحَمد لله الَّذِي لَيْسَ لَهُ حد مَحْدُود فيتوى وَلَا لَهُ أجل مَعْدُود فيفنى وَلَ...
+> <span data-type="title" id=toc-1>(مُقَدّمَة)</span> ﷽ صلى الله على سيدنَا مُحَمَّد وَآله وَسلم تَسْلِيمًا قَالَ أَبُو حَاتِم مُحَمَّد بْن حبَان بن أَحْمد التَّمِيمِي الْحَمد لله الَّذِي لَيْسَ لَهُ حد مَحْدُود فيتوى وَلَا لَهُ أجل مَعْدُود فيفنى وَلَ...
 
 **Closing Text Excerpt (`page_num: 671`):**
 > ...ّامِن من شهر ربيع الآخر أحد شهور سنة اثْنَتَيْنِ وَتِسْعين وَمِائَتَيْنِ بعد الْألف من هِجْرَة من لَهُ الْمجد والمفاخر ﷺ عَلَيْهِ وعَلى آله وَصَحبه السادات الأكابر نسخه العَبْد الْفَقِير الى رَحْمَة ربه الْأَحَد مِسْكين احْمَد عفى الله تَعَالَى عَنهُ
@@ -427,16 +427,16 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,380 | `ddd90791296e63a121074ce1c8ebc511a573bf6d7ad90f307e7ff78c787fd35f` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1981__الثقات-للعجلي-ت-البستوي\book_metadata.json` |
-| `manifest.json` | 872 | `132ab7ae38c887806d4d224032b331e5d273c49db936edf78d3e020acf4b7d57` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1981__الثقات-للعجلي-ت-البستوي\manifest.json` |
-| `toc.jsonl` | 36,652 | `e48ebe0941bf3a946119f649781109f71bcead153d08f082f27d08631a29ee32` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1981__الثقات-للعجلي-ت-البستوي\toc.jsonl` |
-| `pages.jsonl` | 643,644 | `242f986aab8995a751496ab95f8edac4257b9fcdfe5732d5997fcb4cb4b0cd6f` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1981__الثقات-للعجلي-ت-البستوي\pages.jsonl` |
+| `book_metadata.json` | 1,380 | `ddd90791296e63a121074ce1c8ebc511a573bf6d7ad90f307e7ff78c787fd35f` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1981__الثقات-للعجلي-ت-البستوي/book_metadata.json` |
+| `manifest.json` | 872 | `132ab7ae38c887806d4d224032b331e5d273c49db936edf78d3e020acf4b7d57` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1981__الثقات-للعجلي-ت-البستوي/manifest.json` |
+| `toc.jsonl` | 36,652 | `e48ebe0941bf3a946119f649781109f71bcead153d08f082f27d08631a29ee32` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1981__الثقات-للعجلي-ت-البستوي/toc.jsonl` |
+| `pages.jsonl` | 643,644 | `242f986aab8995a751496ab95f8edac4257b9fcdfe5732d5997fcb4cb4b0cd6f` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1981__الثقات-للعجلي-ت-البستوي/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 5`):**
-> ﷽اللَّهُمَّ صل على سيدنَا مُحَمَّد وَآله وَسلم الْحَمد لله حق حَمده وصلواته على خير خلقه مُحَمَّد وعَلى آله وَصَحبه وَسَلَامه هَذَا كتاب تَرْتِيب سُؤَالَات أبي مُسلم الْعجلِيّ أَبَاهُ أَحْمد بن عبد الله رتبته على حُرُوف المعجم تسهيلا للوقوف عَلَيْهِ...
+> ﷽ اللَّهُمَّ صل على سيدنَا مُحَمَّد وَآله وَسلم الْحَمد لله حق حَمده وصلواته على خير خلقه مُحَمَّد وعَلى آله وَصَحبه وَسَلَامه هَذَا كتاب تَرْتِيب سُؤَالَات أبي مُسلم الْعجلِيّ أَبَاهُ أَحْمد بن عبد الله رتبته على حُرُوف المعجم تسهيلا للوقوف عَلَيْهِ...
 
 **Closing Text Excerpt (`page_num: 484`):**
-> ...٢٣٦٥ - أم مُوسَى كوفية تابعية ثِقَة<span data-type="title" id=toc-268>(بَاب)</span>٢٣٦٦ - أُخْت ربعى بن حِرَاش وهى امْرَأَة حُذَيْفَة كوفية تابعية ثِقَة
+> ...٢٣٦٥ - أم مُوسَى كوفية تابعية ثِقَة <span data-type="title" id=toc-268>(بَاب)</span>  ٢٣٦٦ - أُخْت ربعى بن حِرَاش وهى امْرَأَة حُذَيْفَة كوفية تابعية ثِقَة
 
 ---
 
@@ -457,16 +457,16 @@ To operationalize this epistemological firewall across the FYP pipeline, researc
 **Component Files & Cryptographic Checksums:**
 | Filename | Bytes | SHA-256 Checksum | Local Path |
 | :--- | ---: | :--- | :--- |
-| `book_metadata.json` | 1,436 | `40fd358c716fa8764e6a25c15d40948c63900ab2f4d135073ae3657aedcef348` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة\book_metadata.json` |
-| `manifest.json` | 908 | `8c57e40f941012e695e60699ed591f438d2f1f9f0bcf06d828b0655a852eca9e` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة\manifest.json` |
-| `toc.jsonl` | 13,812 | `ee76494e49f79fb53fbcd6a2b1e02c2502e3ab32cfdde398773ef67fba5bd8f6` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة\toc.jsonl` |
-| `pages.jsonl` | 2,278,218 | `4fce530987ea73242de98a3e4170286b514aa162a7d41a0d87700b6f3dc291ef` | `data\1_raw\Shamela4_Full_DB\26__التراجم-والطبقات\1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة\pages.jsonl` |
+| `book_metadata.json` | 1,436 | `40fd358c716fa8764e6a25c15d40948c63900ab2f4d135073ae3657aedcef348` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة/book_metadata.json` |
+| `manifest.json` | 908 | `8c57e40f941012e695e60699ed591f438d2f1f9f0bcf06d828b0655a852eca9e` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة/manifest.json` |
+| `toc.jsonl` | 13,812 | `ee76494e49f79fb53fbcd6a2b1e02c2502e3ab32cfdde398773ef67fba5bd8f6` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة/toc.jsonl` |
+| `pages.jsonl` | 2,278,218 | `4fce530987ea73242de98a3e4170286b514aa162a7d41a0d87700b6f3dc291ef` | `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/1616__الكاشف-في-معرفة-من-له-رواية-في-الكتب-الستة/pages.jsonl` |
 
 **Opening Text Excerpt (`page_num: 1`):**
-> الكاشف في معرفة من له رواية في الكتب الستةللامام شمس الدين أبي عبد الله محمد بن أحمد بن الذهبي الدمشقيولد سنة ٦٧٣ - وتوفي سنة ٧٤٨ هـوحاشيته للامام برهان الدين أبي الوفاء إبراهيم بن محمد سبط ابن العجمي الحلبي ولد سنة ٧٥٣ - وتوفي سنة ٨٤١ هـ رحمهما ...
+> الكاشف في معرفة من له رواية في الكتب الستة  للامام شمس الدين أبي عبد الله محمد بن أحمد بن الذهبي الدمشقي ولد سنة ٦٧٣ - وتوفي سنة ٧٤٨ هـ وحاشيته للامام برهان الدين أبي الوفاء إبراهيم بن محمد سبط ابن العجمي الحلبي ولد سنة ٧٥٣ - وتوفي سنة ٨٤١ هـ رحمهما ...
 
 **Closing Text Excerpt (`page_num: 697`):**
-> ...تها هي أم هشام! عمرة عن أختها هي أم هشام ٧١٥٣ ليلى عن مولاتها هي أم عمارة ليلى عن مولاتها هي أم عمارة ٧١٣٣٧١٧٨- أم الحسن عمة غبطة عن جدتها د٧١٧٩- أم حكيم عن أمها عن أم سليم د س أم سلمة قالت أبى سائر أزواج النبي ﷺ أن يدخل عليهن أحد برضاعة الكبير س ق
+> ...تها هي أم هشام! عمرة عن أختها هي أم هشام ٧١٥٣ ليلى عن مولاتها هي أم عمارة ليلى عن مولاتها هي أم عمارة ٧١٣٣ ٧١٧٨- أم الحسن عمة غبطة عن جدتها د ٧١٧٩- أم حكيم عن أمها عن أم سليم د س أم سلمة قالت أبى سائر أزواج النبي ﷺ أن يدخل عليهن أحد برضاعة الكبير س ق
 
 ---
 

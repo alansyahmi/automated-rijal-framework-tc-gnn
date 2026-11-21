@@ -19,11 +19,11 @@
   },
   "output_hashes": {
     "worksheet_csv": "2e18fe75ecf9a696bc0addca2de12d0bfb52d55feebf2c4040d764f176193198",
-    "codebook_md": "6688a0bae02c427549974f7d4af8c083f0a0cd9fa32db082ea404dd0329a34e5",
-    "protocol_md": "005eb4bee219a94067d9798a8f97b3002e3f02cdacd1b65ecebe8ca52c7d841b",
-    "firewall_spec_md": "668d45711161ea5b6e51f4f8c126edab5e474cdfc4c3a0bc86116bc619a57dc2",
-    "generator_script_py": "2f4f971473575f559e70fe374b3817e35dc1247db22454032ea240f7f249dd4d",
-    "test_suite_py": "9e1a7bcc1f7da336022bcd02abf68c1cf93d32d22b6759b3cd9ea65dc34c5fd7"
+    "codebook_md": "d6bac8ff96d2d8ee6e906c57286395c055a89a1cfe32a49b2f23b0b996483080",
+    "protocol_md": "9cb8ec1028e7287ceeb987a083140c1e04cb1505d46e51286107c17e39df6ad5",
+    "firewall_spec_md": "4c64b6687a9502af02291109883a0a4a6c9beb3c6da4a52d7418829bdfe549e8",
+    "generator_script_py": "c37a62c5ff984b9fef1eb1423e7106fa0f20ac0b0795e7f3f36d81533d2dc4bd",
+    "test_suite_py": "4c0cc0353e060d413b92212c107e4bef7e35d8de7c724973bed9d4d0da87bb75"
   },
   "population_statistics": {
     "hadithdb": {

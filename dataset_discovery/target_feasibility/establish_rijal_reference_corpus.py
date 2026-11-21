@@ -174,7 +174,7 @@ def audit_book(spec: dict[str, Any], dest_dir: Path) -> dict[str, Any]:
         files_info[comp] = {
             "bytes": size,
             "sha256": f_hash,
-            "local_path": str(target_path.relative_to(PROJECT_ROOT)),
+            "local_path": target_path.relative_to(PROJECT_ROOT).as_posix(),
         }
 
     # 1. Parse book_metadata.json
@@ -368,7 +368,7 @@ def generate_markdown_report(audits: list[dict[str, Any]], taqrib_deep: dict[str
         f"**Audit Execution Timestamp:** {now_utc}  ",
         "**Upstream Source Repository:** [`AuthenticIlm/Shamela4_Full_DB`](https://huggingface.co/datasets/AuthenticIlm/Shamela4_Full_DB)  ",
         "**Local Storage Directory:** `data/1_raw/Shamela4_Full_DB/26__التراجم-والطبقات/` (Immutable raw storage; excluded from Git tracking)  ",
-        "**Provenance & Firewall Specification:** [`PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md`](file:///c:/Projects/automated-rijal-framework-tc-gnn/dataset_discovery/target_feasibility/PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md)  ",
+        "**Provenance & Firewall Specification:** [`PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md`](PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md)  ",
         "",
         "---",
         "",
@@ -543,7 +543,7 @@ def generate_markdown_report(audits: list[dict[str, Any]], taqrib_deep: dict[str
         "",
         "## 6. Passage-Level Provenance & Temporal Firewall Rules",
         "",
-        "To operationalize this epistemological firewall across the FYP pipeline, researchers must adhere to the formal specification in [`PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md`](file:///c:/Projects/automated-rijal-framework-tc-gnn/dataset_discovery/target_feasibility/PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md):",
+        "To operationalize this epistemological firewall across the FYP pipeline, researchers must adhere to the formal specification in [`PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md`](PROVENANCE_AND_TEMPORAL_FIREWALL_SPEC.md):",
         "",
         "1. **Passage-Level Provenance & Date Separation**: An author death date is not sufficient to establish passage eligibility. The passage-level provenance schema explicitly separates the historical evaluator and date (`attributed_evaluator`, `historical_evaluator_date`) from the surviving textual witness compiler and date (`source_work_author`, `source_work_date`), ensuring that early judgments quoted in later compilations are not misattributed or assigned a single conflated date.",
         "2. **Exclusion of Modern Editorial Commentary**: Editorial footnotes (`حاشية`), editor brackets, variant reading notes, and introductory essays (e.g., by Dr. Bashshār ʿAwwād or Shaykh Shuʿayb al-Arnāʾūṭ) are strictly `ineligible` for NLP feature extraction.",

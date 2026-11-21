@@ -5,6 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from common.hashing import sha256_text_normalized
 from migrate_manual_collation_v2_2 import (
     EXPECTED_INPUT_HASHES,
     MigrationError,
@@ -28,7 +29,7 @@ class ManualCollationV22MigrationTests(unittest.TestCase):
     def test_all_four_pinned_inputs_match_the_frozen_baseline(self):
         for filename, expected in EXPECTED_INPUT_HASHES.items():
             with self.subTest(filename=filename):
-                digest = hashlib.sha256((INPUT_DIR / filename).read_bytes()).hexdigest()
+                digest = sha256_text_normalized(INPUT_DIR / filename)
                 self.assertEqual(digest, expected)
 
     def test_composite_join_rejects_duplicate_keys(self):

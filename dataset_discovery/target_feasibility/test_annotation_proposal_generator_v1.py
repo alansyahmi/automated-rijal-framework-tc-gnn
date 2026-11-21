@@ -226,6 +226,7 @@ class TestAnnotationProposalGeneratorV1(unittest.TestCase):
         self.assertEqual(proposals[0]["proposal_status"], "abstain")
         self.assertEqual(proposals[0]["abstention_reason"], "statement_not_found_exactly_in_entry")
 
+    @unittest.skipUnless(PILOT_DIR.is_dir(), "Legacy shamela4_narrator_audit archive pruned on taqrib-oriented")
     def test_pilot_development_run_excludes_placeholders_and_rejected_identity(self):
         rows = {
             name: read_csv(PILOT_DIR / f"{name}.csv")

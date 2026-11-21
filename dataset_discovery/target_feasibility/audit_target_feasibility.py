@@ -518,7 +518,7 @@ def run() -> dict[str, Any]:
         ],
         "execution_timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "python_version": platform.python_version(),
-        "inputs": [{"path": str(p.relative_to(ROOT)), "bytes": p.stat().st_size, "sha256": sha256(p)} for p in input_paths if p.exists()],
+        "inputs": [{"path": p.relative_to(ROOT).as_posix(), "bytes": p.stat().st_size, "sha256": sha256(p)} for p in input_paths if p.exists()],
         "outputs": {},
         "summary": stats,
         "normalization": "Arabic NFKC; remove combining marks and tatweel; fold alef variants to ا and ى to ي; preserve ة, word order, and particles. Used only to generate candidate matches, never automatic merges.",
