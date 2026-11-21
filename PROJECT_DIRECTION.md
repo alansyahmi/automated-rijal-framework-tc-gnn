@@ -3,7 +3,7 @@
 **Status:** Controlling document for all work on this repository. Adopted 2026-11-21.
 **Owner:** Alan (`alansyahmi`)
 **Supervisor sign-off:** *pending* (see §10)
-**Detailed implementation steps:** [`notes/IMPLEMENTATION_PLAN_LAYERED_SCORE.md`](notes/IMPLEMENTATION_PLAN_LAYERED_SCORE.md)
+**Detailed implementation steps:** [`research_protocol/IMPLEMENTATION_PLAN_LAYERED_SCORE_V3.md`](research_protocol/IMPLEMENTATION_PLAN_LAYERED_SCORE_V3.md)
 
 > **Rule of use.** Any change to the title, objectives, target, data sources, layer rules or evaluation protocol must first be recorded in [`governance/DECISION_LOG.md`](governance/DECISION_LOG.md) and then reflected here. Work that does not serve an objective in §3 is out of scope until this document is amended.
 
@@ -136,8 +136,8 @@ Human checking is limited to **extraction QA**: confirming that the parser reads
 
 ## 9. Branches and order of work
 
-- **`taqrib-oriented`** is the active line. `main` holds the older Task A/B work, and `frozen-v1` preserves it.
-- Work proceeds in the phases P0–P6 of the [implementation plan](notes/IMPLEMENTATION_PLAN_LAYERED_SCORE.md):
+- **`taqrib-oriented-v2`** is the active line for this direction. It was branched from `taqrib-oriented` at `935bd09`, which stays frozen as `frozen-v2-taqrib-oriented` and tag `v2.0-taqrib-frozen`. `main` holds the older Task A/B work, and `frozen-v1` preserves it.
+- Work proceeds in the phases P0–P6 of the [implementation plan](research_protocol/IMPLEMENTATION_PLAN_LAYERED_SCORE_V3.md):
   - P0: test portability and CI
   - P1: governance and naming
   - P2: layer builder
