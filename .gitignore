@@ -29,6 +29,7 @@ data/1_raw/*
 __pycache__/
 *.py[cod]
 .venv/
+.venv-mps/
 .pytest_cache/
 .codex_round1_working/
 dataset_discovery/target_feasibility/scratch/

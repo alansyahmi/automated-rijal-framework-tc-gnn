@@ -47,6 +47,13 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from common.hashing import sha256_text_normalized, to_posix_relative
+from experiments.mps_layers import (
+    MPSGATv2Conv,
+    MPSGCNConv,
+    MPSSAGEConv,
+    empty_device_cache,
+    select_device,
+)
 from experiments.run_stage2_esa_benchmarks_v3 import load_v3_stage2_inputs
 from experiments.v3_common import (
     EXCLUDED_E2_STATUSES,
@@ -78,6 +85,8 @@ def set_seed(seed: int) -> None:
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
+    if hasattr(torch, "mps") and hasattr(torch.mps, "manual_seed"):
+        torch.mps.manual_seed(seed)
 
 
 def load_graph_and_struct_features(
@@ -259,17 +268,46 @@ class DualHeadMLP(nn.Module):
         return self.rank_head(h), self.shift_head(h), {}
 
 
+def _make_gatv2(
+    in_channels: int,
+    out_channels: int,
+    heads: int,
+    edge_dim: int | None,
+    dropout: float,
+    backend: str,
+) -> nn.Module:
+    if backend == "mps_native":
+        return MPSGATv2Conv(
+            in_channels,
+            out_channels,
+            heads=heads,
+            edge_dim=edge_dim,
+            dropout=dropout,
+            add_self_loops=False,
+        )
+    return GATv2Conv(
+        in_channels,
+        out_channels,
+        heads=heads,
+        edge_dim=edge_dim,
+        dropout=dropout,
+        add_self_loops=False,
+    )
+
+
 class UndirectedGNN(nn.Module):
-    def __init__(self, in_dim: int, conv_type: str, hid: int = 128, dropout: float = 0.3) -> None:
+    def __init__(self, in_dim: int, conv_type: str, hid: int = 128, dropout: float = 0.3, backend: str = "pyg") -> None:
         super().__init__()
         self.in_proj = nn.Sequential(nn.Linear(in_dim, hid), nn.LayerNorm(hid), nn.GELU(), nn.Dropout(dropout))
         if conv_type == "gcn":
-            self.conv1, self.conv2 = GCNConv(hid, hid), GCNConv(hid, hid)
+            cls = MPSGCNConv if backend == "mps_native" else GCNConv
+            self.conv1, self.conv2 = cls(hid, hid), cls(hid, hid)
         elif conv_type == "sage":
-            self.conv1, self.conv2 = SAGEConv(hid, hid), SAGEConv(hid, hid)
+            cls = MPSSAGEConv if backend == "mps_native" else SAGEConv
+            self.conv1, self.conv2 = cls(hid, hid), cls(hid, hid)
         elif conv_type == "gatv2":
-            self.conv1 = GATv2Conv(hid, hid // 4, heads=4, dropout=dropout, add_self_loops=False)
-            self.conv2 = GATv2Conv(hid, hid // 4, heads=4, dropout=dropout, add_self_loops=False)
+            self.conv1 = _make_gatv2(hid, hid // 4, heads=4, edge_dim=None, dropout=dropout, backend=backend)
+            self.conv2 = _make_gatv2(hid, hid // 4, heads=4, edge_dim=None, dropout=dropout, backend=backend)
         else:
             raise ValueError(conv_type)
         self.norm1, self.norm2 = nn.LayerNorm(hid), nn.LayerNorm(hid)
@@ -288,21 +326,29 @@ class UndirectedGNN(nn.Module):
 class DirectedTCGNN(nn.Module):
     """Residual-Gated Directional Edge-Conditioned GATv2 (Forward + Reverse + optional kNN view)."""
 
-    def __init__(self, in_dim: int, edge_dim: int = 5, hid: int = 128, dropout: float = 0.3, use_knn: bool = False) -> None:
+    def __init__(
+        self,
+        in_dim: int,
+        edge_dim: int = 5,
+        hid: int = 128,
+        dropout: float = 0.3,
+        use_knn: bool = False,
+        backend: str = "pyg",
+    ) -> None:
         super().__init__()
         self.use_knn = use_knn
         self.in_proj = nn.Sequential(nn.Linear(in_dim, hid), nn.LayerNorm(hid), nn.GELU(), nn.Dropout(dropout))
-        self.fwd1 = GATv2Conv(hid, hid // 4, heads=4, edge_dim=edge_dim, dropout=dropout, add_self_loops=False)
-        self.rev1 = GATv2Conv(hid, hid // 4, heads=4, edge_dim=edge_dim, dropout=dropout, add_self_loops=False)
-        self.fwd2 = GATv2Conv(hid, hid // 4, heads=4, edge_dim=edge_dim, dropout=dropout, add_self_loops=False)
-        self.rev2 = GATv2Conv(hid, hid // 4, heads=4, edge_dim=edge_dim, dropout=dropout, add_self_loops=False)
+        self.fwd1 = _make_gatv2(hid, hid // 4, heads=4, edge_dim=edge_dim, dropout=dropout, backend=backend)
+        self.rev1 = _make_gatv2(hid, hid // 4, heads=4, edge_dim=edge_dim, dropout=dropout, backend=backend)
+        self.fwd2 = _make_gatv2(hid, hid // 4, heads=4, edge_dim=edge_dim, dropout=dropout, backend=backend)
+        self.rev2 = _make_gatv2(hid, hid // 4, heads=4, edge_dim=edge_dim, dropout=dropout, backend=backend)
 
         self.gate_fwd1, self.gate_rev1 = nn.Linear(hid * 2, hid), nn.Linear(hid * 2, hid)
         self.gate_fwd2, self.gate_rev2 = nn.Linear(hid * 2, hid), nn.Linear(hid * 2, hid)
 
         if use_knn:
-            self.knn1 = GATv2Conv(hid, hid // 4, heads=4, edge_dim=1, dropout=dropout, add_self_loops=False)
-            self.knn2 = GATv2Conv(hid, hid // 4, heads=4, edge_dim=1, dropout=dropout, add_self_loops=False)
+            self.knn1 = _make_gatv2(hid, hid // 4, heads=4, edge_dim=1, dropout=dropout, backend=backend)
+            self.knn2 = _make_gatv2(hid, hid // 4, heads=4, edge_dim=1, dropout=dropout, backend=backend)
             self.gate_knn1, self.gate_knn2 = nn.Linear(hid * 2, hid), nn.Linear(hid * 2, hid)
 
         self.norm1, self.norm2 = nn.LayerNorm(hid), nn.LayerNorm(hid)
@@ -435,8 +481,7 @@ def train_transductive_model(
         gates_np = {k: v.cpu().numpy() for k, v in gates.items()}
     r_exp = (r_probs * np.arange(1, 13, dtype=np.float32)).sum(axis=1)
     del model
-    if device.type == "cuda":
-        torch.cuda.empty_cache()
+    empty_device_cache(device)
     return {"rank_probs": r_probs, "rank_exp": r_exp, "shift_probs": s_probs, "gates": gates_np}
 
 
@@ -518,13 +563,19 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run Stage 3 TC-GNN Benchmarks (v3).")
     parser.add_argument("--stage2-dir", type=Path, default=DEFAULT_STAGE2_DIR)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument("--device", type=str, default="auto", choices=["auto", "mps", "cuda", "cpu"])
+    parser.add_argument("--backend", type=str, default="auto", choices=["auto", "mps_native", "pyg"])
+    parser.add_argument("--max-epochs", type=int, default=200)
+    parser.add_argument("--patience", type=int, default=30)
     args = parser.parse_args()
 
     t0 = time.time()
     torch.use_deterministic_algorithms(True, warn_only=True)
     out_dir: Path = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = select_device(args.device)
+    backend = args.backend if args.backend != "auto" else ("mps_native" if device.type == "mps" else "pyg")
+    print(f"Stage 3 v3 device={device.type}, backend={backend}, max_epochs={args.max_epochs}")
 
     stage2_oof = args.stage2_dir / "STAGE2_OOF_ESA_FEATURES_8827_V3.csv"
     if not stage2_oof.is_file():
@@ -603,8 +654,9 @@ def main() -> None:
     g4a_args = (X_sanad_t, g_chrono_sanad["edge_index_fwd"], g_chrono_sanad["edge_attr_fwd"], g_chrono_sanad["edge_index_rev"], g_chrono_sanad["edge_attr_rev"])
     for _run in range(3):
         out_det = train_transductive_model(
-            lambda: DirectedTCGNN(X_sanad_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False),
+            lambda: DirectedTCGNN(X_sanad_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False, backend=backend),
             g4a_args, idx_train, idx_val, y_rank_all, y_shift_all, is_maqbul_all, seed=42,
+            max_epochs=args.max_epochs, patience=args.patience,
         )
         det_rank_exps.append(out_det["rank_exp"])
         det_hashes.append(hashlib.sha256(out_det["rank_exp"].tobytes()).hexdigest())
@@ -614,6 +666,7 @@ def main() -> None:
     )
     determinism_check = {
         "device": device.type,
+        "backend": backend,
         "seed": 42,
         "run_sha256": det_hashes,
         "all_3_bit_exact": len(set(det_hashes)) == 1,
@@ -673,7 +726,18 @@ def main() -> None:
         gf_c, gf_i, gr_c, gr_i, gk_a = [], [], [], [], []
         conn_mask, iso_mask = ~g_chrono_sanad["is_isolated"], g_chrono_sanad["is_isolated"]
         for sd in SEEDS:
-            out = train_transductive_model(model_fn, fwd_args, idx_train, idx_val, y_rank_all, y_shift_all, is_maqbul_all, seed=sd)
+            out = train_transductive_model(
+                model_fn,
+                fwd_args,
+                idx_train,
+                idx_val,
+                y_rank_all,
+                y_shift_all,
+                is_maqbul_all,
+                seed=sd,
+                max_epochs=args.max_epochs,
+                patience=args.patience,
+            )
             rp, rexp, sp = out["rank_probs"], out["rank_exp"], out["shift_probs"]
             r_sum += rp / len(SEEDS)
             s_sum += sp / len(SEEDS)
@@ -698,27 +762,27 @@ def main() -> None:
 
     run_pyg_5seed(
         "G1_GraphOnly_NoText", "graph_only",
-        lambda: DirectedTCGNN(X_g1_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False),
+        lambda: DirectedTCGNN(X_g1_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False, backend=backend),
         (X_g1_t, g_chrono_sanad["edge_index_fwd"], g_chrono_sanad["edge_attr_fwd"], g_chrono_sanad["edge_index_rev"], g_chrono_sanad["edge_attr_rev"]),
     )
     run_pyg_5seed("G2b_Sem_Plus_SanadStruct_MLP", "tabular_with_struct", lambda: DualHeadMLP(X_sanad_t.size(1)), (X_sanad_t,))
-    run_pyg_5seed("G3a_Undirected_GCN", "undirected_gnn", lambda: UndirectedGNN(X_sanad_t.size(1), "gcn"), (X_sanad_t, g_chrono_sanad["edge_index_undir"]))
-    run_pyg_5seed("G3b_Undirected_GraphSAGE", "undirected_gnn", lambda: UndirectedGNN(X_sanad_t.size(1), "sage"), (X_sanad_t, g_chrono_sanad["edge_index_undir"]))
-    run_pyg_5seed("G3c_Undirected_GATv2", "undirected_gnn", lambda: UndirectedGNN(X_sanad_t.size(1), "gatv2"), (X_sanad_t, g_chrono_sanad["edge_index_undir"]))
-    run_pyg_5seed("G4a_Directed_TC_GNN_Sanad", "directed_tc_gnn_primary", lambda: DirectedTCGNN(X_sanad_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False), g4a_args)
+    run_pyg_5seed("G3a_Undirected_GCN", "undirected_gnn", lambda: UndirectedGNN(X_sanad_t.size(1), "gcn", backend=backend), (X_sanad_t, g_chrono_sanad["edge_index_undir"]))
+    run_pyg_5seed("G3b_Undirected_GraphSAGE", "undirected_gnn", lambda: UndirectedGNN(X_sanad_t.size(1), "sage", backend=backend), (X_sanad_t, g_chrono_sanad["edge_index_undir"]))
+    run_pyg_5seed("G3c_Undirected_GATv2", "undirected_gnn", lambda: UndirectedGNN(X_sanad_t.size(1), "gatv2", backend=backend), (X_sanad_t, g_chrono_sanad["edge_index_undir"]))
+    run_pyg_5seed("G4a_Directed_TC_GNN_Sanad", "directed_tc_gnn_primary", lambda: DirectedTCGNN(X_sanad_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False, backend=backend), g4a_args)
     run_pyg_5seed(
         "G4b_Directed_TC_GNN_UnprunedSanad", "ablation_unpruned_edges",
-        lambda: DirectedTCGNN(X_unpruned_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False),
+        lambda: DirectedTCGNN(X_unpruned_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False, backend=backend),
         (X_unpruned_t, g_unpruned_sanad["edge_index_fwd"], g_unpruned_sanad["edge_attr_fwd"], g_unpruned_sanad["edge_index_rev"], g_unpruned_sanad["edge_attr_rev"]),
     )
     run_pyg_5seed(
         "G4c_MV_TC_GNN_Sanad_Plus_kNN", "ablation_semantic_knn",
-        lambda: DirectedTCGNN(X_sanad_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=True),
+        lambda: DirectedTCGNN(X_sanad_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=True, backend=backend),
         (*g4a_args, ei_knn, ea_knn),
     )
     run_pyg_5seed(
         "G4d_Directed_TC_GNN_Consolidated", "ablation_consolidated_edges",
-        lambda: DirectedTCGNN(X_consol_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False),
+        lambda: DirectedTCGNN(X_consol_t.size(1), edge_dim=5, hid=128, dropout=0.3, use_knn=False, backend=backend),
         (X_consol_t, g_chrono_consol["edge_index_fwd"], g_chrono_consol["edge_attr_fwd"], g_chrono_consol["edge_index_rev"], g_chrono_consol["edge_attr_rev"]),
     )
 
@@ -861,7 +925,7 @@ def main() -> None:
         "# Stage 3: TC-GNN (Text-Classification-informed GNN) Ablation Report (v3)",
         "",
         f"- **Generated (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%SZ')}",
-        f"- **Elapsed:** {time.time() - t0:.1f}s | **Device:** {device.type.upper()}",
+        f"- **Elapsed:** {time.time() - t0:.1f}s | **Device:** {device.type.upper()} (`backend={backend}`)",
         f"- **Clean Cohort (excluding `missing` + `suspect_alignment`):** `train = {len(idx_train)}`, `val = {len(idx_val)}`, `test = {len(idx_test)}`.",
         f"- **Ṭabaqah Chronology Pruning (`chrono_pruned`, Pure Sanad):** 42,011 → **{g_chrono_sanad['kept_edges']}** kept (`{g_chrono_sanad['pruned_impossible']}` pruned).",
         f"- **3-Run Determinism Check (`G4a`, `seed=42`):** `all_3_bit_exact = {determinism_check['all_3_bit_exact']}`, `max_abs_diff = {determinism_check['max_abs_rank_exp_diff']}`.",

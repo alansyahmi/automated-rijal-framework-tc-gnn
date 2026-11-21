@@ -144,12 +144,24 @@ class V3DatasetAndScriptContractTests(unittest.TestCase):
 
 @pytest.mark.gpu
 def test_v3_stage2_and_stage3_imports_when_torch_present() -> None:
-    pytest.importorskip("torch")
+    torch = pytest.importorskip("torch")
     pytest.importorskip("transformers")
     pytest.importorskip("torch_geometric")
     from experiments import run_stage2_esa_benchmarks_v3 as s2
     from experiments import run_stage3_tc_gnn_benchmarks_v3 as s3
 
     data = s2.load_v3_stage2_inputs()
-    assert len(data["entry_ids"]) == 8827
-    assert s3.PRUNING_COLUMN_MAP["sanad_chrono_pruned_adj"] == "chrono_pruned_adj"
+    assert len(data["all_rows"]) == 8827
+    assert len(data["idx_train"]) == 5046
+    assert len(data["idx_val"]) == 1086
+    assert len(data["idx_test"]) == 1077
+    assert len(data["idx_first_grade"]) == 211
+
+    dev = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    backend = "mps_native" if dev.type == "mps" else "pyg"
+    model = s3.DirectedTCGNN(16, edge_dim=5, hid=16, dropout=0.1, use_knn=False, backend=backend).to(dev)
+    x = torch.randn(10, 16, device=dev)
+    ei = torch.randint(0, 10, (2, 12), device=dev)
+    ea = torch.randn(12, 5, device=dev)
+    r_log, s_log, _ = model(x, ei, ea, ei.flip(0), ea)
+    assert r_log.shape == (10, 12) and s_log.shape == (10, 3)

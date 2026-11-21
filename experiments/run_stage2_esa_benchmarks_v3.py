@@ -54,6 +54,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from common.hashing import sha256_text_normalized, to_posix_relative
+from experiments.mps_layers import empty_device_cache, select_device
 from experiments.v3_common import (
     DIACRITICS_RE,
     EXCLUDED_E2_STATUSES,
@@ -85,6 +86,8 @@ def set_seed(seed: int = SEED) -> None:
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
+    if hasattr(torch, "mps") and hasattr(torch.mps, "manual_seed"):
+        torch.mps.manual_seed(seed)
 
 
 def build_name_stripped_text(row: dict[str, str], target_span: str) -> str:
@@ -118,11 +121,16 @@ def build_name_stripped_text(row: dict[str, str], target_span: str) -> str:
     return " ".join(tokens).strip() or "غير محدد"
 
 
-def extract_camelbert_zero_shot(texts: list[str], batch_size: int = 64, local_files_only: bool = True) -> np.ndarray:
+def extract_camelbert_zero_shot(
+    texts: list[str],
+    batch_size: int = 32,
+    local_files_only: bool = True,
+    device: torch.device | None = None,
+) -> np.ndarray:
     """Run zero-shot generic-sentiment baseline (CAMeLBERT-MSA-sentiment) over all 8,827 Taqrib entries."""
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    dev = device or select_device("auto")
     tok = AutoTokenizer.from_pretrained(CAMEL_ID, local_files_only=local_files_only)
-    model = AutoModelForSequenceClassification.from_pretrained(CAMEL_ID, local_files_only=local_files_only).to(device)
+    model = AutoModelForSequenceClassification.from_pretrained(CAMEL_ID, local_files_only=local_files_only).to(dev)
     model.eval()
     id2label = {int(k): v.lower() for k, v in model.config.id2label.items()}
     pos_idx = next(k for k, v in id2label.items() if "pos" in v)
@@ -133,8 +141,8 @@ def extract_camelbert_zero_shot(texts: list[str], batch_size: int = 64, local_fi
     with torch.no_grad():
         for start in range(0, len(texts), batch_size):
             batch = texts[start : start + batch_size]
-            enc = tok(batch, padding=True, truncation=True, max_length=96, return_tensors="pt").to(device)
-            with torch.amp.autocast("cuda", dtype=torch.float16, enabled=(device == "cuda")):
+            enc = tok(batch, padding=True, truncation=True, max_length=96, return_tensors="pt").to(dev)
+            with torch.cuda.amp.autocast(dtype=torch.float16, enabled=(dev.type == "cuda")):
                 logits = model(**enc).logits
             probs = torch.softmax(logits.float(), dim=-1).cpu().numpy()
             probs_all.append(probs)
@@ -144,38 +152,57 @@ def extract_camelbert_zero_shot(texts: list[str], batch_size: int = 64, local_fi
     p_neg = raw[:, neg_idx : neg_idx + 1]
     polarity = p_pos - p_neg
     del model
-    if device == "cuda":
-        torch.cuda.empty_cache()
+    empty_device_cache(dev)
     return np.hstack([p_pos, p_neu, p_neg, polarity]).astype(np.float32)
 
 
 class TaqribBertDataset(Dataset):
     def __init__(
         self,
-        encodings: dict[str, torch.Tensor],
+        token_ids_list: list[list[int]],
         meta: np.ndarray,
         y_rank: np.ndarray | None = None,
         y_shift: np.ndarray | None = None,
     ) -> None:
-        self.input_ids = encodings["input_ids"]
-        self.attention_mask = encodings["attention_mask"]
+        self.token_ids = token_ids_list
         self.meta = torch.tensor(meta, dtype=torch.float32)
         self.y_rank = torch.tensor(y_rank - 1, dtype=torch.long) if y_rank is not None else None
         self.y_shift = torch.tensor(y_shift, dtype=torch.long) if y_shift is not None else None
 
     def __len__(self) -> int:
-        return self.input_ids.size(0)
+        return len(self.token_ids)
 
-    def __getitem__(self, idx: int) -> dict[str, torch.Tensor]:
-        item = {
-            "input_ids": self.input_ids[idx],
-            "attention_mask": self.attention_mask[idx],
+    def __getitem__(self, idx: int) -> dict[str, Any]:
+        item: dict[str, Any] = {
+            "ids": self.token_ids[idx],
             "meta": self.meta[idx],
         }
         if self.y_rank is not None and self.y_shift is not None:
             item["y_rank"] = self.y_rank[idx]
             item["y_shift"] = self.y_shift[idx]
         return item
+
+
+def make_dynamic_collate(pad_id: int):
+    def collate(batch: list[dict[str, Any]]) -> dict[str, torch.Tensor]:
+        max_len = max(len(b["ids"]) for b in batch)
+        input_ids = torch.full((len(batch), max_len), pad_id, dtype=torch.long)
+        attention_mask = torch.zeros((len(batch), max_len), dtype=torch.long)
+        for i, b in enumerate(batch):
+            seq = b["ids"]
+            input_ids[i, : len(seq)] = torch.tensor(seq, dtype=torch.long)
+            attention_mask[i, : len(seq)] = 1
+        out: dict[str, torch.Tensor] = {
+            "input_ids": input_ids,
+            "attention_mask": attention_mask,
+            "meta": torch.stack([b["meta"] for b in batch], dim=0),
+        }
+        if "y_rank" in batch[0]:
+            out["y_rank"] = torch.stack([b["y_rank"] for b in batch], dim=0)
+            out["y_shift"] = torch.stack([b["y_shift"] for b in batch], dim=0)
+        return out
+
+    return collate
 
 
 class AraBERTDualHead(nn.Module):
@@ -222,36 +249,42 @@ def train_and_eval_arabert(
     val_is_maqbul: np.ndarray,
     epochs: int = 5,
     batch_size: int = 32,
+    grad_accum: int = 1,
+    max_length: int = 96,
     seed: int = SEED,
     local_files_only: bool = True,
+    device: torch.device | None = None,
 ) -> tuple[dict[str, dict[str, np.ndarray]], dict[str, Any]]:
     set_seed(seed)
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    dev = device or select_device("auto")
     tok = AutoTokenizer.from_pretrained(ARABERT_ID, local_files_only=local_files_only)
+    pad_id = tok.pad_token_id if tok.pad_token_id is not None else 0
+    collate_fn = make_dynamic_collate(pad_id)
 
     scaler = StandardScaler()
     tr_meta_sc = scaler.fit_transform(train_meta).astype(np.float32)
 
-    tr_enc = tok(train_texts, padding="max_length", truncation=True, max_length=96, return_tensors="pt")
-    tr_ds = TaqribBertDataset(tr_enc, tr_meta_sc, train_rank, train_shift)
-    tr_loader = DataLoader(tr_ds, batch_size=batch_size, shuffle=True)
+    tr_ids = tok(train_texts, truncation=True, max_length=max_length)["input_ids"]
+    tr_ds = TaqribBertDataset(tr_ids, tr_meta_sc, train_rank, train_shift)
+    tr_loader = DataLoader(tr_ds, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
 
+    eval_bs = 32 if dev.type == "mps" else 64
     eval_loaders = {}
     for name, (txts, m_arr) in eval_batches.items():
-        enc = tok(txts, padding="max_length", truncation=True, max_length=96, return_tensors="pt")
-        ds = TaqribBertDataset(enc, scaler.transform(m_arr).astype(np.float32))
-        eval_loaders[name] = DataLoader(ds, batch_size=64, shuffle=False)
+        ids_list = tok(txts, truncation=True, max_length=max_length)["input_ids"]
+        ds = TaqribBertDataset(ids_list, scaler.transform(m_arr).astype(np.float32))
+        eval_loaders[name] = DataLoader(ds, batch_size=eval_bs, shuffle=False, collate_fn=collate_fn)
 
-    model = AraBERTDualHead(meta_dim=train_meta.shape[1], local_files_only=local_files_only).to(device)
+    model = AraBERTDualHead(meta_dim=train_meta.shape[1], local_files_only=local_files_only).to(dev)
 
     cnts = np.bincount(train_shift, minlength=3).astype(np.float32)
     sw = np.sqrt(cnts.sum() / (3.0 * np.maximum(cnts, 1.0)))
-    sw = torch.tensor(sw / sw.mean(), dtype=torch.float32, device=device)
+    sw = torch.tensor(sw / sw.mean(), dtype=torch.float32, device=dev)
 
     ce_rank = nn.CrossEntropyLoss()
     ce_shift = nn.CrossEntropyLoss(weight=sw)
     smooth_l1 = nn.SmoothL1Loss()
-    rank_vals = torch.arange(1, 13, dtype=torch.float32, device=device)
+    rank_vals = torch.arange(1, 13, dtype=torch.float32, device=dev)
 
     optimizer = torch.optim.AdamW(
         [
@@ -263,7 +296,8 @@ def train_and_eval_arabert(
         ],
         weight_decay=0.01,
     )
-    total_steps = len(tr_loader) * epochs
+    steps_per_epoch = max(1, math.ceil(len(tr_loader) / max(1, grad_accum)))
+    total_steps = steps_per_epoch * epochs
     warmup_steps = max(1, int(0.1 * total_steps))
 
     def lr_lambda(step: int) -> float:
@@ -273,7 +307,8 @@ def train_and_eval_arabert(
         return max(0.05, 0.5 * (1.0 + math.cos(math.pi * progress)))
 
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
-    grad_scaler = torch.amp.GradScaler("cuda", enabled=(device == "cuda"))
+    use_cuda_amp = dev.type == "cuda"
+    grad_scaler = torch.cuda.amp.GradScaler(enabled=use_cuda_amp)
 
     best_score = -1e9
     best_state = None
@@ -284,10 +319,10 @@ def train_and_eval_arabert(
         r_probs_list, s_probs_list, cls_list = [], [], []
         with torch.no_grad():
             for b in loader:
-                ids = b["input_ids"].to(device)
-                mask = b["attention_mask"].to(device)
-                meta = b["meta"].to(device)
-                with torch.amp.autocast("cuda", dtype=torch.float16, enabled=(device == "cuda")):
+                ids = b["input_ids"].to(dev)
+                mask = b["attention_mask"].to(dev)
+                meta = b["meta"].to(dev)
+                with torch.cuda.amp.autocast(dtype=torch.float16, enabled=use_cuda_amp):
                     r_log, s_log, cls_e = model(ids, mask, meta)
                 r_probs_list.append(torch.softmax(r_log.float(), dim=-1).cpu().numpy())
                 s_probs_list.append(torch.softmax(s_log.float(), dim=-1).cpu().numpy())
@@ -300,26 +335,29 @@ def train_and_eval_arabert(
 
     for ep in range(1, epochs + 1):
         model.train()
-        for b in tr_loader:
-            optimizer.zero_grad()
-            ids = b["input_ids"].to(device)
-            mask = b["attention_mask"].to(device)
-            meta = b["meta"].to(device)
-            yr = b["y_rank"].to(device)
-            ys = b["y_shift"].to(device)
-            with torch.amp.autocast("cuda", dtype=torch.float16, enabled=(device == "cuda")):
+        optimizer.zero_grad()
+        n_batches = len(tr_loader)
+        for b_idx, b in enumerate(tr_loader):
+            ids = b["input_ids"].to(dev)
+            mask = b["attention_mask"].to(dev)
+            meta = b["meta"].to(dev)
+            yr = b["y_rank"].to(dev)
+            ys = b["y_shift"].to(dev)
+            with torch.cuda.amp.autocast(dtype=torch.float16, enabled=use_cuda_amp):
                 r_log, s_log, _ = model(ids, mask, meta)
                 r_probs = torch.softmax(r_log.float(), dim=-1)
                 r_exp = (r_probs * rank_vals).sum(dim=-1)
                 loss_r = ce_rank(r_log.float(), yr) + 0.35 * smooth_l1(r_exp, (yr + 1).float())
                 loss_s = ce_shift(s_log.float(), ys)
-                loss = loss_r + 1.0 * loss_s
+                loss = (loss_r + 1.0 * loss_s) / float(max(1, grad_accum))
             grad_scaler.scale(loss).backward()
-            grad_scaler.unscale_(optimizer)
-            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-            grad_scaler.step(optimizer)
-            grad_scaler.update()
-            scheduler.step()
+            if (b_idx + 1) % grad_accum == 0 or (b_idx + 1) == n_batches:
+                grad_scaler.unscale_(optimizer)
+                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+                grad_scaler.step(optimizer)
+                grad_scaler.update()
+                optimizer.zero_grad()
+                scheduler.step()
 
         val_out = run_infer(eval_loaders[val_key])
         val_m = compute_metrics(
@@ -336,11 +374,10 @@ def train_and_eval_arabert(
             best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
 
     assert best_state is not None
-    model.load_state_dict({k: v.to(device) for k, v in best_state.items()})
+    model.load_state_dict({k: v.to(dev) for k, v in best_state.items()})
     outputs = {name: run_infer(ldr) for name, ldr in eval_loaders.items()}
     del model
-    if device == "cuda":
-        torch.cuda.empty_cache()
+    empty_device_cache(dev)
     return outputs, {"best_epoch": best_epoch, "best_val_composite": round(best_score, 4)}
 
 
@@ -409,14 +446,26 @@ def load_v3_stage2_inputs(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run Stage 2 ESA Benchmarks (v3).")
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument("--device", type=str, default="auto", choices=["auto", "mps", "cuda", "cpu"])
+    parser.add_argument("--epochs", type=int, default=5)
+    parser.add_argument("--batch-size", type=int, default=0, help="0 = auto (16 on MPS for 4GB VRAM, 32 on CUDA/CPU).")
+    parser.add_argument("--grad-accum", type=int, default=0, help="0 = auto (2 on MPS -> eff bs 32, 1 on CUDA/CPU).")
+    parser.add_argument("--max-length", type=int, default=96)
+    parser.add_argument("--resume", action="store_true", help="Resume from cached fold/checkpoint files inside out-dir.")
     parser.add_argument("--allow-hf-download", action="store_true", help="Allow downloading HF models if not cached locally.")
     args = parser.parse_args()
 
     t0 = time.time()
     set_seed(SEED)
+    device = select_device(args.device)
+    batch_size = args.batch_size if args.batch_size > 0 else (16 if device.type == "mps" else 32)
+    grad_accum = args.grad_accum if args.grad_accum > 0 else (2 if device.type == "mps" else 1)
     out_dir: Path = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
+    ckpt_dir = out_dir / "checkpoints"
+    ckpt_dir.mkdir(parents=True, exist_ok=True)
     local_only = not args.allow_hf_download
+    print(f"Stage 2 v3 device={device.type}, batch_size={batch_size}, grad_accum={grad_accum}, epochs={args.epochs}")
 
     with TASK_A_V14.open(encoding="utf-8-sig") as f:
         v14_spans = {r["entry_id"]: r["first_complete_target_span_exact"] for r in csv.DictReader(f)}
@@ -609,8 +658,17 @@ def main() -> None:
     )
 
     # 4. M3a CAMeLBERT Zero-Shot Generic-Sentiment Baseline + Meta
-    print("Running generic-sentiment baseline (CAMeLBERT) inference on 8,827 entries...")
-    camel_feats = extract_camelbert_zero_shot(texts_full, batch_size=64, local_files_only=local_only)
+    camel_cache = ckpt_dir / "camelbert_feats.npy"
+    if args.resume and camel_cache.exists():
+        print("Loaded cached CAMeLBERT generic-sentiment features:", camel_cache)
+        camel_feats = np.load(camel_cache)
+    else:
+        print("Running generic-sentiment baseline (CAMeLBERT) inference on 8,827 entries...")
+        camel_bs = 32 if device.type == "mps" else 64
+        camel_feats = extract_camelbert_zero_shot(
+            texts_full, batch_size=camel_bs, local_files_only=local_only, device=device
+        )
+        np.save(camel_cache, camel_feats)
     Xcm_tr = np.hstack([X_meta_all[idx_train], camel_feats[idx_train]])
     Xcm_va = np.hstack([X_meta_all[idx_val], camel_feats[idx_val]])
     Xcm_te = np.hstack([X_meta_all[idx_test], camel_feats[idx_test]])
@@ -676,6 +734,21 @@ def main() -> None:
     for fold_id, (f_tr_rel, f_va_rel) in enumerate(skf.split(idx_train, skf_labels)):
         f_tr = idx_train[f_tr_rel]
         f_va = idx_train[f_va_rel]
+        fold_ckpt = ckpt_dir / f"m3b_fold_{fold_id}.npz"
+        if args.resume and fold_ckpt.exists():
+            print(f"  Loaded cached AraBERTv02 ESA Fold {fold_id + 1}/5 from {fold_ckpt.name}")
+            z = np.load(fold_ckpt)
+            fold_epochs.append(int(z["best_epoch"]))
+            arabert_oof_rank_exp[f_va] = z["va_rank_exp"]
+            arabert_oof_rprobs[f_va] = z["va_rank_probs"]
+            arabert_oof_sprobs[f_va] = z["va_shift_probs"]
+            arabert_oof_cls[f_va] = z["va_cls"]
+            arabert_oof_rank_exp[idx_non_train] += z["nt_rank_exp"] / 5.0
+            arabert_oof_rprobs[idx_non_train] += z["nt_rank_probs"] / 5.0
+            arabert_oof_sprobs[idx_non_train] += z["nt_shift_probs"] / 5.0
+            arabert_oof_cls[idx_non_train] += z["nt_cls"] / 5.0
+            continue
+
         print(f"  Training AraBERTv02 ESA Fold {fold_id + 1}/5 (tr={len(f_tr)}, fold_val={len(f_va)})...")
         eval_b = {
             "fold_val": ([texts_full[i] for i in f_va], X_meta_all[f_va]),
@@ -691,10 +764,13 @@ def main() -> None:
             val_rank=y_rank_all[f_va],
             val_shift=y_shift_all[f_va],
             val_is_maqbul=is_maqbul_all[f_va],
-            epochs=5,
-            batch_size=32,
+            epochs=args.epochs,
+            batch_size=batch_size,
+            grad_accum=grad_accum,
+            max_length=args.max_length,
             seed=SEED + fold_id,
             local_files_only=local_only,
+            device=device,
         )
         fold_epochs.append(info["best_epoch"])
         arabert_oof_rank_exp[f_va] = outs["fold_val"]["rank_exp"]
@@ -706,6 +782,18 @@ def main() -> None:
         arabert_oof_rprobs[idx_non_train] += outs["non_train"]["rank_probs"] / 5.0
         arabert_oof_sprobs[idx_non_train] += outs["non_train"]["shift_probs"] / 5.0
         arabert_oof_cls[idx_non_train] += outs["non_train"]["cls"] / 5.0
+        np.savez(
+            fold_ckpt,
+            best_epoch=np.array(info["best_epoch"]),
+            va_rank_exp=outs["fold_val"]["rank_exp"],
+            va_rank_probs=outs["fold_val"]["rank_probs"],
+            va_shift_probs=outs["fold_val"]["shift_probs"],
+            va_cls=outs["fold_val"]["cls"],
+            nt_rank_exp=outs["non_train"]["rank_exp"],
+            nt_rank_probs=outs["non_train"]["rank_probs"],
+            nt_shift_probs=outs["non_train"]["shift_probs"],
+            nt_cls=outs["non_train"]["cls"],
+        )
 
     record_model(
         "M3b_AraBERTv02_Full_DualHead",
@@ -719,26 +807,49 @@ def main() -> None:
     )
 
     # 6. M3c AraBERTv02 Name-Stripped ESA Ablation
-    print("Training AraBERTv02 Name-Stripped ESA Dual-Head...")
-    outs_ns, info_ns = train_and_eval_arabert(
-        [texts_stripped[i] for i in idx_train],
-        X_meta_all[idx_train],
-        y_rank_all[idx_train],
-        y_shift_all[idx_train],
-        {
-            "val": ([texts_stripped[i] for i in idx_val], X_meta_all[idx_val]),
-            "test": ([texts_stripped[i] for i in idx_test], X_meta_all[idx_test]),
-            "fg": ([texts_stripped[i] for i in idx_first_grade], X_meta_all[idx_first_grade]),
-        },
-        val_key="val",
-        val_rank=y_rank_all[idx_val],
-        val_shift=y_shift_all[idx_val],
-        val_is_maqbul=is_maqbul_all[idx_val],
-        epochs=5,
-        batch_size=32,
-        seed=SEED,
-        local_files_only=local_only,
-    )
+    m3c_ckpt = ckpt_dir / "m3c_stripped.npz"
+    if args.resume and m3c_ckpt.exists():
+        print(f"Loaded cached AraBERTv02 Name-Stripped from {m3c_ckpt.name}")
+        zns = np.load(m3c_ckpt)
+        info_ns = {"best_epoch": int(zns["best_epoch"])}
+        outs_ns = {
+            "val": {"rank_exp": zns["val_rank_exp"], "shift_probs": zns["val_shift_probs"]},
+            "test": {"rank_exp": zns["test_rank_exp"], "shift_probs": zns["test_shift_probs"]},
+            "fg": {"rank_exp": zns["fg_rank_exp"]},
+        }
+    else:
+        print("Training AraBERTv02 Name-Stripped ESA Dual-Head...")
+        outs_ns, info_ns = train_and_eval_arabert(
+            [texts_stripped[i] for i in idx_train],
+            X_meta_all[idx_train],
+            y_rank_all[idx_train],
+            y_shift_all[idx_train],
+            {
+                "val": ([texts_stripped[i] for i in idx_val], X_meta_all[idx_val]),
+                "test": ([texts_stripped[i] for i in idx_test], X_meta_all[idx_test]),
+                "fg": ([texts_stripped[i] for i in idx_first_grade], X_meta_all[idx_first_grade]),
+            },
+            val_key="val",
+            val_rank=y_rank_all[idx_val],
+            val_shift=y_shift_all[idx_val],
+            val_is_maqbul=is_maqbul_all[idx_val],
+            epochs=args.epochs,
+            batch_size=batch_size,
+            grad_accum=grad_accum,
+            max_length=args.max_length,
+            seed=SEED,
+            local_files_only=local_only,
+            device=device,
+        )
+        np.savez(
+            m3c_ckpt,
+            best_epoch=np.array(info_ns["best_epoch"]),
+            val_rank_exp=outs_ns["val"]["rank_exp"],
+            val_shift_probs=outs_ns["val"]["shift_probs"],
+            test_rank_exp=outs_ns["test"]["rank_exp"],
+            test_shift_probs=outs_ns["test"]["shift_probs"],
+            fg_rank_exp=outs_ns["fg"]["rank_exp"],
+        )
     record_model(
         "M3c_AraBERTv02_NameStripped_DualHead",
         "name_stripped_ablation",
@@ -839,11 +950,16 @@ def main() -> None:
         w.writerows(per_cls_rows)
 
     test_rows = [r for r in comparison_rows if r["split"] == "test"]
+    dev_label = (
+        "CUDA (" + torch.cuda.get_device_name(0) + ")"
+        if device.type == "cuda"
+        else ("MPS (AMD Radeon / Apple Metal)" if device.type == "mps" else "CPU")
+    )
     md_lines = [
         "# Stage 2: Evaluative Stance Analysis (ESA) Benchmark Report (v3)",
         "",
         f"- **Generated (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%SZ')}",
-        f"- **Elapsed:** {time.time() - t0:.1f}s | **Device:** {'CUDA (' + torch.cuda.get_device_name(0) + ')' if torch.cuda.is_available() else 'CPU'}",
+        f"- **Elapsed:** {time.time() - t0:.1f}s | **Device:** {dev_label}",
         f"- **Clean Cohort (excluding `missing` + `suspect_alignment`):** `train = {len(idx_train)}`, `val = {len(idx_val)}`, `test = {len(idx_test)}`.",
         f"- **Taqrīb Abstained / Taḥrīr Graded (`observed_first_grade`) Slice:** `N = {len(idx_first_grade)}`.",
         "",

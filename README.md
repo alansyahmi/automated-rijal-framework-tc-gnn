@@ -41,9 +41,13 @@ python dataset_discovery/target_feasibility/build_layered_scores_v3.py
 # P3: Build independent external validation set from al-Dhahabi's al-Kashif (CPU)
 python dataset_discovery/target_feasibility/build_kashif_validation_v1.py
 
-# P4: Train Track L Stage 2 ESA & Stage 3 TC-GNN (CUDA GPU required)
-python experiments/run_stage2_esa_benchmarks_v3.py --allow-hf-download
-python experiments/run_stage3_tc_gnn_benchmarks_v3.py
+# P4: Train Track L Stage 2 ESA & Stage 3 TC-GNN (CUDA GPU or macOS AMD Radeon MPS)
+python experiments/run_stage2_esa_benchmarks_v3.py --device auto --allow-hf-download
+python experiments/run_stage3_tc_gnn_benchmarks_v3.py --device auto
+
+# Or run the full macOS AMD Radeon Pro 5500M (4 GB VRAM MPS) pipeline in one command:
+#   pip install -r requirements-macos-mps.txt
+python experiments/run_radeon_mps_pipeline.py
 
 # P5 & P6: Run Experiments A-D, al-Kashif bootstrap, E1 sensitivity, homophily & showcases (CPU)
 python experiments/run_layered_experiments_v3.py

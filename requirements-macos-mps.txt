@@ -1,0 +1,14 @@
+# macOS x86_64 (Intel + AMD Radeon Pro 5500M Metal/MPS) environment
+# Note: PyTorch 2.2.2 is the final official PyPI release with macOS x86_64 wheels
+# and requires numpy<2. Stage 3 uses pure-PyTorch MPS layers (experiments/mps_layers.py).
+numpy==1.26.4
+torch==2.2.2
+transformers==4.57.6
+torch-geometric==2.6.1
+scikit-learn==1.6.1
+scipy==1.13.1
+pandas==2.3.3
+pyarrow==21.0.0
+matplotlib==3.9.4
+seaborn==0.13.2
+pytest==8.4.2
