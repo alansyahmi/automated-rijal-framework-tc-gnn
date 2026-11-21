@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "source_work": {
+    "book_id": 1616,
+    "title": "الكاشف في معرفة من له رواية في الكتب الستة",
+    "author": "شمس الدين أبو عبد الله محمد بن أحمد بن عثمان الذهبي (ت 748 هـ)",
+    "editor": "محمد عوامة وأحمد محمد نمر الخطيب (دار القبلة / مؤسسة علوم القرآن، 1413 هـ / 1992 م)"
+  },
+  "scale_design_policy": "Al-Dhahabi's vocabulary in al-Kashif differs from Ibn Hajar's 12 maratib in Taqrib. We map explicit verdicts onto a coarse 3-tier scale (2=thiqah_level, 1=saduq_level, 0=weak_and_below) and an optional 5-tier scale (5=superlative/sahabi, 4=thiqah, 3=saduq, 2=mild_weak_or_majhul, 1=severe_weak_or_abandoned). Silent entries (~2,500) and mixed/contested entries are recorded as 'unmapped', never guessed.",
+  "tier_3_labels": {
+    "2": "thiqah_level",
+    "1": "saduq_level",
+    "0": "weak_and_below",
+    "": "unmapped"
+  },
+  "tier_5_labels": {
+    "5": "superlative_thiqah_or_sahabi",
+    "4": "thiqah_or_wuththiqa",
+    "3": "saduq_or_salih_level",
+    "2": "mild_weak_or_majhul",
+    "1": "severe_weak_matruk_or_kadhdhab",
+    "": "unmapped"
+  },
+  "rules": [
+    {
+      "rule_id": "KASHIF-CONTESTED-UNMAPPED",
+      "tier_3": "",
+      "tier_5": "",
+      "terms": [
+        "mixed praise and jarh in the same verdict span"
+      ],
+      "citation": "Methodology §P3: contested entries recorded as unmapped rather than guessed"
+    },
+    {
+      "rule_id": "KASHIF-T3-2-SAHABI",
+      "tier_3": "2",
+      "tier_5": "5",
+      "terms": [
+        "صحابي",
+        "صحابية",
+        "الصحابي",
+        "الصحابية",
+        "له صحبة",
+        "لها صحبة"
+      ],
+      "citation": "Classical Sahabah adālah convention; al-Kashif entries before عن/سمع"
+    },
+    {
+      "rule_id": "KASHIF-T3-2-SUPERLATIVE",
+      "tier_3": "2",
+      "tier_5": "5",
+      "terms": [
+        "ثقة ثبت",
+        "ثقة حجة",
+        "ثقة حافظ",
+        "ثقة متقن",
+        "إمام",
+        "حجة",
+        "ثبت",
+        "متقن",
+        "أوثق",
+        "حافظ"
+      ],
+      "citation": "Muhammad Awwamah, Muqaddimat al-Kashif (1616, Part 1, pp. 25-28); al-Dhahabi, al-Muqizah pp. 77-78"
+    },
+    {
+      "rule_id": "KASHIF-T3-2-THIQAH",
+      "tier_3": "2",
+      "tier_5": "4",
+      "terms": [
+        "ثقة",
+        "الثقة",
+        "وثق",
+        "وثقه",
+        "وثقها",
+        "وثقوه"
+      ],
+      "citation": "Awwamah, Muqaddimat al-Kashif (1616, Part 1, p. 29: 'ومن ألفاظ التعديل في الكتاب: وثقه فلان...')"
+    },
+    {
+      "rule_id": "KASHIF-T3-1-SADUQ",
+      "tier_3": "1",
+      "tier_5": "3",
+      "terms": [
+        "صدوق",
+        "لا بأس به",
+        "ليس به بأس",
+        "ليس بحديثه بأس",
+        "حسن الحديث",
+        "صالح الحديث",
+        "صالح",
+        "محله الصدق",
+        "شيخ",
+        "مقارب الحديث"
+      ],
+      "citation": "al-Dhahabi, al-Muqizah pp. 78-81; Awwamah, Muqaddimat al-Kashif (1616, Part 1, pp. 30-34)"
+    },
+    {
+      "rule_id": "KASHIF-T3-0-MILD-WEAK",
+      "tier_3": "0",
+      "tier_5": "2",
+      "terms": [
+        "ضعيف",
+        "ضعفه",
+        "ضعفوه",
+        "ضعف",
+        "فيه ضعف",
+        "في حديثه ضعف",
+        "لين",
+        "فيه لين",
+        "لين الحديث",
+        "مجهول",
+        "يجهل",
+        "لا يعرف",
+        "لا يدرى",
+        "مستور",
+        "ليس بالقوي",
+        "ليس بذاك",
+        "منكر الحديث",
+        "في حفظه شيء"
+      ],
+      "citation": "al-Dhahabi, al-Muqizah pp. 81-84; Awwamah, Muqaddimat al-Kashif (1616, Part 1, pp. 34-37)"
+    },
+    {
+      "rule_id": "KASHIF-T3-0-SEVERE-WEAK",
+      "tier_3": "0",
+      "tier_5": "1",
+      "terms": [
+        "متروك",
+        "تركوه",
+        "ترك",
+        "واه",
+        "واهي",
+        "ساقط",
+        "ذاهب الحديث",
+        "هالك",
+        "ليس بشيء",
+        "متهم",
+        "اتهمه",
+        "اتهموه",
+        "كذاب",
+        "كذبوه",
+        "وضاع",
+        "يضع الحديث"
+      ],
+      "citation": "al-Dhahabi, al-Muqizah pp. 83-85; Bilgin (2026) severity alignment"
+    }
+  ]
+}
