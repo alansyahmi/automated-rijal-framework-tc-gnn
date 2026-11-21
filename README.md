@@ -8,6 +8,8 @@ A research workspace for investigating computational methods in **ʿIlm al-Rijā
 
 > **Research status:** exploratory. No dataset, label mapping, model architecture, or empirical claim in this repository should be treated as final until it has passed source, methodological, and validation review.
 
+> **Project direction:** the controlling title, objectives, layered design and scope are in [PROJECT_DIRECTION.md](PROJECT_DIRECTION.md). Read it before starting any work.
+
 ## Research principles
 
 1. **Source before model.** Establish the provenance, edition, context, and traceability of every scholarly statement before using it as data.
