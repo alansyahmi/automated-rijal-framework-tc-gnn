@@ -1,6 +1,6 @@
 {
-  "schema_version": "3.0",
-  "description": "Deterministic layered scoring constants and rules (B, E1, E2) for taqrib-oriented-v2 (v3).",
+  "schema_version": "3.1",
+  "description": "Deterministic layered scoring constants and rules (B, E1, E2) for taqrib-oriented-simplified (DEC-011).",
   "scale": {
     "min_rank": 1,
     "max_rank": 12,
@@ -23,6 +23,7 @@
     }
   },
   "layer_E1": {
+    "band_width_mode": "local_ordinal_gap",
     "cap_in_h": 1.0,
     "qualifier_weights_in_h": {
       "qual_ikhtalata": -0.5,
@@ -35,8 +36,8 @@
       "qual_rumiya_bidah": 0.0
     },
     "praise_weights_in_h": {
-      "praise_hafiz": 0.25,
-      "praise_faqih": 0.25
+      "praise_hafiz": 0.0,
+      "praise_faqih": 0.0
     },
     "sensitivity_presets": {
       "default": 1.0,
@@ -48,7 +49,7 @@
   "layer_E2": {
     "qawluhu_offset_in_h": 0.0,
     "qawluhu_max_abs_in_h": 0.5,
-    "dissent_carry_e1_ranks": [3, 4, 5, 6, 7, 8],
+    "dissent_carry_e1_ranks": [],
     "unmappable_entry_ids": [
       "S3076-P111-C017-E0511",
       "S3076-P175-C001-E1442",

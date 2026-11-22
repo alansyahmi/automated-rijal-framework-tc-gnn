@@ -89,7 +89,55 @@ def tahrir_daif_no_itibar_score(scale: str = DEFAULT_SCALE) -> float | None:
 
 
 def band_half_width(scale: str = DEFAULT_SCALE) -> float:
-    """Half of one linear step (100/22). Kept identical across scales so the
-    E1/E2 qualifier weights (expressed in h) keep the same size in points."""
+    """Legacy fixed linear half-step (100/22).
+
+    Kept for backward compatibility with frozen linear_v1 runs; simplified v3.1
+    uses ``local_band_half_width`` so E1 adjustments respect the active scale's
+    adjacent gaps and classical thresholds.
+    """
     check_scale(scale)
     return 100.0 / 22.0
+
+
+def local_band_half_width(rank: int, direction: float, scale: str = DEFAULT_SCALE) -> float:
+    """Half the adjacent ordinal gap on ``scale``, clamped to never cross thresholds.
+
+    * Downward (``direction < 0``): ``0.5 * (S(r) - S(r+1))`` for ``r < 12``
+      (``0.0`` at ``r == 12``), additionally capped so ``S(r) - width >= T``
+      for every scale threshold ``T`` in ``(S(r+1), S(r)]``.
+    * Upward (``direction > 0``): ``0.5 * (S(r-1) - S(r))`` for ``r > 1``
+      (``0.0`` at ``r == 1``), additionally capped so ``S(r) + width < T``
+      for every scale threshold ``T`` in ``(S(r), S(r-1)]``.
+    * Neutral (``direction == 0``): ``min(down_width, up_width)``.
+    """
+    r = int(rank)
+    if r < 1 or r > 12:
+        raise ValueError(f"rank must be in 1..12, got {rank!r}")
+    sc = check_scale(scale)
+    scores = SCALES[sc]
+    thresholds = list(THRESHOLDS[sc].values())
+    s_cur = scores[r]
+
+    if r >= 12:
+        down_w = 0.0
+    else:
+        s_next = scores[r + 1]
+        down_w = 0.5 * (s_cur - s_next)
+        for thr in thresholds:
+            if s_next < thr <= s_cur + 1e-12:
+                down_w = min(down_w, max(0.0, s_cur - thr))
+
+    if r <= 1:
+        up_w = 0.0
+    else:
+        s_prev = scores[r - 1]
+        up_w = 0.5 * (s_prev - s_cur)
+        for thr in thresholds:
+            if s_cur < thr <= s_prev + 1e-12:
+                up_w = min(up_w, max(0.0, (thr - s_cur) - 1e-6))
+
+    if direction < 0.0:
+        return float(down_w)
+    if direction > 0.0:
+        return float(up_w)
+    return float(min(down_w, up_w))

@@ -12,7 +12,12 @@ from dataset_discovery.target_feasibility.build_layered_scores_v3 import (
     DEFAULT_RULES_PATH,
     run_build,
 )
-from common.rank_scale import rank_to_score, tahrir_daif_no_itibar_score
+from common.rank_scale import (
+    THRESHOLDS,
+    local_band_half_width,
+    rank_to_score,
+    tahrir_daif_no_itibar_score,
+)
 
 WIDE_CSV = DEFAULT_OUT_DIR / "LAYERED_SCORES_WIDE_V3.csv"
 EVIDENCE_CSV = DEFAULT_OUT_DIR / "LAYER_EVIDENCE_LONG_V3.csv"
@@ -25,19 +30,31 @@ def _read_csv(path: Path) -> list[dict[str, str]]:
 
 def test_scores_within_bounds_and_e1_inside_band() -> None:
     rules = json.loads(DEFAULT_RULES_PATH.read_text(encoding="utf-8"))
-    h = float(rules["scale"]["band_half_width_h"])
+    cap_mult = float(rules["layer_E1"]["cap_in_h"])
     wide = _read_csv(WIDE_CSV)
     assert len(wide) == 8827
 
     for row in wide:
+        sc = row["rank_scale"]
         for col in ("score_B", "score_E1", "score_E2"):
             val = row[col]
             if val != "":
                 num = float(val)
                 assert 0.0 - 1e-6 <= num <= 100.0 + 1e-6, f"{row['entry_id']} {col}={num}"
         if row["score_B"] != "" and row["score_E1"] != "":
-            diff = abs(float(row["score_E1"]) - float(row["score_B"]))
-            assert diff <= h + 1e-5, f"{row['entry_id']} E1 exceeded band: diff={diff}"
+            sb = float(row["score_B"])
+            se1 = float(row["score_E1"])
+            r_b = int(row["rank_B"])
+            down_cap = cap_mult * local_band_half_width(r_b, -1.0, sc)
+            up_cap = cap_mult * local_band_half_width(r_b, 1.0, sc)
+            diff = se1 - sb
+            assert -down_cap - 1e-5 <= diff <= up_cap + 1e-5, (
+                f"{row['entry_id']} E1 exceeded local band [-{down_cap}, +{up_cap}]: diff={diff}"
+            )
+            for thr in THRESHOLDS[sc].values():
+                assert (sb >= thr) == (se1 >= thr), (
+                    f"{row['entry_id']} E1 crossed threshold {thr}: score_B={sb}, score_E1={se1}"
+                )
 
 
 def test_provenance_closure_from_evidence_table() -> None:
@@ -178,3 +195,45 @@ def test_rank_scales_monotone_and_invertible() -> None:
 def test_linear_scale_reproduces_original_formula() -> None:
     for r in range(1, 13):
         assert abs(rank_to_score(r, "linear_v1") - 100.0 * (12 - r) / 11.0) < 1e-12
+
+
+def test_local_band_half_width_respects_gaps_and_thresholds() -> None:
+    for r in range(2, 12):
+        assert abs(local_band_half_width(r, -1.0, "linear_v1") - 100.0 / 22.0) < 1e-9
+        # Rank 7 sits 100/22 below the 50.0 midpoint threshold and is shaved by 1e-6 so S(7)+delta < 50.
+        tol = 2e-6 if r == 7 else 1e-9
+        assert abs(local_band_half_width(r, 1.0, "linear_v1") - 100.0 / 22.0) < tol
+        if r == 7:
+            assert rank_to_score(r, "linear_v1") + local_band_half_width(r, 1.0, "linear_v1") < 50.0
+    # hukm_v1: Rank 8->9 gap is 3.0 -> half=1.5; Rank 9 is 27 with i'tibar threshold 25 -> cap 2.0
+    assert abs(local_band_half_width(8, -1.0, "hukm_v1") - 1.5) < 1e-9
+    assert abs(local_band_half_width(9, -1.0, "hukm_v1") - 2.0) < 1e-9
+    assert abs(local_band_half_width(3, -1.0, "hukm_v1") - 5.0) < 1e-9
+    assert rank_to_score(5, "hukm_v1") + local_band_half_width(5, 1.0, "hukm_v1") < 50.0
+
+
+def test_praise_is_evidence_only_and_e2_band_replacements_do_not_inherit_e1() -> None:
+    evidence = _read_csv(EVIDENCE_CSV)
+    praise_obs = [
+        ev for ev in evidence
+        if ev["rule_id"] in {"E1-PRAISE_HAFIZ", "E1-PRAISE_FAQIH"} and ev["status"] == "observed"
+    ]
+    assert len(praise_obs) > 0
+    for ev in praise_obs:
+        assert abs(float(ev["delta_0_100"])) == 0.0
+        assert ev["double_count_check"] == "descriptive_evidence_only"
+
+    wide = _read_csv(WIDE_CSV)
+    for row in wide:
+        st = row["status_E2"]
+        sc = row["rank_scale"]
+        if st in {"observed_dissent", "observed_maqbul_to_r7"}:
+            r2 = int(row["rank_E2"])
+            if row["tahrir_r8_itibar"] == "False" and sc == "hukm_v1":
+                expected = tahrir_daif_no_itibar_score("hukm_v1")
+            else:
+                expected = rank_to_score(r2, sc)
+            assert expected is not None
+            assert abs(float(row["score_E2"]) - expected) < 1e-6, (
+                f"{row['entry_id']} ({st}) unexpectedly inherited E1 delta into score_E2"
+            )
