@@ -1,43 +1,43 @@
 ﻿gold_id,group_profile,english_name,entry_id,matched,split,score_B,rank_B,score_E1,delta_E1,score_E2,rank_E2,delta_E2,status_E2,score_G_estimate,source,kashif_tier_3,kashif_tier_5
-1,1_highly_reliable,Malik ibn Anas,S3076-P516-C004-E6425,True,train,95.000000,2,96.136364,1.136364,96.136364,2,0.000000,observed_agreement,,observed_scholarly,2,5
+1,1_highly_reliable,Malik ibn Anas,S3076-P516-C004-E6425,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
 2,1_highly_reliable,Shu'bah ibn al-Hajjaj,S3076-P266-C013-E2790,True,test,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
 3,1_highly_reliable,Sufyan al-Thawri,S3076-P244-C011-E2445,True,val,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
-4,1_highly_reliable,Sufyan ibn Uyaynah,S3076-P245-C001-E2451,True,train,95.000000,2,92.727273,-2.272727,92.727273,2,0.000000,observed_qualification,,observed_scholarly,2,5
+4,1_highly_reliable,Sufyan ibn Uyaynah,S3076-P245-C001-E2451,True,train,95.000000,2,92.500000,-2.500000,92.500000,2,0.000000,observed_qualification,,observed_scholarly,2,5
 5,1_highly_reliable,Yahya ibn Sa'id al-Qattan,S3076-P591-C002-E7557,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
 6,1_highly_reliable,Abd al-Rahman ibn Mahdi,S3076-P351-C006-E4018,True,test,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
-7,1_highly_reliable,al-Awza'i,S3076-P347-C016-E3967,True,train,95.000000,2,96.136364,1.136364,96.136364,2,0.000000,observed_agreement,,observed_scholarly,2,5
+7,1_highly_reliable,al-Awza'i,S3076-P347-C016-E3967,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
 8,1_highly_reliable,al-Layth ibn Sa'd,S3076-P464-C009-E5684,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
 21,1_highly_reliable,Abd Allah ibn al-Mubarak,S3076-P320-C005-E3570,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,,
 22,1_highly_reliable,Waki' ibn al-Jarrah,S3076-P581-C007-E7414,True,val,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,,
 23,1_highly_reliable,Hammad ibn Zayd,S3076-P178-C007-E1498,True,test,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
 24,1_highly_reliable,Hammad ibn Salamah,S3076-P178-C008-E1499,True,test,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_no_grade,,observed_scholarly,2,4
 25,1_highly_reliable,al-Fadl ibn Dukayn,S3076-P446-C001-E5401,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
-26,1_highly_reliable,Abd Allah ibn Wahb,S3076-P328-C015-E3694,True,train,95.000000,2,96.136364,1.136364,96.136364,2,0.000000,observed_agreement,,observed_scholarly,,
+26,1_highly_reliable,Abd Allah ibn Wahb,S3076-P328-C015-E3694,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,,
 27,1_highly_reliable,Yazid ibn Harun,S3076-P606-C001-E7789,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
-28,1_highly_reliable,Jarir ibn Abd al-Hamid,S3076-P139-C002-E0916,True,train,95.000000,2,93.181818,-1.818182,93.181818,2,0.000000,observed_qualification,,observed_scholarly,,
+28,1_highly_reliable,Jarir ibn Abd al-Hamid,S3076-P139-C002-E0916,True,train,95.000000,2,93.000000,-2.000000,93.000000,2,0.000000,observed_qualification,,observed_scholarly,,
 29,1_highly_reliable,Isma'il ibn Ulayyah,S3076-P105-C011-E0416,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
-30,1_highly_reliable,Abu Dawud al-Tayalisi,S3076-P250-C019-E2550,True,val,95.000000,2,93.181818,-1.818182,93.181818,2,0.000000,observed_qualification,,observed_scholarly,,
-9,2_nuanced_mixed,Muhammad ibn Ishaq,S3076-P467-C014-E5725,True,train,70.000000,4,68.863636,-1.136364,85.000000,3,16.136364,observed_dissent,,observed_scholarly,2,5
-10,2_nuanced_mixed,Abu Ishaq al-Sabi'i,S3076-P423-C018-E5065,True,train,85.000000,3,82.727273,-2.272727,82.727273,3,0.000000,observed_qualification,,observed_scholarly,,
-11,2_nuanced_mixed,Ata ibn al-Sa'ib,S3076-P391-C009-E4592,True,train,70.000000,4,67.727273,-2.272727,85.000000,3,17.272727,observed_dissent,,observed_scholarly,2,4
-12,2_nuanced_mixed,al-A'mash,S3076-P254-C018-E2615,True,val,95.000000,2,93.863636,-1.136364,93.863636,2,0.000000,suspect_alignment,93.28,model_estimate,2,5
+30,1_highly_reliable,Abu Dawud al-Tayalisi,S3076-P250-C019-E2550,True,val,95.000000,2,93.000000,-2.000000,93.000000,2,0.000000,observed_qualification,,observed_scholarly,,
+9,2_nuanced_mixed,Muhammad ibn Ishaq,S3076-P467-C014-E5725,True,train,70.000000,4,66.875000,-3.125000,85.000000,3,18.125000,observed_dissent,,observed_scholarly,2,5
+10,2_nuanced_mixed,Abu Ishaq al-Sabi'i,S3076-P423-C018-E5065,True,train,85.000000,3,82.500000,-2.500000,82.500000,3,0.000000,observed_qualification,,observed_scholarly,,
+11,2_nuanced_mixed,Ata ibn al-Sa'ib,S3076-P391-C009-E4592,True,train,70.000000,4,63.750000,-6.250000,85.000000,3,21.250000,observed_dissent,,observed_scholarly,2,4
+12,2_nuanced_mixed,al-A'mash,S3076-P254-C018-E2615,True,val,95.000000,2,93.750000,-1.250000,93.750000,2,0.000000,suspect_alignment,93.28,model_estimate,2,5
 13,2_nuanced_mixed,Qatadah ibn Di'amah,S3076-P453-C014-E5518,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_no_grade,,observed_scholarly,2,5
 14,2_nuanced_mixed,Hisham ibn Urwah,S3076-P573-C007-E7302,True,train,85.000000,3,85.000000,0.000000,85.000000,3,0.000000,observed_qualification,,observed_scholarly,2,4
-15,2_nuanced_mixed,Abd Allah ibn Lahi'ah,S3076-P319-C013-E3563,True,train,70.000000,4,67.727273,-2.272727,32.727273,7,-35.000000,observed_dissent,,observed_scholarly,0,2
-31,2_nuanced_mixed,Muhammad ibn Shihab al-Zuhri,S3076-P506-C020-E6296,True,val,95.000000,2,96.136364,1.136364,96.136364,2,0.000000,observed_agreement,,observed_scholarly,,
+15,2_nuanced_mixed,Abd Allah ibn Lahi'ah,S3076-P319-C013-E3563,True,train,70.000000,4,63.750000,-6.250000,35.000000,7,-28.750000,observed_dissent,,observed_scholarly,0,2
+31,2_nuanced_mixed,Muhammad ibn Shihab al-Zuhri,S3076-P506-C020-E6296,True,val,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,,
 32,2_nuanced_mixed,Nafi' mawla Ibn Umar,S3076-P559-C003-E7086,True,test,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,,
 33,2_nuanced_mixed,Amr ibn Dinar,S3076-P421-C004-E5024,True,train,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
-34,2_nuanced_mixed,Yahya ibn Abi Kathir,S3076-P596-C001-E7632,True,test,95.000000,2,93.863636,-1.136364,93.863636,2,0.000000,observed_no_grade,,observed_scholarly,2,5
+34,2_nuanced_mixed,Yahya ibn Abi Kathir,S3076-P596-C001-E7632,True,test,95.000000,2,93.750000,-1.250000,93.750000,2,0.000000,observed_no_grade,,observed_scholarly,2,5
 35,2_nuanced_mixed,Ikrimah mawla Ibn Abbas,S3076-P397-C001-E4673,True,val,95.000000,2,95.000000,0.000000,95.000000,2,0.000000,observed_agreement,,observed_scholarly,2,5
-36,2_nuanced_mixed,Ata ibn Abi Rabah,S3076-P391-C008-E4591,True,train,85.000000,3,82.045455,-2.954545,82.045455,3,0.000000,observed_no_grade,,observed_scholarly,,
+36,2_nuanced_mixed,Ata ibn Abi Rabah,S3076-P391-C008-E4591,True,train,85.000000,3,81.750000,-3.250000,81.750000,3,0.000000,observed_no_grade,,observed_scholarly,,
 37,2_nuanced_mixed,Tawus ibn Kaysan,S3076-P281-C015-E3009,True,test,85.000000,3,85.000000,0.000000,85.000000,3,0.000000,observed_agreement,,observed_scholarly,2,5
 38,2_nuanced_mixed,Mujahid ibn Jabr,S3076-P520-C006-E6481,True,test,85.000000,3,85.000000,0.000000,85.000000,3,0.000000,observed_agreement,,observed_scholarly,2,5
 39,2_nuanced_mixed,Sufyan ibn Husayn,S3076-P244-C002-E2437,True,train,85.000000,3,85.000000,0.000000,85.000000,3,0.000000,observed_agreement,,observed_scholarly,,
-40,2_nuanced_mixed,Isma'il ibn Ayyash,S3076-P109-C008-E0473,True,train,70.000000,4,67.727273,-2.272727,67.727273,4,0.000000,observed_agreement,,observed_scholarly,0,2
+40,2_nuanced_mixed,Isma'il ibn Ayyash,S3076-P109-C008-E0473,True,train,70.000000,4,63.750000,-6.250000,63.750000,4,0.000000,observed_agreement,,observed_scholarly,0,2
 16,3_criticised_weaker,Jabir ibn Yazid al-Ju'fi,S3076-P137-C002-E0878,True,test,30.000000,8,30.000000,0.000000,22.000000,8,-8.000000,observed_agreement,,observed_scholarly,2,4
 17,3_criticised_weaker,al-Harith al-A'war,S3076-P146-C012-E1029,True,excluded_unranked,,,,0.000000,,,,abstained,40.42,model_estimate,0,2
 18,3_criticised_weaker,Abd al-Rahman ibn Zayd ibn Aslam,S3076-P340-C014-E3865,True,train,30.000000,8,30.000000,0.000000,22.000000,8,-8.000000,observed_agreement,,observed_scholarly,0,2
-19,3_criticised_weaker,Layth ibn Abi Sulaym,S3076-P464-C010-E5685,True,val,70.000000,4,67.727273,-2.272727,67.727273,4,0.000000,observed_agreement,,observed_scholarly,,
+19,3_criticised_weaker,Layth ibn Abi Sulaym,S3076-P464-C010-E5685,True,val,70.000000,4,63.750000,-6.250000,63.750000,4,0.000000,observed_agreement,,observed_scholarly,,
 20,3_criticised_weaker,al-Hajjaj ibn Artah,S3076-P152-C015-E1119,True,train,45.000000,5,45.000000,0.000000,70.000000,4,25.000000,observed_dissent,,observed_scholarly,,
 41,3_criticised_weaker,Muhammad ibn Abd al-Rahman ibn Abi Layla,S3076-P493-C002-E6081,True,train,45.000000,5,45.000000,0.000000,35.000000,7,-10.000000,observed_dissent,,observed_scholarly,,
 42,3_criticised_weaker,Isma'il ibn Muslim al-Makki,S3076-P110-C004-E0484,True,train,30.000000,8,30.000000,0.000000,22.000000,8,-8.000000,observed_agreement,,observed_scholarly,0,2

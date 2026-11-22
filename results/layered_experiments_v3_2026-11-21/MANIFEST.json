@@ -1,7 +1,7 @@
 {
-  "generated_utc": "2026-11-22T15:41:42.059579+00:00",
+  "generated_utc": "2026-11-22T17:35:23.953491+00:00",
   "script": "experiments/run_layered_experiments_v3.py",
-  "elapsed_sec": 179.79,
+  "elapsed_sec": 167.66,
   "stage2_dir": "results/stage2_esa_benchmarks_v3_2026-11-21",
   "stage3_dir": "results/stage3_tc_gnn_benchmarks_v3_2026-11-21",
   "disagreement_audit": {
@@ -10,9 +10,9 @@
       "abstained": 1565
     },
     "status_E1": {
-      "not_applicable": 7031,
+      "not_applicable": 7143,
       "abstained": 1565,
-      "observed": 231
+      "observed": 119
     },
     "status_E2": {
       "observed_dissent": 2398,
@@ -43,9 +43,9 @@
       "T0->T2": 3
     },
     "e1_alignment_with_e2": {
-      "toward": 118,
-      "away": 20,
-      "unchanged_dist": 91
+      "toward": 99,
+      "away": 18,
+      "unchanged_dist": 0
     }
   },
   "homophily": {
@@ -86,32 +86,32 @@
   },
   "files": {
     "EXPERIMENT_A_TO_D_METRICS_V3.csv": {
-      "sha256": "18346f3625ff0c73bba11ee5c64ee7f211cc0789812929bd731ee8555575b5fd",
-      "bytes": 4109
+      "sha256": "73062526f93eec075e492a59ceba0414434be7a08d3efc1cb458119d7f1329a3",
+      "bytes": 4110
     },
     "KASHIF_AGREEMENT_V3.csv": {
-      "sha256": "ca6209d51cd5a9915f5e4321af18de2bee9a4f7632b38ea5c308ff34ce0fad8c",
-      "bytes": 3764
+      "sha256": "4ed2a176c8bb1afe411ab92e1e919958f29d9dffd6de98838da725325c735fce",
+      "bytes": 3767
     },
     "KASHIF_PAIRED_BOOTSTRAP_V3.csv": {
-      "sha256": "b009c32a66face8c2b1d7b2b850c1eabff5b4f651cca49d06424dcbb311b166c",
-      "bytes": 1541
+      "sha256": "870e4c669010487034182234567907545cac89d75e666f7294fefc38221d086b",
+      "bytes": 1539
     },
     "E1_SENSITIVITY_SUMMARY_V3.csv": {
-      "sha256": "ba9c9c77e8d09c2922e58267bd23f84aa3d2d66e4daac5ec68a7fbfae5474ee8",
-      "bytes": 635
+      "sha256": "5285576facacc76ae6cc37e316181e772f37f25c3c05e89bd141b5638bc69e87",
+      "bytes": 632
     },
     "SLICE_METRICS_V3.csv": {
-      "sha256": "5e496ea5986b0fc47d97f058179def3d12a340ef94932cdaa61e40c7319447a8",
+      "sha256": "4e353211491096f34a78ff2c9b437e3448eb35638f777025737b91d74fe39266",
       "bytes": 706
     },
     "FINAL_LAYERED_RIJAL_SCORES_8827_V3.csv": {
-      "sha256": "03c0015c8e1fcfa8d95010bc871272e15ca5be44d2a3bff2fbe84067720383e7",
-      "bytes": 1840703
+      "sha256": "6574907d68836e7940fb178a265dcdcaec441dab15bc07eddc8192d0c82749f8",
+      "bytes": 1838574
     },
     "LAYERED_EXPERIMENTS_REPORT_V3.md": {
-      "sha256": "6995434e6ebdcd49f5efca314c8c743e6b426be7fcf67b8ffb4912934abb1612",
-      "bytes": 13798
+      "sha256": "a86d2ec0092fe2df14fbaa7291772fd6a4750024d2f9d07efd9d7dd8c5b9474f",
+      "bytes": 14037
     }
   }
 }

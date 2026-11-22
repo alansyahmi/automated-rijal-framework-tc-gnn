@@ -1,5 +1,5 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "3.1",
   "script": "dataset_discovery/target_feasibility/build_layered_scores_v3.py",
   "e1_preset": "default",
   "rank_scale": "hukm_v1",
@@ -21,7 +21,7 @@
   "inputs": {
     "layer_rules_v3.json": {
       "path": "dataset_discovery/target_feasibility/layer_rules_v3.json",
-      "sha256": "876ba31e00f1c42c9d29d84332eabab4074746ec31f09fef5e0106cd71643055"
+      "sha256": "1b049ca08bdc579648d5d45b950eac63a7b83c09d83a9f5fa109f9e5cc43efd7"
     },
     "bilgin_grounded_targets_v2": {
       "path": "data/2_interim/rijal_fyp_modelling_pipeline/bilgin_grounded_targets_v2_2026-11-20/BILGIN_GROUNDED_TAQRIB_TAHRIR_8827_V2.csv",
@@ -40,9 +40,9 @@
       "abstained": 1565
     },
     "status_E1": {
-      "not_applicable": 7031,
+      "not_applicable": 7143,
       "abstained": 1565,
-      "observed": 231
+      "observed": 119
     },
     "status_E2": {
       "observed_dissent": 2398,
@@ -62,16 +62,16 @@
   },
   "files": {
     "LAYER_EVIDENCE_LONG_V3.csv": {
-      "sha256": "2fadde5c3d55d74205bdf56e6502742deff64da8cd9641ca6334ebee6027ed62",
-      "bytes": 3030414
+      "sha256": "0a13e6d354be4bcb0a426380c72ec0031a34a96045bc685aca0baf9b5831f635",
+      "bytes": 3054524
     },
     "LAYERED_SCORES_WIDE_V3.csv": {
-      "sha256": "e2dc64de76cd3b158835c9efad366963c7053ef7ed496e78725f35e0efe614e5",
-      "bytes": 1432558
+      "sha256": "ec78cd3fe95d5e90fadd8bd7fa98cd66826feefd3cb82ea6f6c3a95f3b5ad0bb",
+      "bytes": 1430429
     },
     "LAYERED_SCORES_REPORT_V3.md": {
-      "sha256": "1253714e41d11d1fde97027a9e26b816a6f7cf1e7e93c049e921c64e1010b9e8",
-      "bytes": 2348
+      "sha256": "b5f8266aaf5b02782ef4307ea1bef2666b87d0b2898adf8a452162346b952164",
+      "bytes": 2361
     }
   }
 }

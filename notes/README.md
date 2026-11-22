@@ -2,6 +2,10 @@
 
 Repository-level notes capturing key empirical findings, methodological framing, literature synthesis, and viva/examiner defense points for the `taqrib-oriented` branch.
 
+- [simplified_research_direction.md](simplified_research_direction.md) — Working charter defining the source-grounded representation boundary, numerical mapping principles, and undergraduate scope (`taqrib-oriented-simplified`).
+- [v2_charter_audit.md](v2_charter_audit.md) — Component classification of `taqrib-oriented-v2` (`b8dd2d4`) against the charter plus the four friction points addressed.
+- [E1_METHODOLOGY_RULES.md](E1_METHODOLOGY_RULES.md) — Formal evidence-first `E₁` specification (`local_band_half_width`, descriptive-only `hafiz`/`faqih`, and no implicit `E₁ → E₂` inheritance, `DEC-011`).
+- [v2_vs_simplified_comparison.md](v2_vs_simplified_comparison.md) — Exact before/after audit comparing `taqrib-oriented-v2` (`b8dd2d4`) and rebuilt `taqrib-oriented-simplified` outputs.
 - [METHODOLOGY_AND_VIVA_DEFENSE.md](METHODOLOGY_AND_VIVA_DEFENSE.md) — Why deterministic *Taqrīb* rank mapping + *Taḥrīr* (`8246`) extraction is **not** subjective self-annotation, plus alignment & coverage figures.
 - [BILGIN_2026_COMPARISON.md](BILGIN_2026_COMPARISON.md) — Side-by-side comparison of our *Taqrīb* counts against Bilgin (2026) Tables 1–4 and the quantitative research gap filled by *Taḥrīr* + TC-GNN.
 - [STAGE1_AND_STAGE2_METHODOLOGY.md](STAGE1_AND_STAGE2_METHODOLOGY.md) — Stage 1 (Alignment, Bilgin-grounded mapping, zero-leakage features & graph) and Stage 2 (Evaluative Stance Analysis [ESA] benchmarks, Name-Stripped ablation, 5-fold OOF handoff) methodology.
