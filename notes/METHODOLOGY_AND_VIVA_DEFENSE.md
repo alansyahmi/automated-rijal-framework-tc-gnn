@@ -40,3 +40,12 @@ A systematic audit across all `8,827` aligned rows in `TAHRIR_TAQRIB_ALIGNED_882
 3. **ASCII `* بل:` / `° بل:` overrides (`11` rows):** Early entries (`E0138`, `E0143`–`E0145`, `E0153`, `E0155`, `E0159`, etc.) used ASCII `*` instead of Unicode `•`, leaving them marked `agreed_no_bullet`.
 4. **Duplicate `normalized_name_fallback` collisions (`28` pairs = `56` rows):** Adjacent namesakes matched to an already-claimed `exact_entry_number` entry when the target entry's number was missing/corrupted in `8246`.
 
+---
+
+## 4. Defensible Rationale for `wuththiqa_policy="maqbul_r6"` in *al-Kāshif* (`DEC-010`)
+
+When validating against al-Dhahabī's *al-Kāshif* (`1616`), bare passive **`وثق`** (*wuththiqa*, "he was deemed reliable") and **`وثق حب`** ("deemed reliable by Ibn Ḥibbān") map by default to **Tier 1 (`maqbul_r6`, Rank 6)** rather than **Tier 2 (`thiqah`, Rank 3)**, while active attributed verdicts (`ثقة`, `وثقه`, `وثقوه`) stay in Tier 2:
+
+1. **Classical *Jarḥ wa Taʿdīl* Grounds:** Per *Muqaddimat al-Kāshif* (Part 1, p. 29) and Ibn Ḥajar's *Taqrīb* methodology, unattributed passive *wuththiqa* typically signals lenient/solitary documentation (often Ibn Ḥibbān's *al-Thiqāt*) without corroborated confirmation from major early critics, matching Ibn Ḥajar's Rank 6 (*maqbūl*) rather than unconditional *thiqah*.
+2. **Methodological Conservatism (CS / Label-Hygiene Defense):** Treating an ambiguous passive tag as equal to unequivocal *thiqah* would over-promote uncertain ground-truth labels (contrary to `RESEARCH_PROTOCOL.md` §7). Conservatively placing bare *wuththiqa* in the intermediate Tier 1 avoids optimistic ceiling inflation while keeping the full alternative inspectable via `--wuththiqa-policy thiqah`.
+
