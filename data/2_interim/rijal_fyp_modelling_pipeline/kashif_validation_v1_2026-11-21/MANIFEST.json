@@ -1,6 +1,7 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "script": "dataset_discovery/target_feasibility/build_kashif_validation_v1.py",
+  "wuththiqa_policy": "maqbul_r6",
   "narrators_csv_provenance_check": {
     "narrators_csv_with_dhahabi_field": 5370,
     "matched_in_1616_kashif_body": 5136,
@@ -8,29 +9,29 @@
   },
   "counts": {
     "kashif_entries_total": 7181,
-    "linked_unambiguous": 5807,
-    "link_rate_kashif": 0.8087,
-    "mapped_linked_total": 3789,
-    "mapped_coverage_of_linked": 0.6525,
-    "verbatim_overlap_count": 843,
-    "verbatim_overlap_rate": 0.2225,
+    "linked_unambiguous": 5640,
+    "link_rate_kashif": 0.7854,
+    "mapped_linked_total": 3706,
+    "mapped_coverage_of_linked": 0.6571,
+    "verbatim_overlap_count": 1169,
+    "verbatim_overlap_rate": 0.3154,
     "link_methods": {
       "shamela_crosswalk": 3447,
-      "n3_sigil_canon": 123,
-      "n3_unique": 698,
-      "n4_unique": 957,
-      "n4_sigil_canon": 357,
-      "n2_sigil_canon": 151,
-      "n3_sigil_subset": 14,
-      "n4_sigil_subset": 30,
-      "n2_sigil_subset": 30
+      "n3_sigil_canon": 125,
+      "n3_unique": 705,
+      "n4_unique": 974,
+      "n4_sigil_canon": 358,
+      "n4_sigil_subset": 31
     },
     "tier3_linked_counts": {
-      "thiqah_level": 2705,
-      "unmapped": 2018,
-      "saduq_level": 539,
-      "weak_and_below": 545
-    }
+      "saduq_level": 1111,
+      "thiqah_level": 2059,
+      "unmapped": 1934,
+      "weak_and_below": 536
+    },
+    "verbatim_overlap_taqrib_count": 823,
+    "verbatim_overlap_tahrir_count": 409,
+    "tahrir_cites_dhahabi_count": 549
   },
   "inputs": {
     "1616_pages_jsonl": {
@@ -43,29 +44,29 @@
     },
     "layered_scores_wide_v3": {
       "path": "data/2_interim/rijal_fyp_modelling_pipeline/layered_scores_v3_2026-11-21/LAYERED_SCORES_WIDE_V3.csv",
-      "sha256": "dfa995f461b7cf87e060baace6c7326bec79cb71be0d6fcf1a0ae3fc6709167e"
+      "sha256": "e2dc64de76cd3b158835c9efad366963c7053ef7ed496e78725f35e0efe614e5"
     }
   },
   "files": {
     "KASHIF_ENTRIES_V1.csv": {
-      "sha256": "14618a12ff9e6694832ca7528bea69ac412f180f2354b0663c1e4771dfe236df",
-      "bytes": 2620308
+      "sha256": "fbe400db6fed7a4efa8bbcb49a930b18b76408bfce95405981ef1436d99a87a1",
+      "bytes": 2625716
     },
     "KASHIF_TAQRIB_LINK_V1.csv": {
-      "sha256": "8bb784ab97a8f0902b7a2b13f26e4f3f2264fb39fb1773d4f790b214e298564f",
-      "bytes": 995989
+      "sha256": "ba7fe02968f2af7c1eea18951dc01e913155a06caf8dea6d3545cae3e16de12d",
+      "bytes": 971111
     },
     "KASHIF_GRADE_MAP_V1.json": {
-      "sha256": "b4d96b77ecd3555c365e3129d7511718f74b58d3726510b24b29d5b0415a8ced",
-      "bytes": 4504
+      "sha256": "ab4546d2dfc5b3cb542b86935182b7abbc4e0eeff16afd4d4d5c49c0bebeb1f3",
+      "bytes": 5546
     },
     "KASHIF_OVERLAP_AUDIT_V1.csv": {
-      "sha256": "05459b3126ad6edc9be6fcf38292406f7d3ef8fc863a313173a772fa4b46bd6a",
-      "bytes": 943168
+      "sha256": "b40eeaa059b4034a4733cd70a5ad62fd9274ff6570c8b1188678daefbf5895b5",
+      "bytes": 1111899
     },
     "REPORT.md": {
-      "sha256": "2c5bc418a2cf99cadbcf690c15ec8e4a18369a5963918188c64e90ffaae9d011",
-      "bytes": 2559
+      "sha256": "008e1e3f6d26651341bfc7e0669ade0425dbf421f250de9fb003c72d553ec70b",
+      "bytes": 2482
     }
   }
 }

@@ -56,6 +56,10 @@ def main() -> None:
     parser.add_argument("--exp-dir", type=Path, default=ROOT / "results/layered_experiments_v3_2026-11-21")
     parser.add_argument("--rebuild-deterministic", action="store_true", help="Re-run P2 and P3 deterministic builders.")
     parser.add_argument("--skip-stage2", action="store_true", help="Skip Stage 2 ESA if OOF CSV already exists.")
+    parser.add_argument(
+        "--stage2-mps-empty-cache", choices=["step", "epoch"], default="step",
+        help="Passed to Stage 2 --mps-empty-cache ('epoch' is faster; same results).",
+    )
     parser.add_argument("--no-resume", action="store_true", help="Disable Stage 2 checkpoint resumption.")
     parser.add_argument("--smoke", action="store_true", help="Verify MPS hardware + run full pytest suite (fast check).")
     args = parser.parse_args()
@@ -80,6 +84,7 @@ def main() -> None:
             "--epochs", str(args.epochs),
             "--batch-size", str(args.batch_size),
             "--grad-accum", str(args.grad_accum),
+            "--mps-empty-cache", args.stage2_mps_empty_cache,
             "--out-dir", str(args.stage2_dir),
             "--allow-hf-download",
         ]

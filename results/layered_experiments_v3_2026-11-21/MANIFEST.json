@@ -1,7 +1,7 @@
 {
-  "generated_utc": "2026-11-22T08:13:13.092674+00:00",
+  "generated_utc": "2026-11-22T14:18:21.648568+00:00",
   "script": "experiments/run_layered_experiments_v3.py",
-  "elapsed_sec": 81.0,
+  "elapsed_sec": 182.43,
   "stage2_dir": "results/stage2_esa_benchmarks_v3_2026-11-21",
   "stage3_dir": "results/stage3_tc_gnn_benchmarks_v3_2026-11-21",
   "disagreement_audit": {
@@ -43,8 +43,8 @@
       "T0->T2": 3
     },
     "e1_alignment_with_e2": {
-      "toward": 119,
-      "away": 19,
+      "toward": 118,
+      "away": 20,
       "unchanged_dist": 91
     }
   },
@@ -86,32 +86,32 @@
   },
   "files": {
     "EXPERIMENT_A_TO_D_METRICS_V3.csv": {
-      "sha256": "2680611cbff366028f75b1c99ba601ccf5fc37a06d34fbb9a4d89dab96cf2c08",
-      "bytes": 3764
+      "sha256": "0ac00187c970b225ec0a5bcc7abe43dbc8312806232ba74c84ce5ee53719efb2",
+      "bytes": 3754
     },
     "KASHIF_AGREEMENT_V3.csv": {
-      "sha256": "6cc6a2e45d1ef2961890cee9748689067bf8dfbac86a61fbeb54c023259d0887",
-      "bytes": 2056
+      "sha256": "30662261aca0a55f4af316043901bf5211ddbefcc905f79d230c8c95e857db33",
+      "bytes": 3763
     },
     "KASHIF_PAIRED_BOOTSTRAP_V3.csv": {
-      "sha256": "1af2e1c797ee273e77f58be03380d984beedbc2221499534fc4e18bf32b3c82a",
-      "bytes": 1208
+      "sha256": "b009c32a66face8c2b1d7b2b850c1eabff5b4f651cca49d06424dcbb311b166c",
+      "bytes": 1541
     },
     "E1_SENSITIVITY_SUMMARY_V3.csv": {
-      "sha256": "2efe6ffd1acb703fb38e38dfdd5a91a0dd26f818428a1664e2827f3de603154d",
-      "bytes": 636
+      "sha256": "ba9c9c77e8d09c2922e58267bd23f84aa3d2d66e4daac5ec68a7fbfae5474ee8",
+      "bytes": 635
     },
     "SLICE_METRICS_V3.csv": {
-      "sha256": "4b7fce6a1be2749a8f9df754db483a392d25622c615d84426e5b10346af62e15",
-      "bytes": 707
+      "sha256": "5e496ea5986b0fc47d97f058179def3d12a340ef94932cdaa61e40c7319447a8",
+      "bytes": 706
     },
     "FINAL_LAYERED_RIJAL_SCORES_8827_V3.csv": {
-      "sha256": "15e5b870d9c8e80c8fdb68cd1119606b36b9de1d3fca1b2ae17e8d41162a3257",
-      "bytes": 1841243
+      "sha256": "b793477410342fdbc2b8414057aec0120937d19e01cf0ab9e28b3283fe9a1233",
+      "bytes": 1840801
     },
     "LAYERED_EXPERIMENTS_REPORT_V3.md": {
-      "sha256": "f20da9756512f489c90cfbd84610d42afee7c7911efe09515d90777002ef707f",
-      "bytes": 11122
+      "sha256": "8a848ee65898214e81e100a37b56ee280a2c8f0bbb28f75b6b241e352d7d7320",
+      "bytes": 13400
     }
   }
 }

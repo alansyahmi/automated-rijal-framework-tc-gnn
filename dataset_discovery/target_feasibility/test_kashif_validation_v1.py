@@ -6,7 +6,9 @@ import csv
 import json
 from pathlib import Path
 
-from dataset_discovery.target_feasibility.build_kashif_validation_v1 import DEFAULT_OUT_DIR
+import pytest
+
+from dataset_discovery.target_feasibility.build_kashif_validation_v1 import DEFAULT_OUT_DIR, extract_kashif_verdict
 
 
 def _read_csv(path: Path) -> list[dict[str, str]]:
@@ -47,3 +49,51 @@ def test_kashif_overlap_audit_and_manifest() -> None:
 
     manifest_text = (DEFAULT_OUT_DIR / "MANIFEST.json").read_text(encoding="utf-8")
     assert "\\" not in manifest_text
+
+
+def test_kashif_links_exclude_weak_name_keys() -> None:
+    links = _read_csv(DEFAULT_OUT_DIR / "KASHIF_TAQRIB_LINK_V1.csv")
+    methods = {r["link_method"] for r in links}
+    assert not any(m.startswith("n2_") for m in methods), methods
+    assert "n3_sigil_subset" not in methods
+
+
+def test_kashif_overlap_audit_is_symmetric() -> None:
+    overlap = _read_csv(DEFAULT_OUT_DIR / "KASHIF_OVERLAP_AUDIT_V1.csv")
+    for r in overlap:
+        expected = r["verbatim_overlap_taqrib"] == "True" or r["verbatim_overlap_tahrir"] == "True"
+        assert (r["verbatim_overlap"] == "True") == expected
+        assert r["tahrir_cites_dhahabi"] in {"True", "False"}
+
+
+_STUB = "١- فلان بن فلان الكوفي عن أبيه وعنه ابنه "
+
+
+@pytest.mark.parametrize(
+    "verdict, tier_3",
+    [
+        ("صدوق", "1"),
+        ("صدوق حافظ", "1"),  # title must not override an explicit grade
+        ("حافظ صدوق", "1"),
+        ("صدوق وثقه أحمد", "1"),  # al-Dhahabi's own leading verdict beats a quoted tawthiq
+        ("قال أحمد ثقة وقال أبو حاتم صدوق", ""),  # two quoted critics disagree: unmapped
+        ("ثقة", "2"),
+        ("ثقة حافظ", "2"),
+    ],
+)
+def test_kashif_verdict_rule_order(verdict: str, tier_3: str) -> None:
+    assert extract_kashif_verdict(_STUB + verdict + " مات ٢٠٠ د")["tier_3"] == tier_3
+
+
+def test_kashif_title_only_in_name_region_is_fallback() -> None:
+    v = extract_kashif_verdict("١- فلان بن فلان الحافظ عن أبيه وعنه ابنه ضعفوه مات ٢٠٠ د")
+    assert v["tier_3"] == "0"
+
+
+def test_kashif_wuththiqa_policy_switch() -> None:
+    text = _STUB + "وثق مات ٢٠٠ د"
+    assert extract_kashif_verdict(text, wuththiqa_policy="thiqah")["tier_3"] == "2"
+    v = extract_kashif_verdict(text, wuththiqa_policy="maqbul_r6")
+    assert (v["tier_3"], v["tier_5"], v["rule_id"]) == ("1", "3", "KASHIF-T3-1-WUTHTHIQA-MAQBUL")
+    with pytest.raises(ValueError):
+        extract_kashif_verdict(text, wuththiqa_policy="other")

@@ -51,7 +51,7 @@ def _segment_softmax_index_add(scores: torch.Tensor, dst: torch.Tensor, num_node
     w = torch.exp(scores.clamp(-15.0, 15.0))
     denom = torch.zeros((num_nodes, scores.size(1)), device=scores.device, dtype=scores.dtype)
     denom = denom.index_add(0, dst, w).clamp_min(1e-8)
-    return w / denom[dst]
+    return w / denom.index_select(0, dst)
 
 
 class MPSGATv2Conv(nn.Module):
@@ -99,14 +99,18 @@ class MPSGATv2Conv(nn.Module):
         out = torch.zeros((n, h, c), device=x.device, dtype=x.dtype)
 
         if src.numel() > 0:
-            msg_att = x_l[src] + x_r[dst]
+            # index_select instead of x[idx]: identical forward values; its backward is index_add
+            # rather than index_put_(accumulate=True), which is several times faster (see perf review).
+            msg_att = x_l.index_select(0, src) + x_r.index_select(0, dst)
             if self.lin_edge is not None and edge_attr is not None:
                 msg_att = msg_att + self.lin_edge(edge_attr).view(-1, h, c)
             e = F.leaky_relu(msg_att, negative_slope=self.negative_slope)
             alpha_raw = (e * self.att).sum(dim=-1)
             alpha = _segment_softmax_index_add(alpha_raw, dst, n)
             alpha = F.dropout(alpha, p=self.dropout, training=self.training)
-            msg = x_r[src] * alpha.unsqueeze(-1)
+            # PyG GATv2Conv parity: the message is the SOURCE projection x_l[src] (x_j), not x_r.
+            # Gathered again rather than reused: reusing it changes gradient summation order (not bit-exact).
+            msg = x_l.index_select(0, src) * alpha.unsqueeze(-1)
             out = out.index_add(0, dst, msg)
 
         return out.reshape(n, h * c) + self.bias
@@ -138,8 +142,8 @@ class MPSGCNConv(nn.Module):
             0, dst, torch.ones(dst.size(0), device=x.device, dtype=x.dtype)
         )
         inv_sqrt = deg.clamp_min(1.0).pow(-0.5)
-        norm = inv_sqrt[src] * inv_sqrt[dst]
-        out = torch.zeros_like(h).index_add(0, dst, h[src] * norm.unsqueeze(-1))
+        norm = inv_sqrt.index_select(0, src) * inv_sqrt.index_select(0, dst)
+        out = torch.zeros_like(h).index_add(0, dst, h.index_select(0, src) * norm.unsqueeze(-1))
         return out + self.bias
 
 
@@ -158,6 +162,6 @@ class MPSSAGEConv(nn.Module):
             src, dst = edge_index[0], edge_index[1]
             ones = torch.ones(dst.size(0), device=x.device, dtype=x.dtype)
             deg = torch.zeros(n, device=x.device, dtype=x.dtype).index_add(0, dst, ones).clamp_min(1.0)
-            summed = out_neigh.index_add(0, dst, x[src])
+            summed = out_neigh.index_add(0, dst, x.index_select(0, src))
             out_neigh = summed / deg.unsqueeze(-1)
         return self.lin_l(out_neigh) + self.lin_r(x)

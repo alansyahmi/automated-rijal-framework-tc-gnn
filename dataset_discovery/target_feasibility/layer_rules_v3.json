@@ -4,7 +4,10 @@
   "scale": {
     "min_rank": 1,
     "max_rank": 12,
-    "score_formula": "100.0 * (12 - rank) / 11.0",
+    "active": "hukm_v1",
+    "available": ["hukm_v1", "linear_v1"],
+    "score_formula": "lookup table in common/rank_scale.py (hukm_v1: 100,95,85,70,45,40,35,30,27,15,5,0; linear_v1: 100*(12-rank)/11)",
+    "scale_rationale": "reviews/ibn-hajar-12-rank-0-100-scale-2026-11-22.md; Alan chose rank 5 = 45 on 2026-11-22",
     "band_half_width_h": 4.545454545454546,
     "clamp_min": 0.0,
     "clamp_max": 100.0

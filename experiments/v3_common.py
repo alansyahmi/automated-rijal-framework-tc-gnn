@@ -65,12 +65,15 @@ def normalize_text(s: str) -> str:
     return WHITESPACE_RE.sub(" ", s).strip()
 
 
-def rank_to_0_1(rank: float) -> float:
-    return (12.0 - float(rank)) / 11.0
+def rank_to_0_100(rank: float, scale: str | None = None) -> float:
+    """Rank (fractional allowed) -> 0-100 on the active scale (common/rank_scale.py)."""
+    from common.rank_scale import DEFAULT_SCALE, rank_to_score
+
+    return rank_to_score(rank, scale or DEFAULT_SCALE)
 
 
-def rank_to_0_100(rank: float) -> float:
-    return 100.0 * rank_to_0_1(rank)
+def rank_to_0_1(rank: float, scale: str | None = None) -> float:
+    return rank_to_0_100(rank, scale) / 100.0
 
 
 def rank_to_tier3_id(rank: int) -> int:

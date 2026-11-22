@@ -395,6 +395,25 @@ class DirectedTCGNN(nn.Module):
         return self.rank_head(h), self.shift_head(h), gates
 
 
+def early_stop_composite(
+    y_rank_true: np.ndarray,
+    y_shift_true: np.ndarray,
+    y_rank_pred_cont: np.ndarray,
+    y_shift_pred: np.ndarray,
+    mae_weight: float,
+) -> float:
+    """shift_macro_f1 - mae_weight * rank_mae, computed exactly as compute_metrics() does.
+
+    compute_metrics() rounds every metric to 4 dp and the original loop used those rounded
+    values, so the rounding is kept here: without it the best epoch can change.
+    """
+    rank_mae = round(float(mean_absolute_error(y_rank_true, y_rank_pred_cont)), 4)
+    shift_macro_f1 = round(
+        float(f1_score(y_shift_true, y_shift_pred, labels=[0, 1, 2], average="macro", zero_division=0)), 4
+    )
+    return shift_macro_f1 - mae_weight * rank_mae
+
+
 def train_transductive_model(
     model_fn: Any,
     forward_args: tuple[torch.Tensor, ...],
@@ -435,18 +454,22 @@ def train_transductive_model(
         model.train()
         optimizer.zero_grad()
         r_log, s_log, _ = model(*forward_args)
-        r_probs_tr = torch.softmax(r_log[tr_t], dim=-1)
+        # index_select == r_log[tr_t] in value (tr_t has no duplicates); computed once, cheaper backward.
+        r_log_tr = r_log.index_select(0, tr_t)
+        r_probs_tr = torch.softmax(r_log_tr, dim=-1)
         r_exp_tr = (r_probs_tr * rank_vals).sum(dim=-1)
         loss = (
-            ce_rank(r_log[tr_t], yr_tr)
+            ce_rank(r_log_tr, yr_tr)
             + 0.35 * smooth_l1(r_exp_tr, (yr_tr + 1).float())
-            + ce_shift(s_log[tr_t], ys_tr)
+            + ce_shift(s_log.index_select(0, tr_t), ys_tr)
         )
-        assert not torch.isnan(loss), f"NaN loss at epoch {ep}"
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), 2.0)
         optimizer.step()
         scheduler.step()
+        # NaN check moved after the step: it no longer stalls the GPU queue between forward and
+        # backward. A NaN still aborts the run (the model is discarded), so outputs are unchanged.
+        assert not torch.isnan(loss), f"NaN loss at epoch {ep}"
 
         model.eval()
         with torch.no_grad():
@@ -454,14 +477,11 @@ def train_transductive_model(
             r_probs = torch.softmax(r_log, dim=-1).cpu().numpy()
             s_probs = torch.softmax(s_log, dim=-1).cpu().numpy()
         r_exp = (r_probs * np.arange(1, 13, dtype=np.float32)).sum(axis=1)
-        vm = compute_metrics(
-            y_rank_all[idx_val],
-            y_shift_all[idx_val],
-            r_exp[idx_val],
-            s_probs[idx_val].argmax(axis=1),
-            is_maqbul_all[idx_val],
+        # Early stopping only needs these two metrics; compute_metrics() computes ~20 (≈17 ms/epoch).
+        # Same sklearn calls/arguments as compute_metrics(), so `comp` is bit-identical.
+        comp = early_stop_composite(
+            y_rank_all[idx_val], y_shift_all[idx_val], r_exp[idx_val], s_probs[idx_val].argmax(axis=1), mae_weight=0.15
         )
-        comp = vm["shift_macro_f1"] - 0.15 * vm["rank_mae"]
         if comp > best_score:
             best_score = comp
             best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}

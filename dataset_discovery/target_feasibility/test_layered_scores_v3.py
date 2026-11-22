@@ -12,6 +12,7 @@ from dataset_discovery.target_feasibility.build_layered_scores_v3 import (
     DEFAULT_RULES_PATH,
     run_build,
 )
+from common.rank_scale import rank_to_score, tahrir_daif_no_itibar_score
 
 WIDE_CSV = DEFAULT_OUT_DIR / "LAYERED_SCORES_WIDE_V3.csv"
 EVIDENCE_CSV = DEFAULT_OUT_DIR / "LAYER_EVIDENCE_LONG_V3.csv"
@@ -73,8 +74,12 @@ def test_agreed_no_bullet_and_maqbul_rules() -> None:
     assert len(agreed) > 3000
     for row in agreed:
         assert row["tahrir_disposition"] == "agreed_no_bullet"
-        assert abs(float(row["delta_E2"])) == 0.0
         assert row["tahrir_confirms_B"] == "True"
+        if row["tahrir_r8_itibar"] == "False" and row["rank_scale"] == "hukm_v1":
+            # Tahrir intro p. 47: silent agreement with "ضعيف" = not usable for i'tibar
+            assert abs(float(row["delta_E2"]) - (tahrir_daif_no_itibar_score("hukm_v1") - rank_to_score(8, "hukm_v1"))) < 1e-6
+        else:
+            assert abs(float(row["delta_E2"])) == 0.0
 
     maqbul_r7 = [r for r in wide if r["status_E2"] == "observed_maqbul_to_r7"]
     assert len(maqbul_r7) > 300
@@ -147,3 +152,29 @@ def test_deterministic_byte_identical_rebuild(tmp_path: Path) -> None:
     files_a = {p.name: p.read_bytes() for p in sorted(out_a.iterdir())}
     files_b = {p.name: p.read_bytes() for p in sorted(out_b.iterdir())}
     assert files_a == files_b
+
+
+def test_rank_scales_monotone_and_invertible() -> None:
+    from common.rank_scale import SCALES, THRESHOLDS, score_to_rank_cont
+
+    for name, m in SCALES.items():
+        vals = [m[r] for r in range(1, 13)]
+        assert all(a > b for a, b in zip(vals, vals[1:])), name
+        for r in range(1, 13):
+            assert abs(score_to_rank_cont(rank_to_score(r, name), name) - r) < 1e-9
+    hk = SCALES["hukm_v1"]
+    t = THRESHOLDS["hukm_v1"]
+    # Alan, 2026-11-22: rank 5 below the accepted-alone line; ranks 5-9 usable for i'tibar
+    assert hk[4] >= t["accepted_alone"] > hk[5]
+    assert all(t["itibar"] <= hk[r] < t["accepted_alone"] for r in range(5, 10))
+    assert hk[10] < t["itibar"]
+    d = tahrir_daif_no_itibar_score("hukm_v1")
+    assert hk[10] < d < t["itibar"]
+    # still reads back as rank 9 so ordinal/tier metrics are unchanged
+    assert round(score_to_rank_cont(d, "hukm_v1")) == 9
+    assert tahrir_daif_no_itibar_score("linear_v1") is None
+
+
+def test_linear_scale_reproduces_original_formula() -> None:
+    for r in range(1, 13):
+        assert abs(rank_to_score(r, "linear_v1") - 100.0 * (12 - r) / 11.0) < 1e-12

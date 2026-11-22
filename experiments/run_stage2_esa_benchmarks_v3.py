@@ -265,6 +265,7 @@ def train_and_eval_arabert(
     seed: int = SEED,
     local_files_only: bool = True,
     device: torch.device | None = None,
+    mps_empty_cache: str = "step",
 ) -> tuple[dict[str, dict[str, np.ndarray]], dict[str, Any]]:
     set_seed(seed)
     dev = device or select_device("auto")
@@ -372,7 +373,10 @@ def train_and_eval_arabert(
                 grad_scaler.update()
                 optimizer.zero_grad()
                 scheduler.step()
-                if dev.type == "mps":
+                # Emptying the MPS cache after every optimizer step forces Metal to re-allocate every
+                # activation buffer on the next step. 'epoch' keeps the cache within an epoch. Allocation
+                # does not affect numerics, so both settings give the same results.
+                if dev.type == "mps" and mps_empty_cache == "step":
                     empty_device_cache(dev)
 
         val_out = run_infer(eval_loaders[val_key])
@@ -482,6 +486,13 @@ def main() -> None:
     parser.add_argument("--max-length", type=int, default=96)
     parser.add_argument("--resume", action="store_true", help="Resume from cached fold/checkpoint files inside out-dir.")
     parser.add_argument("--allow-hf-download", action="store_true", help="Allow downloading HF models if not cached locally.")
+    parser.add_argument(
+        "--mps-empty-cache",
+        choices=["step", "epoch"],
+        default="step",
+        help="When to call torch.mps.empty_cache() during AraBERT training: after every optimizer step "
+        "(default, the setting that fixed the 4GB OOM) or only at the end of each epoch (faster). Results are the same.",
+    )
     args = parser.parse_args()
 
     t0 = time.time()
@@ -797,6 +808,7 @@ def main() -> None:
             batch_size=batch_size,
             grad_accum=grad_accum,
             max_length=args.max_length,
+            mps_empty_cache=args.mps_empty_cache,
             seed=SEED + fold_id,
             local_files_only=local_only,
             device=device,
@@ -866,6 +878,7 @@ def main() -> None:
             batch_size=batch_size,
             grad_accum=grad_accum,
             max_length=args.max_length,
+            mps_empty_cache=args.mps_empty_cache,
             seed=SEED,
             local_files_only=local_only,
             device=device,

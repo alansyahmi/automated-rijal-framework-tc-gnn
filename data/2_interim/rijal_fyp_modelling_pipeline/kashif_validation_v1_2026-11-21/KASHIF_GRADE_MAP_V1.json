@@ -32,6 +32,15 @@
       "citation": "Methodology §P3: contested entries recorded as unmapped rather than guessed"
     },
     {
+      "rule_id": "KASHIF-MIXED-PRAISE-UNMAPPED",
+      "tier_3": "",
+      "tier_5": "",
+      "terms": [
+        "thiqah-level and saduq-level praise in the same region with no own leading verdict by al-Dhahabi"
+      ],
+      "citation": "Review 2026-11-22 (rule-order fix): quoted critics and titles must not override al-Dhahabi's own verdict"
+    },
+    {
       "rule_id": "KASHIF-T3-2-SAHABI",
       "tier_3": "2",
       "tier_5": "5",
@@ -54,12 +63,10 @@
         "ثقة حجة",
         "ثقة حافظ",
         "ثقة متقن",
-        "إمام",
         "حجة",
         "ثبت",
         "متقن",
-        "أوثق",
-        "حافظ"
+        "أوثق"
       ],
       "citation": "Muhammad Awwamah, Muqaddimat al-Kashif (1616, Part 1, pp. 25-28); al-Dhahabi, al-Muqizah pp. 77-78"
     },
@@ -70,12 +77,34 @@
       "terms": [
         "ثقة",
         "الثقة",
-        "وثق",
         "وثقه",
         "وثقها",
         "وثقوه"
       ],
       "citation": "Awwamah, Muqaddimat al-Kashif (1616, Part 1, p. 29: 'ومن ألفاظ التعديل في الكتاب: وثقه فلان...')"
+    },
+    {
+      "rule_id": "KASHIF-T3-2-TITLE",
+      "tier_3": "2",
+      "tier_5": "5",
+      "terms": [
+        "إمام",
+        "الإمام",
+        "حافظ",
+        "الحافظ",
+        "حافظا"
+      ],
+      "citation": "Titles count only when no explicit grade term is present (review 2026-11-22)"
+    },
+    {
+      "rule_id": "KASHIF-WUTHTHIQA (policy-dependent)",
+      "tier_3": "thiqah: 2 | maqbul_r6: 1",
+      "tier_5": "thiqah: 4 | maqbul_r6: 3",
+      "terms": [
+        "وثق",
+        "وثق حب"
+      ],
+      "citation": "Passive tawthiq, often Ibn Hibban-only. Policy maqbul_r6 maps it to Ibn Hajar rank 6 (maqbul, saduq tier); policy thiqah keeps the v1 mapping. Supervisor sign-off pending."
     },
     {
       "rule_id": "KASHIF-T3-1-SADUQ",

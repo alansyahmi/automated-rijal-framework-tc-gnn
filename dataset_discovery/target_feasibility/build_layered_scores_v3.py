@@ -37,6 +37,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from common.hashing import sha256_text_normalized, to_posix_relative
+from common.rank_scale import SCALES, check_scale, rank_to_score, tahrir_daif_no_itibar_score
 from dataset_discovery.target_feasibility.build_bilgin_grounded_targets_v2 import (
     map_tahrir_verdict_to_rank,
 )
@@ -84,8 +85,18 @@ def norm_ar(text: str) -> str:
     return re.sub(r"\s+", " ", DIACRITICS_RE.sub("", text or "")).strip()
 
 
-def rank_to_score_0_100(rank: int) -> float:
-    return 100.0 * (12.0 - float(rank)) / 11.0
+def rank_to_score_0_100(rank: int, scale: str = "linear_v1") -> float:
+    """Rank -> 0-100 on the chosen scale (see common/rank_scale.py)."""
+    return rank_to_score(rank, scale)
+
+
+# Tahrir intro p. 47: a bare "ضعيف" (no "يعتبر به") is not usable for i'tibar.
+TAHRIR_ITIBAR_RE = re.compile(r"(?<!لا )يعتبر به")
+
+
+def tahrir_marks_itibar(tahrir_commentary: str) -> bool:
+    """True when the opening of the Tahrir note grades the man "يعتبر به"."""
+    return bool(TAHRIR_ITIBAR_RE.search(norm_ar(tahrir_commentary)[:100]))
 
 
 def clamp_score(value: float, lo: float = 0.0, hi: float = 100.0) -> float:
@@ -167,8 +178,15 @@ def compute_layered_scores(
     *,
     e1_preset: str = "default",
     qawluhu_offset_in_h: float | None = None,
+    rank_scale: str | None = None,
 ) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, Any]]:
     """Compute Track R layered scores (wide) and span-traceable evidence (long)."""
+    scale = check_scale(rank_scale or rules["scale"].get("active", "linear_v1"))
+    daif_no_itibar = tahrir_daif_no_itibar_score(scale)
+
+    def r2s(rank: int) -> float:
+        return rank_to_score(rank, scale)
+
     h = float(rules["scale"]["band_half_width_h"])
     clamp_min = float(rules["scale"]["clamp_min"])
     clamp_max = float(rules["scale"]["clamp_max"])
@@ -198,6 +216,8 @@ def compute_layered_scores(
         "total_entries": len(bilgin_rows),
         "e1_preset": e1_preset,
         "e1_multiplier": preset_mult,
+        "rank_scale": scale,
+        "tahrir_daif_no_itibar_count": 0,
         "status_B": Counter(),
         "status_E1": Counter(),
         "status_E2": Counter(),
@@ -232,7 +252,7 @@ def compute_layered_scores(
         entry_ev: list[dict[str, str]] = []
         if rank_B_str:
             rank_B = int(rank_B_str)
-            score_B: float | None = rank_to_score_0_100(rank_B)
+            score_B: float | None = r2s(rank_B)
             status_B = "observed"
             entry_ev.append(
                 _build_evidence_row(
@@ -417,7 +437,7 @@ def compute_layered_scores(
                 # Tahrir intro p. 45: uncommented maqbul resolves to Rank 7
                 rank_E2 = 7
                 e1_carry = sum(d for _, d in e1_carried_items)
-                score_E2 = clamp_score(rank_to_score_0_100(rank_E2) + e1_carry, clamp_min, clamp_max)
+                score_E2 = clamp_score(r2s(rank_E2) + e1_carry, clamp_min, clamp_max)
                 delta_E2 = score_E2 - score_E1
                 status_E2 = "observed_maqbul_to_r7"
                 tahrir_confirms_B = False
@@ -455,7 +475,7 @@ def compute_layered_scores(
                 )
         elif tah_disp == "dissent_bal":
             rank_E2 = int(tah_rank_str)
-            base_E2 = rank_to_score_0_100(rank_E2)
+            base_E2 = r2s(rank_E2)
             if score_E1 is None:
                 # Taqrib abstained, Tahrir graded
                 score_E2 = base_E2
@@ -495,8 +515,8 @@ def compute_layered_scores(
             q_phrase = m_q.group(1).strip() if m_q else norm_ar(tah_comm)[:120]
             if score_E1 is not None and rank_B is not None:
                 rank_E2 = rank_B
-                band_lo = max(clamp_min, rank_to_score_0_100(rank_B) - h)
-                band_hi = min(clamp_max, rank_to_score_0_100(rank_B) + h)
+                band_lo = max(clamp_min, r2s(rank_B) - h)
+                band_hi = min(clamp_max, r2s(rank_B) + h)
                 score_E2 = clamp_score(score_E1 + qawl_off_h * h, band_lo, band_hi)
                 delta_E2 = score_E2 - score_E1
                 status_E2 = "observed_qualification"
@@ -541,6 +561,24 @@ def compute_layered_scores(
                     )
                 )
 
+        # Tahrir intro p. 47: Tahrir's bare "ضعيف" (agreed by silence or written
+        # without "يعتبر به") is below the i'tibar line, unlike Ibn Hajar's rank 8.
+        tahrir_itibar = ""
+        if rank_E2 == 8 and score_E2 is not None and status_E2 not in {"missing", "suspect_alignment", "abstained"}:
+            tahrir_itibar = str(tahrir_marks_itibar(tah_comm))
+            if daif_no_itibar is not None and tahrir_itibar == "False":
+                shift = daif_no_itibar - r2s(8)
+                score_E2 = clamp_score(score_E2 + shift, clamp_min, clamp_max)
+                delta_E2 = (score_E2 - score_E1) if score_E1 is not None else delta_E2
+                stats["tahrir_daif_no_itibar_count"] += 1
+                entry_ev.append(
+                    _build_evidence_row(
+                        eid, "E2", "8246", tah_part, tah_page,
+                        "ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد]",
+                        "TAHRIR-DAIF-NO-ITIBAR-P47", shift,
+                        status_E2, "score_shift_daif_no_itibar",
+                    )
+                )
         stats["status_E2"][status_E2] += 1
         if rank_B is not None and rank_E2 is not None and rank_B != rank_E2 and status_E2 not in {"missing", "suspect_alignment"}:
             stats["band_crossings_E2"] += 1
@@ -567,6 +605,8 @@ def compute_layered_scores(
                 "e1_rules_applied": ";".join(e1_applied_rules),
                 "tahrir_disposition": tah_disp,
                 "tahrir_confirms_B": str(tahrir_confirms_B),
+                "tahrir_r8_itibar": tahrir_itibar,
+                "rank_scale": scale,
                 "suspect_alignment_reason": suspect_reason,
                 "n_evidence_rows": str(len(entry_ev)),
             }
@@ -588,6 +628,7 @@ def build_report(stats: dict[str, Any], rules: dict[str, Any]) -> str:
         "# Layered Score Builder Report (v3: Layers B, E1, E2)",
         "",
         f"- **Total entries:** `{stats['total_entries']:,}`",
+        f"- **Rank scale:** `{stats['rank_scale']}` (Tahrir bare ضعيف below i'tibar: `{stats['tahrir_daif_no_itibar_count']}`)",
         f"- **E1 preset:** `{stats['e1_preset']}` (multiplier `{stats['e1_multiplier']}`, half-width `h = {h:.4f}`)",
         f"- **ASCII `* بل:` / `° بل:` overrides fixed:** `{stats['ascii_bal_fixed_count']}`",
         f"- **Suspect alignments flagged (`E2615/E2616` + collision pairs):** `{stats['suspect_alignment_count']}`",
@@ -636,6 +677,7 @@ def run_build(
     out_dir: Path = DEFAULT_OUT_DIR,
     e1_preset: str = "default",
     qawluhu_offset_in_h: float | None = None,
+    rank_scale: str | None = None,
 ) -> dict[str, Any]:
     rules = json.loads(rules_path.read_text(encoding="utf-8"))
     with bilgin_csv.open("r", encoding="utf-8-sig", newline="") as f:
@@ -644,7 +686,8 @@ def run_build(
         master_by_id = {r["entry_id"]: r for r in csv.DictReader(f)}
 
     wide_rows, evidence_rows, stats = compute_layered_scores(
-        bilgin_rows, master_by_id, rules, e1_preset=e1_preset, qawluhu_offset_in_h=qawluhu_offset_in_h
+        bilgin_rows, master_by_id, rules, e1_preset=e1_preset, qawluhu_offset_in_h=qawluhu_offset_in_h,
+        rank_scale=rank_scale,
     )
 
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -661,6 +704,9 @@ def run_build(
         "schema_version": rules["schema_version"],
         "script": to_posix_relative(Path(__file__), ROOT),
         "e1_preset": e1_preset,
+        "rank_scale": stats["rank_scale"],
+        "rank_scale_scores": {str(k): v for k, v in SCALES[stats["rank_scale"]].items()},
+        "tahrir_daif_no_itibar_score": tahrir_daif_no_itibar_score(stats["rank_scale"]),
         "inputs": {
             "layer_rules_v3.json": {
                 "path": to_posix_relative(rules_path, ROOT),
@@ -684,6 +730,7 @@ def run_build(
             "ascii_bal_fixed_count": stats["ascii_bal_fixed_count"],
             "suspect_alignment_count": stats["suspect_alignment_count"],
             "band_crossings_E2": stats["band_crossings_E2"],
+            "tahrir_daif_no_itibar": stats["tahrir_daif_no_itibar_count"],
         },
         "files": {
             p.name: {"sha256": sha256_text_normalized(p), "bytes": p.stat().st_size}
@@ -703,8 +750,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Build deterministic layered scores (B, E1, E2) v3.")
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--e1-preset", choices=["default", "halved", "doubled", "off"], default="default")
+    parser.add_argument(
+        "--rank-scale", choices=sorted(SCALES), default=None,
+        help="0-100 rank scale (default: layer_rules_v3.json scale.active). linear_v1 reproduces the pre-2026-11-22 scores.",
+    )
     args = parser.parse_args()
-    manifest = run_build(out_dir=args.out_dir, e1_preset=args.e1_preset)
+    manifest = run_build(out_dir=args.out_dir, e1_preset=args.e1_preset, rank_scale=args.rank_scale)
     print(json.dumps(manifest["counts"], ensure_ascii=False, indent=2))
 
 

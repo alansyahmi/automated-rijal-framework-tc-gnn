@@ -59,7 +59,15 @@ class LayeredExperimentsV3Tests(unittest.TestCase):
 
         with (OUT_DIR / "KASHIF_PAIRED_BOOTSTRAP_V3.csv").open("r", encoding="utf-8-sig", newline="") as f:
             boot = {(r["subset"], r["metric"]): r for r in csv.DictReader(f)}
+        # Do not pin the direction or size of the E2-vs-B effect here: a test must not enforce a result.
         acc_nv = boot[("paired_non_verbatim", "tier3_acc")]
-        self.assertEqual(int(acc_nv["n_common"]), 2566)
-        self.assertGreater(float(acc_nv["delta"]), 0.05)
-        self.assertLess(float(acc_nv["p_value_2sided"]), 0.01)
+        acc_clean = boot[("paired_clean", "tier3_acc")]
+        self.assertGreater(int(acc_clean["n_common"]), 1500)
+        self.assertLessEqual(int(acc_clean["n_common"]), int(acc_nv["n_common"]))
+        for key in [("paired_clean", m) for m in ("tier3_acc", "tier3_macro_f1", "tier3_qwk", "tier5_qwk")]:
+            self.assertIn(key, boot)
+
+        with (OUT_DIR / "KASHIF_AGREEMENT_V3.csv").open("r", encoding="utf-8-sig", newline="") as f:
+            agree = list(csv.DictReader(f))
+        for r in agree:
+            self.assertNotEqual(r["majority_tier3_acc"], "", "every al-Kashif row must carry its majority-class floor")

@@ -45,6 +45,7 @@ PIPELINE = ROOT / "data/2_interim/rijal_fyp_modelling_pipeline"
 TASK_B_NODES = PIPELINE / "task_b_consolidated_graph_v0_3_2026-11-17/TASK_B_NODE_STRUCTURAL_FEATURES_V0_3.csv"
 MASTER_NODES = PIPELINE / "taqrib_v2_master_dataset_2026-11-20/TAQRIB_V2_MASTER_NODES_8827.csv"
 LAYERED_WIDE = PIPELINE / "layered_scores_v3_2026-11-21/LAYERED_SCORES_WIDE_V3.csv"
+TAHRIR_ALIGNED = PIPELINE / "tahrir_taqrib_alignment_v1_2026-11-20/TAHRIR_TAQRIB_ALIGNED_8827_V1.csv"
 DEFAULT_OUT_DIR = PIPELINE / "kashif_validation_v1_2026-11-21"
 
 AR_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩", "0123456789")
@@ -95,6 +96,13 @@ GRADE_MAP_SPEC: dict[str, Any] = {
             "citation": "Methodology §P3: contested entries recorded as unmapped rather than guessed",
         },
         {
+            "rule_id": "KASHIF-MIXED-PRAISE-UNMAPPED",
+            "tier_3": "",
+            "tier_5": "",
+            "terms": ["thiqah-level and saduq-level praise in the same region with no own leading verdict by al-Dhahabi"],
+            "citation": "Review 2026-11-22 (rule-order fix): quoted critics and titles must not override al-Dhahabi's own verdict",
+        },
+        {
             "rule_id": "KASHIF-T3-2-SAHABI",
             "tier_3": "2",
             "tier_5": "5",
@@ -105,15 +113,29 @@ GRADE_MAP_SPEC: dict[str, Any] = {
             "rule_id": "KASHIF-T3-2-SUPERLATIVE",
             "tier_3": "2",
             "tier_5": "5",
-            "terms": ["ثقة ثبت", "ثقة حجة", "ثقة حافظ", "ثقة متقن", "إمام", "حجة", "ثبت", "متقن", "أوثق", "حافظ"],
+            "terms": ["ثقة ثبت", "ثقة حجة", "ثقة حافظ", "ثقة متقن", "حجة", "ثبت", "متقن", "أوثق"],
             "citation": "Muhammad Awwamah, Muqaddimat al-Kashif (1616, Part 1, pp. 25-28); al-Dhahabi, al-Muqizah pp. 77-78",
         },
         {
             "rule_id": "KASHIF-T3-2-THIQAH",
             "tier_3": "2",
             "tier_5": "4",
-            "terms": ["ثقة", "الثقة", "وثق", "وثقه", "وثقها", "وثقوه"],
+            "terms": ["ثقة", "الثقة", "وثقه", "وثقها", "وثقوه"],
             "citation": "Awwamah, Muqaddimat al-Kashif (1616, Part 1, p. 29: 'ومن ألفاظ التعديل في الكتاب: وثقه فلان...')",
+        },
+        {
+            "rule_id": "KASHIF-T3-2-TITLE",
+            "tier_3": "2",
+            "tier_5": "5",
+            "terms": ["إمام", "الإمام", "حافظ", "الحافظ", "حافظا"],
+            "citation": "Titles count only when no explicit grade term is present (review 2026-11-22)",
+        },
+        {
+            "rule_id": "KASHIF-WUTHTHIQA (policy-dependent)",
+            "tier_3": "thiqah: 2 | maqbul_r6: 1",
+            "tier_5": "thiqah: 4 | maqbul_r6: 3",
+            "terms": ["وثق", "وثق حب"],
+            "citation": "Passive tawthiq, often Ibn Hibban-only. Policy maqbul_r6 maps it to Ibn Hajar rank 6 (maqbul, saduq tier); policy thiqah keeps the v1 mapping. Supervisor sign-off pending.",
         },
         {
             "rule_id": "KASHIF-T3-1-SADUQ",
@@ -152,11 +174,22 @@ PAT_SADUQ = re.compile(
     r"|(?<!\bبن\s)(?<!\bابن\s)(?<!\bابي\s)(?<!\bابو\s)(?<!\bقال\s)(?<!\bوقال\s)صالح(?!\s+(?:بن|ابن|بنت|مولي|مولى|جزره|العجلي|السدوسي|الهمداني))"
     r"|(?<!\bبن\s)(?<!\bابن\s)شيخ(?!\s+(?:الاسلام|البلد|بن|ابن)))(?=$|\s)"
 )
-PAT_THIQAH_SUP = re.compile(
-    r"(?:^|\s)(?:ثقه\s+ثبت|ثقه\s+حجه|ثقه\s+حافظ|ثقه\s+متقن|امام|الامام|حجه|ثبت|متقن|اوثق"
-    r"|(?<!\bبن\s)(?<!\bابن\s)(?<!\bابي\s)حافظ(?!\s+(?:بن|ابن))|الحافظ|حافظا)(?=$|\s)"
+PAT_THIQAH_SUP = re.compile(r"(?:^|\s)(?:ثقه\s+ثبت|ثقه\s+حجه|ثقه\s+حافظ|ثقه\s+متقن|حجه|ثبت|متقن|اوثق)(?=$|\s)")
+# Honorific titles: a grade only when no explicit grade term is present (review 2026-11-22).
+PAT_TITLE = re.compile(
+    r"(?:^|\s)(?:امام|الامام|(?<!\bبن\s)(?<!\bابن\s)(?<!\bابي\s)حافظ(?!\s+(?:بن|ابن))|الحافظ|حافظا)(?=$|\s)"
 )
-PAT_THIQAH = re.compile(r"(?:^|\s)(?:ثقه|الثقه|وثق|وثقه|وثقها|وثقوه)(?=$|\s)")
+PAT_THIQAH = re.compile(r"(?:^|\s)(?:ثقه|الثقه)(?=$|\s)")
+# Tawthiq attributed to a named critic (وثقه أحمد): reported, not al-Dhahabi's own verdict.
+PAT_THIQAH_QUOTED = re.compile(r"(?:^|\s)(?:وثقه|وثقها|وثقوه)(?=$|\s)")
+# Passive وثق / وثق حب: policy-dependent (see WUTHTHIQA_POLICIES).
+PAT_WUTHTHIQA = re.compile(r"(?:^|\s)وثق(?=$|\s)")
+PAT_QUOTE_LEAD = re.compile(r"(?:^|\s)(?:قال|وقال|قاله)\s+(?:\S+\s+){0,3}$")
+
+WUTHTHIQA_POLICIES = ("maqbul_r6", "thiqah")
+DEFAULT_WUTHTHIQA_POLICY = "maqbul_r6"
+# Tahrir commentary that cites al-Dhahabi or one of his rijal works.
+PAT_TAHRIR_CITES_DHAHABI = re.compile(r"الذهبي|الكاشف|الميزان|المغني في الضعفاء|ديوان الضعفاء|سير اعلام")
 
 
 def norm_ar(text: str) -> str:
@@ -243,7 +276,9 @@ def parse_kashif_entries(pages_path: Path = KASHIF_PAGES) -> list[dict[str, Any]
     return entries
 
 
-def extract_kashif_verdict(full_text: str) -> dict[str, str]:
+def extract_kashif_verdict(full_text: str, wuththiqa_policy: str = DEFAULT_WUTHTHIQA_POLICY) -> dict[str, str]:
+    if wuththiqa_policy not in WUTHTHIQA_POLICIES:
+        raise ValueError(f"wuththiqa_policy must be one of {WUTHTHIQA_POLICIES}")
     body_no_sig, sigils = strip_sigils(full_text)
     s = ENTRY_RE.sub(r"\2", body_no_sig)
     s = DIACRITICS_RE.sub("", s)
@@ -267,15 +302,22 @@ def extract_kashif_verdict(full_text: str) -> dict[str, str]:
     pre_safe = " ".join(
         re.findall(r"\b(?:ثقه|الثقه|صدوق|ضعيف|متروك|مجهول|الحافظ|حافظ|الامام|امام|ثبت|حجه|لين)\b", pre_n)
     )
-    combined = f"{pre_safe} {post_n}".strip()
+    # al-Dhahabi's verdict sits after the student list. Name-region words (titles such as
+    # الحافظ/الامام) are used only when the post region has no verdict cue at all.
+    all_pats = (PAT_WEAK_SEV, PAT_WEAK_MLD, PAT_SADUQ, PAT_THIQAH_SUP, PAT_TITLE, PAT_THIQAH, PAT_THIQAH_QUOTED, PAT_WUTHTHIQA)
+    post_has_cue = any(p.search(post_n) for p in all_pats)
+    combined = post_n if post_has_cue else f"{pre_safe} {post_n}".strip()
 
     m_ws = PAT_WEAK_SEV.search(combined)
     m_wm = PAT_WEAK_MLD.search(combined)
     m_sad = PAT_SADUQ.search(combined)
     m_ts = PAT_THIQAH_SUP.search(combined)
+    m_title = PAT_TITLE.search(combined)
     m_th = PAT_THIQAH.search(combined)
+    m_thq = PAT_THIQAH_QUOTED.search(combined)
+    m_wu = PAT_WUTHTHIQA.search(combined)
 
-    has_praise = is_sahabi or bool(m_ts) or bool(m_th) or bool(m_sad)
+    has_praise = is_sahabi or any(bool(m) for m in (m_ts, m_title, m_th, m_thq, m_wu, m_sad))
     has_weak = bool(m_ws) or bool(m_wm)
 
     # Extract concise verbatim span around the matched verdict for overlap & provenance
@@ -325,36 +367,53 @@ def extract_kashif_verdict(full_text: str) -> dict[str, str]:
             "is_sahabi": "True",
             "sigils_raw": " ".join(sigils),
         }
-    if m_ts:
+    if has_praise:
+        wu_t3, wu_t5, wu_rule = (
+            ("1", "3", "KASHIF-T3-1-WUTHTHIQA-MAQBUL") if wuththiqa_policy == "maqbul_r6" else ("2", "4", "KASHIF-T3-2-WUTHTHIQA")
+        )
+        # (level, match, tier_3, tier_5, rule_id), highest priority first within a tier
+        levels = [
+            ("sup", m_ts, "2", "5", "KASHIF-T3-2-SUPERLATIVE"),
+            ("thiqah", m_th, "2", "4", "KASHIF-T3-2-THIQAH"),
+            ("thiqah_quoted", m_thq, "2", "4", "KASHIF-T3-2-THIQAH"),
+            ("wuththiqa", m_wu, wu_t3, wu_t5, wu_rule),
+            ("saduq", m_sad, "1", "3", "KASHIF-T3-1-SADUQ"),
+        ]
+        present = [lv for lv in levels if lv[1]]
+        if not present and m_title:
+            present = [("title", m_title, "2", "5", "KASHIF-T3-2-TITLE")]
+        chosen = None
+        if len({lv[2] for lv in present}) == 1:
+            chosen = present[0]
+        else:
+            # Mixed thiqah/saduq-level praise: use al-Dhahabi's own leading verdict, i.e. the
+            # earliest cue that is not a named critic's tawthiq (وثقه فلان) and not inside a
+            # "قال فلان ..." quotation. Without one, the entry is recorded as unmapped.
+            own = [
+                lv for lv in present
+                if lv[0] != "thiqah_quoted" and not PAT_QUOTE_LEAD.search(combined[: lv[1].start() + 1])
+            ]
+            if own:
+                lead = min(own, key=lambda lv: lv[1].start())
+                chosen = (lead[0], lead[1], lead[2], lead[3], lead[4] + "-OWN-LEAD")
+        if chosen is None:
+            return {
+                "verdict_span": verdict_span,
+                "region_src": region_src,
+                "tier_3": "",
+                "tier_3_label": "unmapped",
+                "tier_5": "",
+                "rule_id": "KASHIF-MIXED-PRAISE-UNMAPPED",
+                "is_sahabi": "False",
+                "sigils_raw": " ".join(sigils),
+            }
         return {
             "verdict_span": verdict_span,
             "region_src": region_src,
-            "tier_3": "2",
-            "tier_3_label": "thiqah_level",
-            "tier_5": "5",
-            "rule_id": "KASHIF-T3-2-SUPERLATIVE",
-            "is_sahabi": "False",
-            "sigils_raw": " ".join(sigils),
-        }
-    if m_th:
-        return {
-            "verdict_span": verdict_span,
-            "region_src": region_src,
-            "tier_3": "2",
-            "tier_3_label": "thiqah_level",
-            "tier_5": "4",
-            "rule_id": "KASHIF-T3-2-THIQAH",
-            "is_sahabi": "False",
-            "sigils_raw": " ".join(sigils),
-        }
-    if m_sad:
-        return {
-            "verdict_span": verdict_span,
-            "region_src": region_src,
-            "tier_3": "1",
-            "tier_3_label": "saduq_level",
-            "tier_5": "3",
-            "rule_id": "KASHIF-T3-1-SADUQ",
+            "tier_3": chosen[2],
+            "tier_3_label": {"2": "thiqah_level", "1": "saduq_level"}[chosen[2]],
+            "tier_5": chosen[3],
+            "rule_id": chosen[4],
             "is_sahabi": "False",
             "sigils_raw": " ".join(sigils),
         }
@@ -433,7 +492,7 @@ def write_csv_lf(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) 
         writer.writerows(rows)
 
 
-def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
+def run_build(out_dir: Path = DEFAULT_OUT_DIR, wuththiqa_policy: str = DEFAULT_WUTHTHIQA_POLICY) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
     k_entries = parse_kashif_entries(KASHIF_PAGES)
     prov_check = verify_narrators_csv_provenance(k_entries)
@@ -445,6 +504,10 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
 
     with LAYERED_WIDE.open("r", encoding="utf-8-sig", newline="") as f:
         l_by_id = {r["entry_id"]: r for r in csv.DictReader(f)}
+
+    # Tahrir commentary, for the symmetric overlap check and the al-Dhahabi citation flag
+    with TAHRIR_ALIGNED.open("r", encoding="utf-8-sig", newline="") as f:
+        tahrir_comm_by_id = {r["entry_id"]: r.get("tahrir_commentary_text", "") or "" for r in csv.DictReader(f)}
 
     with TASK_B_NODES.open("r", encoding="utf-8-sig", newline="") as f:
         eid_to_sid = {r["entry_id"]: r["shamela_narrator_id"] for r in csv.DictReader(f) if r["shamela_narrator_id"]}
@@ -469,7 +532,7 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         toks = extract_name_tokens(full)
         _, raw_sig = strip_sigils(full)
         cb = canon_sigil_books(raw_sig)
-        vinfo = extract_kashif_verdict(full)
+        vinfo = extract_kashif_verdict(full, wuththiqa_policy=wuththiqa_policy)
         name_hdr = " ".join(toks[:6])
         k_uid = f"K1616-{idx+1:04d}-E{ke['num']:04d}"
         ke["k_uid"] = k_uid
@@ -555,7 +618,8 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
     for idx, _full, _full_n, toks, cb, _raw_s, _vinfo in k_meta:
         if idx in k_to_t:
             continue
-        for kname, key, mp in [("n4", toks[:4], t_by_n4), ("n3", toks[:3], t_by_n3), ("n2", toks[:2], t_by_n2)]:
+        # n2 keys (usually just "first name + بن") produced mostly wrong links (review 2026-11-21, M4): dropped.
+        for kname, key, mp in [("n4", toks[:4], t_by_n4), ("n3", toks[:3], t_by_n3)]:
             if len(key) < int(kname[1]):
                 continue
             cands = [c for c in mp.get(key, []) if c[0] not in used_t]
@@ -571,7 +635,8 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
                 if len(sc) == 1:
                     p2_cands[sc[0][0]].append((idx, f"{kname}_sigil_canon", "high"))
                     break
-                sc2 = [c for c in cands if cb.issubset(c[2]) or c[2].issubset(cb)]
+                # Sigil-subset matching only with a 4-token name key (n3_sigil_subset links were all wrong).
+                sc2 = [c for c in cands if cb.issubset(c[2]) or c[2].issubset(cb)] if kname == "n4" else []
                 if len(sc2) == 1:
                     p2_cands[sc2[0][0]].append((idx, f"{kname}_sigil_subset", "medium"))
                     break
@@ -600,8 +665,14 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         vspan = vinfo["verdict_span"]
         vspan_norm = norm_ar(vspan)
 
-        # Check verbatim overlap for mapped entries
-        verbatim_ov = bool(vspan_norm and vspan_norm in taq_norm)
+        # Symmetric verbatim overlap (review 2026-11-21, H1): the al-Kashif span counts as copied
+        # if it appears in the Taqrib text OR in the Tahrir commentary, so neither B nor E2 is favoured.
+        tahrir_comm = tahrir_comm_by_id.get(eid, "")
+        tahrir_norm = norm_ar(tahrir_comm)
+        ov_taqrib = bool(vspan_norm and vspan_norm in taq_norm)
+        ov_tahrir = bool(vspan_norm and vspan_norm in tahrir_norm)
+        verbatim_ov = ov_taqrib or ov_tahrir
+        cites_dh = bool(PAT_TAHRIR_CITES_DHAHABI.search(DIACRITICS_RE.sub("", tahrir_comm).replace("أ", "ا").replace("إ", "ا")))
         if vinfo["tier_3"] != "":
             mapped_total += 1
             if verbatim_ov:
@@ -629,6 +700,10 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
                 "verdict_span": vspan,
                 "verdict_span_norm": vspan_norm,
                 "verbatim_overlap": str(verbatim_ov),
+                "verbatim_overlap_taqrib": str(ov_taqrib),
+                "verbatim_overlap_tahrir": str(ov_tahrir),
+                "tahrir_cites_dhahabi": str(cites_dh),
+                "link_method": meth,
                 "kashif_tier_3": vinfo["tier_3"],
                 "kashif_tier_3_label": vinfo["tier_3_label"],
                 "kashif_tier_5": vinfo["tier_5"],
@@ -713,8 +788,9 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
 
     output_files = [entries_csv, link_csv, map_json, overlap_csv, report_md]
     manifest = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "script": to_posix_relative(Path(__file__), ROOT),
+        "wuththiqa_policy": wuththiqa_policy,
         "narrators_csv_provenance_check": prov_check,
         "counts": {
             "kashif_entries_total": len(k_parsed_rows),
@@ -726,6 +802,9 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "verbatim_overlap_rate": round(ov_rate, 4),
             "link_methods": dict(link_methods),
             "tier3_linked_counts": dict(tier3_counts),
+            "verbatim_overlap_taqrib_count": sum(1 for r in overlap_rows if r["kashif_tier_3"] != "" and r["verbatim_overlap_taqrib"] == "True"),
+            "verbatim_overlap_tahrir_count": sum(1 for r in overlap_rows if r["kashif_tier_3"] != "" and r["verbatim_overlap_tahrir"] == "True"),
+            "tahrir_cites_dhahabi_count": sum(1 for r in overlap_rows if r["tahrir_cites_dhahabi"] == "True"),
         },
         "inputs": {
             "1616_pages_jsonl": {
@@ -758,8 +837,14 @@ def run_build(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build al-Kashif (1616) external validation set v1.")
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument(
+        "--wuththiqa-policy",
+        choices=WUTHTHIQA_POLICIES,
+        default=DEFAULT_WUTHTHIQA_POLICY,
+        help="How to map al-Dhahabi's passive وثق: maqbul_r6 (rank 6, saduq tier) or thiqah (v1 mapping).",
+    )
     args = parser.parse_args()
-    manifest = run_build(out_dir=args.out_dir)
+    manifest = run_build(out_dir=args.out_dir, wuththiqa_policy=args.wuththiqa_policy)
     print(json.dumps(manifest["counts"], ensure_ascii=False, indent=2))
 
 

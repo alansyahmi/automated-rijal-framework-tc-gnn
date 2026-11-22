@@ -142,7 +142,7 @@ class V3DatasetAndScriptContractTests(unittest.TestCase):
         self.assertIn("model_estimate", s3_text)
 
 
-@pytest.mark.gpu
+# Runs on CPU; skipped only when torch/transformers/torch_geometric are absent (no gpu marker, so CI runs it).
 def test_v3_stage2_and_stage3_imports_when_torch_present() -> None:
     torch = pytest.importorskip("torch")
     pytest.importorskip("transformers")

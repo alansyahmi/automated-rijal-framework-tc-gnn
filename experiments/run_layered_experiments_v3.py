@@ -32,6 +32,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from common.hashing import sha256_text_normalized, to_posix_relative  # noqa: E402
+from common.rank_scale import score_to_rank_cont as _scale_score_to_rank  # noqa: E402
 from dataset_discovery.target_feasibility.build_layered_scores_v3 import (  # noqa: E402
     DEFAULT_BILGIN_CSV,
     DEFAULT_MASTER_CSV,
@@ -80,9 +81,17 @@ KASHIF_AUDIT = (
 DEFAULT_OUT_DIR = ROOT / "results" / "layered_experiments_v3_2026-11-21"
 
 
-def score_to_rank_cont(score: float) -> float:
-    """Exact inverse of score = 100 * (12 - rank) / 11."""
-    return 12.0 - 11.0 * (float(score) / 100.0)
+def score_to_rank_cont(score: float, scale: str = "linear_v1") -> float:
+    """Inverse of the 0-100 rank scale the layered CSV was built with.
+
+    linear_v1 is the exact inverse of 100 * (12 - rank) / 11. Rows carry their
+    scale in the ``rank_scale`` column; rows without it are linear_v1.
+    """
+    return _scale_score_to_rank(score, scale)
+
+
+def _row_scale(row: dict[str, str]) -> str:
+    return (row.get("rank_scale") or "linear_v1").strip() or "linear_v1"
 
 
 def rank_cont_to_tier3(rank_cont: float) -> int:
@@ -199,7 +208,7 @@ def evaluate_track_r_on_tahrir_test(
         re2 = int(rk_e2_s)
         y_rank.append(float(re2))
         y_shift.append(0 if re2 < rb else (2 if re2 > rb else 1))
-        pred_rank.append(score_to_rank_cont(float(sc_s)))
+        pred_rank.append(score_to_rank_cont(float(sc_s), _row_scale(lr)))
         pred_shift.append(1)  # Identity / unchanged baseline for shift
         is_maqbul.append(lr["taqrib_is_conditional_maqbul"] == "True")
     return compute_metrics(
@@ -275,6 +284,21 @@ def evaluate_against_kashif(
         "tier5_qwk": round(float(cohen_kappa_score(yt5_a, pt5_a, weights="quadratic")), 4),
         "tier5_spearman": round(sp, 4),
         "_arrays": (used_ids, yt3_a, pt3_a, yt5_a, pt5_a, prank_a),
+    }
+
+
+def _majority_floor(ev: dict[str, Any]) -> dict[str, Any]:
+    """Constant-prediction floor on exactly the rows of `ev`: always predict the most common al-Kashif tier."""
+    if not ev.get("_arrays"):
+        return {"majority_tier3": "", "majority_tier3_acc": float("nan"), "majority_tier3_macro_f1": float("nan")}
+    yt3 = ev["_arrays"][1]
+    vals, cnts = np.unique(yt3, return_counts=True)
+    maj = int(vals[np.argmax(cnts)])
+    pred = np.full_like(yt3, maj)
+    return {
+        "majority_tier3": maj,
+        "majority_tier3_acc": round(float(np.mean(yt3 == maj)), 4),
+        "majority_tier3_macro_f1": round(float(f1_score(yt3, pred, labels=[0, 1, 2], average="macro", zero_division=0)), 4),
     }
 
 
@@ -423,13 +447,14 @@ def run_e1_sensitivity(
                     master_csv=DEFAULT_MASTER_CSV,
                     out_dir=tmp_path,
                     e1_preset=preset,
+                    rank_scale=_row_scale(next(iter(default_layered_by_id.values()))),
                 )
                 with (tmp_path / "LAYERED_SCORES_WIDE_V3.csv").open("r", encoding="utf-8-sig", newline="") as f:
                     lmap = {r["entry_id"]: r for r in csv.DictReader(f)}
 
         tahrir_test_m = evaluate_track_r_on_tahrir_test(master_rows, lmap, "score_E1", test_indices)
         pred_e1 = {
-            eid: score_to_rank_cont(float(r["score_E1"]))
+            eid: score_to_rank_cont(float(r["score_E1"]), _row_scale(r))
             for eid, r in lmap.items()
             if r["score_E1"].strip() and r["status_E2"] not in EXCLUDED_E2_STATUSES
         }
@@ -494,17 +519,17 @@ def run_suite(
 
     # Pred maps (continuous 1..12 ranks) for Kashif validation, strictly excluding missing/suspect_alignment E2 flags
     ranks_b_clean = {
-        eid: score_to_rank_cont(float(r["score_B"]))
+        eid: score_to_rank_cont(float(r["score_B"]), _row_scale(r))
         for eid, r in layered_by_id.items()
         if r["score_B"].strip() and r["status_E2"] not in EXCLUDED_E2_STATUSES
     }
     ranks_e1_clean = {
-        eid: score_to_rank_cont(float(r["score_E1"]))
+        eid: score_to_rank_cont(float(r["score_E1"]), _row_scale(r))
         for eid, r in layered_by_id.items()
         if r["score_E1"].strip() and r["status_E2"] not in EXCLUDED_E2_STATUSES
     }
     ranks_e2_clean = {
-        eid: score_to_rank_cont(float(r["score_E2"]))
+        eid: score_to_rank_cont(float(r["score_E2"]), _row_scale(r))
         for eid, r in layered_by_id.items()
         if r["score_E2"].strip() and r["status_E2"] not in EXCLUDED_E2_STATUSES
     }
@@ -626,16 +651,28 @@ def run_suite(
         if ranks_g_est:
             layer_maps.append(("Exp_D_G4a_EstimateOnly", ranks_g_est))
 
+    def _paired_clean(eid: str, kr: dict[str, str]) -> bool:
+        """Primary subset: paired, symmetric non-verbatim, and Tahrir does not cite al-Dhahabi."""
+        return (
+            eid in common_b_e2_ids
+            and kr["verbatim_overlap"] == "False"
+            and kr.get("tahrir_cites_dhahabi", "False") == "False"
+        )
+
     for lname, rmap in layer_maps:
         for sname, fn in [
             ("all_observed", None),
+            ("all_excl_sahabi", lambda _eid, kr: kr["is_sahabi"] == "False"),
             ("paired_B_E2_common", lambda eid, _kr: eid in common_b_e2_ids),
             ("non_verbatim", lambda _eid, kr: kr["verbatim_overlap"] == "False"),
+            # v1 one-sided filter (al-Kashif span absent from Taqrib only), kept for comparison
+            ("paired_non_verbatim_taqrib_only_v1", lambda eid, kr: eid in common_b_e2_ids and kr.get("verbatim_overlap_taqrib", kr["verbatim_overlap"]) == "False"),
             ("paired_non_verbatim", lambda eid, kr: eid in common_b_e2_ids and kr["verbatim_overlap"] == "False"),
             (
                 "paired_non_verbatim_excl_sahabi",
                 lambda eid, kr: eid in common_b_e2_ids and kr["verbatim_overlap"] == "False" and kr["is_sahabi"] == "False",
             ),
+            ("paired_clean", _paired_clean),
             ("observed_first_grade_abstained_B", lambda _eid, kr: kr["status_E2"] == "observed_first_grade"),
         ]:
             ev = evaluate_against_kashif(rmap, kashif_by_id, subset_name=sname, filter_fn=fn)
@@ -652,15 +689,16 @@ def run_suite(
                     "tier3_qwk": ev["tier3_qwk"],
                     "tier5_qwk": ev["tier5_qwk"],
                     "tier5_spearman": ev["tier5_spearman"],
+                    **_majority_floor(ev),
                 }
             )
-            if lname == "Exp_C_score_E2" and sname == "paired_non_verbatim":
+            if lname == "Exp_C_score_E2" and sname == "paired_clean":
                 exp_rows.append(
                     {
                         "experiment": "Exp_C_Scholarly_E2",
                         "track": "Track_R_Deterministic",
                         "model_or_layer": "score_E2 (B + E1 + Tahrir)",
-                        "eval_target": "al_kashif_paired_non_verbatim",
+                        "eval_target": "al_kashif_paired_clean",
                         "status": "COMPLETED",
                         "n_eval": ev["n"],
                         "rank_mae": "",
@@ -681,6 +719,7 @@ def run_suite(
             "paired_non_verbatim_excl_sahabi",
             lambda eid, kr: eid in common_b_e2_ids and kr["verbatim_overlap"] == "False" and kr["is_sahabi"] == "False",
         ),
+        ("paired_clean", _paired_clean),
     ]:
         for b_row in paired_bootstrap_kashif(
             ranks_b_clean, ranks_e2_clean, kashif_by_id, fn, n_boot=bootstrap_iters, seed=42
@@ -943,13 +982,16 @@ def run_suite(
             "",
             "## 2. External Validation vs al-Dhahabi's *al-Kāshif* (1616)",
             "",
-            "| Layer | Subset | N | 3-Tier Acc ↑ | 3-Tier MF1 ↑ | 3-Tier QWK ↑ | 5-Tier QWK ↑ | 5-Tier Spearman ↑ |",
-            "|---|---|---:|---:|---:|---:|---:|---:|",
+            "Primary subset: `paired_clean` (paired B/E2, al-Kashif span in neither Taqrib nor Tahrir, Tahrir does not cite al-Dhahabi). "
+            "QWK and Macro-F1 are the primary agreement metrics; accuracy is secondary and must be read against the majority-class floor.",
+            "",
+            "| Layer | Subset | N | 3-Tier Acc ↑ | Majority Acc | 3-Tier MF1 ↑ | 3-Tier QWK ↑ | 5-Tier QWK ↑ | 5-Tier Spearman ↑ |",
+            "|---|---|---:|---:|---:|---:|---:|---:|---:|",
         ]
     )
     for kr in kashif_rows:
         md.append(
-            f"| `{kr['layer']}` | `{kr['subset']}` | {kr['n']} | {kr['tier3_acc']:.4f} | {kr['tier3_macro_f1']:.4f} | "
+            f"| `{kr['layer']}` | `{kr['subset']}` | {kr['n']} | {kr['tier3_acc']:.4f} | {kr['majority_tier3_acc']:.4f} | {kr['tier3_macro_f1']:.4f} | "
             f"{kr['tier3_qwk']:.4f} | {kr['tier5_qwk']:.4f} | {kr['tier5_spearman']:.4f} |"
         )
     md.extend(
@@ -1029,9 +1071,11 @@ def main() -> None:
     parser.add_argument("--stage2-dir", type=Path, default=None)
     parser.add_argument("--stage3-dir", type=Path, default=None)
     parser.add_argument("--bootstrap-iters", type=int, default=2000)
+    parser.add_argument("--kashif-csv", type=Path, default=KASHIF_AUDIT, help="al-Kashif overlap audit (e.g. a wuththiqa-policy sensitivity build).")
     args = parser.parse_args()
     res = run_suite(
         out_dir=args.out_dir,
+        kashif_csv=args.kashif_csv,
         stage2_dir=args.stage2_dir,
         stage3_dir=args.stage3_dir,
         bootstrap_iters=args.bootstrap_iters,
