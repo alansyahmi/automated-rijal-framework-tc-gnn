@@ -1,6 +1,6 @@
 # Layered 0–100 Narrator Score: Experiments A–D Report (v3)
 
-- **Generated (UTC):** 2026-11-22 14:18:21Z
+- **Generated (UTC):** 2026-11-22 15:41:42Z
 - **Stage 2 ESA Dir:** `results/stage2_esa_benchmarks_v3_2026-11-21`
 - **Stage 3 TC-GNN Dir:** `results/stage3_tc_gnn_benchmarks_v3_2026-11-21`
 
@@ -15,6 +15,8 @@
 
 | Experiment | Track | Model / Layer | Eval Target | Status | N | Rank MAE ↓ | QWK ↑ | 3-Tier Acc ↑ | 3-Tier MF1 ↑ | Shift MF1 ↑ | R6 MAE ↓ |
 |---|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| `Exp_A_Majority_Baseline` | `Track_R_Deterministic` | `majority_class (train modal rank/shift)` | `tahrir_clean_test` | `COMPLETED` | 1077 | 2.4689 | 0.0 | 0.4067 | 0.1927 | 0.255 | 3.9207 |
+| `Exp_A_LookupTable_Baseline` | `Track_R_Deterministic` | `lookup_table ((rank_B, maqbul) -> train mode)` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.6202 | 0.8749 | 0.8171 | 0.7901 | 0.6576 | 1.5066 |
 | `Exp_A_Baseline_B` | `Track_R_Deterministic` | `score_B (Ibn Hajar Taqrib)` | `tahrir_clean_test_descriptive` | `COMPLETED` | 1077 | 0.7233 | 0.8603 | 0.7066 | 0.698 | 0.255 | 1.978 |
 | `Exp_B_Qualifiers_E1_Det` | `Track_R_Deterministic` | `score_E1 (B + within-band E1 qualifiers)` | `tahrir_clean_test_descriptive` | `COMPLETED` | 1077 | 0.7248 | 0.8603 | 0.7066 | 0.698 | 0.255 | 1.9786 |
 | `Exp_B_ESA_Learned` | `Track_L_ESA` | `M0_Identity_Baseline` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.7233 | 0.8603 | 0.7066 | 0.698 | 0.255 | 1.978 |
@@ -30,15 +32,15 @@
 | `Exp_C_Scholarly_E2` | `Track_R_Deterministic` | `score_E2 (B + E1 + Tahrir)` | `al_kashif_paired_clean` | `COMPLETED` | 1994 |  | 0.6757 | 0.669 | 0.651 |  |  |
 | `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G0_Stage2_AraBERT_NoGraph` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6597 | 0.8892 | 0.8115 | 0.7919 | 0.7262 | 1.4946 |
 | `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G2a_Sem_Plus_SanadStruct_HistGBDT` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 1.4076 | 0.6432 | 0.6342 | 0.6146 | 0.7162 | 1.8519 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G1_GraphOnly_NoText` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 1.3307 | 0.7031 | 0.6698 | 0.6482 | 0.5339 | 1.7361 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G2b_Sem_Plus_SanadStruct_MLP` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6536 | 0.889 | 0.8195 | 0.7966 | 0.7194 | 1.4823 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3a_Undirected_GCN` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6653 | 0.8891 | 0.8212 | 0.798 | 0.7256 | 1.4745 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3b_Undirected_GraphSAGE` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.679 | 0.8872 | 0.8184 | 0.7967 | 0.7218 | 1.4728 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3c_Undirected_GATv2` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6847 | 0.8864 | 0.8199 | 0.7984 | 0.7248 | 1.463 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4a_Directed_TC_GNN_Sanad` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6801 | 0.8865 | 0.818 | 0.7973 | 0.7218 | 1.4796 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4b_Directed_TC_GNN_UnprunedSanad` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6839 | 0.8853 | 0.8173 | 0.7965 | 0.7156 | 1.475 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4c_MV_TC_GNN_Sanad_Plus_kNN` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6714 | 0.8879 | 0.8156 | 0.7935 | 0.7271 | 1.4897 |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4d_Directed_TC_GNN_Consolidated` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6698 | 0.8905 | 0.8204 | 0.7996 | 0.7287 | 1.4538 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G1_GraphOnly_NoText` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 1.3263 | 0.7087 | 0.6737 | 0.6517 | 0.5392 | 1.7368 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G2b_Sem_Plus_SanadStruct_MLP` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6558 | 0.8885 | 0.8214 | 0.7977 | 0.7247 | 1.4744 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3a_Undirected_GCN` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6708 | 0.8882 | 0.8199 | 0.7969 | 0.7183 | 1.4779 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3b_Undirected_GraphSAGE` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6799 | 0.8867 | 0.8171 | 0.7954 | 0.721 | 1.4758 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3c_Undirected_GATv2` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.676 | 0.886 | 0.8214 | 0.7994 | 0.7162 | 1.4741 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4a_Directed_TC_GNN_Sanad` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.676 | 0.8858 | 0.8191 | 0.7979 | 0.724 | 1.4847 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4b_Directed_TC_GNN_UnprunedSanad` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6866 | 0.8852 | 0.8184 | 0.7979 | 0.7156 | 1.471 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4c_MV_TC_GNN_Sanad_Plus_kNN` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6821 | 0.8862 | 0.8186 | 0.7969 | 0.7259 | 1.4888 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4d_Directed_TC_GNN_Consolidated` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6613 | 0.8913 | 0.8191 | 0.7985 | 0.732 | 1.4586 |
 
 ## 2. External Validation vs al-Dhahabi's *al-Kāshif* (1616)
 
@@ -71,18 +73,18 @@ Primary subset: `paired_clean` (paired B/E2, al-Kashif span in neither Taqrib no
 | `Exp_C_score_E2` | `paired_non_verbatim_excl_sahabi` | 2087 | 0.6310 | 0.4490 | 0.6171 | 0.6459 | 0.7103 | 0.7154 |
 | `Exp_C_score_E2` | `paired_clean` | 1994 | 0.6690 | 0.4829 | 0.6510 | 0.6757 | 0.7542 | 0.7520 |
 | `Exp_C_score_E2` | `observed_first_grade_abstained_B` | 77 | 0.5974 | 0.5195 | 0.5361 | 0.5614 | 0.5412 | 0.5138 |
-| `Exp_D_G4a_All` | `all_observed` | 3706 | 0.6711 | 0.5556 | 0.6433 | 0.6596 | 0.7370 | 0.7498 |
-| `Exp_D_G4a_All` | `all_excl_sahabi` | 3400 | 0.6426 | 0.5156 | 0.6304 | 0.6379 | 0.6738 | 0.6869 |
-| `Exp_D_G4a_All` | `paired_B_E2_common` | 3227 | 0.6545 | 0.5448 | 0.6313 | 0.6406 | 0.7249 | 0.7411 |
-| `Exp_D_G4a_All` | `non_verbatim` | 2537 | 0.6271 | 0.4876 | 0.6141 | 0.6353 | 0.7163 | 0.7308 |
-| `Exp_D_G4a_All` | `paired_non_verbatim_taqrib_only_v1` | 2508 | 0.5602 | 0.4860 | 0.5598 | 0.5554 | 0.6640 | 0.6877 |
-| `Exp_D_G4a_All` | `paired_non_verbatim` | 2186 | 0.6057 | 0.4739 | 0.5981 | 0.6103 | 0.7041 | 0.7218 |
-| `Exp_D_G4a_All` | `paired_non_verbatim_excl_sahabi` | 2087 | 0.5879 | 0.4490 | 0.5876 | 0.5932 | 0.6654 | 0.6870 |
-| `Exp_D_G4a_All` | `paired_clean` | 1994 | 0.6399 | 0.4829 | 0.6317 | 0.6448 | 0.7284 | 0.7373 |
-| `Exp_D_G4a_All` | `observed_first_grade_abstained_B` | 77 | 0.6234 | 0.5195 | 0.6074 | 0.5495 | 0.6159 | 0.5777 |
-| `Exp_D_G4a_EstimateOnly` | `all_observed` | 402 | 0.8134 | 0.6493 | 0.7157 | 0.8187 | 0.8024 | 0.7806 |
-| `Exp_D_G4a_EstimateOnly` | `all_excl_sahabi` | 317 | 0.7666 | 0.5552 | 0.7024 | 0.8056 | 0.7354 | 0.6730 |
-| `Exp_D_G4a_EstimateOnly` | `non_verbatim` | 300 | 0.7867 | 0.5933 | 0.7035 | 0.8096 | 0.7790 | 0.7471 |
+| `Exp_D_G4a_All` | `all_observed` | 3706 | 0.6705 | 0.5556 | 0.6422 | 0.6599 | 0.7412 | 0.7508 |
+| `Exp_D_G4a_All` | `all_excl_sahabi` | 3400 | 0.6421 | 0.5156 | 0.6293 | 0.6383 | 0.6796 | 0.6883 |
+| `Exp_D_G4a_All` | `paired_B_E2_common` | 3227 | 0.6548 | 0.5448 | 0.6310 | 0.6415 | 0.7301 | 0.7420 |
+| `Exp_D_G4a_All` | `non_verbatim` | 2537 | 0.6248 | 0.4876 | 0.6109 | 0.6349 | 0.7212 | 0.7322 |
+| `Exp_D_G4a_All` | `paired_non_verbatim_taqrib_only_v1` | 2508 | 0.5614 | 0.4860 | 0.5604 | 0.5573 | 0.6715 | 0.6888 |
+| `Exp_D_G4a_All` | `paired_non_verbatim` | 2186 | 0.6043 | 0.4739 | 0.5961 | 0.6107 | 0.7107 | 0.7231 |
+| `Exp_D_G4a_All` | `paired_non_verbatim_excl_sahabi` | 2087 | 0.5865 | 0.4490 | 0.5857 | 0.5936 | 0.6732 | 0.6885 |
+| `Exp_D_G4a_All` | `paired_clean` | 1994 | 0.6369 | 0.4829 | 0.6283 | 0.6438 | 0.7338 | 0.7384 |
+| `Exp_D_G4a_All` | `observed_first_grade_abstained_B` | 77 | 0.6104 | 0.5195 | 0.6014 | 0.5318 | 0.6054 | 0.5875 |
+| `Exp_D_G4a_EstimateOnly` | `all_observed` | 402 | 0.8085 | 0.6493 | 0.7023 | 0.8161 | 0.8026 | 0.7807 |
+| `Exp_D_G4a_EstimateOnly` | `all_excl_sahabi` | 317 | 0.7603 | 0.5552 | 0.6889 | 0.8024 | 0.7361 | 0.6743 |
+| `Exp_D_G4a_EstimateOnly` | `non_verbatim` | 300 | 0.7800 | 0.5933 | 0.6874 | 0.8063 | 0.7778 | 0.7462 |
 
 ### Paired Bootstrap E2 vs B on *al-Kāshif* ($B = 2000$, `seed = 42`)
 

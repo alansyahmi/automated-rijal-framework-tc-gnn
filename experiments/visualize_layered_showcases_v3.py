@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from common.rank_scale import THRESHOLDS, rank_to_score, score_to_rank_cont  # noqa: E402
 from experiments.visualize_rank6_maqbul_test_showcase import transliterate_short_name  # noqa: E402
 
 FINAL_CSV = ROOT / "results/layered_experiments_v3_2026-11-21/FINAL_LAYERED_RIJAL_SCORES_8827_V3.csv"
@@ -89,12 +90,14 @@ def plot_gold50_stepped(matched_rows: list[dict[str, Any]], out_png: Path) -> No
         ax.set_yticks(y)
         ax.set_yticklabels(labels, fontsize=8.5)
         ax.set_xlim(-3, 104)
+        for tname, tval, tcol in [("sahih=80", THRESHOLDS["hukm_v1"]["sahih"], "#27ae60"), ("accepted=50", THRESHOLDS["hukm_v1"]["accepted_alone"], "#e67e22"), ("itibar=25", THRESHOLDS["hukm_v1"]["itibar"], "#c0392b")]:
+            ax.axvline(x=tval, color=tcol, linestyle=":", linewidth=1.0, alpha=0.55)
         ax.set_title(f"{title} (n={len(sub)})", fontsize=11, fontweight="bold")
         ax.grid(axis="x", linestyle="--", alpha=0.4)
         if gk == "1_highly_reliable":
             ax.legend(loc="lower left", fontsize=8.5, ncol=2)
 
-    axes[-1].set_xlabel("Layered 0–100 Narrator Reliability Score", fontsize=11)
+    axes[-1].set_xlabel("Layered 0–100 Narrator Reliability Score (hukm_v1 scale)", fontsize=11)
     fig.suptitle("Gold-50 Well-Known Narrators: Stepped B -> B+E1 -> B+E1+E2 Trajectory (v3)", fontsize=13, fontweight="bold", y=0.995)
     fig.tight_layout()
     fig.savefig(out_png, dpi=180)
@@ -103,16 +106,19 @@ def plot_gold50_stepped(matched_rows: list[dict[str, Any]], out_png: Path) -> No
 
 def plot_rank6_showcase(r6_rows: list[dict[str, Any]], out_png: Path) -> None:
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.2))
+    r6_base = rank_to_score(6, "hukm_v1")  # 40.0 on hukm_v1
 
     vals_e2 = [float(r["score_E2"]) for r in r6_rows if r["score_E2"] != ""]
     counts = Counter(round(v, 2) for v in vals_e2)
     xs = sorted(counts.keys())
     ys = [counts[x] for x in xs]
-    colors = ["#c0392b" if x < 54.55 else ("#27ae60" if x > 54.55 else "#7f8c8d") for x in xs]
+    colors = ["#c0392b" if x < r6_base else ("#27ae60" if x > r6_base else "#7f8c8d") for x in xs]
     ax1.bar([str(x) for x in xs], ys, color=colors, edgecolor="#2c3e50", linewidth=0.7)
-    ax1.axvline(x=[str(x) for x in xs].index("45.45") if "45.45" in [str(x) for x in xs] else 0, color="#c0392b", linestyle="--", alpha=0.4)
-    ax1.set_title(f"Unseen Clean Test Rank-6 Maqbul (N={len(r6_rows)})\nAll Start at Layer B = 54.55 -> Resolved by E2", fontsize=10.5, fontweight="bold")
-    ax1.set_xlabel("Layer B+E1+E2 Score (0–100)", fontsize=10)
+    r7_str = str(round(rank_to_score(7, "hukm_v1"), 2))
+    if r7_str in [str(x) for x in xs]:
+        ax1.axvline(x=[str(x) for x in xs].index(r7_str), color="#c0392b", linestyle="--", alpha=0.4)
+    ax1.set_title(f"Unseen Clean Test Rank-6 Maqbul (N={len(r6_rows)})\nAll Start at Layer B = {r6_base:.1f} -> Resolved by E2", fontsize=10.5, fontweight="bold")
+    ax1.set_xlabel("Layer B+E1+E2 Score (0–100, hukm_v1)", fontsize=10)
     ax1.set_ylabel("Narrator Count", fontsize=10)
     ax1.tick_params(axis="x", rotation=40, labelsize=8.5)
 
@@ -123,7 +129,7 @@ def plot_rank6_showcase(r6_rows: list[dict[str, Any]], out_png: Path) -> None:
         e2_s = r["score_E2"].strip()
         if not kt3 or not e2_s:
             continue
-        re2 = int(round(12.0 - 11.0 * float(e2_s) / 100.0))
+        re2 = int(round(score_to_rank_cont(float(e2_s), "hukm_v1")))
         t3_e2 = "2" if re2 <= 3 else ("1" if re2 <= 6 else "0")
         t3_counts["B=Saduq matches Kashif" if kt3 == "1" else "B=Saduq misses Kashif"] += 1
         t3_counts["E2 matches Kashif" if kt3 == t3_e2 else "E2 misses Kashif"] += 1
@@ -226,7 +232,7 @@ def main() -> None:
         "",
         f"- **Gold-50 Matched Narrators:** `{len(matched_gold)}` / `{len(gold_out)}` (1 Prophet-era/Sahabi edge case unmatched in Bilgin table).",
         f"- **Gold-50 `E6868` (Muqatil b. Sulayman):** `rank_B = {e6868.get('rank_B', '')}`, `score_B = {e6868.get('score_B', '')}`, `score_E2 = {e6868.get('score_E2', '')}` (`status_E2 = {e6868.get('status_E2', '')}`).",
-        f"- **Rank-6 (`maqbul`) Unseen Clean Test Cohort:** `N = {len(r6_out)}` narrators starting at flat `score_B = 54.55`.",
+        f"- **Rank-6 (`maqbul`) Unseen Clean Test Cohort:** `N = {len(r6_out)}` narrators starting at flat `score_B = {rank_to_score(6, 'hukm_v1'):.2f}` (`hukm_v1` scale).",
         "",
         "Generated files:",
         "- `GOLD50_LAYERED_SHOWCASE_V3.csv`",

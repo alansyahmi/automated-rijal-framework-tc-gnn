@@ -18,7 +18,7 @@
 
 ### C. Why `main` v2.0's 120-Narrator Dual-Reviewer ESA Pilot Is Dropped (`DEC-007`)
 - **Archival Notice:** Prior to the `taqrib-oriented` pivot (`DEC-004`), `origin/main` drafted a 120-narrator manual ESA pilot (`TRAIN_120_STRATIFIED_ESA_PILOT_WORKSHEET_V2_0.csv` with a `STOP-AND-APPROVE` gate under the earlier critic-level Task B framing). That pilot is **formally superseded (`DEC-007`)**.
-- **Justification:** In the *Taqrīb* → *Taḥrīr* paradigm, reliability grades and overrides are authored directly by named classical and modern *ḥadīth* authorities (Ibn Ḥajar, al-Arnāʾūṭ, Maʿrūf), so inventing subjective dual-reviewer labels on modern summaries would replace scholarly ground truth with annotator opinion. Instead, label validity rests on: (1) blind extraction QA (`120/120` Bilgin rules, `99.95%` `3076↔8246` alignment, Gold-50 adjudication), and (2) independent external validation against al-Dhahabī's *al-Kāshif* (`1616`, `N = 2,566` non-verbatim linked narrators).
+- **Justification:** In the *Taqrīb* → *Taḥrīr* paradigm, reliability grades and overrides are authored directly by named classical and modern *ḥadīth* authorities (Ibn Ḥajar, al-Arnāʾūṭ, Maʿrūf), so inventing subjective dual-reviewer labels on modern summaries would replace scholarly ground truth with annotator opinion. Instead, label validity rests on: (1) blind extraction QA (`120/120` Bilgin rules, `99.95%` `3076↔8246` alignment, Gold-50 adjudication), and (2) independent external validation against al-Dhahabī's *al-Kāshif* (`1616`, `N = 1,994` `paired_clean` non-verbatim / non-citing narrators out of `5,640` linked).
 
 ---
 

@@ -1,228 +1,228 @@
 ﻿entry_id,short_label,score_B,score_E1,delta_E1,score_E2,rank_E2,delta_E2,status_E2,tahrir_disposition,source,score_G_estimate,kashif_tier_3
-S3076-P090-C018-E0196,E0196: Ibrahim b. Abd Allah,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P101-C002-E0353,E0353: Ishaq b. al-Rby' al-'sfry,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P108-C012-E0462,E0462: Isma'il b. Abd al-Rahman,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P109-C002-E0467,E0467: Isma'il b. Ubayd Allah,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P109-C005-E0470,E0470: Isma'il b. Umar Kanh,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P109-C007-E0472,E0472: Isma'il b. 'wn b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P111-C008-E0504,E0504: al-Aswd b. Abd Allah,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P124-C019-E0713,E0713: Bshyr b. Rby'h al-Bjly,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P129-C001-E0775,E0775: Blad,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P130-C018-E0806,E0806: Tmym Abu Slmh al-Fhry,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P136-C003-E0864,E0864: Jabr b. Isma'il al-Hdrmy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P140-C003-E0933,E0933: J'fr b. Abi Thwr,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P142-C002-E0965,E0965: Jmhan,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P147-C005-E1037,E1037: al-Harth b. Amr al-Bahly,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P152-C001-E1107,E1107: Hbyb b. Abi Mlykh,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P157-C005-E1189,E1189: Hzam,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P161-C008-E1246,E1246: al-Hasan b. Shyl b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,2
-S3076-P167-C003-E1327,E1327: al-Husayn b. Abd al-Rahman,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P171-C002-E1386,E1386: Hsyn b. Ms'b,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P178-C010-E1501,E1501: Hmad b. Abd al-Rahman,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P180-C012-E1535,E1535: Hmzh b. al-Mghyrh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P186-C006-E1610,E1610: Kharjh b. al-Slt al-Brjmy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
-S3076-P188-C015-E1645,E1645: Khalid b. Abd Allah,54.545455,53.863636,-0.681818,53.863636,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,2
-S3076-P190-C001-E1663,E1663: Khalid b. 'myr al-'dwy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P199-C020-E1809,E1809: Dawud b. Qys al-Sn'any,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P207-C008-E1905,E1905: Rby'h b. Slym Aw,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P207-C013-E1910,E1910: Rby'h b. Abd al-Rahman,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P211-C012-E1969,E1969: Rwh b. al-Frj al-Bsry,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P212-C002-E1975,E1975: Ryhan b. Yazid al-'amry,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P218-C003-E2053,E2053: Zhyr b. al-Hnyd al-'dwy,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P223-C010-E2135,E2135: Zayd b. Drhm Wyqal,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P224-C011-E2150,E2150: Zayd b. Ali b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P231-C011-E2244,E2244: Sa'd b. 'badh al-Zrqy,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P232-C011-E2257,E2257: Sa'd b. al-Mndhr b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P235-C017-E2310,E2310: Sa'id b. Zyad al-Shybany,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P238-C010-E2351,E2351: Sa'id b. Abd al-Rahman,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P238-C012-E2353,E2353: Sa'id b. Abd al-Rahman,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P241-C005-E2392,E2392: Sa'id b. Mzahm b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,0
-S3076-P241-C014-E2401,E2401: Sa'id b. al-Mhlb,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P242-C001-E2407,E2407: Sa'id b. al-Ndr b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P242-C006-E2412,E2412: Sa'id b. Whb al-Thwry,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P245-C004-E2454,E2454: Sfyan b. Nshyt,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P249-C006-E2520,E2520: Slyt,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P250-C017-E2548,E2548: Sulayman b. Kharjh b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P253-C011-E2596,E2596: Sulayman b. Ali b.,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P254-C007-E2606,E2606: Sulayman b. Muhammad b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P256-C017-E2643,E2643: Snan b. Qys Shamy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P262-C002-E2719,E2719: Syar Abu Hmzh al-Kwfy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P263-C015-E2736,E2736: Shbl b. Hamd Aw,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P265-C015-E2773,E2773: Shryh b. Artah al-Nkh'y,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P266-C012-E2789,E2789: Shryk b. Nmlh al-Kwfy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P269-C004-E2827,E2827: Shhab b. Abbad al-'bdy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P269-C008-E2831,E2831: Shwys Akhrh Mhmlh Msghr,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P270-C003-E2840,E2840: Shybh al-Khdry,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P271-C002-E2842,E2842: Sa'd b. Ubayd al-Bjly,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P273-C004-E2876,E2876: Salih b. Ubayd,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P273-C005-E2877,E2877: Salih b. Ubayd al-Ymany,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P275-C008-E2912,E2912: Sdqh b. Sa'id al-Hnfy,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,1
-S3076-P277-C011-E2944,E2944: Sfwan b. Abi Yazid,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P279-C015-E2975,E2975: al-Dhak b. Fyrwz al-Dylmy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P284-C006-E3050,E3050: Tyslh,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P293-C011-E3178,E3178: 'bas b. Ubayd Allah,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P304-C009-E3334,E3334: Abd Allah b. Zayd,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P305-C011-E3351,E3351: Abd Allah b. Sa'd,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P310-C015-E3428,E3428: Abd Allah b. Abd,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P312-C005-E3448,E3448: Abd Allah b. Abd,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P312-C009-E3451,E3451: Abd Allah b. Ubayd,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P312-C011-E3453,E3453: Abd Allah b. Ubayd,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P313-C009-E3463,E3463: Abd Allah b. 'tyk,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P314-C013-E3484,E3484: Abd Allah b. Ali,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P316-C007-E3507,E3507: Abd Allah b. Amr,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P321-C011-E3590,E3590: Abd Allah b. Muhammad,54.545455,54.545455,0.000000,36.363636,8,-18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P323-C008-E3618,E3618: Abd Allah b. Mslm,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P329-C014-E3707,E3707: Abd Allah b. Yazid,54.545455,54.545455,0.000000,54.545455,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
-S3076-P332-C004-E3740,E3740: Abd al-Akrm b. Abi,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P332-C013-E3748,E3748: Abd al-Hkm b. Dhkwan,54.545455,54.545455,0.000000,54.545455,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
-S3076-P334-C016-E3777,E3777: Abd al-Hmyd mawla Bny,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P337-C003-E3811,E3811: Abd al-Rahman b. Bshr,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,1
-S3076-P339-C002-E3841,E3841: Abd al-Rahman b. Hrmlh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P339-C006-E3845,E3845: Abd al-Rahman b. Hsyn,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P340-C002-E3857,E3857: Abd al-Rahman b. Abi,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
-S3076-P340-C012-E3863,E3863: Abd al-Rahman b. Zyad,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,0
-S3076-P341-C002-E3869,E3869: Abd al-Rahman b. al-Sa'b,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P343-C018-E3912,E3912: Abd al-Rahman b. 'bas,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P345-C001-E3925,E3925: Abd al-Rahman b. Abd,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P346-C003-E3941,E3941: Abd al-Rahman b. Ubayd,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P346-C011-E3947,E3947: Abd al-Rahman b. 'dy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P347-C017-E3968,E3968: Abd al-Rahman b. Abi,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P348-C003-E3975,E3975: Abd al-Rahman b. al-'la',54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P348-C009-E3979,E3979: Abd al-Rahman b. Frwkh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P349-C015-E3998,E3998: Abd al-Rahman b. Muhammad,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P350-C006-E4005,E4005: Abd al-Rahman b. al-Mswr,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P355-C014-E4076,E4076: Abd al-Slam al-Kwfy,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P360-C008-E4141,E4141: Abd al-Qahr b. al-Sry,54.545455,54.545455,0.000000,36.363636,8,-18.181818,observed_dissent,dissent_bal,observed_scholarly,,1
-S3076-P361-C002-E4151,E4151: Abd al-Krym b. Slyt,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P362-C017-E4177,E4177: Abd al-Mlk b. al-Khtab,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P365-C015-E4222,E4222: Abd al-Mlk b. Mysrh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P370-C005-E4282,E4282: Ubayd Allah b. al-Jhm,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P373-C012-E4326,E4326: Ubayd Allah b. Umar,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
-S3076-P374-C001-E4333,E4333: Ubayd Allah b. Mhrz,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P378-C010-E4393,E4393: Ubayd b. Mhran al-Wzan,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P379-C003-E4406,E4406: Ubayd mawla al-Sa'b al-M..,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P382-C001-E4447,E4447: 'tyk,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P383-C020-E4475,E4475: Uthman b. Sulayman b.,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P385-C011-E4499,E4499: Uthman b. Ubayd al-Yhsby,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P387-C002-E4521,E4521: Uthman b. Mwhb,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P392-C012-E4607,E4607: 'ta' mawla Abi Ahmad,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P394-C002-E4628,E4628: 'fyf b. Amr b.,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P399-C012-E4709,E4709: Ali b. al-Hasan al-Kwfy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P399-C015-E4712,E4712: Ali b. al-Hasan al-Hrthmy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P404-C003-E4774,E4774: Ali b. 'marh,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P409-C010-E4852,E4852: 'marh b. Abd Allah,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P413-C001-E4901,E4901: Umar b. Abi Shym,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P413-C020-E4916,E4916: Umar b. Slam Baltshdyd,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P414-C003-E4921,E4921: Umar b. Shqyq b.,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P418-C001-E4981,E4981: Umar b. Hsham al-Qbty,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P418-C013-E4987,E4987: Amr b. Ahyhh Bmhmltyn,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P419-C012-E5000,E5000: Amr b. Abi Jndb,54.545455,54.545455,0.000000,54.545455,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
-S3076-P422-C006-E5038,E5038: Amr b. Sfyan al-Thqfy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P425-C010-E5091,E5091: Amr b. Ghalb al-Hmdany,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P432-C007-E5195,E5195: 'myrh,54.545455,54.545455,0.000000,36.363636,8,-18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P432-C011-E5199,E5199: 'nbsh b. Abi Ra'th,54.545455,54.545455,0.000000,54.545455,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
-S3076-P434-C001-E5221,E5221: 'wn b. Abi Shdad,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P440-C015-E5324,E5324: Isa b. Ms'wd b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P444-C019-E5386,E5386: Frwkh mawla Uthman,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P445-C016-E5400,E5400: al-Fdl b. Abi al-Hkm,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P450-C007-E5464,E5464: al-Qasm b. Slam al-Mrwzy,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P456-C021-E5571,E5571: Qys b. Raf' al-Qysy,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P457-C003-E5575,E5575: Qys b. Salm al-M'afry,54.545455,54.545455,0.000000,36.363636,8,-18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P457-C019-E5586,E5586: Qys b. Muhammad b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P460-C012-E5628,E5628: Kthyr b. Abi Kthyr,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P460-C017-E5632,E5632: Kthyr b. al-Mtlb b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,2
-S3076-P463-C001-E5672,E5672: Klab b. Tlyd,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P469-C002-E5742,E5742: Muhammad b. al-Ash'th b.,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P474-C016-E5828,E5828: Muhammad b. al-Hkm al-Asdy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P476-C015-E5855,E5855: Muhammad b. Abi Khalid,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P476-C017-E5857,E5857: Muhammad b. Khthym Bmthl..,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P481-C014-E5929,E5929: Muhammad b. Sulayman b.,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P487-C001-E6004,E6004: Muhammad b. Abd Allah,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P494-C007-E6102,E6102: Muhammad b. Abd al-Mlk,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P497-C005-E6148,E6148: Muhammad b. 'krmh b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P503-C011-E6240,E6240: Muhammad b. Qdamh al-Blkhy,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P506-C010-E6286,E6286: Muhammad b. Mzahm b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P511-C017-E6374,E6374: Muhammad b. al-Wlyd b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,2
-S3076-P516-C012-E6432,E6432: Malik b. Hmzh b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,2
-S3076-P518-C006-E6452,E6452: Malik b. Mhran Abu,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P522-C002-E6504,E6504: Mhrz b. al-Wdah b.,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P523-C019-E6536,E6536: Mkhld b. Khfaf,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P525-C005-E6556,E6556: Mrzwq Abu Bakr al-Tymy,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P525-C009-E6560,E6560: Mrzwq al-Thqfy mawla al-..,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P528-C003-E6600,E6600: Msrwh al-M'dhn mawla Umar,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P529-C010-E6624,E6624: Mslm b. Abi Hrh,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P531-C001-E6649,E6649: Mslm b. Ndhyr Balnwn,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,1
-S3076-P532-C003-E6668,E6668: al-Mswr b. Ibrahim b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P534-C015-E6711,E6711: al-Mtlb b. Abd Allah,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P535-C006-E6717,E6717: Mty' b. Rashd al-Bsry,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P543-C008-E6841,E6841: al-Mghyrh b. al-Dhak b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P545-C014-E6880,E6880: Mnbwdh Bnwn Saknh Wmwhdh,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P547-C013-E6912,E6912: Mnswr b. Wrdan al-Msry,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P547-C014-E6913,E6913: Mnzwr Bza' M'jmh Qa'mh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P549-C009-E6939,E6939: M'thr,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P552-C005-E6983,E6983: Musa b. Abd Allah,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,1
-S3076-P554-C016-E7025,E7025: Musa b. Ysar al-Ardny,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,1
-S3076-P555-C022-E7041,E7041: Mysrh mawla Fdalh b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P556-C001-E7043,E7043: Maymun b. al-Asbagh Balg..,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P556-C013-E7055,E7055: Maymun al-Qnad Balqaf Wa..,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,2
-S3076-P559-C014-E7096,E7096: Nbyt,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P560-C002-E7106,E7106: al-Nzal b. 'mar Bsry,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P565-C002-E7168,E7168: N'ym b. Djajh al-Asdy,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P568-C012-E7229,E7229: Harwn b. Sa'd al-Mdny,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P570-C009-E7260,E7260: Han' b. Abd Allah,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P572-C002-E7281,E7281: Hrym b. Ms'r al-Azdy,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P575-C003-E7326,E7326: Hwd b. Abd Allah,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P575-C017-E7339,E7339: Hlal b. Sraj,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P581-C005-E7412,E7412: Wqas Btshdyd al-Qaf b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P589-C002-E7523,E7523: Yahya b. al-Harth al-Shy..,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P590-C010-E7547,E7547: Yahya b. Zrarh b.,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P594-C012-E7609,E7609: Yahya b. 'fyf al-Kndy,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P595-C002-E7617,E7617: Yahya b. 'myr al-Mdny,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,1
-S3076-P597-C016-E7660,E7660: Yahya b. al-Ndr b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P599-C018-E7691,E7691: Yazid b. Anys al-Hdhly,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P599-C019-E7692,E7692: Yazid b. Aws Kwfy,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P601-C014-E7723,E7723: Yazid b. Abi Sulayman,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P602-C006-E7731,E7731: Yazid b. Salih Wyqal,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,2
-S3076-P605-C011-E7782,E7782: Yazid b. Mqsm al-Thqfy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P606-C013-E7796,E7796: Yazid al-Farsy al-Bsry,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P610-C001-E7850,E7850: Y'la b. Mmlk Bwzn,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P612-C003-E7884,E7884: Yusuf b. Ms'wd b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P613-C014-E7910,E7910: Ywns b. Ubayd mawla,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P617-C018-E7927,E7927: Abu Idrys al-Skwny al-Hmsy,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,0
-S3076-P618-C020-E7936,E7936: Abu Ishaq al-Dwsy mawla,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P630-C004-E8028,E8028: Abu al-Jwyryh al-'bdy Akhr,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P635-C014-E8070,E8070: Abu Hyh b. Qys,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P640-C011-E8100,E8100: Abu Rfy',54.545455,54.545455,0.000000,54.545455,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,2
-S3076-P644-C002-E8123,E8123: Abu Sa'id b. Abi,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P644-C020-E8132,E8132: Abu Sa'id mawla b.,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P646-C008-E8148,E8148: Abu Smyh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P652-C002-E8190,E8190: Abu Tlhh al-Khwlany Nzyl,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P657-C012-E8239,E8239: Abu Uthman al-Ansary al-..,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P658-C014-E8252,E8252: Abu 'sam al-Bsry Qyl,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P661-C003-E8274,E8274: Abu Amr al-Sybany Balmhmlh,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P662-C002-E8283,E8283: Abu al-'nbs al-Kwfy al-'..,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P666-C014-E8314,E8314: Abu Qdamh al-Mrwzy Hw,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P668-C007-E8320,E8320: Abu Kbshh al-Sdwsy al-Bsry,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P668-C009-E8322,E8322: Abu Kbshh al-Bra' b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P671-C016-E8349,E8349: Abu Mdlh,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P673-C012-E8365,E8365: Abu Mslm al-Bjly,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P673-C013-E8366,E8366: Abu Mslm al-Jdhmy Baljym,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,2
-S3076-P675-C008-E8384,E8384: Abu M'n Muhammad b.,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P675-C021-E8389,E8389: Abu Mqatl al-Smrqndy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P679-C007-E8417,E8417: Abu N'ym al-Nkh'y al-Kbyr,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P681-C010-E8429,E8429: Abu Hnd al-Hmdany al-Kwfy,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P683-C001-E8441,E8441: Abu Whb al-Jyshany,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
-S3076-P695-C026-E8478,E8478: b. Abd al-Rahman b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P744-C021-E8551,E8551: Jsrh bt. Djajh al-'amryh,54.545455,54.545455,0.000000,72.727273,4,18.181818,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P746-C021-E8580,E8580: Dfrh bt. Ghalb al-Rasbyh,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P747-C010-E8589,E8589: Rmythh bt. al-Harth b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P748-C009-E8603,E8603: Sa'bh mawlat al-Fakh b.,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P748-C016-E8610,E8610: Smyh Bsryh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P749-C004-E8618,E8618: Shmysh,54.545455,54.545455,0.000000,81.818182,3,27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P753-C003-E8677,E8677: L'l'h mawlat al-Ansar,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P753-C013-E8682,E8682: Msh,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P754-C014-E8698,E8698: Hnydh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P757-C001-E8736,E8736: Umm Sa'id bt. Mrh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P758-C019-E8766,E8766: Umm Muhammad Waldh Muham..,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P759-C008-E8774,E8774: Umm Mnbwdh Waldh Mnbwdh,54.545455,54.545455,0.000000,27.272727,9,-27.272727,observed_dissent,dissent_bal,observed_scholarly,,
-S3076-P759-C011-E8777,E8777: Umm Musa Sryh Ali,54.545455,54.545455,0.000000,45.454545,7,-9.090909,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P090-C018-E0196,E0196: Ibrahim b. Abd Allah,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P101-C002-E0353,E0353: Ishaq b. al-Rby' al-'sfry,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P108-C012-E0462,E0462: Isma'il b. Abd al-Rahman,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P109-C002-E0467,E0467: Isma'il b. Ubayd Allah,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P109-C005-E0470,E0470: Isma'il b. Umar Kanh,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P109-C007-E0472,E0472: Isma'il b. 'wn b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P111-C008-E0504,E0504: al-Aswd b. Abd Allah,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P124-C019-E0713,E0713: Bshyr b. Rby'h al-Bjly,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P129-C001-E0775,E0775: Blad,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P130-C018-E0806,E0806: Tmym Abu Slmh al-Fhry,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P136-C003-E0864,E0864: Jabr b. Isma'il al-Hdrmy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P140-C003-E0933,E0933: J'fr b. Abi Thwr,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P142-C002-E0965,E0965: Jmhan,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P147-C005-E1037,E1037: al-Harth b. Amr al-Bahly,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P152-C001-E1107,E1107: Hbyb b. Abi Mlykh,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P157-C005-E1189,E1189: Hzam,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P161-C008-E1246,E1246: al-Hasan b. Shyl b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
+S3076-P167-C003-E1327,E1327: al-Husayn b. Abd al-Rahman,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P171-C002-E1386,E1386: Hsyn b. Ms'b,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P178-C010-E1501,E1501: Hmad b. Abd al-Rahman,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P180-C012-E1535,E1535: Hmzh b. al-Mghyrh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P186-C006-E1610,E1610: Kharjh b. al-Slt al-Brjmy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
+S3076-P188-C015-E1645,E1645: Khalid b. Abd Allah,40.000000,39.318182,-0.681818,39.318182,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,1
+S3076-P190-C001-E1663,E1663: Khalid b. 'myr al-'dwy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P199-C020-E1809,E1809: Dawud b. Qys al-Sn'any,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P207-C008-E1905,E1905: Rby'h b. Slym Aw,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P207-C013-E1910,E1910: Rby'h b. Abd al-Rahman,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P211-C012-E1969,E1969: Rwh b. al-Frj al-Bsry,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P212-C002-E1975,E1975: Ryhan b. Yazid al-'amry,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P218-C003-E2053,E2053: Zhyr b. al-Hnyd al-'dwy,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P223-C010-E2135,E2135: Zayd b. Drhm Wyqal,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P224-C011-E2150,E2150: Zayd b. Ali b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P231-C011-E2244,E2244: Sa'd b. 'badh al-Zrqy,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P232-C011-E2257,E2257: Sa'd b. al-Mndhr b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P235-C017-E2310,E2310: Sa'id b. Zyad al-Shybany,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P238-C010-E2351,E2351: Sa'id b. Abd al-Rahman,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P238-C012-E2353,E2353: Sa'id b. Abd al-Rahman,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P241-C005-E2392,E2392: Sa'id b. Mzahm b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,0
+S3076-P241-C014-E2401,E2401: Sa'id b. al-Mhlb,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P242-C001-E2407,E2407: Sa'id b. al-Ndr b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P242-C006-E2412,E2412: Sa'id b. Whb al-Thwry,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P245-C004-E2454,E2454: Sfyan b. Nshyt,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P249-C006-E2520,E2520: Slyt,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P250-C017-E2548,E2548: Sulayman b. Kharjh b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P253-C011-E2596,E2596: Sulayman b. Ali b.,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P254-C007-E2606,E2606: Sulayman b. Muhammad b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P256-C017-E2643,E2643: Snan b. Qys Shamy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P262-C002-E2719,E2719: Syar Abu Hmzh al-Kwfy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P263-C015-E2736,E2736: Shbl b. Hamd Aw,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P265-C015-E2773,E2773: Shryh b. Artah al-Nkh'y,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P266-C012-E2789,E2789: Shryk b. Nmlh al-Kwfy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P269-C004-E2827,E2827: Shhab b. Abbad al-'bdy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P269-C008-E2831,E2831: Shwys Akhrh Mhmlh Msghr,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P270-C003-E2840,E2840: Shybh al-Khdry,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P271-C002-E2842,E2842: Sa'd b. Ubayd al-Bjly,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P273-C004-E2876,E2876: Salih b. Ubayd,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P273-C005-E2877,E2877: Salih b. Ubayd al-Ymany,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P275-C008-E2912,E2912: Sdqh b. Sa'id al-Hnfy,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P277-C011-E2944,E2944: Sfwan b. Abi Yazid,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P279-C015-E2975,E2975: al-Dhak b. Fyrwz al-Dylmy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P284-C006-E3050,E3050: Tyslh,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P293-C011-E3178,E3178: 'bas b. Ubayd Allah,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,2
+S3076-P304-C009-E3334,E3334: Abd Allah b. Zayd,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P305-C011-E3351,E3351: Abd Allah b. Sa'd,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P310-C015-E3428,E3428: Abd Allah b. Abd,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P312-C005-E3448,E3448: Abd Allah b. Abd,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P312-C009-E3451,E3451: Abd Allah b. Ubayd,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P312-C011-E3453,E3453: Abd Allah b. Ubayd,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P313-C009-E3463,E3463: Abd Allah b. 'tyk,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P314-C013-E3484,E3484: Abd Allah b. Ali,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P316-C007-E3507,E3507: Abd Allah b. Amr,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P321-C011-E3590,E3590: Abd Allah b. Muhammad,40.000000,40.000000,0.000000,22.000000,8,-18.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P323-C008-E3618,E3618: Abd Allah b. Mslm,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P329-C014-E3707,E3707: Abd Allah b. Yazid,40.000000,40.000000,0.000000,40.000000,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
+S3076-P332-C004-E3740,E3740: Abd al-Akrm b. Abi,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P332-C013-E3748,E3748: Abd al-Hkm b. Dhkwan,40.000000,40.000000,0.000000,40.000000,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
+S3076-P334-C016-E3777,E3777: Abd al-Hmyd mawla Bny,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P337-C003-E3811,E3811: Abd al-Rahman b. Bshr,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P339-C002-E3841,E3841: Abd al-Rahman b. Hrmlh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P339-C006-E3845,E3845: Abd al-Rahman b. Hsyn,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P340-C002-E3857,E3857: Abd al-Rahman b. Abi,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
+S3076-P340-C012-E3863,E3863: Abd al-Rahman b. Zyad,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,0
+S3076-P341-C002-E3869,E3869: Abd al-Rahman b. al-Sa'b,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P343-C018-E3912,E3912: Abd al-Rahman b. 'bas,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P345-C001-E3925,E3925: Abd al-Rahman b. Abd,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P346-C003-E3941,E3941: Abd al-Rahman b. Ubayd,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P346-C011-E3947,E3947: Abd al-Rahman b. 'dy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P347-C017-E3968,E3968: Abd al-Rahman b. Abi,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P348-C003-E3975,E3975: Abd al-Rahman b. al-'la',40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P348-C009-E3979,E3979: Abd al-Rahman b. Frwkh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P349-C015-E3998,E3998: Abd al-Rahman b. Muhammad,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P350-C006-E4005,E4005: Abd al-Rahman b. al-Mswr,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P355-C014-E4076,E4076: Abd al-Slam al-Kwfy,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P360-C008-E4141,E4141: Abd al-Qahr b. al-Sry,40.000000,40.000000,0.000000,22.000000,8,-18.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P361-C002-E4151,E4151: Abd al-Krym b. Slyt,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P362-C017-E4177,E4177: Abd al-Mlk b. al-Khtab,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P365-C015-E4222,E4222: Abd al-Mlk b. Mysrh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P370-C005-E4282,E4282: Ubayd Allah b. al-Jhm,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P373-C012-E4326,E4326: Ubayd Allah b. Umar,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
+S3076-P374-C001-E4333,E4333: Ubayd Allah b. Mhrz,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P378-C010-E4393,E4393: Ubayd b. Mhran al-Wzan,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P379-C003-E4406,E4406: Ubayd mawla al-Sa'b al-M..,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P382-C001-E4447,E4447: 'tyk,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P383-C020-E4475,E4475: Uthman b. Sulayman b.,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P385-C011-E4499,E4499: Uthman b. Ubayd al-Yhsby,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P387-C002-E4521,E4521: Uthman b. Mwhb,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P392-C012-E4607,E4607: 'ta' mawla Abi Ahmad,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P394-C002-E4628,E4628: 'fyf b. Amr b.,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P399-C012-E4709,E4709: Ali b. al-Hasan al-Kwfy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P399-C015-E4712,E4712: Ali b. al-Hasan al-Hrthmy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P404-C003-E4774,E4774: Ali b. 'marh,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P409-C010-E4852,E4852: 'marh b. Abd Allah,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P413-C001-E4901,E4901: Umar b. Abi Shym,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P413-C020-E4916,E4916: Umar b. Slam Baltshdyd,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P414-C003-E4921,E4921: Umar b. Shqyq b.,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P418-C001-E4981,E4981: Umar b. Hsham al-Qbty,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P418-C013-E4987,E4987: Amr b. Ahyhh Bmhmltyn,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P419-C012-E5000,E5000: Amr b. Abi Jndb,40.000000,40.000000,0.000000,40.000000,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
+S3076-P422-C006-E5038,E5038: Amr b. Sfyan al-Thqfy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P425-C010-E5091,E5091: Amr b. Ghalb al-Hmdany,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P432-C007-E5195,E5195: 'myrh,40.000000,40.000000,0.000000,22.000000,8,-18.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P432-C011-E5199,E5199: 'nbsh b. Abi Ra'th,40.000000,40.000000,0.000000,40.000000,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
+S3076-P434-C001-E5221,E5221: 'wn b. Abi Shdad,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P440-C015-E5324,E5324: Isa b. Ms'wd b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P444-C019-E5386,E5386: Frwkh mawla Uthman,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P445-C016-E5400,E5400: al-Fdl b. Abi al-Hkm,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P450-C007-E5464,E5464: al-Qasm b. Slam al-Mrwzy,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P456-C021-E5571,E5571: Qys b. Raf' al-Qysy,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P457-C003-E5575,E5575: Qys b. Salm al-M'afry,40.000000,40.000000,0.000000,22.000000,8,-18.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P457-C019-E5586,E5586: Qys b. Muhammad b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P460-C012-E5628,E5628: Kthyr b. Abi Kthyr,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P460-C017-E5632,E5632: Kthyr b. al-Mtlb b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,2
+S3076-P463-C001-E5672,E5672: Klab b. Tlyd,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P469-C002-E5742,E5742: Muhammad b. al-Ash'th b.,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P474-C016-E5828,E5828: Muhammad b. al-Hkm al-Asdy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P476-C015-E5855,E5855: Muhammad b. Abi Khalid,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P476-C017-E5857,E5857: Muhammad b. Khthym Bmthl..,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P481-C014-E5929,E5929: Muhammad b. Sulayman b.,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P487-C001-E6004,E6004: Muhammad b. Abd Allah,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P494-C007-E6102,E6102: Muhammad b. Abd al-Mlk,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P497-C005-E6148,E6148: Muhammad b. 'krmh b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P503-C011-E6240,E6240: Muhammad b. Qdamh al-Blkhy,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P506-C010-E6286,E6286: Muhammad b. Mzahm b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P511-C017-E6374,E6374: Muhammad b. al-Wlyd b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
+S3076-P516-C012-E6432,E6432: Malik b. Hmzh b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
+S3076-P518-C006-E6452,E6452: Malik b. Mhran Abu,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P522-C002-E6504,E6504: Mhrz b. al-Wdah b.,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P523-C019-E6536,E6536: Mkhld b. Khfaf,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P525-C005-E6556,E6556: Mrzwq Abu Bakr al-Tymy,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P525-C009-E6560,E6560: Mrzwq al-Thqfy mawla al-..,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P528-C003-E6600,E6600: Msrwh al-M'dhn mawla Umar,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P529-C010-E6624,E6624: Mslm b. Abi Hrh,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P531-C001-E6649,E6649: Mslm b. Ndhyr Balnwn,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P532-C003-E6668,E6668: al-Mswr b. Ibrahim b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P534-C015-E6711,E6711: al-Mtlb b. Abd Allah,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P535-C006-E6717,E6717: Mty' b. Rashd al-Bsry,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P543-C008-E6841,E6841: al-Mghyrh b. al-Dhak b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P545-C014-E6880,E6880: Mnbwdh Bnwn Saknh Wmwhdh,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P547-C013-E6912,E6912: Mnswr b. Wrdan al-Msry,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P547-C014-E6913,E6913: Mnzwr Bza' M'jmh Qa'mh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P549-C009-E6939,E6939: M'thr,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P552-C005-E6983,E6983: Musa b. Abd Allah,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P554-C016-E7025,E7025: Musa b. Ysar al-Ardny,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P555-C022-E7041,E7041: Mysrh mawla Fdalh b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P556-C001-E7043,E7043: Maymun b. al-Asbagh Balg..,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P556-C013-E7055,E7055: Maymun al-Qnad Balqaf Wa..,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P559-C014-E7096,E7096: Nbyt,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P560-C002-E7106,E7106: al-Nzal b. 'mar Bsry,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P565-C002-E7168,E7168: N'ym b. Djajh al-Asdy,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P568-C012-E7229,E7229: Harwn b. Sa'd al-Mdny,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P570-C009-E7260,E7260: Han' b. Abd Allah,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P572-C002-E7281,E7281: Hrym b. Ms'r al-Azdy,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P575-C003-E7326,E7326: Hwd b. Abd Allah,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P575-C017-E7339,E7339: Hlal b. Sraj,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P581-C005-E7412,E7412: Wqas Btshdyd al-Qaf b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P589-C002-E7523,E7523: Yahya b. al-Harth al-Shy..,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P590-C010-E7547,E7547: Yahya b. Zrarh b.,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P594-C012-E7609,E7609: Yahya b. 'fyf al-Kndy,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P595-C002-E7617,E7617: Yahya b. 'myr al-Mdny,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P597-C016-E7660,E7660: Yahya b. al-Ndr b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P599-C018-E7691,E7691: Yazid b. Anys al-Hdhly,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P599-C019-E7692,E7692: Yazid b. Aws Kwfy,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P601-C014-E7723,E7723: Yazid b. Abi Sulayman,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P602-C006-E7731,E7731: Yazid b. Salih Wyqal,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,1
+S3076-P605-C011-E7782,E7782: Yazid b. Mqsm al-Thqfy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P606-C013-E7796,E7796: Yazid al-Farsy al-Bsry,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P610-C001-E7850,E7850: Y'la b. Mmlk Bwzn,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P612-C003-E7884,E7884: Yusuf b. Ms'wd b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P613-C014-E7910,E7910: Ywns b. Ubayd mawla,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P617-C018-E7927,E7927: Abu Idrys al-Skwny al-Hmsy,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,0
+S3076-P618-C020-E7936,E7936: Abu Ishaq al-Dwsy mawla,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P630-C004-E8028,E8028: Abu al-Jwyryh al-'bdy Akhr,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P635-C014-E8070,E8070: Abu Hyh b. Qys,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P640-C011-E8100,E8100: Abu Rfy',40.000000,40.000000,0.000000,40.000000,6,0.000000,observed_no_grade,other_commentary,observed_scholarly,,
+S3076-P644-C002-E8123,E8123: Abu Sa'id b. Abi,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P644-C020-E8132,E8132: Abu Sa'id mawla b.,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P646-C008-E8148,E8148: Abu Smyh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P652-C002-E8190,E8190: Abu Tlhh al-Khwlany Nzyl,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P657-C012-E8239,E8239: Abu Uthman al-Ansary al-..,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P658-C014-E8252,E8252: Abu 'sam al-Bsry Qyl,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P661-C003-E8274,E8274: Abu Amr al-Sybany Balmhmlh,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P662-C002-E8283,E8283: Abu al-'nbs al-Kwfy al-'..,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P666-C014-E8314,E8314: Abu Qdamh al-Mrwzy Hw,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P668-C007-E8320,E8320: Abu Kbshh al-Sdwsy al-Bsry,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P668-C009-E8322,E8322: Abu Kbshh al-Bra' b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P671-C016-E8349,E8349: Abu Mdlh,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P673-C012-E8365,E8365: Abu Mslm al-Bjly,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,1
+S3076-P673-C013-E8366,E8366: Abu Mslm al-Jdhmy Baljym,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,2
+S3076-P675-C008-E8384,E8384: Abu M'n Muhammad b.,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P675-C021-E8389,E8389: Abu Mqatl al-Smrqndy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P679-C007-E8417,E8417: Abu N'ym al-Nkh'y al-Kbyr,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P681-C010-E8429,E8429: Abu Hnd al-Hmdany al-Kwfy,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P683-C001-E8441,E8441: Abu Whb al-Jyshany,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,
+S3076-P695-C026-E8478,E8478: b. Abd al-Rahman b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P744-C021-E8551,E8551: Jsrh bt. Djajh al-'amryh,40.000000,40.000000,0.000000,70.000000,4,30.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P746-C021-E8580,E8580: Dfrh bt. Ghalb al-Rasbyh,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P747-C010-E8589,E8589: Rmythh bt. al-Harth b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P748-C009-E8603,E8603: Sa'bh mawlat al-Fakh b.,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P748-C016-E8610,E8610: Smyh Bsryh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P749-C004-E8618,E8618: Shmysh,40.000000,40.000000,0.000000,85.000000,3,45.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P753-C003-E8677,E8677: L'l'h mawlat al-Ansar,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P753-C013-E8682,E8682: Msh,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P754-C014-E8698,E8698: Hnydh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P757-C001-E8736,E8736: Umm Sa'id bt. Mrh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P758-C019-E8766,E8766: Umm Muhammad Waldh Muham..,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P759-C008-E8774,E8774: Umm Mnbwdh Waldh Mnbwdh,40.000000,40.000000,0.000000,27.000000,9,-13.000000,observed_dissent,dissent_bal,observed_scholarly,,
+S3076-P759-C011-E8777,E8777: Umm Musa Sryh Ali,40.000000,40.000000,0.000000,35.000000,7,-5.000000,observed_maqbul_to_r7,agreed_no_bullet,observed_scholarly,,

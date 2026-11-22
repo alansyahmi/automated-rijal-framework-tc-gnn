@@ -18,7 +18,7 @@ import math
 import sys
 import tempfile
 import time
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -487,6 +487,52 @@ def run_e1_sensitivity(
     return rows
 
 
+def evaluate_majority_and_lookup_on_test(
+    master_rows: list[dict[str, str]],
+    layered_by_id: dict[str, dict[str, str]],
+    train_indices: list[int],
+    test_indices: list[int],
+) -> tuple[dict[str, float], dict[str, float]]:
+    """Train-fitted Majority-Class and Lookup-Table ((rank_B, maqbul) -> train mode) baselines."""
+    rank_by_key: dict[tuple[int, str], list[int]] = defaultdict(list)
+    shift_by_key: dict[tuple[int, str], list[int]] = defaultdict(list)
+    all_ranks: list[int] = []
+    all_shifts: list[int] = []
+    for gi in train_indices:
+        lr = layered_by_id[master_rows[gi]["entry_id"]]
+        rb, re2 = int(lr["rank_B"]), int(lr["rank_E2"])
+        sh = 0 if re2 < rb else (2 if re2 > rb else 1)
+        key = (rb, lr["taqrib_is_conditional_maqbul"])
+        rank_by_key[key].append(re2)
+        shift_by_key[key].append(sh)
+        all_ranks.append(re2)
+        all_shifts.append(sh)
+
+    maj_rank = Counter(all_ranks).most_common(1)[0][0]
+    maj_shift = Counter(all_shifts).most_common(1)[0][0]
+    lookup_rank = {k: Counter(v).most_common(1)[0][0] for k, v in rank_by_key.items()}
+    lookup_shift = {k: Counter(v).most_common(1)[0][0] for k, v in shift_by_key.items()}
+
+    y_rank, y_shift, is_mq, lkp_r, lkp_s = [], [], [], [], []
+    for gi in test_indices:
+        lr = layered_by_id[master_rows[gi]["entry_id"]]
+        rb, re2 = int(lr["rank_B"]), int(lr["rank_E2"])
+        sh = 0 if re2 < rb else (2 if re2 > rb else 1)
+        key = (rb, lr["taqrib_is_conditional_maqbul"])
+        y_rank.append(float(re2))
+        y_shift.append(sh)
+        is_mq.append(lr["taqrib_is_conditional_maqbul"] == "True")
+        lkp_r.append(float(lookup_rank.get(key, rb)))
+        lkp_s.append(lookup_shift.get(key, 1))
+
+    yr_a = np.array(y_rank)
+    ys_a = np.array(y_shift, dtype=int)
+    mq_a = np.array(is_mq, dtype=bool)
+    m_maj = compute_metrics(yr_a, ys_a, np.full(len(test_indices), float(maj_rank)), np.full(len(test_indices), maj_shift, dtype=int), mq_a)
+    m_lkp = compute_metrics(yr_a, ys_a, np.array(lkp_r), np.array(lkp_s, dtype=int), mq_a)
+    return m_maj, m_lkp
+
+
 def run_suite(
     *,
     out_dir: Path = DEFAULT_OUT_DIR,
@@ -508,7 +554,16 @@ def run_suite(
     if stage3_dir is None:
         stage3_dir = _find_latest_dir("stage3_tc_gnn_benchmarks_v3_")
 
-    # Clean test indices (excluding status_E2 in {missing, suspect_alignment})
+
+    # Clean train & test indices (excluding status_E2 in {missing, suspect_alignment})
+    clean_train_idx = [
+        i
+        for i, r in enumerate(master_rows)
+        if r["split"] == "train"
+        and layered_by_id[r["entry_id"]]["status_E2"] not in EXCLUDED_E2_STATUSES
+        and layered_by_id[r["entry_id"]]["rank_B"].strip()
+        and layered_by_id[r["entry_id"]]["rank_E2"].strip()
+    ]
     clean_test_idx = [
         i
         for i, r in enumerate(master_rows)
@@ -539,6 +594,32 @@ def run_suite(
 
     # Exp A..D summary table
     exp_rows: list[dict[str, Any]] = []
+
+    m_maj_test, m_lkp_test = evaluate_majority_and_lookup_on_test(
+        master_rows, layered_by_id, clean_train_idx, clean_test_idx
+    )
+    for b_exp, b_name, b_m in [
+        ("Exp_A_Majority_Baseline", "majority_class (train modal rank/shift)", m_maj_test),
+        ("Exp_A_LookupTable_Baseline", "lookup_table ((rank_B, maqbul) -> train mode)", m_lkp_test),
+    ]:
+        exp_rows.append(
+            {
+                "experiment": b_exp,
+                "track": "Track_R_Deterministic",
+                "model_or_layer": b_name,
+                "eval_target": "tahrir_clean_test",
+                "status": "COMPLETED",
+                "n_eval": len(clean_test_idx),
+                "rank_mae": b_m["rank_mae"],
+                "rank_qwk": b_m["rank_qwk"],
+                "rank_spearman": b_m["rank_spearman"],
+                "bin_acc": b_m["bin_acc"],
+                "tier3_acc": b_m["tier3_acc"],
+                "tier3_macro_f1": b_m["tier3_macro_f1"],
+                "shift_macro_f1": b_m["shift_macro_f1"],
+                "r6_rank_mae": b_m["r6_rank_mae"],
+            }
+        )
 
     m_a_test = evaluate_track_r_on_tahrir_test(master_rows, layered_by_id, "score_B", clean_test_idx)
     exp_rows.append(

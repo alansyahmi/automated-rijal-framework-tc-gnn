@@ -1,15 +1,15 @@
 {
-  "generated_utc": "2026-11-22T08:06:44.244733+00:00",
+  "generated_utc": "2026-11-22T15:37:54.621016+00:00",
   "script": "experiments/run_stage3_tc_gnn_benchmarks_v3.py",
-  "elapsed_sec": 8603.26,
+  "elapsed_sec": 4537.15,
   "inputs": {
     "layer_rules_v3.json": {
       "path": "dataset_discovery/target_feasibility/layer_rules_v3.json",
-      "sha256": "59fb22c7f92c2cfaba791c6cb8f6e301ee54bf2cc4965c261c7e104fef3555ec"
+      "sha256": "876ba31e00f1c42c9d29d84332eabab4074746ec31f09fef5e0106cd71643055"
     },
     "LAYERED_SCORES_WIDE_V3.csv": {
       "path": "data/2_interim/rijal_fyp_modelling_pipeline/layered_scores_v3_2026-11-21/LAYERED_SCORES_WIDE_V3.csv",
-      "sha256": "dfa995f461b7cf87e060baace6c7326bec79cb71be0d6fcf1a0ae3fc6709167e"
+      "sha256": "e2dc64de76cd3b158835c9efad366963c7053ef7ed496e78725f35e0efe614e5"
     },
     "STAGE2_OOF_ESA_FEATURES_8827_V3.csv": {
       "path": "results/stage2_esa_benchmarks_v3_2026-11-21/STAGE2_OOF_ESA_FEATURES_8827_V3.csv",
@@ -27,16 +27,16 @@
   "chrono_sanad_kept_edges": 37364,
   "chrono_sanad_pruned_edges": 4647,
   "determinism_check": {
-    "device": "mps",
+    "device": "cpu",
     "backend": "mps_native",
     "seed": 42,
     "run_sha256": [
-      "41e8c62c6362ab416a510e58058ec48446c2f777b88266037715acd69ca108f2",
-      "695e3de8171ddf309a8e42e79d2205b96be760d1e50c2026924c0ad9b97a76a5",
-      "7cf387531fdea3145e46ba9187d3ed4234b0ed5bf67b8434a61416665e56e8ad"
+      "41b40e7cc43b55052dde89681e009bf85d4f175ca1f30c65572b82d2003135f7",
+      "41b40e7cc43b55052dde89681e009bf85d4f175ca1f30c65572b82d2003135f7",
+      "41b40e7cc43b55052dde89681e009bf85d4f175ca1f30c65572b82d2003135f7"
     ],
-    "all_3_bit_exact": false,
-    "max_abs_rank_exp_diff": 0.00016499
+    "all_3_bit_exact": true,
+    "max_abs_rank_exp_diff": 0.0
   },
   "homophily": {
     "chrono_sanad_12rank": {
@@ -62,57 +62,57 @@
   },
   "gate_logs": {
     "G1_GraphOnly_NoText": {
-      "g_fwd_connected": 0.5189,
-      "g_fwd_isolated": 0.4975,
-      "g_rev_connected": 0.5138,
-      "g_rev_isolated": 0.4927
+      "g_fwd_connected": 0.522,
+      "g_fwd_isolated": 0.4902,
+      "g_rev_connected": 0.5012,
+      "g_rev_isolated": 0.4885
     },
     "G4a_Directed_TC_GNN_Sanad": {
-      "g_fwd_connected": 0.4816,
-      "g_fwd_isolated": 0.4982,
-      "g_rev_connected": 0.4771,
-      "g_rev_isolated": 0.4957
+      "g_fwd_connected": 0.4857,
+      "g_fwd_isolated": 0.5001,
+      "g_rev_connected": 0.4833,
+      "g_rev_isolated": 0.5005
     },
     "G4b_Directed_TC_GNN_UnprunedSanad": {
-      "g_fwd_connected": 0.4815,
-      "g_fwd_isolated": 0.4966,
-      "g_rev_connected": 0.4785,
-      "g_rev_isolated": 0.4931
+      "g_fwd_connected": 0.4814,
+      "g_fwd_isolated": 0.4949,
+      "g_rev_connected": 0.4795,
+      "g_rev_isolated": 0.4942
     },
     "G4c_MV_TC_GNN_Sanad_Plus_kNN": {
-      "g_fwd_connected": 0.4909,
-      "g_fwd_isolated": 0.5026,
-      "g_rev_connected": 0.4878,
-      "g_rev_isolated": 0.4975,
-      "g_knn_all": 0.5126
+      "g_fwd_connected": 0.4819,
+      "g_fwd_isolated": 0.4983,
+      "g_rev_connected": 0.4802,
+      "g_rev_isolated": 0.4964,
+      "g_knn_all": 0.5205
     },
     "G4d_Directed_TC_GNN_Consolidated": {
-      "g_fwd_connected": 0.483,
-      "g_fwd_isolated": 0.496,
-      "g_rev_connected": 0.4812,
-      "g_rev_isolated": 0.4931
+      "g_fwd_connected": 0.4878,
+      "g_fwd_isolated": 0.497,
+      "g_rev_connected": 0.486,
+      "g_rev_isolated": 0.4966
     }
   },
   "files": {
     "STAGE3_MODEL_COMPARISON_5SEED_V3.csv": {
-      "sha256": "8fd29c7e2b22a903d162434872b87ec73e33dd526425dca2a5a3f0e3f22929ca",
-      "bytes": 11474
+      "sha256": "f94460816e46f9dc2359bd7dbce80b54537bae65b5bc71496e5cc88a6f41f4ea",
+      "bytes": 11475
     },
     "STAGE3_SUBGROUP_AND_SIGNIFICANCE_V3.csv": {
-      "sha256": "402843a6935bc5af6de5819c8dcd4c94ddbd7d2b3bcfcad2dc35364d59c0019a",
-      "bytes": 6362
+      "sha256": "4a0f328823795700db603ae612cebf899de0ec56ac0423806c9d118d9b8acc86",
+      "bytes": 6346
     },
     "STAGE3_TEST_PREDICTIONS_V3.csv": {
-      "sha256": "abf61e0657523e7679736348ab63a85cf208a124e29ecfa785238c5464724f31",
-      "bytes": 244381
+      "sha256": "ae5855dc3506252df5827cc4b01d6ab2a5b444c129e0ad03cbd43d54184b7bd3",
+      "bytes": 244385
     },
     "STAGE3_TC_GNN_OUTPUTS_8827_V3.csv": {
-      "sha256": "5680fec479890b33f91aa3efec7a1e3e291e63ec125991533369b988a49307e9",
-      "bytes": 1727008
+      "sha256": "3de21bf18a1b074be197c76ea256e592b0eb96ce2c64902e6b1b8887c28f447b",
+      "bytes": 1726970
     },
     "STAGE3_RESULTS_SUMMARY_V3.md": {
-      "sha256": "b6a2ab48a7159868cf3142f3f63c9ea2f7c7088d4986e179e63869c181413ec1",
-      "bytes": 2810
+      "sha256": "cfe541f0b26f9d325b3b6d2848ae65fbc9cfa1e6c7454d40d7846ed4cbce2ce5",
+      "bytes": 2802
     }
   }
 }
