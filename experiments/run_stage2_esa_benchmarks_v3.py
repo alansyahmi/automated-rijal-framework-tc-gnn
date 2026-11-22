@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gc
 import json
 import math
 import os
@@ -190,11 +191,12 @@ class TaqribBertDataset(Dataset):
         return item
 
 
-def make_dynamic_collate(pad_id: int):
+def make_dynamic_collate(pad_id: int, quantum: int = 16, max_length: int = 96):
     def collate(batch: list[dict[str, Any]]) -> dict[str, torch.Tensor]:
-        max_len = max(len(b["ids"]) for b in batch)
-        input_ids = torch.full((len(batch), max_len), pad_id, dtype=torch.long)
-        attention_mask = torch.zeros((len(batch), max_len), dtype=torch.long)
+        raw_max = max(len(b["ids"]) for b in batch)
+        qmax = min(max_length, ((raw_max + quantum - 1) // quantum) * quantum)
+        input_ids = torch.full((len(batch), qmax), pad_id, dtype=torch.long)
+        attention_mask = torch.zeros((len(batch), qmax), dtype=torch.long)
         for i, b in enumerate(batch):
             seq = b["ids"]
             input_ids[i, : len(seq)] = torch.tensor(seq, dtype=torch.long)
@@ -268,7 +270,7 @@ def train_and_eval_arabert(
     dev = device or select_device("auto")
     tok = AutoTokenizer.from_pretrained(ARABERT_ID, local_files_only=local_files_only)
     pad_id = tok.pad_token_id if tok.pad_token_id is not None else 0
-    collate_fn = make_dynamic_collate(pad_id)
+    collate_fn = make_dynamic_collate(pad_id, quantum=16 if dev.type == "mps" else 1, max_length=max_length)
 
     scaler = StandardScaler()
     tr_meta_sc = scaler.fit_transform(train_meta).astype(np.float32)
@@ -277,13 +279,15 @@ def train_and_eval_arabert(
     tr_ds = TaqribBertDataset(tr_ids, tr_meta_sc, train_rank, train_shift)
     tr_loader = DataLoader(tr_ds, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
 
-    eval_bs = 32 if dev.type == "mps" else 64
+    eval_bs = 16 if dev.type == "mps" else 64
     eval_loaders = {}
     for name, (txts, m_arr) in eval_batches.items():
         ids_list = tok(txts, truncation=True, max_length=max_length)["input_ids"]
         ds = TaqribBertDataset(ids_list, scaler.transform(m_arr).astype(np.float32))
         eval_loaders[name] = DataLoader(ds, batch_size=eval_bs, shuffle=False, collate_fn=collate_fn)
 
+    gc.collect()
+    empty_device_cache(dev)
     model = AraBERTDualHead(meta_dim=train_meta.shape[1], local_files_only=local_files_only).to(dev)
 
     cnts = np.bincount(train_shift, minlength=3).astype(np.float32)
@@ -367,8 +371,12 @@ def train_and_eval_arabert(
                 grad_scaler.update()
                 optimizer.zero_grad()
                 scheduler.step()
+                if dev.type == "mps":
+                    empty_device_cache(dev)
 
         val_out = run_infer(eval_loaders[val_key])
+        if dev.type == "mps":
+            empty_device_cache(dev)
         val_m = compute_metrics(
             val_rank,
             val_shift,
@@ -385,7 +393,8 @@ def train_and_eval_arabert(
     assert best_state is not None
     model.load_state_dict({k: v.to(dev) for k, v in best_state.items()})
     outputs = {name: run_infer(ldr) for name, ldr in eval_loaders.items()}
-    del model
+    del model, optimizer, scheduler, tr_loader, eval_loaders
+    gc.collect()
     empty_device_cache(dev)
     return outputs, {"best_epoch": best_epoch, "best_val_composite": round(best_score, 4)}
 
@@ -457,8 +466,8 @@ def main() -> None:
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--device", type=str, default="auto", choices=["auto", "mps", "cuda", "cpu"])
     parser.add_argument("--epochs", type=int, default=5)
-    parser.add_argument("--batch-size", type=int, default=0, help="0 = auto (16 on MPS for 4GB VRAM, 32 on CUDA/CPU).")
-    parser.add_argument("--grad-accum", type=int, default=0, help="0 = auto (2 on MPS -> eff bs 32, 1 on CUDA/CPU).")
+    parser.add_argument("--batch-size", type=int, default=0, help="0 = auto (8 on MPS for 4GB VRAM, 32 on CUDA/CPU).")
+    parser.add_argument("--grad-accum", type=int, default=0, help="0 = auto (4 on MPS -> eff bs 32, 1 on CUDA/CPU).")
     parser.add_argument("--max-length", type=int, default=96)
     parser.add_argument("--resume", action="store_true", help="Resume from cached fold/checkpoint files inside out-dir.")
     parser.add_argument("--allow-hf-download", action="store_true", help="Allow downloading HF models if not cached locally.")
@@ -467,8 +476,8 @@ def main() -> None:
     t0 = time.time()
     set_seed(SEED)
     device = select_device(args.device)
-    batch_size = args.batch_size if args.batch_size > 0 else (16 if device.type == "mps" else 32)
-    grad_accum = args.grad_accum if args.grad_accum > 0 else (2 if device.type == "mps" else 1)
+    batch_size = args.batch_size if args.batch_size > 0 else (8 if device.type == "mps" else 32)
+    grad_accum = args.grad_accum if args.grad_accum > 0 else (4 if device.type == "mps" else 1)
     out_dir: Path = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
     ckpt_dir = out_dir / "checkpoints"

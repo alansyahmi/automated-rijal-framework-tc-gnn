@@ -49,8 +49,8 @@ def check_radeon_mps() -> torch.device:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run full Track R+L v3 pipeline on AMD Radeon Pro 5500M (MPS).")
     parser.add_argument("--epochs", type=int, default=5, help="Stage 2 ESA fine-tuning epochs per fold.")
-    parser.add_argument("--batch-size", type=int, default=16, help="Stage 2 micro-batch size (16 tuned for 4GB VRAM FP32).")
-    parser.add_argument("--grad-accum", type=int, default=2, help="Gradient accumulation steps (16*2 = 32 effective bs).")
+    parser.add_argument("--batch-size", type=int, default=8, help="Stage 2 micro-batch size (8 tuned for 4GB VRAM FP32).")
+    parser.add_argument("--grad-accum", type=int, default=4, help="Gradient accumulation steps (8*4 = 32 effective bs).")
     parser.add_argument("--stage2-dir", type=Path, default=ROOT / "results/stage2_esa_benchmarks_v3_2026-11-21")
     parser.add_argument("--stage3-dir", type=Path, default=ROOT / "results/stage3_tc_gnn_benchmarks_v3_2026-11-21")
     parser.add_argument("--exp-dir", type=Path, default=ROOT / "results/layered_experiments_v3_2026-11-21")
