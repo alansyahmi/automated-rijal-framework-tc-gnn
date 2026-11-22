@@ -347,6 +347,7 @@ def train_and_eval_arabert(
         return {"rank_probs": r_probs, "rank_exp": r_exp, "shift_probs": s_probs, "cls": cls_arr}
 
     for ep in range(1, epochs + 1):
+        ep_t0 = time.time()
         model.train()
         optimizer.zero_grad()
         n_batches = len(tr_loader)
@@ -385,6 +386,16 @@ def train_and_eval_arabert(
             val_is_maqbul,
         )
         comp = val_m["shift_macro_f1"] - 0.1 * val_m["rank_mae"]
+        mem_msg = (
+            f" | driver={torch.mps.driver_allocated_memory()/1e9:.2f}GB"
+            if dev.type == "mps"
+            else ""
+        )
+        print(
+            f"    Ep {ep}/{epochs} ({time.time()-ep_t0:.1f}s) | val_MAE={val_m['rank_mae']:.4f} "
+            f"val_3TMF1={val_m['tier3_macro_f1']:.4f} val_ShiftMF1={val_m['shift_macro_f1']:.4f}{mem_msg}",
+            flush=True,
+        )
         if comp > best_score:
             best_score = comp
             best_epoch = ep

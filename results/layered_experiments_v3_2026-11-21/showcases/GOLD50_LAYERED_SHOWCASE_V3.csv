@@ -20,7 +20,7 @@
 9,2_nuanced_mixed,Muhammad ibn Ishaq,S3076-P467-C014-E5725,True,train,72.727273,4,71.590909,-1.136364,81.818182,3,10.227273,observed_dissent,,observed_scholarly,2,5
 10,2_nuanced_mixed,Abu Ishaq al-Sabi'i,S3076-P423-C018-E5065,True,train,81.818182,3,79.545455,-2.272727,79.545455,3,0.000000,observed_qualification,,observed_scholarly,,
 11,2_nuanced_mixed,Ata ibn al-Sa'ib,S3076-P391-C009-E4592,True,train,72.727273,4,70.454545,-2.272727,81.818182,3,11.363636,observed_dissent,,observed_scholarly,,
-12,2_nuanced_mixed,al-A'mash,S3076-P254-C018-E2615,True,val,90.909091,2,89.772727,-1.136364,89.772727,2,0.000000,suspect_alignment,,pending_stage3_gpu,2,5
+12,2_nuanced_mixed,al-A'mash,S3076-P254-C018-E2615,True,val,90.909091,2,89.772727,-1.136364,89.772727,2,0.000000,suspect_alignment,89.03,model_estimate,2,5
 13,2_nuanced_mixed,Qatadah ibn Di'amah,S3076-P453-C014-E5518,True,train,90.909091,2,90.909091,0.000000,90.909091,2,0.000000,observed_no_grade,,observed_scholarly,2,5
 14,2_nuanced_mixed,Hisham ibn Urwah,S3076-P573-C007-E7302,True,train,81.818182,3,81.818182,0.000000,81.818182,3,0.000000,observed_qualification,,observed_scholarly,2,5
 15,2_nuanced_mixed,Abd Allah ibn Lahi'ah,S3076-P319-C013-E3563,True,train,72.727273,4,70.454545,-2.272727,43.181818,7,-27.272727,observed_dissent,,observed_scholarly,0,2
@@ -35,7 +35,7 @@
 39,2_nuanced_mixed,Sufyan ibn Husayn,S3076-P244-C002-E2437,True,train,81.818182,3,81.818182,0.000000,81.818182,3,0.000000,observed_agreement,,observed_scholarly,2,4
 40,2_nuanced_mixed,Isma'il ibn Ayyash,S3076-P109-C008-E0473,True,train,72.727273,4,70.454545,-2.272727,70.454545,4,0.000000,observed_agreement,,observed_scholarly,0,2
 16,3_criticised_weaker,Jabir ibn Yazid al-Ju'fi,S3076-P137-C002-E0878,True,test,36.363636,8,36.363636,0.000000,36.363636,8,0.000000,observed_agreement,,observed_scholarly,2,4
-17,3_criticised_weaker,al-Harith al-A'war,S3076-P146-C012-E1029,True,excluded_unranked,,,,0.000000,,,,abstained,,pending_stage3_gpu,0,2
+17,3_criticised_weaker,al-Harith al-A'war,S3076-P146-C012-E1029,True,excluded_unranked,,,,0.000000,,,,abstained,51.60,model_estimate,0,2
 18,3_criticised_weaker,Abd al-Rahman ibn Zayd ibn Aslam,S3076-P340-C014-E3865,True,train,36.363636,8,36.363636,0.000000,36.363636,8,0.000000,observed_agreement,,observed_scholarly,0,2
 19,3_criticised_weaker,Layth ibn Abi Sulaym,S3076-P464-C010-E5685,True,val,72.727273,4,70.454545,-2.272727,70.454545,4,0.000000,observed_agreement,,observed_scholarly,,
 20,3_criticised_weaker,al-Hajjaj ibn Artah,S3076-P152-C015-E1119,True,train,63.636364,5,63.636364,0.000000,72.727273,4,9.090909,observed_dissent,,observed_scholarly,,

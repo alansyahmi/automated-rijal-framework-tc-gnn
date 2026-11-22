@@ -567,12 +567,15 @@ def main() -> None:
     parser.add_argument("--backend", type=str, default="auto", choices=["auto", "mps_native", "pyg"])
     parser.add_argument("--max-epochs", type=int, default=200)
     parser.add_argument("--patience", type=int, default=30)
+    parser.add_argument("--resume", action="store_true", help="Resume from per-model 5-seed checkpoints inside out-dir.")
     args = parser.parse_args()
 
     t0 = time.time()
     torch.use_deterministic_algorithms(True, warn_only=True)
     out_dir: Path = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
+    ckpt_dir = out_dir / "checkpoints"
+    ckpt_dir.mkdir(parents=True, exist_ok=True)
     device = select_device(args.device)
     backend = args.backend if args.backend != "auto" else ("mps_native" if device.type == "mps" else "pyg")
     print(f"Stage 3 v3 device={device.type}, backend={backend}, max_epochs={args.max_epochs}")
@@ -720,6 +723,19 @@ def main() -> None:
     record_5seed("G2a_Sem_Plus_SanadStruct_HistGBDT", "tabular_with_struct", g2a_vm, g2a_tm, g2a_r_sum, g2a_s_sum)
 
     def run_pyg_5seed(name: str, family: str, model_fn: Any, fwd_args: tuple[torch.Tensor, ...]) -> None:
+        ckpt_path = ckpt_dir / f"{name}.npz"
+        if args.resume and ckpt_path.exists():
+            z = np.load(ckpt_path, allow_pickle=True)
+            r_sum = z["r_sum"]
+            s_sum = z["s_sum"]
+            vm_list = list(z["vm_list"])
+            tm_list = list(z["tm_list"])
+            glog = z["gate_log"].item() if "gate_log" in z else {}
+            if glog:
+                gate_logs[name] = glog
+            record_5seed(name, family, vm_list, tm_list, r_sum, s_sum)
+            return
+
         vm_list, tm_list = [], []
         r_sum = np.zeros((len(node_rows), 12), dtype=np.float32)
         s_sum = np.zeros((len(node_rows), 3), dtype=np.float32)
@@ -758,6 +774,14 @@ def main() -> None:
                 "g_rev_isolated": round(float(np.mean(gr_i)), 4),
                 **({"g_knn_all": round(float(np.mean(gk_a)), 4)} if gk_a else {}),
             }
+        np.savez(
+            ckpt_path,
+            r_sum=r_sum,
+            s_sum=s_sum,
+            vm_list=np.array(vm_list, dtype=object),
+            tm_list=np.array(tm_list, dtype=object),
+            gate_log=np.array(gate_logs.get(name, {}), dtype=object),
+        )
         record_5seed(name, family, vm_list, tm_list, r_sum, s_sum)
 
     run_pyg_5seed(

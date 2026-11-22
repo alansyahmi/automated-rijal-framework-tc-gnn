@@ -87,15 +87,18 @@ def main() -> None:
             cmd_s2.append("--resume")
         _run(cmd_s2, "Stage 2: AraBERTv02 ESA & Generic-Sentiment Baseline (MPS FP32)")
 
+    cmd_s3 = [
+        py,
+        "experiments/run_stage3_tc_gnn_benchmarks_v3.py",
+        "--device", "mps",
+        "--backend", "mps_native",
+        "--stage2-dir", str(args.stage2_dir),
+        "--out-dir", str(args.stage3_dir),
+    ]
+    if not args.no_resume:
+        cmd_s3.append("--resume")
     _run(
-        [
-            py,
-            "experiments/run_stage3_tc_gnn_benchmarks_v3.py",
-            "--device", "mps",
-            "--backend", "mps_native",
-            "--stage2-dir", str(args.stage2_dir),
-            "--out-dir", str(args.stage3_dir),
-        ],
+        cmd_s3,
         "Stage 3: TC-GNN 5-Seed Ablations (Pure-PyTorch MPS index_add)",
     )
 

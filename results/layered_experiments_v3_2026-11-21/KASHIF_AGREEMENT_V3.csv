@@ -15,3 +15,11 @@ Exp_C_score_E2,non_verbatim,2633,0.643,0.5838,0.6641,0.4911,0.6115,0.6189
 Exp_C_score_E2,paired_non_verbatim,2566,0.6422,0.5839,0.6633,0.4867,0.6111,0.6192
 Exp_C_score_E2,paired_non_verbatim_excl_sahabi,2460,0.628,0.5779,0.6475,0.4768,0.5781,0.574
 Exp_C_score_E2,observed_first_grade_abstained_B,78,0.6154,0.511,0.6398,0.5132,0.5161,0.4802
+Exp_D_G4a_All,all_observed,3789,0.6463,0.5991,0.6763,0.5031,0.6304,0.6723
+Exp_D_G4a_All,paired_B_E2_common,3300,0.6242,0.5844,0.6539,0.4664,0.5999,0.6458
+Exp_D_G4a_All,non_verbatim,2946,0.5543,0.5238,0.5883,0.4208,0.5666,0.6281
+Exp_D_G4a_All,paired_non_verbatim,2566,0.5226,0.5009,0.5544,0.3752,0.5304,0.5989
+Exp_D_G4a_All,paired_non_verbatim_excl_sahabi,2460,0.5033,0.4904,0.5304,0.3604,0.4859,0.5511
+Exp_D_G4a_All,observed_first_grade_abstained_B,78,0.6026,0.567,0.6562,0.565,0.6168,0.6403
+Exp_D_G4a_EstimateOnly,all_observed,411,0.8321,0.6909,0.8416,0.8093,0.8044,0.7752
+Exp_D_G4a_EstimateOnly,non_verbatim,313,0.7987,0.6694,0.8094,0.7918,0.7777,0.7455

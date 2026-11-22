@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-11-21T11:47:33.787521+00:00",
+  "generated_utc": "2026-11-22T08:13:13.092674+00:00",
   "script": "experiments/run_layered_experiments_v3.py",
-  "elapsed_sec": 114.14,
-  "stage2_dir": null,
-  "stage3_dir": null,
+  "elapsed_sec": 81.0,
+  "stage2_dir": "results/stage2_esa_benchmarks_v3_2026-11-21",
+  "stage3_dir": "results/stage3_tc_gnn_benchmarks_v3_2026-11-21",
   "disagreement_audit": {
     "status_B": {
       "observed": 7262,
@@ -86,12 +86,12 @@
   },
   "files": {
     "EXPERIMENT_A_TO_D_METRICS_V3.csv": {
-      "sha256": "347f8387f4f809f5ee3935b8adb42ec3b25268c18294206036f4af26a6c30e95",
-      "bytes": 894
+      "sha256": "2680611cbff366028f75b1c99ba601ccf5fc37a06d34fbb9a4d89dab96cf2c08",
+      "bytes": 3764
     },
     "KASHIF_AGREEMENT_V3.csv": {
-      "sha256": "4163cf32b58a87a9a927490255abaaec52c8f4d149dc1268329e303b49df448a",
-      "bytes": 1400
+      "sha256": "6cc6a2e45d1ef2961890cee9748689067bf8dfbac86a61fbeb54c023259d0887",
+      "bytes": 2056
     },
     "KASHIF_PAIRED_BOOTSTRAP_V3.csv": {
       "sha256": "1af2e1c797ee273e77f58be03380d984beedbc2221499534fc4e18bf32b3c82a",
@@ -106,12 +106,12 @@
       "bytes": 707
     },
     "FINAL_LAYERED_RIJAL_SCORES_8827_V3.csv": {
-      "sha256": "b1a72752defdd9488be5cb0f8e422667411d41e57e2d59f329a4460d73777c78",
-      "bytes": 1621750
+      "sha256": "15e5b870d9c8e80c8fdb68cd1119606b36b9de1d3fca1b2ae17e8d41162a3257",
+      "bytes": 1841243
     },
     "LAYERED_EXPERIMENTS_REPORT_V3.md": {
-      "sha256": "f983bd2941fe4dd1e65453e39c838121dc513159d8fd83d53e88b15c9690e22c",
-      "bytes": 7047
+      "sha256": "f20da9756512f489c90cfbd84610d42afee7c7911efe09515d90777002ef707f",
+      "bytes": 11122
     }
   }
 }

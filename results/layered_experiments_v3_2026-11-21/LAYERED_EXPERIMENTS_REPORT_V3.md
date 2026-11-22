@@ -1,8 +1,8 @@
 # Layered 0–100 Narrator Score: Experiments A–D Report (v3)
 
-- **Generated (UTC):** 2026-11-21 11:47:33Z
-- **Stage 2 ESA Dir:** `NOT YET RUN (CUDA GPU required)`
-- **Stage 3 TC-GNN Dir:** `NOT YET RUN (CUDA GPU required)`
+- **Generated (UTC):** 2026-11-22 08:13:13Z
+- **Stage 2 ESA Dir:** `results/stage2_esa_benchmarks_v3_2026-11-21`
+- **Stage 3 TC-GNN Dir:** `results/stage3_tc_gnn_benchmarks_v3_2026-11-21`
 
 ## 0. Coverage, Missingness, and Exclusion Accounting (8,827 Narrators)
 
@@ -17,9 +17,28 @@
 |---|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|
 | `Exp_A_Baseline_B` | `Track_R_Deterministic` | `score_B (Ibn Hajar Taqrib)` | `tahrir_clean_test_descriptive` | `COMPLETED` | 1077 | 0.7233 | 0.8603 | 0.7066 | 0.698 | 0.255 | 1.978 |
 | `Exp_B_Qualifiers_E1_Det` | `Track_R_Deterministic` | `score_E1 (B + within-band E1 qualifiers)` | `tahrir_clean_test_descriptive` | `COMPLETED` | 1077 | 0.7253 | 0.8603 | 0.7066 | 0.698 | 0.255 | 1.9783 |
-| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M3b_AraBERTv02_Full / M3a_GenericSentiment` | `tahrir_clean_test` | `PENDING_CUDA_GPU` | 1077 |  |  |  |  |  |  |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M0_Identity_Baseline` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.7233 | 0.8603 | 0.7066 | 0.698 | 0.255 | 1.978 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M1a_Meta_Linear` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.7607 | 0.8833 | 0.7902 | 0.7679 | 0.6957 | 1.537 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M1b_Meta_HistGBDT` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.7194 | 0.8832 | 0.792 | 0.7727 | 0.6824 | 1.5224 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M1c_Meta_RandomForest` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.7097 | 0.8784 | 0.7939 | 0.7751 | 0.7166 | 1.5825 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M2a_TFIDF_Full_Linear` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.8095 | 0.8822 | 0.7679 | 0.7497 | 0.6996 | 1.5142 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M2b_TFIDF_Full_HistGBDT` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.7195 | 0.8911 | 0.8013 | 0.7808 | 0.6917 | 1.4943 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M2c_TFIDF_NameStripped_Linear` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.7891 | 0.879 | 0.7716 | 0.7515 | 0.6987 | 1.5351 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M3a_CAMeLBERT_Sentiment_Plus_Meta` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.7189 | 0.8865 | 0.7911 | 0.7704 | 0.6963 | 1.5576 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M3b_AraBERTv02_Full_DualHead` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.6597 | 0.8892 | 0.8115 | 0.7919 | 0.7262 | 1.4946 |
+| `Exp_B_ESA_Learned` | `Track_L_ESA` | `M3c_AraBERTv02_NameStripped_DualHead` | `tahrir_clean_test` | `COMPLETED` | 1077 | 0.6485 | 0.891 | 0.8236 | 0.7997 | 0.7183 | 1.4663 |
 | `Exp_C_Scholarly_E2` | `Track_R_Deterministic` | `score_E2 (B + E1 + Tahrir)` | `al_kashif_paired_non_verbatim` | `COMPLETED` | 2566 |  | 0.4867 | 0.6422 | 0.5839 |  |  |
-| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4a_Directed_TC_GNN_Sanad (vs G2b & G0)` | `tahrir_clean_test_5seed_ens` | `PENDING_CUDA_GPU` | 1077 |  |  |  |  |  |  |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G0_Stage2_AraBERT_NoGraph` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6597 | 0.8892 | 0.8115 | 0.7919 | 0.7262 | 1.4946 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G2a_Sem_Plus_SanadStruct_HistGBDT` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 1.4076 | 0.6432 | 0.6342 | 0.6146 | 0.7162 | 1.8519 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G1_GraphOnly_NoText` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 1.3307 | 0.7031 | 0.6698 | 0.6482 | 0.5339 | 1.7361 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G2b_Sem_Plus_SanadStruct_MLP` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6536 | 0.889 | 0.8195 | 0.7966 | 0.7194 | 1.4823 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3a_Undirected_GCN` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6653 | 0.8891 | 0.8212 | 0.798 | 0.7256 | 1.4745 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3b_Undirected_GraphSAGE` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.679 | 0.8872 | 0.8184 | 0.7967 | 0.7218 | 1.4728 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G3c_Undirected_GATv2` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6847 | 0.8864 | 0.8199 | 0.7984 | 0.7248 | 1.463 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4a_Directed_TC_GNN_Sanad` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6801 | 0.8865 | 0.818 | 0.7973 | 0.7218 | 1.4796 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4b_Directed_TC_GNN_UnprunedSanad` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6839 | 0.8853 | 0.8173 | 0.7965 | 0.7156 | 1.475 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4c_MV_TC_GNN_Sanad_Plus_kNN` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6714 | 0.8879 | 0.8156 | 0.7935 | 0.7271 | 1.4897 |
+| `Exp_D_TC_GNN` | `Track_L_TC_GNN` | `G4d_Directed_TC_GNN_Consolidated` | `tahrir_clean_test_5seed_ens` | `COMPLETED` | 1077 | 0.6698 | 0.8905 | 0.8204 | 0.7996 | 0.7287 | 1.4538 |
 
 ## 2. External Validation vs al-Dhahabi's *al-Kāshif* (1616)
 
@@ -41,6 +60,14 @@
 | `Exp_C_score_E2` | `paired_non_verbatim` | 2566 | 0.6422 | 0.5839 | 0.4867 | 0.6111 | 0.6192 |
 | `Exp_C_score_E2` | `paired_non_verbatim_excl_sahabi` | 2460 | 0.6280 | 0.5779 | 0.4768 | 0.5781 | 0.5740 |
 | `Exp_C_score_E2` | `observed_first_grade_abstained_B` | 78 | 0.6154 | 0.5110 | 0.5132 | 0.5161 | 0.4802 |
+| `Exp_D_G4a_All` | `all_observed` | 3789 | 0.6463 | 0.5991 | 0.5031 | 0.6304 | 0.6723 |
+| `Exp_D_G4a_All` | `paired_B_E2_common` | 3300 | 0.6242 | 0.5844 | 0.4664 | 0.5999 | 0.6458 |
+| `Exp_D_G4a_All` | `non_verbatim` | 2946 | 0.5543 | 0.5238 | 0.4208 | 0.5666 | 0.6281 |
+| `Exp_D_G4a_All` | `paired_non_verbatim` | 2566 | 0.5226 | 0.5009 | 0.3752 | 0.5304 | 0.5989 |
+| `Exp_D_G4a_All` | `paired_non_verbatim_excl_sahabi` | 2460 | 0.5033 | 0.4904 | 0.3604 | 0.4859 | 0.5511 |
+| `Exp_D_G4a_All` | `observed_first_grade_abstained_B` | 78 | 0.6026 | 0.5670 | 0.5650 | 0.6168 | 0.6403 |
+| `Exp_D_G4a_EstimateOnly` | `all_observed` | 411 | 0.8321 | 0.6909 | 0.8093 | 0.8044 | 0.7752 |
+| `Exp_D_G4a_EstimateOnly` | `non_verbatim` | 313 | 0.7987 | 0.6694 | 0.7918 | 0.7777 | 0.7455 |
 
 ### Paired Bootstrap E2 vs B on *al-Kāshif* ($B = 2000$, `seed = 42`)
 
