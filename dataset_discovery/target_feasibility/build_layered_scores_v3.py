@@ -132,6 +132,56 @@ def _extract_eval_region(taqrib_text: str, target_span: str) -> str:
     return norm_txt
 
 
+_NEG_PREFIX_RE = re.compile(
+    r"(?:^|\s)(?:لا|لم|ليس|غير|(?<!بعد\s)ما)(?:\s+(?:يخطئ|يخطىء|يدلس|يرسل|يختلط))?(?:\s+و(?:لا)?)?\s*$"
+)
+_REFUTED_PREFIX_RE = re.compile(r"(?:^|\s)(?:وهم|أخطأ|غلط)\s+من\s*$")
+_THIRD_PARTY_MAN_SUFFIX_RE = re.compile(
+    r"^\s+من\s+(?:زعم|عده|قال|نقل|تكلم|ذكره|لينه|ضعفه|أدخله)(?=$|\s)"
+)
+_THIRD_PARTY_SCHOLAR_SUFFIX_RE = re.compile(
+    r"^\s+(?:ابن|بعضهم|شعبة|ال[ء-ي]+)(?=$|\s)"
+)
+_THIRD_PARTY_COPY_PREFIX_RE = re.compile(r"(?:^|\s)(?:فقد|وهو|في\s+الصحابة)\s*$")
+_IDENTITY_ERR_SUFFIX_RE = re.compile(r"^\s+في\s+(?:اسمه|اسم\s+أبيه)(?=$|\s|[،.])")
+_TEACHER_CONFUSION_PREFIX_RE = re.compile(r"سماعه\s+من\s+.{1,28}بعد\s+أن\s*$")
+_MITIGATED_IKHTILAT_SUFFIX_RE = re.compile(
+    r"^\s*(?:بأخرة\s+)?(?:فلم|لكن\s+لم|ولم)\s+يحدث(?=$|\s)"
+)
+
+
+def _e1_qualifier_exclusion_reason(
+    qname: str, norm_txt: str, match: re.Match[str]
+) -> str | None:
+    """Return a non-None exclusion reason when Arabic syntax negates/shifts the E1 qualifier."""
+    prefix = norm_txt[max(0, match.start() - 45) : match.start()]
+    suffix = norm_txt[match.end() : min(len(norm_txt), match.end() + 45)]
+    tok = match.group(0).strip()
+
+    if qname == "qual_ikhtalata":
+        if _TEACHER_CONFUSION_PREFIX_RE.search(prefix):
+            return "teacher_confusion"
+        if _MITIGATED_IKHTILAT_SUFFIX_RE.match(suffix):
+            return "mitigated_no_narration_after_ikhtilat"
+
+    if _NEG_PREFIX_RE.search(prefix):
+        return "negated_qualifier"
+
+    if qname in {"qual_lin", "qual_yukhti_yahim"} and _REFUTED_PREFIX_RE.search(prefix):
+        return "refuted_criticism"
+
+    if qname == "qual_yukhti_yahim":
+        if tok in {"أخطأ", "غلط"} and (
+            _THIRD_PARTY_MAN_SUFFIX_RE.match(suffix)
+            or _THIRD_PARTY_SCHOLAR_SUFFIX_RE.match(suffix)
+        ):
+            return "third_party_subject"
+        if _THIRD_PARTY_COPY_PREFIX_RE.search(prefix) or _IDENTITY_ERR_SUFFIX_RE.match(suffix):
+            return "third_party_or_identity_error"
+
+    return None
+
+
 def _detect_collision_ids(bilgin_rows: list[dict[str, str]]) -> set[str]:
     """Identify the 28 duplicate Tahrir alignment signature collision pairs."""
     by_sig: dict[tuple[str, str, str], list[str]] = defaultdict(list)
@@ -299,13 +349,36 @@ def compute_layered_scores(
             )
         else:
             candidate_items: list[tuple[str, str, float, bool]] = []
-            # Check qualifiers across normalized text
+            excluded_items: list[tuple[str, str, str]] = []
+            # Check qualifiers across normalized text with Arabic syntax guards
             for qname, pat in E1_QUALIFIER_PATTERNS.items():
-                m_txt = pat.search(norm_txt)
-                if m_txt:
-                    inside = bool(norm_span and pat.search(norm_span))
+                matches = list(pat.finditer(norm_txt))
+                if not matches:
+                    continue
+                valid_matches = [
+                    m for m in matches
+                    if _e1_qualifier_exclusion_reason(qname, norm_txt, m) is None
+                ]
+                inside = bool(norm_span and pat.search(norm_span))
+                if valid_matches:
                     w_h = float(qual_weights_h[qname])
-                    candidate_items.append((qname, m_txt.group(0).strip(), w_h, inside))
+                    candidate_items.append(
+                        (qname, valid_matches[0].group(0).strip(), w_h, inside)
+                    )
+                elif not inside:
+                    reason = _e1_qualifier_exclusion_reason(qname, norm_txt, matches[0])
+                    if reason is not None:
+                        excluded_items.append(
+                            (qname, matches[0].group(0).strip(), reason)
+                        )
+
+            for eqname, ematched, ereason in excluded_items:
+                entry_ev.append(
+                    _build_evidence_row(
+                        eid, "E1", "3076", "", taq_page, ematched,
+                        f"E1-{eqname.upper()}", 0.0, "not_applicable", ereason,
+                    )
+                )
 
             # Check positive praise epithets in evaluation region
             for pname, pat in E1_PRAISE_PATTERNS.items():

@@ -34,15 +34,15 @@
   },
   "counts": {
     "wide_rows": 8827,
-    "evidence_rows": 19447,
+    "evidence_rows": 19432,
     "status_B": {
       "observed": 7262,
       "abstained": 1565
     },
     "status_E1": {
-      "not_applicable": 7143,
+      "not_applicable": 7171,
       "abstained": 1565,
-      "observed": 119
+      "observed": 91
     },
     "status_E2": {
       "observed_dissent": 2398,
@@ -62,16 +62,16 @@
   },
   "files": {
     "LAYER_EVIDENCE_LONG_V3.csv": {
-      "sha256": "0a13e6d354be4bcb0a426380c72ec0031a34a96045bc685aca0baf9b5831f635",
-      "bytes": 3054524
+      "sha256": "a8bb11f9b94b94641f9b314e5ea1ff25666ecce7ac52eff7c0c1dfc16c1eae32",
+      "bytes": 3053668
     },
     "LAYERED_SCORES_WIDE_V3.csv": {
-      "sha256": "ec78cd3fe95d5e90fadd8bd7fa98cd66826feefd3cb82ea6f6c3a95f3b5ad0bb",
-      "bytes": 1430429
+      "sha256": "1f673edc829f8758ddd1106a5d7d504eccb66708be623c954d21a8599ee21e04",
+      "bytes": 1429847
     },
     "LAYERED_SCORES_REPORT_V3.md": {
-      "sha256": "b5f8266aaf5b02782ef4307ea1bef2666b87d0b2898adf8a452162346b952164",
-      "bytes": 2361
+      "sha256": "580168503e2d7c876c8f3db4810467b644e321d7f83a64aba5a4c0825110308d",
+      "bytes": 2359
     }
   }
 }

@@ -237,3 +237,37 @@ def test_praise_is_evidence_only_and_e2_band_replacements_do_not_inherit_e1() ->
             assert abs(float(row["score_E2"]) - expected) < 1e-6, (
                 f"{row['entry_id']} ({st}) unexpectedly inherited E1 delta into score_E2"
             )
+
+
+def test_e1_arabic_linguistic_guards() -> None:
+    wide = {r["entry_id"]: r for r in _read_csv(WIDE_CSV)}
+    ev_by_id: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for ev in _read_csv(EVIDENCE_CSV):
+        ev_by_id[ev["entry_id"]].append(ev)
+
+    excluded_expectations = [
+        ("S3076-P547-C009-E6908", "E1-QUAL_YUDALLIS", "negated_qualifier"),
+        ("S3076-P583-C019-E7454", "E1-QUAL_YUDALLIS", "negated_qualifier"),
+        ("S3076-P583-C019-E7454", "E1-QUAL_YUKHTI_YAHIM", "negated_qualifier"),
+        ("S3076-P540-C015-E6802", "E1-QUAL_YUKHTI_YAHIM", "negated_qualifier"),
+        ("S3076-P547-C005-E6904", "E1-QUAL_YUKHTI_YAHIM", "third_party_subject"),
+        ("S3076-P259-C015-E2684", "E1-QUAL_YUKHTI_YAHIM", "third_party_subject"),
+        ("S3076-P606-C005-E7793", "E1-QUAL_LIN", "refuted_criticism"),
+        ("S3076-P485-C015-E5986", "E1-QUAL_IKHTALATA", "teacher_confusion"),
+        ("S3076-P138-C018-E0911", "E1-QUAL_IKHTALATA", "mitigated_no_narration_after_ikhtilat"),
+    ]
+    for eid, rule_id, reason in excluded_expectations:
+        matches = [e for e in ev_by_id[eid] if e["rule_id"] == rule_id]
+        assert len(matches) == 1, f"Missing excluded evidence row {rule_id} for {eid}"
+        assert matches[0]["status"] == "not_applicable"
+        assert matches[0]["double_count_check"] == reason
+        assert abs(float(matches[0]["delta_0_100"])) == 0.0
+        rule_key = rule_id.removeprefix("E1-").lower()
+        assert rule_key not in wide[eid]["e1_rules_applied"]
+
+    # E0911 still receives qual_yukhti_yahim while qual_ikhtalata is excluded
+    assert "qual_yukhti_yahim" in wide["S3076-P138-C018-E0911"]["e1_rules_applied"]
+    # Positive controls remain observed and numeric
+    assert "qual_yukhti_yahim" in wide["S3076-P243-C003-E2424"]["e1_rules_applied"]
+    assert "qual_yukhti_yahim" in wide["S3076-P139-C002-E0916"]["e1_rules_applied"]
+    assert "qual_ikhtalata" in wide["S3076-P464-C010-E5685"]["e1_rules_applied"]

@@ -433,7 +433,7 @@ S3076-P090-C011-E0189,E2,8246,1,89,• لم يكن إبراهيم بن طهما�
 S3076-P090-C012-E0190,B,3076,,90,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P090-C012-E0190,E2,8246,1,89,١٩٠ - إبراهيم بن عامر بن مسعود بن أمية بن خلف الجمحي: ثقة، من السادسة. د س.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P090-C013-E0191,B,3076,,90,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P090-C013-E0191,E1,3076,,90,تغير,E1-QUAL_IKHTALATA,-2.500000,observed,none
+S3076-P090-C013-E0191,E1,3076,,90,تغير,E1-QUAL_IKHTALATA,0.000000,not_applicable,mitigated_no_narration_after_ikhtilat
 S3076-P090-C013-E0191,E2,8246,1,89,تغير بأخرةٍ فلم يحدث,TAHRIR-QUALIFICATION-QAWLUHU,0.000000,observed_qualification,none
 S3076-P090-C014-E0192,B,3076,,90,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P090-C014-E0192,E2,8246,1,90,١٩٢ - إبراهيم بن عبد الله بن أحمد الخلال المروزي، أبو إسحاق: صدوق، من العاشرة، مات سنة إحدى وأربعين. س.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -694,7 +694,7 @@ S3076-P097-C018-E0305,B,3076,,97,ضعيف,RULE-R8-DAIF,30.000000,observed,none
 S3076-P097-C018-E0305,E2,8246,1,109,٣٠٥ - أزهر بن راشد الكاهلي: ضعيف، من الثامنة. عس.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P097-C018-E0305,E2,8246,1,109,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_agreement,score_shift_daif_no_itibar
 S3076-P097-C019-E0306,B,3076,,97,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
-S3076-P097-C019-E0306,E1,3076,,97,غلط,E1-QUAL_YUKHTI_YAHIM,-5.000000,observed,none
+S3076-P097-C019-E0306,E1,3076,,97,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P097-C019-E0306,E2,8246,1,109,٣٠٦ - أزهر بن راشد الهوزني، بفتح الهاء وسكون الواو بعدها زاي مفتوحة ثم نون، أبو الوليد الشامي: صدوق، من السادسة، غلط من ,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P097-C020-E0307,B,3076,,97,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P097-C020-E0307,E2,8246,1,109,٣٠٧ - أزهر بن سعد السمان، أبو بكر الباهلي، بصري: ثقة، من التاسعة، مات سنة ثلاث ومئتين، وهو ابن أربع وتسعين. خ م د ت س.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -1815,7 +1815,6 @@ S3076-P130-C018-E0806,E2,8246,1,193,مجهول,TAHRIR-R9-MAJHUL,-13.000000,obser
 S3076-P130-C019-E0807,B,3076,,130,صحابي وقع في ابن ماجة في بعض النسخ,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
 S3076-P130-C019-E0807,E2,8246,1,193,• هذا من الأوهام التي وقعت في بعض نسخ ابن ماجه، نبه عليه المزي، وذكر أنه وهم قبيح وتخليط فاحش، فلا يوجد مثل هذا الصحابي.,TAHRIR-OTHER-COMMENTARY-UNRANKED,0.000000,abstained,none
 S3076-P131-C001-E0808,B,3076,,131,ثقة أخطأ الأزدي إذ ضعفه,GUARD-ATTRIBUTED-CRITIC,0.000000,abstained,none
-S3076-P131-C001-E0808,E1,3076,,131,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P131-C001-E0808,E2,8246,1,193,٨٠٨ - توبة العنبري، البصري، أبو المورع، بضم الميم وفتح الواو وتشديد الراء المكسورة بعدها مهملة: ثقة أخطأ الأزدي إذ ضعفه،,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P131-C002-E0809,B,3076,,131,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P131-C002-E0809,E2,8246,1,193,مقبول [Intro p. 45: ضعيف يعتبر به],TAHRIR-AGREED-MAQBUL-TO-R7,-5.000000,observed_maqbul_to_r7,band_replaced_maqbul_p45_no_e1_inheritance
@@ -2051,7 +2050,7 @@ S3076-P138-C016-E0909,E2,8246,1,212,٩٠٩ - الجراح بن مليح البه
 S3076-P138-C017-E0910,B,3076,,138,له صحبة,RULE-R1-COMPANION,100.000000,observed,none
 S3076-P138-C017-E0910,E2,8246,1,212,٩١٠ - جرهد بن رزاح، بكسر الراء، بعدها زاي وآخره مهملة، الأسلمي، مدني: له صحبة، وكان من أهل الصفة، يقال مات سنة إحدى وستي,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P138-C018-E0911,B,3076,,138,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P138-C018-E0911,E1,3076,,138,اختلط,E1-QUAL_IKHTALATA,-2.500000,observed,none
+S3076-P138-C018-E0911,E1,3076,,138,اختلط,E1-QUAL_IKHTALATA,0.000000,not_applicable,mitigated_no_narration_after_ikhtilat
 S3076-P138-C018-E0911,E1,3076,,138,أوهام,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
 S3076-P138-C018-E0911,E2,8246,1,212,"• قلت: ومع كون حديثه فيه ضعف عن قتادة، فقد أخرج له البخاري في ""صحيحه"" أحاديث يسيرة من روايته عن قتادة، لكن قد توبع عليها",TAHRIR-OTHER-COMMENTARY,0.000000,observed_no_grade,none
 S3076-P138-C019-E0912,B,3076,,138,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
@@ -2109,7 +2108,6 @@ S3076-P140-C005-E0934,E2,8246,1,216,٩٣٤ - جعفر بن حميد العبسي
 S3076-P140-C006-E0935,B,3076,,140,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P140-C006-E0935,E2,8246,1,216,٩٣٥ - جعفر بن حيان السعدي، أبو الأشهب العطاردي، البصري، مشهور بكنيته: ثقة، من السادسة، مات سنة خمس وستين، وله خمس وتسعون,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P140-C007-E0936,B,3076,,140,صدوق كثير الخطأ أخطأ ابن الجوزي فخلطه بالذي قبله وهذا من الطبقة السابعة,RULE-R5-QUALIFIED-SADUQ,45.000000,observed,none
-S3076-P140-C007-E0936,E1,3076,,140,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P140-C007-E0936,E2,8246,1,217,ضعيف,TAHRIR-R8-DAIF,-15.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P140-C007-E0936,E2,8246,1,217,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_dissent,score_shift_daif_no_itibar
 S3076-P140-C008-E0937,B,3076,,140,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
@@ -2188,7 +2186,7 @@ S3076-P142-C005-E0968,E1,3076,,142,يخطىء,E1-QUAL_YUKHTI_YAHIM,0.000000,not_
 S3076-P142-C005-E0968,E2,8246,1,222,ضعيف,TAHRIR-R8-DAIF,-15.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P142-C005-E0968,E2,8246,1,222,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_dissent,score_shift_daif_no_itibar
 S3076-P142-C006-E0969,B,3076,,142,٩٦٩- جميع جد الوليد ابن عبد الله كذا ذكروه وهو خطأ والذي عند أبي داود عن الوليد ,GUARD-NONE161-ABSTAIN,0.000000,abstained,none
-S3076-P142-C006-E0969,E1,3076,,142,خطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,baseline_abstained
+S3076-P142-C006-E0969,E1,3076,,142,خطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_or_identity_error
 S3076-P142-C006-E0969,E2,8246,1,222,٩٦٩ - جميع، جد الوليد بن عبد الله، كذا ذكروه، وهو خطأ، والذي عند أبي داود: عن الوليد، عن جدته، وسيأتي ذكرها. د. [= ٨٨١٣],TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P142-C007-E0970,B,3076,,142,صدوق يخطىء أفرط فيه عبدان,RULE-R5-QUALIFIED-SADUQ,45.000000,observed,none
 S3076-P142-C007-E0970,E1,3076,,142,يخطىء,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
@@ -2319,7 +2317,7 @@ S3076-P146-C007-E1025,E2,8246,1,235,١٠٢٥ - الحارث بن سويد الت
 S3076-P146-C008-E1026,B,3076,,146,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P146-C008-E1026,E2,8246,1,235,١٠٢٦ - الحارث بن شبيل، بالمعجمة والموحدة، مصغر، البجلي، أبو الطفيل: ثقة، من الخامسة. خ م د ت س.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P146-C009-E1027,B,3076,,146,ضعيف,RULE-R8-DAIF,30.000000,observed,none
-S3076-P146-C009-E1027,E1,3076,,146,أخطأ,E1-QUAL_YUKHTI_YAHIM,-0.600000,observed,none
+S3076-P146-C009-E1027,E1,3076,,146,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P146-C009-E1027,E2,8246,1,235,١٠٢٧ - الحارث بن شبل، كالأول لكن بلا تصغير: بصري، ضعيف، من السادسة، أخطأ الكلاباذي في خلطه بالذي قبله، ورد ذلك الباجي، و,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P146-C009-E1027,E2,8246,1,235,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_agreement,score_shift_daif_no_itibar
 S3076-P146-C011-E1028,B,3076,,146,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
@@ -2365,8 +2363,8 @@ S3076-P147-C017-E1045,E2,8246,1,239,١٠٤٥ - الحارث بن مالك بن �
 S3076-P147-C018-E1046,B,3076,,147,مجهول,RULE-R9-MAJHUL,27.000000,observed,none
 S3076-P147-C018-E1046,E2,8246,1,239,١٠٤٦ - الحارث بن مالك: مجهول، من الثالثة. س.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P147-C019-E1047,B,3076,,147,مجهول الحال,RULE-R7-MASTUR,35.000000,observed,none
-S3076-P147-C019-E1047,E1,3076,,147,أخطأ,E1-QUAL_YUKHTI_YAHIM,-1.000000,observed,none
-S3076-P147-C019-E1047,E2,8246,1,239,مقبول,TAHRIR-R6-MAQBUL,6.000000,observed_dissent,band_replaced_no_e1_inheritance
+S3076-P147-C019-E1047,E1,3076,,147,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
+S3076-P147-C019-E1047,E2,8246,1,239,مقبول,TAHRIR-R6-MAQBUL,5.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P148-C001-E1048,B,3076,,148,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P148-C001-E1048,E2,8246,1,239,١٠٤٨ - الحارث بن مرة بن مجاعة، بضم الميم وتشديد الجيم، الحنفي، أبو مرة اليمامي ثم البصري: صدوق، من التاسعة. د.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P148-C002-E1049,B,3076,,148,ثقة فقيه,RULE-R3-STANDALONE,85.000000,observed,none
@@ -2404,7 +2402,7 @@ S3076-P149-C001-E1062,B,3076,,149,ضعيف,RULE-R8-DAIF,30.000000,observed,none
 S3076-P149-C001-E1062,E2,8246,1,241,١٠٦٢ - حارثة بن أبي الرجال، بكسر الراء ثم جيم، الأنصاري ثم النجاري، المدني: ضعيف، من السادسة، مات سنة ثمان وأربعين. ت ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P149-C001-E1062,E2,8246,1,241,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_agreement,score_shift_daif_no_itibar
 S3076-P149-C002-E1063,B,3076,,149,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P149-C002-E1063,E1,3076,,149,غلط,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P149-C002-E1063,E1,3076,,149,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P149-C002-E1063,E2,8246,1,241,١٠٦٣ - حارثة بن مضرب، بتشديد الراء المكسورة، قبلها معجمة، العبدي، الكوفي: ثقة، من الثانية، غلط من نقل عن ابن المديني (١),TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P149-C003-E1064,B,3076,,149,صحابي,RULE-R1-COMPANION,100.000000,observed,none
 S3076-P149-C003-E1064,E2,8246,1,241,١٠٦٤ - حارثة بن وهب الخزاعي: صحابي، نزل الكوفة، وكان عمر زوج أمه. ع.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -2424,7 +2422,7 @@ S3076-P149-C014-E1071,E2,8246,1,242,١٠٧١ - حبان بن أبي جبلة، �
 S3076-P149-C015-E1072,B,3076,,149,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P149-C015-E1072,E2,8246,1,243,مقبول,TAHRIR-R6-MAQBUL,-30.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P149-C016-E1073,B,3076,,149,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P149-C016-E1073,E1,3076,,149,أخطأ,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P149-C016-E1073,E1,3076,,149,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P149-C016-E1073,E2,8246,1,243,١٠٧٣ - حبان بن زيد الشرعبي، بفتح المعجمة ثم راء ساكنة ثم مهملة مفتوحة ثم موحدة، أبو خداش، بكسر المعجمة وآخره معجمة: ثقة،,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P149-C017-E1074,B,3076,,149,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P149-C017-E1074,E2,8246,1,243,مجهول,TAHRIR-R9-MAJHUL,-13.000000,observed_dissent,band_replaced_no_e1_inheritance
@@ -2473,7 +2471,6 @@ S3076-P150-C016-E1091,E2,8246,1,246,١٠٩١ - حبيب بن زيد بن خلا�
 S3076-P151-C001-E1092,B,3076,,151,لا بأس به,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P151-C001-E1092,E2,8246,1,246,١٠٩٢ - حبيب بن سالم الأنصاري، مولى النعمان بن بشير وكاتبه: لا بأس به، من الثالثة. م ٤ (١).,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P151-C002-E1093,B,3076,,151,ثقة أخطأ من زعم أن له صحبة,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P151-C002-E1093,E1,3076,,151,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P151-C002-E1093,E2,8246,1,247,مجهول,TAHRIR-R9-MAJHUL,27.000000,observed_first_grade,none
 S3076-P151-C003-E1094,B,3076,,151,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P151-C003-E1094,E2,8246,1,247,صدوق,TAHRIR-R4-SADUQ-HASAN,30.000000,observed_dissent,band_replaced_no_e1_inheritance
@@ -3754,8 +3751,8 @@ S3076-P189-C012-E1657,E2,8246,1,348,١٦٥٧ - خالد بن عرفطة القض
 S3076-P189-C013-E1658,B,3076,,189,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P189-C013-E1658,E2,8246,1,348,١٦٥٨ - خالد بن عقبة السكوني، أبو عقبة (١) الكوفي: صدوق، من الحادية عشرة، مات سنة سبع وأربعين. س.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P189-C014-E1659,B,3076,,189,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
-S3076-P189-C014-E1659,E1,3076,,189,يهم,E1-QUAL_YUKHTI_YAHIM,-5.000000,observed,none
-S3076-P189-C014-E1659,E2,8246,1,348,ثقة,TAHRIR-R3-THIQAH,20.000000,observed_dissent,band_replaced_no_e1_inheritance
+S3076-P189-C014-E1659,E1,3076,,189,يهم,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_or_identity_error
+S3076-P189-C014-E1659,E2,8246,1,348,ثقة,TAHRIR-R3-THIQAH,15.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P189-C015-E1660,B,3076,,189,بالكذب ونسبه صالح جزرة وغيره إلى الوضع,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
 S3076-P189-C015-E1660,E2,8246,1,349,١٦٦٠ - خالد بن عمرو بن محمد بن عبد الله بن سعيد بن العاص الأموي، أبو سعيد الكوفي: رماه ابن معين بالكذب، ونسبه صالح جزرة ,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P189-C016-E1661,B,3076,,189,ضعيف,GUARD-CONFLICTING-LYING,0.000000,abstained,none
@@ -3785,7 +3782,7 @@ S3076-P190-C009-E1671,B,3076,,190,مقبول,BILGIN-R6-MAQBUL,40.000000,observed
 S3076-P190-C009-E1671,E2,8246,1,351,ضعيف,TAHRIR-R8-DAIF,-10.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P190-C009-E1671,E2,8246,1,351,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_dissent,score_shift_daif_no_itibar
 S3076-P190-C010-E1672,B,3076,,190,صدوق فقيه,RULE-R4-LOWER-PRAISE,70.000000,observed,none
-S3076-P190-C010-E1672,E1,3076,,190,أخطأ,E1-QUAL_YUKHTI_YAHIM,-5.000000,observed,none
+S3076-P190-C010-E1672,E1,3076,,190,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P190-C010-E1672,E1,3076,,190,فقيه,E1-PRAISE_FAQIH,0.000000,not_applicable,inside_rank_span
 S3076-P190-C010-E1672,E2,8246,1,351,١٦٧٢ - خالد بن اللجلاج العامري، أبو إبراهيم، حمصي، وقيل دمشقي: صدوق فقيه، من الثانية، قال البخاري: سمع عمر، أخطأ من عده ,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P190-C011-E1673,B,3076,,190,مجهول,RULE-R9-MAJHUL,27.000000,observed,none
@@ -4510,7 +4507,6 @@ S3076-P213-C015-E1989,E2,8246,1,411,١٩٨٩ - زبيد، بموحدة، مصغ�
 S3076-P213-C016-E1990,B,3076,,213,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P213-C016-E1990,E2,8246,1,411,مقبول في المتابعات والشواهد,TAHRIR-R6-MAQBUL,-30.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P214-C001-E1991,B,3076,,214,ثقة أخطأ السليماني في تضعيفه,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P214-C001-E1991,E1,3076,,214,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P214-C001-E1991,E2,8246,1,411,١٩٩١ - الزبير بن بكار بن عبد الله بن مصعب بن ثابت بن عبد الله بن الزبير الأسدي المدني، أبو عبد الله بن أبي بكر، قاضي الم,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P214-C002-E1992,B,3076,,214,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P214-C002-E1992,E2,8246,1,411,صدوق,TAHRIR-R4-SADUQ-HASAN,30.000000,observed_dissent,band_replaced_no_e1_inheritance
@@ -5020,7 +5016,6 @@ S3076-P230-C002-E2221,E2,8246,2,13,٢٢٢١ - السري بن إسماعيل ا�
 S3076-P230-C003-E2222,B,3076,,230,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P230-C003-E2222,E2,8246,2,14,صدوق,TAHRIR-R4-SADUQ-HASAN,30.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P230-C004-E2223,B,3076,,230,ثقة أخطأ الأزدي في تضعيفه,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P230-C004-E2223,E1,3076,,230,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P230-C004-E2223,E2,8246,2,14,٢٢٢٣ - السري بن يحيى بن إياس بن حرملة الشيباني، البصري: ثقة، أخطا الأزدي في تضعيفه، من السابعة، مات سنة سبع وستين. بخ س.,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P230-C005-E2224,B,3076,,230,صدوق عابد,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P230-C005-E2224,E2,8246,2,14,٢٢٢٤ - السري بن ينعم، بفتح التحتانية وسكون النون وضم المهملة، الجبلاني، بضم الجيم وسكون الموحدة، شامي: صدوق عابد، من الس,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -5693,7 +5688,7 @@ S3076-P249-C011-E2525,E2,8246,2,62,مجهول,TAHRIR-R9-MAJHUL,-13.000000,observ
 S3076-P249-C013-E2526,B,3076,,249,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P249-C013-E2526,E2,8246,2,63,٢٥٢٦ - سليم بن جبير الدوسي، أبو يونس المصري: ثقة، من الثالثة، مات سنة ثلاث وعشرين. بخ م د ت.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P249-C014-E2527,B,3076,,249,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P249-C014-E2527,E1,3076,,249,غلط,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P249-C014-E2527,E1,3076,,249,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P249-C014-E2527,E2,8246,2,63,٢٥٢٧ - سليم بن عامر الكلاعي، ويقال: الخبائري، بخاء معجمة وموحدة، أبو يحيى الحمصي: ثقة، من الثالثة، غلط من قال: إنه أدرك ,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P249-C015-E2528,B,3076,,249,٢٥٢٨- سليم ابن عامر الشامي أبو عامر صلى خلف أبي بكر من الثانية فرق ابن عساكر بين,GUARD-NONE161-ABSTAIN,0.000000,abstained,none
 S3076-P249-C015-E2528,E2,8246,2,63,٢٥٢٨ - سليم بن عامر الشامي، أبو عامر، صلى خلف أبي بكر، من الثانية، فرق ابن عساكر بينه وبين الأول فأصاب. تمييز.,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
@@ -6043,7 +6038,7 @@ S3076-P259-C013-E2682,E2,8246,2,92,ضعيف يعتبر به,TAHRIR-R7-YUTABAR-OR
 S3076-P259-C014-E2683,B,3076,,259,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P259-C014-E2683,E2,8246,2,93,٢٦٨٣ - سوار بن سهل البصري: صدوق، من الحادية عشرة. كد.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P259-C015-E2684,B,3076,,259,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P259-C015-E2684,E1,3076,,259,غلط,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P259-C015-E2684,E1,3076,,259,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P259-C015-E2684,E2,8246,2,93,٢٦٨٤ - سوار بن عبد الله بن سوار بن عبد الله بن قدامة التميمي العنبري، أبو عبد الله البصري، قاضي الرصافة وغيرها: ثقة، من ,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P259-C016-E2685,B,3076,,259,صدوق محمود السيرة,GUARD-CTX-QUALIFIER,0.000000,abstained,none
 S3076-P259-C016-E2685,E2,8246,2,93,٢٦٨٥ - سوار بن عبد الله بن قدامة التميمي العنبري، جد الذي قبله، كان قاضي البصرة، وهو أشهر في القضاء من الذي قبله، وذاك أ,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
@@ -6098,8 +6093,8 @@ S3076-P261-C005-E2706,E2,8246,2,97,٢٧٠٦ - سلام بن أبي سلام ال
 S3076-P261-C006-E2707,B,3076,,261,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P261-C006-E2707,E2,8246,2,97,مجهول,TAHRIR-R9-MAJHUL,-13.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P261-C007-E2708,B,3076,,261,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
-S3076-P261-C007-E2708,E1,3076,,261,أخطأ,E1-QUAL_YUKHTI_YAHIM,-1.000000,observed,none
-S3076-P261-C007-E2708,E2,8246,2,97,مجهول,TAHRIR-R9-MAJHUL,-12.000000,observed_dissent,band_replaced_no_e1_inheritance
+S3076-P261-C007-E2708,E1,3076,,261,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
+S3076-P261-C007-E2708,E2,8246,2,97,مجهول,TAHRIR-R9-MAJHUL,-13.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P261-C008-E2709,B,3076,,261,ضعيف,RULE-R8-DAIF,30.000000,observed,none
 S3076-P261-C008-E2709,E2,8246,2,97,٢٧٠٩ - سلام بن أبي عمرة الخراساني، أبو علي: ضعيف، من السادسة. ت.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P261-C008-E2709,E2,8246,2,97,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_agreement,score_shift_daif_no_itibar
@@ -6188,7 +6183,7 @@ S3076-P263-C021-E2742,E2,8246,2,106,٢٧٤٢ - شبيب بن عبد الملك �
 S3076-P263-C022-E2743,B,3076,,263,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P263-C022-E2743,E2,8246,2,106,٢٧٤٣ - شبيب بن غرقدة، بمعجمة وقاف: ثقة، من الرابعة. ع.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P263-C023-E2744,B,3076,,263,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P263-C023-E2744,E1,3076,,263,أخطأ,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P263-C023-E2744,E1,3076,,263,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P263-C023-E2744,E2,8246,2,106,٢٧٤٤ - شبيب بن نعيم، أبو روح: ثقة، من الثالثة، أخطأ من عده في الصحابة. دس.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P264-C001-E2745,B,3076,,264,صدوق يهم,RULE-R5-QUALIFIED-SADUQ,45.000000,observed,none
 S3076-P264-C001-E2745,E1,3076,,264,يهم,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
@@ -6348,7 +6343,7 @@ S3076-P268-C004-E2811,E2,8246,2,118,مقبول [Intro p. 45: ضعيف يعتبر
 S3076-P268-C005-E2812,B,3076,,268,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P268-C005-E2812,E2,8246,2,119,مجهول,TAHRIR-R9-MAJHUL,-13.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P268-C006-E2813,B,3076,,268,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P268-C006-E2813,E1,3076,,268,خطأ,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P268-C006-E2813,E1,3076,,268,خطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_or_identity_error
 S3076-P268-C006-E2813,E2,8246,2,119,٢٨١٣ - شفي، بالفاء مصغرا، ابن ماتع، بمثناة، الأصبحي: ثقة، من الثالثة، أرسل حديثا فذكره بعضهم في الصحابة خطأ، مات في خلاف,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P268-C007-E2814,B,3076,,268,صالح,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
 S3076-P268-C007-E2814,E2,8246,2,119,٢٨١٤ - شقران، بضم أوله وسكون القاف، مولى رسول الله ﷺ، قيل: اسمه صالح، شهد بدرا وهو مملوك، ثم عتق، أظنه مات في خلافة عثما,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
@@ -6516,8 +6511,8 @@ S3076-P274-C003-E2890,E2,8246,2,133,٢٨٩٠ - صالح بن مهران الشي
 S3076-P274-C005-E2891,B,3076,,274,متروك,RULE-R10-STANDALONE,15.000000,observed,none
 S3076-P274-C005-E2891,E2,8246,2,133,٢٨٩١ - صالح بن موسى بن إسحاق بن طلحة التيمي، الكوفي: متروك، من الثامنة. ت ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P274-C006-E2892,B,3076,,274,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
+S3076-P274-C006-E2892,E1,3076,,274,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P274-C006-E2892,E1,3076,,274,اختلط,E1-QUAL_IKHTALATA,-6.250000,observed,none
-S3076-P274-C006-E2892,E1,3076,,274,أخطأ,E1-QUAL_YUKHTI_YAHIM,-5.000000,observed,none
 S3076-P274-C006-E2892,E2,8246,2,133,• هو: صدوق حسن الحديث بالنسبة لمن روى عنه قبل اختلاطه، وهم: أسيد بن أبي أسيد البراد، وزياد بن سعد، وسعيد بن أبي أيوب، وع,TAHRIR-OTHER-COMMENTARY,0.000000,observed_no_grade,none
 S3076-P274-C007-E2893,B,3076,,274,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P274-C007-E2893,E2,8246,2,134,٢٨٩٣ - صالح بن الهيثم الواسطي، أبو شعيب الصيرفي، الطحان: صدوق، من صغار العاشرة. ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -6550,8 +6545,8 @@ S3076-P275-C001-E2905,E2,8246,2,136,٢٩٠٥ - صخر بن حرب بن أمية 
 S3076-P275-C002-E2906,B,3076,,275,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P275-C002-E2906,E2,8246,2,136,مجهول,TAHRIR-R9-MAJHUL,-13.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P275-C003-E2907,B,3076,,275,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
-S3076-P275-C003-E2907,E1,3076,,275,غلط,E1-QUAL_YUKHTI_YAHIM,-1.000000,observed,none
-S3076-P275-C003-E2907,E2,8246,2,137,مقبول [Intro p. 45: ضعيف يعتبر به],TAHRIR-AGREED-MAQBUL-TO-R7,-4.000000,observed_maqbul_to_r7,band_replaced_maqbul_p45_no_e1_inheritance
+S3076-P275-C003-E2907,E1,3076,,275,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
+S3076-P275-C003-E2907,E2,8246,2,137,مقبول [Intro p. 45: ضعيف يعتبر به],TAHRIR-AGREED-MAQBUL-TO-R7,-5.000000,observed_maqbul_to_r7,band_replaced_maqbul_p45_no_e1_inheritance
 S3076-P275-C004-E2908,B,3076,,275,صحابي قليل الحديث يقال إن العيلة اسم أمه,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
 S3076-P275-C004-E2908,E1,3076,,275,قليل الحديث,E1-QUAL_QALIL_HADITH,0.000000,not_applicable,inside_rank_span
 S3076-P275-C004-E2908,E2,8246,2,137,٢٩٠٨ - صخر بن العيلة، بفتح المهملة وسكون المثناة التحتانية، ابن عبد الله بن ربيعة الأحمسي: صحابي، قليل الحديث، يقال: إن ,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
@@ -8325,7 +8320,7 @@ S3076-P329-C014-E3707,E2,8246,2,286,"• قلنا: لم يذكره المؤلف 
 S3076-P329-C015-E3708,B,3076,,329,وثقه العجلي,GUARD-ATTRIBUTED-CRITIC,0.000000,abstained,none
 S3076-P329-C015-E3708,E2,8246,2,287,"• ذكره ابن حبان في ""الثقات""، وأخرج له مسلم حديثا واحدا في صلاة مئة على الميت، وقال الترمذي (١٠٢٩) فيه: حسن صحيح. فهو حسن",TAHRIR-OTHER-COMMENTARY-UNRANKED,0.000000,abstained,none
 S3076-P329-C016-E3709,B,3076,,329,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
-S3076-P329-C016-E3709,E1,3076,,329,أخطأ,E1-QUAL_YUKHTI_YAHIM,-5.000000,observed,none
+S3076-P329-C016-E3709,E1,3076,,329,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P329-C016-E3709,E2,8246,2,287,٣٧٠٩ - عبد الله بن يزيد النخعي، الكوفي، عن أبي زرعة، في شكال الخيل، قال أحمد: صوابه: سلم بن عبد الرحمن، أخطأ شعبة في اسم,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P329-C017-E3710,B,3076,,329,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P329-C017-E3710,E2,8246,2,287,٣٧١٠ - عبد الله بن يزيد النخعي، الكوفي، الصهباني، بضم المهملة: ثقة، من السادسة، وهم من خلطه بالذي قبله. تمييز.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -8772,7 +8767,7 @@ S3076-P343-C015-E3909,E2,8246,2,328,• إن لم يكن هو عبيد الله 
 S3076-P343-C016-E3910,B,3076,,343,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P343-C016-E3910,E2,8246,2,328,٣٩١٠ - عبد الرحمن بن عائذ، بتحتانية ومعجمة، الثمالي، بضم المثلثة، ويقال: الكندي، الحمصي: ثقة، من الثالثة، ووهم من ذكره ف,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P343-C017-E3911,B,3076,,343,يقال له صحبة,GUARD-R1-DISPUTED,0.000000,abstained,none
-S3076-P343-C017-E3911,E1,3076,,343,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,baseline_abstained
+S3076-P343-C017-E3911,E1,3076,,343,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_or_identity_error
 S3076-P343-C017-E3911,E2,8246,2,328,• لا تصح صحبته البتة، أشار إلى ذلك البخاري أيضا. ولم يذكر له المؤلف رتبة، وهو: مستور، روى عنه ثلاثة، وقال أبو زرعة الراز,TAHRIR-OTHER-COMMENTARY-UNRANKED,0.000000,abstained,none
 S3076-P343-C018-E3912,B,3076,,343,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P343-C018-E3912,E2,8246,2,329,مجهول,TAHRIR-R9-MAJHUL,-13.000000,observed_dissent,band_replaced_no_e1_inheritance
@@ -9216,7 +9211,7 @@ S3076-P358-C008-E4114,E2,8246,2,371,٤١١٤ - عبد العزيز بن عمرا
 S3076-P358-C009-E4115,B,3076,,358,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P358-C009-E4115,E2,8246,2,371,مقبول [Intro p. 45: ضعيف يعتبر به],TAHRIR-AGREED-MAQBUL-TO-R7,-5.000000,observed_maqbul_to_r7,band_replaced_maqbul_p45_no_e1_inheritance
 S3076-P358-C010-E4116,B,3076,,358,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P358-C010-E4116,E1,3076,,358,غلط,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P358-C010-E4116,E1,3076,,358,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_or_identity_error
 S3076-P358-C010-E4116,E2,8246,2,371,٤١١٦ - عبد العزيز بن قرير، بقاف، مصغر، العبدي، البصري: ثقة، من السادسة، ولم يصب من زعم أنه الأصمعي، وأن مالكا غلط في اسم,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P358-C011-E4117,B,3076,,358,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P358-C011-E4117,E2,8246,2,371,مقبول [Intro p. 45: ضعيف يعتبر به],TAHRIR-AGREED-MAQBUL-TO-R7,-5.000000,observed_maqbul_to_r7,band_replaced_maqbul_p45_no_e1_inheritance
@@ -9528,7 +9523,7 @@ S3076-P367-C015-E4253,E2,8246,2,396,٤٢٥٣ - عبد الوارث بن عبيد
 S3076-P368-C001-E4254,B,3076,,368,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P368-C001-E4254,E2,8246,2,397,٤٢٥٤ - عبد الوهاب بن بخت، بضم الموحدة، وسكون المعجمة بعدها مثناة، المكي، سكن الشام، ثم المدينة: ثقة، من الخامسة، مات سنة,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P368-C002-E4255,B,3076,,368,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P368-C002-E4255,E1,3076,,368,أخطأ,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P368-C002-E4255,E1,3076,,368,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_or_identity_error
 S3076-P368-C002-E4255,E2,8246,2,397,٤٢٥٥ - عبد الوهاب بن أبي بكر المدني، وكيل الزهري: ثقة، من السابعة، قال أبو داود: هو ابن بخت، وقال الدارقطني: من زعم أنه ,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P368-C004-E4256,B,3076,,368,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P368-C004-E4256,E2,8246,2,397,٤٢٥٦ - عبد الوهاب بن سعيد بن عطية السلمي، أبو محمد الدمشقي، يعرف بوهب: صدوق، من العاشرة. س ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -10457,12 +10452,11 @@ S3076-P397-C012-E4681,E2,8246,3,34,٤٦٨١ - علقمة بن قيس بن عبد
 S3076-P397-C013-E4682,B,3076,,397,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P397-C013-E4682,E2,8246,3,34,٤٦٨٢ - علقمة بن مرثد، بفتح الميم وسكون الراء بعدها مثلثة، الحضرمي، أبو الحارث الكوفي: ثقة، من السادسة. ع.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P397-C014-E4683,B,3076,,397,مقبول أخطأ من عده في الصحابة,BILGIN-R6-MAQBUL,40.000000,observed,none
-S3076-P397-C014-E4683,E1,3076,,397,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P397-C014-E4683,E2,8246,3,34,مجهول الحال,TAHRIR-R7-YUTABAR-OR-MASTUR,-5.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P397-C015-E4684,B,3076,,397,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P397-C015-E4684,E2,8246,3,34,لم يسمع من أبيه,TAHRIR-QUALIFICATION-QAWLUHU,0.000000,observed_qualification,none
 S3076-P397-C016-E4685,B,3076,,397,ثقة ثبت,RULE-R2-COMPOUND,95.000000,observed,none
-S3076-P397-C016-E4685,E1,3076,,397,أخطأ,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P397-C016-E4685,E1,3076,,397,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P397-C016-E4685,E2,8246,3,35,٤٦٨٥ - علقمة بن وقاص، بتشديد القاف، الليثي، المدني: ثقة ثبت، من الثانية، أخطأ من زعم أن له صحبة، وقيل؛ إنه ولد في عهد ال,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P398-C002-E4686,B,3076,,398,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P398-C002-E4686,E2,8246,3,35,ثقة,TAHRIR-R3-THIQAH,15.000000,observed_dissent,band_replaced_no_e1_inheritance
@@ -10760,7 +10754,6 @@ S3076-P406-C011-E4817,B,3076,,406,ضعيف,RULE-R8-DAIF,30.000000,observed,none
 S3076-P406-C011-E4817,E2,8246,3,57,٤٨١٧ - علي بن يزيد بن أبي زياد (١) الألهاني، أبو عبد الملك الدمشقي، صاحب القاسم بن عبد الرحمن: ضعيف، من السادسة، مات سنة,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P406-C011-E4817,E2,8246,3,57,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_agreement,score_shift_daif_no_itibar
 S3076-P406-C012-E4818,B,3076,,406,غلط شعبة في اسمه وكنيته قاله الدارقطني وغيره مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
-S3076-P406-C012-E4818,E1,3076,,406,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P406-C012-E4818,E2,8246,3,57,ثقة,TAHRIR-R3-THIQAH,45.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P407-C003-E4819,B,3076,,407,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P407-C003-E4819,E2,8246,3,58,٤٨١٩ - عمار بن الحسن الهلالي، أبو الحسن الرازي، نزيل نسا: ثقة، من العاشرة، مات سنة اثنتين وأربعين، وله ثلاث وثمانون سنة.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -10843,7 +10836,6 @@ S3076-P409-C013-E4855,E2,8246,3,65,صدوق حسن الحديث,TAHRIR-R4-SADUQ-
 S3076-P409-C014-E4856,B,3076,,409,ثقة ثبت,RULE-R2-COMPOUND,95.000000,observed,none
 S3076-P409-C014-E4856,E2,8246,3,65,٤٨٥٦ - عمارة بن عمير التيمي، كوفي: ثقة ثبت، من الرابعة، مات بعد المئة، وقيل: قبلها بسنتين. ع.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P409-C015-E4857,B,3076,,409,مجهول غلط من عده صحابيا بل هو,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P409-C015-E4857,E1,3076,,409,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P409-C015-E4857,E2,8246,3,65,٤٨٥٧ - عمارة بن غراب، بضم المعجمة، اليحصبي، بفتح التحتانية وسكون المهملة وفتح الصاد المهملة بعدها موحدة: تابعي، مجهول، غ,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P409-C016-E4858,B,3076,,409,لا بأس به وروايته عن أنس مرسلة,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
 S3076-P409-C016-E4858,E2,8246,3,65,ثقة,TAHRIR-R3-THIQAH,85.000000,observed_first_grade,none
@@ -10872,7 +10864,7 @@ S3076-P410-C011-E4868,E2,8246,3,67,صدوق,TAHRIR-R4-SADUQ-HASAN,30.000000,obse
 S3076-P410-C012-E4869,B,3076,,410,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P410-C012-E4869,E2,8246,3,67,مجهول الحال,TAHRIR-R7-YUTABAR-OR-MASTUR,-5.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P410-C013-E4870,B,3076,,410,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P410-C013-E4870,E1,3076,,410,أخطأ,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P410-C013-E4870,E1,3076,,410,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P410-C013-E4870,E2,8246,3,67,٤٨٧٠ - عمر بن ثابت الأنصاري الخزرجي، المدني: ثقة، من الثالثة، أخطأ من عده في الصحابة. م ٤.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P410-C014-E4871,B,3076,,410,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P410-C014-E4871,E2,8246,3,67,مقبول [Intro p. 45: ضعيف يعتبر به],TAHRIR-AGREED-MAQBUL-TO-R7,-5.000000,observed_maqbul_to_r7,band_replaced_maqbul_p45_no_e1_inheritance
@@ -11406,7 +11398,7 @@ S3076-P426-C016-E5110,E2,8246,3,107,له أوهام,TAHRIR-QUALIFICATION-QAWLUHU
 S3076-P426-C017-E5111,B,3076,,426,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P426-C017-E5111,E2,8246,3,107,٥١١١ - عمرو بن مرزوق الواشحي، بمعجمة مكسورة ثم مهملة، بصري: صدوق، من الثامنة. تمييز.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P426-C019-E5112,B,3076,,426,ثقة عابد كان لا,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P426-C019-E5112,E1,3076,,426,يدلس,E1-QUAL_YUDALLIS,0.000000,not_applicable,baseline_abstained
+S3076-P426-C019-E5112,E1,3076,,426,يدلس,E1-QUAL_YUDALLIS,0.000000,not_applicable,negated_qualifier
 S3076-P426-C019-E5112,E2,8246,3,107,٥١١٢ - عمرو بن مرة بن عبد الله بن طارق الجملي، بفتح الجيم والميم، المرادي، أبو عبد الله الكوفي، الأعمى: ثقة عابد، كان لا,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P427-C001-E5113,B,3076,,427,صحابي مات بالشام في خلافة معاوية,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
 S3076-P427-C001-E5113,E2,8246,3,107,٥١١٣ - عمرو بن مرة الجهني، أبو طلحة، أو أبو مريم: صحابي، مات بالشام، في خلافة معاوية. ت.,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
@@ -12151,7 +12143,7 @@ S3076-P449-C007-E5448,E2,8246,3,167,مقبول [Intro p. 45: ضعيف يعتبر
 S3076-P449-C008-E5449,B,3076,,449,معروف,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
 S3076-P449-C008-E5449,E2,8246,3,167,ثقة,TAHRIR-R3-THIQAH,85.000000,observed_first_grade,none
 S3076-P449-C009-E5450,B,3076,,449,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
-S3076-P449-C009-E5450,E1,3076,,449,خطأ,E1-QUAL_YUKHTI_YAHIM,-5.000000,observed,none
+S3076-P449-C009-E5450,E1,3076,,449,خطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_or_identity_error
 S3076-P449-C009-E5450,E2,8246,3,167,٥٤٥٠ - القاسم بن أمية الحذاء، بالمهملة والذال المعجمة الثقيلة، بصري: صدوق، من كبار العاشرة، ضعفه ابن حبان بلا مستند، ووق,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P449-C010-E5451,B,3076,,449,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P449-C010-E5451,E2,8246,3,168,٥٤٥١ - القاسم بن أبي أيوب الأسدي الأعرج الواسطي، أصبهاني الأصل: ثقة، من السادسة، وزعم أبو نعيم أنه القاسم بن بهرام، وفرق,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -13325,7 +13317,7 @@ S3076-P485-C013-E5984,E2,8246,3,261,٥٩٨٤ - محمد بن عاصم بن جع�
 S3076-P485-C014-E5985,B,3076,,485,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
 S3076-P485-C014-E5985,E2,8246,3,261,٥٩٨٥ - محمد بن عاصم الرازي، صدوق، من الحادية عشرة. تمييز.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P485-C015-E5986,B,3076,,485,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
-S3076-P485-C015-E5986,E1,3076,,485,تغير,E1-QUAL_IKHTALATA,-6.250000,observed,none
+S3076-P485-C015-E5986,E1,3076,,485,تغير,E1-QUAL_IKHTALATA,0.000000,not_applicable,teacher_confusion
 S3076-P485-C015-E5986,E2,8246,3,261,٥٩٨٦ - محمد بن عاصم الثقفي، الأصبهاني، العابد: صدوق إلا أن سماعه من ابن عيينة بعد أن تغير، من صغار العاشرة، مات سنة اثنت,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P485-C016-E5987,B,3076,,485,صدوق من الشافعية,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
 S3076-P485-C016-E5987,E1,3076,,485,الفقيه,E1-PRAISE_FAQIH,0.000000,not_applicable,baseline_abstained
@@ -14461,7 +14453,7 @@ S3076-P521-C009-E6497,B,3076,,521,صحابي قليل الحديث,RULE-R1-COMPA
 S3076-P521-C009-E6497,E1,3076,,521,قليل الحديث,E1-QUAL_QALIL_HADITH,0.000000,not_applicable,inside_rank_span
 S3076-P521-C009-E6497,E2,8246,3,350,٦٤٩٧ - محجن بن أبي محجن الديلي: صحابي قليل الحديث. س.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P521-C010-E6498,B,3076,,521,مجهول,RULE-R9-MAJHUL,27.000000,observed,none
-S3076-P521-C010-E6498,E1,3076,,521,أخطأ,E1-QUAL_YUKHTI_YAHIM,-0.800000,observed,none
+S3076-P521-C010-E6498,E1,3076,,521,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P521-C010-E6498,E2,8246,3,350,٦٤٩٨ - محدوج، بمهملة ساكنة وآخره جيم، الذهلي (١): مجهول، من السادسة، أخطأ من زعم أن له صحبة. ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P521-C011-E6499,B,3076,,521,متروك,RULE-R10-STANDALONE,15.000000,observed,none
 S3076-P521-C011-E6499,E2,8246,3,350,٦٤٩٩ - محرر، وزن محمد على الصحيح، ابن (هارون بن) (٢) عبد الله التيمي: متروك، من السابعة. ت.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -15128,7 +15120,7 @@ S3076-P540-C013-E6800,E2,8246,3,401,٦٨٠٠ - معقل بن يسار المزن
 S3076-P540-C014-E6801,B,3076,,540,مجهول,RULE-R9-MAJHUL,27.000000,observed,none
 S3076-P540-C014-E6801,E2,8246,3,401,٦٨٠١ - معقل الخثعمي: مجهول، من الثالثة. د.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P540-C015-E6802,B,3076,,540,ثقة ثبت,RULE-R2-COMPOUND,95.000000,observed,none
-S3076-P540-C015-E6802,E1,3076,,540,يخطىء,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P540-C015-E6802,E1,3076,,540,يخطىء,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,negated_qualifier
 S3076-P540-C015-E6802,E2,8246,3,401,٦٨٠٢ - معلى، بفتح ثانيه وتشديد اللام المفتوحة، ابن أسد العمي، بفتح المهملة وتشديد الميم، أبو الهيثم البصري، أخو بهز: ثقة,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P541-C001-E6803,B,3076,,541,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P541-C001-E6803,E2,8246,3,401,صدوق حسن الحديث,TAHRIR-R4-SADUQ-HASAN,30.000000,observed_dissent,band_replaced_no_e1_inheritance
@@ -15139,7 +15131,6 @@ S3076-P541-C003-E6805,B,3076,,541,متهم بالوضع وقد,RULE-R11-ACCUSATI
 S3076-P541-C003-E6805,E1,3076,,541,رمي بالرفض,E1-QUAL_RUMIYA_BIDAH,0.000000,observed,descriptive_evidence_only
 S3076-P541-C003-E6805,E2,8246,3,402,٦٨٠٥ - معلى بن عبد الرحمن الواسطي: متهم بالوضع وقد رمي بالرفض، من التاسعة. ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P541-C004-E6806,B,3076,,541,ثقة سني فقيه طلب للقضاء فامتنع أخطأ من زعم أن أحمد رماه بالكذب,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P541-C004-E6806,E1,3076,,541,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P541-C004-E6806,E1,3076,,541,فقيه,E1-PRAISE_FAQIH,0.000000,not_applicable,inside_rank_span
 S3076-P541-C004-E6806,E2,8246,3,402,٦٨٠٦ - معلى بن منصور الرازي، أبو يعلى، نزيل بغداد: ثقة سني فقيه، طلب للقضاء فامتنع، أخطأ من زعم أن أحمد رماه بالكذب، من ,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P541-C005-E6807,B,3076,,541,اتفق النقاد على تكذيبه,RULE-R12-APPLIED,0.000000,observed,none
@@ -15160,7 +15151,6 @@ S3076-P541-C012-E6813,E2,8246,3,404,٦٨١٣ - معمر بن مخلد السرو
 S3076-P541-C013-E6814,B,3076,,541,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P541-C013-E6814,E2,8246,3,404,ثقة,TAHRIR-R3-THIQAH,45.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P541-C014-E6815,B,3076,,541,ثقة فاضل أخطأ الأزدي في تليينه وأخطأ من زعم أن البخاري أخرج له,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P541-C014-E6815,E1,3076,,541,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P541-C014-E6815,E2,8246,3,404,٦٨١٥ - معمر، بالتشديد، ابن سليمان النخعي، أبو عبد الله الرقي: ثقة فاضل، أخطأ الأزدي في تليينه، وأخطأ من زعم أن البخاري أ,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P541-C015-E6816,B,3076,,541,منكر الحديث,RULE-R10-STANDALONE,15.000000,observed,none
 S3076-P541-C015-E6816,E2,8246,3,404,٦٨١٦ - معمر بن محمد بن عبيد الله بن أبي رافع الهاشمي مولاهم، المدني: منكر الحديث، من كبار العاشرة. ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -15245,7 +15235,7 @@ S3076-P544-C001-E6853,E2,8246,3,412,٦٨٥٣ - المغيرة بن نهيك ال
 S3076-P544-C004-E6854,B,3076,,544,ضعيف,RULE-R8-DAIF,30.000000,observed,none
 S3076-P544-C004-E6854,E2,8246,3,412,متروك,TAHRIR-R10-MATRUK-OR-JIDDAN,-15.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P544-C005-E6855,B,3076,,544,ضعيف,RULE-R8-DAIF,30.000000,observed,none
-S3076-P544-C005-E6855,E1,3076,,544,أخطأ,E1-QUAL_YUKHTI_YAHIM,-0.600000,observed,none
+S3076-P544-C005-E6855,E1,3076,,544,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P544-C005-E6855,E2,8246,3,412,٦٨٥٥ - المفضل بن عبد الله الكوفي: ضعيف، من الثامنة، وقال أبو حاتم: هو ابن صالح، أخطأ بعضهم في اسم أبيه. ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P544-C005-E6855,E2,8246,3,412,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_agreement,score_shift_daif_no_itibar
 S3076-P544-C006-E6856,B,3076,,544,صدوق,RULE-R4-LOWER-PRAISE,70.000000,observed,none
@@ -15254,7 +15244,6 @@ S3076-P544-C007-E6857,B,3076,,544,ضعيف,RULE-R8-DAIF,30.000000,observed,none
 S3076-P544-C007-E6857,E2,8246,3,412,٦٨٥٧ - المفضل بن فضالة بن أبي أمية، أبو مالك البصري، أخو مبارك: ضعيف، من السابعة. د ت ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P544-C007-E6857,E2,8246,3,412,ضعيف [Intro p. 47: لا يصلح للمتابعات والشواهد],TAHRIR-DAIF-NO-ITIBAR-P47,-8.000000,observed_agreement,score_shift_daif_no_itibar
 S3076-P544-C008-E6858,B,3076,,544,ثقة فاضل عابد أخطأ ابن سعد في تضعيفه,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P544-C008-E6858,E1,3076,,544,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P544-C008-E6858,E2,8246,3,412,٦٨٥٨ - المفضل بن فضالة بن عبيد بن ثمامة القتباني، بكسر القاف وسكون المثناة بعدها موحدة، المصري، أبو معاوية القاضي: ثقة ف,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P544-C009-E6859,B,3076,,544,مستور,RULE-R7-MASTUR,35.000000,observed,none
 S3076-P544-C009-E6859,E2,8246,3,412,٦٨٥٩ - المفضل بن فضالة المصري، حفيد الذي قبله: مستور، من العاشرة، مات سنة اثنتين وخمسين. تمييز.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -15273,7 +15262,6 @@ S3076-P544-C015-E6865,E2,8246,3,413,مجهول الحال,TAHRIR-R7-YUTABAR-OR-M
 S3076-P544-C016-E6866,B,3076,,544,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P544-C016-E6866,E2,8246,3,413,مجهول,TAHRIR-R9-MAJHUL,-13.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P544-C017-E6867,B,3076,,544,صدوق فاضل أخطأ الأزدي في زعمه أن وكيعا كذبه وإنما كذب الذي بعده,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P544-C017-E6867,E1,3076,,544,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P544-C017-E6867,E2,8246,3,413,٦٨٦٧ - مقاتل بن حيان النبطي، بفتح النون والموحدة، أبو بسطام البلخي، الخزاز، بمعجمة وزاءين منقوطتين (١): صدوق فاضل، أخطأ ,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P545-C001-E6868,B,3076,,545,كذبوه وهجروه,RULE-R12-PLURAL-KADHABUHU,0.000000,observed,none
 S3076-P545-C001-E6868,E2,8246,3,413,٦٨٦٨ - مقاتل بن سليمان بن بشير الأزدي الخراساني، أبو الحسن البلخي، نزيل مرو، ويقال له: ابن دوال دوز: كذبوه وهجروه ورمي ب,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -15354,7 +15342,7 @@ S3076-P547-C002-E6902,E2,8246,3,419,مجهول,TAHRIR-R9-MAJHUL,-13.000000,obser
 S3076-P547-C004-E6903,B,3076,,547,ضعيف,RULE-R8-DAIF,30.000000,observed,none
 S3076-P547-C004-E6903,E2,8246,3,419,ضعيف يعتبر به في المتابعات والشواهد,TAHRIR-R7-YUTABAR-OR-MASTUR,5.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P547-C005-E6904,B,3076,,547,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P547-C005-E6904,E1,3076,,547,أخطأ,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P547-C005-E6904,E1,3076,,547,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_subject
 S3076-P547-C005-E6904,E2,8246,3,419,٦٩٠٤ - منصور بن عبد الرحمن بن طلحة بن الحارث العبدري، الحجبي المكي، وهو ابن صفية بنت شيبة: ثقة، من الخامسة، أخطأ ابن حزم,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P547-C006-E6905,B,3076,,547,صدوق يهم,RULE-R5-QUALIFIED-SADUQ,45.000000,observed,none
 S3076-P547-C006-E6905,E1,3076,,547,يهم,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
@@ -15364,7 +15352,7 @@ S3076-P547-C007-E6906,E2,8246,3,420,مجهول,TAHRIR-R9-MAJHUL,-13.000000,obser
 S3076-P547-C008-E6907,B,3076,,547,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P547-C008-E6907,E2,8246,3,420,٦٩٠٧ - منصور بن أبي مزاحم: بشير التركي، أبو نصر البغدادي الكاتب: ثقة، من العاشرة، مات سنة خمس وثلاثين، وهو ابن ثمانين سن,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P547-C009-E6908,B,3076,,547,ثقة ثبت,RULE-R2-COMPOUND,95.000000,observed,none
-S3076-P547-C009-E6908,E1,3076,,547,يدلس,E1-QUAL_YUDALLIS,-1.250000,observed,none
+S3076-P547-C009-E6908,E1,3076,,547,يدلس,E1-QUAL_YUDALLIS,0.000000,not_applicable,negated_qualifier
 S3076-P547-C009-E6908,E2,8246,3,420,٦٩٠٨ - منصور بن المعتمر بن عبد الله السلمي، أبو عتاب، بمثناة ثقيلة ثم موحدة، الكوفي: ثقة ثبت وكان لا يدلس، من طبقة الأعم,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P547-C010-E6909,B,3076,,547,مستور,RULE-R7-MASTUR,35.000000,observed,none
 S3076-P547-C010-E6909,E2,8246,3,420,٦٩٥٩ - منصور بن المهاجر الواسطي، أبو الحسن، بياع القصب، ويقال له: البزوري، بضم الموحدة والزاي: مستور، من كبار العاشرة. ف,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -16564,8 +16552,8 @@ S3076-P583-C016-E7452,E2,8246,4,66,ثقة,TAHRIR-R3-THIQAH,85.000000,observed_fi
 S3076-P583-C018-E7453,B,3076,,583,متروك,RULE-R10-STANDALONE,15.000000,observed,none
 S3076-P583-C018-E7453,E2,8246,4,66,٧٤٥٣ - الوليد بن محمد الموقري، بضم الميم وبقاف مفتوحة، أبو بشر البلقاوي، مولى بني أمية: متروك، من الثامنة، مات سنة اثنتي,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P583-C019-E7454,B,3076,,583,ثقة ثبت,RULE-R2-COMPOUND,95.000000,observed,none
-S3076-P583-C019-E7454,E1,3076,,583,يدلس,E1-QUAL_YUDALLIS,-1.250000,observed,none
-S3076-P583-C019-E7454,E1,3076,,583,يخطىء,E1-QUAL_YUKHTI_YAHIM,-2.000000,observed,none
+S3076-P583-C019-E7454,E1,3076,,583,يدلس,E1-QUAL_YUDALLIS,0.000000,not_applicable,negated_qualifier
+S3076-P583-C019-E7454,E1,3076,,583,يخطىء,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,negated_qualifier
 S3076-P583-C019-E7454,E2,8246,4,66,٧٤٥٤ - الوليد بن مزيد، بفتح الميم وسكون الزاي وفتح التحتانية، العذري، بضم المهملة وسكون المعجمة، أبو العباس البيروتي، بف,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P584-C001-E7455,B,3076,,584,ثقة,RULE-R3-STANDALONE,85.000000,observed,none
 S3076-P584-C001-E7455,E2,8246,4,67,٧٤٥٥ - الوليد بن مسلم بن شهاب العنبري، أبو بشر البصري: ثقة، من الخامسة. رم دس.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -17170,7 +17158,6 @@ S3076-P601-C013-E7722,E2,8246,4,111,٧٧٢٢ - يزيد بن سلمة بن يز�
 S3076-P601-C014-E7723,B,3076,,601,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
 S3076-P601-C014-E7723,E2,8246,4,111,مستور,TAHRIR-R7-YUTABAR-OR-MASTUR,-5.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P601-C015-E7724,B,3076,,601,ثقة أخطأ الحاكم في تضعيفه,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P601-C015-E7724,E1,3076,,601,أخطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P601-C015-E7724,E1,3076,,601,الفقيه,E1-PRAISE_FAQIH,0.000000,not_applicable,baseline_abstained
 S3076-P601-C015-E7724,E2,8246,4,111,٧٧٢٤ - يزيد بن السمط الصنعاني، أبو السمط الدمشقي، الفقيه: ثقة أخطأ الحاكم في تضعيفه، من كبار االتاسعة، مات بعد الستين. م,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P601-C016-E7725,B,3076,,601,مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
@@ -17317,7 +17304,7 @@ S3076-P606-C003-E7791,E2,8246,4,122,٧٧٩١ - يزيد بن يزيد بن جا�
 S3076-P606-C004-E7792,B,3076,,606,مجهول,RULE-R9-MAJHUL,27.000000,observed,none
 S3076-P606-C004-E7792,E2,8246,4,122,٧٧٩٢ - يزيد بن يزيد بن جابر الرقي، عن يزيد بن الأصم، قيل: هو الذي قبله، وقيل: آخر، من أهل الرقة: مجهول، من السابعة. د.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P606-C005-E7793,B,3076,,606,ثقة عابد,RULE-R3-STANDALONE,85.000000,observed,none
-S3076-P606-C005-E7793,E1,3076,,606,لينه,E1-QUAL_LIN,-2.500000,observed,none
+S3076-P606-C005-E7793,E1,3076,,606,لينه,E1-QUAL_LIN,0.000000,not_applicable,refuted_criticism
 S3076-P606-C005-E7793,E2,8246,4,122,٧٧٩٣ - يزيد بن أبي يزيد الضبعي، بضم المعجمة وفتح الموحدة بعدها مهملة، مولاهم، أبو الأزهر البصري، يعرف بالرشك، بكسر الراء,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P606-C006-E7794,B,3076,,606,ضعيف,RULE-R8-DAIF,30.000000,observed,none
 S3076-P606-C006-E7794,E2,8246,4,122,٧٧٩٤ - يزيد بن يوسف الرحبي، بفتح الراء والمهملة بعدها موحدة، الصنعاني، صنعاء دمشق: ضعيف، من التاسعة. ت.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -18032,7 +18019,7 @@ S3076-P644-C010-E8127,E2,8246,4,203,٨١٢٧ - أبو سعيد الخير، بف
 S3076-P644-C011-E8128,B,3076,,644,مجهول,RULE-R9-MAJHUL,27.000000,observed,none
 S3076-P644-C011-E8128,E2,8246,4,203,٨١٢٨ - أبو سعيد الحميري، شامي: مجهول، من الثالثة، وروايته عن معاذ بن جبل مرسلة. د ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P644-C014-E8129,B,3076,,644,صحابي اسمه عمارة ابن سعيد أو بالعكس وصححه ابن حبان,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P644-C014-E8129,E1,3076,,644,خطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,baseline_abstained
+S3076-P644-C014-E8129,E1,3076,,644,خطأ,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,third_party_or_identity_error
 S3076-P644-C014-E8129,E2,8246,4,204,٨١٢٩ - أبو سعيد الزرقي الأنصاري، وقيل: أبو سعد: صحابي، اسمه عمارة بن سعيد، أو بالعكس، وصححه ابن حبان، وقيل: عامر بن مسعو,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P644-C015-E8130,B,3076,,644,مجهول لا يعرف اسمه,GUARD-UNKNOWN-NEGATION,0.000000,abstained,none
 S3076-P644-C015-E8130,E2,8246,4,204,٨١٣٠ - أبو سعيد الشامي، عن وراد، مولى المغيرة بن شعبة، قيل: هو كثير رضيع عائشة، وقيل: عمرو بن سعيد الثقفي، وقيل: عبد ربه,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
@@ -18218,7 +18205,6 @@ S3076-P655-C008-E8217,E2,8246,4,229,٨٢١٧ - أبو عبد الله: صحاب�
 S3076-P655-C009-E8218,B,3076,,655,مستور,RULE-R7-MASTUR,35.000000,observed,none
 S3076-P655-C009-E8218,E2,8246,4,230,مجهول الحال,TAHRIR-R7-YUTABAR-OR-MASTUR,0.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P655-C010-E8219,B,3076,,655,وهو غلط مقبول,BILGIN-R6-MAQBUL,40.000000,observed,none
-S3076-P655-C010-E8219,E1,3076,,655,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P655-C010-E8219,E2,8246,4,230,مستور,TAHRIR-R7-YUTABAR-OR-MASTUR,-5.000000,observed_dissent,band_replaced_no_e1_inheritance
 S3076-P655-C013-E8220,B,3076,,655,مجهول,RULE-R9-MAJHUL,27.000000,observed,none
 S3076-P655-C013-E8220,E2,8246,4,230,٨٢٢٠ - أبو عبد الرحمن التميمي، شامي: مجهول، من السادسة. ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
@@ -18416,7 +18402,6 @@ S3076-P666-C014-E8314,E2,8246,4,256,مقبول [Intro p. 45: ضعيف يعتبر
 S3076-P666-C017-E8315,B,3076,,666,مجهول,RULE-R9-MAJHUL,27.000000,observed,none
 S3076-P666-C017-E8315,E2,8246,4,256,٨٣١٥ - أبو قرة الأسدي، من أهل البادية: مجهول، من السادسة. ت.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
 S3076-P667-C001-E8316,B,3076,,667,وهو غلط ثقة,GUARD-UNCOVERED-COMPLEX,0.000000,abstained,none
-S3076-P667-C001-E8316,E1,3076,,667,غلط,E1-QUAL_YUKHTI_YAHIM,0.000000,not_applicable,inside_rank_span
 S3076-P667-C001-E8316,E2,8246,4,257,٨٣١٦ - أبو قيس، مولى عمرو بن العاص، اسمه: عبد الرحمن بن ثابت، وقيل: ابن الحكم - وهو غلط -: ثقة، من الثانية، مات قديما، س,TAHRIR-AGREED-UNRANKED-TAQRIB,0.000000,abstained,none
 S3076-P668-C004-E8317,B,3076,,668,صحابي,RULE-R1-COMPANION,100.000000,observed,none
 S3076-P668-C004-E8317,E2,8246,4,259,٨٣١٧ - أبو كاهل الأحمسي، بمهملتين، يقال: اسمه قيس بن عائذ، وقيل: عبد الله بن مالك: صحابي، له حديث. س ق.,TAHRIR-AGREED-AS-TAQRIB,0.000000,observed_agreement,none
