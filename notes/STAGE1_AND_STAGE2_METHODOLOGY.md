@@ -69,10 +69,10 @@ flowchart TD
 
 ---
 
-## 2. Stage 2: Evaluative Stance Analysis (ESA) Module
+## 2. Stage 2: Entry-Level Evaluative Stance Classification (ESA) Module
 
-- **Script:** [run_stage2_semantic_benchmarks_v2.py](../experiments/run_stage2_semantic_benchmarks_v2.py)
-- **Results:** [STAGE2_RESULTS_SUMMARY_V2.md](../results/stage2_semantic_benchmarks_v2_2026-11-20/STAGE2_RESULTS_SUMMARY_V2.md) & [STAGE2_MODEL_COMPARISON_V2.csv](../results/stage2_semantic_benchmarks_v2_2026-11-20/STAGE2_MODEL_COMPARISON_V2.csv)
+- **Script:** [run_stage2_esa_benchmarks_v3.py](../experiments/run_stage2_esa_benchmarks_v3.py) (frozen `v2` snapshot in `run_stage2_semantic_benchmarks_v2.py`)
+- **Task Scope Note (`simplified` charter §6):** Stage 2 performs **entry-level evaluative stance classification** (predicting *Taḥrīr*'s ordinal verdict and editorial shift from full *Taqrīb* entries + metadata), rather than span-level quote segmentation or speaker/target attribution.
 
 ### 2.1 Modality Isolation & Dual-Target Formulation
 - **Strict Modality Firewall:** Stage 2 uses **only** `taqrib_text_verbatim` and structured *Taqrīb* metadata (`X_meta`). All graph columns (`graph_*`, `sanad_*`, `bukhari_*`, `nbr_*`) and *Taḥrīr* columns are excluded and asserted absent.

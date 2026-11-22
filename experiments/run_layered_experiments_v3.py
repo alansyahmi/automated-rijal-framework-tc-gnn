@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Unified Track R + Track L Experiment Suite (P5, taqrib-oriented-v2 / v3).
+"""Unified Track R + Track L Experiment Suite (P5, taqrib-oriented-simplified / v3.1).
 
-Runs on CPU for all deterministic Track R experiments (Exp A: B, Exp B-det: B+E1,
-Exp C: B+E1+E2 vs al-Kashif only, E1 sensitivity across 4 presets, graph homophily,
-coverage/missingness accounting, and slice breakdowns). If GPU Stage 2 ESA and/or
-Stage 3 TC-GNN v3 output directories exist (auto-detected or passed via CLI),
-gracefully merges Exp B-learned and Exp D (TC-GNN G4a + model_estimate rows)
-without overwriting any observed scholarly verdicts.
+Runs on CPU for all deterministic Track R experiments (Exp A: B + Majority + LookupTable,
+Exp B-det: B+E1 evidence-first local bounds per DEC-011, Exp C: B+E1+E2 vs al-Kashif only,
+E1 sensitivity across 4 presets, graph homophily, coverage/missingness accounting, and slice
+breakdowns). If GPU Stage 2 entry-level ESA and/or Stage 3 TC-GNN v3 output directories exist
+(auto-detected or passed via CLI), gracefully merges Exp B-learned and Exp D (TC-GNN G4a +
+model_estimate rows) without overwriting any observed scholarly verdicts.
 """
 
 from __future__ import annotations
@@ -1038,6 +1038,7 @@ def run_suite(
         "# Layered 0–100 Narrator Score: Experiments A–D Report (v3)",
         "",
         f"- **Generated (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%SZ')}",
+        "- **Stage 2 Task Note:** Stage 2 (`Exp_B_ESA_Learned`) performs **entry-level evaluative stance classification** predicting *Taḥrīr* verdicts/shifts from full *Taqrīb* entries (`3076`) + metadata (not per-quote speaker/target extraction).",
         f"- **Stage 2 ESA Dir:** `{to_posix_relative(stage2_dir, ROOT) if stage2_dir and stage2_dir.exists() else 'NOT YET RUN (CUDA GPU required)'}`",
         f"- **Stage 3 TC-GNN Dir:** `{to_posix_relative(stage3_dir, ROOT) if stage3_dir and stage3_dir.exists() else 'NOT YET RUN (CUDA GPU required)'}`",
         "",

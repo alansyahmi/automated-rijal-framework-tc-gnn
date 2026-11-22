@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Stage 2: Evaluative Stance Analysis (ESA) Benchmarks (taqrib-oriented-v2 / v3).
+"""Stage 2: Entry-Level Evaluative Stance Classification (ESA) Benchmarks (v3).
 
-Evaluates strictly on Ibn Hajar's Taqrib al-Tahdhib (3076) text + structured metadata
-(ZERO graph columns, ZERO Tahrir text/verdict leakage) for Dual-Target prediction:
+Evaluates strictly on full Ibn Hajar Taqrib al-Tahdhib (3076) entries + structured metadata
+(ZERO graph columns, ZERO Tahrir text/verdict leakage) for entry-level Dual-Target prediction
+(this stage predicts whole-entry Tahrir verdicts/shifts, not quote-level speaker/target spans):
   - Target A (Tahrir Ordinal): Tahrir Bilgin-grounded 1-12 rank (score_E2 target)
   - Target B (3-Class Shift): upgraded / unchanged / downgraded vs Baseline B (score_B)
 
@@ -998,9 +999,10 @@ def main() -> None:
         else ("MPS (AMD Radeon / Apple Metal)" if device.type == "mps" else "CPU")
     )
     md_lines = [
-        "# Stage 2: Evaluative Stance Analysis (ESA) Benchmark Report (v3)",
+        "# Stage 2: Entry-Level Evaluative Stance Classification (ESA) Benchmark Report (v3)",
         "",
         f"- **Generated (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%SZ')}",
+        f"- **Task Scope:** Entry-level prediction of *Taḥrīr* ordinal verdicts & 3-class shifts from full *Taqrīb* entries (`3076`) + metadata (not statement/speaker attribution).",
         f"- **Elapsed:** {time.time() - t0:.1f}s | **Device:** {dev_label}",
         f"- **Clean Cohort (excluding `missing` + `suspect_alignment`):** `train = {len(idx_train)}`, `val = {len(idx_val)}`, `test = {len(idx_test)}`.",
         f"- **Taqrīb Abstained / Taḥrīr Graded (`observed_first_grade`) Slice:** `N = {len(idx_first_grade)}`.",
