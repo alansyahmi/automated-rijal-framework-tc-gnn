@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>End-to-End Project Journey — Automated Rijāl Reliability Framework</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    :root {
+      --background: #f8fafc;
+      --content: #f1f5f9;
+      --card: #ffffff;
+      --border: #cbd5e1;
+      --foreground: #0f172a;
+      --muted-foreground: #475569;
+      --primary: #2563eb;
+      --primary-foreground: #ffffff;
+      --chart-1: #2563eb;
+      --chart-2: #059669;
+      --chart-3: #dc2626;
+      --chart-4: #d97706;
+      --chart-5: #7c3aed;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0b1120;
+        --content: #111827;
+        --card: #1e293b;
+        --border: #334155;
+        --foreground: #f8fafc;
+        --muted-foreground: #94a3b8;
+        --primary: #60a5fa;
+        --primary-foreground: #0f172a;
+        --chart-1: #60a5fa;
+        --chart-2: #34d399;
+        --chart-3: #f87171;
+        --chart-4: #fbbf24;
+        --chart-5: #a78bfa;
+      }
+    }
+    .tab-btn[aria-selected="true"] {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      border-color: var(--primary);
+    }
+    .phase-card[data-active="true"] {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+    .bar-fill {
+      transition: width 280ms ease;
+    }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4 md:p-6">
+  <div class="max-w-6xl mx-auto space-y-5">
+
+    <!-- Header -->
+    <header class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-3">
+      <div class="flex flex-wrap items-start justify-between gap-4">
+        <div class="space-y-1">
+          <div class="text-xs font-mono uppercase tracking-wider text-[var(--muted-foreground)]">
+            taqrib-oriented-v2 · b7dd6f6 · Verified End-to-End Atlas
+          </div>
+          <h1 class="text-xl md:text-2xl font-bold tracking-tight">
+            From Raw Classical Texts to Audited 0–100 Narrator Scores
+          </h1>
+          <p class="text-sm text-[var(--muted-foreground)] max-w-3xl">
+            How <span class="font-medium text-[var(--foreground)]">8,827</span> narrators in Ibn Ḥajar's <em>Taqrīb al-Tahdhīb</em> (<code class="text-xs">3076</code>) were aligned with <em>Taḥrīr</em> (<code class="text-xs">8246</code>), calibrated onto classical <em>ḥukm</em> thresholds, modelled with Evaluative Stance &amp; Graph Learning, audited against hidden inflation bugs, and verified externally in <em>al-Kāshif</em> (<code class="text-xs">1616</code>).
+          </p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+          <div class="border border-[var(--border)] rounded-lg px-3 py-2">
+            <div class="text-base font-bold font-mono tabular-nums">99.95%</div>
+            <div class="text-xs text-[var(--muted-foreground)]">3076↔8246 Match</div>
+          </div>
+          <div class="border border-[var(--border)] rounded-lg px-3 py-2">
+            <div class="text-base font-bold font-mono tabular-nums" style="color: var(--chart-1)">0.7262</div>
+            <div class="text-xs text-[var(--muted-foreground)]">M3b Shift MF1</div>
+          </div>
+          <div class="border border-[var(--border)] rounded-lg px-3 py-2">
+            <div class="text-base font-bold font-mono tabular-nums" style="color: var(--chart-3)">0.0474</div>
+            <div class="text-xs text-[var(--muted-foreground)]">12-Rank Homophily</div>
+          </div>
+          <div class="border border-[var(--border)] rounded-lg px-3 py-2">
+            <div class="text-base font-bold font-mono tabular-nums" style="color: var(--chart-2)">76.03%</div>
+            <div class="text-xs text-[var(--muted-foreground)]">Est. vs Kāshif*</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex flex-wrap gap-2 pt-2 border-t border-[var(--border)]" role="tablist">
+        <button class="tab-btn px-3 py-1.5 rounded-lg border border-[var(--border)] text-xs font-medium cursor-pointer" role="tab" aria-selected="true" data-tab="journey">
+          1. End-to-End Journey &amp; 8,827 Funnel
+        </button>
+        <button class="tab-btn px-3 py-1.5 rounded-lg border border-[var(--border)] text-xs font-medium cursor-pointer" role="tab" aria-selected="false" data-tab="models">
+          2. Baselines, Stage 2 ESA &amp; Stage 3 Heterophily
+        </button>
+        <button class="tab-btn px-3 py-1.5 rounded-lg border border-[var(--border)] text-xs font-medium cursor-pointer" role="tab" aria-selected="false" data-tab="scale">
+          3. Why hukm_v1 Replaced linear_v1
+        </button>
+        <button class="tab-btn px-3 py-1.5 rounded-lg border border-[var(--border)] text-xs font-medium cursor-pointer" role="tab" aria-selected="false" data-tab="kashif">
+          4. Audit Fix: al-Kāshif &amp; Ungraded Narrators
+        </button>
+      </nav>
+    </header>
+
+    <!-- TAB 1: JOURNEY & FUNNEL -->
+    <section id="panel-journey" class="space-y-4">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="text-base font-semibold">Interactive 6-Stage Research &amp; Engineering Journey</h2>
+            <p class="text-xs text-[var(--muted-foreground)]">Select any stage to inspect what happened, what problem surfaced, and the exact verified artefact.</p>
+          </div>
+          <span class="text-xs font-mono text-[var(--muted-foreground)]">Track R (Deterministic) ⟂ Track L (Learned)</span>
+        </div>
+
+        <!-- 6 Phase Selector Cards -->
+        <div id="phase-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-2.5"></div>
+
+        <!-- Active Phase Detail Drawer -->
+        <div id="phase-detail" class="border border-[var(--border)] rounded-xl p-4 bg-[var(--content)] space-y-3"></div>
+      </div>
+
+      <!-- 8,827 Corpus Flow SVG -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="text-base font-semibold">How All 8,827 Narrators Route Without Overwriting Scholarship</h2>
+            <p class="text-xs text-[var(--muted-foreground)]">Track R records scholarly ground truth verbatim; Track L supplies <code class="text-xs">score_G_estimate</code> exclusively when *Taḥrīr* is absent/unmapped.</p>
+          </div>
+          <span class="text-xs px-2 py-0.5 rounded border border-[var(--border)] font-mono">DEC-005 · Non-Overwrite Contract</span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <svg viewBox="0 0 980 250" class="w-full min-w-[740px] h-auto text-xs" aria-label="8827 Narrator Flow">
+            <!-- Nodes -->
+            <!-- Col 1: Taqrib -->
+            <rect x="12" y="75" width="165" height="92" rx="10" fill="var(--content)" stroke="var(--border)" stroke-width="1.5"/>
+            <text x="94" y="102" text-anchor="middle" fill="var(--foreground)" font-weight="700" font-size="13">Taqrīb 3076</text>
+            <text x="94" y="122" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">8,827 narrators</text>
+            <text x="94" y="142" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">8,823 matched in 8246</text>
+            <text x="94" y="157" text-anchor="middle" fill="var(--chart-1)" font-size="11">(99.95% alignment)</text>
+
+            <!-- Arrows Col 1 -> Col 2 -->
+            <path d="M177,105 C215,105 215,62 252,62" fill="none" stroke="var(--chart-1)" stroke-width="2.5"/>
+            <path d="M177,138 C215,138 215,182 252,182" fill="none" stroke="var(--chart-4)" stroke-width="2"/>
+
+            <!-- Col 2 Top: Layer B observed -->
+            <rect x="252" y="18" width="195" height="86" rx="10" fill="var(--content)" stroke="var(--chart-1)" stroke-width="1.5"/>
+            <text x="349" y="42" text-anchor="middle" fill="var(--foreground)" font-weight="700" font-size="12">Layer B: Ranked + E₁</text>
+            <text x="349" y="61" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">7,262 observed ranks (1–12)</text>
+            <text x="349" y="78" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">231 E₁ qualifier shifts</text>
+            <text x="349" y="94" text-anchor="middle" fill="var(--chart-1)" font-size="10">Incl. Rank-6 Maqbūl (hukm=40)</text>
+
+            <!-- Col 2 Bottom: Layer B abstained -->
+            <rect x="252" y="138" width="195" height="86" rx="10" fill="var(--content)" stroke="var(--chart-4)" stroke-width="1.5"/>
+            <text x="349" y="162" text-anchor="middle" fill="var(--foreground)" font-weight="700" font-size="12">Layer B: Explicit Abstained</text>
+            <text x="349" y="181" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">1,565 abstained entries</text>
+            <text x="349" y="198" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">Anti-guessing guard:</text>
+            <text x="349" y="213" text-anchor="middle" fill="var(--chart-4)" font-size="10">Compound / unmapped wording</text>
+
+            <!-- Arrows Col 2 -> Col 3 -->
+            <path d="M447,55 C485,55 485,58 525,58" fill="none" stroke="var(--chart-1)" stroke-width="2.5"/>
+            <path d="M447,165 C485,165 485,78 525,78" fill="none" stroke="var(--chart-2)" stroke-width="2" stroke-dasharray="4 3"/>
+            <path d="M447,196 C485,196 485,190 525,190" fill="none" stroke="var(--chart-4)" stroke-width="2"/>
+            <text x="486" y="114" text-anchor="middle" fill="var(--chart-2)" font-size="10">+211 first grades</text>
+
+            <!-- Col 3 Top: E2 Observed -->
+            <rect x="525" y="18" width="215" height="106" rx="10" fill="var(--content)" stroke="var(--chart-2)" stroke-width="1.8"/>
+            <text x="632" y="40" text-anchor="middle" fill="var(--foreground)" font-weight="700" font-size="12">Layer E₂: Taḥrīr 8246 Observed</text>
+            <text x="632" y="59" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">4,177 agree · 2,398 dissent</text>
+            <text x="632" y="75" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">398 agreed maqbūl → Rank 7 (35.0)</text>
+            <text x="632" y="91" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">463 bare ضعيف p.47 → 22.0</text>
+            <text x="632" y="110" text-anchor="middle" fill="var(--chart-2)" font-weight="700" font-size="11">Clean test: 1,077 · First-grade: 211</text>
+
+            <!-- Col 3 Bottom: Quarantine / Missing E2 -->
+            <rect x="525" y="146" width="215" height="84" rx="10" fill="var(--content)" stroke="var(--chart-3)" stroke-width="1.5"/>
+            <text x="632" y="168" text-anchor="middle" fill="var(--foreground)" font-weight="700" font-size="12">No Clean E₂ Grade</text>
+            <text x="632" y="186" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">1,339 abstained in both / unmapped</text>
+            <text x="632" y="203" text-anchor="middle" fill="var(--muted-foreground)" font-size="11">57 suspect_alignment quarantined</text>
+            <text x="632" y="219" text-anchor="middle" fill="var(--chart-3)" font-size="11">10 missing alignment → Track L fills</text>
+
+            <!-- Arrows Col 3 -> Col 4 -->
+            <path d="M740,70 L785,70" fill="none" stroke="var(--chart-2)" stroke-width="2.5"/>
+            <path d="M740,188 L785,188" fill="none" stroke="var(--chart-5)" stroke-width="2.5"/>
+
+            <!-- Col 4 Top: Final Observed Scholarly -->
+            <rect x="785" y="26" width="182" height="88" rx="10" fill="var(--content)" stroke="var(--chart-2)" stroke-width="2"/>
+            <text x="876" y="50" text-anchor="middle" fill="var(--foreground)" font-weight="700" font-size="12">observed_scholarly</text>
+            <text x="876" y="72" text-anchor="middle" fill="var(--chart-2)" font-weight="700" font-size="18">7,421</text>
+            <text x="876" y="92" text-anchor="middle" fill="var(--muted-foreground)" font-size="10">Score untouched; G gives diagnostics</text>
+
+            <!-- Col 4 Bottom: Final Model Estimate -->
+            <rect x="785" y="144" width="182" height="88" rx="10" fill="var(--content)" stroke="var(--chart-5)" stroke-width="2"/>
+            <text x="876" y="168" text-anchor="middle" fill="var(--foreground)" font-weight="700" font-size="12">model_estimate</text>
+            <text x="876" y="190" text-anchor="middle" fill="var(--chart-5)" font-weight="700" font-size="18">1,406</text>
+            <text x="876" y="210" text-anchor="middle" fill="var(--muted-foreground)" font-size="10">76.03% excl. Ṣaḥābah vs Kāshif</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: MODELS & NEGATIVE RESULT -->
+    <section id="panel-models" class="hidden space-y-4">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 class="text-base font-semibold">Baselines, Stage 2 ESA &amp; Stage 3 TC-GNN (`N = 1,077` Clean Test)</h2>
+            <p class="text-xs text-[var(--muted-foreground)]">Switch the metric below to see why <strong>Shift Macro-F1</strong> separates neural ESA from the Lookup-Table, and why Stage 3 shows <strong>heterophily</strong>.</p>
+          </div>
+          <div id="metric-pills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <div id="metric-takeaway" class="text-xs border border-[var(--border)] rounded-lg px-3 py-2 bg-[var(--content)]"></div>
+
+        <div id="model-bars" class="space-y-2"></div>
+      </div>
+
+      <!-- Two side-by-side summary cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-semibold">Ungraded at Baseline (<code class="text-xs">observed_first_grade</code>, N = 211)</h3>
+            <span class="text-xs px-2 py-0.5 rounded border border-[var(--border)] font-mono">No score_B available</span>
+          </div>
+          <p class="text-xs text-[var(--muted-foreground)]">
+            When Ibn Ḥajar abstained, lookup/rule baselines collapse to Majority voting. Only fine-tuned <strong>AraBERTv02</strong> reads the raw biographical wording and recovers signal:
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between items-center border-b border-[var(--border)] pb-1.5">
+              <span>Majority / Meta / TF-IDF / M3a baselines</span>
+              <span class="font-mono">BinAcc 47.39% · 3T-MF1 0.1607 · Exact 0.00%</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-[var(--border)] pb-1.5">
+              <span>M3b (AraBERTv02 Full)</span>
+              <span class="font-mono">BinAcc 67.30% · 3T-MF1 0.3505 · QWK 0.3218</span>
+            </div>
+            <div class="flex justify-between items-center font-semibold">
+              <span style="color: var(--chart-1)">M3c (AraBERTv02 Name-Stripped)</span>
+              <span class="font-mono" style="color: var(--chart-1)">BinAcc 69.67% · 3T-MF1 0.3998 · Exact 18.96%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-semibold">Why Multi-Hop GNNs Didn't Beat 1-Hop <code class="text-xs">G2b</code></h3>
+            <span class="text-xs px-2 py-0.5 rounded border border-[var(--border)] font-mono">RQ3 Negative Result</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-center">
+            <div class="border border-[var(--border)] rounded-lg p-2.5 bg-[var(--content)]">
+              <div class="text-lg font-bold font-mono" style="color: var(--chart-3)">0.0474</div>
+              <div class="text-xs text-[var(--muted-foreground)]">12-Rank Class Homophily</div>
+            </div>
+            <div class="border border-[var(--border)] rounded-lg p-2.5 bg-[var(--content)]">
+              <div class="text-lg font-bold font-mono" style="color: var(--chart-1)">-4,647</div>
+              <div class="text-xs text-[var(--muted-foreground)]">Anachronistic Edges Pruned</div>
+            </div>
+          </div>
+          <ul class="text-xs text-[var(--muted-foreground)] space-y-1 list-disc pl-4">
+            <li>Great <em>imām</em>s taught large circles including weak students (strong edge heterophily <code class="text-xs">0.2725</code>), so 2-hop averaging blurs point grades (<code class="text-xs">G4a MAE 0.6760</code> vs <code class="text-xs">G2b 0.6558</code>, <code class="text-xs">p = 0.000</code>).</li>
+            <li>1-hop summary counts (<code class="text-xs">G2b</code>) significantly raise <code class="text-xs">BinAcc</code> over text-only <code class="text-xs">G0</code> (<code class="text-xs">0.9090</code> vs <code class="text-xs">0.8951</code>, <code class="text-xs">p = 0.031</code>).</li>
+            <li>Consolidated <code class="text-xs">G4d</code> edges achieve highest ensemble <code class="text-xs">QWK = 0.8925</code> (<code class="text-xs">p = 0.032</code> vs <code class="text-xs">G2b</code>) and <code class="text-xs">Shift MF1 = 0.7320</code>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: HUKM_V1 SCALE EXPLORER -->
+    <section id="panel-scale" class="hidden space-y-4">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 class="text-base font-semibold">Classical Threshold Calibration: <code class="text-xs">linear_v1</code> vs. <code class="text-xs">hukm_v1</code> (<code class="text-xs">DEC-009</code>)</h2>
+            <p class="text-xs text-[var(--muted-foreground)]">Equal spacing placed conditional <em>ṣadūq yuhim</em> (Rank 5 = 63.6) and conditional <em>maqbūl</em> (Rank 6 = 54.5) above 50 and blurred the <em>iʿtibār</em> floor.</p>
+          </div>
+          <div class="flex gap-2">
+            <button id="btn-hukm" class="px-3 py-1.5 rounded-lg text-xs font-medium border cursor-pointer" style="background: var(--primary); color: var(--primary-foreground); border-color: var(--primary)">
+              hukm_v1 (Active)
+            </button>
+            <button id="btn-linear" class="px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--border)] cursor-pointer">
+              linear_v1 (Frozen v2)
+            </button>
+          </div>
+        </div>
+
+        <div id="scale-callout" class="text-xs border border-[var(--border)] rounded-lg px-3 py-2 bg-[var(--content)]"></div>
+
+        <!-- Threshold legend -->
+        <div class="flex flex-wrap gap-4 text-xs text-[var(--muted-foreground)]">
+          <span><strong style="color: var(--chart-2)">≥ 80</strong>: Ṣaḥīḥ (Ranks 1–3)</span>
+          <span><strong style="color: var(--chart-1)">≥ 50</strong>: Accepted alone (Rank 4 <em>ṣadūq</em> = 70; Rank 5 drops to 45)</span>
+          <span><strong style="color: var(--chart-4)">≥ 25</strong>: Usable for <em>iʿtibār</em> (Ranks 5–9: 45 → 27)</span>
+          <span><strong style="color: var(--chart-3)">&lt; 25</strong>: Rejected / non-<em>iʿtibār</em> (<em>Taḥrīr</em> bare ضعيف p.47 = 22.0; Ranks 10–12 = 15, 5, 0)</span>
+        </div>
+
+        <div id="rank-scale-rows" class="space-y-1.5"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: AL-KASHIF AUDIT & GENERALIZATION -->
+    <section id="panel-kashif" class="hidden space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-semibold">Audit Fix (<code class="text-xs">DEC-010</code>): Why <code class="text-xs">+11.65 pp</code> Was Retired</h2>
+            <span class="text-xs px-2 py-0.5 rounded border border-[var(--border)] font-mono">paired_clean · N = 1,994</span>
+          </div>
+          <p class="text-xs text-[var(--muted-foreground)]">
+            Once we dropped weak <code class="text-xs">n2</code>/<code class="text-xs">n3_sigil_subset</code> links, stripped verbatim overlap symmetrically across <strong>both</strong> <em>Taqrīb</em> and <em>Taḥrīr</em> (<code class="text-xs">1,169</code> rows), excluded <code class="text-xs">549</code> <em>Taḥrīr</em> citations of al-Dhahabī, and enforced rule-order (<code class="text-xs">وثق</code> → <code class="text-xs">maqbul_r6</code>):
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="border border-[var(--border)] rounded-lg p-3 bg-[var(--content)] flex justify-between">
+              <span>Majority class floor (<em>al-Kāshif</em>)</span>
+              <span class="font-mono font-semibold">3T-Acc = 48.29%</span>
+            </div>
+            <div class="border border-[var(--border)] rounded-lg p-3 bg-[var(--content)] space-y-1">
+              <div class="flex justify-between font-medium">
+                <span>Layer B (<em>Taqrīb</em> baseline)</span>
+                <span class="font-mono">Acc 68.36% · MF1 0.6932 · QWK 0.6796</span>
+              </div>
+              <div class="text-[var(--muted-foreground)] font-mono">5-Tier Spearman = 0.7248</div>
+            </div>
+            <div class="border border-[var(--border)] rounded-lg p-3 bg-[var(--content)] space-y-1">
+              <div class="flex justify-between font-medium">
+                <span>Layer E₂ (<em>Taḥrīr</em> verdict)</span>
+                <span class="font-mono">Acc 66.90% · MF1 0.6510 · QWK 0.6757</span>
+              </div>
+              <div class="font-mono" style="color: var(--chart-2)">5-Tier Spearman = 0.7520 (+0.0272, p = 0.0000)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-semibold">Generalizing to Missing <em>Taḥrīr</em> (<code class="text-xs">model_estimate</code>)</h2>
+            <span class="text-xs px-2 py-0.5 rounded border border-[var(--border)] font-mono">Post-fix CPU Stage 3 G4a</span>
+          </div>
+          <p class="text-xs text-[var(--muted-foreground)]">
+            Where <em>Taḥrīr</em> provides no mapped grade (<code class="text-xs">1,406</code> narrators), non-overwrite <code class="text-xs">score_G_estimate</code> strongly outperforms majority-class guessing in <em>al-Kāshif</em>:
+          </p>
+          <div id="kashif-est-bars" class="space-y-3 pt-1"></div>
+          <p class="text-xs text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]">
+            *On <code class="text-xs">all_excl_sahabi</code> (<code class="text-xs">N = 317</code>), removing Rank-1 <em>Ṣaḥābah</em> tests non-trivial grading and still achieves <strong>76.03%</strong> (<code class="text-xs">+20.51 pp</code> above the <code class="text-xs">55.52%</code> majority floor, <code class="text-xs">3T-QWK = 0.8024</code>).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-xs text-[var(--muted-foreground)] flex flex-wrap justify-between gap-2 px-1">
+      <span>Policy note: <code class="text-xs">wuththiqa_policy="maqbul_r6"</code> (DEC-010) conservatively maps unattributed passive <code class="text-xs">وثق</code> to Tier 1; active <code class="text-xs">وثقه/وثقوه</code> stays Tier 2.</span>
+      <span>Verified after final edits: 126 CPU tests passed (6 GPU skipped) · 130 MPS tests passed (4 CUDA skipped).</span>
+    </footer>
+  </div>
+
+  <script>
+    const PHASES = [
+      {
+        num: "01",
+        tag: "Corpus & Pivot",
+        title: "Align 3076 ↔ 8246",
+        stat: "8,823 / 8,827 (99.95%)",
+        question: "How do we establish non-subjective ground truth instead of manual student annotation?",
+        body: "Anchored targets on Ibn Ḥajar's 12-rank Taqrīb taxonomy (Bilgin, 2026) and aligned 99.95% of entries with al-Arnāʾūṭ & Maʿrūf's Taḥrīr (8246) editorial overrides (5,766 agreements, 2,621 • بل: dissents, 325 commentaries, 111 • قوله qualifications).",
+        artifacts: "extract_tahrir_taqrib_alignment_v1.py · TAHRIR_TAQRIB_ALIGNED_8827_V1.csv · DEC-004, DEC-007"
+      },
+      {
+        num: "02",
+        tag: "Track R",
+        title: "Deterministic Layers + hukm_v1",
+        stat: "7,421 observed · 1,406 est.",
+        question: "How do we protect classical scholarly verdicts while still scoring nuances and missing entries?",
+        body: "Separated deterministic Track R (B → B+E₁ qualifier shifts [231] → B+E₁+E₂ Taḥrīr verdicts) from learned Track L. Replaced equal-interval linear_v1 with hukm_v1 anchored at ṣaḥīḥ=80, accepted=50, iʿtibār=25, plus Taḥrīr bare ضعيف p.47 = 22.0 (463 entries). Quarantined 57 suspect alignments & 10 missing rows.",
+        artifacts: "common/rank_scale.py · build_layered_scores_v3.py · LAYERED_SCORES_WIDE_V3.csv · DEC-005, DEC-009"
+      },
+      {
+        num: "03",
+        tag: "Stage 2 ESA",
+        title: "AraBERTv02 & Baselines",
+        stat: "0.7262 Shift MF1 (M3b)",
+        question: "Can text classification genuinely improve on static lookups and generic Arabic sentiment?",
+        body: "Yes—specifically on editorial revisions and abstained narrators. While a (rank_B, maqbul) Lookup-Table reaches 0.6202 static MAE, AraBERTv02 leads on Shift Macro-F1 (0.7262 vs Lookup-Table 0.6576 vs generic sentiment CAMeLBERT 0.6963) and Name-Stripped M3c reaches BinAcc 69.67% on ungraded observed_first_grade (N=211) where baselines collapse to 47.39%.",
+        artifacts: "run_stage2_esa_benchmarks_v3.py · run_layered_experiments_v3.py · STAGE2_RESULTS_SUMMARY_V3.md"
+      },
+      {
+        num: "04",
+        tag: "Stage 3 Graph",
+        title: "Sanad Pruning & Heterophily",
+        stat: "Class Homophily = 0.0474",
+        question: "Does adding a chronological teacher-student graph improve grade prediction over text + 1-hop structure?",
+        body: "Pruned 42,011 pure-sanad edges chronologically to 37,364 (-4,647). Discovered severe heterophily (0.0474): 2-hop smoothing (G4a MAE 0.6760) underperforms 1-hop summary features (G2b MAE 0.6558, p=0.000), answering RQ3 cleanly as an instructive negative result while G2b gains BinAcc (0.9090 vs G0 0.8951) and G4d leads ensemble QWK (0.8925) & Shift MF1 (0.7320).",
+        artifacts: "run_stage3_tc_gnn_benchmarks_v3.py · mps_layers.py · STAGE3_SUBGROUP_AND_SIGNIFICANCE_V3.csv"
+      },
+      {
+        num: "05",
+        tag: "Code & Speed Audit",
+        title: "GATv2 Fix & 4.5× CPU Run",
+        stat: "max_abs_diff = 0.0 · 4,537s",
+        question: "Did MPS shortcuts or external-validation bugs distort any numbers?",
+        body: "Caught and fixed MPSGATv2Conv message indexing (x_l.index_select(0, src) for bit-exact PyG parity), benchmarked CPU at 4.5× faster than Radeon MPS for sparse graph passes (2,908 vs 13,126 ms/epoch), reran Stage 3 across all 5 seeds on CPU, and retired the asymmetric +11.65 pp al-Kāshif artifact via symmetric overlap deduplication & rule-order fixes.",
+        artifacts: "bench_stage3_devices.py · build_kashif_validation_v1.py · DEC-010 · commit 6422ba6"
+      },
+      {
+        num: "06",
+        tag: "External Proof & Thesis",
+        title: "al-Kāshif & Chapter Drafts",
+        stat: "76.03% Est. vs Kāshif",
+        question: "Do non-overwrite estimates actually generalize outside Taqrīb/Taḥrīr?",
+        body: "Yes. On narrators missing Taḥrīr (model_estimate), G4a reaches 76.03% 3-tier agreement with al-Dhahabī's al-Kāshif on non-Companions (N=317 vs 55.52% majority floor, QWK=0.8024) and 80.85% overall (N=402). All claims, hukm_v1 Rank-6 showcases, and full Chapters 4–5 drafts are committed and pushed.",
+        artifacts: "RESULTS_AND_DISCUSSION_DRAFT.md · THESIS_MAPPING.md · LAYERED_EXPERIMENTS_REPORT_V3.md · b7dd6f6"
+      }
+    ];
+
+    const MODELS = [
+      { id: "Majority Baseline", group: "Baseline", mae: 2.4689, shift_mf1: 0.2550, t3_mf1: 0.1927, bin_acc: 0.6054, note: "Always predicts training mode rank; collapses on shifts & ungraded entries." },
+      { id: "Baseline B (M0 Identity)", group: "Baseline", mae: 0.7233, shift_mf1: 0.2550, t3_mf1: 0.6980, bin_acc: 0.7994, note: "Copies Ibn Hajar's score_B; good static accuracy only because 62% of entries don't change." },
+      { id: "LookupTable (rank_B, maqbul)", group: "Baseline", mae: 0.6202, shift_mf1: 0.6576, t3_mf1: 0.7901, bin_acc: 0.8988, note: "Exploits static priors (low MAE), but fails to read text nuance or abstained entries." },
+      { id: "M3a CAMeLBERT Sentiment", group: "Stage 2 ESA", mae: 0.7189, shift_mf1: 0.6963, t3_mf1: 0.7704, bin_acc: 0.8877, note: "Zero-shot MSA sentiment + meta; shows generic sentiment != classical evaluative stance." },
+      { id: "M3b AraBERTv02 Full", group: "Stage 2 ESA", mae: 0.6597, shift_mf1: 0.7262, t3_mf1: 0.7919, bin_acc: 0.8951, note: "Best Stage 2 Shift MF1 (0.7262) & feeds Stage 3 OOF features (G0)." },
+      { id: "M3c AraBERTv02 Name-Stripped", group: "Stage 2 ESA", mae: 0.6485, shift_mf1: 0.7183, t3_mf1: 0.7997, bin_acc: 0.9053, note: "Proves semantic stance (no name memorization); leads Stage 2 MAE, BinAcc & N=211 first-grade." },
+      { id: "G2b 1-Hop Sanad Struct MLP", group: "Stage 3 Graph", mae: 0.6558, shift_mf1: 0.7247, t3_mf1: 0.7957, bin_acc: 0.9090, note: "Ensemble wins Rank MAE (0.6558) & BinAcc (0.9090, p=0.031 vs G0) without multi-hop blur." },
+      { id: "G4a Directed TC-GNN (chrono)", group: "Stage 3 Graph", mae: 0.6760, shift_mf1: 0.7240, t3_mf1: 0.7983, bin_acc: 0.9062, note: "Outperforms unpruned G4b (0.7240 vs 0.7156 Shift MF1), but smoothing trails G2b on MAE (heterophily)." },
+      { id: "G4d Directed TC-GNN (Consol.)", group: "Stage 3 Graph", mae: 0.6613, shift_mf1: 0.7320, t3_mf1: 0.7999, bin_acc: 0.9081, note: "Top ensemble QWK (0.8925, p=0.032 vs G2b), top Shift MF1 (0.7320) & lowest R6 MAE (1.4563)." }
+    ];
+
+    const METRIC_META = {
+      shift_mf1: {
+        label: "Shift Macro-F1 ↑",
+        higher: true,
+        min: 0,
+        max: 0.80,
+        takeaway: "<strong>Why Shift Macro-F1 matters:</strong> Predicting whether <em>Taḥrīr</em> upgrades, keeps, or downgrades Ibn Ḥajar exposes the Lookup-Table ceiling (<code>0.6576</code>) and highlights <code>AraBERTv02</code> ESA (<code>0.7262</code>) and <code>G4d</code> (<code>0.7320</code>)."
+      },
+      mae: {
+        label: "Rank MAE ↓ (Lower Better)",
+        higher: false,
+        min: 0,
+        max: 2.55,
+        takeaway: "<strong>Two key insights in Rank MAE:</strong> (1) Static Lookup-Table (<code>0.6202</code>) outperforms neural text on unchanging priors, proving why Rank MAE alone is misleading; (2) 1-hop <code>G2b</code> (<code>0.6558</code>) beats 2-hop <code>G4a</code> (<code>0.6760</code>, <code>p = 0.000</code>) due to heterophily."
+      },
+      bin_acc: {
+        label: "Binary Taʿdīl/Jarḥ Acc ↑",
+        higher: true,
+        min: 0.5,
+        max: 1.0,
+        takeaway: "<strong>Binary acceptance boundary:</strong> 1-hop structural features (<code>G2b</code> <code>90.90%</code>, <code>p = 0.031</code> vs <code>G0</code> <code>89.51%</code>) and name-stripped ESA (<code>M3c</code> <code>90.53%</code>) cleanly tighten the <em>taʿdīl/jarḥ</em> boundary."
+      },
+      t3_mf1: {
+        label: "3-Tier Macro-F1 ↑",
+        higher: true,
+        min: 0,
+        max: 0.88,
+        takeaway: "<strong>Balanced 3-tier classification (1–3 / 4–6 / 7–12):</strong> Majority voting fails completely (<code>0.1927</code>), while <code>M3c</code> (<code>0.7997</code>) and consolidated <code>G4d</code> (<code>0.7999</code>) tie at the top."
+      }
+    };
+
+    const RANKS = [
+      { r: 1, name: "Ṣaḥābah (Companions)", hukm: 100, lin: 100.00, zone: "Ṣaḥīḥ (≥80)" },
+      { r: 2, name: "Awthaq an-Nās / Thiqah Thabt", hukm: 95, lin: 90.91, zone: "Ṣaḥīḥ (≥80)" },
+      { r: 3, name: "Thiqah (Trustworthy)", hukm: 85, lin: 81.82, zone: "Ṣaḥīḥ (≥80)" },
+      { r: 4, name: "Ṣadūq / Lā baʾs bih (Ḥasan)", hukm: 70, lin: 72.73, zone: "Accepted Alone (≥50)" },
+      { r: 5, name: "Ṣadūq yuhim / lahū awhām", hukm: 45, lin: 63.64, zone: "Iʿtibār (25–49)" },
+      { r: 6, name: "Maqbūl (Conditional)", hukm: 40, lin: 54.55, zone: "Iʿtibār (25–49)" },
+      { r: 7, name: "Mastūr / Layyin / Ḍaʿīf yuʿtabaru bih", hukm: 35, lin: 45.45, zone: "Iʿtibār (25–49)" },
+      { r: 8, name: "Ḍaʿīf (Taqrīb)", hukm: 30, lin: 36.36, zone: "Iʿtibār (25–49)" },
+      { r: 9, name: "Majhūl", hukm: 27, lin: 27.27, zone: "Iʿtibār Floor (25–49)" },
+      { r: "p.47", name: "Taḥrīr bare ضعيف (no iʿtibār, 463 rows)", hukm: 22, lin: null, zone: "Non-Iʿtibār (<25)" },
+      { r: 10, name: "Matrūk / Ḍaʿīf jiddan", hukm: 15, lin: 18.18, zone: "Non-Iʿtibār (<25)" },
+      { r: 11, name: "Muttaham bi-l-kadhib", hukm: 5, lin: 9.09, zone: "Non-Iʿtibār (<25)" },
+      { r: 12, name: "Kadhdhāb / Waḍḍāʿ", hukm: 0, lin: 0.00, zone: "Non-Iʿtibār (<25)" }
+    ];
+
+    const EST_SLICES = [
+      { label: "Non-Companion (all_excl_sahabi, N = 317)", model: 76.03, floor: 55.52, qwk: "0.8024" },
+      { label: "Non-Verbatim Clean (non_verbatim, N = 300)", model: 78.00, floor: 59.33, qwk: "0.8063" },
+      { label: "All Mapped Missing-Taḥrīr (all_observed, N = 402)", model: 80.85, floor: 64.93, qwk: "0.8161" },
+      { label: "Abstained in Taqrīb, Graded in Taḥrīr (observed_first_grade, N = 77)", model: 59.74, floor: 51.95, qwk: "0.5944" }
+    ];
+
+    let activePhase = 0;
+    let activeMetric = "shift_mf1";
+    let activeScale = "hukm";
+
+    function renderPhases() {
+      const grid = document.getElementById("phase-grid");
+      grid.innerHTML = PHASES.map((p, idx) => `
+        <button data-phase="${idx}" data-active="${idx === activePhase}"
+          class="phase-card text-left border border-[var(--border)] rounded-xl p-3 bg-[var(--content)] hover:border-[var(--primary)] cursor-pointer transition-colors space-y-1">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-mono font-bold" style="color: var(--chart-1)">${p.num}</span>
+            <span class="text-[var(--muted-foreground)]">${p.tag}</span>
+          </div>
+          <div class="text-xs font-semibold leading-snug">${p.title}</div>
+          <div class="text-xs font-mono text-[var(--muted-foreground)] pt-0.5">${p.stat}</div>
+        </button>
+      `).join("");
+
+      grid.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          activePhase = Number(btn.dataset.phase);
+          renderPhases();
+        });
+      });
+
+      const p = PHASES[activePhase];
+      document.getElementById("phase-detail").innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="text-sm font-bold">${p.num}. ${p.title} — <span style="color: var(--chart-1)">${p.stat}</span></div>
+          <span class="text-xs font-mono px-2 py-0.5 rounded border border-[var(--border)]">${p.tag}</span>
+        </div>
+        <div class="text-xs text-[var(--muted-foreground)]"><strong>Core question:</strong> ${p.question}</div>
+        <p class="text-xs leading-relaxed">${p.body}</p>
+        <div class="text-xs font-mono text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]">
+          Artefacts: ${p.artifacts}
+        </div>
+      `;
+    }
+
+    function renderModels() {
+      const pills = document.getElementById("metric-pills");
+      pills.innerHTML = Object.entries(METRIC_META).map(([k, m]) => `
+        <button data-metric="${k}" class="px-2.5 py-1 rounded-lg border text-xs font-medium cursor-pointer"
+          style="${k === activeMetric ? 'background: var(--primary); color: var(--primary-foreground); border-color: var(--primary);' : 'border-color: var(--border);'}">
+          ${m.label}
+        </button>
+      `).join("");
+      pills.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          activeMetric = btn.dataset.metric;
+          renderModels();
+        });
+      });
+
+      const meta = METRIC_META[activeMetric];
+      document.getElementById("metric-takeaway").innerHTML = meta.takeaway;
+
+      const bestVal = meta.higher
+        ? Math.max(...MODELS.map(m => m[activeMetric]))
+        : Math.min(...MODELS.map(m => m[activeMetric]));
+
+      const colorByGroup = {
+        "Baseline": "var(--chart-4)",
+        "Stage 2 ESA": "var(--chart-1)",
+        "Stage 3 Graph": "var(--chart-2)"
+      };
+
+      document.getElementById("model-bars").innerHTML = MODELS.map(m => {
+        const val = m[activeMetric];
+        const isBest = Math.abs(val - bestVal) < 1e-6;
+        const pct = Math.max(4, Math.min(100, ((val - meta.min) / (meta.max - meta.min)) * 100));
+        return `
+          <div class="border border-[var(--border)] rounded-lg px-3 py-2 bg-[var(--content)] space-y-1">
+            <div class="flex flex-wrap justify-between items-center gap-2 text-xs">
+              <div class="flex items-center gap-2">
+                <span class="font-semibold">${m.id}</span>
+                <span class="px-1.5 py-0.5 rounded border border-[var(--border)] text-[var(--muted-foreground)] font-mono">${m.group}</span>
+                ${isBest ? '<span class="px-1.5 py-0.5 rounded font-mono font-semibold" style="background: var(--primary); color: var(--primary-foreground);">Best</span>' : ''}
+              </div>
+              <span class="font-mono font-bold tabular-nums">${val.toFixed(4)}</span>
+            </div>
+            <div class="w-full h-2 rounded-full overflow-hidden border border-[var(--border)]">
+              <div class="h-full bar-fill" style="width: ${pct}%; background-color: ${colorByGroup[m.group]};"></div>
+            </div>
+            <div class="text-xs text-[var(--muted-foreground)]">${m.note}</div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderScale() {
+      const isHukm = activeScale === "hukm";
+      const btnH = document.getElementById("btn-hukm");
+      const btnL = document.getElementById("btn-linear");
+      btnH.style.cssText = isHukm ? "background: var(--primary); color: var(--primary-foreground); border-color: var(--primary)" : "";
+      btnL.style.cssText = !isHukm ? "background: var(--primary); color: var(--primary-foreground); border-color: var(--primary)" : "";
+
+      document.getElementById("scale-callout").innerHTML = isHukm
+        ? "<strong>hukm_v1 (Active):</strong> Rank 4 (<em>ṣadūq</em> = <code>70</code>) stays ≥ 50 (accepted alone), while qualified Rank 5 (<em>ṣadūq yuhim</em> = <code>45</code>) &amp; Rank 6 (<em>maqbūl</em> = <code>40</code>) drop into the 25–49 <em>iʿtibār</em> zone, and <em>Taḥrīr</em> bare ضعيف (p.47 = <code>22</code>) explicitly falls below the <code>25</code> <em>iʿtibār</em> floor."
+        : "<strong>linear_v1 (Legacy v2):</strong> Equal-step formula <code>100×(12−r)/11</code> forced Rank 5 (<code>63.64</code>) and conditional <em>maqbūl</em> Rank 6 (<code>54.55</code>) above 50, conflating corroborated-only narrators with independently acceptable transmitters.";
+
+      document.getElementById("rank-scale-rows").innerHTML = RANKS.map(row => {
+        const val = isHukm ? row.hukm : row.lin;
+        const valStr = val === null ? "N/A (mapped to r=8 in v2)" : val.toFixed(isHukm ? 0 : 2);
+        const width = val === null ? 0 : val;
+        const barCol = val === null ? "var(--border)" : (val >= 80 ? "var(--chart-2)" : (val >= 50 ? "var(--chart-1)" : (val >= 25 ? "var(--chart-4)" : "var(--chart-3)")));
+        return `
+          <div class="grid grid-cols-12 items-center gap-2 text-xs py-1 border-b border-[var(--border)]">
+            <div class="col-span-4 sm:col-span-4 font-medium truncate" title="Rank ${row.r}: ${row.name}">
+              <span class="font-mono text-[var(--muted-foreground)] mr-1">R${row.r}</span> ${row.name}
+            </div>
+            <div class="col-span-5 sm:col-span-5 relative h-3 rounded-full border border-[var(--border)] overflow-hidden bg-[var(--content)]">
+              <div class="h-full bar-fill" style="width: ${width}%; background-color: ${barCol};"></div>
+            </div>
+            <div class="col-span-3 sm:col-span-3 flex justify-between font-mono tabular-nums">
+              <span class="font-bold">${valStr}</span>
+              <span class="hidden sm:inline text-[var(--muted-foreground)]">${isHukm ? row.zone : ""}</span>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderKashifEstimates() {
+      document.getElementById("kashif-est-bars").innerHTML = EST_SLICES.map(s => `
+        <div class="space-y-1 text-xs">
+          <div class="flex justify-between gap-2">
+            <span class="font-medium">${s.label}</span>
+            <span class="font-mono font-bold tabular-nums" style="color: var(--chart-2)">${s.model.toFixed(2)}% <span class="text-[var(--muted-foreground)] font-normal">(QWK ${s.qwk})</span></span>
+          </div>
+          <div class="relative w-full h-3 rounded-full border border-[var(--border)] bg-[var(--content)] overflow-hidden">
+            <div class="absolute inset-y-0 left-0 opacity-35" style="width: ${s.floor}%; background-color: var(--chart-4);"></div>
+            <div class="h-full bar-fill opacity-85" style="width: ${s.model}%; background-color: var(--chart-2);"></div>
+          </div>
+          <div class="text-xs text-[var(--muted-foreground)] font-mono">Shaded majority floor: ${s.floor.toFixed(2)}% · Gain: +${(s.model - s.floor).toFixed(2)} pp</div>
+        </div>
+      `).join("");
+    }
+
+    // Tab switching
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach(b => b.setAttribute("aria-selected", "false"));
+        btn.setAttribute("aria-selected", "true");
+        const target = btn.dataset.tab;
+        ["journey", "models", "scale", "kashif"].forEach(id => {
+          document.getElementById("panel-" + id).classList.toggle("hidden", id !== target);
+        });
+      });
+    });
+
+    document.getElementById("btn-hukm").addEventListener("click", () => { activeScale = "hukm"; renderScale(); });
+    document.getElementById("btn-linear").addEventListener("click", () => { activeScale = "linear"; renderScale(); });
+
+    renderPhases();
+    renderModels();
+    renderScale();
+    renderKashifEstimates();
+  </script>
+</body>
+</html>
