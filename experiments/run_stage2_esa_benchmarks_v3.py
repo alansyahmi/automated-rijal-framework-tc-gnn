@@ -130,7 +130,14 @@ def extract_camelbert_zero_shot(
     """Run zero-shot generic-sentiment baseline (CAMeLBERT-MSA-sentiment) over all 8,827 Taqrib entries."""
     dev = device or select_device("auto")
     tok = AutoTokenizer.from_pretrained(CAMEL_ID, local_files_only=local_files_only)
-    model = AutoModelForSequenceClassification.from_pretrained(CAMEL_ID, local_files_only=local_files_only).to(dev)
+    try:
+        model = AutoModelForSequenceClassification.from_pretrained(
+            CAMEL_ID, use_safetensors=True, local_files_only=local_files_only
+        ).to(dev)
+    except (OSError, ValueError):
+        model = AutoModelForSequenceClassification.from_pretrained(
+            CAMEL_ID, revision="refs/pr/1", use_safetensors=True, local_files_only=local_files_only
+        ).to(dev)
     model.eval()
     id2label = {int(k): v.lower() for k, v in model.config.id2label.items()}
     pos_idx = next(k for k, v in id2label.items() if "pos" in v)
@@ -208,7 +215,9 @@ def make_dynamic_collate(pad_id: int):
 class AraBERTDualHead(nn.Module):
     def __init__(self, meta_dim: int, dropout: float = 0.2, local_files_only: bool = True) -> None:
         super().__init__()
-        self.bert = AutoModel.from_pretrained(ARABERT_ID, local_files_only=local_files_only)
+        self.bert = AutoModel.from_pretrained(
+            ARABERT_ID, use_safetensors=True, local_files_only=local_files_only
+        )
         h_dim = self.bert.config.hidden_size
         self.meta_proj = nn.Sequential(
             nn.Linear(meta_dim, 64),
